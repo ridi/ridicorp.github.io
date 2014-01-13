@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
+  <meta name="ROBOTS" content="ALL"/>
+  <meta name="author" content="nnyamm@ridicorp.com"/>
+  <meta name="description" content="RIDI Corporation site"/>
+  <meta name="keywords" content="리디북스 RidiBooks 리디샵 RidiShop 주리디 리디주식회사 ridicorp ridi"/>
+  <meta name="format-detection" content="telephone=no">
+  <title>RIDI Corporation</title>
+  
+  <!-- ============== icon ========= -->
+  <link rel="apple-touch-icon-precomposed" href="//static.ridibooks.com/books/images/favicon/favicon_72.png"/>
+  <link rel="apple-touch-icon-precomposed" href="//static.ridibooks.com/books/images/favicon/favicon_114.png" sizes="114x114"/>
+  <link rel="shortcut icon" href="//static.ridibooks.com/books/images/favicon/ridibooks.ico" />
+  
+  <!-- ============== CSS ========= -->
+  <link rel="stylesheet" type="text/css" media="screen" href="//static.ridibooks.com/ridicorp/css/ridicorp_style.css?140107"/>
+  <!-- <link rel="stylesheet" type="text/css" media="screen" href="//static.nnyamm.dev.ridibooks.kr/ridicorp/css/ridicorp_style.css?140102"/> -->
+  <!-- ============== JS ========= -->
+  <!--[if lt IE 9]>
+    <script type="text/javascript" src="//static.ridibooks.com/common/js/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="//static.ridibooks.com/common/js/jquery.min.js"></script>
+  <script type="text/javascript">
+    
+
+    
+    $(function(){
+      gnbOnOff();
+      getToday();
+    });
+
+    //==== GNB 메뉴 열기닫기
+    function gnbOnOff(){
+      $('#ridicorp .header_wrapper .button_set .gnb_onoff').click(function(){
+        if( $('#ridicorp_gnb').css('display') == 'block' ){
+          $('#ridicorp_gnb').hide();
+        }else{
+          $('#ridicorp_gnb').show();
+        }
+      });
+      $('#ridicorp_gnb a').click(function( event ){
+        if( $('#ridicorp .header_wrapper .button_set').css('display') == 'block' ){
+          $('#ridicorp_gnb').hide();
+        }// 화면사이즈가 작아서 모바일 버전 CSS 적용시 버튼 액션
+        var sectionID = $( event.target ).data('href');
+        gotoSection( sectionID );
+      });
+    }
+
+    //==== nav 클릭시 섹션 이동
+    function gotoSection( sectionID ){
+      $('html, body').animate({scrollTop: $( sectionID ).offset().top}, 600);
+    }
+
+    //==== 채용공고 현재날짜 삽입
+    function getToday(){
+      var now = new Date();
+      var year= now.getFullYear();
+      var mon = (now.getMonth()+1)>9 ? ''+(now.getMonth()+1) : '0'+(now.getMonth()+1);
+      var day = now.getDate()>9 ? ''+now.getDate() : '0'+now.getDate();
+      var todayString = year + "." + mon + "." + day + "." + " 현재";
+      $('#section2 .recurit_date').html( todayString );
+    }
+  </script>
+</head>
+<!--[if lte IE 9]>
+<body id="old_browser">
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<body id="modern_browser">
+<!--<![endif]-->
+  <div id="ridicorp">
+    <header>
+      <div class="header_wrapper">
+        <h1 class="main_logo"><a onclick="gotoSection('#section0')">RIDI Corporation</a></h1>
+        <div class="button_set">
+          <button type="button" onclick="gotoSection('#section2')">채용</button>
+          <button type="button" class="gnb_onoff"><span class="icon-menu"></span><span class="hidden">메뉴 열기/닫기</span></button>
+        </div>
+        <nav id="ridicorp_gnb">
+          <ul>
+            <li><a data-href="#section0">리디가 하는 일</a></li>
+            <li><a data-href="#section1">리디에 대하여</a></li>
+            <li><a data-href="#section2">채용공고 <span class="icon-badge_new"></span></a></li>
+            <li><a data-href="#section3">주소와 연락처</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header><hr>
+
+    <!-- ==================================== 리디가 하는 일 -->
+    <section id="section0">
+      <h2 class="hidden">리디가 하는 일</h2>
+      <article class="section0_p0"><p class="text_wrap"><span class="text">e-mail이 그냥 mail이 되었듯,</span></p></article>
+      <article class="section0_p1"><p class="text_wrap"><span class="text">e-book도 그냥 book이 될 세상을 향하여</span></p></article>
+      <article class="section0_p2"><p class="text_wrap"><span class="text">책의 경계를 허물고 패러다임을 바꿉니다.</span></p></article>
+      <article class="section0_p3"><p class="text_wrap"><span class="text">당신의 손위에 서점을 짓는 일</span></p></article>
+      <article class="section0_p4"><p class="text_wrap"><span class="text">당신의 손 위에 책을 펴는 일</span></p></article>
+      <article class="section0_p5"><p class="text_wrap"><span class="text">당신의 손 위에 세우는 우리의 철학:</span></p></article>
+      <article class="section0_p6"><p class="text_wrap"><span class="text">MUST-USE, 없어지면 너무나 불편한, 필수불가결한 제품과 서비스</span></p></article>
+      <article class="section0_ending">
+        <p class="text_wrap"><span class="text">새로운 책 세상의 MUST-USE 리디가 만듭니다.</span></p>
+        <ul class="service_list_wrap">
+          <li class="service_list service_ridistory">
+            <h3 class="service_title">RIDISTORY</h3>
+            <p class="service_contents">로맨스 소설 무료 연재</p>
+            <a href="https://play.google.com/store/apps/details?id=com.initialcoms.story" target="_blank">
+              <figure class="service_img">
+                <img src="images/s_image_01@2x.png?140102" alt="리디 스토리">
+              </figure>
+            </a>
+          </li><!-- service_list -->
+          <li class="service_list service_ridibooks">
+            <h3 class="service_title">RIDIBOOKS</h3>
+            <p class="service_contents">책을 읽는 가장 쉬운 습관</p>
+            <a href="http://ridibooks.com" target="_blank">
+              <figure class="service_img">
+                <img src="images/s_image_02@2x.png?140102" alt="리디북스">
+              </figure>
+            </a>
+          </li><!-- service_list -->
+          <li class="service_list service_ridishop">
+            <h3 class="service_title">RIDISHOP</h3>
+            <p class="service_contents">가장 저렴한 태블릿 샵</p>
+            <a href="http://shop.ridibooks.com" target="_blank">
+              <figure class="service_img">
+                <img src="images/s_image_03@2x.png?140102" alt="리디샵">
+              </figure>
+            </a>
+          </li><!-- service_list -->
+        </ul>
+      </article>
+    </section><hr>
+
+    <!-- ==================================== 리디에 대하여 -->
+    <section id="section1">
+      <h2 class="section1_title"><span class="title_text">리디는 색깔있는 벤처기업입니다.</span></h2>
+      <article class="section1_article growing">
+        <div class="section1_contents_wrap">
+          <div class="section1_contents">
+            <h3 class="contents_title">GROWING <br>리디는 성장합니다.</h3>
+            <p class="contents_text">
+              리디는 매년 평균 700%의 성장률로 빠르게 성장하고 있는 기업입니다.<br>
+              2014년 1월 현재 1000개 이상의 출판사와 제휴,<br>
+              국내 최대 규모인 30만권의 전자책을 서비스 하고 있습니다.<br>
+              대기업 위주의 업계에서 최고의 성과를 내고 있는 리디는<br>
+              미래에셋 벤처투자, 에이티넘인베스트먼트 등의 VC로부터<br>
+              대규모 투자를 성사시키며 높은 성장성을 인정받았습니다.
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="section1_article enjoyable">
+        <div class="section1_contents_wrap">
+          <div class="section1_contents">
+            <h3 class="contents_title">ENJOYABLE <br>리디는 즐겁습니다.</h3>
+            <p class="contents_text">
+              어떤 분야에서든 즐기는 사람을 이길 수 없다고 말하곤 합니다.<br>
+              리디는 개인의 재능을 존중하여 일에 사람을 맞추기보다는<br>
+              사람에게 일을 맞춰가며 진정으로 즐겁게 일할 수 있는 공간을 꿈꿉니다.
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="section1_article open">
+        <div class="section1_contents_wrap">
+          <div class="section1_contents">
+            <h3 class="contents_title">OPEN <br>리디는 열려있습니다.</h3>
+            <p class="contents_text">
+              리디에는 파티션이 없습니다.<br>
+              열린 공간에서 '함께' 일할 때 더 좋은 서비스가 나온다는 철학 때문입니다.<br>
+              서비스에 대한 고민과 아이디어부터 회식의 테마를 정하는 것까지<br>
+              누구든지 의견을 낼 수 있는 수평적인 분위기가 형성되어 있으며<br>
+              한달에 한 번 모든 리디 가족들이 함께하는 회의를 열어<br>
+              다른 부서의 업무에도 높은 이해도를 가질 수 있도록 합니다.
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="section1_article professional">
+        <div class="section1_contents_wrap">
+          <div class="section1_contents">
+            <h3 class="contents_title">PROFESSIONAL <br>리디는 프로들입니다.</h3>
+            <p class="contents_text">
+              리디 가족들은 평균연령 29세로 젊은 편이지만<br>
+              단기간에 리디북스를 국내 최고의 전자책 서비스로 끌어올린 실력있고 열정적인 사람들입니다.<br>
+              우리는 최고의 서비스를 만들기 위해 누구보다 열정적으로 일하지만<br>
+              열심히 일한 후에는 리프레시 휴가를 즐기는, 놀땐 놀줄 아는 사람들이기도 합니다.
+            </p>
+          </div>
+        </div>
+      </article>
+      <article class="section1_article customer">
+        <div class="section1_contents_wrap">
+          <div class="section1_contents">
+            <h3 class="contents_title">CUSTOMER-ORIENTED <br>리디는 고객을 위해 존재합니다.</h3>
+            <p>
+              매일 아침, 모든 리디 가족이 모여<br>
+              전날 접수된 고객의 소리를 낭독하며  하루를 시작합니다.<br>
+              '무엇이 고객을 좀 더 기쁘게 하는 행동일지'<br>
+              모든 의사결정은, 이 고민에서 출발합니다. 
+            </p>
+          </div>
+        </div>
+      </article>
+    </section><hr>
+
+    <!-- ==================================== 채용공고 -->
+    <section id="section2">
+      <h2 class="hidden">채용공고</h2>
+      <div class="section2_contents">
+        <div class="section2_header">
+          <h3 class="header_title">리디와 함께 꿈을 이룰 분을 찾습니다.</h3>
+          <p class="header_copy">
+            <span class="copy_block">
+              우리는 생각합니다.<br>  
+            </span>
+            <span class="copy_block">
+              한번 사는 인생,<br>
+              우리가 아니면 그 누구도 할 수 없는 일을 꿈꾸고,<br>
+              함께 꿈을 이룰 수 있는 멋진 사람들을 만나고,<br>
+              그들과 함께 그 꿈을 이루어 보자고.<br>  
+            </span>
+            <span class="copy_block">
+              MUST-USE, 리디를 함께 만들어 갈<br>
+              당신을 기다립니다.
+            </span>
+          </p>
+        </div>
+
+        <div class="section2_table">
+
+          <div class="table_title">
+            <h3>지원방법</h3>
+          </div>
+          <table class="table_info">
+            <caption class="hidden">채용진행 안내</caption>
+            <colgroup>
+              <col style="width: 100px;">
+              <col style="width: auto;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <th>
+                  접수방법
+                </th>
+                <td class="contents">
+                  · 이메일접수 : <a href="mailto:start@ridicorp.com">start@ridicorp.com</a><br>
+                  · 지원 이메일 제목에 [지원부서/인턴/이름/연락처]를 명기해주세요. <br>
+                  · (예: [콘텐츠팀 로맨스파트/인턴/신보라/010-123-4567])<br>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  제출 서류
+                </th>
+                <td class="contents">
+                  · 이력서<br>
+                  · 자기소개서(지원동기 포함)<br>
+                  · 자격 요건을 갖춘 분에 한해 지원한 순서대로 바로 면접을 진행합니다.<br>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  전형절차
+                </th>
+                <td class="contents">
+                  · 1차 서류전형 / 2차 면접 (서류전형 합격시 개별 연락)<br>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  지원 기간
+                </th>
+                <td class="contents">
+                  · 채용시까지<br>
+                </td>
+              </tr>
+              <tr>
+                <th>
+                  직급/급여
+                </th>
+                <td class="contents">
+                  · 회사 내규와 경력 사항 및 인터뷰 결과에 따라 협의 후 결정<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+
+          <!-- =========================================== 직군별 모집 테이블 -->
+          <div class="table_title">
+            <h3>모집구분 <span class="recurit_date">현재</span></h3>
+          </div>
+          
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">iOS 개발 ( 병역특례 모집 중 )</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · iOS, OSX 용 리디북스 애플리케이션 개발<br>
+                  · EPUB, PDF, 만화, 인터렉티브 e-book 뷰어 개발<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · iOS기반 어플리케이션 개발 경력 1년 이상이신 분<br>
+                  · C++ 을 능숙하게 다루시는 분 우대<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">Android 개발 ( 병역특례 모집 중 )</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · Android 용 리디북스 애플리케이션 개발<br>
+                  · EPUB, PDF, 만화, 인터렉티브 e-book 뷰어 개발<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · Android 개발 경력 1년 이상<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">리디북스 서점 및 API 개발 ( 병역특례 모집 중 )</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 리디북스 서점 개발<br>
+                  · 개인화 추천 알고리즘 및 API 개발<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · 웹 프로그래밍 경력 3년 이상<br>
+                  · MySQL을 능숙하게 다루시는 분 우대<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">서비스 플랫폼 개발 ( 병역특례 모집 중 )</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 출판 자동화 플랫폼 및 정산, 결제 시스템 개발<br>
+                  · 서비스 인프라 관리<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · 웹 프로그래밍 경력 3년 이상<br>
+                  · MySQL을 능숙하게 다루시는 분 우대<br>
+                  · 확장성있는 시스템을 구축한 경험이 있으신 분 우대<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">UI/UX 디자이너</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 모바일, 태블릿, PC/Mac 리디북스 애플리케이션 GUI 디자인<br>
+                  · 리디북스 서점 UI/UX 디자인<br>
+                  · BI, CI, 아이콘 디자인<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                   · 관련 경력 5년 이상<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2"><span class="icon-badge_new"></span> 콘텐츠사업팀 (1월 8일 모집 시작 / 채용시까지)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">인턴 (최소 3개월~최장 6개월 근무 가능자)</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 리디북스 콘텐츠팀 운영 및 마케팅 업무 지원<br>
+                  · 콘텐츠 기획 및 편집 업무<br>
+                  · 제휴 출판사 커뮤니케이션 업무<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · 다양한 분야의 독서 경험을 갖추고, 책에 대한 이해도가 높은 분<br>
+                  · 회사 내외의 재기발랄한 소통 능력<br>
+                  · 꼼꼼한 일처리 및 기본적인 엑셀/오피스 프로그램 수행 능력<br>
+                  · 콘텐츠 편집/기획 및 마케팅 관련 업무 경험자 우대<br>
+                  · 블로그 운영/공모전 수상 등 글쓰기에 자신 있는 분 우대<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">콘텐츠 사업팀</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력/신입</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 리디북스 콘텐츠 운영관리 및 기획<br>
+                  · 신규 콘텐츠 개발 및 제휴<br>
+                  · 전자책 마케팅 기획, 실행 및 성과 분석<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · 모바일 서비스와 전자책 콘텐츠에 대한 관심과 열정<br>
+                  · 출판사 및 CP 등 다양한 주체간 원활한 협업 및 의사소통 능력<br>
+                  · 특정 카테고리(일반, 장르문학, 만화 등) 전문성 우대<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">디바이스 MD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력/신입</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 전자제품, 악세서리 상품 기획 및 소싱 활동<br>
+                  · 상품 운영 및 판매 성과분석<br>
+                  · 고객과의 커뮤니케이션 및 고객분석(CRM)<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · 전자제품 상품기획 및 판매에 대한 경험과 이해<br>
+                  · 온라인 실물 유통, 공급사 계약 및 관리에 대한 경험과 이해<br>
+                  · 전자제품, 악세서리 제품/고객/시장에 대한 깊은 관심<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">고객커뮤니케이션</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력/신입</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 리디북스 및 리디샵 고객 문의에 대한 답변 및 고객 상담<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · 인터넷/모바일 서비스 산업에서의 고객상담 유경험자<br>
+                  · 밝은 성격, 긍정적이며 친화력이 우수한 분<br>
+                  · 고객 커뮤니케이션 업무에 자부심을 지니고 있는 분<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">운영디자인</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력/신입</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 리디북스 및 리디샵 서비스의 이벤트/상품 디자인<br>
+                  · 브랜드 마케팅을 위한 광고, 포스터, 브로슈어 등 그래픽/공간 디자인<br>
+                  · 회사 홈페이지, 사내 행사, 인테리어, 사내 교육등에 필요한 사내 디자인<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · 마케팅 전략, 프로모션 기획, Copy writing에 대한 이해 및 실무 경험 우대<br>
+                  · 마케팅/운영/기획팀 등 타부서와의 커뮤니케이션을 즐기는 분 우대<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">홍보(PR)/브랜딩</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 회사 홍보전략 및 브랜딩 구축<br>
+                  · 보도자료 작성 및 언론관계 관리<br>
+                  · 회사 홈페이지 및 외부 고객 관리<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · IT 및 문화콘텐츠 업계에 대한 깊은 이해와 관심<br>
+                  · 원활한 커뮤니케이션 및 라이팅 능력<br>
+                  · 업무에 대한 열정적/긍정적인 태도<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table_recruit">
+            <colgroup>
+              <col class="cell0">
+              <col class="cell1">
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">사업기획팀</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="sub_th">지원자격</th>
+                <td class="contents">경력</td>
+              </tr>
+              <tr>
+                <th class="sub_th">주요업무</th>
+                <td class="contents">
+                  · 사업 관련 각종 KPI 지표 관리 및 리포팅<br>
+                  · 마케팅 분석 및 전략 수립<br>
+                  · 시장 및 트렌드 분석, 리서치<br>
+                </td>
+              </tr>
+              <tr>
+                <th class="sub_th">지원자격, 우대사항</th>
+                <td class="contents">
+                  · 사업에 대한 높은 이해도, 빠른 습득 능력, 논리적 사고<br>
+                  · 원활한 커뮤니케이션 스킬<br>
+                  · 빠른 정보 수집력 및 다양한 데이터 분석 업무 스킬<br>
+                  · MS Office 활용 능력<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- //.table_recruit -->
+        </div>
+      </div><!-- //section2_contents -->
+    </section><hr>
+
+    <!-- ==================================== 주소/연락/제휴 -->
+    <section id="section3">
+      <h2 class="hidden">주소/연락/제휴</h2>
+      <div class="section3_contents">
+        <h3 class="hidden">CONTACT US</h3>
+        <ul class="section3_address">
+          <li><span class="icon-marker"></span> 서울시 강남구 대치동 891-46 V&amp;S빌딩 14층 (삼성로85길 26)</li>
+          <li><span class="icon-phone"></span> 02-2051-0331</li>
+        </ul>
+        <div id="map-canvas">
+          <a href="http://map.naver.com/?dlevel=12&pinType=site&pinId=33919828&x=127.0549902&y=37.5050684&enc=b64" target="_blank"><img src="images/ridicorp_map.jpg" alt="서울특별시 강남구 대치동 891-46 14층"></a>
+        </div>
+        <h4 class="hidden">오시는 방법</h4>
+        <div class="ways_to_ridi subway">
+          <h5 class="way_title">지하철 이용시</h5>
+          <ul class="step_by_step">
+            <li>2호선 분당선 선릉역 하차</li>
+            <li>1번 출구로 나오셔서 500미터 직진, 동부금융센터와 포스코빌딩 사잇길로 들어오세요.</li>
+            <li>100미터 직진 후 사거리에서 TEA OREUM(까페)를 끼고 우회전 하세요.</li>
+            <li>충무교회 맞은편, 1층에 망고식스가 있는 건물의 14층 입니다.</li>
+          </ul>
+        </div>
+        <div class="ways_to_ridi bus">
+          <h5 class="way_title">버스 이용시</h5>
+          <ul class="step_by_step">
+            <li>2호선 선릉역 1번 출구 앞 승차 -> 포스코빌딩 하차</li>
+            <li>간선(파랑색) : 146, 333, 341, 360, 740</li>
+            <li>지선(초록색) : 4434</li>
+            <li>좌석(빨간색) : 1100, 1700, 2000, 7007, 9414, 8001</li>
+          </ul> 
+        </div>
+      </div><!-- //section3_contents -->
+      <div class="pdf_download_wrap">
+        <h3 class="hidden">pdf 다운로드</h3>
+        <ul class="btn_wrap">
+          <li><a target="_blank" href="download/ridicorp_intro_131212.pdf">회사소개서 <span class="icon-round_arrow"></span></a></li>
+          <li><a target="_blank" href="download/contents_intro_131212.pdf">제휴안내 <span class="icon-round_arrow"></span></a></li>
+        </ul>
+      </div><!-- //pdf_download_wrap -->
+    </section><hr>
+  </div>
+</body>
+</html>
