@@ -1,0 +1,4 @@
+ridicorp
+========
+
+RIDI Corporation.
