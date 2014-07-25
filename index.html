@@ -21,48 +21,8 @@
   <!-- <link rel="stylesheet" type="text/css" media="screen" href="//static.nnyamm.dev.ridibooks.kr/ridicorp/css/ridicorp_style.css?140102"/> -->
   <!-- ============== JS ========= -->
   <!--[if lt IE 9]>
-    <script type="text/javascript" src="//static.ridibooks.com/common/js/html5.js"></script>
+  <script type="text/javascript" src="//static.ridibooks.com/common/js/html5.js"></script>
   <![endif]-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(function(){
-      gnbOnOff();
-      getToday();
-    });
-
-    //==== GNB 메뉴 열기닫기
-    function gnbOnOff(){
-      $('#ridicorp .header_wrapper .button_set .gnb_onoff').click(function(){
-        if( $('#ridicorp_gnb').css('display') == 'block' ){
-          $('#ridicorp_gnb').hide();
-        }else{
-          $('#ridicorp_gnb').show();
-        }
-      });
-      $('#ridicorp_gnb a').click(function( event ){
-        if( $('#ridicorp .header_wrapper .button_set').css('display') == 'block' ){
-          $('#ridicorp_gnb').hide();
-        }// 화면사이즈가 작아서 모바일 버전 CSS 적용시 버튼 액션
-        var sectionID = $( event.target ).data('href');
-        gotoSection( sectionID );
-      });
-    }
-
-    //==== nav 클릭시 섹션 이동
-    function gotoSection( sectionID ){
-      $('html, body').animate({scrollTop: $( sectionID ).offset().top}, 600);
-    }
-
-    //==== 채용공고 현재날짜 삽입
-    function getToday(){
-      var now = new Date();
-      var year= now.getFullYear();
-      var mon = (now.getMonth()+1)>9 ? ''+(now.getMonth()+1) : '0'+(now.getMonth()+1);
-      var day = now.getDate()>9 ? ''+now.getDate() : '0'+now.getDate();
-      var todayString = year + "." + mon + "." + day + "." + " 현재";
-      $('#section2 .recurit_date').html( todayString );
-    }
-  </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -359,7 +319,8 @@
               <tr>
                 <th class="sub_th">지원자격/우대사항</th>
                 <td class="contents">
-                  · Android 개발 경력 1년 이상<br>
+                  · Android 개발 경력 2년 이상<br>
+                  · Java, Javascript를 능숙하게 다루시는 분<br>
                 </td>
               </tr>
             </tbody>
@@ -711,5 +672,45 @@
       </div><!-- //pdf_download_wrap -->
     </section><hr>
   </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      gnbOnOff();
+      getToday();
+
+      //==== GNB 메뉴 열기닫기
+      function gnbOnOff() {
+        $('#ridicorp .header_wrapper .button_set .gnb_onoff').click(function () {
+          if ($('#ridicorp_gnb').css('display') == 'block') {
+            $('#ridicorp_gnb').hide();
+          } else {
+            $('#ridicorp_gnb').show();
+          }
+        });
+        $('#ridicorp_gnb a').click(function (event) {
+          if ($('#ridicorp .header_wrapper .button_set').css('display') == 'block') {
+            $('#ridicorp_gnb').hide();
+          }// 화면사이즈가 작아서 모바일 버전 CSS 적용시 버튼 액션
+          var sectionID = $(event.target).data('href');
+          gotoSection(sectionID);
+        });
+      }
+
+      //==== 채용공고 현재날짜 삽입
+      function getToday() {
+        var now = new Date();
+        var year = now.getFullYear();
+        var mon = (now.getMonth() + 1) > 9 ? '' + (now.getMonth() + 1) : '0' + (now.getMonth() + 1);
+        var day = now.getDate() > 9 ? '' + now.getDate() : '0' + now.getDate();
+        var todayString = year + "." + mon + "." + day + "." + " 현재";
+        $('#section2 .recurit_date').html(todayString);
+      }
+    });
+
+    //==== nav 클릭시 섹션 이동
+    function gotoSection(sectionID) {
+      $('html, body').animate({scrollTop: $(sectionID).offset().top}, 600);
+    }
+  </script>
 </body>
 </html>
