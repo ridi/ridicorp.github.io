@@ -250,308 +250,45 @@
               </tr>
             </tbody>
           </table>
-          
 
           <!-- =========================================== 직군별 모집 테이블 -->
           <div class="table_title">
             <h3>모집구분 <span class="recurit_date">현재</span></h3>
           </div>
-          
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
+
+          <!-- 데이터 바인딩은 하단 javascript 에서 수행 -->
+          <script id="recruit_template" type="text/x-handlebars-template">
+            <table class="table_recruit">
+              <colgroup>
+                <col class="cell0">
+                <col class="cell1">
+              </colgroup>
+              <thead>
               <tr>
-                <th colspan="2">PC/Mac 개발 ( 병역특례 가능 )</th>
+                <th colspan="2">{{#if is_new }}<span class="icon-badge_new"></span> {{/if}}{{title}}</th>
               </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
               <tr>
                 <th class="sub_th">구분</th>
-                <td class="contents">경력</td>
+                <td class="contents">{{career}}</td>
               </tr>
               <tr>
                 <th class="sub_th">주요업무</th>
                 <td class="contents">
-                  · PC/Mac 용 리디북스 애플리케이션 개발<br>
-                  · EPUB, PDF, 만화, 인터렉티브 e-book 뷰어 개발<br>
+                  {{#list description}}{{/list}}
                 </td>
               </tr>
               <tr>
                 <th class="sub_th">지원자격/우대사항</th>
                 <td class="contents">
-                  · Qt기반 애플리케이션 개발 경력자 우대<br>
-                  · C++ 을 능숙하게 다루시는 분<br>
+                  {{#list qualifications}}{{/list}}
                 </td>
               </tr>
-            </tbody>
-          </table>
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th colspan="2">Android 개발 ( 병역특례 가능 )</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="sub_th">구분</th>
-                <td class="contents">경력</td>
-              </tr>
-              <tr>
-                <th class="sub_th">주요업무</th>
-                <td class="contents">
-                  · Android 용 리디북스 애플리케이션 개발<br>
-                  · EPUB, PDF, 만화, 인터렉티브 e-book 뷰어 개발<br>
-                </td>
-              </tr>
-              <tr>
-                <th class="sub_th">지원자격/우대사항</th>
-                <td class="contents">
-                  · Android 개발 경력 2년 이상<br>
-                  · Java, Javascript를 능숙하게 다루시는 분<br>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th colspan="2"><span class="icon-badge_new"></span> 리디북스 서점 및 API 개발 ( 병역특례 가능 )</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="sub_th">구분</th>
-                <td class="contents">경력</td>
-              </tr>
-              <tr>
-                <th class="sub_th">주요업무</th>
-                <td class="contents">
-                  · 리디북스 서점 개발<br>
-                  · 개인화 추천 알고리즘 및 API 개발<br>
-                  · 대용량 데이터 처리 및 분석<br>
-                </td>
-              </tr>
-              <tr>
-                <th class="sub_th">지원자격/우대사항</th>
-                <td class="contents">
-                  · 회사가 아닌, 개인 혹은 팀에서의 개발 경험<br>
-                  · 웹 프로그래밍 경력 2년 이상<br>
-                  · 하나의 서비스를 지속적으로 개발한 경험 우대<br>
-                  · MySQL을 능숙하게 다루시는 분 우대<br>
-                  · 대용량 데이터 처리 및 분석 경험 우대<br>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th colspan="2"><span class="icon-badge_new"></span> 콘텐츠 사업팀 – 편집자</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="sub_th">구분</th>
-                <td class="contents">경력 (3년이상)</td>
-              </tr>
-              <tr>
-                <th class="sub_th">주요업무</th>
-                <td class="contents">
-                  · 원고의 교정/교열 및 편집<br>
-                  · 출간을 위한 소설(원고) 발굴 및 출판 업무<br>
-                </td>
-              </tr>
-              <tr>
-                <th class="sub_th">지원자격/우대사항</th>
-                <td class="contents">
-                  · 단행본 소설 편집 경력 3년 이상<br>
-                  · 장르(로맨스, BL, 판타지무협 분야) 출판사 경험 우대<br>
-                  · 원활한 커뮤니케이션 능력(특히 작가와의 커뮤니케이션) 필수<br>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th colspan="2"><span class="icon-badge_new"></span> 리디샵팀 - 상품 MD</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="sub_th">구분</th>
-                <td class="contents">경력 (2년 이상)</td>
-              </tr>
-              <tr>
-                <th class="sub_th">주요업무</th>
-                <td class="contents">
-                  · 리디북스 고객에 대한 이해를 바탕으로 리디북스 사용성, 접근성 확대를 위한 스마트 디바이스(태블릿/스마트폰/PC) 및 액세서리를 기획, 소싱 (MD)<br>
-                  · 해외 제조/ 공급사 직접 소싱 및 OEM/ODM<br>
-                </td>
-              </tr>
-              <tr>
-                <th class="sub_th">지원자격/우대사항</th>
-                <td class="contents">
-                  · 스마트 디바이스 및 관련 액세서리 분야 MD(상품기획 및 소싱) 경력 2년 이상<br>
-                  · 해외 제조/공급사 직접 소싱 및 OEM/ODM 경험자 우대<br>
-                  · 신규 브랜드 및 단독 상품 런칭 경험자 우대<br>
-                  · 종합몰, 소셜커머스, 홈쇼핑 근무 유경험자 우대<br>
-                  · 고객 중심의 사고를 하는 팀 플레이어 우대<br>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th colspan="2"><span class="icon-badge_new"></span> 콘텐츠 사업팀 - 일반도서 파트 (채용시 마감)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="sub_th">구분</th>
-                <td class="contents">인턴</td>
-              </tr>
-              <tr>
-                <th class="sub_th">주요업무</th>
-                <td class="contents">
-                  · 리디북스 서점 운영 및 마케팅 업무 지원<br>
-                  · 제휴 출판사 이벤트 협의 및 진행<br>
-                </td>
-              </tr>
-              <tr>
-                <th class="sub_th">지원자격/우대사항</th>
-                <td class="contents">
-                  · 다양한 분야의 독서 경험을 갖추고, 책에 대한 이해도가 높은 분<br>
-                  · 꼼꼼한 일처리 및 기본적인 엑셀/오피스 프로그램 수행 능력<br>
-                  · 의사 소통 능력이 뛰어나며, 동료와의 협업에 능한 분 <br>
-                  · 3개월 이상 근무 가능자<br>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th colspan="2"><span class="icon-badge_new"></span> 마케팅팀 – 광고기획</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="sub_th">구분</th>
-                <td class="contents">경력 (2년 이상)</td>
-              </tr>
-              <tr>
-                <th class="sub_th">주요업무</th>
-                <td class="contents">
-                  · 온라인 / 오프라인 마케팅 캠페인 기획, 운영, 측정<br>
-                  · 외부 마케팅 파트너 및 광고 대행사 협업<br>
-                </td>
-              </tr>
-              <tr>
-                <th class="sub_th">지원자격/우대사항</th>
-                <td class="contents">
-                  · 마케팅 또는 광고 경력 2년 이상<br>
-                  · 인터넷 / 모바일 서비스 마케팅 경력 우대<br>
-                  · 광고 기획, 카피라이팅 경력 우대<br>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th colspan="2"><span class="icon-badge_new"></span> 제작파트 인턴 (채용시까지)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="sub_th">구분</th>
-                <td class="contents">인턴</td>
-              </tr>
-              <tr>
-                <th class="sub_th">주요업무</th>
-                <td class="contents">
-                  · 전자책 제작 파트 업무 지원<br>
-                </td>
-              </tr>
-              <tr>
-                <th class="sub_th">지원자격/우대사항</th>
-                <td class="contents">
-                  · 꼼꼼하고 성실한 분<br>
-                  · 책을 사랑하고, 책과 독자간의 연결고리가 되고 싶은 분<br>
-                  · 의사 소통 능력이 뛰어나며, 동료와의 협업에 능한 분<br>
-                  · 고객 지향적인 사고를 하는 분<br>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="table_recruit">
-            <colgroup>
-              <col class="cell0">
-              <col class="cell1">
-            </colgroup>
-            <thead>
-              <tr>
-                <th colspan="2"><span class="icon-badge_new"></span> 콘텐츠 사업팀 - 소설/비소설(인문/사회/역사, 경영경제 등)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th class="sub_th">구분</th>
-                <td class="contents">경력</td>
-              </tr>
-              <tr>
-                <th class="sub_th">주요업무</th>
-                <td class="contents">
-                  · 리디북스 인터넷/모바일 서점 운영<br>
-                  · 도서 이벤트 기획/운영/마케팅<br>
-                  · 출판사와의 업무 커뮤니케이션<br>
-                </td>
-              </tr>
-              <tr>
-                <th class="sub_th">지원자격/우대사항</th>
-                <td class="contents">
-                  · 일반 도서 주요 분야(ex. 소설, 인문, 경영경제/자기계발 등) 관련 업무 1년 이상 경험자 우대<br>
-                  · 인터넷/모바일 스토어 운영 경험자 우대<br>
-                  · 책을 사랑하고, 책과 독자간의 연결고리가 되고 싶은 분<br>
-                  · 의사 소통 능력이 뛰어나며, 동료와의 협업에 능한 분<br>
-                  · 고객 지향적인 사고를 하는 분<br>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </script>
+
         </div>
       </div><!-- //section2_contents -->
     </section><hr>
@@ -585,7 +322,7 @@
             <li>간선(파랑색) : 146, 333, 341, 360, 740</li>
             <li>지선(초록색) : 4434</li>
             <li>좌석(빨간색) : 1100, 1700, 2000, 7007, 9414, 8001</li>
-          </ul> 
+          </ul>
         </div>
       </div><!-- //section3_contents -->
       <div class="pdf_download_wrap">
@@ -597,45 +334,202 @@
       </div><!-- //pdf_download_wrap -->
     </section><hr>
   </div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      gnbOnOff();
-      getToday();
 
-      //==== GNB 메뉴 열기닫기
-      function gnbOnOff() {
-        $('#ridicorp .header_wrapper .button_set .gnb_onoff').click(function () {
-          if ($('#ridicorp_gnb').css('display') == 'block') {
-            $('#ridicorp_gnb').hide();
-          } else {
-            $('#ridicorp_gnb').show();
-          }
-        });
-        $('#ridicorp_gnb a').click(function (event) {
-          if ($('#ridicorp .header_wrapper .button_set').css('display') == 'block') {
-            $('#ridicorp_gnb').hide();
-          }// 화면사이즈가 작아서 모바일 버전 CSS 적용시 버튼 액션
-          var sectionID = $(event.target).data('href');
-          gotoSection(sectionID);
-        });
-      }
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+<script type="text/javascript">
+  $(function () {
+    gnbOnOff();
+    getToday();
 
-      //==== 채용공고 현재날짜 삽입
-      function getToday() {
-        var now = new Date();
-        var year = now.getFullYear();
-        var mon = (now.getMonth() + 1) > 9 ? '' + (now.getMonth() + 1) : '0' + (now.getMonth() + 1);
-        var day = now.getDate() > 9 ? '' + now.getDate() : '0' + now.getDate();
-        var todayString = year + "." + mon + "." + day + "." + " 현재";
-        $('#section2 .recurit_date').html(todayString);
-      }
+    //==== GNB 메뉴 열기닫기
+    function gnbOnOff() {
+      $('#ridicorp .header_wrapper .button_set .gnb_onoff').click(function () {
+        if ($('#ridicorp_gnb').css('display') == 'block') {
+          $('#ridicorp_gnb').hide();
+        } else {
+          $('#ridicorp_gnb').show();
+        }
+      });
+      $('#ridicorp_gnb a').click(function (event) {
+        if ($('#ridicorp .header_wrapper .button_set').css('display') == 'block') {
+          $('#ridicorp_gnb').hide();
+        }// 화면사이즈가 작아서 모바일 버전 CSS 적용시 버튼 액션
+        var sectionID = $(event.target).data('href');
+        gotoSection(sectionID);
+      });
+    }
+
+    //==== 채용공고 현재날짜 삽입
+    function getToday() {
+      var now = new Date();
+      var year = now.getFullYear();
+      var mon = (now.getMonth() + 1) > 9 ? '' + (now.getMonth() + 1) : '0' + (now.getMonth() + 1);
+      var day = now.getDate() > 9 ? '' + now.getDate() : '0' + now.getDate();
+      var todayString = year + "." + mon + "." + day + "." + " 현재";
+      $('#section2 .recurit_date').html(todayString);
+    }
+  });
+
+  //==== nav 클릭시 섹션 이동
+  function gotoSection(sectionID) {
+    $('html, body').animate({scrollTop: $(sectionID).offset().top}, 600);
+  }
+
+
+  var recruit = [
+    {
+      "title": "PC/Mac 개발",
+      "career": "경력 (병역특례 가능)",
+      "is_new": false,
+      "description": [
+        "PC/Mac 용 리디북스 애플리케이션 개발",
+        "EPUB, PDF, 만화, 인터렉티브 e-book 뷰어 개발"
+      ],
+      "qualifications": [
+        "Qt기반 애플리케이션 개발 경력자 우대",
+        "C++ 을 능숙하게 다루시는 분"
+      ]
+    },
+    {
+      "title": "Android 개발",
+      "career": "경력 (병역특례 가능)",
+      "is_new": false,
+      "description": [
+        "Android 용 리디북스 애플리케이션 개발",
+        "EPUB, PDF, 만화, 인터렉티브 e-book 뷰어 개발"
+      ],
+      "qualifications": [
+        "Android 개발 경력 2년 이상",
+        "Java, Javascript를 능숙하게 다루시는 분"
+      ]
+    },
+    {
+      "title": "리디북스 서점 및 API 개발",
+      "career": "경력 (병역특례 가능)",
+      "is_new": true,
+      "description": [
+        "리디북스 서점 개발",
+        "개인화 추천 알고리즘 및 API 개발",
+        "대용량 데이터 처리 및 분석"
+      ],
+      "qualifications": [
+        "회사가 아닌, 개인 혹은 팀에서의 개발 경험",
+        "웹 프로그래밍 경력 2년 이상",
+        "하나의 서비스를 지속적으로 개발한 경험 우대",
+        "MySQL을 능숙하게 다루시는 분 우대",
+        "대용량 데이터 처리 및 분석 경험 우대"
+      ]
+    },
+    {
+      "title": "콘텐츠 사업팀 – 편집자",
+      "career": "경력 (3년이상)",
+      "is_new": true,
+      "description": [
+        "원고의 교정/교열 및 편집",
+        "출간을 위한 소설(원고) 발굴 및 출판 업무"
+      ],
+      "qualifications": [
+        "단행본 소설 편집 경력 3년 이상",
+        "장르(로맨스, BL, 판타지무협 분야) 출판사 경험 우대",
+        "원활한 커뮤니케이션 능력(특히 작가와의 커뮤니케이션) 필수"
+      ]
+    },
+    {
+      "title": "리디샵팀 - 상품 MD",
+      "career": "경력 (2년 이상)",
+      "is_new": true,
+      "description": [
+        "리디북스 고객에 대한 이해를 바탕으로 리디북스 사용성, 접근성 확대를 위한 스마트 디바이스(태블릿/스마트폰/PC) 및 액세서리를 기획, 소싱 (MD)",
+        "해외 제조/ 공급사 직접 소싱 및 OEM/ODM"
+      ],
+      "qualifications": [
+        "스마트 디바이스 및 관련 액세서리 분야 MD(상품기획 및 소싱) 경력 2년 이상",
+        "해외 제조/공급사 직접 소싱 및 OEM/ODM 경험자 우대",
+        "신규 브랜드 및 단독 상품 런칭 경험자 우대",
+        "종합몰, 소셜커머스, 홈쇼핑 근무 유경험자 우대",
+        "고객 중심의 사고를 하는 팀 플레이어 우대"
+      ]
+    },
+    {
+      "title": "콘텐츠 사업팀 - 일반도서 파트 (채용시 마감)",
+      "career": "인턴",
+      "is_new": true,
+      "description": [
+        "리디북스 서점 운영 및 마케팅 업무 지원",
+        "제휴 출판사 이벤트 협의 및 진행"
+      ],
+      "qualifications": [
+        "다양한 분야의 독서 경험을 갖추고, 책에 대한 이해도가 높은 분",
+        "꼼꼼한 일처리 및 기본적인 엑셀/오피스 프로그램 수행 능력",
+        "의사 소통 능력이 뛰어나며, 동료와의 협업에 능한 분 ",
+        "3개월 이상 근무 가능자"
+      ]
+    },
+    {
+      "title": "마케팅팀 – 광고기획",
+      "career": "경력 (2년 이상)",
+      "is_new": true,
+      "description": [
+        "온라인 / 오프라인 마케팅 캠페인 기획, 운영, 측정",
+        "외부 마케팅 파트너 및 광고 대행사 협업"
+      ],
+      "qualifications": [
+        "마케팅 또는 광고 경력 2년 이상",
+        "인터넷 / 모바일 서비스 마케팅 경력 우대",
+        "광고 기획, 카피라이팅 경력 우대"
+      ]
+    },
+    {
+      "title": "제작파트 인턴 (채용시까지)",
+      "career": "인턴",
+      "is_new": true,
+      "description": [
+        "전자책 제작 파트 업무 지원"
+      ],
+      "qualifications": [
+        "꼼꼼하고 성실한 분",
+        "책을 사랑하고, 책과 독자간의 연결고리가 되고 싶은 분",
+        "의사 소통 능력이 뛰어나며, 동료와의 협업에 능한 분",
+        "고객 지향적인 사고를 하는 분"
+      ]
+    },
+    {
+      "title": "콘텐츠 사업팀 - 소설/비소설(인문/사회/역사, 경영경제 등)",
+      "career": "경력",
+      "is_new": true,
+      "description": [
+        "리디북스 인터넷/모바일 서점 운영",
+        "도서 이벤트 기획/운영/마케팅",
+        "출판사와의 업무 커뮤니케이션"
+      ],
+      "qualifications": [
+        "일반 도서 주요 분야(ex. 소설, 인문, 경영경제/자기계발 등) 관련 업무 1년 이상 경험자 우대",
+        "인터넷/모바일 스토어 운영 경험자 우대",
+        "책을 사랑하고, 책과 독자간의 연결고리가 되고 싶은 분",
+        "의사 소통 능력이 뛰어나며, 동료와의 협업에 능한 분",
+        "고객 지향적인 사고를 하는 분"
+      ]
+    }
+  ];
+
+  $(function () {
+
+    var template = Handlebars.compile($("#recruit_template").html());
+    Handlebars.registerHelper('list', function (items, options) {
+      var out = '';
+      $.each(items, function (index, value) {
+        out += '· ' + value + '<br>';
+      });
+      return out;
     });
 
-    //==== nav 클릭시 섹션 이동
-    function gotoSection(sectionID) {
-      $('html, body').animate({scrollTop: $(sectionID).offset().top}, 600);
-    }
-  </script>
+    $.each(recruit, function(index) {
+      var html = template(recruit[index]);
+      $('.section2_table').append(html);
+    });
+
+  });
+</script>
 </body>
 </html>
