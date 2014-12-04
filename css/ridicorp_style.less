@@ -14,6 +14,10 @@
 @import "http://static.ridibooks.com/common/css/icon_font.less"; 
 @max_width: 984px;
 @body_padding: 0 20px;
+@queries_high: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
 
 .gradation_horizon( @start_color, @end_color ){
   background: linear-gradient(left , @start_color 0%, @end_color 100%);
@@ -49,7 +53,7 @@
         float:left; 
         a{display: block; line-height:1em; width: 170px; height: 60px; text-indent: -20000px;
           background: url( ../images/logo.png ) left top no-repeat; cursor: pointer;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/logo@2x.png ) left top no-repeat;
             background-size: 170px; height: 60px;  
           }//@media
@@ -109,7 +113,7 @@
         background-image: url(../images/01.jpg?140102);
         .text{
           background: url(../images/t_01.png) left top no-repeat transparent;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/t_01@2x.png ) left top no-repeat;
             background-size: 500px 240px;
           }//@media
@@ -119,7 +123,7 @@
         background-image: url(../images/02.jpg?140102);
         .text{
           background: url(../images/t_02.png?140102) left top no-repeat transparent;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/t_02@2x.png?140102 ) left top no-repeat;
             background-size: 500px 240px;
           }//@media
@@ -129,7 +133,7 @@
         background-image: url(../images/03.jpg?141127);
         .text{
           background: url(../images/t_03.png) left top no-repeat transparent;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/t_03@2x.png ) left top no-repeat;
             background-size: 500px 240px;
           }//@media
@@ -139,7 +143,7 @@
         background-image: url(../images/04.jpg?140102);
         .text{
           background: url(../images/t_04.png) left top no-repeat transparent;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/t_04@2x.png ) left top no-repeat;
             background-size: 500px 240px;
           }//@media
@@ -149,7 +153,7 @@
         background-image: url(../images/05.jpg?140102);
         .text{
           background: url(../images/t_05.png) left top no-repeat transparent;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/t_05@2x.png ) left top no-repeat;
             background-size: 500px 240px;
           }//@media
@@ -159,7 +163,7 @@
         background-image: url(../images/06.jpg?141127);
         .text{
           background: url(../images/t_06.png) left top no-repeat transparent;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/t_06@2x.png ) left top no-repeat;
             background-size: 500px 240px;
           }//@media
@@ -169,7 +173,7 @@
         background-image: url(../images/07.jpg?140102);
         .text{
           background: url(../images/t_07.png) left top no-repeat transparent;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/t_07@2x.png ) left top no-repeat;
             background-size: 500px 240px;
           }//@media
@@ -181,7 +185,7 @@
           .text{
             display: inline-block; width: 700px; height: 140px;
             background: url(../images/t_08.png) left top no-repeat transparent;
-            @media @quries_high{
+            @media @queries_high{
               background: url( ../images/t_08@2x.png ) left top no-repeat;
               background-size: 700px; height: 140px;  
             }//@media
@@ -207,7 +211,7 @@
             &.service_ridistory{
               .service_title{
                 background: url( ../images/s_logo_01.png ) center top no-repeat;
-                @media @quries_high{
+                @media @queries_high{
                   background: url( ../images/s_logo_01@2x.png ) left top no-repeat;
                   background-size: 320px; height: 50px;
                 }//@media
@@ -216,7 +220,7 @@
             &.service_ridibooks{
               .service_title{
                 background: url( ../images/s_logo_02.png ) center top no-repeat;
-                @media @quries_high{
+                @media @queries_high{
                   background: url( ../images/s_logo_02@2x.png ) left top no-repeat;
                   background-size: 320px; height: 50px;
                 }//@media
@@ -225,7 +229,7 @@
             &.service_ridishop{
               .service_title{
                 background: url( ../images/s_logo_03.png ) center top no-repeat;
-                @media @quries_high{
+                @media @queries_high{
                   background: url( ../images/s_logo_03@2x.png ) left top no-repeat;
                   background-size: 320px; height: 50px;
                 }//@media
@@ -249,7 +253,7 @@
       .title_text{
         display: inline-block; width: 766px; height: 160px; text-indent: -20000px;
         background: url(../images/tb_00.png) left top no-repeat;
-        @media @quries_high{
+        @media @queries_high{
           background: url( ../images/tb_00@2x.png ) left top no-repeat;
           background-size: 766px; height: 160px;
         }//@media
@@ -274,7 +278,7 @@
           .contents_title{
             display: block; width: 442px; height: 110px; background: url( ../images/tb_01.png ) left top no-repeat; background-size: 422px 110px;
             margin-top: 100px;
-            @media @quries_high{
+            @media @queries_high{
               background: url( ../images/tb_01@2x.png ) left top no-repeat;
               background-size: 442px; height: 110px;  
             }//@media
@@ -288,7 +292,7 @@
           .contents_title{
             display: block; width: 462px; height: 110px; background: url( ../images/tb_02.png ) left top no-repeat; background-size: 462px 110px;
             margin-top: 140px;
-            @media @quries_high{
+            @media @queries_high{
               background: url( ../images/tb_02@2x.png ) left top no-repeat;
               background-size: 462px; height: 110px;  
             }//@media
@@ -302,7 +306,7 @@
           .contents_title{
             display: block; width: 442px; height: 110px; background: url( ../images/tb_03.png ) left top no-repeat; background-size: 422px 110px;
             margin-top: 100px;
-            @media @quries_high{
+            @media @queries_high{
               background: url( ../images/tb_03@2x.png ) left top no-repeat;
               background-size: 442px; height: 110px;  
             }//@media
@@ -316,7 +320,7 @@
           .contents_title{
             display: block; width: 572px; height: 110px; background: url( ../images/tb_04.png ) left top no-repeat; background-size: 572px 110px;
             margin-top: 130px;
-            @media @quries_high{
+            @media @queries_high{
               background: url( ../images/tb_04@2x.png ) left top no-repeat;
               background-size: 572px; height: 110px;  
             }//@media
@@ -330,7 +334,7 @@
           .contents_title{
             display: block; width: 452px; height: 184px; background: url( ../images/tb_05.png ) left top no-repeat; background-size: 452px 184px;
             margin-top: 100px;
-            @media @quries_high{
+            @media @queries_high{
               background: url( ../images/tb_05@2x.png ) left top no-repeat;
               background-size: 452px; height: 184px;  
             }//@media
@@ -350,7 +354,7 @@
         .header_title{
           float:left; margin-right: 60px; color: #fde401; text-indent: -20000px;
           width: 340px; height: 210px; background: url( ../images/recruit.png ) left top no-repeat;
-          @media @quries_high{
+          @media @queries_high{
             background: url( ../images/recruit@2x.png ) left top no-repeat;
             background-size: 340px 210px;
           }//@media
@@ -496,7 +500,7 @@
           a{
             width: 130px; height: 48px;
             background-size: 130px 46px;
-            @media @quries_high{
+            @media @queries_high{
               background-size: 130px 46px;
             }//@media
           }
@@ -526,7 +530,7 @@
         .text_wrap{
           .text{
             width: @text_width; height: 13em; background-size: 100%; max-width: 500px;
-            @media @quries_high{
+            @media @queries_high{
               background-size: 100%;
             }
           }//.text
@@ -552,7 +556,7 @@
             .text{
               display: inline-block; width: 100%; height: 13em;
               background-size: 100%;
-              @media @quries_high{
+              @media @queries_high{
                 background-size: 100%;
               }//@media
             }//.text
@@ -604,7 +608,7 @@
             width: 100%; height: 170px; float: none; max-width: 600px;
             background: url( ../images/recruit@2x.m.png ) left bottom no-repeat;
             background-size: 100%;
-            @media @quries_high{
+            @media @queries_high{
               background: transparent;
             }//@media
           }
