@@ -1,17 +1,10 @@
-@font-face {
-  font-family: 'Nanum Gothic';
-  font-style: normal;
-  font-weight: 400;
-  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot);
-  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
-       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff2) format('woff2'),
-       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.woff) format('woff'),
-       url(//themes.googleusercontent.com/static/fonts/earlyaccess/nanumgothic/v3/NanumGothic-Regular.ttf) format('truetype');
-}
-@import "http://static.ridibooks.com/common/css/varsAndMixins.less";
-@import "http://static.ridibooks.com/common/css/rsg_reset.less";
+@import "common/rsg_reset.less";
+@import "common/icon_font.less";
+@import "common/colorChips.less";
+@import "common/nanumgothic.css";
+@import "common/varsAndMixins.less";
 .rsg_default_layout();
-@import "http://static.ridibooks.com/common/css/icon_font.less"; 
+
 @max_width: 984px;
 @body_padding: 0 20px;
 @queries_high: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
