@@ -1,0 +1,66 @@
+---
+layout: post
+title:  "안드로이드 개발자 채용"
+subtitle: "리디북스 앱팀"
+date:   2015-01-19 01:46:41
+---
+
+h3. 리디북스 앱팀?
+
+(앱 개발에서 중요하게 생각하는 것. 리디북스 앱이 가지는 가치에 대한 소개)
+우리는 해외의 한국 책을 보기 어려운 사람들에게, 저시력자들에게, TTS를 필요로하는 사람들에게 최고의 가독성과 편리함을 제공하기위해 노력하는 팀입니다.
+리디북스 앱은 현재 iOS, 안드로이드, PC, Mac 플랫폼에서 서비스되고 있으며, 추후에는 WinRT 태블릿 및 리눅스에 대한 지원도 제공할 예정입니다.
+
+(안드로이드 자랑)
+안드로이드 앱은 2010년 10월에 최초로 런칭되었으며, 지속적인 업데이트를 통해 고객들에게 사랑받고 있습니다.
+안정성과 EPUB뷰어의 표현은 타 유통사의 뷰어와 비교했을때 매우 높은 평가를 받아오고 있습니다.
+리디북스 뷰어 짱짱맨.
+
+앱팀의 인재상은 특정 플랫폼에 종속되지 않고 다양한 언어와 플랫폼에 관심을 가지는 사람이다.
+우리 팀원 모두 Swift로 작성된 iOS 개발과, Qt 기반으로 작성된 Mac/PC 뷰어 개발도 척척함.
+<br>
+
+h3. 안드로이드 개발 환경
+
+* Realm 을 이용한 데이터 모델링
+<br>
+
+h3. EPUB 뷰어 개발
+
+디버깅 짱구림.
+EPUB 3.0 지원할거임.
+<br>
+
+h3. Workflow
+
+앱팀에서는 효율적인 업무 프로세스를 위해 아래와 같은 도구들도 활용하고 있습니다.
+
+* 버그 추적을 위한 Crashlytics
+* 프로젝트 및 버그 관리를 위한 Asana
+* 지식 공유를 위한 Confluence
+* 팀 커뮤니케이션 및 다양한 플러그인을 연동하기위한 Slack
+<br>
+
+h3. 앱팀에 합류하게 된다면…
+
+3개월 이내에는 다음과 같은 일을 하게 됩니다.
+
+* 자바를 배웁니다.
+* Realm를 다룹니다.
+* EPUB, 만화, PDF 뷰어의 내부에 대해 이해하고 개선합니다.
+
+6개월 이내에는 다음과 같은 일을 하게 됩니다.
+
+* 안드로이드 이외의 플랫폼을 이해하고 커밋을 늘려나갑니다.
+* EPUB과 관련된 다양한 스펙을 구현합니다.
+
+12개월 이내에는 다음과 같은 일을 하게 됩니다.
+
+* 동기화, 알림센터와 관련된 API를 이해하고 확장합니다.
+* 서버의 동작을 완벽히 이해하고 매일밤 IDC로 퇴근합니다.
+* TTS 엔진을 만들고 음성 데이터를 녹음합니다.
+<br>
+
+h1=. <a class="typeform-share link" href="https://hyunwoo.typeform.com/to/fEumaA" data-mode="1" target="_blank">지원하기</a>
+<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+
