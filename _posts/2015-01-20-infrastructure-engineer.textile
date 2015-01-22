@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "안드로이드 개발자 채용"
+title:  "플랫폼팀 개발자 채용"
 subtitle: "리디북스 앱팀"
 header-img: "img/about-bg.jpg"
 date:   2015-01-19 01:46:41
