@@ -1,9 +1,21 @@
 // Mixins
 
-.transition-all() {
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
+.serif() {
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+.sans-serif () {
+	font-family: 'Apple SD Gothic Neo', NanumGothic, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.brandon-grotesque() {
+	font-family: "brandon-grotesque", sans-serif;
+}
+
+.transition(@type: all, @time: 0.2s) {
+    -webkit-transition: @type @time;
+    -moz-transition: @type @time;
+    transition: @type @time;
 }
 
 .background-cover() {
@@ -13,10 +25,29 @@
     -o-background-size: cover;
 }
 
-.serif() {
-	font-family: 'Lora', 'Times New Roman', serif;
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+	text-shadow: @string;
 }
 
-.sans-serif () {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @color: rgba(0, 0, 0, 0.25)) {
+	-webkit-box-shadow:	@x @y @blur @spread @color;
+	-moz-box-shadow:	@x @y @blur @spread @color;
+	box-shadow:		@x @y @blur @spread @color;
 }
+
+.border-radius (@radius: 4px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+.opacity (@opacity: 0.5) {
+	-webkit-opacity: 	@opacity;
+	-moz-opacity: 		@opacity;
+	opacity: 		@opacity;
+}
+

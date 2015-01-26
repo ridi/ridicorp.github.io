@@ -1,0 +1,318 @@
+body {
+  font-family: 'Apple SD Gothic Neo', NanumGothic, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  color: #555;
+}
+@media only screen and (max-width: 480px) {
+  .clear-md {
+    display: none;
+  }
+}
+@media only screen and (min-width : 481px) and (max-width : 768px) {
+  .clear-md {
+    display: none;
+  }
+}
+a:hover {
+  text-decoration: none;
+}
+.navbar-custom {
+  font-family: "brandon-grotesque", sans-serif;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+}
+.navbar-custom .navbar-brand {
+  font-weight: 900;
+}
+.navbar-custom .nav li a {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+@media only screen and (min-width: 768px) {
+  .navbar-custom {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
+  .navbar-custom .navbar-brand {
+    color: white;
+    padding: 20px;
+  }
+  .navbar-custom .navbar-brand:hover,
+  .navbar-custom .navbar-brand:focus {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .navbar-custom .nav li a {
+    color: white;
+    padding: 20px;
+  }
+  .navbar-custom .nav li a:hover,
+  .navbar-custom .nav li a:focus {
+    color: rgba(255, 255, 255, 0.8);
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .navbar-custom {
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    /* Force Hardware Acceleration in WebKit */
+  
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .navbar-custom.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+  
+    position: fixed;
+    top: -61px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #f2f2f2;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+  }
+  .navbar-custom.is-fixed .navbar-brand {
+    color: #404040;
+  }
+  .navbar-custom.is-fixed .navbar-brand:hover,
+  .navbar-custom.is-fixed .navbar-brand:focus {
+    color: #0085a1;
+  }
+  .navbar-custom.is-fixed .nav li a {
+    color: #404040;
+  }
+  .navbar-custom.is-fixed .nav li a:hover,
+  .navbar-custom.is-fixed .nav li a:focus {
+    color: #0085a1;
+  }
+  .navbar-custom.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+  
+    -webkit-transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    -o-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+.intro-header {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #888;
+  margin-bottom: 50px;
+}
+.intro-header.ih-about {
+  background-color: #30356e;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+.intro-header.ih-career {
+  background-color: #0a1b39;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+.intro-header.ih-contact {
+  background-color: #111111;
+  height: 100vh;
+  margin-bottom: 0;
+}
+.intro-header .site-heading,
+.intro-header .page-heading {
+  text-align: center;
+  padding: 150px 0 200px;
+}
+.intro-header .site-heading h1,
+.intro-header .page-heading h1 {
+  font-family: "ff-market-web", cursive;
+  margin-top: 0;
+  font-size: 12em;
+  color: #fff;
+  line-height: 0.9;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.intro-header .site-heading h1.oneline,
+.intro-header .page-heading h1.oneline {
+  padding-top: 100px;
+}
+@media only screen and (min-width : 481px) and (max-width : 768px) {
+  .intro-header .site-heading h1,
+  .intro-header .page-heading h1 {
+    font-size: 8em;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .intro-header .site-heading h1,
+  .intro-header .page-heading h1 {
+    font-size: 5em;
+  }
+}
+.intro-header .site-heading.career-heading,
+.intro-header .page-heading.career-heading {
+  padding-bottom: 80px;
+}
+.intro-header .sub-heading {
+  display: inline-block;
+  font-size: 3em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+  position: relative;
+  padding-bottom: 8px;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+.intro-header .sub-heading:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+.intro-header .sub-description {
+  padding-bottom: 70px;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+.intro-header .sub-description.sd-about {
+  color: #78caf3;
+}
+.intro-header .sub-description.sd-career {
+  color: #15668e;
+}
+.intro-header .career-sub-area {
+  background: #78caf3;
+  padding-top: 60px;
+}
+.job-quick-links {
+  text-align: center;
+  margin-bottom: 150px;
+  font-family: "brandon-grotesque", sans-serif;
+}
+.job-quick-links .wrapper {
+  display: inline-block;
+  background: #061124;
+  border: 2px solid #78caf3;
+  padding: 0 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.job-quick-links strong {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.95em;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: #78caf3;
+  padding: 10px;
+}
+.job-quick-links a {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 15px;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.job-quick-links a:hover {
+  background: #0e2141;
+  color: #78caf3;
+}
+h3 {
+  display: inline-block;
+  font-size: 2.4em;
+  color: #3e3835;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  font-family: "brandon-grotesque", sans-serif;
+}
+h3:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #3e3835;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.how-we-work-area {
+  padding-bottom: 40px;
+}
+.how-we-work {
+  counter-reset: hww-counter;
+  list-style-type: none;
+  padding-top: 50px;
+}
+.how-we-work li {
+  border-bottom: 2px solid #f31717;
+  padding-bottom: 30px;
+  padding-left: 0;
+  margin-bottom: 50px;
+  position: relative;
+  counter-increment: hww-counter;
+  color: #3e3835;
+}
+.how-we-work li:before {
+  content: "0" counter(hww-counter);
+  position: absolute;
+  left: -80px;
+  top: -50px;
+  color: #f31717;
+  font-size: 6em;
+  font-weight: 100;
+  font-family: "brandon-grotesque", sans-serif;
+}
+.how-we-work li h4 {
+  font-size: 4em;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  padding-bottom: 20px;
+}
+.how-we-work li.hww-2,
+.how-we-work li.hww-4 {
+  margin-top: 80px;
+}
+.benefit-area {
+  background: #f3f3f5;
+}
+.copyright {
+  padding: 40px 0;
+}
