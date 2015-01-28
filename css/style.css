@@ -1,7 +1,61 @@
+.clear {
+  clear: both;
+}
+@font-face {
+  font-family: 'ridicorp-icon';
+  src: url('../fonts/ridicorp-icon.eot?-t5rjbu');
+  src: url('../fonts/ridicorp-icon.eot?#iefix-t5rjbu') format('embedded-opentype'), url('../fonts/ridicorp-icon.woff?-t5rjbu') format('woff'), url('../fonts/ridicorp-icon.ttf?-t5rjbu') format('truetype'), url('../fonts/ridicorp-icon.svg?-t5rjbu#ridicorp-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'ridicorp-icon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -10%;
+  /* Better Font Rendering =========== */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-num-1:before {
+  content: "\e604";
+}
+.icon-num-2:before {
+  content: "\e605";
+}
+.icon-num-3:before {
+  content: "\e606";
+}
+.icon-num-4:before {
+  content: "\e607";
+}
+.icon-direct-right:before {
+  content: "\e600";
+}
+.icon-mail:before {
+  content: "\e601";
+}
+.icon-pin:before {
+  content: "\e602";
+}
+.icon-telephone:before {
+  content: "\e603";
+}
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: 'Apple SD Gothic Neo', NanumGothic, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #555;
+  letter-spacing: -0.01em;
 }
 @media only screen and (max-width: 480px) {
   .clear-md {
@@ -13,8 +67,24 @@ body {
     display: none;
   }
 }
-a:hover {
+p a {
+  color: #000;
+  border-bottom: 1px dotted #000;
+}
+p a:hover {
+  color: #000;
+}
+a:hover,
+a:active,
+a:focus {
   text-decoration: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+::selection {
+  background: #ccc;
 }
 .navbar-custom {
   font-family: "brandon-grotesque", sans-serif;
@@ -27,6 +97,9 @@ a:hover {
 }
 .navbar-custom .navbar-brand {
   font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.8em;
 }
 .navbar-custom .nav li a {
   text-transform: uppercase;
@@ -110,24 +183,26 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center top;
   background-color: #888;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 .intro-header.ih-about {
   background-color: #30356e;
+  background-image: url(../img/about-bg.png);
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
 .intro-header.ih-career {
   background-color: #0a1b39;
+  background-image: url(../img/career-bg.png);
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
 .intro-header.ih-contact {
   background-color: #111111;
-  height: 100vh;
   margin-bottom: 0;
+  padding-bottom: 200px;
 }
 .intro-header .site-heading,
 .intro-header .page-heading {
@@ -163,6 +238,14 @@ a:hover {
 .intro-header .page-heading.career-heading {
   padding-bottom: 80px;
 }
+.intro-header .site-heading.contact-heading,
+.intro-header .page-heading.contact-heading {
+  padding-bottom: 20px;
+}
+.intro-header .site-heading.contact-heading h1,
+.intro-header .page-heading.contact-heading h1 {
+  color: #f55327;
+}
 .intro-header .sub-heading {
   display: inline-block;
   font-size: 3em;
@@ -196,6 +279,7 @@ a:hover {
   padding-bottom: 70px;
   font-size: 1.2em;
   line-height: 1.5;
+  letter-spacing: -0.03em;
 }
 .intro-header .sub-description.sd-about {
   color: #78caf3;
@@ -206,6 +290,86 @@ a:hover {
 .intro-header .career-sub-area {
   background: #78caf3;
   padding-top: 60px;
+}
+.intro-header .contact-buttons {
+  text-align: center;
+}
+.intro-header .contact-buttons a {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 1.125em;
+  padding: 16px 50px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+}
+.intro-header .contact-buttons .view-map {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 1.125em;
+  padding: 16px 50px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+  background: #f55327;
+  color: #6f210b;
+  margin-right: 20px;
+}
+.intro-header .contact-buttons .view-map:hover {
+  color: #f55327;
+  background: #fff;
+}
+.intro-header .contact-buttons .other-button {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 1.125em;
+  padding: 16px 50px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+  background: #484848;
+  color: #d4d4d4;
+}
+.intro-header .contact-buttons .other-button:hover {
+  color: #eee;
+  background: #222;
+}
+.intro-header .contact-buttons .other-button.first {
+  border-radius: 4px 0 0 4px;
+  border-right: 2px solid #3a3a3a;
+}
+.intro-header .contact-buttons .other-button:last-child {
+  border-radius: 0 4px 4px 0;
 }
 .job-quick-links {
   text-align: center;
@@ -246,7 +410,10 @@ a:hover {
   background: #0e2141;
   color: #78caf3;
 }
-h3 {
+.job-quick-links .icon-direct-right {
+  color: #42738e;
+}
+.site-content h3 {
   display: inline-block;
   font-size: 2.4em;
   color: #3e3835;
@@ -258,7 +425,7 @@ h3 {
   margin-bottom: 20px;
   font-family: "brandon-grotesque", sans-serif;
 }
-h3:after {
+.site-content h3:after {
   content: "";
   position: absolute;
   left: 0;
@@ -279,7 +446,10 @@ h3:after {
 .how-we-work {
   counter-reset: hww-counter;
   list-style-type: none;
-  padding-top: 50px;
+  padding-top: 250px;
+  padding-left: 0;
+  width: 960px;
+  margin: 0 auto;
 }
 .how-we-work li {
   border-bottom: 2px solid #f31717;
@@ -289,12 +459,14 @@ h3:after {
   position: relative;
   counter-increment: hww-counter;
   color: #3e3835;
+  margin-top: 140px;
 }
 .how-we-work li:before {
   content: "0" counter(hww-counter);
   position: absolute;
-  left: -80px;
-  top: -50px;
+  z-index: 1;
+  left: -0.7em;
+  top: -0.8em;
   color: #f31717;
   font-size: 6em;
   font-weight: 100;
@@ -302,16 +474,246 @@ h3:after {
 }
 .how-we-work li h4 {
   font-size: 4em;
-  font-weight: 800;
+  font-weight: 100;
   letter-spacing: -0.03em;
   padding-bottom: 20px;
+  margin-left: -0.1em;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+.how-we-work li.hww-1 {
+  margin-top: 0;
 }
 .how-we-work li.hww-2,
 .how-we-work li.hww-4 {
-  margin-top: 80px;
+  float: right;
+}
+.how-we-work li p {
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  font-size: 1.125em;
+}
+.how-we-work li .hww-icon {
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 172px;
+  height: 172px;
+  z-index: 3;
+}
+.how-we-work li .hww-icon.hwwi-1 {
+  background-image: url(../img/icon-howwework-1.png);
+  left: 70px;
+  top: -190px;
+}
+.how-we-work li .hww-icon.hwwi-2 {
+  background-image: url(../img/icon-howwework-1.png);
+  right: 10px;
+  top: -170px;
+}
+.how-we-work li .hww-icon.hwwi-3 {
+  background-image: url(../img/icon-howwework-1.png);
+  left: -180px;
+  top: 50px;
+}
+.how-we-work li .hww-icon.hwwi-4 {
+  background-image: url(../img/icon-howwework-1.png);
+  right: 10px;
+  top: -100px;
+}
+.how-we-work li .hww-icon.hwwi-5 {
+  background-image: url(../img/icon-howwework-1.png);
+  right: 10px;
+  top: -140px;
 }
 .benefit-area {
   background: #f3f3f5;
+  padding: 50px 0;
+}
+.benefit-area .benefit-content {
+  width: 960px;
+  margin: 30px auto 0;
+  clear: both;
+}
+.benefit-area .benefit-content:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.benefit-area .benefit-content h4 {
+  float: left;
+  width: 170px;
+  font-family: "brandon-grotesque", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  color: #30356e;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+.benefit-area .benefit-content .bc-box {
+  margin-left: 170px;
+  padding-bottom: 15px;
+}
+.benefit-area .benefit-content .bc-box .bf-icon {
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-top: -10px;
+  background-repeat: no-repeat;
+}
+.benefit-area .benefit-content .bc-box .bf-icon.bfi-1 {
+  background-image: url(../img/icon-benefit-1.png);
+}
+.benefit-area .benefit-content .bc-box .bf-icon.bfi-2 {
+  background-image: url(../img/icon-benefit-1.png);
+}
+.benefit-area .benefit-content .bc-box .bf-icon.bfi-3 {
+  background-image: url(../img/icon-benefit-1.png);
+}
+.benefit-area .benefit-content .bc-box .bf-icon.bfi-4 {
+  background-image: url(../img/icon-benefit-1.png);
+}
+.benefit-area .benefit-content .bc-box .bf-icon.bfi-5 {
+  background-image: url(../img/icon-benefit-1.png);
+}
+.benefit-area .benefit-content .bc-box .bf-icon.bfi-6 {
+  background-image: url(../img/icon-benefit-1.png);
+}
+.benefit-area .benefit-content .bc-box h5 {
+  font-weight: 700;
+  margin-left: 80px;
+  font-size: 1em;
+}
+.benefit-area .benefit-content .bc-box p {
+  line-height: 1.5;
+  margin-left: 80px;
+}
+.job-openings-area {
+  background: #30356e;
+  padding: 50px 0;
+}
+.job-openings-area h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+.job-openings-area h3:after {
+  background: #fff;
+}
+.job-openings-area h4 {
+  color: #78caf3;
+}
+.job-openings-area .jobs {
+  width: 800px;
+  margin: 50px auto 0;
+}
+.job-openings-area .jobs .jobs-item {
+  background: #282c5c;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  padding: 20px 20px 20px 40px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.job-openings-area .jobs .jobs-item .ji-left {
+  float: left;
+}
+.job-openings-area .jobs .jobs-item strong {
+  display: block;
+  font-size: 1.75em;
+  font-family: "brandon-grotesque", sans-serif;
+  color: #fff;
+  font-weight: 300;
+}
+.job-openings-area .jobs .jobs-item span {
+  display: block;
+  color: #78caf3;
+  font-size: 0.75em;
+}
+.job-openings-area .jobs .jobs-item .apply {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 1.125em;
+  padding: 16px 50px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+  background: #78caf3;
+  color: #fff;
+  font-family: "brandon-grotesque", sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  float: right;
+}
+.job-openings-area .jobs .jobs-item .apply:hover {
+  background: #fff;
+  color: #30356e;
+}
+.how-to-contact {
+  background: #000;
+  padding: 50px 0;
+}
+.how-to-contact .container {
+  width: 960px;
+  margin: 0 auto;
+}
+.how-to-contact .htc-left {
+  width: 30%;
+  float: left;
+}
+.how-to-contact .htc-right {
+  width: 70%;
+  float: left;
+}
+.how-to-contact h2 {
+  color: #f55327;
+  padding-bottom: 10px;
+  font-size: 1em;
+  margin-bottom: 0;
+}
+.how-to-contact h3 {
+  font-size: 1.25em;
+  line-height: 1.5;
+  color: #dadada;
+  font-weight: 500;
+}
+.how-to-contact p {
+  color: #919191;
+  line-height: 1.4;
+}
+.how-to-contact p.steps {
+  text-indent: -1.2em;
+  padding-left: 1.2em;
+}
+.how-to-contact .contact-point {
+  color: #dadada;
+  font-size: 1.1em;
+  padding-top: 10px;
+}
+.how-to-contact .contact-point li {
+  padding: 3px 0;
+}
+.how-to-contact .hr-box {
+  float: left;
+  width: 50%;
+  padding-right: 5%;
 }
 .copyright {
   padding: 40px 0;

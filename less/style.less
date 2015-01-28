@@ -1,12 +1,19 @@
 @import "variables.less";
 @import "mixins.less";
+@import "icon.less";
 
 // Global Components
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	.sans-serif;
-	font-size: 15px;
+	font-size: 16px;
 	color: #555;
+	letter-spacing: -0.01em;
 }
 
 .clear-md {
@@ -18,8 +25,24 @@ body {
 	}
 }
 
-a:hover {
+p a {
+	color: #000;
+	border-bottom: 1px dotted #000;
+}
+p a:hover {
+	color: #000;
+}
+a:hover, a:active, a:focus {
 	text-decoration: none;
+}
+
+ul, ol {
+	list-style: none;
+
+}
+
+::selection {
+	background: #ccc;
 }
 
 // Navigation
@@ -35,6 +58,9 @@ a:hover {
 
 	.navbar-brand {
 		font-weight: 900;
+		text-transform: uppercase;
+		letter-spacing: 0.3em;
+		font-size: 0.8em;
 	}
 	.nav {
 		li {
@@ -127,20 +153,22 @@ a:hover {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #888;
-	margin-bottom: 50px;
+	margin-bottom: 70px;
 
 	&.ih-about {
 		background-color: #30356e;
+		background-image: url(../img/about-bg.png);
 		.drop-shadow();
 	}
 	&.ih-career {
 		background-color: #0a1b39;
+		background-image: url(../img/career-bg.png);
 		.drop-shadow();
 	}
 	&.ih-contact {
 		background-color: #111111;
-		height: 100vh;
 		margin-bottom: 0;
+		padding-bottom: 200px;
 	}
 
 	.site-heading,
@@ -167,6 +195,12 @@ a:hover {
 
 		&.career-heading {
 			padding-bottom: 80px;
+		}
+		&.contact-heading {
+			h1 {
+				color: @bright-orange;	
+			}
+			padding-bottom: 20px;
 		}
 
 	}
@@ -197,6 +231,7 @@ a:hover {
 		padding-bottom: 70px;
 		font-size: 1.2em;
 		line-height: 1.5;
+		letter-spacing: -0.03em;
 		&.sd-about {
 			color: #78caf3;
 		}
@@ -205,12 +240,33 @@ a:hover {
 		}
 	}
 
-	// Career 
+	// Career Header
 	.career-sub-area {
 		background: #78caf3;
 		padding-top: 60px;
 	}
-	
+
+	// Contact Header
+	.contact-buttons {
+		text-align: center;
+		a {
+			.button();
+		}
+		.view-map {
+			.button-orange();
+			margin-right: 20px;
+		}
+		.other-button {
+			.button-gray();
+			&.first {
+				border-radius: 4px 0 0 4px;
+				border-right: 2px solid #3a3a3a;
+			}
+			&:last-child {
+				border-radius: 0 4px 4px 0;
+			}
+		}
+	}
 }
 
 // Job Quick Links
@@ -246,11 +302,14 @@ a:hover {
 			color: #78caf3;
 		}
 	}
+	.icon-direct-right {
+		color: #42738e;
+	}
 }
 
 // Contents
 
-h3 {
+.site-content h3 {
 	display: inline-block;
 	font-size: 2.4em;
 	color: @base-gray;
@@ -282,7 +341,10 @@ h3 {
 .how-we-work {
 	counter-reset: hww-counter;
 	list-style-type: none;
-	padding-top: 50px;
+	padding-top: 250px;
+	padding-left: 0;
+	width: 960px;
+	margin: 0 auto;
 
 	li {
 		border-bottom: 2px solid @bright-red;
@@ -292,12 +354,14 @@ h3 {
 		position: relative;
 		counter-increment: hww-counter;
 		color: @base-gray;
+		margin-top: 140px;	
 
 		&:before {
 			content: "0" counter(hww-counter);
 			position: absolute;
-			left: -80px;
-			top: -50px;
+			z-index: 1;
+			left: -0.7em;
+			top: -0.8em;
 			color: @bright-red;
 			font-size: 6em;
 			font-weight: 100;
@@ -306,12 +370,59 @@ h3 {
 
 		h4 {
 			font-size: 4em;
-			font-weight: 800;
+			font-weight: 100;
 			letter-spacing: -0.03em;
 			padding-bottom: 20px;
+			margin-left: -0.1em;
+			background: #fff;
+			position: relative;
+			z-index: 2;
+		}
+		&.hww-1 {
+			margin-top: 0;
 		}
 		&.hww-2, &.hww-4 {
-			margin-top: 80px;
+			float: right;
+		}
+
+
+		p {
+			letter-spacing: -0.02em;
+			margin: 0 0 20px;
+			font-size: 1.125em;
+		}
+		.hww-icon {
+			position: absolute;
+			background-repeat: no-repeat;
+			width: 172px;
+			height: 172px;
+			z-index: 3;
+
+			&.hwwi-1 {
+				background-image: url(../img/icon-howwework-1.png);
+				left: 70px;
+				top: -190px;
+			}
+			&.hwwi-2 {
+				background-image: url(../img/icon-howwework-1.png);
+				right: 10px;
+				top: -170px;
+			}
+			&.hwwi-3 {
+				background-image: url(../img/icon-howwework-1.png);
+				left: -180px;
+				top: 50px;
+			}
+			&.hwwi-4 {
+				background-image: url(../img/icon-howwework-1.png);
+				right: 10px;
+				top: -100px;
+			}
+			&.hwwi-5 {
+				background-image: url(../img/icon-howwework-1.png);
+				right: 10px;
+				top: -140px;
+			}
 		}
 	}
 }
@@ -320,8 +431,174 @@ h3 {
 // Benefit
 .benefit-area {
 	background: #f3f3f5;
+	padding: 50px 0;
+
+	.benefit-content {
+		width: 960px;
+		margin: 30px auto 0;
+		.clear();
+		h4 {
+			float: left;
+			width: 170px;
+			.brandon-grotesque();
+			font-weight: 800;
+			text-transform: uppercase;
+			font-size: 0.9em;
+			color: #30356e;
+			letter-spacing: 0.1em;
+			margin: 0;
+		}
+		.bc-box {
+			margin-left: 170px;
+			padding-bottom: 15px;
+			.bf-icon {
+				float: left;
+				width: 60px;
+				height: 60px;
+				margin-top: -10px;
+				background-repeat: no-repeat;
+				&.bfi-1 {
+					background-image: url(../img/icon-benefit-1.png);
+				}
+				&.bfi-2 {
+					background-image: url(../img/icon-benefit-1.png);
+				}
+				&.bfi-3 {
+					background-image: url(../img/icon-benefit-1.png);
+				}
+				&.bfi-4 {
+					background-image: url(../img/icon-benefit-1.png);
+				}
+				&.bfi-5 {
+					background-image: url(../img/icon-benefit-1.png);
+				}
+				&.bfi-6 {
+					background-image: url(../img/icon-benefit-1.png);
+				}
+			}
+			h5 {
+				font-weight: 700;
+				margin-left: 80px;
+				font-size: 1em;
+			}
+			p {
+				line-height: 1.5;
+				margin-left: 80px;
+			}
+		}
+	}
 }
 
+
+// Job Openings
+.job-openings-area {
+	background: #30356e;
+	padding: 50px 0;
+
+	h3 {
+		color: #fff;
+		margin-bottom: 10px;
+		&:after {
+			background: #fff;
+		}
+	}
+	h4 {
+		color: #78caf3;
+	}
+
+	.jobs {
+		width: 800px;
+		margin: 50px auto 0;
+
+		.jobs-item {
+			background: #282c5c;
+			.border-radius();
+			padding: 20px 20px 20px 40px;
+			margin-bottom: 10px;
+			box-sizing: border-box;
+			
+			.ji-left {
+				float: left;
+			}
+			strong {
+				display: block;
+				font-size: 1.75em;
+				.brandon-grotesque();
+				color: #fff;
+				font-weight: 300;
+			}
+			span {
+				display: block;
+				color: #78caf3;
+				font-size: 0.75em;
+			}
+			.apply {
+				.button-skyblue();
+				.brandon-grotesque();
+				letter-spacing: 0.1em;
+				font-size: 0.8em;
+				text-transform: uppercase;
+				float: right;
+			}
+		}
+	}
+
+}
+
+// Contact 
+.how-to-contact {
+	background: #000;
+	padding: 50px 0;
+
+	.container {
+		width: 960px;
+		margin: 0 auto;
+	}
+
+	.htc-left {
+		width: 30%;
+		float: left;
+	}
+	.htc-right {
+		width: 70%;
+		float: left;
+	}
+
+	h2 {
+		color: @bright-orange;
+		padding-bottom: 10px;
+		font-size: 1em;
+		margin-bottom: 0;
+	}
+	h3 {
+		font-size: 1.25em;
+		line-height: 1.5;
+		color: #dadada;
+		font-weight: 500;
+	}
+	p {
+		color: #919191;
+		line-height: 1.4;
+		&.steps {
+			text-indent: -1.2em;
+			padding-left: 1.2em;
+		}
+	}
+	.contact-point {
+		color: #dadada;
+		font-size: 1.1em;
+		padding-top: 10px;
+		li {
+			padding: 3px 0;	
+		}
+	}
+	.hr-box {
+		float: left;
+		width: 50%;
+		padding-right: 5%;
+	}
+
+}
 
 // Footer 
 .copyright {

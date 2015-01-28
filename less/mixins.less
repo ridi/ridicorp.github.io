@@ -12,6 +12,57 @@
 	font-family: "brandon-grotesque", sans-serif;
 }
 
+.clear {
+	clear: both;
+}
+.clear() {
+	&:after { 
+	   content: "."; 
+	   visibility: hidden; 
+	   display: block; 
+	   height: 0; 
+	   clear: both;
+	}
+}
+
+.button() {
+	.border-radius();
+	.drop-shadow();
+	.transition();
+	font-size: 1.125em;
+	padding: 16px 50px;
+	display: inline-block;
+	letter-spacing: -0.03em;
+	font-weight: bold;
+}
+.button-orange() {
+	.button();
+	background: @bright-orange;
+	color: #6f210b;
+	&:hover {
+		color: @bright-orange;
+		background: #fff;
+	}
+}
+.button-gray() {
+	.button();
+	background: #484848;
+	color: #d4d4d4;
+	&:hover {
+		color: #eee;
+		background: #222;
+	}
+}
+.button-skyblue() {
+	.button();
+	background: #78caf3;
+	color: #fff;
+	&:hover {
+		background: #fff;
+		color: #30356e;
+	}
+}
+
 .transition(@type: all, @time: 0.2s) {
     -webkit-transition: @type @time;
     -moz-transition: @type @time;
