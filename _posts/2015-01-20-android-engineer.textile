@@ -2,7 +2,7 @@
 layout: post
 title:  "Android Developer"
 subtitle: "리디북스 앱팀"
-header-img: "img/career-bg-1.jpg"
+header-img: "img/career-bg-4.jpg"
 date:   2015-01-19 01:46:41
 ---
 

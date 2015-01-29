@@ -32,8 +32,7 @@ p a {
 }
 p a:hover {
 	color: #0282da;
-	border-color: #0282da;
-	
+	border-color: #0282da;	
 }
 a:hover, a:active, a:focus {
 	text-decoration: none;
@@ -171,6 +170,7 @@ ul, ol {
 	&.ih-career {
 		background-color: #0a1b39;
 		background-image: url(../img/career-bg.png);
+		background-repeat: repeat-x;
 		.drop-shadow();
 	}
 	&.ih-contact {
@@ -189,7 +189,7 @@ ul, ol {
 			font-size: 12em;
 			color: #fff;
 			line-height: 0.9;
-			.text-shadow();
+			.text-shadow(0 20px 0 rgba(0,0,0,.15));
 			&.oneline {
 				padding-top: 100px;
 			}
@@ -215,13 +215,12 @@ ul, ol {
 	.sub-heading {
 		display: inline-block;
 		font-size: 3em;
-		font-weight: 800;
+		font-weight: 700;
 		letter-spacing: -0.03em;
 		color: #fff;
 		position: relative;
 		padding-bottom: 8px;
 		margin-bottom: 30px;
-		.text-shadow();
 
 		&:after {
 			content: "";
@@ -232,7 +231,6 @@ ul, ol {
 			height: 4px;
 			background: #fff;
 			.border-radius();
-			.drop-shadow();
 		}
 	}
 	.sub-description {
@@ -424,8 +422,8 @@ ul, ol {
 			}
 			&.hwwi-4 {
 				background-image: url(../img/icon-howwework-1.png);
-				right: 10px;
-				top: -100px;
+				right: -80px;
+				top: -30px;
 			}
 			&.hwwi-5 {
 				background-image: url(../img/icon-howwework-1.png);
@@ -535,6 +533,7 @@ ul, ol {
 				.brandon-grotesque();
 				color: #fff;
 				font-weight: 300;
+				letter-spacing: 0.02em;
 			}
 			span {
 				display: block;
