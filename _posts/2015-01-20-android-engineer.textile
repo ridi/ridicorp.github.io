@@ -26,6 +26,7 @@ h3. Multi-Platform Engineer
 h3. 안드로이드 개발 환경
 
 * "Realm":http://realm.io 을 이용한 데이터 모델링
+* "Genymotion":https://www.genymotion.com
 <br>
 
 h3. EPUB 뷰어 개발
@@ -39,6 +40,7 @@ h3. Workflow
 앱팀에서는 효율적인 업무 프로세스를 위해 아래와 같은 도구들도 활용하고 있습니다.
 
 * 소스코드의 버전관리를 위한 Mercurial & Git
+* API 문서화 및 테스트를 위한 "Apiary":http://apiary.io
 * Crash 추적을 위한 "Crashlytics":https://try.crashlytics.com
 * 프로젝트 및 이슈 관리를 위한 "Asana":https://asana.com
 * 지식 공유를 위한 "Confluence":https://www.atlassian.com/software/confluence
