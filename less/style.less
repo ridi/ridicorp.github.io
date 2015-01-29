@@ -27,10 +27,13 @@ body {
 
 p a {
 	color: #000;
-	border-bottom: 1px dotted #000;
+	border-bottom: 2px solid #ccc;
+	.transition();
 }
 p a:hover {
-	color: #000;
+	color: #0282da;
+	border-color: #0282da;
+	
 }
 a:hover, a:active, a:focus {
 	text-decoration: none;
@@ -152,8 +155,13 @@ ul, ol {
 .intro-header {
 	background-repeat: no-repeat;
 	background-position: center top;
-	background-color: #888;
+	background-color: #333;
 	margin-bottom: 70px;
+
+	&.post-header {
+		background-position: center center;
+		.background-cover();
+	}
 
 	&.ih-about {
 		background-color: #30356e;
@@ -243,7 +251,7 @@ ul, ol {
 	// Career Header
 	.career-sub-area {
 		background: #78caf3;
-		padding-top: 60px;
+		padding-top: 50px;
 	}
 
 	// Contact Header
@@ -390,6 +398,7 @@ ul, ol {
 			letter-spacing: -0.02em;
 			margin: 0 0 20px;
 			font-size: 1.125em;
+			font-weight: 300;
 		}
 		.hww-icon {
 			position: absolute;
@@ -444,7 +453,7 @@ ul, ol {
 			font-weight: 800;
 			text-transform: uppercase;
 			font-size: 0.9em;
-			color: #30356e;
+			color: #2763a9;
 			letter-spacing: 0.1em;
 			margin: 0;
 		}
@@ -599,6 +608,108 @@ ul, ol {
 	}
 
 }
+
+// Post 
+.post-heading {
+	padding: 100px 0;
+	h1 {
+		font-size: 4em;
+		color: #fff;
+		.brandon-grotesque();
+		font-weight: 500;
+		.text-shadow();
+	}
+	h2 {
+		font-size: 1.2em;
+		color: #fff;
+		font-weight: 300;
+		.text-shadow();
+	}
+}
+article {
+	h3 {
+		font-size: 1.5em;
+		color: #999;
+		padding-bottom: 10px;
+		font-weight: 200;
+		letter-spacing: -0.03em;
+	}
+	p {
+		font-size: 1.125em;
+		line-height: 1.5;
+		padding-top: 15px;
+	}
+	hr {
+		width: 100px;
+		border-top: 1px solid #ccc;
+		margin: 60px auto 30px;
+	}
+	ul {
+		padding-left: 1.5em;
+		line-height: 1.6;
+		li {
+			position: relative;
+		}
+		li:before {
+			color: #aaa;
+			content: "•";
+			display: block;
+			position: relative;
+			max-width: 0px;
+			max-height: 0px;
+			left: -16px;
+			top: 1px;
+			font-size: 0.9em;			
+		}
+	}
+	img {
+		position: relative;
+		display: block;
+	}
+	figcaption {
+		text-align: center;
+		font-size: 0.8em;
+		color: #aaa;
+		padding: 0 0 10px;
+	}
+	.btn-apply {
+		margin: 30px 0 20px;
+		.button-navy();
+		i {
+			color: #5796bc;
+		}
+		&:hover i {
+			color: #78caf3;
+		}
+	}
+	.apply-area {
+		strong {
+			color: #555;
+			.brandon-grotesque();
+			font-size: 1.75em;
+			font-weight: 300;
+		}
+		span {
+			color: #999;
+			font-size: 0.75em;
+		}
+	}
+}
+.post-preview {
+	h2 {
+		color: #333;
+		.brandon-grotesque();
+	}
+	h3 {
+		font-size: 0.8em;
+		color: #999;
+		margin-top: 0;
+	}
+	.post-meta {
+		color: #999;
+	}
+}
+
 
 // Footer 
 .copyright {

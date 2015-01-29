@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "플랫폼팀 개발자 채용"
+title:  "Web Developer - Platform"
 subtitle: "리디북스 플랫폼팀"
-header-img: "img/about-bg.jpg"
+header-img: "img/career-bg-1.jpg"
 date:   2015-01-19 01:46:41
 ---
 
@@ -10,13 +10,13 @@ h3. 리디북스 플랫폼팀?
 
 리디북스에서 고객이 단 한 권의 책을 구매한다고 하더라도 그 책의 준비는 눈 깜짝할 사이에 이루어지지 않습니다.
 
-정성스레 작성된 글을 꼼꼼하게 검토하여 서점에 게시
-책을 구매한 고객이 알려주는 문제점을 검토 취합하여 출판사에 전달
-공정하고 투명한 거래를 위한 판매 정보의 정리 및 안내
+* 정성스레 작성된 글을 꼼꼼하게 검토하여 서점에 게시
+* 책을 구매한 고객이 알려주는 문제점을 검토 취합하여 출판사에 전달
+* 공정하고 투명한 거래를 위한 판매 정보의 정리 및 안내
 
 그렇습니다. 이것이 플랫폼팀이 하는 일이며, 그리고 가야 할 길입니다.
 
-<br>
+<hr>
 
 h3. 플랫폼팀의 비전
 
@@ -31,7 +31,7 @@ h3. 플랫폼팀의 비전
 ** 작가도 미처 몰랐던 점을 고객의 빠른 피드백으로 수정
 ** 더욱더 서로 신뢰할 수 있는 판매 콘텐츠 플랫폼
 
-<br>
+<hr>
 
 h3. 즐거운 개발 문화
 
@@ -60,7 +60,7 @@ h3. 즐거운 개발 문화
 ** 오픈소스를 통해 개인의 발전 뿐만 아니라 회사의 모두가 발전할 수 있다는 것을 믿습니다.
 ** 때문에 In-house 도구를 회사의 소유로 귀속시키는게 아니라, 오픈소스로도 오픈함을 권장합니다.
 
-<br>
+<hr>
 
 h3. 들어오게 된다면 해야 할 노력
 
@@ -75,7 +75,7 @@ h3. 들어오게 된다면 해야 할 노력
 ** 개발자가 편하게 만들고, 그걸 "쓰는 사람"이 불편하면 "실패한 개발"이라고 믿습니다.
 ** 언제나 "쓰는 사람"이 편하도록 경청하는 자세를 가져야 합니다.
 
-<br>
+<hr>
 
 h3. Workflow
 
@@ -85,7 +85,8 @@ h3. Workflow
 * 프로젝트 및 이슈 관리를 위한 Asana
 * 지식 공유를 위한 Confluence
 * 팀 커뮤니케이션을 위한 Slack
-<br>
+
+<hr>
 
 h3. 플랫폼팀에 합류하게 된다면…
 
@@ -93,8 +94,11 @@ h3. 플랫폼팀에 합류하게 된다면…
 * 서점뿐만 아니라 도서 유통의 여러 면면을 체험해보며 개선할 점을 생각할 시간을 갖게 됩니다.
 * 진심으로 사용자 관점에서 생각하는 문화를 배웁니다.
 
-<br>
+<hr>
 
-h1=. <a class="typeform-share link" href="https://hyunwoo.typeform.com/to/fEumaA" data-mode="1" target="_blank">지원하기</a>
-<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
-
+<div class="text-center apply-area">
+	<strong>{{ page.title }}</strong>
+	<span>{{ page.subtitle }}</span>
+	<a class="typeform-share btn-apply" href="https://hyunwoo.typeform.com/to/fEumaA" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
+	<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+</div>

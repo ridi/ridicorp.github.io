@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "웹 개발자 채용"
+title:  "Web Developer - Store"
 subtitle: "리디북스 스토어팀"
+header-img: "img/career-bg-1.jpg"
 date:   2015-01-19 01:46:41
 ---
 
@@ -10,10 +11,12 @@ h3. 리디북스 스토어팀?
 
 스토어팀에서는 리디북스의 고객들이 책을 살펴보고 구매하는 모든 것과 관련된 것을 개발합니다. 빠르게 성장하는 서비스에서 다양한 이벤트를 운영하며 발생하는 웹서버 및 데이터베이스의 부하를 감당하는 일은 매우 도전적입니다. 2015년 1월 현재, 리디북스의 서버 스택은 아래와 같이 구성되어 있습니다.
 
-!/img/post-ridibooks-backend-architecture.png([Ridibooks Backend Arhcitecture])!
+!/img/post-ridibooks-backend-architecture.png(Ridibooks Backend Architecture)!
+<figcaption>Ridibooks Backend Architecture</figcaption>
 
 그림에서 나타나듯 리디북스 서점은 매우 다양한 서버들로 구성되어 있습니다. 스토어팀은 비교적 적은 인원으로 서버에서 발생하는 수많은 이슈를 안정적으로 처리하기 위해 노력하고 있습니다. 좋은 코드를 작성하는 것만큼이나 중요한 것은 철저한 모니터링입니다.
-<br>
+
+<hr>
 
 h3. 서비스 운영
 
@@ -26,7 +29,7 @@ h3. 서비스 운영
 * MariaDB의 부하를 감지하고 Slow Query를 모니터링하는 Percona Tools
 * 각종 데이터의 무결성을 주기적으로 감지하는 In-house 스크립트
 * 해킹, DDoS에 대응하기 위한 IPS & WAF
-<br>
+<hr>
 
 h3. 마이크로서비스 아키텍쳐
 
@@ -40,7 +43,7 @@ h3. 마이크로서비스 아키텍쳐
 * 알림 서비스
 
 서비스 지향적인 아키텍쳐를 만든다는 것은 구성원 개개인의 높은 실력과 책임감을 요구하지만, 새로운 기술을 접할 수 있는 기회와 자율성을 제공합니다. 스토어팀에서는 이를 자신 있게 수행해낼 인재를 찾고 있습니다.
-<br>
+<hr>
 
 h3. Back-end Engineering
 
@@ -48,12 +51,12 @@ h3. Back-end Engineering
 
 개발 스택은 각 기능의 요구사항을 구현하는데 최적인 플랫폼을 적극적으로 수용합니다. 현재 서점을 구성하고 있는 스택은 다음과 같습니다.
 
-* 대용량 DB를 위한 Galera Cluster, MariaDB Master-Slave
-* 개인화 추천 및 실시간 도서 랭킹을 위한 Node.js, Redis
-* 각종 동기화를 위한 Couchbase
-* 검색을 위한 Solr
-* 테스트를 위한 PHPUnit, Selenium
-<br>
+* 대용량 DB를 위한 *Galera Cluster, MariaDB Master-Slave*
+* 개인화 추천 및 실시간 도서 랭킹을 위한 *Node.js, Redis*
+* 각종 동기화를 위한 *Couchbase*
+* 검색을 위한 *Solr*
+* 테스트를 위한 *PHPUnit, Selenium*
+<hr>
 
 h3. Front-end Engineering
 
@@ -61,24 +64,24 @@ h3. Front-end Engineering
 
 서점의 프론트엔드는 아래의 오픈소스들을 이용하여 만들어집니다.
 
-* 프론트엔드 패키지 관리를 위한 Bower
-* AMD 형태의 자바스크립트 코드의 의존성 관리를 위한 RequireJS
-* CSS를 작고 효율적으로 관리하기 위한 Less
-* jshint, ugilify, csslint 등 일련의 배치작업을 자동화하기위한 Grunt
-* 렌더링 성능을 끌어올리고 View를 효율적으로 작성하기 위한 React.js
-<br>
+* 프론트엔드 패키지 관리를 위한 *Bower*
+* AMD 형태의 자바스크립트 코드의 의존성 관리를 위한 *RequireJS*
+* CSS를 작고 효율적으로 관리하기 위한 *Less*
+* jshint, ugilify, csslint 등 일련의 배치작업을 자동화하기 위한 *Grunt*
+* 렌더링 성능을 끌어올리고 View를 효율적으로 작성하기 위한 *React.js*
+<hr>
 
 h3. Workflow
 
 스토어팀에서는 효율적인 업무 프로세스를 위해 아래와 같은 도구들도 활용하고 있습니다.
 
-* 소스코드의 버전관리를 위한 Mercurial & Git
-* 일관되고 편한 개발환경을 구축하기 위한 Vagrant & Ansible
-* 지식 공유를 위한 Confluence
-* 프로젝트 및 이슈 관리를 위한 Asana
-* 코드 리뷰를 위한 RhodeCode
-* 팀 커뮤니케이션을 위한 Slack
-<br>
+* 소스코드의 버전관리를 위한 *Mercurial & Git*
+* 일관되고 편한 개발환경을 구축하기 위한 *Vagrant & Ansible*
+* 지식 공유를 위한 *Confluence*
+* 프로젝트 및 이슈 관리를 위한 *Asana*
+* 코드 리뷰를 위한 *RhodeCode*
+* 팀 커뮤니케이션을 위한 *Slack*
+<hr>
 
 h3. 스토어팀에 합류하게 된다면...
 
@@ -101,10 +104,16 @@ h3. 스토어팀에 합류하게 된다면...
 * DevOps를 실천하기 위한 도구와 배포환경을 알게 됩니다.
 * 더 효율적이고 건강한 개발 문화, 환경을 만들어 나가는데 동참합니다.
 
-<br>
+<hr>
 
-h1=. <a class="typeform-share link" href="https://hyunwoo.typeform.com/to/fEumaA" data-mode="1" target="_blank">지원하기</a>
-<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
+<div class="text-center apply-area">
+	<strong>{{ page.title }}</strong>
+	<span>{{ page.subtitle }}</span>
+	<a class="typeform-share btn-apply" href="https://hyunwoo.typeform.com/to/fEumaA" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
+	<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>	
+</div>
+
+<hr>
 
 
 
