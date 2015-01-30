@@ -155,7 +155,6 @@ ul, ol {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #333;
-	margin-bottom: 70px;
 
 	&.post-header {
 		background-position: center center;
@@ -325,7 +324,13 @@ ul, ol {
 	position: relative;
 	padding-bottom: 10px;
 	margin-bottom: 20px;
+	margin-top: 50px;
 	.brandon-grotesque();
+
+	@media @queries_960 {
+		font-size: 1.8em;
+		margin-top: 20px;
+	}
 
 	&:after {
 		content: "";
@@ -351,6 +356,11 @@ ul, ol {
 	padding-left: 0;
 	width: 960px;
 	margin: 0 auto;
+	@media @queries_960 {
+		width: auto;
+		padding-top: 60px;
+	}
+
 
 	li {
 		border-bottom: 2px solid @bright-red;
@@ -431,6 +441,30 @@ ul, ol {
 				top: -140px;
 			}
 		}
+
+		@media @queries_960 {
+			margin-top: 80px;
+			float: none !important;
+			padding: 0 20px;
+
+			h4 {
+				font-size: 3em;
+			}
+			&:before {
+				left: 15px;
+				top: -0.9em;
+				font-size: 4em;
+			}
+			.hww-icon {
+				position: absolute;
+				top: -50px !important;
+				left: auto !important;
+				right: 20px !important;
+				width: 100px;
+				height: 100px;
+				background-size: 100px 100px;
+			}
+		}
 	}
 }
 
@@ -441,9 +475,15 @@ ul, ol {
 	padding: 50px 0;
 
 	.benefit-content {
-		width: 960px;
+		width: 800px;
 		margin: 30px auto 0;
 		.clear();
+		@media @queries_960 {
+			width: auto;
+			margin: 30px 20px 0;
+
+		}
+
 		h4 {
 			float: left;
 			width: 170px;
@@ -456,7 +496,6 @@ ul, ol {
 			margin: 0;
 		}
 		.bc-box {
-			margin-left: 170px;
 			padding-bottom: 15px;
 			.bf-icon {
 				float: left;
@@ -517,15 +556,24 @@ ul, ol {
 		width: 800px;
 		margin: 50px auto 0;
 
+		@media @queries_960 {
+				width: auto;
+				margin: 50px 20px 10px;
+				text-align: center;
+			}
 		.jobs-item {
 			background: #282c5c;
 			.border-radius();
 			padding: 20px 20px 20px 40px;
 			margin-bottom: 10px;
 			box-sizing: border-box;
+
 			
 			.ji-left {
 				float: left;
+				@media @queries_960 {
+					float: none;
+				}
 			}
 			strong {
 				display: block;
@@ -547,6 +595,10 @@ ul, ol {
 				font-size: 0.8em;
 				text-transform: uppercase;
 				float: right;
+				@media @queries_960 {
+					float: none;
+					margin-top: 20px;
+				}
 			}
 		}
 	}

@@ -187,7 +187,6 @@ ol {
   background-repeat: no-repeat;
   background-position: center top;
   background-color: #333;
-  margin-bottom: 70px;
 }
 .intro-header.post-header {
   background-position: center center;
@@ -431,7 +430,14 @@ ol {
   position: relative;
   padding-bottom: 10px;
   margin-bottom: 20px;
+  margin-top: 50px;
   font-family: "brandon-grotesque", sans-serif;
+}
+@media only screen and (max-width : 960px) {
+  .site-content h3 {
+    font-size: 1.8em;
+    margin-top: 20px;
+  }
 }
 .site-content h3:after {
   content: "";
@@ -458,6 +464,12 @@ ol {
   padding-left: 0;
   width: 960px;
   margin: 0 auto;
+}
+@media only screen and (max-width : 960px) {
+  .how-we-work {
+    width: auto;
+    padding-top: 60px;
+  }
 }
 .how-we-work li {
   border-bottom: 2px solid #f31717;
@@ -535,12 +547,36 @@ ol {
   right: 10px;
   top: -140px;
 }
+@media only screen and (max-width : 960px) {
+  .how-we-work li {
+    margin-top: 80px;
+    float: none !important;
+    padding: 0 20px;
+  }
+  .how-we-work li h4 {
+    font-size: 3em;
+  }
+  .how-we-work li:before {
+    left: 15px;
+    top: -0.9em;
+    font-size: 4em;
+  }
+  .how-we-work li .hww-icon {
+    position: absolute;
+    top: -50px !important;
+    left: auto !important;
+    right: 20px !important;
+    width: 100px;
+    height: 100px;
+    background-size: 100px 100px;
+  }
+}
 .benefit-area {
   background: #f3f3f5;
   padding: 50px 0;
 }
 .benefit-area .benefit-content {
-  width: 960px;
+  width: 800px;
   margin: 30px auto 0;
   clear: both;
 }
@@ -550,6 +586,12 @@ ol {
   display: block;
   height: 0;
   clear: both;
+}
+@media only screen and (max-width : 960px) {
+  .benefit-area .benefit-content {
+    width: auto;
+    margin: 30px 20px 0;
+  }
 }
 .benefit-area .benefit-content h4 {
   float: left;
@@ -563,7 +605,6 @@ ol {
   margin: 0;
 }
 .benefit-area .benefit-content .bc-box {
-  margin-left: 170px;
   padding-bottom: 15px;
 }
 .benefit-area .benefit-content .bc-box .bf-icon {
@@ -618,6 +659,13 @@ ol {
   width: 800px;
   margin: 50px auto 0;
 }
+@media only screen and (max-width : 960px) {
+  .job-openings-area .jobs {
+    width: auto;
+    margin: 50px 20px 10px;
+    text-align: center;
+  }
+}
 .job-openings-area .jobs .jobs-item {
   background: #282c5c;
   -webkit-border-radius: 4px;
@@ -632,6 +680,11 @@ ol {
 }
 .job-openings-area .jobs .jobs-item .ji-left {
   float: left;
+}
+@media only screen and (max-width : 960px) {
+  .job-openings-area .jobs .jobs-item .ji-left {
+    float: none;
+  }
 }
 .job-openings-area .jobs .jobs-item strong {
   display: block;
@@ -675,6 +728,12 @@ ol {
 .job-openings-area .jobs .jobs-item .apply:hover {
   background: #fff;
   color: #30356e;
+}
+@media only screen and (max-width : 960px) {
+  .job-openings-area .jobs .jobs-item .apply {
+    float: none;
+    margin-top: 20px;
+  }
 }
 .how-to-contact {
   background: #000;
