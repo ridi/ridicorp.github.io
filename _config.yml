@@ -10,6 +10,7 @@ github_username:  davidtmiller
 facebook_username:  IronSummitMedia
 
 # Build settings
+encoding: utf-8
 markdown: kramdown
 highlighter: pygments
 permalink: pretty
