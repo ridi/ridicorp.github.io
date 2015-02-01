@@ -1,3 +1,3 @@
-require "rack/jekyll"
-
+require 'rack/jekyll'
+require 'yaml'
 run Rack::Jekyll.new

@@ -15,4 +15,4 @@ highlighter: pygments
 permalink: pretty
 paginate: 5
 paginate_path: "articles/page:num/"
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md", "config.ru", "Gemfile", "Gemfile.lock", "vendor", "Procfile", "Rakefile"]

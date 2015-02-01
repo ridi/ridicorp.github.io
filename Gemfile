@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gem 'jekyll'
+gem 'RedCloth'
+gem 'rack-jekyll'
+gem 'rake'
+gem 'puma'
