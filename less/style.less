@@ -17,11 +17,12 @@ body {
 }
 
 .clear-md {
+	display: none;
 	@media @queries_sm {
-		display: none;
+		display: block;
 	}
 	@media @queries_md {
-		display: none;
+		display: block;
 	}
 }
 
@@ -155,6 +156,7 @@ ul, ol {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #333;
+	.background-cover();
 
 	&.post-header {
 		background-position: center center;
@@ -165,30 +167,50 @@ ul, ol {
 		background-color: #30356e;
 		background-image: url(../img/about-bg.png);
 		.drop-shadow();
+
+		@media @queries_md {
+			background-size: 1600px auto;
+		}
+		@media @queries_sm {
+			background-size: 900px auto;
+		}
 	}
 	&.ih-career {
 		background-color: #0a1b39;
 		background-image: url(../img/career-bg.png);
 		background-repeat: repeat-x;
 		.drop-shadow();
+
+		@media @queries_lg {
+			background-size: 1200px auto;
+		}
+		
 	}
 	&.ih-contact {
 		background-color: #111111;
 		margin-bottom: 0;
 		padding-bottom: 200px;
+
+		@media @queries_sm {
+			padding-bottom: 80px;
+		}
 	}
 
 	.site-heading,
 	.page-heading {
 		text-align: center;
 		padding: 150px 0 200px;
+		@media @queries_lg {
+			padding-bottom: 100px;
+		}
+
 		h1 {
 			font-family: "ff-market-web", cursive;
 			margin-top: 0;
 			font-size: 12em;
 			color: #fff;
 			line-height: 0.9;
-			.text-shadow(0 20px 0 rgba(0,0,0,.15));
+			.text-shadow(0 0.1em 0 rgba(0,0,0,.15));
 			&.oneline {
 				padding-top: 100px;
 			}
@@ -197,6 +219,9 @@ ul, ol {
 			}
 			@media @queries_sm {
 				font-size: 5em;
+				&.oneline {
+					padding-top: 40px;
+				}
 			}
 		}
 
@@ -221,6 +246,13 @@ ul, ol {
 		padding-bottom: 8px;
 		margin-bottom: 30px;
 
+		@media @queries_md {
+			font-size: 2em;
+		}
+		@media @queries_sm {
+			font-size: 2em;
+		}
+
 		&:after {
 			content: "";
 			position: absolute;
@@ -242,6 +274,14 @@ ul, ol {
 		}
 		&.sd-career {
 			color: #15668e;
+		}
+		@media @queries_md {
+			font-size: 1em;
+			margin: 0 30px;
+		}
+		@media @queries_sm {
+			font-size: 1em;
+			margin: 0 30px;
 		}
 	}
 
@@ -271,6 +311,19 @@ ul, ol {
 				border-radius: 0 4px 4px 0;
 			}
 		}
+		@media @queries_smmd {
+			margin-top: 30px;
+			a {
+				display: block !important;
+				width: 240px;
+				margin: 0 auto 5px !important;
+				border: none !important;
+				border-radius: 4px !important;
+			}
+			.view-map {
+				margin-bottom: 20px !important;
+			}
+		}
 	}
 }
 
@@ -280,10 +333,12 @@ ul, ol {
 	margin-bottom: 150px;
 	.brandon-grotesque();
 
+	@media @queries_sm {
+		margin-bottom: 100px;
+	}
+
 	.wrapper {
 		display: inline-block;
-		background: #061124;
-		border: 2px solid #78caf3;
 		padding: 0 10px;
 		.border-radius();
 	}
@@ -300,11 +355,13 @@ ul, ol {
 		display: inline-block;
 		color: #fff;
 		font-size: 1.2em;
-		padding: 15px;
+		padding: 10px;
 		.transition();
 		&:hover {
-			background: #0e2141;
 			color: #78caf3;
+		}
+		@media @queries_lg {
+			display: block;
 		}
 	}
 	.icon-direct-right {
@@ -327,9 +384,9 @@ ul, ol {
 	margin-top: 50px;
 	.brandon-grotesque();
 
-	@media @queries_960 {
+	@media @queries_lg {
 		font-size: 1.8em;
-		margin-top: 20px;
+
 	}
 
 	&:after {
@@ -356,11 +413,15 @@ ul, ol {
 	padding-left: 0;
 	width: 960px;
 	margin: 0 auto;
-	@media @queries_960 {
+
+	@media @queries_md {
+		width: auto;
+		padding: 100px 40px 0;
+	}
+	@media @queries_sm {
 		width: auto;
 		padding-top: 60px;
 	}
-
 
 	li {
 		border-bottom: 2px solid @bright-red;
@@ -371,6 +432,9 @@ ul, ol {
 		counter-increment: hww-counter;
 		color: @base-gray;
 		margin-top: 140px;	
+
+		width: 45%;
+		float: left;
 
 		&:before {
 			content: "0" counter(hww-counter);
@@ -442,10 +506,30 @@ ul, ol {
 			}
 		}
 
-		@media @queries_960 {
+		@media @queries_md {
+			h4 {
+				font-size: 3em;
+			}
+			&:before {
+				left: -0.1em;
+				top: -0.8em;
+				font-size: 4em;
+			}
+			.hww-icon {
+				position: absolute;
+				top: -50px !important;
+				left: auto !important;
+				right: 20px !important;
+				width: 120px;
+				height: 120px;
+				background-size: 120px 120px;
+			}
+		}
+		@media @queries_sm {
 			margin-top: 80px;
 			float: none !important;
 			padding: 0 20px;
+			width: auto;
 
 			h4 {
 				font-size: 3em;
@@ -472,13 +556,13 @@ ul, ol {
 // Benefit
 .benefit-area {
 	background: #f3f3f5;
-	padding: 50px 0;
+	padding: 30px 0 50px;
 
 	.benefit-content {
 		width: 800px;
 		margin: 30px auto 0;
 		.clear();
-		@media @queries_960 {
+		@media @queries_lg {
 			width: auto;
 			margin: 30px 20px 0;
 
@@ -555,23 +639,25 @@ ul, ol {
 	.jobs {
 		width: 800px;
 		margin: 50px auto 0;
-
-		@media @queries_960 {
-				width: auto;
-				margin: 50px 20px 10px;
-				text-align: center;
-			}
+		
+		@media @queries_md {
+			width: 90%;
+		}
+		@media @queries_sm {
+			width: auto;
+			margin: 50px 20px 10px;
+			text-align: center;
+		}
 		.jobs-item {
 			background: #282c5c;
 			.border-radius();
 			padding: 20px 20px 20px 40px;
 			margin-bottom: 10px;
 			box-sizing: border-box;
-
 			
 			.ji-left {
 				float: left;
-				@media @queries_960 {
+				@media @queries_sm {
 					float: none;
 				}
 			}
@@ -595,7 +681,7 @@ ul, ol {
 				font-size: 0.8em;
 				text-transform: uppercase;
 				float: right;
-				@media @queries_960 {
+				@media @queries_sm {
 					float: none;
 					margin-top: 20px;
 				}
@@ -609,19 +695,49 @@ ul, ol {
 .how-to-contact {
 	background: #000;
 	padding: 50px 0;
+	@media @queries_md {
+		padding: 20px;
+	}
+	@media @queries_sm {
+		padding: 20px;
+	}
+
 
 	.container {
 		width: 960px;
 		margin: 0 auto;
+		@media @queries_md {
+			width: auto;
+		}
+		@media @queries_sm {
+			width: auto;
+		}
 	}
 
 	.htc-left {
 		width: 30%;
 		float: left;
+		@media @queries_md {
+			width: auto;
+			float: none;
+		}
+		@media @queries_sm {
+			width: auto;
+			float: none;
+		}
 	}
 	.htc-right {
 		width: 70%;
 		float: left;
+		@media @queries_md {
+			width: auto;
+			float: none;
+		}
+		@media @queries_sm {
+			width: auto;
+			float: none;
+			padding-top: 20px;
+		}
 	}
 
 	h2 {
@@ -641,7 +757,12 @@ ul, ol {
 		line-height: 1.4;
 		&.steps {
 			text-indent: -1.2em;
-			padding-left: 1.2em;
+			padding-left: 1.2em;			
+		}
+		&.bus-lines {
+			margin-bottom: 0;
+			text-indent: -0.5em;
+			padding-left: 0.5em;
 		}
 	}
 	.contact-point {
@@ -656,6 +777,16 @@ ul, ol {
 		float: left;
 		width: 50%;
 		padding-right: 5%;
+		@media @queries_md {
+			width: auto;
+			float: none;
+			padding: 0;
+		}
+		@media @queries_sm {
+			width: auto;
+			float: none;
+			padding: 0;
+		}
 	}
 
 }
@@ -678,6 +809,7 @@ ul, ol {
 	}
 }
 article {
+	padding-top: 40px;
 	h3 {
 		font-size: 1.5em;
 		color: #999;
@@ -716,6 +848,7 @@ article {
 	img {
 		position: relative;
 		display: block;
+		width: 100%;
 	}
 	figcaption {
 		text-align: center;
@@ -727,9 +860,6 @@ article {
 		margin: 30px 0 20px;
 		.button-navy();
 		i {
-			color: #5796bc;
-		}
-		&:hover i {
 			color: #78caf3;
 		}
 	}

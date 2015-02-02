@@ -57,14 +57,17 @@ body {
   color: #555;
   letter-spacing: -0.01em;
 }
-@media only screen and (max-width: 480px) {
+.clear-md {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
   .clear-md {
-    display: none;
+    display: block;
   }
 }
-@media only screen and (min-width : 481px) and (max-width : 768px) {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
   .clear-md {
-    display: none;
+    display: block;
   }
 }
 p a {
@@ -187,6 +190,10 @@ ol {
   background-repeat: no-repeat;
   background-position: center top;
   background-color: #333;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 .intro-header.post-header {
   background-position: center center;
@@ -202,6 +209,16 @@ ol {
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .intro-header.ih-about {
+    background-size: 1600px auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .intro-header.ih-about {
+    background-size: 900px auto;
+  }
+}
 .intro-header.ih-career {
   background-color: #0a1b39;
   background-image: url(../img/career-bg.png);
@@ -210,15 +227,31 @@ ol {
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
+@media only screen and (max-width : 1024px) {
+  .intro-header.ih-career {
+    background-size: 1200px auto;
+  }
+}
 .intro-header.ih-contact {
   background-color: #111111;
   margin-bottom: 0;
   padding-bottom: 200px;
 }
+@media only screen and (max-width: 767px) {
+  .intro-header.ih-contact {
+    padding-bottom: 80px;
+  }
+}
 .intro-header .site-heading,
 .intro-header .page-heading {
   text-align: center;
   padding: 150px 0 200px;
+}
+@media only screen and (max-width : 1024px) {
+  .intro-header .site-heading,
+  .intro-header .page-heading {
+    padding-bottom: 100px;
+  }
 }
 .intro-header .site-heading h1,
 .intro-header .page-heading h1 {
@@ -227,22 +260,26 @@ ol {
   font-size: 12em;
   color: #fff;
   line-height: 0.9;
-  text-shadow: 0 20px 0 rgba(0, 0, 0, 0.15);
+  text-shadow: 0 0.1em 0 rgba(0, 0, 0, 0.15);
 }
 .intro-header .site-heading h1.oneline,
 .intro-header .page-heading h1.oneline {
   padding-top: 100px;
 }
-@media only screen and (min-width : 481px) and (max-width : 768px) {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
     font-size: 8em;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 767px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
     font-size: 5em;
+  }
+  .intro-header .site-heading h1.oneline,
+  .intro-header .page-heading h1.oneline {
+    padding-top: 40px;
   }
 }
 .intro-header .site-heading.career-heading,
@@ -266,6 +303,16 @@ ol {
   position: relative;
   padding-bottom: 8px;
   margin-bottom: 30px;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .intro-header .sub-heading {
+    font-size: 2em;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .intro-header .sub-heading {
+    font-size: 2em;
+  }
 }
 .intro-header .sub-heading:after {
   content: "";
@@ -294,6 +341,18 @@ ol {
 .intro-header .sub-description.sd-career {
   color: #15668e;
 }
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .intro-header .sub-description {
+    font-size: 1em;
+    margin: 0 30px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .intro-header .sub-description {
+    font-size: 1em;
+    margin: 0 30px;
+  }
+}
 .intro-header .career-sub-area {
   background: #78caf3;
   padding-top: 50px;
@@ -320,6 +379,9 @@ ol {
   letter-spacing: -0.03em;
   font-weight: bold;
 }
+.intro-header .contact-buttons a i {
+  opacity: 0.5;
+}
 .intro-header .contact-buttons .view-map {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -341,6 +403,9 @@ ol {
   background: #f55327;
   color: #6f210b;
   margin-right: 20px;
+}
+.intro-header .contact-buttons .view-map i {
+  opacity: 0.5;
 }
 .intro-header .contact-buttons .view-map:hover {
   color: #f55327;
@@ -367,6 +432,9 @@ ol {
   background: #484848;
   color: #d4d4d4;
 }
+.intro-header .contact-buttons .other-button i {
+  opacity: 0.5;
+}
 .intro-header .contact-buttons .other-button:hover {
   color: #eee;
   background: #222;
@@ -378,15 +446,33 @@ ol {
 .intro-header .contact-buttons .other-button:last-child {
   border-radius: 0 4px 4px 0;
 }
+@media only screen and (max-width : 1023px) {
+  .intro-header .contact-buttons {
+    margin-top: 30px;
+  }
+  .intro-header .contact-buttons a {
+    display: block !important;
+    width: 240px;
+    margin: 0 auto 5px !important;
+    border: none !important;
+    border-radius: 4px !important;
+  }
+  .intro-header .contact-buttons .view-map {
+    margin-bottom: 20px !important;
+  }
+}
 .job-quick-links {
   text-align: center;
   margin-bottom: 150px;
   font-family: "brandon-grotesque", sans-serif;
 }
+@media only screen and (max-width: 767px) {
+  .job-quick-links {
+    margin-bottom: 100px;
+  }
+}
 .job-quick-links .wrapper {
   display: inline-block;
-  background: #061124;
-  border: 2px solid #78caf3;
   padding: 0 10px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -408,14 +494,18 @@ ol {
   display: inline-block;
   color: #fff;
   font-size: 1.2em;
-  padding: 15px;
+  padding: 10px;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
 .job-quick-links a:hover {
-  background: #0e2141;
   color: #78caf3;
+}
+@media only screen and (max-width : 1024px) {
+  .job-quick-links a {
+    display: block;
+  }
 }
 .job-quick-links .icon-direct-right {
   color: #42738e;
@@ -433,10 +523,9 @@ ol {
   margin-top: 50px;
   font-family: "brandon-grotesque", sans-serif;
 }
-@media only screen and (max-width : 960px) {
+@media only screen and (max-width : 1024px) {
   .site-content h3 {
     font-size: 1.8em;
-    margin-top: 20px;
   }
 }
 .site-content h3:after {
@@ -465,7 +554,13 @@ ol {
   width: 960px;
   margin: 0 auto;
 }
-@media only screen and (max-width : 960px) {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .how-we-work {
+    width: auto;
+    padding: 100px 40px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
   .how-we-work {
     width: auto;
     padding-top: 60px;
@@ -480,6 +575,8 @@ ol {
   counter-increment: hww-counter;
   color: #3e3835;
   margin-top: 140px;
+  width: 45%;
+  float: left;
 }
 .how-we-work li:before {
   content: "0" counter(hww-counter);
@@ -547,11 +644,31 @@ ol {
   right: 10px;
   top: -140px;
 }
-@media only screen and (max-width : 960px) {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .how-we-work li h4 {
+    font-size: 3em;
+  }
+  .how-we-work li:before {
+    left: -0.1em;
+    top: -0.8em;
+    font-size: 4em;
+  }
+  .how-we-work li .hww-icon {
+    position: absolute;
+    top: -50px !important;
+    left: auto !important;
+    right: 20px !important;
+    width: 120px;
+    height: 120px;
+    background-size: 120px 120px;
+  }
+}
+@media only screen and (max-width: 767px) {
   .how-we-work li {
     margin-top: 80px;
     float: none !important;
     padding: 0 20px;
+    width: auto;
   }
   .how-we-work li h4 {
     font-size: 3em;
@@ -573,7 +690,7 @@ ol {
 }
 .benefit-area {
   background: #f3f3f5;
-  padding: 50px 0;
+  padding: 30px 0 50px;
 }
 .benefit-area .benefit-content {
   width: 800px;
@@ -587,7 +704,7 @@ ol {
   height: 0;
   clear: both;
 }
-@media only screen and (max-width : 960px) {
+@media only screen and (max-width : 1024px) {
   .benefit-area .benefit-content {
     width: auto;
     margin: 30px 20px 0;
@@ -659,7 +776,12 @@ ol {
   width: 800px;
   margin: 50px auto 0;
 }
-@media only screen and (max-width : 960px) {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .job-openings-area .jobs {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 767px) {
   .job-openings-area .jobs {
     width: auto;
     margin: 50px 20px 10px;
@@ -681,7 +803,7 @@ ol {
 .job-openings-area .jobs .jobs-item .ji-left {
   float: left;
 }
-@media only screen and (max-width : 960px) {
+@media only screen and (max-width: 767px) {
   .job-openings-area .jobs .jobs-item .ji-left {
     float: none;
   }
@@ -725,11 +847,14 @@ ol {
   text-transform: uppercase;
   float: right;
 }
+.job-openings-area .jobs .jobs-item .apply i {
+  opacity: 0.5;
+}
 .job-openings-area .jobs .jobs-item .apply:hover {
   background: #fff;
   color: #30356e;
 }
-@media only screen and (max-width : 960px) {
+@media only screen and (max-width: 767px) {
   .job-openings-area .jobs .jobs-item .apply {
     float: none;
     margin-top: 20px;
@@ -739,17 +864,62 @@ ol {
   background: #000;
   padding: 50px 0;
 }
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .how-to-contact {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .how-to-contact {
+    padding: 20px;
+  }
+}
 .how-to-contact .container {
   width: 960px;
   margin: 0 auto;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .how-to-contact .container {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .how-to-contact .container {
+    width: auto;
+  }
 }
 .how-to-contact .htc-left {
   width: 30%;
   float: left;
 }
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .how-to-contact .htc-left {
+    width: auto;
+    float: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .how-to-contact .htc-left {
+    width: auto;
+    float: none;
+  }
+}
 .how-to-contact .htc-right {
   width: 70%;
   float: left;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .how-to-contact .htc-right {
+    width: auto;
+    float: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .how-to-contact .htc-right {
+    width: auto;
+    float: none;
+    padding-top: 20px;
+  }
 }
 .how-to-contact h2 {
   color: #f55327;
@@ -771,6 +941,11 @@ ol {
   text-indent: -1.2em;
   padding-left: 1.2em;
 }
+.how-to-contact p.bus-lines {
+  margin-bottom: 0;
+  text-indent: -0.5em;
+  padding-left: 0.5em;
+}
 .how-to-contact .contact-point {
   color: #dadada;
   font-size: 1.1em;
@@ -783,6 +958,20 @@ ol {
   float: left;
   width: 50%;
   padding-right: 5%;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .how-to-contact .hr-box {
+    width: auto;
+    float: none;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .how-to-contact .hr-box {
+    width: auto;
+    float: none;
+    padding: 0;
+  }
 }
 .post-heading {
   padding: 100px 0;
@@ -799,6 +988,9 @@ ol {
   color: #fff;
   font-weight: 300;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+article {
+  padding-top: 40px;
 }
 article h3 {
   font-size: 1.5em;
@@ -838,6 +1030,7 @@ article ul li:before {
 article img {
   position: relative;
   display: block;
+  width: 100%;
 }
 article figcaption {
   text-align: center;
@@ -867,14 +1060,14 @@ article .btn-apply {
   background: #0a1b39;
   color: #fff;
 }
+article .btn-apply i {
+  opacity: 0.5;
+}
 article .btn-apply:hover {
   color: #fff;
   background: #050f22;
 }
 article .btn-apply i {
-  color: #5796bc;
-}
-article .btn-apply:hover i {
   color: #78caf3;
 }
 article .apply-area strong {
