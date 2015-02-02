@@ -98,6 +98,12 @@
 	box-shadow:		@x @y @blur @spread @color;
 }
 
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @color: rgba(0, 0, 0, 0.25)) {
+	-webkit-box-shadow:	inset @x @y @blur @spread @color;
+	-moz-box-shadow:	inset @x @y @blur @spread @color;
+	box-shadow:		inset @x @y @blur @spread @color;
+}
+
 .border-radius (@radius: 4px) {
 	-webkit-border-radius: @radius;
 	-moz-border-radius:    @radius;

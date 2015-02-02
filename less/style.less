@@ -14,6 +14,7 @@ body {
 	font-size: 16px;
 	color: #555;
 	letter-spacing: -0.01em;
+	overflow-x: hidden;
 }
 
 .clear-md {
@@ -89,11 +90,20 @@ ul, ol {
 		.nav {
 			li {
 				a {
-					color: white;
-					padding: 20px;
+					color: @white-faded;
+					padding: 5px 0;
+					margin: 20px;
+					border-bottom: 2px solid transparent;
+					.transition();
+
 					&:hover,
 					&:focus {
-						color: @white-faded;
+						color: white;
+						border-color: rgba(255,255,255,.5);
+					}
+					&.active {
+						border-color: white;
+						color: white;
 					}
 				}
 			}
@@ -173,10 +183,11 @@ ul, ol {
 		}
 		@media @queries_sm {
 			background-size: 900px auto;
+			background-position: center 45px;
 		}
 	}
 	&.ih-career {
-		background-color: #0a1b39;
+		background-color: #165097;
 		background-image: url(../img/career-bg.png);
 		background-repeat: repeat-x;
 		.drop-shadow();
@@ -200,7 +211,7 @@ ul, ol {
 	.page-heading {
 		text-align: center;
 		padding: 150px 0 200px;
-		@media @queries_lg {
+		@media @queries_sm {
 			padding-bottom: 100px;
 		}
 
@@ -210,6 +221,7 @@ ul, ol {
 			font-size: 12em;
 			color: #fff;
 			line-height: 0.9;
+			padding-top: 50px;
 			.text-shadow(0 0.1em 0 rgba(0,0,0,.15));
 			&.oneline {
 				padding-top: 100px;
@@ -218,7 +230,7 @@ ul, ol {
 				font-size: 8em;
 			}
 			@media @queries_sm {
-				font-size: 5em;
+				font-size: 6em;
 				&.oneline {
 					padding-top: 40px;
 				}
@@ -264,6 +276,12 @@ ul, ol {
 			.border-radius();
 		}
 	}
+	.career-sub-area .sub-heading {
+		color: #c7cdd2;
+		&:after {
+			background: #737679;
+		}
+	}
 	.sub-description {
 		padding-bottom: 70px;
 		font-size: 1.2em;
@@ -273,7 +291,7 @@ ul, ol {
 			color: #78caf3;
 		}
 		&.sd-career {
-			color: #15668e;
+			color: #818992;
 		}
 		@media @queries_md {
 			font-size: 1em;
@@ -287,8 +305,13 @@ ul, ol {
 
 	// Career Header
 	.career-sub-area {
-		background: #78caf3;
+		background: #1e1f20 url(../img/career-sub-bg.png) repeat-x center center;
 		padding-top: 50px;
+		.inner-shadow();
+
+		@media @queries_lg {
+			background-size: 1200px auto;
+		}
 	}
 
 	// Contact Header
@@ -348,8 +371,8 @@ ul, ol {
 		font-size: 0.95em;
 		letter-spacing: 0.2em;
 		font-weight: 700;
-		color: #78caf3;
-		padding: 10px;
+		color: #b0d4ff;
+		padding: 10px 0;
 	}
 	a {
 		display: inline-block;
@@ -358,14 +381,14 @@ ul, ol {
 		padding: 10px;
 		.transition();
 		&:hover {
-			color: #78caf3;
+			color: #b0d4ff;
 		}
 		@media @queries_lg {
 			display: block;
 		}
 	}
 	.icon-direct-right {
-		color: #42738e;
+		color: #b0d4ff;
 	}
 }
 
@@ -381,12 +404,12 @@ ul, ol {
 	position: relative;
 	padding-bottom: 10px;
 	margin-bottom: 20px;
-	margin-top: 50px;
+	margin-top: 80px;
 	.brandon-grotesque();
 
-	@media @queries_lg {
+	@media @queries_smmd {
 		font-size: 1.8em;
-
+		margin-top: 60px;
 	}
 
 	&:after {

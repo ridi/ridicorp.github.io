@@ -56,6 +56,7 @@ body {
   font-size: 16px;
   color: #555;
   letter-spacing: -0.01em;
+  overflow-x: hidden;
 }
 .clear-md {
   display: none;
@@ -128,12 +129,22 @@ ol {
     color: rgba(255, 255, 255, 0.8);
   }
   .navbar-custom .nav li a {
-    color: white;
-    padding: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 5px 0;
+    margin: 20px;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  .navbar-custom .nav li a.active {
+    border-color: white;
+    color: white;
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -217,10 +228,11 @@ ol {
 @media only screen and (max-width: 767px) {
   .intro-header.ih-about {
     background-size: 900px auto;
+    background-position: center 45px;
   }
 }
 .intro-header.ih-career {
-  background-color: #0a1b39;
+  background-color: #165097;
   background-image: url(../img/career-bg.png);
   background-repeat: repeat-x;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
@@ -247,7 +259,7 @@ ol {
   text-align: center;
   padding: 150px 0 200px;
 }
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-width: 767px) {
   .intro-header .site-heading,
   .intro-header .page-heading {
     padding-bottom: 100px;
@@ -260,6 +272,7 @@ ol {
   font-size: 12em;
   color: #fff;
   line-height: 0.9;
+  padding-top: 50px;
   text-shadow: 0 0.1em 0 rgba(0, 0, 0, 0.15);
 }
 .intro-header .site-heading h1.oneline,
@@ -275,7 +288,7 @@ ol {
 @media only screen and (max-width: 767px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 5em;
+    font-size: 6em;
   }
   .intro-header .site-heading h1.oneline,
   .intro-header .page-heading h1.oneline {
@@ -329,6 +342,12 @@ ol {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
+.intro-header .career-sub-area .sub-heading {
+  color: #c7cdd2;
+}
+.intro-header .career-sub-area .sub-heading:after {
+  background: #737679;
+}
 .intro-header .sub-description {
   padding-bottom: 70px;
   font-size: 1.2em;
@@ -339,7 +358,7 @@ ol {
   color: #78caf3;
 }
 .intro-header .sub-description.sd-career {
-  color: #15668e;
+  color: #818992;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .intro-header .sub-description {
@@ -354,8 +373,16 @@ ol {
   }
 }
 .intro-header .career-sub-area {
-  background: #78caf3;
+  background: #1e1f20 url(../img/career-sub-bg.png) repeat-x center center;
   padding-top: 50px;
+  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+}
+@media only screen and (max-width : 1024px) {
+  .intro-header .career-sub-area {
+    background-size: 1200px auto;
+  }
 }
 .intro-header .contact-buttons {
   text-align: center;
@@ -487,8 +514,8 @@ ol {
   font-size: 0.95em;
   letter-spacing: 0.2em;
   font-weight: 700;
-  color: #78caf3;
-  padding: 10px;
+  color: #b0d4ff;
+  padding: 10px 0;
 }
 .job-quick-links a {
   display: inline-block;
@@ -500,7 +527,7 @@ ol {
   transition: all 0.2s;
 }
 .job-quick-links a:hover {
-  color: #78caf3;
+  color: #b0d4ff;
 }
 @media only screen and (max-width : 1024px) {
   .job-quick-links a {
@@ -508,7 +535,7 @@ ol {
   }
 }
 .job-quick-links .icon-direct-right {
-  color: #42738e;
+  color: #b0d4ff;
 }
 .site-content h3 {
   display: inline-block;
@@ -520,12 +547,13 @@ ol {
   position: relative;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  margin-top: 50px;
+  margin-top: 80px;
   font-family: "brandon-grotesque", sans-serif;
 }
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-width : 1023px) {
   .site-content h3 {
     font-size: 1.8em;
+    margin-top: 60px;
   }
 }
 .site-content h3:after {
