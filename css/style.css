@@ -96,7 +96,7 @@ ol {
 }
 .navbar-custom {
   font-family: "brandon-grotesque", sans-serif;
-  background: white;
+  background: transparent;
   position: absolute;
   top: 0;
   left: 0;
@@ -108,6 +108,11 @@ ol {
   text-transform: uppercase;
   letter-spacing: 0.3em;
   font-size: 0.8em;
+  color: #fff;
+}
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: rgba(255, 255, 255, 0.7);
 }
 .navbar-custom .nav li a {
   text-transform: uppercase;
@@ -126,10 +131,10 @@ ol {
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
   }
   .navbar-custom .nav li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     padding: 20px 0 2px;
     margin: 0 16px 10px;
     border-bottom: 2px solid transparent;
@@ -203,6 +208,43 @@ ol {
     transform: translate3d(0, 100%, 0);
   }
 }
+.navbar-default {
+  border-color: transparent;
+}
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  z-index: 5;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #000;
+}
+.navbar-default .navbar-collapse {
+  border-color: transparent;
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  .navbar-default .navbar-nav > li > a {
+    color: rgba(255, 255, 255, 0.7);
+    padding: 15px 20px;
+  }
+  .navbar-default .navbar-nav > li > a:focus,
+  .navbar-default .navbar-nav > li > a:hover,
+  .navbar-default .navbar-nav > li > a.active {
+    color: white;
+  }
+  .navbar-default .navbar-collapse {
+    background-color: #000;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
 .intro-header {
   background-repeat: no-repeat;
   background-position: center top;
@@ -234,7 +276,6 @@ ol {
 @media only screen and (max-width: 767px) {
   .intro-header.ih-about {
     background-size: 900px auto;
-    background-position: center 45px;
   }
 }
 .intro-header.ih-career {
@@ -268,7 +309,7 @@ ol {
 @media only screen and (max-width: 767px) {
   .intro-header .site-heading,
   .intro-header .page-heading {
-    padding-bottom: 100px;
+    padding: 100px 0;
   }
 }
 .intro-header .site-heading h1,
@@ -501,7 +542,7 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .job-quick-links {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
   }
 }
 .job-quick-links .wrapper {
@@ -558,7 +599,7 @@ ol {
 }
 @media only screen and (max-width : 1023px) {
   .site-content h3 {
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin-top: 60px;
   }
 }
@@ -579,6 +620,11 @@ ol {
 }
 .how-we-work-area {
   padding-bottom: 40px;
+}
+@media only screen and (max-width : 1023px) {
+  .how-we-work-area {
+    padding-bottom: 0;
+  }
 }
 .how-we-work {
   counter-reset: hww-counter;
@@ -640,6 +686,9 @@ ol {
 .how-we-work li.hww-2,
 .how-we-work li.hww-4 {
   float: right;
+}
+.how-we-work li.hww-5 {
+  margin-bottom: 0;
 }
 .how-we-work li p {
   letter-spacing: -0.02em;
@@ -786,12 +835,12 @@ ol {
 }
 .benefit-area .benefit-content .bc-box h5 {
   font-weight: 700;
-  margin-left: 80px;
+  margin-left: 70px;
   font-size: 1em;
 }
 .benefit-area .benefit-content .bc-box p {
   line-height: 1.5;
-  margin-left: 80px;
+  margin-left: 70px;
 }
 .job-openings-area {
   background: #30356e;
@@ -851,6 +900,11 @@ ol {
   font-weight: 300;
   letter-spacing: 0.02em;
 }
+@media only screen and (max-width: 767px) {
+  .job-openings-area .jobs .jobs-item strong {
+    font-size: 1.4em;
+  }
+}
 .job-openings-area .jobs .jobs-item span {
   display: block;
   color: #78caf3;
@@ -899,26 +953,16 @@ ol {
   background: #000;
   padding: 50px 0;
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
+@media only screen and (max-width : 1023px) {
   .how-to-contact {
-    padding: 20px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .how-to-contact {
-    padding: 20px;
+    padding: 20px 10px;
   }
 }
 .how-to-contact .container {
   width: 960px;
   margin: 0 auto;
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .how-to-contact .container {
-    width: auto;
-  }
-}
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width : 1023px) {
   .how-to-contact .container {
     width: auto;
   }
@@ -927,13 +971,7 @@ ol {
   width: 30%;
   float: left;
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .how-to-contact .htc-left {
-    width: auto;
-    float: none;
-  }
-}
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width : 1023px) {
   .how-to-contact .htc-left {
     width: auto;
     float: none;
@@ -958,7 +996,6 @@ ol {
 }
 .how-to-contact h2 {
   color: #f55327;
-  padding-bottom: 10px;
   font-size: 1em;
   margin-bottom: 0;
 }
@@ -994,18 +1031,11 @@ ol {
   width: 50%;
   padding-right: 5%;
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
+@media only screen and (max-width : 1023px) {
   .how-to-contact .hr-box {
     width: auto;
     float: none;
-    padding: 0;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .how-to-contact .hr-box {
-    width: auto;
-    float: none;
-    padding: 0;
+    padding: 10px 0 0;
   }
 }
 .post-heading {
@@ -1031,7 +1061,7 @@ article h3 {
   font-size: 1.5em;
   color: #999;
   padding-bottom: 10px;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: -0.03em;
 }
 article p {
@@ -1042,7 +1072,7 @@ article p {
 article hr {
   width: 100px;
   border-top: 1px solid #ccc;
-  margin: 60px auto 30px;
+  margin: 40px auto;
 }
 article ul {
   padding-left: 1.5em;
@@ -1061,6 +1091,17 @@ article ul li:before {
   left: -16px;
   top: 1px;
   font-size: 0.9em;
+}
+article li a {
+  color: #000;
+  border-bottom: 2px solid #ccc;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+article li a:hover {
+  color: #0282da;
+  border-color: #0282da;
 }
 article img {
   position: relative;
