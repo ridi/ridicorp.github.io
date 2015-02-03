@@ -130,8 +130,8 @@ ol {
   }
   .navbar-custom .nav li a {
     color: rgba(255, 255, 255, 0.8);
-    padding: 5px 0;
-    margin: 20px;
+    padding: 20px 0 2px;
+    margin: 0 16px 10px;
     border-bottom: 2px solid transparent;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
@@ -178,14 +178,20 @@ ol {
   }
   .navbar-custom.is-fixed .navbar-brand:hover,
   .navbar-custom.is-fixed .navbar-brand:focus {
-    color: #0085a1;
+    color: #0282da;
   }
   .navbar-custom.is-fixed .nav li a {
     color: #404040;
+    opacity: 0.6;
   }
   .navbar-custom.is-fixed .nav li a:hover,
   .navbar-custom.is-fixed .nav li a:focus {
-    color: #0085a1;
+    color: #0282da;
+    opacity: 1;
+  }
+  .navbar-custom.is-fixed .nav li a.active {
+    opacity: 1;
+    border-color: transparent;
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
@@ -599,7 +605,7 @@ ol {
   border-bottom: 2px solid #f31717;
   padding-bottom: 30px;
   padding-left: 0;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   position: relative;
   counter-increment: hww-counter;
   color: #3e3835;
@@ -656,12 +662,12 @@ ol {
 .how-we-work li .hww-icon.hwwi-2 {
   background-image: url(../img/icon-howwework-1.png);
   right: 10px;
-  top: -170px;
+  top: -120px;
 }
 .how-we-work li .hww-icon.hwwi-3 {
   background-image: url(../img/icon-howwework-1.png);
-  left: -180px;
-  top: 50px;
+  right: 10px;
+  top: -100px;
 }
 .how-we-work li .hww-icon.hwwi-4 {
   background-image: url(../img/icon-howwework-1.png);
@@ -671,7 +677,7 @@ ol {
 .how-we-work li .hww-icon.hwwi-5 {
   background-image: url(../img/icon-howwework-1.png);
   right: 10px;
-  top: -140px;
+  top: -90px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .how-we-work li h4 {
@@ -719,7 +725,7 @@ ol {
 }
 .benefit-area {
   background: #f3f3f5;
-  padding: 30px 0 50px;
+  padding: 0 0 50px;
 }
 .benefit-area .benefit-content {
   width: 800px;
@@ -789,7 +795,7 @@ ol {
 }
 .job-openings-area {
   background: #30356e;
-  padding: 50px 0;
+  padding: 0 0 50px;
 }
 .job-openings-area h3 {
   color: #fff;

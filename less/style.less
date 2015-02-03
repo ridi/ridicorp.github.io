@@ -91,8 +91,8 @@ ul, ol {
 			li {
 				a {
 					color: @white-faded;
-					padding: 5px 0;
-					margin: 20px;
+					padding: 20px 0 2px;
+					margin: 0 16px 10px;
 					border-bottom: 2px solid transparent;
 					.transition();
 
@@ -134,16 +134,22 @@ ul, ol {
 				color: @gray-dark;
 				&:hover,
 				&:focus {
-					color: @brand-primary;
+					color: #0282da;
 				}
 			}
 			.nav {
 				li {
 					a {
 						color: @gray-dark;
+						opacity: 0.6;
 						&:hover,
 						&:focus {
-							color: @brand-primary;
+							color: #0282da;
+							opacity: 1;
+						}
+						&.active {
+							opacity: 1;
+							border-color: transparent;
 						}
 					}
 				}
@@ -451,7 +457,7 @@ ul, ol {
 		border-bottom: 2px solid @bright-red;
 		padding-bottom: 30px;
 		padding-left: 0;
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 		position: relative;
 		counter-increment: hww-counter;
 		color: @base-gray;
@@ -511,12 +517,12 @@ ul, ol {
 			&.hwwi-2 {
 				background-image: url(../img/icon-howwework-1.png);
 				right: 10px;
-				top: -170px;
+				top: -120px;
 			}
 			&.hwwi-3 {
 				background-image: url(../img/icon-howwework-1.png);
-				left: -180px;
-				top: 50px;
+				right: 10px;
+				top: -100px;
 			}
 			&.hwwi-4 {
 				background-image: url(../img/icon-howwework-1.png);
@@ -526,7 +532,7 @@ ul, ol {
 			&.hwwi-5 {
 				background-image: url(../img/icon-howwework-1.png);
 				right: 10px;
-				top: -140px;
+				top: -90px;
 			}
 		}
 
@@ -580,7 +586,7 @@ ul, ol {
 // Benefit
 .benefit-area {
 	background: #f3f3f5;
-	padding: 30px 0 50px;
+	padding: 0 0 50px;
 
 	.benefit-content {
 		width: 800px;
@@ -647,7 +653,7 @@ ul, ol {
 // Job Openings
 .job-openings-area {
 	background: #30356e;
-	padding: 50px 0;
+	padding: 0 0 50px;
 
 	h3 {
 		color: #fff;
