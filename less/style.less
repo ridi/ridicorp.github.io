@@ -174,7 +174,8 @@ ul, ol {
 	border-color: transparent;
 
 	.navbar-toggle {
-		border-color: transparent;
+		border: 0 none;
+		margin-right: 10px;
 		z-index: 5;
 		.icon-bar {
 			background-color: #fff;
@@ -189,6 +190,13 @@ ul, ol {
 		margin: 0;
 	}
 	@media @queries_sm {
+		.navbar-nav {
+			margin: 0 -15px;
+		}
+		.navbar-nav > li {
+			padding-right: 70px;
+			border-bottom: 1px solid #222;
+		}
 		.navbar-nav > li > a {
 			color: @white-faded;
 			padding: 15px 20px;
@@ -248,7 +256,7 @@ ul, ol {
 	&.ih-contact {
 		background-color: #111111;
 		margin-bottom: 0;
-		padding-bottom: 200px;
+		padding-bottom: 140px;
 
 		@media @queries_sm {
 			padding-bottom: 80px;
@@ -258,7 +266,7 @@ ul, ol {
 	.site-heading,
 	.page-heading {
 		text-align: center;
-		padding: 150px 0 200px;
+		padding: 120px 0 200px;
 		@media @queries_sm {
 			padding: 100px 0;
 		}
@@ -266,21 +274,21 @@ ul, ol {
 		h1 {
 			font-family: "ff-market-web", cursive;
 			margin-top: 0;
-			font-size: 12em;
+			font-size: 10em;
 			color: #fff;
 			line-height: 0.9;
-			padding-top: 50px;
-			.text-shadow(0 0.1em 0 rgba(0,0,0,.15));
+			padding-top: 20px;
+			.text-shadow(0 2px 3px rgba(0,0,0,.15));
 			&.oneline {
 				padding-top: 100px;
 			}
 			@media @queries_md {
-				font-size: 8em;
+				font-size: 9em;
 			}
 			@media @queries_sm {
 				font-size: 6em;
 				&.oneline {
-					padding-top: 40px;
+					padding-top: 20px;
 				}
 			}
 		}
@@ -475,7 +483,7 @@ ul, ol {
 
 // How We Work
 .how-we-work-area {
-	padding-bottom: 40px;
+	padding-bottom: 80px;
 	@media @queries_smmd {
 		padding-bottom: 0;
 	}
@@ -487,7 +495,6 @@ ul, ol {
 	padding-left: 0;
 	width: 960px;
 	margin: 0 auto;
-	overflow: hidden;
 
 	@media @queries_md {
 		width: auto;
@@ -777,7 +784,7 @@ ul, ol {
 	background: #000;
 	padding: 50px 0;
 	@media @queries_smmd {
-		padding: 20px 10px;
+		padding: 20px 10px 50px;
 	}
 
 	.container {
@@ -791,6 +798,7 @@ ul, ol {
 	.htc-left {
 		width: 30%;
 		float: left;
+		padding-bottom: 20px;
 		@media @queries_smmd {
 			width: auto;
 			float: none;
@@ -842,6 +850,9 @@ ul, ol {
 		li {
 			padding: 3px 0;	
 		}
+		a {
+			color: #dadada;
+		}
 	}
 	.hr-box {
 		float: left;
@@ -858,7 +869,7 @@ ul, ol {
 
 // Post 
 .post-heading {
-	padding: 100px 0;
+	padding: 100px 25px;
 	h1 {
 		font-size: 4em;
 		color: #fff;
@@ -875,6 +886,13 @@ ul, ol {
 }
 article {
 	padding-top: 40px;
+	
+	@media @queries_md {
+		.container {
+			width: 700px;
+		}
+	}
+
 	h3 {
 		font-size: 1.5em;
 		color: #999;

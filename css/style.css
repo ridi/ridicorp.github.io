@@ -212,7 +212,8 @@ ol {
   border-color: transparent;
 }
 .navbar-default .navbar-toggle {
-  border-color: transparent;
+  border: 0 none;
+  margin-right: 10px;
   z-index: 5;
 }
 .navbar-default .navbar-toggle .icon-bar {
@@ -227,6 +228,13 @@ ol {
   margin: 0;
 }
 @media only screen and (max-width: 767px) {
+  .navbar-default .navbar-nav {
+    margin: 0 -15px;
+  }
+  .navbar-default .navbar-nav > li {
+    padding-right: 70px;
+    border-bottom: 1px solid #222;
+  }
   .navbar-default .navbar-nav > li > a {
     color: rgba(255, 255, 255, 0.7);
     padding: 15px 20px;
@@ -294,7 +302,7 @@ ol {
 .intro-header.ih-contact {
   background-color: #111111;
   margin-bottom: 0;
-  padding-bottom: 200px;
+  padding-bottom: 140px;
 }
 @media only screen and (max-width: 767px) {
   .intro-header.ih-contact {
@@ -304,7 +312,7 @@ ol {
 .intro-header .site-heading,
 .intro-header .page-heading {
   text-align: center;
-  padding: 150px 0 200px;
+  padding: 120px 0 200px;
 }
 @media only screen and (max-width: 767px) {
   .intro-header .site-heading,
@@ -316,11 +324,11 @@ ol {
 .intro-header .page-heading h1 {
   font-family: "ff-market-web", cursive;
   margin-top: 0;
-  font-size: 12em;
+  font-size: 10em;
   color: #fff;
   line-height: 0.9;
-  padding-top: 50px;
-  text-shadow: 0 0.1em 0 rgba(0, 0, 0, 0.15);
+  padding-top: 20px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 .intro-header .site-heading h1.oneline,
 .intro-header .page-heading h1.oneline {
@@ -329,7 +337,7 @@ ol {
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 8em;
+    font-size: 9em;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -339,7 +347,7 @@ ol {
   }
   .intro-header .site-heading h1.oneline,
   .intro-header .page-heading h1.oneline {
-    padding-top: 40px;
+    padding-top: 20px;
   }
 }
 .intro-header .site-heading.career-heading,
@@ -619,7 +627,7 @@ ol {
   background-clip: padding-box;
 }
 .how-we-work-area {
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
 @media only screen and (max-width : 1023px) {
   .how-we-work-area {
@@ -633,7 +641,6 @@ ol {
   padding-left: 0;
   width: 960px;
   margin: 0 auto;
-  overflow: hidden;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .how-we-work {
@@ -955,7 +962,7 @@ ol {
 }
 @media only screen and (max-width : 1023px) {
   .how-to-contact {
-    padding: 20px 10px;
+    padding: 20px 10px 50px;
   }
 }
 .how-to-contact .container {
@@ -970,6 +977,7 @@ ol {
 .how-to-contact .htc-left {
   width: 30%;
   float: left;
+  padding-bottom: 20px;
 }
 @media only screen and (max-width : 1023px) {
   .how-to-contact .htc-left {
@@ -1026,6 +1034,9 @@ ol {
 .how-to-contact .contact-point li {
   padding: 3px 0;
 }
+.how-to-contact .contact-point a {
+  color: #dadada;
+}
 .how-to-contact .hr-box {
   float: left;
   width: 50%;
@@ -1039,7 +1050,7 @@ ol {
   }
 }
 .post-heading {
-  padding: 100px 0;
+  padding: 100px 25px;
 }
 .post-heading h1 {
   font-size: 4em;
@@ -1056,6 +1067,11 @@ ol {
 }
 article {
   padding-top: 40px;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  article .container {
+    width: 700px;
+  }
 }
 article h3 {
   font-size: 1.5em;
