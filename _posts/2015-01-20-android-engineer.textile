@@ -40,7 +40,7 @@ ePub은 사실상의 전자책 표준으로 자리잡고 있는 포맷이며, �
 h3. 안드로이드 개발 환경
 
 * "Realm":http://realm.io 을 이용한 데이터 모델링
-* "Retrofit":square.github.io/retrofit/ + "OkHttp":http://square.github.io/okhttp/ + "Gson":https://code.google.com/p/google-gson/ 을 이용한 API 통신
+* "Retrofit":http://square.github.io/retrofit/ + "OkHttp":http://square.github.io/okhttp/ + "Gson":https://code.google.com/p/google-gson/ 을 이용한 API 통신
 * "Event Bus":https://github.com/greenrobot/EventBus 를 이용한 멀티 스레드 이벤트 핸들링
 * "Grunt":http://gruntjs.com/ 를 이용한 뷰어용 Javascript 관리
 * "Robolectric":http://robolectric.org/ 을 이용한 테스트 자동화 (TODO)
