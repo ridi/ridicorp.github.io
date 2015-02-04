@@ -224,6 +224,8 @@ ul, ol {
 	background-position: center top;
 	background-color: #333;
 	.background-cover();
+	position: relative;
+	z-index:1;
 
 	&.post-header {
 		background-position: center center;
@@ -233,6 +235,7 @@ ul, ol {
 	&.ih-about {
 		background-color: #30356e;
 		background-image: url(../img/about-bg.png);
+		background-size: 1800px auto;
 		.drop-shadow();
 
 		@media @queries_md {
@@ -254,7 +257,9 @@ ul, ol {
 		
 	}
 	&.ih-contact {
-		background-color: #111111;
+		background-color: rgba(0,0,0,.8);
+		background-blending-mode: multiply;
+		// background-image: url(../img/contact-bg.png);
 		margin-bottom: 0;
 		padding-bottom: 140px;
 
@@ -306,7 +311,7 @@ ul, ol {
 	}
 	.sub-heading {
 		display: inline-block;
-		font-size: 3em;
+		font-size: 2.375em;
 		font-weight: 700;
 		letter-spacing: -0.03em;
 		color: #fff;
@@ -330,6 +335,12 @@ ul, ol {
 			height: 4px;
 			background: #fff;
 			.border-radius();
+		}
+	}
+	.about-sub-area .sub-heading {
+		color: #fff;
+		&:after {
+			background: #6f729a;
 		}
 	}
 	.career-sub-area .sub-heading {
@@ -783,6 +794,8 @@ ul, ol {
 .how-to-contact {
 	background: #000;
 	padding: 50px 0;
+	position: relative;
+	z-index: 1;
 	@media @queries_smmd {
 		padding: 20px 10px 50px;
 	}
@@ -864,7 +877,37 @@ ul, ol {
 			padding: 10px 0 0;
 		}
 	}
+}
+#map_canvas {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 960px;
+	z-index: 0;
+}
+#map_controls {
+	display: none;
 
+	.close-map {
+		position: absolute;
+		left: 20px;
+		top: 20px;
+		color: #555;
+		padding: 8px 12px;
+		font-size: 1.4em;
+		border: 1px solid #aaa;
+		background: rgba(255,255,255,.8);
+
+		.drop-shadow();
+		.border-radius();
+		.transition();
+		&:hover {
+			color: #222;
+			border-color: #999;
+			.drop-shadow(0, 3px, 6px, 0, rgba(0,0,0,.2));
+		}
+	}
 }
 
 // Post 

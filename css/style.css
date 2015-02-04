@@ -23,17 +23,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-num-1:before {
-  content: "\e604";
-}
-.icon-num-2:before {
-  content: "\e605";
-}
-.icon-num-3:before {
-  content: "\e606";
-}
-.icon-num-4:before {
-  content: "\e607";
+.icon-close:before {
+  content: "\e608";
 }
 .icon-direct-right:before {
   content: "\e600";
@@ -46,6 +37,18 @@
 }
 .icon-telephone:before {
   content: "\e603";
+}
+.icon-num-1:before {
+  content: "\e604";
+}
+.icon-num-2:before {
+  content: "\e605";
+}
+.icon-num-3:before {
+  content: "\e606";
+}
+.icon-num-4:before {
+  content: "\e607";
 }
 * {
   margin: 0;
@@ -261,6 +264,8 @@ ol {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  position: relative;
+  z-index: 1;
 }
 .intro-header.post-header {
   background-position: center center;
@@ -272,6 +277,7 @@ ol {
 .intro-header.ih-about {
   background-color: #30356e;
   background-image: url(../img/about-bg.png);
+  background-size: 1800px auto;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
@@ -300,7 +306,8 @@ ol {
   }
 }
 .intro-header.ih-contact {
-  background-color: #111111;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blending-mode: multiply;
   margin-bottom: 0;
   padding-bottom: 140px;
 }
@@ -364,7 +371,7 @@ ol {
 }
 .intro-header .sub-heading {
   display: inline-block;
-  font-size: 3em;
+  font-size: 2.375em;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: #fff;
@@ -396,6 +403,12 @@ ol {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+}
+.intro-header .about-sub-area .sub-heading {
+  color: #fff;
+}
+.intro-header .about-sub-area .sub-heading:after {
+  background: #6f729a;
 }
 .intro-header .career-sub-area .sub-heading {
   color: #c7cdd2;
@@ -959,6 +972,8 @@ ol {
 .how-to-contact {
   background: #000;
   padding: 50px 0;
+  position: relative;
+  z-index: 1;
 }
 @media only screen and (max-width : 1023px) {
   .how-to-contact {
@@ -1048,6 +1063,46 @@ ol {
     float: none;
     padding: 10px 0 0;
   }
+}
+#map_canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 960px;
+  z-index: 0;
+}
+#map_controls {
+  display: none;
+}
+#map_controls .close-map {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: #555;
+  padding: 8px 12px;
+  font-size: 1.4em;
+  border: 1px solid #aaa;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+#map_controls .close-map:hover {
+  color: #222;
+  border-color: #999;
+  -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 .post-heading {
   padding: 100px 25px;
