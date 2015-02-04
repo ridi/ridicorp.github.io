@@ -256,8 +256,7 @@ ul, ol {
 		
 	}
 	&.ih-contact {
-		background-color: rgba(0,0,0,.8);
-		background-blending-mode: multiply;
+		background: rgba(0,0,0,.8) url(../img/bg-fader.png) repeat;
 		// background-image: url(../img/contact-bg.png);
 		margin-bottom: 0;
 		padding-bottom: 140px;
@@ -282,7 +281,7 @@ ul, ol {
 			color: #fff;
 			line-height: 0.9;
 			padding-top: 20px;
-			.text-shadow(0 2px 3px rgba(0,0,0,.15));
+			.text-shadow(0 2px 3px rgba(0,0,0,.3));
 			&.oneline {
 				padding-top: 100px;
 			}
@@ -322,7 +321,7 @@ ul, ol {
 			font-size: 2em;
 		}
 		@media @queries_sm {
-			font-size: 2em;
+			font-size: 1.2em;
 		}
 
 		&:after {
@@ -364,7 +363,7 @@ ul, ol {
 			margin: 0 30px;
 		}
 		@media @queries_sm {
-			font-size: 1em;
+			font-size: 0.9em;
 			margin: 0 30px;
 		}
 	}
@@ -889,7 +888,7 @@ ul, ol {
 	display: none;
 
 	.close-map {
-		position: absolute;
+		position: fixed;
 		left: 20px;
 		top: 20px;
 		color: #555;

@@ -305,8 +305,7 @@ ol {
   }
 }
 .intro-header.ih-contact {
-  background-color: rgba(0, 0, 0, 0.8);
-  background-blending-mode: multiply;
+  background: rgba(0, 0, 0, 0.8) url(../img/bg-fader.png) repeat;
   margin-bottom: 0;
   padding-bottom: 140px;
 }
@@ -334,7 +333,7 @@ ol {
   color: #fff;
   line-height: 0.9;
   padding-top: 20px;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
 .intro-header .site-heading h1.oneline,
 .intro-header .page-heading h1.oneline {
@@ -385,7 +384,7 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .intro-header .sub-heading {
-    font-size: 2em;
+    font-size: 1.2em;
   }
 }
 .intro-header .sub-heading:after {
@@ -435,7 +434,7 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .intro-header .sub-description {
-    font-size: 1em;
+    font-size: 0.9em;
     margin: 0 30px;
   }
 }
@@ -1075,7 +1074,7 @@ ol {
   display: none;
 }
 #map_controls .close-map {
-  position: absolute;
+  position: fixed;
   left: 20px;
   top: 20px;
   color: #555;
