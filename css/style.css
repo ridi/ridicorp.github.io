@@ -592,6 +592,12 @@ ol {
   text-align: center;
   color: #352e48;
 }
+@media only screen and (max-width: 767px) {
+  .must-use-area .description {
+    font-size: 0.8em;
+    padding: 40px 0 60px;
+  }
+}
 .products-area {
   padding-bottom: 80px;
 }
@@ -626,6 +632,8 @@ ol {
     width: auto;
     float: none;
     padding: 0 20px 40px;
+    max-width: 440px;
+    margin: 0 auto;
   }
 }
 .products-area .products li img {
