@@ -7,6 +7,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	vertical-align: middle;
 }
 
 body {
@@ -412,6 +413,118 @@ ul, ol {
 				margin-bottom: 20px !important;
 			}
 		}
+	}
+}
+
+// Must Use
+.must-use-area {
+	background: #6aacd8;
+
+	&.site-content h3 {
+		color: #352e48;
+		&:after {
+			background: #352e48;
+		}
+	}
+	.must-use {
+		.brandon-grotesque();
+		.text-shadow();
+		text-align: center;
+		color: #fff;
+		font-size: 6.25em;
+		font-weight: 900;
+		letter-spacing: -0.03em;
+		padding: 30px 0 0;
+		@media @queries_sm {
+			font-size: 3.25em;
+		}
+	}
+	.must-use-desc {
+		.text-shadow();
+		font-size: 1.125em;
+		color: #fff;
+		margin-top: -22px;
+		@media @queries_sm {
+			margin-top: 10px;
+		}
+	}
+	.description {
+		padding: 60px 0 80px;
+		text-align: center;
+		color: #352e48;
+	}
+}
+
+// Products
+.products-area {
+	padding-bottom: 80px;
+	@media @queries_sm {
+		padding-bottom: 0;
+	}
+	.products {
+		padding: 30px 0;
+		width: 960px;
+		margin: 0 auto;
+
+		@media @queries_md {
+			width: 768px;
+		}
+		@media @queries_sm {
+			width: auto;
+		}
+		li {
+			width: 30%;
+			margin-right: 3%;
+			float: left;
+			text-align: center;
+			@media @queries_sm {
+				width: auto;
+				float: none;
+				padding: 0 20px 40px;
+			}
+
+			img {
+				display: block;
+				margin: 0 auto;
+				width: 100%;
+			}
+			strong {
+				display: block;
+				font-size: 1.5em;
+				font-weight: 700;
+				color: #333;
+				padding-top: 20px;
+			}
+			span {
+				display: block;
+				color: #aaa;
+				font-weight: 400;
+				padding-bottom: 20px;
+				@media @queries_md {
+					font-size: 0.8em;
+				}
+			}
+			a {
+				.button-gray-stroke();
+			}
+		}
+	}
+}
+
+// Link to Career
+div.link-to-career {
+	background: #eaedf2;
+	text-align: center;
+	padding: 60px 0;
+	h4 {
+		font-size: 2.25em;
+		font-weight: 100;
+		color: #0a1b39;
+		letter-spacing: -0.03em;
+		padding-bottom: 10px;
+	}
+	.go-to-career {
+		.button-navy();
 	}
 }
 

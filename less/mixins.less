@@ -27,7 +27,6 @@
 
 .button() {
 	.border-radius();
-	.drop-shadow();
 	.transition();
 	font-size: 18px;
 	padding: 16px 50px;
@@ -40,6 +39,7 @@
 }
 .button-orange() {
 	.button();
+	.drop-shadow();
 	background: @bright-orange;
 	color: #6f210b;
 	&:hover {
@@ -49,6 +49,7 @@
 }
 .button-gray() {
 	.button();
+	.drop-shadow();
 	background: #484848;
 	color: #d4d4d4;
 	&:hover {
@@ -58,6 +59,7 @@
 }
 .button-skyblue() {
 	.button();
+	.drop-shadow();
 	background: #78caf3;
 	color: #fff;
 	&:hover {
@@ -72,6 +74,15 @@
 	&:hover {
 		color: #fff;
 		background: #050f22;
+	}
+}
+.button-gray-stroke() {
+	.button();
+	background: transparent;
+	border: 2px solid #c9c9c9;
+	color: #484848;
+	&:hover {
+		border-color: #484848;
 	}
 }
 
