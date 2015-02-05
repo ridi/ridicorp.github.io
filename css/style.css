@@ -420,6 +420,7 @@ ol {
   font-size: 1.2em;
   line-height: 1.5;
   letter-spacing: -0.03em;
+  margin: 0;
 }
 .intro-header .sub-description.sd-about {
   color: #78caf3;
@@ -464,7 +465,7 @@ ol {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 16px 50px;
   display: inline-block;
   letter-spacing: -0.03em;
@@ -483,7 +484,7 @@ ol {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 16px 50px;
   display: inline-block;
   letter-spacing: -0.03em;
@@ -512,7 +513,7 @@ ol {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 16px 50px;
   display: inline-block;
   letter-spacing: -0.03em;
@@ -594,7 +595,7 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .must-use-area .description {
-    font-size: 0.8em;
+    font-size: 1em;
     padding: 40px 0 60px;
   }
 }
@@ -643,7 +644,7 @@ ol {
 }
 .products-area .products li strong {
   display: block;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: 700;
   color: #333;
   padding-top: 20px;
@@ -653,11 +654,8 @@ ol {
   color: #aaa;
   font-weight: 400;
   padding-bottom: 20px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .products-area .products li span {
-    font-size: 0.8em;
-  }
+  letter-spacing: -0.03em;
+  font-size: 0.8em;
 }
 .products-area .products li a {
   -webkit-border-radius: 4px;
@@ -669,7 +667,7 @@ ol {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 16px 50px;
   display: inline-block;
   letter-spacing: -0.03em;
@@ -706,7 +704,7 @@ div.link-to-career .go-to-career {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 16px 50px;
   display: inline-block;
   letter-spacing: -0.03em;
@@ -1105,7 +1103,7 @@ div.link-to-career .go-to-career:hover {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 16px 50px;
   display: inline-block;
   letter-spacing: -0.03em;
@@ -1361,7 +1359,7 @@ article .btn-apply {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
-  font-size: 18px;
+  font-size: 16px;
   padding: 16px 50px;
   display: inline-block;
   letter-spacing: -0.03em;
