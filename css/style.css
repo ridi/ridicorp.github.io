@@ -813,7 +813,7 @@ div.link-to-career .go-to-career:hover {
 .how-we-work {
   counter-reset: hww-counter;
   list-style-type: none;
-  padding-top: 250px;
+  padding-top: 180px;
   padding-left: 0;
   width: 960px;
   margin: 0 auto;
@@ -882,33 +882,34 @@ div.link-to-career .go-to-career:hover {
 .how-we-work li .hww-icon {
   position: absolute;
   background-repeat: no-repeat;
-  width: 172px;
-  height: 172px;
+  width: 200px;
+  height: 200px;
+  background-size: 200px 200px;
   z-index: 3;
 }
 .how-we-work li .hww-icon.hwwi-1 {
   background-image: url(../img/icon-howwework-1.png);
-  left: 70px;
-  top: -190px;
+  right: -20px;
+  top: -130px;
 }
 .how-we-work li .hww-icon.hwwi-2 {
-  background-image: url(../img/icon-howwework-1.png);
+  background-image: url(../img/icon-howwework-2.png);
   right: 10px;
   top: -120px;
 }
 .how-we-work li .hww-icon.hwwi-3 {
-  background-image: url(../img/icon-howwework-1.png);
+  background-image: url(../img/icon-howwework-3.png);
   right: 10px;
   top: -100px;
 }
 .how-we-work li .hww-icon.hwwi-4 {
-  background-image: url(../img/icon-howwework-1.png);
-  right: -80px;
-  top: -30px;
+  background-image: url(../img/icon-howwework-4.png);
+  right: 0;
+  top: -70px;
 }
 .how-we-work li .hww-icon.hwwi-5 {
-  background-image: url(../img/icon-howwework-1.png);
-  right: 10px;
+  background-image: url(../img/icon-howwework-5.png);
+  right: 0;
   top: -90px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
@@ -950,9 +951,9 @@ div.link-to-career .go-to-career:hover {
     top: -50px !important;
     left: auto !important;
     right: 20px !important;
-    width: 100px;
-    height: 100px;
-    background-size: 100px 100px;
+    width: 120px;
+    height: 120px;
+    background-size: 120px 120px;
   }
 }
 .benefit-area {
@@ -995,6 +996,7 @@ div.link-to-career .go-to-career:hover {
   float: left;
   width: 60px;
   height: 60px;
+  background-size: 60px 60px;
   margin-top: -10px;
   background-repeat: no-repeat;
 }
@@ -1002,28 +1004,28 @@ div.link-to-career .go-to-career:hover {
   background-image: url(../img/icon-benefit-1.png);
 }
 .benefit-area .benefit-content .bc-box .bf-icon.bfi-2 {
-  background-image: url(../img/icon-benefit-1.png);
+  background-image: url(../img/icon-benefit-2.png);
 }
 .benefit-area .benefit-content .bc-box .bf-icon.bfi-3 {
-  background-image: url(../img/icon-benefit-1.png);
+  background-image: url(../img/icon-benefit-3.png);
 }
 .benefit-area .benefit-content .bc-box .bf-icon.bfi-4 {
-  background-image: url(../img/icon-benefit-1.png);
+  background-image: url(../img/icon-benefit-4.png);
 }
 .benefit-area .benefit-content .bc-box .bf-icon.bfi-5 {
-  background-image: url(../img/icon-benefit-1.png);
+  background-image: url(../img/icon-benefit-5.png);
 }
 .benefit-area .benefit-content .bc-box .bf-icon.bfi-6 {
-  background-image: url(../img/icon-benefit-1.png);
+  background-image: url(../img/icon-benefit-6.png);
 }
 .benefit-area .benefit-content .bc-box h5 {
   font-weight: 700;
-  margin-left: 70px;
+  margin-left: 80px;
   font-size: 1em;
 }
 .benefit-area .benefit-content .bc-box p {
   line-height: 1.5;
-  margin-left: 70px;
+  margin-left: 80px;
 }
 .job-openings-area {
   background: #30356e;
