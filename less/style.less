@@ -139,7 +139,7 @@ ul, ol {
 				color: @gray-dark;
 				&:hover,
 				&:focus {
-					color: #0282da;
+					color: #000;
 				}
 			}
 			.nav {
@@ -149,7 +149,7 @@ ul, ol {
 						opacity: 0.6;
 						&:hover,
 						&:focus {
-							color: #0282da;
+							color: #000;
 							opacity: 1;
 						}
 						&.active {
@@ -223,7 +223,6 @@ ul, ol {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-color: #333;
-	.background-cover();
 	position: relative;
 	z-index:1;
 
@@ -236,23 +235,28 @@ ul, ol {
 		background-color: #30356e;
 		background-image: url(../img/about-bg.png);
 		background-size: 1800px auto;
+		.background-cover();
 		.drop-shadow();
 
 		@media @queries_md {
 			background-size: 1600px auto;
 		}
 		@media @queries_sm {
-			background-size: 900px auto;
+			background-size: 700px auto;
 		}
 	}
 	&.ih-career {
 		background-color: #165097;
 		background-image: url(../img/career-bg.png);
 		background-repeat: repeat-x;
+		background-position: center -80px;
 		.drop-shadow();
 
-		@media @queries_lg {
-			background-size: 1200px auto;
+		@media @queries_md {
+			background-size: 1400px auto;
+		}
+		@media @queries_sm {
+			background-size: 1000px auto;
 		}
 		
 	}
@@ -545,7 +549,9 @@ div.link-to-career {
 	text-align: center;
 	margin-bottom: 150px;
 	.brandon-grotesque();
-
+	@media @queries_md {
+		margin-bottom: 100px;
+	}
 	@media @queries_sm {
 		margin-bottom: 50px;
 	}
