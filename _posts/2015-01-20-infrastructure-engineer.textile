@@ -94,12 +94,3 @@ h3. 플랫폼팀에 합류하게 된다면…
 * 플랫폼팀의 코딩 규칙과 PHP와 MariaDB으로 구성된 제작 환경을 익힙니다.
 * 서점뿐만 아니라 도서 유통의 여러 면면을 체험해보며 개선할 점을 생각할 시간을 갖게 됩니다.
 * 진심으로 사용자 관점에서 생각하는 문화를 배웁니다.
-
-<hr>
-
-<div class="text-center apply-area">
-	<strong>{{ page.title }}</strong>
-	<span>{{ page.subtitle }}</span>
-	<a class="typeform-share btn-apply" href="https://hyunwoo.typeform.com/to/fEumaA" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-	<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>
-</div>

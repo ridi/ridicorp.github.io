@@ -33,28 +33,3 @@ h3. 스토어팀에 합류하게 된다면...
 12개월 이내에는 다음과 같은 일을 하게 됩니다.
 
 * 더 효율적이고 건강한 개발 문화, 환경을 만들어 나가는데 동참합니다.
-
-<hr>
-
-<div class="text-center apply-area">
-	<strong>{{ page.title }}</strong>
-	<span>{{ page.subtitle }}</span>
-	<a class="typeform-share btn-apply" href="https://hyunwoo.typeform.com/to/fEumaA" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-	<script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}})()</script>	
-</div>
-
-<hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
