@@ -627,7 +627,8 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .must-use-area .must-use {
-    font-size: 3.25em;
+    font-size: 3em;
+    text-shadow: 0 3px 0 #100f13, 0 6px 10px rgba(0, 0, 0, 0.15), 0 12px 2px rgba(0, 0, 0, 0.1), 0 20px 15px rgba(0, 0, 0, 0.1);
   }
 }
 .must-use-area .must-use span {
@@ -659,7 +660,7 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .must-use-area .description {
-    font-size: 1em;
+    font-size: 0.9em;
     padding: 40px 0 60px;
   }
 }
@@ -944,9 +945,15 @@ div.link-to-career .go-to-career:hover {
   margin-top: 80px;
   font-family: "brandon-grotesque", sans-serif;
 }
-@media only screen and (max-width : 1023px) {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
   .site-content h3 {
     font-size: 1.5em;
+    margin-top: 60px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .site-content h3 {
+    font-size: 1.2em;
     margin-top: 60px;
   }
 }

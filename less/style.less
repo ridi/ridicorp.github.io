@@ -463,7 +463,11 @@ ul, ol {
             0 34px 30px rgba(0,0,0,0.1);
 		
 		@media @queries_sm {
-			font-size: 3.25em;
+			font-size: 3em;
+			text-shadow: 0 3px 0 #100f13,
+            0 6px 10px rgba(0,0,0,0.15),
+            0 12px 2px rgba(0,0,0,0.1),
+            0 20px 15px rgba(0,0,0,0.1);
 		}
 		span {
 			display: block;
@@ -491,7 +495,7 @@ ul, ol {
 		position: relative;
 		z-index: 3;
 		@media @queries_sm {
-			font-size: 1em;
+			font-size: 0.9em;
 			padding: 40px 0 60px;
 		}
 	}
@@ -716,8 +720,12 @@ div.link-to-career {
 	margin-top: 80px;
 	.brandon-grotesque();
 
-	@media @queries_smmd {
+	@media @queries_md {
 		font-size: 1.5em;
+		margin-top: 60px;
+	}
+	@media @queries_sm {
+		font-size: 1.2em;
 		margin-top: 60px;
 	}
 	
