@@ -65,10 +65,18 @@ ul, ol {
 		text-transform: uppercase;
 		letter-spacing: 0.3em;
 		font-size: 0.8em;
+		padding: 0;
 		color: #fff;
-		&:hover,
-		&:focus {
-			color: @white-faded;
+		text-indent: -9999px;
+		background: url(../img/ci.png) no-repeat;
+		width: 152px;
+		height: 24px;
+		background-size: 100% 100%;
+		margin: 18px 0 0 5px !important;
+		@media @queries_sm {
+			margin: 15px 0 0 15px !important;
+			width: 122px;
+			height: 19px;
 		}
 	}
 	.nav {
@@ -84,14 +92,7 @@ ul, ol {
 	@media only screen and (min-width: 768px) {
 		background: transparent;
 		border-bottom: 1px solid transparent;
-		.navbar-brand {
-			color: white;
-			padding: 20px;
-			&:hover,
-			&:focus {
-				color: @white-faded;
-			}
-		}
+
 		.nav {
 			li {
 				a {
@@ -141,6 +142,7 @@ ul, ol {
 				&:focus {
 					color: #000;
 				}
+				background-image: url(../img/ci_black.png);
 			}
 			.nav {
 				li {
@@ -234,15 +236,14 @@ ul, ol {
 	&.ih-about {
 		background-color: #30356e;
 		background-image: url(../img/about-bg.png);
-		background-size: 1800px auto;
-		.background-cover();
+		background-size: 1600px auto;
 		.drop-shadow();
 
 		@media @queries_md {
-			background-size: 1600px auto;
+			background-size: 1400px auto;
 		}
 		@media @queries_sm {
-			background-size: 700px auto;
+			background-size: 600px auto;
 		}
 	}
 	&.ih-career {
@@ -253,7 +254,7 @@ ul, ol {
 		.drop-shadow();
 
 		@media @queries_md {
-			background-size: 1400px auto;
+			background-size: 1200px auto;
 		}
 		@media @queries_sm {
 			background-size: 1000px auto;
@@ -274,9 +275,12 @@ ul, ol {
 	.site-heading,
 	.page-heading {
 		text-align: center;
-		padding: 120px 0 200px;
+		padding: 180px 0;
+		@media @queries_md {
+			padding: 140px 0 120px;
+		}
 		@media @queries_sm {
-			padding: 100px 0;
+			padding: 100px 0 40px;
 		}
 
 		h1 {
@@ -302,7 +306,7 @@ ul, ol {
 		}
 
 		&.career-heading {
-			padding-bottom: 80px;
+			padding-bottom: 40px;
 		}
 		&.contact-heading {
 			h1 {
@@ -423,49 +427,158 @@ ul, ol {
 
 // Must Use
 .must-use-area {
-	background: #6aacd8;
+	background: #36333f;
+	position: relative;
+	overflow: hidden;
 
 	&.site-content h3 {
-		color: #352e48;
+		color: #97969b;
+		position: relative;
+		z-index: 3;
 		&:after {
-			background: #352e48;
+			background: #97969b;
 		}
 	}
 	.must-use {
+		display: inline-block;
+		position: relative;
+		z-index: 3;
 		.brandon-grotesque();
-		.text-shadow();
 		text-align: center;
-		color: #fff;
-		font-size: 6.25em;
+		color: #36333f; /* fall back */
+		color: rgba(54,51,63,.9);
+		font-size: 8em;
 		font-weight: 900;
 		letter-spacing: -0.03em;
 		margin: 20px 0 0;
+		background: @must-use;
+		line-height: 1.2;
+		.border-radius();
+		box-shadow: 0 3px 3px rgba(0,0,0,.5),
+			0 14px 10px rgba(0,0,0,.15),
+			0 24px 14px rgba(0,0,0,.1);
+		text-shadow: 0 3px 0 #100f13,
+            0 14px 10px rgba(0,0,0,0.15),
+            0 24px 2px rgba(0,0,0,0.1),
+            0 34px 30px rgba(0,0,0,0.1);
 		
 		@media @queries_sm {
 			font-size: 3.25em;
 		}
 		span {
-			display: inline-block;
+			display: block;
 			position: relative;
-
+			margin: 5px;
+			padding: 0 30px;
+			border: 4px solid #f56741;
 		}
 	}
 	.must-use-desc {
 		.text-shadow();
 		font-size: 1.125em;
-		color: #fff;
+		color: #e54e26;
 		margin: 20px 0 0;
+		position: relative;
+		z-index: 3;
 		@media @queries_sm {
 			margin-top: 10px;
 		}
 	}
 	.description {
-		padding: 20px 0 100px;
+		padding: 40px 0 80px;
 		text-align: center;
-		color: #352e48;
+		color: #97969b;
+		position: relative;
+		z-index: 3;
 		@media @queries_sm {
 			font-size: 1em;
 			padding: 40px 0 60px;
+		}
+	}
+	[class^="bg-text-"] {
+		.brandon-grotesque();
+		font-size: 25em;
+		font-weight: 100;
+		position: absolute;
+		z-index: 1;
+		color: #3b3844;
+		line-height: 1;
+		-webkit-user-select: none;
+		white-space: nowrap;
+	}
+	.bg-text-1 {
+		left: -100px;
+		top: -100px;
+	}
+	.bg-text-2 {
+		left: -200px;
+		bottom: -100px;
+	}
+}
+.numbers-area {
+	background: #b9b8bc url(../img/numbers-bg.png) no-repeat center center;
+	padding: 0 0 80px;	
+	@media @queries_sm {
+		padding: 0 0 40px;
+	}
+
+	h3 {
+		color: #36333f;
+		background: #b9b8bc;
+		&:after {
+			color: #36333f;
+		}
+	}
+	.number-boxes {
+		width: 960px;
+		margin: 0 auto;
+		li {
+			float: left;
+			width: 23%;
+			padding: 30px 0 20px;
+			margin: 10px 1% 10px;
+			background: #fff;
+			.drop-shadow();
+			.border-radius();
+			border-bottom: 3px solid #e54e26;
+
+			i {
+				font-size: 4em;
+				color: #3b3844;
+				padding-bottom: 5px;
+			}
+			strong {
+				display: block;
+				font-size: 2.5em;
+				.brandon-grotesque();
+				color: #3b3844;
+				padding-bottom: 5px;
+			}
+			span {
+				display: block;
+				font-size: 0.875em;
+				color: #97969b;
+				height: 2.5em;
+			}
+
+		}
+		@media @queries_md {
+			width: 740px;
+			li {
+				strong {
+					font-size: 2em;
+				}
+			}
+		}
+		@media @queries_sm {
+			width: auto;
+			li {
+				width: 45%;
+				margin: 10px 2.5% 10px;
+				strong {
+					font-size: 1.5em;
+				}
+			}
 		}
 	}
 }
@@ -592,7 +705,7 @@ div.link-to-career {
 
 .site-content h3 {
 	display: inline-block;
-	font-size: 2.4em;
+	font-size: 1.5em;
 	color: @base-gray;
 	font-weight: 900;
 	text-transform: uppercase;
@@ -607,7 +720,7 @@ div.link-to-career {
 		font-size: 1.5em;
 		margin-top: 60px;
 	}
-
+	
 	&:after {
 		content: "";
 		position: absolute;
