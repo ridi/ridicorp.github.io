@@ -3,8 +3,8 @@
 }
 @font-face {
   font-family: 'ridicorp-icon';
-  src: url('../fonts/ridicorp-icon.eot?hlqfse');
-  src: url('../fonts/ridicorp-icon.eot?#iefixhlqfse') format('embedded-opentype'), url('../fonts/ridicorp-icon.woff?hlqfse') format('woff'), url('../fonts/ridicorp-icon.ttf?hlqfse') format('truetype'), url('../fonts/ridicorp-icon.svg?hlqfse#ridicorp-icon') format('svg');
+  src: url('../fonts/ridicorp-icon.eot?-l58ye');
+  src: url('../fonts/ridicorp-icon.eot?#iefix-l58ye') format('embedded-opentype'), url('../fonts/ridicorp-icon.woff?-l58ye') format('woff'), url('../fonts/ridicorp-icon.ttf?-l58ye') format('truetype'), url('../fonts/ridicorp-icon.svg?-l58ye#ridicorp-icon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -21,6 +21,18 @@
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-smile:before {
+  content: "\e614";
+}
+.icon-download:before {
+  content: "\e611";
+}
+.icon-ridishop:before {
+  content: "\e612";
+}
+.icon-ridibooks:before {
+  content: "\e613";
 }
 .icon-note:before {
   content: "\e609";
@@ -84,6 +96,10 @@ body {
   color: #555;
   letter-spacing: -0.01em;
 }
+[class^="icon-"],
+[class*=" icon-"] {
+  vertical-align: -4%;
+}
 .clear-md {
   display: none;
 }
@@ -127,7 +143,7 @@ ol {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 3;
+  z-index: 5;
 }
 .navbar-custom .navbar-brand {
   font-weight: 900;
@@ -346,18 +362,18 @@ ol {
 .intro-header .site-heading,
 .intro-header .page-heading {
   text-align: center;
-  padding: 180px 0;
+  padding: 120px 0;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .intro-header .site-heading,
   .intro-header .page-heading {
-    padding: 140px 0 120px;
+    padding: 120px 0;
   }
 }
 @media only screen and (max-width: 767px) {
   .intro-header .site-heading,
   .intro-header .page-heading {
-    padding: 100px 0 40px;
+    padding: 80px 0 40px;
   }
 }
 .intro-header .site-heading h1,
@@ -684,12 +700,13 @@ ol {
   bottom: -100px;
 }
 .numbers-area {
-  background: #b9b8bc url(../img/numbers-bg.png) no-repeat center center;
+  background: #b9b8bc url(../img/numbers-bg.png) repeat center center;
   padding: 0 0 80px;
 }
 @media only screen and (max-width: 767px) {
   .numbers-area {
     padding: 0 0 40px;
+    background-position: center top;
   }
 }
 .numbers-area h3 {
@@ -699,15 +716,21 @@ ol {
 .numbers-area h3:after {
   color: #36333f;
 }
+.numbers-area h4 {
+  font-size: 1em;
+  color: #828086;
+  margin-top: 0;
+}
 .numbers-area .number-boxes {
   width: 960px;
   margin: 0 auto;
+  padding: 0 0 0 2%;
 }
 .numbers-area .number-boxes li {
   float: left;
   width: 23%;
   padding: 30px 0 20px;
-  margin: 10px 1% 10px;
+  margin: 10px 2% 10px 0;
   background: #fff;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
@@ -738,6 +761,11 @@ ol {
   color: #97969b;
   height: 2.5em;
 }
+.numbers-area .number-boxes li em {
+  vertical-align: super;
+  font-style: normal;
+  font-size: 0.5em;
+}
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .numbers-area .number-boxes {
     width: 740px;
@@ -749,10 +777,11 @@ ol {
 @media only screen and (max-width: 767px) {
   .numbers-area .number-boxes {
     width: auto;
+    padding: 0 0 0 20px;
   }
   .numbers-area .number-boxes li {
     width: 45%;
-    margin: 10px 2.5% 10px;
+    margin: 10px 3.3% 10px 0;
   }
   .numbers-area .number-boxes li strong {
     font-size: 1.5em;
@@ -840,6 +869,10 @@ ol {
 }
 .products-area .products li a:hover {
   border-color: #484848;
+}
+.products-area .products li strong i {
+  font-size: 2em;
+  vertical-align: -12px;
 }
 div.link-to-career {
   background: #eaedf2;
@@ -1131,7 +1164,7 @@ div.link-to-career .go-to-career:hover {
   padding: 0 0 50px;
 }
 .benefit-area .benefit-content {
-  width: 800px;
+  width: 750px;
   margin: 30px auto 0;
   clear: both;
 }
@@ -1142,7 +1175,13 @@ div.link-to-career .go-to-career:hover {
   height: 0;
   clear: both;
 }
-@media only screen and (max-width : 1024px) {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .benefit-area .benefit-content {
+    width: 90%;
+    margin: 30px auto 0;
+  }
+}
+@media only screen and (max-width: 767px) {
   .benefit-area .benefit-content {
     width: auto;
     margin: 30px 20px 0;
@@ -1192,6 +1231,7 @@ div.link-to-career .go-to-career:hover {
   font-weight: 700;
   margin-left: 80px;
   font-size: 1em;
+  line-height: 1.3;
 }
 .benefit-area .benefit-content .bc-box p {
   line-height: 1.5;
@@ -1558,6 +1598,10 @@ article .apply-area strong {
 article .apply-area span {
   color: #999;
   font-size: 0.75em;
+}
+article .back {
+  font-size: 16px;
+  color: #777;
 }
 .post-preview h2 {
   color: #333;

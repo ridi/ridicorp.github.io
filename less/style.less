@@ -17,6 +17,10 @@ body {
 	letter-spacing: -0.01em;
 }
 
+[class^="icon-"], [class*=" icon-"] {
+	vertical-align: -4%;
+}
+
 .clear-md {
 	display: none;
 	@media @queries_sm {
@@ -58,7 +62,7 @@ ul, ol {
 	top: 0;
 	left: 0;
 	width: 100%;
-	z-index: 3;
+	z-index: 5;
 
 	.navbar-brand {
 		font-weight: 900;
@@ -275,12 +279,12 @@ ul, ol {
 	.site-heading,
 	.page-heading {
 		text-align: center;
-		padding: 180px 0;
+		padding: 120px 0;
 		@media @queries_md {
-			padding: 140px 0 120px;
+			padding: 120px 0;
 		}
 		@media @queries_sm {
-			padding: 100px 0 40px;
+			padding: 80px 0 40px;
 		}
 
 		h1 {
@@ -519,11 +523,14 @@ ul, ol {
 		bottom: -100px;
 	}
 }
+
+// Numbers 
 .numbers-area {
-	background: #b9b8bc url(../img/numbers-bg.png) no-repeat center center;
+	background: #b9b8bc url(../img/numbers-bg.png) repeat center center;
 	padding: 0 0 80px;	
 	@media @queries_sm {
 		padding: 0 0 40px;
+		background-position: center top;
 	}
 
 	h3 {
@@ -533,14 +540,20 @@ ul, ol {
 			color: #36333f;
 		}
 	}
+	h4 {
+		font-size: 1em;
+		color: #828086;
+		margin-top: 0;
+	}
 	.number-boxes {
 		width: 960px;
 		margin: 0 auto;
+		padding: 0 0 0 2%; 
 		li {
 			float: left;
 			width: 23%;
 			padding: 30px 0 20px;
-			margin: 10px 1% 10px;
+			margin: 10px 2% 10px 0;
 			background: #fff;
 			.drop-shadow();
 			.border-radius();
@@ -564,6 +577,11 @@ ul, ol {
 				color: #97969b;
 				height: 2.5em;
 			}
+			em {
+				vertical-align: super;
+				font-style: normal;
+				font-size: 0.5em;
+			}
 
 		}
 		@media @queries_md {
@@ -576,9 +594,10 @@ ul, ol {
 		}
 		@media @queries_sm {
 			width: auto;
+			padding: 0 0 0 20px;
 			li {
 				width: 45%;
-				margin: 10px 2.5% 10px;
+				margin: 10px 3.3% 10px 0;
 				strong {
 					font-size: 1.5em;
 				}
@@ -639,6 +658,10 @@ ul, ol {
 			}
 			a {
 				.button-gray-stroke();
+			}
+			strong i {
+				font-size: 2em;
+				vertical-align: -12px;
 			}
 		}
 	}
@@ -906,13 +929,16 @@ div.link-to-career {
 	padding: 0 0 50px;
 
 	.benefit-content {
-		width: 800px;
+		width: 750px;
 		margin: 30px auto 0;
 		.clear();
-		@media @queries_lg {
+		@media @queries_md {
+			width: 90%;
+			margin: 30px auto 0;
+		}
+		@media @queries_sm {
 			width: auto;
 			margin: 30px 20px 0;
-
 		}
 
 		h4 {
@@ -958,6 +984,7 @@ div.link-to-career {
 				font-weight: 700;
 				margin-left: 80px;
 				font-size: 1em;
+				line-height: 1.3;
 			}
 			p {
 				line-height: 1.5;
@@ -1261,6 +1288,10 @@ article {
 			color: #999;
 			font-size: 0.75em;
 		}
+	}
+	.back {
+		font-size: 16px;
+		color: #777;
 	}
 }
 .post-preview {
