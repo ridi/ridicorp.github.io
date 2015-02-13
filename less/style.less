@@ -302,7 +302,7 @@ ul, ol {
 				font-size: 9em;
 			}
 			@media @queries_sm {
-				font-size: 6em;
+				font-size: 5em;
 				&.oneline {
 					padding-top: 20px;
 				}
@@ -374,11 +374,9 @@ ul, ol {
 		}
 		@media @queries_md {
 			font-size: 1em;
-			margin: 0 30px;
 		}
 		@media @queries_sm {
 			font-size: 0.9em;
-			margin: 0 30px;
 		}
 	}
 
@@ -386,10 +384,16 @@ ul, ol {
 	.career-sub-area {
 		background: #1e1f20 url(../img/career-sub-bg.png) repeat-x center center;
 		padding-top: 50px;
+		text-align: center;
 		.inner-shadow();
 
 		@media @queries_lg {
 			background-size: 1200px auto;
+		}
+		@media @queries_sm {
+			text-align: left;
+			padding-left: 30px;
+			padding-right: 30px;
 		}
 	}
 
@@ -673,8 +677,8 @@ div.link-to-career {
 	text-align: center;
 	padding: 60px 0;
 	h4 {
-		font-size: 2.25em;
-		font-weight: 100;
+		font-size: 1.8em;
+		font-weight: 300;
 		color: #0a1b39;
 		letter-spacing: -0.03em;
 		padding-bottom: 10px;
