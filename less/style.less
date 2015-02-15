@@ -251,7 +251,7 @@ ul, ol {
 		}
 	}
 	&.ih-career {
-		background-color: #165097;
+		background-color: @bg-career;
 		background-image: url(../img/career-bg.png);
 		background-repeat: repeat-x;
 		background-position: center -80px;
@@ -713,22 +713,41 @@ div.link-to-career {
 		font-weight: 700;
 		color: #b0d4ff;
 		padding: 10px 0;
+		background: @bg-career;
 	}
-	a {
-		display: inline-block;
-		color: #fff;
-		font-size: 1.2em;
-		padding: 10px;
-		.transition();
-		&:hover {
-			color: #b0d4ff;
-		}
-		@media @queries_lg {
-			display: block;
-		}
+	// a {
+	// 	display: inline-block;
+	// 	color: #fff;
+	// 	font-size: 1.2em;
+	// 	padding: 10px;
+	// 	background: @bg-career;
+	// 	.transition();
+	// 	.border-radius();
+	// 	&:hover {
+	// 		color: #b0d4ff;
+	// 	}
+	// 	@media @queries_lg {
+	// 		display: block;
+	// 	}
+	// }
+	.now-hiring {
+		.button-white();
+		margin-bottom: 15px;
 	}
-	.icon-direct-right {
+	.hiring {
 		color: #b0d4ff;
+		font-size: 1.1em;
+		margin: 0 2px;
+		&:after {
+			content: "•";
+			color: #779ecd;
+			margin: 0 0 0 5px;
+		}
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
 	}
 }
 
