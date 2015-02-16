@@ -1,0 +1,337 @@
+@import "colorChips.less";
+@import "base64Image.less";
+@import "fontMixins.less";
+
+//vars
+@separate_bar:1px solid #d9dadc; //세로 구분선( 메뉴 탭, 솔팅탭 등 )
+
+//rsg 프로젝트 신규 vars
+@font_size_default: 14px;
+@font_size_term: 2px;
+@font_size_xs: @font_size_default - ( @font_size_term * 2 );
+@font_size_s: @font_size_default - @font_size_term;
+@font_size_m: @font_size_default - 1px;
+@font_size_l: @font_size_default + @font_size_term;
+@font_size_xl: @font_size_default + ( @font_size_term * 2 );
+@font_size_xxl: @font_size_default + ( @font_size_term * 3 );
+
+@line_height_default: 1em;
+
+@default_border: 1px solid @color_grayb;
+
+//media quries
+@queries_high: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
+@queries_low: ~"only screen and (min-device-width : 768px)", 
+      ~"only screen and (max-device-width : 1024px)",
+      ~"only screen and (-webkit-device-pixel-ratio: 1)",
+      ~"only screen and (min-device-width : 320px)", 
+      ~"only screen and (max-device-width : 480px)";
+@queries_mobile: ~"only screen and (min-device-width : 320px) and (max-device-width : 480px)";
+@queries_320px: ~"only screen and (max-width: 320px)";
+
+.bg_gradation( @start_color, @end_color ){
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@start_color), to(@end_color));/* Safari 4+, Chrome 1-9 */
+  background: -webkit-linear-gradient(top, @start_color, @end_color);/* Safari 5.1+, Mobile Safari, Chrome 10+ */
+  background: -moz-linear-gradient(top, @start_color, @end_color);/* Firefox 3.6+ */
+  background: -ms-linear-gradient(top, @start_color, @end_color);/* IE 10+ */
+  background: -o-linear-gradient(top, @start_color, @end_color);/* Opera 11.10+ */
+}
+.bg_gradation_left( @start_color, @end_color ){
+  background: -webkit-gradient(linear, 0% 0%, 100% 0%, from(@start_color), to(@end_color));/* Safari 4+, Chrome 1-9 */
+  background: -webkit-linear-gradient(left, @start_color, @end_color);/* Safari 5.1+, Mobile Safari, Chrome 10+ */
+  background: -moz-linear-gradient(left, @start_color, @end_color);/* Firefox 3.6+ */
+  background: -ms-linear-gradient(left, @start_color, @end_color);/* IE 10+ */
+  background: -o-linear-gradient(left, @start_color, @end_color);/* Opera 11.10+ */
+}
+
+.border_radius( @radius_num ){
+  border-radius: @radius_num; 
+  -webkit-border-radius: @radius_num; 
+  -moz-border-radius: @radius_num;
+}
+
+.border_radius_top( @radius_num ){
+  border-top-right-radius: @radius_num; 
+  -webkit-border-top-right-radius: @radius_num; 
+  -moz-border-top-right-radius: @radius_num;
+  border-top-left-radius: @radius_num; 
+  -webkit-border-top-left-radius: @radius_num; 
+  -moz-border-top-left-radius: @radius_num;
+}
+
+.border_radius_bottom( @radius_num ){
+  border-bottom-right-radius: @radius_num; 
+  -webkit-border-bottom-right-radius: @radius_num; 
+  -moz-border-bottom-right-radius: @radius_num;
+  border-bottom-left-radius: @radius_num; 
+  -webkit-border-bottom-left-radius: @radius_num; 
+  -moz-border-bottom-left-radius: @radius_num;
+}
+
+.border_radius_right( @radius_num ){
+  border-top-right-radius: @radius_num; 
+  -webkit-border-top-right-radius: @radius_num; 
+  -moz-border-top-right-radius: @radius_num;
+  border-bottom-right-radius: @radius_num; 
+  -webkit-border-bottom-right-radius: @radius_num; 
+  -moz-border-bottom-right-radius: @radius_num;
+}
+
+.border_radius_left( @radius_num ){
+  border-top-left-radius: @radius_num; 
+  -webkit-border-top-left-radius: @radius_num; 
+  -moz-border-top-left-radius: @radius_num;
+  border-bottom-left-radius: @radius_num; 
+  -webkit-border-bottom-left-radius: @radius_num; 
+  -moz-border-bottom-left-radius: @radius_num;
+}
+
+.border_radius_top_right( @radius_num ){
+  border-top-right-radius: @radius_num;
+  -webkit-border-top-right-radius: @radius_num; 
+  -moz-border-top-right-radius: @radius_num;
+}
+
+.border_radius_top_left( @radius_num ){
+  border-top-left-radius: @radius_num;
+  -webkit-border-top-left-radius: @radius_num; 
+  -moz-border-top-left-radius: @radius_num;
+}
+
+.border_radius_bottom_right( @radius_num ){
+  border-bottom-right-radius: @radius_num;
+  -webkit-border-bottom-right-radius: @radius_num; 
+  -moz-border-bottom-right-radius: @radius_num;
+}
+
+.border_radius_bottom_left( @radius_num ){
+  border-bottom-left-radius: @radius_num;
+  -webkit-border-bottom-left-radius: @radius_num; 
+  -moz-border-bottom-left-radius: @radius_num;
+}
+
+.box_shadow( @shadow_num ){
+  box-shadow: @shadow_num;
+  -webkit-box-shadow: @shadow_num;
+  -moz-box-shadow: @shadow_num;
+}
+
+.box_sizing( @box_type ){
+  box-sizing: @box_type; 
+  -moz-box-sizing: @box_type; 
+  -webkit-box-sizing: @box_type;
+}
+
+.opacity( @value ){
+  @ms_filter: @value * 100;
+  -ms-filter: ~'"progid:DXImageTransform.Microsoft.Alpha(Opacity=@{ms_filter})"';
+  -moz-opacity: @value;
+  opacity: @value;
+}
+
+.transition( @transition_value ){
+  -webkit-transition: @transition_value; /* For Safari 3.1 to 6.0 */
+  transition: @transition_value;
+}
+
+.transform( @transform_value ){
+  transform: @transform_value;
+  -ms-transform: @transform_value; /* IE 9 */
+  -webkit-transform: @transform_value; /* Safari and Chrome */
+}
+
+.rotate( @degrees ){
+  -webkit-transform: rotate(~"@{degrees}deg");
+     -moz-transform: rotate(~"@{degrees}deg");
+      -ms-transform: rotate(~"@{degrees}deg");
+       -o-transform: rotate(~"@{degrees}deg");
+          transform: rotate(~"@{degrees}deg");
+}
+
+.gpu_acceleration(){
+  -webkit-backface-visibility: hidden; -webkit-transform: translateZ(0);
+}
+
+.char_cut(){ overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.margin_auto(){ margin: 0 auto; }
+.text_indent(){ text-indent:-20000px; }
+.clear_both(){ content:""; display:block; clear:both; width:0; height:0; font-size:0; line-height:0; }
+
+.line_clamp( @line_num: 2; ){ // 글줄 수 제한 :: @line_num = 글줄 수
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-overflow: -o-ellipsis-lastline;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: @line_num;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+}
+.placeholder_style( @color, @font-weight: bold ){
+  &::-webkit-input-placeholder{
+    color: @color;
+    font-weight: @font-weight;
+  }
+  &:-moz-placeholder{
+    color: @color;
+    font-weight: @font-weight;
+  }
+  &::-moz-placeholder{
+    color: @color;
+    font-weight: @font-weight;
+  }
+  &:-ms-input-placeholder{
+    color: @color;
+    font-weight: @font-weight;
+  }
+}
+
+.font_tahoma(){ font-family: Tahoma, Verdana, helvetica, '나눔고딕', 'NanumGothic', 'Nanum Gothic', '돋움', Dotum, AppleSDGothic, Geneva, arial, sans-serif; }
+
+.line_clamp_for_non_webkit( @line_height, @line_number, @fadeout_color: #f4f4f4 ){
+  max-height: @line_height * @line_number + .1em; overflow: hidden;
+  // fadeout 처리
+  // position: relative;
+  // &:after {
+  //   content: "";
+  //   text-align: right;
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+  //   width: 30%;
+  //   height: @line_height;
+  //   .bg_gradation_left( rgba(255, 255, 255, 0), @fadeout_color );
+  // }//&:after
+}//.line_clamp_for_non_webkit()
+
+.image_sharpen(){
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}//.image_rendering_sharpen()
+
+.user_select_none(){
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* ========================================== 페이징 스타일 */
+.paging(){
+  width:100%; text-align:center; padding: 20px 0;
+  ul.paging_wrap{
+    display:inline-block; text-align:center;
+    li{ 
+      display: inline-block; position: relative; z-index: 2; margin-left: -1px;
+      a{
+        display: inline-block; border: 1px solid @color_slategray_4;
+        font-size: @font_size_m; font-weight: bold; color: @color_slategray_5;
+        height: 30px; line-height: 30px; padding: 0 10px; 
+        text-align: center; min-width: 20px;
+        .box_shadow(~" 0 1px 1px 0 rgba(210,210,210,.3);");
+        &:hover{
+          background: @color_slategray_6;
+        }
+      }
+      &.page_list_first a{
+        .border_radius_left( 3px );
+      }
+      &.page_list_last a{
+        .border_radius_right( 3px );
+      }
+      &.page_this{
+        z-index: 3;
+        a{
+          cursor: default;
+          color: white; background: #1a90df; border-color: #0e7bc3;
+          &:hover{
+            background: #1a90df;
+          }
+        }
+      }
+      &.btn_first, &.btn_last{
+        .icon-dotdotdot{
+          color: #bfc4c8;
+        }
+        a{ 
+          .border_radius( 3px ); 
+        }
+      }
+      &.btn_first{
+        .icon-dotdotdot{
+          padding: 0 3px 0 9px;
+        }
+      } 
+      &.btn_last{
+        .icon-dotdotdot{
+          padding: 0 9px 0 3px;
+        }
+      }
+      &.btn_prev, &.btn_next{
+        padding: 0 6px;
+        a{ 
+          .border_radius( 3px );
+        }
+      }
+      .icon-arrow_8_left, .icon-arrow_8_right{ vertical-align: -10%; }
+    }
+  }
+}
+
+
+/* ========================================== 버튼 기본 4종 셋트 mixins */
+.default_btn(){ 
+  display:inline-block; font-size:13px; height:30px; line-height:29px; color:white!important; font-weight:bold; text-align:center; position:relative; -webkit-tap-highlight-color: rgba(0,0,0,0);
+  border:none; .border_radius(3px); .box_shadow( ~"inset 0 0 1px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .3), 0 1px 2px -1px rgba(0, 0, 0, .7)" );
+  span{ color:white!important; }
+  &:hover{ text-decoration:none!important; }
+  &.pressed{ .box_shadow( ~"inset 0 0 1px rgba(0, 0, 0, .7), inset 0 1px 2px rgba(0, 0, 0, .4)" ); }
+  @media @queries_low{
+    .box_shadow( none );
+    .pressed{ .box_shadow( ~"inset 0 0 2px rgba(0, 0, 0, .3)" );}
+  }
+}
+/* ==================== blue 버튼 */
+.btn_blue(){
+  background: #4e8ee2; .bg_gradation(#4F9BF9,#3C7ACF);
+  &.pressed{.bg_gradation(#4b78b8, #436ca3);} 
+  &:hover{ background:#436ca3; .bg_gradation(#4b78b8, #436ca3); }
+  @media @queries_low{ border:1px solid #4577b7;}
+}
+/* ==================== gray 버튼 */
+.btn_gray(){
+  background: #989da5; .bg_gradation(#9CA6B2, #7F8C9F);
+  &.pressed{.bg_gradation(#8d9197, #747980);}
+  &:hover{ background:#747980; .bg_gradation(#8d9197, #747980); }
+  @media @queries_low{ border:1px solid #777c81;}
+}
+/* ==================== white 버튼 */
+.btn_white(){
+  background: #edeef3; .bg_gradation(#f8f8fe, #e6e8ec); color:#505c77!important;
+  span{ color:#505c77!important; }  
+  &.pressed{.bg_gradation(#d8dada, #cccfd1);}
+  &:hover{ background:#cccfd1; .bg_gradation(#d8dada, #cccfd1); }
+  .gift_icon{ display:block; position:absolute; left:-1px; top:-1px; }
+  @media @queries_low{ border:1px solid #bdbdbd; }
+}
+/* ==================== 비활성화 버튼 */
+.btn_disabled(){ color:#bbb!important; .box_shadow( ~"inset 0 0 1px rgba(0, 0, 0, .7), inset 0 1px 0 rgba(255, 255, 255, .3)" ); .bg_gradation(#f8f8fe, #e6e8ec);
+  span{ color:#bbb!important; }
+  @media @queries_low{ border:1px solid #dfdfdf; .box_shadow( none );}
+}
+
+/* ========================================== 신형 버튼 기본 base 스타일 mixins */
+.button_base(){
+  -webkit-appearance: none; border: none; display: inline-block; text-align: center;
+  font-size: @font_size_l; padding: 1em; font-weight: bold; letter-spacing: -.03em;
+  .box_sizing(~"border-box"); .border_radius(4px); 
+}//.button_base()
