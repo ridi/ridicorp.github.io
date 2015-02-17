@@ -1,0 +1,141 @@
+// Mixins
+
+.serif() {
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+.sans-serif () {
+	font-family: 'Apple SD Gothic Neo', NanumGothic, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.brandon-grotesque() {
+	font-family: "brandon-grotesque", sans-serif;
+}
+
+.clear {
+	clear: both;
+}
+.clear() {
+	&:after { 
+	   content: "."; 
+	   visibility: hidden; 
+	   display: block; 
+	   height: 0; 
+	   clear: both;
+	}
+}
+
+.button() {
+	.border-radius();
+	.transition();
+	font-size: 16px;
+	padding: 16px 50px;
+	display: inline-block;
+	letter-spacing: -0.03em;
+	font-weight: bold;
+	i {
+		opacity: 0.5;
+	}
+}
+.button-orange() {
+	.button();
+	.drop-shadow();
+	background: @bright-orange;
+	color: #6f210b;
+	&:hover {
+		color: @bright-orange;
+		background: #fff;
+	}
+}
+.button-gray() {
+	.button();
+	.drop-shadow();
+	background: #484848;
+	color: #d4d4d4;
+	&:hover {
+		color: #eee;
+		background: #222;
+	}
+}
+.button-skyblue() {
+	.button();
+	.drop-shadow();
+	background: #78caf3;
+	color: #fff;
+	&:hover {
+		background: #fff;
+		color: #30356e;
+	}
+}
+.button-navy() {
+	.button();
+	background: #0a1b39;
+	color: #fff;
+	&:hover {
+		color: #fff;
+		background: #050f22;
+	}
+}
+.button-gray-stroke() {
+	.button();
+	background: transparent;
+	border: 2px solid #c9c9c9;
+	color: #484848;
+	&:hover {
+		border-color: #484848;
+	}
+}
+.button-white() {
+	.button();
+	background: #fff;
+	color: #165097;
+	&:hover {
+		background: #d8eaff;
+	}
+}
+
+.transition(@type: all, @time: 0.2s) {
+    -webkit-transition: @type @time;
+    -moz-transition: @type @time;
+    transition: @type @time;
+}
+
+.background-cover() {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
+	text-shadow: @string;
+}
+
+.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @color: rgba(0, 0, 0, 0.25)) {
+	-webkit-box-shadow:	@x @y @blur @spread @color;
+	-moz-box-shadow:	@x @y @blur @spread @color;
+	box-shadow:		@x @y @blur @spread @color;
+}
+
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @color: rgba(0, 0, 0, 0.25)) {
+	-webkit-box-shadow:	inset @x @y @blur @spread @color;
+	-moz-box-shadow:	inset @x @y @blur @spread @color;
+	box-shadow:		inset @x @y @blur @spread @color;
+}
+
+.border-radius (@radius: 4px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius:    @radius;
+	border-radius:         @radius;
+
+	-moz-background-clip:    padding;
+	-webkit-background-clip: padding-box;
+	background-clip:         padding-box;
+}
+
+.opacity (@opacity: 0.5) {
+	-webkit-opacity: 	@opacity;
+	-moz-opacity: 		@opacity;
+	opacity: 		@opacity;
+}
+
