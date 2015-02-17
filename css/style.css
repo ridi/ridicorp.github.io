@@ -1279,6 +1279,11 @@ div.link-to-career .go-to-career:hover {
 .job-openings-area h4 {
   color: #78caf3;
 }
+@media only screen and (max-width: 767px) {
+  .job-openings-area h4 {
+    font-size: 0.9em;
+  }
+}
 .job-openings-area .jobs {
   width: 800px;
   margin: 50px auto 0;
