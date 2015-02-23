@@ -1218,19 +1218,25 @@ div.link-to-career {
 
 // Post 
 .post-heading {
-	padding: 100px 25px;
+	padding: 250px 25px;
+	
+	@media @queries_sm {
+		padding: 100px 25px;
+	}
 	h1 {
 		font-size: 4em;
 		color: #fff;
 		.brandon-grotesque();
 		font-weight: 500;
-		.text-shadow();
+		text-shadow: 0 1px 3px rgba(0,0,0,.25),
+			0 5px 20px rgba(0,0,0,.5);
 	}
 	h2 {
 		font-size: 1.2em;
 		color: #fff;
 		font-weight: 300;
-		.text-shadow();
+		text-shadow: 0 1px 3px rgba(0,0,0,.25),
+			0 5px 20px rgba(0,0,0,.5);
 	}
 }
 article {
