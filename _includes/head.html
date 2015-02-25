@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <meta name="description" content="{{ site.description }}">
     <meta name="ROBOTS" content="ALL"/>
-    <meta name="author" content="simple@ridicorp.com"/>
     <meta name="description" content="RIDI Corporation"/>
     <meta name="keywords" content="리디북스 RidiBooks 리디샵 RidiShop 리디 리디주식회사 ridicorp ridi"/>
     <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% endif %}" />
+    <meta property="og:description" content="{% if page.description %}{{ page.subtitle }} - {{ page.description }}{% endif %}" />
 
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 

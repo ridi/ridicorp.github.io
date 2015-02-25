@@ -2,8 +2,9 @@
 layout: post
 title:  "UX/UI Designer"
 subtitle: "리디북스 UX팀"
+description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
 header-img: "img/career-bg-4.jpg"
-fb-img: "img/career-bg-4.jpg"
+fb-img: "img/fb-uxui-designer.jpg"
 date:   2015-02-23 11:46:41
 ---
 
