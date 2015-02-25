@@ -3,6 +3,7 @@ layout: post
 title:  "UX/UI Designer"
 subtitle: "리디북스 UX팀"
 header-img: "img/career-bg-4.jpg"
+fb-img: "img/career-bg-4.jpg"
 date:   2015-02-23 11:46:41
 ---
 
