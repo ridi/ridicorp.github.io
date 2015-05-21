@@ -1,9 +1,9 @@
 # Site settings
 title: RIDI Corporation
 header-img: img/home-bg.jpg
-email: start@ridicorp.com
+email: start@ridi.com
 description: "RIDI Corporation"
-url: "http://ridicorp.com"
+url: "http://www.ridicorp.com"
 baseurl: ""
 
 # Build settings
