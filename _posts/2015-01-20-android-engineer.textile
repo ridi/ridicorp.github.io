@@ -7,6 +7,7 @@ header-img: "img/career-bg-5.jpg"
 fb-img: "img/fb-android.jpg"
 date: 2015-01-19 01:46:41
 footer: apply
+permalink: /career/android-engineer
 ---
 
 h3. 리디북스 앱팀은?

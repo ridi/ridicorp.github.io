@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.1'
+ruby '2.2.2'
 gem 'jekyll'
 gem 'RedCloth'
 gem 'rack-jekyll'
