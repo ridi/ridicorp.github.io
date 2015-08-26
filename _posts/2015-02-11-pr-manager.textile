@@ -4,6 +4,7 @@ title: "PR Manager"
 subtitle: "리디북스 마케팅팀"
 header-img: "img/career-bg-3.jpg"
 date: 2015-02-11 13:01:00
+fb-img: "img/fb-pr-manager.jpg"
 footer: apply
 ---
 
