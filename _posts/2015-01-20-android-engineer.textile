@@ -36,7 +36,6 @@ h3. 안드로이드 앱
 * "Retrofit":http://square.github.io/retrofit/ + "OkHttp":http://square.github.io/okhttp/ + "Gson":https://code.google.com/p/google-gson/ 을 이용한 API 통신
 * "EventBus":https://github.com/greenrobot/EventBus 를 이용한 멀티 스레드 이벤트 핸들링
 * "Grunt":http://gruntjs.com/ 를 이용한 뷰어용 Javascript 관리
-* "Robolectric":http://robolectric.org/ 을 이용한 테스트 자동화
 * "Genymotion":https://www.genymotion.com 을 이용한 다양한 기기 환경 시뮬레이션
 
 <br>
@@ -55,8 +54,8 @@ h3. Workflow & Environment
 
 * 소스코드의 버전관리를 위한 Mercurial & Git
 * API 문서화 및 테스트를 위한 "Apiary":http://apiary.io
-* Crash 추적을 위한 "Crashlytics":https://try.crashlytics.com
-* 고객의 이용 패턴 분석을 위한 "Google Aynalytics":http://www.google.com/analytics & "Flurry":http://www.flurry.com
+* Crash 추적을 위한 "Crashlytics":https://get.fabric.io/crashlytics
+* 고객의 이용 패턴 분석을 위한 "Google Aynalytics":http://www.google.com/analytics & "Answers":https://get.fabric.io/answers
 * 프로젝트 및 이슈 관리를 위한 "Asana":https://asana.com
 * 지식 공유를 위한 "Confluence":https://www.atlassian.com/software/confluence
 * 팀 커뮤니케이션을 위한 "Slack":https://slack.com
