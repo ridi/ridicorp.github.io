@@ -1,22 +1,23 @@
 {
-    "name": "ridicorp",
-    "title": "RIDI Corporation",
-    "version": "1.0.0",
-    "homepage": "http://ridicorp.com",
-    "author": "RIDI Corporation",
-    "license": {
-        "type": "Apache 2.0",
-        "url": "https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.5",
-        "grunt-contrib-less": "~0.11.4",
-        "grunt-contrib-watch": "~0.6.1",
-        "grunt-banner": "~0.2.3",
-        "grunt-contrib-uglify": "~0.5.1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll.git"
-    }
+  "name": "ridicorp",
+  "title": "RIDI Corporation",
+  "version": "1.0.0",
+  "homepage": "http://ridicorp.com",
+  "author": "RIDI Corporation",
+  "license": {
+    "type": "Apache 2.0",
+    "url": "https://github.com/IronSummitMedia/startbootstrap/blob/gh-pages/LICENSE"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-banner": "^0.6.0",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-uglify": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-webfont": "^0.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ridibooks/ridibooks.github.io"
+  }
 }

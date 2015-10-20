@@ -60,6 +60,26 @@ module.exports = function(grunt) {
                 }
             },
         },
+        webfont: {
+            icons: {
+               src: 'icon/svg/*.svg',
+               dest: 'icon/fonts',
+               destCss: 'icon/css',
+               options: {
+                 normalize: true,
+                 font: 'ridi-icon',
+                 htmlDemo: true,
+                 htmlDemoTemplate: 'icon/templates/ridicorp_tmpl.html',
+                 destHtml: 'icon',
+                 // stylesheet: 'less',
+                 template: 'icon/templates/ridicorp_tmpl.css',
+                 types: 'eot,ttf,woff',
+                 embed: 'ttf,woff',
+                 fontHeight: 1024,
+                 descent: 64
+               }
+            }
+        }
     });
 
     // Load the plugins.
@@ -67,8 +87,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-banner');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-webfont');
+
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'less', 'usebanner']);
+    grunt.registerTask('default', ['uglify', 'less', 'usebanner', 'webfont']);
 
 };

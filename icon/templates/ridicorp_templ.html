@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://static.ridibooks.com/books/icon/templates/ridi_tmpl.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>&lt;%= fontBaseName %&gt;</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="./ridicorp_templ_files/navigation.css">
+    <style>
+      <%= styles %>
+      .contents_wrapper {
+        padding: 30px; margin: 0; cursor: default;
+      }
+      h1 {
+        margin: 0; padding: 0; font-size: 24px; font-weight: 600; color: #41474b;
+      }
+      .icon_name {
+        margin: 10px 0 0 0; padding: 0; height: 1.5em;
+        font-size: 20px; font-weight: 600; color: #0282da; text-decoration: none;
+      }
+      ul {
+        margin: 15px 0 0 0; padding: 0;
+      }
+      ul li {
+        display: inline-block; position: relative;
+        margin: 0 10px 20px 0;
+      }
+      ul li a {
+        text-decoration: none; display: block;
+      }
+      ul li a i {
+        display: block;
+        background: #eee; color: #41474b;
+        padding: 22px; text-align: center;
+        font-size: 35px; line-height: 35px;
+        min-width: 35px; height: 35px;
+        -webkit-transition: background .2s, color .2s;
+        transition: background .2s, color .2s;
+      }
+      ul li .icon_title {
+        cursor: auto;
+        display: block; padding: 5px; background: white; text-align: center;
+        font-size: 11px; color: #999; font-weight: 600; white-space: nowrap;
+        -webkit-transition: color .2s;
+        transition: color .2s;
+      }
+      ul li a:hover i {
+        background: #0282da; color: white; line-height: 30px;
+      }
+      ul li:hover .icon_title {
+        color: #41474b;
+      }
+    </style>
+    <!--[if lt IE 9]>
+      <script src="http://static.nnyamm.dev.ridi.kr/books/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+    <![endif]-->
+  </head>
+  <body data-pinterest-extension-installed="cr1.39.1">
+    <div class="header_wrapper">
+      <h1 class="header_title"><a href="http://ridibooks.com/">RIDIBOOKS</a></h1>
+      <ul class="navigation_wrapper">
+        <li><a href="http://static.ridibooks.com/rui/">RUI ▸</a></li>
+        <li><span class="submenu_toggle_button">IconFont ▾</span>
+          <ul class="submenu">
+            <li><a href="http://static.ridibooks.com/books/icon/ridi-icon.html">서점 IconFont</a></li>
+            <li><a href="http://static.ridibooks.com/rui/icon/ruicon.html">RUI IconFont</a></li>
+          </ul>
+        </li>
+        <li><a href="http://static.ridibooks.com/rui/colorChips.html">ColorChips ▸</a></li>
+      </ul>
+    </div>
+    <div class="contents_wrapper">
+      <h1>RIDIBOOKS Icon Font</h1>
+      <p class="icon_name">font-family: &lt;%= fontBaseName %&gt;</p>
+      <ul id="icons">
+        &lt;% for (var glyphIdx = 0; glyphIdx &lt; glyphs.length; glyphIdx++) { var glyph = glyphs[glyphIdx] %&gt;
+          <li>
+            <a href="http://static.ridibooks.com/books/icon/svg/%3C%=%20glyph%20%%3E.svg" target="_blank" download="">
+              <i class="&lt;%= baseClass %&gt; &lt;%= classPrefix %&gt;&lt;%= glyph %&gt;"></i>
+            </a>
+            <span class="icon_title">&lt;%= classPrefix %&gt;&lt;%= glyph %&gt;</span>
+          </li>
+        &lt;% } %&gt;
+      </ul>
+    </div>
+  
+
+
+
+
+
+
+</body></html>
