@@ -10,7 +10,7 @@
     <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% endif %}" />
     <meta property="og:description" content="{% if page.description %}{{ page.subtitle }} - {{ page.description }}{% endif %}" />
 
-    <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title | strip_html }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     
