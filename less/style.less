@@ -669,6 +669,173 @@ ul, ol {
 	}
 }
 
+
+// Branding
+.branding-area {
+	width: 768px;
+	margin: 0 auto;
+	@media @queries_sm {
+		width: auto;
+	}
+	
+	h4 {
+		text-align: center;
+		font-size: 14px;
+		color: #aaa;
+		letter-spacing: 0.2em;
+		margin: 30px 0 20px;
+		font-family: "brandon-grotesque", sans-serif;
+		@media @queries_sm {
+			text-align: left;
+			margin: 20px 20px 0;
+		}
+	}
+	.branding-box {
+		border: 2px solid #ccc;
+		border-radius: 8px;
+		padding: 40px;
+		margin-bottom: 50px;
+		@media @queries_sm {
+			border: none;
+			padding: 20px 20px 40px;
+		}
+
+		h5 {
+			font-size: 14px;
+			color: #555;
+			font-weight: bold;
+			line-height: 1;
+			span {
+				font-weight: normal;
+				color: #aaa;
+			}
+			@media @queries_sm {
+				border-top: 1px solid #ddd;
+				padding: 15px 0 0;
+			}
+		}
+		a {
+			.button-blue();
+		}
+		.bb-left {
+			float: left;
+			width: 270px;
+			padding-right: 20px;
+			@media @queries_sm {
+				float: none;
+				width: auto;
+				width: auto;
+				padding-left: 0;
+			}
+		}
+		.bb-right {
+			float: left;
+			width: 410px;
+			padding-left: 40px;
+			border-left: 1px solid #d6d6d6;
+			@media @queries_sm {
+				float: none;
+				width: auto;
+				width: auto;
+				padding-left: 0;
+				border-left: none;
+			}
+		}
+		.big-logo {
+			text-align: center;
+			padding-bottom: 20px;
+			@media @queries_sm {
+				text-align: left;	
+			}
+			.icon-logo-ridibooks-full {
+				color: #1f8ee6;
+				font-size: 70px;
+				margin: 60px 0 40px;
+				display: block;
+				@media @queries_sm {
+					margin: 30px 0;
+				}
+			}
+			.icon-logo-paper {
+				color: #333;
+				font-size: 55px;
+				margin: 60px 0 40px;
+				display: block;
+				@media @queries_sm {
+					margin: 30px 0;
+				}
+			}
+		}
+		.logo-desc {
+			font-size: 13px;
+			color: #aaa;
+			padding-top: 20px;
+		}
+		.logo-compact-wrap {
+			padding: 30px 0 40px;
+			font-size: 30px;
+			@media @queries_sm {
+				padding: 15px 0 20px;
+			}
+			.ridi-logo-compact-1 {
+				color: #1f8ee6;
+				margin-right: 30px;
+			}
+			.ridi-logo-compact-2 {
+				color: #333;
+			}
+		}
+		.branding-color {
+			float: left;
+			width: 180px;
+			border-left: 8px solid;
+			padding-left: 10px;
+			font-size: 14px;
+			margin: 10px 0;
+			&.bc-blue {border-color: #1f8ee6;}
+			&.bc-black {border-color: #333;}
+
+			dt {
+				color: #333;
+				width: 55px;
+				float: left;
+			}
+			dd {
+
+			}
+		}
+		.logo-sample {
+			float: left;
+			width: 120px;
+			padding: 15px 0;
+			text-align: center;
+			&.ridi-logo-sample-1 {background: #000; color: #fff;}
+			&.ridi-logo-sample-2 {background: #999; color: #fff;}
+			&.ridi-logo-sample-3 {background: #e5e5e5; color: #333;}
+			&.paper-logo-sample-1 {background: #000; color: #fff;}
+			&.paper-logo-sample-2 {background: #999; color: #fff;}
+			&.paper-logo-sample-3 {background: #e5e5e5; color: #333;}
+			@media @queries_sm {
+				width: 90px;
+				padding: 10px 0;
+			}
+		}
+		.logo-guideline {
+			font-size: 14px;
+			color: #999;
+			margin: 20px 0 0;
+			li:before {
+				content: "•";
+				margin-right: 3px;
+			}
+			@media @queries_sm {
+				font-size: 13px;
+			}
+		}
+
+	}
+}
+
 // Link to Career
 div.link-to-career {
 	background: #eaedf2;
