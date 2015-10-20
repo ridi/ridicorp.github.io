@@ -845,7 +845,7 @@ ol {
     padding: 15px 0 0;
   }
 }
-.branding-area .branding-box a {
+.branding-area .branding-box a.download {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -864,10 +864,10 @@ ol {
   background: #1f8ee6;
   color: #fff;
 }
-.branding-area .branding-box a i {
+.branding-area .branding-box a.download i {
   opacity: 0.5;
 }
-.branding-area .branding-box a:hover {
+.branding-area .branding-box a.download:hover {
   color: #fff;
   background: #1477c5;
 }
