@@ -67,7 +67,7 @@ module.exports = function(grunt) {
                destCss: 'icon/css',
                options: {
                  normalize: true,
-                 font: 'ridi-icon',
+                 font: 'ridicorp-icon',
                  htmlDemo: true,
                  htmlDemoTemplate: 'icon/templates/ridicorp_tmpl.html',
                  destHtml: 'icon',
@@ -76,7 +76,12 @@ module.exports = function(grunt) {
                  types: 'eot,ttf,woff',
                  embed: 'ttf,woff',
                  fontHeight: 1024,
-                 descent: 64
+                 descent: 64,
+                 templateOptions: {
+                    baseClass: 'ridicorp-icon',
+                    classPrefix: 'icon-',
+                    mixinPrefix: 'icon_'
+                 }
                }
             }
         }
