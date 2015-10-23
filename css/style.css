@@ -13,6 +13,7 @@ body {
   color: #555;
   letter-spacing: -0.01em;
   cursor: default;
+  -webkit-font-smoothing: antialiased;
 }
 [class^="icon-"],
 [class*=" icon-"] {
@@ -276,6 +277,25 @@ ol {
 @media only screen and (max-width: 767px) {
   .intro-header.ih-contact {
     padding-bottom: 40px;
+  }
+}
+.intro-header.ih-branding {
+  background-color: #155096;
+  background-image: url(../img/branding-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 1800px auto;
+  padding-bottom: 100px;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .intro-header.ih-branding {
+    background-size: 1200px auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .intro-header.ih-branding {
+    background-size: 1000px auto;
+    padding-bottom: 20px;
   }
 }
 .intro-header .site-heading,
@@ -763,11 +783,11 @@ ol {
 }
 .products-area .products li span {
   display: block;
-  color: #aaa;
+  color: #555;
   font-weight: 400;
   padding-bottom: 20px;
   letter-spacing: -0.03em;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 .products-area .products li a {
   -webkit-border-radius: 4px;
@@ -794,9 +814,45 @@ ol {
 .products-area .products li a:hover {
   border-color: #484848;
 }
+.branding-link-area {
+  width: 768px;
+  margin: 0 auto 100px;
+}
+@media only screen and (max-width: 767px) {
+  .branding-link-area {
+    width: auto;
+  }
+}
+.branding-link-area .go-to-branding {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 16px;
+  padding: 16px 50px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+  padding: 16px 30px;
+  background: #1f8ee6;
+  color: #fff;
+  margin-top: 20px;
+}
+.branding-link-area .go-to-branding i {
+  opacity: 0.5;
+}
+.branding-link-area .go-to-branding:hover {
+  color: #fff;
+  background: #1477c5;
+}
 .branding-area {
   width: 768px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 @media only screen and (max-width: 767px) {
   .branding-area {
@@ -841,8 +897,8 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .branding-area .branding-box h5 {
-    border-top: 1px solid #ddd;
-    padding: 15px 0 0;
+    border-top: 1px solid #999;
+    padding: 10px 0 0;
   }
 }
 .branding-area .branding-box a.download {
@@ -932,7 +988,7 @@ ol {
 }
 .branding-area .branding-box .logo-desc {
   font-size: 13px;
-  color: #aaa;
+  color: #555;
   padding-top: 20px;
 }
 .branding-area .branding-box .logo-compact-wrap {
@@ -951,13 +1007,16 @@ ol {
 .branding-area .branding-box .logo-compact-wrap .ridi-logo-compact-2 {
   color: #333;
 }
+.branding-area .branding-box .branding-color-list {
+  padding: 0 0 20px;
+}
 .branding-area .branding-box .branding-color {
   float: left;
   width: 180px;
   border-left: 8px solid;
   padding-left: 10px;
   font-size: 14px;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 .branding-area .branding-box .branding-color.bc-blue {
   border-color: #1f8ee6;
@@ -974,6 +1033,7 @@ ol {
   float: left;
   width: 120px;
   padding: 15px 0;
+  margin-top: 5px;
   text-align: center;
 }
 .branding-area .branding-box .logo-sample.ridi-logo-sample-1 {
@@ -1008,7 +1068,7 @@ ol {
 }
 .branding-area .branding-box .logo-guideline {
   font-size: 14px;
-  color: #999;
+  color: #555;
   margin: 20px 0 0;
 }
 .branding-area .branding-box .logo-guideline li:before {
@@ -1020,42 +1080,53 @@ ol {
     font-size: 13px;
   }
 }
-div.link-to-career {
-  background: #eaedf2;
+.link-to {
+  display: block;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   text-align: center;
-  padding: 60px 0;
+  padding: 60px 0 70px;
+  width: 50%;
+  float: left;
+  transition: background 0.3s ease-out;
 }
-div.link-to-career h4 {
+@media only screen and (max-width: 767px) {
+  .link-to {
+    width: auto;
+    float: none;
+  }
+}
+.link-to h4 {
   font-size: 1.8em;
   font-weight: 300;
-  color: #0a1b39;
   letter-spacing: -0.03em;
   padding-bottom: 10px;
+  line-height: 1.3;
+  color: #0282da;
 }
-div.link-to-career .go-to-career {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
-  font-size: 16px;
-  padding: 16px 50px;
-  display: inline-block;
-  letter-spacing: -0.03em;
+.link-to.ltl {
+  padding-left: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .link-to.ltl {
+    padding-left: 0;
+  }
+}
+.link-to.ltr {
+  padding-right: 50px;
+}
+@media only screen and (max-width: 767px) {
+  .link-to.ltr {
+    padding-right: 0;
+  }
+}
+.link-to .go-to {
+  color: #0282da;
   font-weight: bold;
-  background: #0a1b39;
-  color: #fff;
+  border-bottom: 1px dotted #0282da;
 }
-div.link-to-career .go-to-career i {
-  opacity: 0.5;
-}
-div.link-to-career .go-to-career:hover {
-  color: #fff;
-  background: #050f22;
+.link-to:hover {
+  background: #e6f5ff;
 }
 .job-quick-links {
   text-align: center;
@@ -1128,6 +1199,78 @@ div.link-to-career .go-to-career:hover {
   margin: 0 0 0 5px;
 }
 .job-quick-links .hiring:last-child:after {
+  display: none;
+}
+.branding-download-all {
+  text-align: center;
+  font-family: "brandon-grotesque", sans-serif;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .branding-download-all {
+    margin-bottom: 100px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .branding-download-all {
+    margin-bottom: 50px;
+  }
+}
+.branding-download-all .wrapper {
+  display: inline-block;
+  padding: 0 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.branding-download-all strong {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.95em;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: #b0d4ff;
+  padding: 10px 0;
+  background: #165097;
+}
+.branding-download-all .now-hiring {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 16px;
+  padding: 16px 50px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+  background: #fff;
+  color: #165097;
+  margin-bottom: 15px;
+}
+.branding-download-all .now-hiring i {
+  opacity: 0.5;
+}
+.branding-download-all .now-hiring:hover {
+  background: #d8eaff;
+}
+.branding-download-all .hiring {
+  color: #b0d4ff;
+  font-size: 1.1em;
+  margin: 0 2px;
+}
+.branding-download-all .hiring:after {
+  content: "•";
+  color: #779ecd;
+  margin: 0 0 0 5px;
+}
+.branding-download-all .hiring:last-child:after {
   display: none;
 }
 .site-content h3 {

@@ -16,6 +16,7 @@ body {
 	color: #555;
 	letter-spacing: -0.01em;
 	cursor: default;
+	-webkit-font-smoothing: antialiased;
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -274,6 +275,23 @@ ul, ol {
 
 		@media @queries_sm {
 			padding-bottom: 40px;
+		}
+	}
+	&.ih-branding {
+		background-color: #155096;
+		background-image: url(../img/branding-bg.png);
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 1800px auto;
+		padding-bottom: 100px;
+
+
+		@media @queries_md {
+			background-size: 1200px auto;
+		}
+		@media @queries_sm {
+			background-size: 1000px auto;
+			padding-bottom: 20px;
 		}
 	}
 
@@ -656,11 +674,11 @@ ul, ol {
 			}
 			span {
 				display: block;
-				color: #aaa;
+				color: #555;
 				font-weight: 400;
 				padding-bottom: 20px;
 				letter-spacing: -0.03em;
-				font-size: 0.8em;
+				font-size: 0.9em;
 			}
 			a {
 				.button-gray-stroke();
@@ -669,11 +687,25 @@ ul, ol {
 	}
 }
 
+// Branding Link
+.branding-link-area {
+	width: 768px;
+	margin: 0 auto 100px;
+
+	@media @queries_sm {
+		width: auto;
+	}
+
+	.go-to-branding {
+		.button-blue();
+		margin-top: 20px;
+	}
+}
 
 // Branding
 .branding-area {
 	width: 768px;
-	margin: 0 auto;
+	margin: 50px auto;
 	@media @queries_sm {
 		width: auto;
 	}
@@ -710,8 +742,8 @@ ul, ol {
 				color: #aaa;
 			}
 			@media @queries_sm {
-				border-top: 1px solid #ddd;
-				padding: 15px 0 0;
+				border-top: 1px solid #999;
+				padding: 10px 0 0;
 			}
 		}
 		a.download {
@@ -768,7 +800,7 @@ ul, ol {
 		}
 		.logo-desc {
 			font-size: 13px;
-			color: #aaa;
+			color: #555;
 			padding-top: 20px;
 		}
 		.logo-compact-wrap {
@@ -785,13 +817,16 @@ ul, ol {
 				color: #333;
 			}
 		}
+		.branding-color-list {
+			padding: 0 0 20px;
+		}
 		.branding-color {
 			float: left;
 			width: 180px;
 			border-left: 8px solid;
 			padding-left: 10px;
 			font-size: 14px;
-			margin: 10px 0;
+			margin: 5px 0;
 			&.bc-blue {border-color: #1f8ee6;}
 			&.bc-black {border-color: #333;}
 
@@ -808,6 +843,7 @@ ul, ol {
 			float: left;
 			width: 120px;
 			padding: 15px 0;
+			margin-top: 5px;
 			text-align: center;
 			&.ridi-logo-sample-1 {background: #000; color: #fff;}
 			&.ridi-logo-sample-2 {background: #999; color: #fff;}
@@ -822,7 +858,7 @@ ul, ol {
 		}
 		.logo-guideline {
 			font-size: 14px;
-			color: #999;
+			color: #555;
 			margin: 20px 0 0;
 			li:before {
 				content: "•";
@@ -837,19 +873,47 @@ ul, ol {
 }
 
 // Link to Career
-div.link-to-career {
-	background: #eaedf2;
+.link-to {
+	display: block;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 	text-align: center;
-	padding: 60px 0;
+	padding: 60px 0 70px;
+	width: 50%;
+	float: left;
+	transition: background .3s ease-out;
+	@media @queries_sm {
+		width: auto;
+		float: none;
+	}
 	h4 {
 		font-size: 1.8em;
 		font-weight: 300;
-		color: #0a1b39;
 		letter-spacing: -0.03em;
 		padding-bottom: 10px;
+		line-height: 1.3;
+		color: #0282da;
 	}
-	.go-to-career {
-		.button-navy();
+	&.ltl {
+		padding-left: 50px;
+		@media @queries_sm {
+			padding-left: 0;
+		}
+	}
+	&.ltr {
+		padding-right: 50px;
+		@media @queries_sm {
+			padding-right: 0;
+		}
+	}
+	.go-to {
+		color: #0282da;
+		font-weight: bold;
+		border-bottom: 1px dotted #0282da;
+	}
+
+	&:hover {
+		background: #e6f5ff;
 	}
 }
 
@@ -880,21 +944,6 @@ div.link-to-career {
 		padding: 10px 0;
 		background: @bg-career;
 	}
-	// a {
-	// 	display: inline-block;
-	// 	color: #fff;
-	// 	font-size: 1.2em;
-	// 	padding: 10px;
-	// 	background: @bg-career;
-	// 	.transition();
-	// 	.border-radius();
-	// 	&:hover {
-	// 		color: #b0d4ff;
-	// 	}
-	// 	@media @queries_lg {
-	// 		display: block;
-	// 	}
-	// }
 	.now-hiring {
 		.button-white();
 		margin-bottom: 15px;
@@ -915,6 +964,55 @@ div.link-to-career {
 		}
 	}
 }
+
+// Branding Download
+
+.branding-download-all {
+	text-align: center;
+	.brandon-grotesque();
+	@media @queries_md {
+		margin-bottom: 100px;
+	}
+	@media @queries_sm {
+		margin-bottom: 50px;
+	}
+
+	.wrapper {
+		display: inline-block;
+		padding: 0 10px;
+		.border-radius();
+	}
+	strong {
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 0.95em;
+		letter-spacing: 0.2em;
+		font-weight: 700;
+		color: #b0d4ff;
+		padding: 10px 0;
+		background: @bg-career;
+	}
+	.now-hiring {
+		.button-white();
+		margin-bottom: 15px;
+	}
+	.hiring {
+		color: #b0d4ff;
+		font-size: 1.1em;
+		margin: 0 2px;
+		&:after {
+			content: "•";
+			color: #779ecd;
+			margin: 0 0 0 5px;
+		}
+		&:last-child {
+			&:after {
+				display: none;
+			}
+		}
+	}
+}
+
 
 // Contents
 
