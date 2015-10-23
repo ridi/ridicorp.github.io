@@ -1118,6 +1118,7 @@ ol {
 @media only screen and (max-width: 767px) {
   .link-to.ltr {
     padding-right: 0;
+    border-top: none;
   }
 }
 .link-to .go-to {
