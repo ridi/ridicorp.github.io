@@ -758,9 +758,18 @@ fb-img: "img/fb-img-ridicorp.png"
 
 <script>
     $(function(){
+        
+        // 채용공고로 바로 이동
         $('.now-hiring').click(function(){
             $('.job-openings-area').animatescroll({scrollSpeed:1000, easing:'easeInOutQuad'});
         });
+
+        // 채용공고 아코디언 토글
+        $('.job-item').click(function(){
+            var iconArrow = $(this).find('.icon-arrow-down-1');
+            iconArrow.toggleClass('icon-arrow-up-1');
+        });
+
     });
 </script>
 <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>

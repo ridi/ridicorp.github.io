@@ -1717,12 +1717,6 @@ ol {
   z-index: 1;
   opacity: 0;
 }
-.job-openings-area .jobs .job-item input[type=checkbox]:checked ~ .job-title i:before {
-  content: "\f101";
-}
-.job-openings-area .jobs .job-item input[type=checkbox]  ~ .job-title i:before {
-  content: "\f102";
-}
 .job-openings-area .jobs .job-item input[type=checkbox]  ~ .job-title i {
   float: right;
   margin-right: 5px;
