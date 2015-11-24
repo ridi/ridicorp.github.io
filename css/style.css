@@ -1122,7 +1122,7 @@ ol {
 }
 .link-to h4 {
   font-size: 1.8em;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.03em;
   padding-bottom: 10px;
   line-height: 1.3;
@@ -1413,7 +1413,7 @@ ol {
   letter-spacing: -0.02em;
   margin: 0 0 20px;
   font-size: 1.125em;
-  font-weight: 300;
+  font-weight: 400;
 }
 .how-we-work li .hww-icon {
   position: absolute;
@@ -1630,7 +1630,7 @@ ol {
 }
 .job-openings-area .jobs .job-item .job-title {
   font-size: 1.4em;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1;
   padding: 18px 24px 15px;
   transition: all 0.15s ease-in-out;
@@ -1778,7 +1778,7 @@ ol {
   padding: 30px 0 10px;
   color: #333;
   font-size: 1.4em;
-  font-weight: 300;
+  font-weight: 400;
   color: #999;
 }
 .job-openings-area .jobs .apply-instruction .icon-arrow-right-1 {
@@ -1788,7 +1788,7 @@ ol {
 .job-openings-area .jobs .apply-instruction p,
 .job-openings-area .jobs .apply-instruction li {
   margin: 0;
-  margin-left: 45px;
+  margin-left: 40px;
 }
 @media only screen and (max-width: 767px) {
   .job-openings-area .jobs .apply-instruction p,
@@ -1981,7 +1981,7 @@ ol {
 .post-heading h2 {
   font-size: 1.2em;
   color: #fff;
-  font-weight: 300;
+  font-weight: 400;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 article.post {
@@ -1996,7 +1996,7 @@ article.post h3 {
   font-size: 1.5em;
   color: #999;
   padding-bottom: 10px;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.03em;
 }
 article.post p {
@@ -2088,7 +2088,7 @@ article.post .apply-area strong {
   color: #555;
   font-family: "brandon-grotesque", sans-serif;
   font-size: 1.75em;
-  font-weight: 300;
+  font-weight: 400;
 }
 article.post .apply-area span {
   display: block;
