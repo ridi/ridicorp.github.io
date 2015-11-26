@@ -2,8 +2,9 @@
 layout: page
 ---
 
-{% for post in paginator.posts %}
+{% for post in site.categories.["articles"] %}
 <div class="post-preview">
+    {% capture length %} {{ forloop.length }} {% endcapture %}
     <a href="{{ post.url | prepend: site.baseurl }}">
         <h2 class="post-title">            {{ post.title }}
         </h2>
@@ -15,11 +16,10 @@ layout: page
     </a>
     <p class="post-meta">Posted by {{ post.author }} on {{ post.date | date: "%B %-d, %Y" }}</p>
 </div>
-<hr>
 {% endfor %}
 
 <!-- Pager -->
-{% if paginator.total_pages > 1 %}
+{% if length != 0 %}
 <ul class="pager">
     {% if paginator.previous_page %}
     <li class="previous">

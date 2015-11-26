@@ -11,6 +11,7 @@ encoding: utf-8
 markdown: kramdown
 highlighter: pygments
 permalink: pretty
-paginate: 5
+gems: [jekyll-paginate]
+paginate: 2
 paginate_path: "articles/page:num/"
 exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md", "config.ru", "Gemfile", "Gemfile.lock", "vendor", "Procfile", "Rakefile"]
