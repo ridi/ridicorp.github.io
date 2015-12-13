@@ -28,8 +28,8 @@
 .button() {
 	.border-radius();
 	.transition();
-	font-size: 16px;
-	padding: 16px 50px;
+	font-size: 0.875em;
+	padding: 12px 30px;
 	display: inline-block;
 	letter-spacing: -0.03em;
 	font-weight: bold;
@@ -103,6 +103,32 @@
 		background: #1477c5;
 	}
 }
+.button-blue-stroke() {
+	.button();
+	background: transparent;
+	border: 2px solid #1f8ee6;
+	color: #1f8ee6;
+	&:hover {
+		background-color: #eef8ff;
+	}
+	i {
+		opacity: 1;
+	}
+}
+.button-white-stroke() {
+	.button();
+	background: transparent;
+	border: 2px solid #fff;
+	color: #fff;
+	&:hover {
+		border-color: rgba(255,255,255,.7);
+		color: rgba(255,255,255,.7);
+	}
+	i {
+		opacity: 1;
+	}
+}
+
 
 .transition(@type: all, @time: 0.2s) {
     -webkit-transition: @type @time;
