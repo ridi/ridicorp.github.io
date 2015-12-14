@@ -1841,8 +1841,9 @@ article.post {
 		em {
 			cursor: pointer;
 			font-style: normal;
+			transition: color .2s;
 		}
-		em.selected, em:hover {
+		em.active, em:hover {
 			color: #02406f;
 		}
 	}
@@ -1870,6 +1871,7 @@ article.post {
 				height: 100%;
 				transition: all .1s;
 				transform-origin: 50% 50%;
+				border-radius: 5px;
 			}
 			&:hover a {
 				-webkit-transform: translateY(-3px);
@@ -1906,6 +1908,12 @@ article.post {
 				display: -webkit-box;
 				-webkit-box-orient: vertical;
 			}
+		}
+	}
+	.pager {
+		a {
+			margin-right: 10px;
+			.button-blue-stroke();
 		}
 	}
 }
@@ -2072,6 +2080,15 @@ article.press-article {
 		font-size: 0.875em;
 		color: #a1afbb;
 		font-weight: bold;
+		margin-bottom: 15px;
+		.date {
+			.brandon-grotesque();
+		}
+	}
+	.download {
+		.button-gray-stroke();
+		.brandon-grotesque();
+		padding: 4px 8px;
 	}
 	p {
 		font-size: 1em;

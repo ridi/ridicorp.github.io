@@ -13,5 +13,5 @@ highlighter: pygments
 permalink: pretty
 gems: [jekyll-paginate]
 paginate: 6
-paginate_path: "articles/page:num/"
+paginate_path: "press/page:num/"
 exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md", "config.ru", "Gemfile", "Gemfile.lock", "vendor", "Procfile", "Rakefile"]

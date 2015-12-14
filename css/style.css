@@ -2218,8 +2218,9 @@ article.post .back:hover {
 .press-articles-area .paa-tab em {
   cursor: pointer;
   font-style: normal;
+  transition: color .2s;
 }
-.press-articles-area .paa-tab em.selected,
+.press-articles-area .paa-tab em.active,
 .press-articles-area .paa-tab em:hover {
   color: #02406f;
 }
@@ -2248,6 +2249,7 @@ article.post .back:hover {
   height: 100%;
   transition: all .1s;
   transform-origin: 50% 50%;
+  border-radius: 5px;
 }
 .press-articles-area .articles-list li:hover a {
   -webkit-transform: translatey(-3px);
@@ -2283,6 +2285,35 @@ article.post .back:hover {
   -webkit-line-clamp: 6;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+}
+.press-articles-area .pager a {
+  margin-right: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 0.875em;
+  padding: 12px 30px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+  background: transparent;
+  border: 2px solid #1f8ee6;
+  color: #1f8ee6;
+}
+.press-articles-area .pager a i {
+  opacity: 0.5;
+}
+.press-articles-area .pager a:hover {
+  background-color: #eef8ff;
+}
+.press-articles-area .pager a i {
+  opacity: 1;
 }
 .ridi-insights h3 {
   letter-spacing: -0.03em;
@@ -2467,6 +2498,37 @@ article.press-article .meta {
   font-size: 0.875em;
   color: #a1afbb;
   font-weight: bold;
+  margin-bottom: 15px;
+}
+article.press-article .meta .date {
+  font-family: "brandon-grotesque", sans-serif;
+}
+article.press-article .download {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+  font-size: 0.875em;
+  padding: 12px 30px;
+  display: inline-block;
+  letter-spacing: -0.03em;
+  font-weight: bold;
+  background: transparent;
+  border: 2px solid #c9c9c9;
+  color: #484848;
+  font-family: "brandon-grotesque", sans-serif;
+  padding: 4px 8px;
+}
+article.press-article .download i {
+  opacity: 0.5;
+}
+article.press-article .download:hover {
+  border-color: #484848;
 }
 article.press-article p {
   font-size: 1em;
