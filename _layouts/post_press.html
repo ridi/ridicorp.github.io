@@ -15,7 +15,7 @@ layout: default
     <div class="article-header">
         <h3>{{ page.title }}</h3>
         <div class="meta">
-            <span class="date">{{ post.date | date: "%Y. %m. %d. " }}</span>
+            <span class="date">{{ page.date | date: "%Y. %m. %d. " }}</span>
         </div>
         {% if page.docx %}
         <a href="{{ page.docx }}" class="download">DOCX  <i class="icon-direct-down"></i></a>
