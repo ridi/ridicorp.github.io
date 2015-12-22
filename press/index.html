@@ -48,82 +48,56 @@ fb-img: "img/fb-img-ridicorp.png"
     <div class="tab-container">
         <!-- 보도자료 -->
         <ol class="articles-list tab-content" id="tab1">
-            {% for post in paginator.posts %}
+            {% for post in site.categories.report_material %}
             <li>
                 <a href="{{ post.url | prepend: site.baseurl }}">
-                    <span class="date">{{ post.date | date: "%Y. %b %-d, " }}</span>
+                    <span class="date">{{ post.date | date: "%Y. %m. %d. " }}</span>
                     <strong class="title">{{ post.title }}</strong>
-                    <p>{{ post.subtitle }}</p>
+                    <p>{{ post.description }}</p>
                 </a>
                 <figure></figure>
             </li>
             {% endfor %}
-
-            {% if paginator.total_pages > 1 %}
-            <div class="clear"></div>
-            <div class="pager">
-                {% if paginator.previous_page %}
-                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="icon-direct-left"></i> 이전</a>
-                {% endif %}
-                {% if paginator.next_page %}
-                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">다음 <i class="icon-direct-right"></i></a>
-                {% endif %}
-            </div>
-            {% endif %}
-
         </ol>
 
+        {% if paginator.total_pages > 1 %}
+        <div class="clear"></div>
+        <div class="pager">
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="icon-direct-left"></i> 이전</a>
+            {% endif %}
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">다음 <i class="icon-direct-right"></i></a>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        
         <!-- 언론보도 -->
         <ol class="articles-list tab-content" id="tab2">
+            {% for post in site.categories.media_report %}
             <li>
-                <a href="../press-article/">
-                    <span class="date">2015. 10. 12.</span>
-                    <strong class="title">언론보도임</strong>
-                    <p>전자책 서점 리디북스는 학산문화사와 함께 일본 만화의 거장 테즈카 오사무(手塚治虫)의 대표작을 고화질(HD) 전자책으로 독점 출간한다고 10일 밝혔다. 리디북스가 이번에 새로 발간하는 테즈카 오사무의 전자책 시리즈 대부분은 국내에서 처음으로 전자책으로 재발간되는 작품들이다.테즈카 오사무의 중기 걸작인 석가모니의 일생을 담은 ‘붓다(ブッダ)’와 테즈카 프로덕션에서 작가의 사후 출간한 ‘테즈카 오사무 이야기’는 이미 출시된 상태다. 특히 지난달 30일 판매를 시작한 ‘붓다’는 발매 직후부터 만화 팬을 넘어 일반 도서 팬들 사이에서도 큰 인기를 얻고 있다. 일본에서 연재를 마친 1980년대에는 일본 종교학자들로부터 “불교를 이해하는데 있어 가장 쉽고도 심오한 작품”이라는 평가를 받았던 작품이기도 하다.</p>
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <span class="date">{{ post.date | date: "%Y. %m. %d. " }}</span>
+                    <strong class="title">{{ post.title }}</strong>
+                    <p>{{ post.description }}</p>
                 </a>
                 <figure></figure>
             </li>
-            <li>
-                <a href="../press-article/">
-                    <span class="date">2015. 10. 12.</span>
-                    <strong class="title">리디북스 페이퍼 소개자료 + 리디북스 페이퍼 8문8답</strong>
-                    <p>전자책 서점 리디북스는 학산문화사와 함께 일본 만화의 거장 테즈카 오사무(手塚治虫)의 대표작을 고화질(HD) 전자책으로 독점 출간한다고 10일 밝혔다. 리디북스가 이번에 새로 발간하는 테즈카 오사무의 전자책 시리즈 대부분은 국내에서 처음으로 전자책으로 재발간되는 작품들이다.테즈카 오사무의 중기 걸작인 석가모니의 일생을 담은 ‘붓다(ブッダ)’와 테즈카 프로덕션에서 작가의 사후 출간한 ‘테즈카 오사무 이야기’는 이미 출시된 상태다. 특히 지난달 30일 판매를 시작한 ‘붓다’는 발매 직후부터 만화 팬을 넘어 일반 도서 팬들 사이에서도 큰 인기를 얻고 있다. 일본에서 연재를 마친 1980년대에는 일본 종교학자들로부터 “불교를 이해하는데 있어 가장 쉽고도 심오한 작품”이라는 평가를 받았던 작품이기도 하다.</p>
-                </a>
-                <figure></figure>
-            </li>
-            <li>
-                <a href="../press-article/">
-                    <span class="date">2015. 10. 12.</span>
-                    <strong class="title">리디북스 페이퍼 소개자료 + 리디북스 페이퍼 8문8답</strong>
-                    <p>전자책 서점 리디북스는 학산문화사와 함께 일본 만화의 거장 테즈카 오사무(手塚治虫)의 대표작을 고화질(HD) 전자책으로 독점 출간한다고 10일 밝혔다. 리디북스가 이번에 새로 발간하는 테즈카 오사무의 전자책 시리즈 대부분은 국내에서 처음으로 전자책으로 재발간되는 작품들이다.테즈카 오사무의 중기 걸작인 석가모니의 일생을 담은 ‘붓다(ブッダ)’와 테즈카 프로덕션에서 작가의 사후 출간한 ‘테즈카 오사무 이야기’는 이미 출시된 상태다. 특히 지난달 30일 판매를 시작한 ‘붓다’는 발매 직후부터 만화 팬을 넘어 일반 도서 팬들 사이에서도 큰 인기를 얻고 있다. 일본에서 연재를 마친 1980년대에는 일본 종교학자들로부터 “불교를 이해하는데 있어 가장 쉽고도 심오한 작품”이라는 평가를 받았던 작품이기도 하다.</p>
-                </a>
-                <figure></figure>
-            </li>
-            <li>
-                <a href="../press-article/">
-                    <span class="date">2015. 10. 12.</span>
-                    <strong class="title">리디북스 페이퍼 소개자료 + 리디북스 페이퍼 8문8답</strong>
-                    <p>전자책 서점 리디북스는 학산문화사와 함께 일본 만화의 거장 테즈카 오사무(手塚治虫)의 대표작을 고화질(HD) 전자책으로 독점 출간한다고 10일 밝혔다. 리디북스가 이번에 새로 발간하는 테즈카 오사무의 전자책 시리즈 대부분은 국내에서 처음으로 전자책으로 재발간되는 작품들이다.테즈카 오사무의 중기 걸작인 석가모니의 일생을 담은 ‘붓다(ブッダ)’와 테즈카 프로덕션에서 작가의 사후 출간한 ‘테즈카 오사무 이야기’는 이미 출시된 상태다. 특히 지난달 30일 판매를 시작한 ‘붓다’는 발매 직후부터 만화 팬을 넘어 일반 도서 팬들 사이에서도 큰 인기를 얻고 있다. 일본에서 연재를 마친 1980년대에는 일본 종교학자들로부터 “불교를 이해하는데 있어 가장 쉽고도 심오한 작품”이라는 평가를 받았던 작품이기도 하다.</p>
-                </a>
-                <figure></figure>
-            </li>
-            <li>
-                <a href="../press-article/">
-                    <span class="date">2015. 10. 12.</span>
-                    <strong class="title">리디북스 페이퍼 소개자료 + 리디북스 페이퍼 8문8답</strong>
-                    <p>전자책 서점 리디북스는 학산문화사와 함께 일본 만화의 거장 테즈카 오사무(手塚治虫)의 대표작을 고화질(HD) 전자책으로 독점 출간한다고 10일 밝혔다. 리디북스가 이번에 새로 발간하는 테즈카 오사무의 전자책 시리즈 대부분은 국내에서 처음으로 전자책으로 재발간되는 작품들이다.테즈카 오사무의 중기 걸작인 석가모니의 일생을 담은 ‘붓다(ブッダ)’와 테즈카 프로덕션에서 작가의 사후 출간한 ‘테즈카 오사무 이야기’는 이미 출시된 상태다. 특히 지난달 30일 판매를 시작한 ‘붓다’는 발매 직후부터 만화 팬을 넘어 일반 도서 팬들 사이에서도 큰 인기를 얻고 있다. 일본에서 연재를 마친 1980년대에는 일본 종교학자들로부터 “불교를 이해하는데 있어 가장 쉽고도 심오한 작품”이라는 평가를 받았던 작품이기도 하다.</p>
-                </a>
-                <figure></figure>
-            </li>
-            <li>
-                <a href="../press-article/">
-                    <span class="date">2015. 10. 12.</span>
-                    <strong class="title">리디북스 페이퍼 소개자료 + 리디북스 페이퍼 8문8답</strong>
-                    <p>전자책 서점 리디북스는 학산문화사와 함께 일본 만화의 거장 테즈카 오사무(手塚治虫)의 대표작을 고화질(HD) 전자책으로 독점 출간한다고 10일 밝혔다. 리디북스가 이번에 새로 발간하는 테즈카 오사무의 전자책 시리즈 대부분은 국내에서 처음으로 전자책으로 재발간되는 작품들이다.테즈카 오사무의 중기 걸작인 석가모니의 일생을 담은 ‘붓다(ブッダ)’와 테즈카 프로덕션에서 작가의 사후 출간한 ‘테즈카 오사무 이야기’는 이미 출시된 상태다. 특히 지난달 30일 판매를 시작한 ‘붓다’는 발매 직후부터 만화 팬을 넘어 일반 도서 팬들 사이에서도 큰 인기를 얻고 있다. 일본에서 연재를 마친 1980년대에는 일본 종교학자들로부터 “불교를 이해하는데 있어 가장 쉽고도 심오한 작품”이라는 평가를 받았던 작품이기도 하다.</p>
-                </a>
-                <figure></figure>
-            </li>
+            {% endfor %}
         </ol>
+
+        {% if paginator.total_pages > 1 %}
+        <div class="clear"></div>
+        <div class="pager">
+            {% if paginator.previous_page %}
+                <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="icon-direct-left"></i> 이전</a>
+            {% endif %}
+            {% if paginator.next_page %}
+                <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">다음 <i class="icon-direct-right"></i></a>
+            {% endif %}
+        </div>
+        {% endif %}
     </div>
     <div class="clear"></div>
 </div>
