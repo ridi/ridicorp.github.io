@@ -7,8 +7,7 @@ header-img: "img/career-bg-1.jpg"
 fb-img: "img/fb-store.jpg"
 date: 2015-11-23 00:45:01
 footer: apply
-permalink: /articles/press-test4
-category: article
+permalink: /articles/test4
 ---
 
 

@@ -1,18 +1,17 @@
 ---
 layout: post
-title: "Press Test 3 Page"
-subtitle: "뉴스 테스트 3 subtitle"
-description: "뉴스 테스트 3 desc"
+title: "Press Test 1 Page"
+subtitle: "뉴스 테스트 1 subtitle"
+description: "뉴스 테스트 1 desc"
 header-img: "img/career-bg-1.jpg"
 fb-img: "img/fb-store.jpg"
-date: 2015-11-21 00:45:01
+date: 2015-11-26 00:45:01
 footer: apply
-permalink: /articles/press-test3
-category: article
+permalink: /articles/test
 ---
 
 
-h3. 뉴스 테스트 3이라고!!!!!
+h3. 뉴스 테스트 1이라고!!!!!
 
 스토어팀에서는 리디북스의 고객들이 책을 고르고 구매하는 '모든 것'에 관련된 '모든 것'을 개발합니다. 빠르게 성장하는 커머스 서비스에서 다양한 이벤트를 운영하며 발생하는 웹서버 및 데이터베이스의 부하를 감당하는 일은 매우 도전적입니다. 2015년 1월 현재, 리디북스의 서버 스택은 아래와 같이 구성되어 있습니다.
 

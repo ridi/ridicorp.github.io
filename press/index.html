@@ -45,9 +45,9 @@ fb-img: "img/fb-img-ridicorp.png"
         <span class="separator">∙</span>
         <em rel="tab2">언론보도</em>
     </div>
-    <div class="tab-container">
+    <div class="tab_container">
         <!-- 보도자료 -->
-        <ol class="articles-list tab-content" id="tab1">
+        <ol class="articles-list tab_content" id="tab1">
             {% for post in paginator.posts %}
             <li>
                 <a href="{{ post.url | prepend: site.baseurl }}">
@@ -74,7 +74,7 @@ fb-img: "img/fb-img-ridicorp.png"
         </ol>
 
         <!-- 언론보도 -->
-        <ol class="articles-list tab-content" id="tab2">
+        <ol class="articles-list tab_content" id="tab2">
             <li>
                 <a href="../press-article/">
                     <span class="date">2015. 10. 12.</span>
@@ -175,14 +175,26 @@ fb-img: "img/fb-img-ridicorp.png"
 
 <script>
 $(function() {
-
+    posts = [];
+    i = 0;
+    {% for post in paginator.posts %}
+        post_obj = {url:'{{ post.url }}',
+                date: '{{ post.date | date: "%Y. %b %-d" }}',
+                title: '{{ post.title | json }}',
+                subtitle:'{{ post.subtitle | json }}',
+                category:'{{ post.categories }}'
+                };
+    posts[i] = post_obj;
+    i++;
+    {% endfor %}
+        console.log(posts);
     $(".tab_content").hide();
     $(".tab_content:first").show();
 
     $(".paa-tab em").click(function () {
         $(".paa-tab em").removeClass("active");
         $(this).addClass("active");
-        $(".tab-content").hide()
+        $(".tab_content").hide()
         var activeTab = $(this).attr("rel");
         $("#" + activeTab).fadeIn()
     });
