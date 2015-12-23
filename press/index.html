@@ -234,7 +234,7 @@ fb-img: "img/fb-img-ridicorp.png"
         article_total_page = posts_article.length / 6 ;
         press_total_page = posts_press.length / 6;
 
-        getArticleInfo();
+        getArticleInfo(page_article);
         setArticlePageButton();
 
         $(".tab_content").hide();
@@ -250,42 +250,21 @@ fb-img: "img/fb-img-ridicorp.png"
             {
                 $("#prev_article").attr("id", "prev_press");
                 $("#next_article").attr("id", "next_press");
-                getPressInfo();
+                page_press = 0;
+                getPressInfo(page_press);
                 setPressPageButton();
             } else {
                 $("#prev_press").attr("id", "prev_article");
                 $("#next_press").attr("id", "next_article");
-                getArticleInfo();
+                page_article = 0;
+                getArticleInfo(page_article);
                 setArticlePageButton();
             }
         });
 
         $("#next_article").click(function () {
            page_article++;
-            console.log(page_article);
-            console.log(posts_article.length);
-            if(posts_article.length > page_article*6+6){
-                for(var i=1; i<7; i++)
-                {
-                    $("#article_url"+i).attr("href", posts_article[(page_article*6)+i-1].url);
-                    $("#article_date"+i).text(posts_article[(page_article*6)+i-1].date);
-                    $("#article_title"+i).text(posts_article[(page_article*6)+i-1].title);
-                    $("#article_desc"+i).text(posts_article[(page_article*6)+i-1].description);
-                }
-            } else {
-                var remain_article = posts_article.length - (page_article*6)
-                for(var i=1; i<remain_article+1; i++)
-                {
-                    $("#article_url"+i).attr("href", posts_article[(page_article*6)+i-1].url);
-                    $("#article_date"+i).text(posts_article[(page_article*6)+i-1].date);
-                    $("#article_title"+i).text(posts_article[(page_article*6)+i-1].title);
-                    $("#article_desc"+i).text(posts_article[(page_article*6)+i-1].description);
-                }
-                for(var i=6; i>remain_article; i--)
-                {
-                    $("#article"+i).hide();
-                }
-            }
+            getArticleInfo(page_article);
 
             if(page_article+1 == parseInt(article_total_page))
             {
@@ -296,44 +275,18 @@ fb-img: "img/fb-img-ridicorp.png"
 
         $("#prev_article").click(function () {
             page_article--;
-            for(var i=1; i<7; i++)
+            getArticleInfo(page_article);
+            $("#next_article").show();
+
+            if(page_article == 0)
             {
-                $("#article_url"+i).attr("href", posts_article[(page_article*6)+i-1].url);
-                $("#article_date"+i).text(posts_article[(page_article*6)+i-1].date);
-                $("#article_title"+i).text(posts_article[(page_article*6)+i-1].title);
-                $("#article_desc"+i).text(posts_article[(page_article*6)+i-1].description);
-                if(page_article == 0)
-                {
-                    $(this).hide();
-                }
-                $("#next_article").show();
+                $(this).hide();
             }
         });
 
         $("#next_press").click(function () {
             page_press++;
-            if(posts_press.length > page_press*6+6){
-                for(var i=1; i<7; i++)
-                {
-                    $("#press_url"+i).attr("href", posts_press[(page_press*6)+i-1].url);
-                    $("#press_date"+i).text(posts_press[(page_press*6)+i-1].date);
-                    $("#press_title"+i).text(posts_press[(page_press*6)+i-1].title);
-                    $("#press_desc"+i).text(posts_press[(page_press*6)+i-1].description);
-                }
-            } else {
-                var remain_press = posts_press.length - (page_press*6)
-                for(var i=1; i<remain_press+1; i++)
-                {
-                    $("#press_url"+i).attr("href", posts_press[(page_press*6)+i-1].url);
-                    $("#press_date"+i).text(posts_press[(page_press*6)+i-1].date);
-                    $("#press_title"+i).text(posts_press[(page_press*6)+i-1].title);
-                    $("#press_desc"+i).text(posts_press[(page_press*6)+i-1].description);
-                }
-                for(var i=6; i>remain_press; i--)
-                {
-                    $("#press"+i).hide();
-                }
-            }
+            getPressInfo(page_press);
 
             if(page_press+1 == parseInt(press_total_page))
             {
@@ -344,64 +297,71 @@ fb-img: "img/fb-img-ridicorp.png"
 
         $("#prev_press").click(function () {
             page_press--;
-            for(var i=1; i<7; i++)
+            getPressInfo(page_press);
+
+            $("#next_press").show();
+            if(page_press == 0)
             {
-                $("#press_url"+i).attr("href", posts_press[(page_press*6)+i-1].url);
-                $("#press_date"+i).text(posts_press[(page_press*6)+i-1].date);
-                $("#press_title"+i).text(posts_press[(page_press*6)+i-1].title);
-                $("#press_desc"+i).text(posts_press[(page_press*6)+i-1].description);
-                if(page_press == 0)
-                {
-                    $(this).hide();
-                }
-                $("#next_press").show();
+                $(this).hide();
             }
         });
 
-        function getPressInfo()
+        function getPressInfo(page)
         {
-            page_press = 0;
-            if(press_total_page >= 1){
+            if(posts_press.length > page*6+6){
                 for(var i=1; i<7; i++)
                 {
-                    $("#press_url"+i).attr("href", posts_press[i-1].url);
-                    $("#press_date"+i).text(posts_press[i-1].date);
-                    $("#press_title"+i).text(posts_press[i-1].title);
-                    $("#press_desc"+i).text(posts_press[i-1].description);
+                    $("#press_url"+i).attr("href", posts_press[(page*6)+i-1].url);
+                    $("#press_date"+i).text(posts_press[(page*6)+i-1].date);
+                    $("#press_title"+i).text(posts_press[(page*6)+i-1].title);
+                    $("#press_desc"+i).text(posts_press[(page*6)+i-1].description);
                     $("#press"+i).show();
                 }
             } else {
-                for(var i=1; i<posts_press.length+1; i++)
+                var remain_press = posts_press.length - (page*6)
+
+                for(var i=1; i<remain_press+1; i++)
                 {
-                    $("#press_url"+i).attr("href", posts_press[i-1].url);
-                    $("#press_date"+i).text(posts_press[i-1].date);
-                    $("#press_title"+i).text(posts_press[i-1].title);
-                    $("#press_desc"+i).text(posts_press[i-1].description);
+                    $("#press_url"+i).attr("href", posts_press[(page*6)+i-1].url);
+                    $("#press_date"+i).text(posts_press[(page*6)+i-1].date);
+                    $("#press_title"+i).text(posts_press[(page*6)+i-1].title);
+                    $("#press_desc"+i).text(posts_press[(page*6)+i-1].description);
                     $("#press"+i).show();
+                }
+
+                for(var i=6; i>remain_press; i--)
+                {
+                    $("#press"+i).hide();
                 }
             }
         }
 
-        function getArticleInfo()
+        function getArticleInfo(page)
         {
-            page_article = 0;
-            if(article_total_page >= 1){
+            if(posts_article.length > page*6+6){
                 for(var i=1; i<7; i++)
                 {
-                    $("#article_url"+i).attr("href", posts_article[i-1].url);
-                    $("#article_date"+i).text(posts_article[i-1].date);
-                    $("#article_title"+i).text(posts_article[i-1].title);
-                    $("#article_desc"+i).text(posts_article[i-1].description);
+                    $("#article_url"+i).attr("href", posts_article[(page*6)+i-1].url);
+                    $("#article_date"+i).text(posts_article[(page*6)+i-1].date);
+                    $("#article_title"+i).text(posts_article[(page*6)+i-1].title);
+                    $("#article_desc"+i).text(posts_article[(page*6)+i-1].description);
                     $("#article"+i).show();
                 }
             } else {
-                for(var i=1; i<posts_article.length+1; i++)
+                var remain_article = posts_article.length - (page*6);
+
+                for(var i=1; i<remain_article+1; i++)
                 {
-                    $("#article_url"+i).attr("href", posts_article[i-1].url);
-                    $("#article_date"+i).text(posts_article[i-1].date);
-                    $("#article_title"+i).text(posts_article[i-1].title);
-                    $("#article_desc"+i).text(posts_article[i-1].description);
+                    $("#article_url"+i).attr("href", posts_article[(page*6)+i-1].url);
+                    $("#article_date"+i).text(posts_article[(page*6)+i-1].date);
+                    $("#article_title"+i).text(posts_article[(page*6)+i-1].title);
+                    $("#article_desc"+i).text(posts_article[(page*6)+i-1].description);
                     $("#article"+i).show();
+                }
+
+                for(var i=6; i>remain_article; i--)
+                {
+                    $("#article"+i).hide();
                 }
             }
         }
