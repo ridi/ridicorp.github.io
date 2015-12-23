@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<header class="intro-header ih-press">
+    <div class="site-heading press-sub-heading">
+        <div class="wrapper">
+            <a href="{{ '/press/' | prepend: site.baseurl }}" class="back"><i class="icon-direct-left"></i> Press</a>
+            <h2>보도자료</h2>
+        </div>
+    </div>
+</header>
+
+<article class="press-article">
+    <div class="article-header">
+        <h3>{{ page.title }}</h3>
+        <div class="meta">
+            <span class="date">{{ post.date | date: "%Y. %m. %d. " }}</span>
+        </div>
+        {% if page.docx %}
+        <a href="{{ page.docx }}" class="download">DOCX  <i class="icon-direct-down"></i></a>
+        {% endif %}
+    </div>
+    <div class="article-content">
+        {{ content }}
+    </div>
+</article>
