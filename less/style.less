@@ -1787,11 +1787,25 @@ article.post {
 	width: 700px;
 	margin: 50px auto;
 
+	@media @queries_sm {
+		width: auto;
+		margin: 30px auto;
+	}
+
 	.pql-item {
 		width: 33%;
 		float: left;
 		border-left: 1px dotted #767f8c;
 		text-align: center;
+
+		@media @queries_sm {
+			float: none;
+			min-width: 320px;
+			padding-bottom: 30px;
+			text-align: left;
+			border: 0 none;
+			margin: 0 auto;
+		}
 
 		&:first-child {
 			border-left: none;
@@ -1801,18 +1815,23 @@ article.post {
 			display: block;
 			width: 150px;
 			margin: 0 auto 0;
+			@media @queries_sm {
+				float: left;
+				margin: 0 20px 0 0;
+			}
 		}
 		strong {
 			display: block;
-			text-align: center;
 			color: #545f6f;
 			font-size: 1.125em;
 			margin-bottom: 5px;
 			letter-spacing: -0.03em;
+			@media @queries_sm {
+				padding-top: 20px;
+			}
 		}
 		span {
 			display: block;
-			text-align: center;
 			color: #545f6f;
 			font-size: 0.8em;
 			margin-bottom: 20px;
@@ -1850,10 +1869,20 @@ article.post {
 	.articles-list {
 		width: 780px;
 		margin: 0 auto;
+		@media @queries_md {
+			width: 90%;
+			max-width: 690px;
+		}
+		@media @queries_sm {
+			width: auto;
+		}
 
 		li {
 			float: left;
 			position: relative;
+			@media @queries_sm {
+				float: none;
+			}
 			a {
 				display: block;			
 				width: 255px;
@@ -1861,6 +1890,13 @@ article.post {
 				position: relative;
 				z-index: 1;
 				transition: all .1s;
+				@media @queries_md {
+					width: 230px;
+				}
+				@media @queries_sm {
+					width: auto;
+					padding: 20px 20px 10px;
+				}
 			}
 			figure {
 				position: absolute;
@@ -1898,15 +1934,19 @@ article.post {
 				letter-spacing: -0.03em;
 			}
 			p {
-				font-size: 0.8em;
+				font-size: 0.875em;
 				color: #495262;
 				line-height: 1.5;
-				height: 115px;
+				height: 126px;
 				text-overflow: ellipsis;
 				overflow: hidden;
 				-webkit-line-clamp: 6;
 				display: -webkit-box;
 				-webkit-box-orient: vertical;
+				@media @queries_smmd {
+					-webkit-line-clamp: 3;
+					height: 63px;
+				}
 			}
 		}
 	}
@@ -2007,6 +2047,9 @@ article.post {
 		width: 960px;
 		margin: 0 auto;
 		text-align: left;
+		@media @queries_smmd {
+			width: 90%;
+		}
 	}
 	a.back {
 		color: #fff;
@@ -2021,6 +2064,9 @@ article.post {
 		&:hover {
 			color: rgba(255,255,255,.6);
 		}
+		@media @queries_sm {
+			margin-left: 0;
+		}
 	}
 	h2 {
 		font-size: 2.5em;
@@ -2029,16 +2075,30 @@ article.post {
 		text-align: left;
 		color: #fff;
 		.text-shadow(0 1px 2px rgba(15,93,156,.5));
+		@media @queries_sm {
+			font-size: 1.75em;
+		}
 	}
 }
 .photos-list {
 	width: 960px;
 	margin: 0 auto;
+	@media @queries_smmd {
+		width: 90%;
+	}
 	li {
 		width: 30%;
 		float: left;
 		margin: 50px 20px 0 0;
 		text-align: center;
+		@media @queries_md {
+			
+		}
+		@media @queries_sm {
+			margin: 30px auto 30px;
+			width: 90%;
+			float: none;
+		}
 		img {
 			width: 100%;
 			margin-bottom: 25px;
@@ -2067,6 +2127,10 @@ article.post {
 article.press-article {
 	width: 700px;
 	margin: 70px auto;
+	@media @queries_sm {
+		width: 90%;
+		margin: 30px auto;
+	}
 	.article-header {
 		margin-bottom: 30px;
 	}
@@ -2076,6 +2140,9 @@ article.press-article {
 		color: #1f8ee6;
 		font-size: 2em;
 		line-height: 1.3;
+		@media @queries_sm {
+			font-size: 1.5em;
+		}
 	}
 	.meta {
 		font-size: 0.875em;

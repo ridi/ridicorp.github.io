@@ -2140,11 +2140,27 @@ article.post .back:hover {
   width: 700px;
   margin: 50px auto;
 }
+@media only screen and (max-width: 767px) {
+  .press-quick-links {
+    width: auto;
+    margin: 30px auto;
+  }
+}
 .press-quick-links .pql-item {
   width: 33%;
   float: left;
   border-left: 1px dotted #767f8c;
   text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .press-quick-links .pql-item {
+    float: none;
+    min-width: 320px;
+    padding-bottom: 30px;
+    text-align: left;
+    border: 0 none;
+    margin: 0 auto;
+  }
 }
 .press-quick-links .pql-item:first-child {
   border-left: none;
@@ -2154,17 +2170,26 @@ article.post .back:hover {
   width: 150px;
   margin: 0 auto 0;
 }
+@media only screen and (max-width: 767px) {
+  .press-quick-links .pql-item .pql-illust {
+    float: left;
+    margin: 0 20px 0 0;
+  }
+}
 .press-quick-links .pql-item strong {
   display: block;
-  text-align: center;
   color: #545f6f;
   font-size: 1.125em;
   margin-bottom: 5px;
   letter-spacing: -0.03em;
 }
+@media only screen and (max-width: 767px) {
+  .press-quick-links .pql-item strong {
+    padding-top: 20px;
+  }
+}
 .press-quick-links .pql-item span {
   display: block;
-  text-align: center;
   color: #545f6f;
   font-size: 0.8em;
   margin-bottom: 20px;
@@ -2228,9 +2253,25 @@ article.post .back:hover {
   width: 780px;
   margin: 0 auto;
 }
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .press-articles-area .articles-list {
+    width: 90%;
+    max-width: 690px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .press-articles-area .articles-list {
+    width: auto;
+  }
+}
 .press-articles-area .articles-list li {
   float: left;
   position: relative;
+}
+@media only screen and (max-width: 767px) {
+  .press-articles-area .articles-list li {
+    float: none;
+  }
 }
 .press-articles-area .articles-list li a {
   display: block;
@@ -2239,6 +2280,17 @@ article.post .back:hover {
   position: relative;
   z-index: 1;
   transition: all .1s;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .press-articles-area .articles-list li a {
+    width: 230px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .press-articles-area .articles-list li a {
+    width: auto;
+    padding: 20px 20px 10px;
+  }
 }
 .press-articles-area .articles-list li figure {
   position: absolute;
@@ -2276,15 +2328,21 @@ article.post .back:hover {
   letter-spacing: -0.03em;
 }
 .press-articles-area .articles-list li p {
-  font-size: 0.8em;
+  font-size: 0.875em;
   color: #495262;
   line-height: 1.5;
-  height: 115px;
+  height: 126px;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 6;
   display: -webkit-box;
   -webkit-box-orient: vertical;
+}
+@media only screen and (max-width : 1023px) {
+  .press-articles-area .articles-list li p {
+    -webkit-line-clamp: 3;
+    height: 63px;
+  }
 }
 .press-articles-area .pager a {
   margin-right: 10px;
@@ -2402,6 +2460,11 @@ article.post .back:hover {
   margin: 0 auto;
   text-align: left;
 }
+@media only screen and (max-width : 1023px) {
+  .ih-press .wrapper {
+    width: 90%;
+  }
+}
 .ih-press a.back {
   color: #fff;
   font-family: "brandon-grotesque", sans-serif;
@@ -2416,6 +2479,11 @@ article.post .back:hover {
 .ih-press a.back:hover {
   color: rgba(255, 255, 255, 0.6);
 }
+@media only screen and (max-width: 767px) {
+  .ih-press a.back {
+    margin-left: 0;
+  }
+}
 .ih-press h2 {
   font-size: 2.5em;
   font-weight: 700;
@@ -2424,15 +2492,35 @@ article.post .back:hover {
   color: #fff;
   text-shadow: 0 1px 2px rgba(15, 93, 156, 0.5);
 }
+@media only screen and (max-width: 767px) {
+  .ih-press h2 {
+    font-size: 1.75em;
+  }
+}
 .photos-list {
   width: 960px;
   margin: 0 auto;
+}
+@media only screen and (max-width : 1023px) {
+  .photos-list {
+    width: 90%;
+  }
 }
 .photos-list li {
   width: 30%;
   float: left;
   margin: 50px 20px 0 0;
   text-align: center;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  
+}
+@media only screen and (max-width: 767px) {
+  .photos-list li {
+    margin: 30px auto 30px;
+    width: 90%;
+    float: none;
+  }
 }
 .photos-list li img {
   width: 100%;
@@ -2485,6 +2573,12 @@ article.press-article {
   width: 700px;
   margin: 70px auto;
 }
+@media only screen and (max-width: 767px) {
+  article.press-article {
+    width: 90%;
+    margin: 30px auto;
+  }
+}
 article.press-article .article-header {
   margin-bottom: 30px;
 }
@@ -2494,6 +2588,11 @@ article.press-article h3 {
   color: #1f8ee6;
   font-size: 2em;
   line-height: 1.3;
+}
+@media only screen and (max-width: 767px) {
+  article.press-article h3 {
+    font-size: 1.5em;
+  }
 }
 article.press-article .meta {
   font-size: 0.875em;
