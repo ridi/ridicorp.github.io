@@ -153,9 +153,9 @@ fb-img: "img/fb-img-ridicorp.png"
 
         <div class="clear"></div>
         <div class="pager">
-            <a id="prev_article"><i class="icon-direct-left"></i> 이전</a>
+            <a id="prev_page"><i class="icon-direct-left"></i> 이전</a>
 
-            <a id="next_article">다음 <i class="icon-direct-right"></i></a>
+            <a id="next_page">다음 <i class="icon-direct-right"></i></a>
         </div>
     </div>
     <div class="clear"></div>
@@ -233,6 +233,20 @@ fb-img: "img/fb-img-ridicorp.png"
 
         article_total_page = posts_article.length / 6 ;
         press_total_page = posts_press.length / 6;
+        if(article_total_page > parseInt(article_total_page))
+        {
+            article_total_page = parseInt(article_total_page) + 1;
+        }
+
+        if(press_total_page > parseInt(press_total_page))
+        {
+            press_total_page = parseInt(press_total_page) + 1;
+        }
+
+            console.log(article_total_page);
+            console.log(press_total_page);
+        $("#prev_page").data("flag", "article");
+        $("#next_page").data("flag", "article");
 
         getArticleInfo(page_article);
         setArticlePageButton();
@@ -248,62 +262,67 @@ fb-img: "img/fb-img-ridicorp.png"
             $("#" + activeTab).fadeIn()
             if(activeTab == 'tab2')
             {
-                $("#prev_article").attr("id", "prev_press");
-                $("#next_article").attr("id", "next_press");
+                $("#prev_page").data("flag", "press");
+                $("#next_page").data("flag", "press");
                 page_press = 0;
                 getPressInfo(page_press);
                 setPressPageButton();
             } else {
-                $("#prev_press").attr("id", "prev_article");
-                $("#next_press").attr("id", "next_article");
+                $("#prev_page").data("flag", "article");
+                $("#next_page").data("flag", "article");
                 page_article = 0;
                 getArticleInfo(page_article);
                 setArticlePageButton();
             }
         });
 
-        $("#next_article").click(function () {
-           page_article++;
-            getArticleInfo(page_article);
-
-            if(page_article+1 == parseInt(article_total_page))
+        $(".pager").find("#next_page").click(function() {
+            if($("#next_page").data("flag") == "article")
             {
-                $(this).hide();
+                page_article++;
+                getArticleInfo(page_article);
+
+                if(page_article+1 == parseInt(article_total_page))
+                {
+                    $(this).hide();
+                }
+            } else {
+                console.log("next_press enter")
+                page_press++;
+                getPressInfo(page_press);
+
+                if(page_press+1 == parseInt(press_total_page))
+                {
+                    $(this).hide();
+                }
             }
-            $("#prev_article").show();
+
+            $("#prev_page").show();
         });
 
-        $("#prev_article").click(function () {
-            page_article--;
-            getArticleInfo(page_article);
-            $("#next_article").show();
-
-            if(page_article == 0)
+        $(".pager").find("#prev_page").click(function() {
+            if($("#prev_page").data("flag") == "article")
             {
-                $(this).hide();
+                console.log("prev_article");
+                page_article--;
+                getArticleInfo(page_article);
+
+                if(page_article == 0)
+                {
+                    $(this).hide();
+                }
+            } else {
+                console.log("prev_press");
+                page_press--;
+                getPressInfo(page_press);
+
+                if(page_press == 0)
+                {
+                    $(this).hide();
+                }
             }
-        });
 
-        $("#next_press").click(function () {
-            page_press++;
-            getPressInfo(page_press);
-
-            if(page_press+1 == parseInt(press_total_page))
-            {
-                $(this).hide();
-            }
-            $("#prev_press").show();
-        });
-
-        $("#prev_press").click(function () {
-            page_press--;
-            getPressInfo(page_press);
-
-            $("#next_press").show();
-            if(page_press == 0)
-            {
-                $(this).hide();
-            }
+            $("#next_page").show();
         });
 
         function getPressInfo(page)
@@ -370,11 +389,11 @@ fb-img: "img/fb-img-ridicorp.png"
         {
             if(posts_article.length < 7)
             {
-                $("#prev_article").hide();
-                $("#next_article").hide();
+                $("#prev_page").hide();
+                $("#next_page").hide();
             } else if(posts_article.length > 6) {
-                $("#prev_article").hide();
-                $("#next_article").show();
+                $("#prev_page").hide();
+                $("#next_page").show();
             }
         }
 
@@ -382,11 +401,11 @@ fb-img: "img/fb-img-ridicorp.png"
         {
             if(posts_press.length < 7)
             {
-                $("#prev_press").hide();
-                $("#next_press").hide();
+                $("#prev_page").hide();
+                $("#next_page").hide();
             } else {
-                $("#prev_press").hide();
-                $("#next_press").show();
+                $("#prev_page").hide();
+                $("#next_page").show();
             }
         }
     });
