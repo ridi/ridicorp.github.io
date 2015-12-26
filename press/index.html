@@ -98,9 +98,9 @@ fb-img: "img/fb-img-ridicorp.png"
 
         <div class="clear"></div>
         <div class="pager">
-            <a id="prev_page"><i class="icon-direct-left"></i> 이전</a>
+            <div class="page-button" id="prev_page"><i class="icon-direct-left"></i> 이전</div>
 
-            <a id="next_page">다음 <i class="icon-direct-right"></i></a>
+            <div class="page-button" id="next_page">다음 <i class="icon-direct-right"></i></div>
         </div>
     </div>
     <div class="clear"></div>
@@ -158,7 +158,7 @@ fb-img: "img/fb-img-ridicorp.png"
         page_press_material = 0;
         {% for post in paginator.posts %}
             var post_obj = {url:'{{ post.url | prepend: site.baseurl }}',
-                date: '{{ post.date | date: "%Y. %b %-d" }}',
+                date: '{{ post.date | date: "%Y. %m. %d." }}',
                 title: '{{ post.title | json }}',
                 subtitle:'{{ post.subtitle | json }}',
                 category:'{{ post.categories }}',
