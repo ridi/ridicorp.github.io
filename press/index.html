@@ -172,13 +172,21 @@ fb-img: "img/fb-img-ridicorp.png"
                 cur_page++;
                 refreshMaterialInfo();
                 refreshPageButton();
+                focusToPost();
             });
 
             prev_button.click(function () {
                 cur_page--;
                 refreshMaterialInfo();
                 refreshPageButton();
+                focusToPost();
             });
+        }
+
+        function focusToPost() {
+            $("html, body").animate(
+                    {scrollTop: $("#tab1").offset().top-70}
+            );
         }
 
         // 보도자료 항목들을 리프레쉬
