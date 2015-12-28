@@ -50,6 +50,7 @@ fb-img: "img/fb-img-ridicorp.png"
                 <a id="press_material_url1" href="">
                     <span id="press_material_date1" class="date"></span>
                     <strong id="press_material_title1" class="title"></strong>
+
                     <p id="press_material_desc1"></p>
                 </a>
                 <figure></figure>
@@ -58,6 +59,7 @@ fb-img: "img/fb-img-ridicorp.png"
                 <a id="press_material_url2" href="">
                     <span id="press_material_date2" class="date"></span>
                     <strong id="press_material_title2" class="title"></strong>
+
                     <p id="press_material_desc2"></p>
                 </a>
                 <figure></figure>
@@ -66,6 +68,7 @@ fb-img: "img/fb-img-ridicorp.png"
                 <a id="press_material_url3" href="">
                     <span id="press_material_date3" class="date"></span>
                     <strong id="press_material_title3" class="title"></strong>
+
                     <p id="press_material_desc3"></p>
                 </a>
                 <figure></figure>
@@ -74,6 +77,7 @@ fb-img: "img/fb-img-ridicorp.png"
                 <a id="press_material_url4" href="">
                     <span id="press_material_date4" class="date"></span>
                     <strong id="press_material_title4" class="title"></strong>
+
                     <p id="press_material_desc4"></p>
                 </a>
                 <figure></figure>
@@ -136,107 +140,101 @@ fb-img: "img/fb-img-ridicorp.png"
 </div>
 
 <script>
-    $(function() {
-        posts_press_material = [];
-        index_press_material = 0;
-        page_press_material = 0;
-        page_item_count = 4;
+    $(function () {
+        var posts_press_material = [];
+        var press_material_total_page;
+        var cur_page = 0;
+        var ITEMS_PER_PAGE = 4;
+
+        var prev_button = $("#prev_page");
+        var next_button = $("#next_page");
+
         {% for post in paginator.posts %}
-            var post_obj = {url:'{{ post.url | prepend: site.baseurl }}',
-                date: '{{ post.date | date: "%Y. %m. %d." }}',
-                title: '{{ post.title | json }}',
-                subtitle:'{{ post.subtitle | json }}',
-                category:'{{ post.categories }}',
-                description:'{{ post.description | json }}'
-            };
-            if(post_obj.category == 'press_material') {
-                posts_press_material[index_press_material] = post_obj;
-                index_press_material++;
-            }
+        posts_press_material.push({
+            url: '{{ post.url | prepend: site.baseurl }}',
+            date: '{{ post.date | date: "%Y. %m. %d." }}',
+            title: '{{ post.title | json | escape }}',
+            category: '{{ post.categories }}',
+            description: '{{ post.description | json | escape }}'
+        });
         {% endfor %}
 
-        press_material_total_page = posts_press_material.length / page_item_count ;
-        if(press_material_total_page > parseInt(press_material_total_page))
-        {
-            press_material_total_page = parseInt(press_material_total_page) + 1;
+        press_material_total_page = Math.floor(posts_press_material.length / ITEMS_PER_PAGE);
+
+        if ((posts_press_material.length % ITEMS_PER_PAGE) > 0) {
+            press_material_total_page++;
         }
 
-        $("#prev_page").data("flag", "press_material");
-        $("#next_page").data("flag", "press_material");
+        refreshMaterialInfo();
+        refreshPageButton();
 
-        getMaterialInfo(page_press_material);
-        setPressMaterialButton();
         $(".articles-list li:eq(1)").addClass("row-last");
 
-        $(".pager").find("#next_page").click(function() {
-            if($("#next_page").data("flag") == "press_material")
-            {
-                page_press_material++;
-                getMaterialInfo(page_press_material);
-
-                if(page_press_material+1 == parseInt(press_material_total_page))
-                {
-                    $(this).hide();
-                }
-            }
-            $("#prev_page").show();
-        });
-
-        $(".pager").find("#prev_page").click(function() {
-            if($("#prev_page").data("flag") == "press_material")
-            {
-                page_press_material--;
-                getMaterialInfo(page_press_material);
-
-                if(page_press_material == 0)
-                {
-                    $(this).hide();
-                }
-            }
-
-            $("#next_page").show();
-        });
-
-        function getMaterialInfo(page)
-        {
-            if(posts_press_material.length > page*page_item_count+page_item_count){
-                for(var i=1; i<page_item_count+1; i++)
-                {
-                    $("#press_material_url"+i).attr("href", posts_press_material[(page*page_item_count)+i-1].url);
-                    $("#press_material_date"+i).text(posts_press_material[(page*page_item_count)+i-1].date);
-                    $("#press_material_title"+i).text(posts_press_material[(page*page_item_count)+i-1].title);
-                    $("#press_material_desc"+i).text(posts_press_material[(page*page_item_count)+i-1].description);
-                    $("#press_material"+i).show();
+        //보도자료 항목들을 리프레쉬
+        function refreshMaterialInfo() {
+            var i = 0;
+            if (posts_press_material.length > cur_page * ITEMS_PER_PAGE + ITEMS_PER_PAGE) {
+                for (i = 0; i < ITEMS_PER_PAGE; i++) {
+                    setPressMaterial(i);
                 }
             } else {
-                var remain_press_material = posts_press_material.length - (page*page_item_count);
+                var remain_press_material = posts_press_material.length - (cur_page * ITEMS_PER_PAGE);
 
-                for(var i=1; i<remain_press_material+1; i++)
-                {
-                    $("#press_material_url"+i).attr("href", posts_press_material[(page*page_item_count)+i-1].url);
-                    $("#press_material_date"+i).text(posts_press_material[(page*page_item_count)+i-1].date);
-                    $("#press_material_title"+i).text(posts_press_material[(page*page_item_count)+i-1].title);
-                    $("#press_material_desc"+i).text(posts_press_material[(page*page_item_count)+i-1].description);
-                    $("#press_material"+i).show();
+                for (i = 0; i < remain_press_material; i++) {
+                    setPressMaterial(i);
                 }
 
-                for(var i=page_item_count; i>remain_press_material; i--)
-                {
-                    $("#press_material"+i).hide();
+                for (i = remain_press_material; i < ITEMS_PER_PAGE; i++) {
+                    $("#press_material" + i).hide();
                 }
             }
         }
 
-        function setPressMaterialButton()
-        {
-            if(posts_press_material.length < page_item_count+1)
-            {
-                $("#prev_page").hide();
-                $("#next_page").hide();
-            } else if(posts_press_material.length > page_item_count) {
-                $("#prev_page").hide();
-                $("#next_page").show();
+        //보도자료 항목 값을 각 html element에 set
+        function setPressMaterial(index) {
+            var item_index = (cur_page * ITEMS_PER_PAGE) + index;
+            var post = posts_press_material[item_index];
+
+            $("#press_material_url" + (index + 1)).attr("href", post.url);
+            $("#press_material_date" + (index + 1)).text(post.date);
+            $("#press_material_title" + (index + 1)).html(post.title);
+            $("#press_material_desc" + (index + 1)).html(post.description);
+            $("#press_material" + (index + 1)).show();
+        }
+
+        //page 버튼을 리프레쉬
+        function refreshPageButton() {
+            if (cur_page == 0) {
+                //첫번째 페이지
+                if (posts_press_material.length <= ITEMS_PER_PAGE) {
+                    //다음페이지가 없으면
+                    prev_button.hide();
+                    next_button.hide();
+                } else {
+                    //다음페이지가 있으면
+                    prev_button.hide();
+                    next_button.show();
+                }
+            } else if (cur_page + 1 == press_material_total_page) {
+                //마지막 페이지
+                prev_button.show();
+                next_button.hide();
+            } else {
+                prev_button.show();
+                next_button.show();
             }
         }
+
+        next_button.click(function () {
+            cur_page++;
+            refreshMaterialInfo(cur_page);
+            refreshPageButton();
+        });
+
+        prev_button.click(function () {
+            cur_page--;
+            refreshMaterialInfo(cur_page);
+            refreshPageButton();
+        });
     });
 </script>
