@@ -173,17 +173,20 @@ fb-img: "img/fb-img-ridicorp.png"
         //보도자료 항목들을 리프레쉬
         function refreshMaterialInfo() {
             var i = 0;
+            //다음페이지가 존재하는 경우
             if (posts_press_material.length > cur_page * ITEMS_PER_PAGE + ITEMS_PER_PAGE) {
                 for (i = 0; i < ITEMS_PER_PAGE; i++) {
                     setPressMaterial(i);
                 }
             } else {
+                //마지막 페이지
                 var remain_press_material = posts_press_material.length - (cur_page * ITEMS_PER_PAGE);
 
                 for (i = 0; i < remain_press_material; i++) {
                     setPressMaterial(i);
                 }
 
+                //set 되지 않은 html element hide
                 for (i = remain_press_material; i < ITEMS_PER_PAGE; i++) {
                     $("#press_material" + i).hide();
                 }
@@ -227,13 +230,13 @@ fb-img: "img/fb-img-ridicorp.png"
 
         next_button.click(function () {
             cur_page++;
-            refreshMaterialInfo(cur_page);
+            refreshMaterialInfo();
             refreshPageButton();
         });
 
         prev_button.click(function () {
             cur_page--;
-            refreshMaterialInfo(cur_page);
+            refreshMaterialInfo();
             refreshPageButton();
         });
     });
