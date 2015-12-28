@@ -20,6 +20,9 @@ layout: default
         {% if page.docx %}
         <a href="{{ page.docx }}" class="download">DOCX  <i class="icon-direct-down"></i></a>
         {% endif %}
+        {% if page.zip %}
+        <a href="{{ page.zip }}" class="download">ZIP  <i class="icon-direct-down"></i></a>
+        {% endif %}
     </div>
     <div class="article-content">
         {{ content }}
