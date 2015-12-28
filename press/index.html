@@ -141,46 +141,57 @@ fb-img: "img/fb-img-ridicorp.png"
 
 <script>
     $(function () {
-        var posts_press_material = [];
-        var press_material_total_page;
-        var cur_page = 0;
         var ITEMS_PER_PAGE = 4;
+
+        var posts = [
+            {% for post in paginator.posts %}
+            {
+                url: '{{ post.url | prepend: site.baseurl }}',
+                date: '{{ post.date | date: "%Y. %m. %d." }}',
+                title: '{{ post.title | json | escape }}',
+                category: '{{ post.categories }}',
+                description: '{{ post.description | json | escape }}'
+            },
+            {% endfor %}
+        ];
+
+        var total_pages = Math.ceil(posts.length / ITEMS_PER_PAGE);
+        var cur_page = 0;
 
         var prev_button = $("#prev_page");
         var next_button = $("#next_page");
 
-        {% for post in paginator.posts %}
-        posts_press_material.push({
-            url: '{{ post.url | prepend: site.baseurl }}',
-            date: '{{ post.date | date: "%Y. %m. %d." }}',
-            title: '{{ post.title | json | escape }}',
-            category: '{{ post.categories }}',
-            description: '{{ post.description | json | escape }}'
-        });
-        {% endfor %}
-
-        press_material_total_page = Math.floor(posts_press_material.length / ITEMS_PER_PAGE);
-
-        if ((posts_press_material.length % ITEMS_PER_PAGE) > 0) {
-            press_material_total_page++;
-        }
+        attachPageButtonHandlers();
 
         refreshMaterialInfo();
         refreshPageButton();
 
-        $(".articles-list li:eq(1)").addClass("row-last");
+        // 이전 다음 버튼 클릭 이벤트 핸들러 달기
+        function attachPageButtonHandlers() {
+            next_button.click(function () {
+                cur_page++;
+                refreshMaterialInfo();
+                refreshPageButton();
+            });
 
-        //보도자료 항목들을 리프레쉬
+            prev_button.click(function () {
+                cur_page--;
+                refreshMaterialInfo();
+                refreshPageButton();
+            });
+        }
+
+        // 보도자료 항목들을 리프레쉬
         function refreshMaterialInfo() {
             var i = 0;
             //다음페이지가 존재하는 경우
-            if (posts_press_material.length > cur_page * ITEMS_PER_PAGE + ITEMS_PER_PAGE) {
+            if (posts.length > cur_page * ITEMS_PER_PAGE + ITEMS_PER_PAGE) {
                 for (i = 0; i < ITEMS_PER_PAGE; i++) {
                     setPressMaterial(i);
                 }
             } else {
                 //마지막 페이지
-                var remain_press_material = posts_press_material.length - (cur_page * ITEMS_PER_PAGE);
+                var remain_press_material = posts.length - (cur_page * ITEMS_PER_PAGE);
 
                 for (i = 0; i < remain_press_material; i++) {
                     setPressMaterial(i);
@@ -193,10 +204,10 @@ fb-img: "img/fb-img-ridicorp.png"
             }
         }
 
-        //보도자료 항목 값을 각 html element에 set
+        // 보도자료 항목 값을 각 html element에 set
         function setPressMaterial(index) {
             var item_index = (cur_page * ITEMS_PER_PAGE) + index;
-            var post = posts_press_material[item_index];
+            var post = posts[item_index];
 
             $("#press_material_url" + (index + 1)).attr("href", post.url);
             $("#press_material_date" + (index + 1)).text(post.date);
@@ -205,39 +216,10 @@ fb-img: "img/fb-img-ridicorp.png"
             $("#press_material" + (index + 1)).show();
         }
 
-        //page 버튼을 리프레쉬
+        // page 버튼을 리프레쉬
         function refreshPageButton() {
-            if (cur_page == 0) {
-                //첫번째 페이지
-                if (posts_press_material.length <= ITEMS_PER_PAGE) {
-                    //다음페이지가 없으면
-                    prev_button.hide();
-                    next_button.hide();
-                } else {
-                    //다음페이지가 있으면
-                    prev_button.hide();
-                    next_button.show();
-                }
-            } else if (cur_page + 1 == press_material_total_page) {
-                //마지막 페이지
-                prev_button.show();
-                next_button.hide();
-            } else {
-                prev_button.show();
-                next_button.show();
-            }
+            (cur_page > 0) ? prev_button.show() : prev_button.hide();
+            (cur_page + 1 < total_pages) ? next_button.show() : next_button.hide();
         }
-
-        next_button.click(function () {
-            cur_page++;
-            refreshMaterialInfo();
-            refreshPageButton();
-        });
-
-        prev_button.click(function () {
-            cur_page--;
-            refreshMaterialInfo();
-            refreshPageButton();
-        });
     });
 </script>
