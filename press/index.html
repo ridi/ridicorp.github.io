@@ -78,22 +78,6 @@ fb-img: "img/fb-img-ridicorp.png"
                 </a>
                 <figure></figure>
             </li>
-            <li id="press_material5" hidden>
-                <a id="press_material_url5" href="">
-                    <span id="press_material_date5" class="date"></span>
-                    <strong id="press_material_title5" class="title"></strong>
-                    <p id="press_material_desc5"></p>
-                </a>
-            <figure></figure>
-            </li>
-            <li id="press_material6" hidden>
-                <a id="press_material_url6" href="">
-                    <span id="press_material_date6" class="date"></span>
-                    <strong id="press_material_title6" class="title"></strong>
-                    <p id="press_material_desc6"></p>
-                </a>
-                <figure></figure>
-            </li>
         </ol>
 
         <div class="clear"></div>
@@ -156,6 +140,7 @@ fb-img: "img/fb-img-ridicorp.png"
         posts_press_material = [];
         index_press_material = 0;
         page_press_material = 0;
+        page_item_count = 4;
         {% for post in paginator.posts %}
             var post_obj = {url:'{{ post.url | prepend: site.baseurl }}',
                 date: '{{ post.date | date: "%Y. %m. %d." }}',
@@ -170,7 +155,7 @@ fb-img: "img/fb-img-ridicorp.png"
             }
         {% endfor %}
 
-        press_material_total_page = posts_press_material.length / 6 ;
+        press_material_total_page = posts_press_material.length / page_item_count ;
         if(press_material_total_page > parseInt(press_material_total_page))
         {
             press_material_total_page = parseInt(press_material_total_page) + 1;
@@ -181,6 +166,7 @@ fb-img: "img/fb-img-ridicorp.png"
 
         getMaterialInfo(page_press_material);
         setPressMaterialButton();
+        $(".articles-list li:eq(1)").addClass("row-last");
 
         $(".pager").find("#next_page").click(function() {
             if($("#next_page").data("flag") == "press_material")
@@ -213,28 +199,28 @@ fb-img: "img/fb-img-ridicorp.png"
 
         function getMaterialInfo(page)
         {
-            if(posts_press_material.length > page*6+6){
-                for(var i=1; i<7; i++)
+            if(posts_press_material.length > page*page_item_count+page_item_count){
+                for(var i=1; i<page_item_count+1; i++)
                 {
-                    $("#press_material_url"+i).attr("href", posts_press_material[(page*6)+i-1].url);
-                    $("#press_material_date"+i).text(posts_press_material[(page*6)+i-1].date);
-                    $("#press_material_title"+i).text(posts_press_material[(page*6)+i-1].title);
-                    $("#press_material_desc"+i).text(posts_press_material[(page*6)+i-1].description);
+                    $("#press_material_url"+i).attr("href", posts_press_material[(page*page_item_count)+i-1].url);
+                    $("#press_material_date"+i).text(posts_press_material[(page*page_item_count)+i-1].date);
+                    $("#press_material_title"+i).text(posts_press_material[(page*page_item_count)+i-1].title);
+                    $("#press_material_desc"+i).text(posts_press_material[(page*page_item_count)+i-1].description);
                     $("#press_material"+i).show();
                 }
             } else {
-                var remain_press_material = posts_press_material.length - (page*6);
+                var remain_press_material = posts_press_material.length - (page*page_item_count);
 
                 for(var i=1; i<remain_press_material+1; i++)
                 {
-                    $("#press_material_url"+i).attr("href", posts_press_material[(page*6)+i-1].url);
-                    $("#press_material_date"+i).text(posts_press_material[(page*6)+i-1].date);
-                    $("#press_material_title"+i).text(posts_press_material[(page*6)+i-1].title);
-                    $("#press_material_desc"+i).text(posts_press_material[(page*6)+i-1].description);
+                    $("#press_material_url"+i).attr("href", posts_press_material[(page*page_item_count)+i-1].url);
+                    $("#press_material_date"+i).text(posts_press_material[(page*page_item_count)+i-1].date);
+                    $("#press_material_title"+i).text(posts_press_material[(page*page_item_count)+i-1].title);
+                    $("#press_material_desc"+i).text(posts_press_material[(page*page_item_count)+i-1].description);
                     $("#press_material"+i).show();
                 }
 
-                for(var i=6; i>remain_press_material; i--)
+                for(var i=page_item_count; i>remain_press_material; i--)
                 {
                     $("#press_material"+i).hide();
                 }
@@ -243,11 +229,11 @@ fb-img: "img/fb-img-ridicorp.png"
 
         function setPressMaterialButton()
         {
-            if(posts_press_material.length < 7)
+            if(posts_press_material.length < page_item_count+1)
             {
                 $("#prev_page").hide();
                 $("#next_page").hide();
-            } else if(posts_press_material.length > 6) {
+            } else if(posts_press_material.length > page_item_count) {
                 $("#prev_page").hide();
                 $("#next_page").show();
             }

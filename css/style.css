@@ -2268,17 +2268,13 @@ article.post .back:hover {
   }
 }
 .press-articles-area .articles-list li {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   position: relative;
-}
-@media only screen and (max-width: 767px) {
-  .press-articles-area .articles-list li {
-    float: none;
-  }
 }
 .press-articles-area .articles-list li a {
   display: block;
-  width: 255px;
+  width: 380px;
   padding: 20px 15px 10px;
   position: relative;
   z-index: 1;
@@ -2286,7 +2282,7 @@ article.post .back:hover {
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .press-articles-area .articles-list li a {
-    width: 230px;
+    width: 340px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -2311,7 +2307,7 @@ article.post .back:hover {
 }
 .press-articles-area .articles-list li:hover figure {
   background: #fff;
-  -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.08);
   box-shadow: 0 3px 10px rgba(2, 64, 111, 0.15);
 }
 .press-articles-area .articles-list li .date {
@@ -2324,21 +2320,26 @@ article.post .back:hover {
 }
 .press-articles-area .articles-list li .title {
   display: block;
-  font-size: 1.125em;
+  font-size: 1.5em;
   color: #0282da;
   line-height: 1.3;
   padding-bottom: 10px;
   letter-spacing: -0.03em;
 }
+@media only screen and (max-width: 767px) {
+  .press-articles-area .articles-list li .title {
+    font-size: 1.125em;
+  }
+}
 .press-articles-area .articles-list li p {
   font-size: 0.875em;
   color: #495262;
   line-height: 1.5;
-  height: 126px;
+  height: 84px;
   word-wrap: break-word;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 4;
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
