@@ -42,6 +42,8 @@ fb-img: "img/fb-img-ridicorp.png"
 <div class="press-articles-area site-content">
     <div class="paa-tab">
         <em class="active" rel="tab1">보도자료</em>
+        <span class="separator">∙</span>
+        <em rel="tab2">언론보도</em>
     </div>
     <div class="tab_container">
         <!-- 보도자료 -->
@@ -82,6 +84,9 @@ fb-img: "img/fb-img-ridicorp.png"
                 </a>
                 <figure></figure>
             </li>
+        </ol>
+
+        <ol class="articles-list tab_content" id="tab2" hidden>
         </ol>
 
         <div class="clear"></div>
@@ -138,9 +143,10 @@ fb-img: "img/fb-img-ridicorp.png"
         </li>
     </ul>
 </div>
-
 <script>
     $(function () {
+        $.getJSON('http://intra.dev.ridi.com/press/list?callback=?',null, function(data) {setArticles(data)});
+
         var ITEMS_PER_PAGE = 4;
 
         var posts = [
@@ -157,6 +163,8 @@ fb-img: "img/fb-img-ridicorp.png"
 
         var total_pages = Math.ceil(posts.length / ITEMS_PER_PAGE);
         var cur_page = 0;
+
+        var articles = [];
 
         var prev_button = $("#prev_page");
         var next_button = $("#next_page");
@@ -189,7 +197,25 @@ fb-img: "img/fb-img-ridicorp.png"
             );
         }
 
-        // 보도자료 항목들을 리프레쉬
+        $(".paa-tab em").click(function () {
+            $(".paa-tab em").removeClass("active");
+            $(this).addClass("active");
+            $(".tab_content").hide()
+            var activeTab = $(this).attr("rel");
+            $("#" + activeTab).fadeIn()
+            if(activeTab == 'tab2')
+            {
+                //언론보도 클릭
+                prev_button.hide();
+                next_button.hide();
+            } else {
+                //보도자료 클릭
+                refreshPageButton();
+            }
+        });
+
+
+    // 보도자료 항목들을 리프레쉬
         function refreshMaterialInfo() {
             var i = 0;
             //다음페이지가 존재하는 경우
@@ -209,6 +235,21 @@ fb-img: "img/fb-img-ridicorp.png"
                 for (i = remain_press_material; i < ITEMS_PER_PAGE; i++) {
                     $("#press_material" + i).hide();
                 }
+            }
+        }
+
+        function setArticles(data) {
+            articles = data.data;
+            var i = 0;
+            for(i = 0; i<articles.length; i++) {
+                var temp = "<li>" +
+                        "<a id='article" + i + "' href=" + articles[i]['link_url'] +" target=_blank>" +
+                        "<span id='article_date" + i +"' class='date'>"+ articles[i]['date'] + "</span>" +
+                        "<strong id='article_title" + i + "' class='title'>" + articles[i]['title'] + "</strong>" +
+                        "<p id='article_media" + i + "'>" + articles[i]['media'] + "</p>" +
+                        "</a> <figure></figure>" +
+                        "</li>";
+                $("#tab2").append(temp);
             }
         }
 
