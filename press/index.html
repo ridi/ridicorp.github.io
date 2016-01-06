@@ -145,7 +145,7 @@ fb-img: "img/fb-img-ridicorp.png"
 </div>
 <script>
     $(function () {
-        $.getJSON('http://intra.dev.ridi.com/press/list?callback=?',null, function(data) {setArticles(data)});
+        $.getJSON('http://intra.ridi.com/press/list?callback=?',null, function(data) {setArticles(data)});
 
         var ITEMS_PER_PAGE = 4;
 
@@ -242,9 +242,10 @@ fb-img: "img/fb-img-ridicorp.png"
             articles = data.data;
             var i = 0;
             for(i = 0; i<articles.length; i++) {
+                var date = articles[i]['date'].substr(0,4) + '.' + articles[i]['date'].substr(4,5);
                 var temp = "<li>" +
                         "<a id='article" + i + "' href=" + articles[i]['link_url'] +" target=_blank>" +
-                        "<span id='article_date" + i +"' class='date'>"+ articles[i]['date'] + "</span>" +
+                        "<span id='article_date" + i +"' class='date'>"+ date + "</span>" +
                         "<strong id='article_title" + i + "' class='title'>" + articles[i]['title'] + "</strong>" +
                         "<p id='article_media" + i + "'>" + articles[i]['media'] + "</p>" +
                         "</a> <figure></figure>" +
