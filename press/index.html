@@ -86,7 +86,7 @@ fb-img: "img/fb-img-ridicorp.png"
             </li>
         </ol>
 
-        <ol class="articles-list tab_content" id="tab2" hidden>
+        <ol class="report-list tab_content" id="tab2" hidden>
         </ol>
 
         <div class="clear"></div>
@@ -245,9 +245,9 @@ fb-img: "img/fb-img-ridicorp.png"
                 var date = articles[i]['date'].substr(0,4) + '.' + articles[i]['date'].substr(4,5);
                 var temp = "<li>" +
                         "<a id='article" + i + "' href=" + articles[i]['link_url'] +" target=_blank>" +
-                        "<span id='article_date" + i +"' class='date'>"+ date + "</span>" +
                         "<strong id='article_title" + i + "' class='title'>" + articles[i]['title'] + "</strong>" +
-                        "<p id='article_media" + i + "'>" + articles[i]['media'] + "</p>" +
+                        "<span id='article_date" + i +"' class='date'>"+ date + "</span>" +
+                        "<span id='article_media" + i + "' class='media-name'>" + articles[i]['media'] + "</span>" +
                         "</a> <figure></figure>" +
                         "</li>";
                 $("#tab2").append(temp);
