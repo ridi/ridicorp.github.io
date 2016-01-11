@@ -2240,6 +2240,7 @@ article.post .back:hover {
 .press-articles-area .paa-tab em {
   font-style: normal;
   transition: color .2s;
+  cursor: pointer;
 }
 .press-articles-area .paa-tab em.active,
 .press-articles-area .paa-tab em:hover {
