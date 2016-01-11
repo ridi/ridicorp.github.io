@@ -145,8 +145,8 @@ fb-img: "img/fb-img-ridicorp.png"
 </div>
 <script>
     $(function () {
-        var ITEMS_PER_PAGE = 4;
-        var ARTICLES_PER_PAGE = 10;
+        var MATERIALS_PER_PAGE = 4;
+        var ARTICLES_PER_PAGE = 8;
 
         var posts = [
             {% for post in paginator.posts %}
@@ -160,7 +160,7 @@ fb-img: "img/fb-img-ridicorp.png"
             {% endfor %}
         ];
 
-        var total_pages = calculateTotalPages(posts.length, ITEMS_PER_PAGE);
+        var total_pages = calculateTotalPages(posts.length, MATERIALS_PER_PAGE);
         var cur_page = 0;
 
         var articles = [];
@@ -196,7 +196,7 @@ fb-img: "img/fb-img-ridicorp.png"
             if (next_button.data('flag') == 'material' || prev_button.data('flag') == 'material') {
                 refreshMaterialInfo();
             } else {
-                $.getJSON('http://intra.dev.ridi.com/press/list?callback=?&page=' + (cur_page+1) + '&items=' + ARTICLES_PER_PAGE ,null, function(data) {setArticles(data)});
+                $.getJSON('http://intra.ridi.com/press/list?callback=?&page=' + (cur_page+1) + '&items_per_page=' + ARTICLES_PER_PAGE ,null, function(data) {setArticles(data)});
             }
             refreshPageButton();
             focusToPost();
@@ -226,11 +226,11 @@ fb-img: "img/fb-img-ridicorp.png"
             if(activeTab == 'tab2')
             {
                 //언론보도 클릭
-                $.getJSON('http://intra.dev.ridi.com/press/list?callback=?&page=' + (cur_page+1) + '&items=' + ARTICLES_PER_PAGE ,null, function(data) {setArticles(data)});
+                $.getJSON('http://intra.ridi.com/press/list?callback=?&page=' + (cur_page+1) + '&items_per_page=' + ARTICLES_PER_PAGE ,null, function(data) {setArticles(data)});
                 changeTab('article');
             } else {
                 //보도자료 클릭
-                total_pages = calculateTotalPages(posts.length, ITEMS_PER_PAGE);
+                total_pages = calculateTotalPages(posts.length, MATERIALS_PER_PAGE);
                 changeTab('material');
                 refreshPageButton();
             }
@@ -245,20 +245,20 @@ fb-img: "img/fb-img-ridicorp.png"
         function refreshMaterialInfo() {
             var i = 0;
             //다음페이지가 존재하는 경우
-            if (posts.length > cur_page * ITEMS_PER_PAGE + ITEMS_PER_PAGE) {
-                for (i = 0; i < ITEMS_PER_PAGE; i++) {
+            if (posts.length > cur_page * MATERIALS_PER_PAGE + MATERIALS_PER_PAGE) {
+                for (i = 0; i < MATERIALS_PER_PAGE; i++) {
                     setPressMaterial(i);
                 }
             } else {
                 //마지막 페이지
-                var remain_press_material = posts.length - (cur_page * ITEMS_PER_PAGE);
+                var remain_press_material = posts.length - (cur_page * MATERIALS_PER_PAGE);
 
                 for (i = 0; i < remain_press_material; i++) {
                     setPressMaterial(i);
                 }
 
                 //set 되지 않은 html element hide
-                for (i = remain_press_material; i < ITEMS_PER_PAGE; i++) {
+                for (i = remain_press_material; i < MATERIALS_PER_PAGE; i++) {
                     $("#press_material" + i).hide();
                 }
             }
@@ -266,7 +266,7 @@ fb-img: "img/fb-img-ridicorp.png"
 
         // 보도자료 항목 값을 각 html element에 set
         function setPressMaterial(index) {
-            var item_index = (cur_page * ITEMS_PER_PAGE) + index;
+            var item_index = (cur_page * MATERIALS_PER_PAGE) + index;
             var post = posts[item_index];
 
             $("#press_material_url" + (index + 1)).attr("href", post.url);
