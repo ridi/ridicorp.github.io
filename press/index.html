@@ -42,6 +42,8 @@ fb-img: "img/fb-img-ridicorp.png"
 <div class="press-articles-area site-content">
     <div class="paa-tab">
         <em class="active" rel="tab1">보도자료</em>
+        <span class="separator">∙</span>
+        <em rel="tab2">언론보도</em>
     </div>
     <div class="tab_container">
         <!-- 보도자료 -->
@@ -84,11 +86,14 @@ fb-img: "img/fb-img-ridicorp.png"
             </li>
         </ol>
 
+        <ol class="report-list tab_content" id="tab2" hidden>
+        </ol>
+
         <div class="clear"></div>
         <div class="pager">
-            <div class="page-button" id="prev_page"><i class="icon-direct-left"></i> 이전</div>
+            <div class="page-button" id="prev_page" data-flag="material"><i class="icon-direct-left"></i> 이전</div>
 
-            <div class="page-button" id="next_page">다음 <i class="icon-direct-right"></i></div>
+            <div class="page-button" id="next_page" data-flag="material">다음 <i class="icon-direct-right"></i></div>
         </div>
     </div>
     <div class="clear"></div>
@@ -138,10 +143,10 @@ fb-img: "img/fb-img-ridicorp.png"
         </li>
     </ul>
 </div>
-
 <script>
     $(function () {
-        var ITEMS_PER_PAGE = 4;
+        var MATERIALS_PER_PAGE = 4;
+        var ARTICLES_PER_PAGE = 8;
 
         var posts = [
             {% for post in paginator.posts %}
@@ -155,8 +160,10 @@ fb-img: "img/fb-img-ridicorp.png"
             {% endfor %}
         ];
 
-        var total_pages = Math.ceil(posts.length / ITEMS_PER_PAGE);
+        var total_pages = calculateTotalPages(posts.length, MATERIALS_PER_PAGE);
         var cur_page = 0;
+
+        var articles = [];
 
         var prev_button = $("#prev_page");
         var next_button = $("#next_page");
@@ -166,47 +173,92 @@ fb-img: "img/fb-img-ridicorp.png"
         refreshMaterialInfo();
         refreshPageButton();
 
+
+        //total page를 계산
+        function calculateTotalPages(items_count, items_per_page) {
+            return Math.ceil(items_count / items_per_page);
+        }
+
         // 이전 다음 버튼 클릭 이벤트 핸들러 달기
         function attachPageButtonHandlers() {
             next_button.click(function () {
                 cur_page++;
-                refreshMaterialInfo();
-                refreshPageButton();
-                focusToPost();
+                pageButtonClick();
             });
 
             prev_button.click(function () {
                 cur_page--;
-                refreshMaterialInfo();
-                refreshPageButton();
-                focusToPost();
+                pageButtonClick();
             });
         }
 
+        function pageButtonClick() {
+            if (next_button.data('flag') == 'material' || prev_button.data('flag') == 'material') {
+                refreshMaterialInfo();
+            } else {
+                $.getJSON('http://intra.ridi.com/press/list?callback=?&page=' + (cur_page+1) + '&items_per_page=' + ARTICLES_PER_PAGE ,null, function(data) {setArticles(data)});
+            }
+            refreshPageButton();
+            focusToPost();
+        }
+
+
         function focusToPost() {
             $("html, body").animate(
-                    {scrollTop: $("#tab1").offset().top-70}
+                    {scrollTop: $(".tab_container").offset().top-70}
             );
+        }
+
+
+        // page 버튼을 리프레쉬
+        function refreshPageButton() {
+            (cur_page > 0) ? prev_button.show() : prev_button.hide();
+            (cur_page + 1 < total_pages) ? next_button.show() : next_button.hide();
+        }
+
+        $(".paa-tab em").click(function () {
+            cur_page = 0;
+            $(".paa-tab em").removeClass("active");
+            $(this).addClass("active");
+            $(".tab_content").hide()
+            var activeTab = $(this).attr("rel");
+            $("#" + activeTab).fadeIn();
+            if(activeTab == 'tab2')
+            {
+                //언론보도 클릭
+                $.getJSON('http://intra.ridi.com/press/list?callback=?&page=' + (cur_page+1) + '&items_per_page=' + ARTICLES_PER_PAGE ,null, function(data) {setArticles(data)});
+                changeTab('article');
+            } else {
+                //보도자료 클릭
+                total_pages = calculateTotalPages(posts.length, MATERIALS_PER_PAGE);
+                changeTab('material');
+                refreshPageButton();
+            }
+        });
+
+        function changeTab(flag) {
+            prev_button.data('flag', flag);
+            next_button.data('flag', flag);
         }
 
         // 보도자료 항목들을 리프레쉬
         function refreshMaterialInfo() {
             var i = 0;
             //다음페이지가 존재하는 경우
-            if (posts.length > cur_page * ITEMS_PER_PAGE + ITEMS_PER_PAGE) {
-                for (i = 0; i < ITEMS_PER_PAGE; i++) {
+            if (posts.length > cur_page * MATERIALS_PER_PAGE + MATERIALS_PER_PAGE) {
+                for (i = 0; i < MATERIALS_PER_PAGE; i++) {
                     setPressMaterial(i);
                 }
             } else {
                 //마지막 페이지
-                var remain_press_material = posts.length - (cur_page * ITEMS_PER_PAGE);
+                var remain_press_material = posts.length - (cur_page * MATERIALS_PER_PAGE);
 
                 for (i = 0; i < remain_press_material; i++) {
                     setPressMaterial(i);
                 }
 
                 //set 되지 않은 html element hide
-                for (i = remain_press_material; i < ITEMS_PER_PAGE; i++) {
+                for (i = remain_press_material; i < MATERIALS_PER_PAGE; i++) {
                     $("#press_material" + i).hide();
                 }
             }
@@ -214,7 +266,7 @@ fb-img: "img/fb-img-ridicorp.png"
 
         // 보도자료 항목 값을 각 html element에 set
         function setPressMaterial(index) {
-            var item_index = (cur_page * ITEMS_PER_PAGE) + index;
+            var item_index = (cur_page * MATERIALS_PER_PAGE) + index;
             var post = posts[item_index];
 
             $("#press_material_url" + (index + 1)).attr("href", post.url);
@@ -224,10 +276,24 @@ fb-img: "img/fb-img-ridicorp.png"
             $("#press_material" + (index + 1)).show();
         }
 
-        // page 버튼을 리프레쉬
-        function refreshPageButton() {
-            (cur_page > 0) ? prev_button.show() : prev_button.hide();
-            (cur_page + 1 < total_pages) ? next_button.show() : next_button.hide();
+
+        function setArticles(data) {
+            articles = data.data['press'];
+            total_pages = calculateTotalPages(data.data['count'], ARTICLES_PER_PAGE);
+            refreshPageButton();
+            $("#tab2").empty();
+            var i = 0;
+            for(i = 0; i<articles.length; i++) {
+                var date = articles[i]['date'].substr(0,4) + '.' + articles[i]['date'].substr(4,5);
+                var temp = "<li>" +
+                        "<a id='article" + i + "' href=" + articles[i]['link_url'] +" target=_blank>" +
+                        "<strong id='article_title" + i + "' class='title'>" + articles[i]['title'] + "</strong>" +
+                        "<span id='article_date" + i +"' class='date'>"+ date + "</span>" +
+                        "<span id='article_media" + i + "' class='media-name'>" + articles[i]['media'] + "</span>" +
+                        "</a> <figure></figure>" +
+                        "</li>";
+                $("#tab2").append(temp);
+            }
         }
     });
 </script>

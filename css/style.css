@@ -2342,6 +2342,61 @@ article.post .back:hover {
     height: 63px;
   }
 }
+.press-articles-area .report-list {
+  width: 400px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 767px) {
+  .press-articles-area .report-list {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+.press-articles-area .report-list li {
+  position: relative;
+}
+.press-articles-area .report-list li a {
+  display: block;
+  padding: 14px 0 2px;
+  position: relative;
+  z-index: 1;
+  transition: all .1s;
+}
+.press-articles-area .report-list li .title {
+  display: block;
+  font-size: 1em;
+  color: #0282da;
+  line-height: 1.3;
+  letter-spacing: -0.03em;
+}
+.press-articles-area .report-list li span {
+  font-weight: bold;
+  color: #a1afbb;
+  font-size: 0.8em;
+}
+.press-articles-area .report-list li .date {
+  font-family: "brandon-grotesque", sans-serif;
+  margin-right: 6px;
+}
+.press-articles-area .report-list li figure {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .1s;
+  transform-origin: 50% 50%;
+  border-radius: 5px;
+}
+.press-articles-area .report-list li:hover a {
+  -webkit-transform: translatey(-3px);
+}
+.press-articles-area .report-list li:hover figure {
+  background: #fff;
+  -webkit-transform: scale(1.08);
+  box-shadow: 0 3px 10px rgba(2, 64, 111, 0.15);
+}
 .press-articles-area .pager .page-button {
   margin-right: 10px;
   cursor: pointer;
@@ -2382,10 +2437,12 @@ article.post .back:hover {
 .ridi-insights .ri-list li {
   display: inline-block;
   text-align: center;
+  position: relative;
 }
 .ridi-insights .ri-list li a {
   padding: 15px;
   display: block;
+  position: relative;
   transition: all .1s;
 }
 .ridi-insights .ri-list li a:hover {
