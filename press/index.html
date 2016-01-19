@@ -179,12 +179,12 @@ fb-img: "img/fb-img-ridicorp.png"
 
             next_button.click(function () {
                 cur_page++;
-                refreshPageInfo();
+                refreshAndFocusToActiveTab();
             });
 
             prev_button.click(function () {
                 cur_page--;
-                refreshPageInfo();
+                refreshAndFocusToActiveTab();
             });
         }
 
@@ -208,7 +208,7 @@ fb-img: "img/fb-img-ridicorp.png"
             clicked_tab.addClass('active');
             $("#" + clicked_tab.attr('rel')).fadeIn();
 
-            refreshPageInfo();
+            refreshAndFocusToActiveTab();
         }
 
         function refreshPageInfo() {
@@ -219,7 +219,11 @@ fb-img: "img/fb-img-ridicorp.png"
             }
 
             refreshPageButton();
-            focusToPost();
+        }
+
+        function refreshAndFocusToActiveTab() {
+            refreshPageInfo();
+            focusToActiveTab();
         }
 
         function refreshPageButton() {
@@ -227,9 +231,9 @@ fb-img: "img/fb-img-ridicorp.png"
             (cur_page + 1 < total_pages) ? next_button.show() : next_button.hide();
         }
 
-        function focusToPost() {
+        function focusToActiveTab() {
             $("html, body").animate(
-                    {scrollTop: $(".tab_container").offset().top - 120}
+                    {scrollTop: getActiveTab().offset().top}
             );
         }
 
