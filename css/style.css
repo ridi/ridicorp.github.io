@@ -260,13 +260,10 @@ ol {
   }
 }
 .intro-header.ih-career {
-  background-color: #165097;
+  background-color: #293040;
   background-image: url(../img/career-bg.png);
   background-repeat: repeat-x;
   background-position: center -80px;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .intro-header.ih-career {
@@ -289,7 +286,7 @@ ol {
   }
 }
 .intro-header.ih-branding {
-  background-color: #155096;
+  background-color: #0282da;
   background-image: url(../img/branding-bg.png);
   background-repeat: no-repeat;
   background-position: center center;
@@ -340,7 +337,7 @@ ol {
   font-style: italic;
   color: #fff;
   line-height: 0.9;
-  padding: 20px 20px 0;
+  padding: 20px 0 0;
   text-rendering: optimizeLegibility;
   text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
@@ -357,7 +354,7 @@ ol {
 @media only screen and (max-width: 767px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 3em;
+    font-size: 3.5em;
   }
   .intro-header .site-heading h1.oneline,
   .intro-header .page-heading h1.oneline {
@@ -383,6 +380,10 @@ ol {
 .intro-header .site-heading.press-sub-heading .wrapper-compact,
 .intro-header .page-heading.press-sub-heading .wrapper-compact {
   width: 700px;
+}
+.intro-header .site-heading.branding-heading,
+.intro-header .page-heading.branding-heading {
+  padding-bottom: 40px;
 }
 .intro-header .sub-heading {
   display: inline-block;
@@ -426,10 +427,10 @@ ol {
   background: #6f729a;
 }
 .intro-header .career-sub-area .sub-heading {
-  color: #c7cdd2;
+  color: #5b6f7f;
 }
 .intro-header .career-sub-area .sub-heading:after {
-  background: #737679;
+  background: #b5d6e5;
 }
 .intro-header .sub-description {
   padding-bottom: 70px;
@@ -443,7 +444,7 @@ ol {
   color: #78caf3;
 }
 .intro-header .sub-description.sd-career {
-  color: #818992;
+  color: #697c8a;
 }
 @media only screen and (max-width: 767px) {
   .intro-header .sub-description {
@@ -451,7 +452,7 @@ ol {
   }
 }
 .intro-header .career-sub-area {
-  background: #1e1f20 url(../img/career-sub-bg.png) repeat-x center center;
+  background: #cbf0ff url(../img/career-sub-bg.png) repeat-x center center;
   padding-top: 50px;
   text-align: center;
   -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
@@ -561,7 +562,7 @@ ol {
     border-radius: 4px !important;
   }
   .intro-header .contact-buttons .view-map {
-    margin-bottom: 20px !important;
+    margin-bottom: 10px !important;
   }
 }
 .must-use-area {
@@ -1170,6 +1171,7 @@ ol {
   -moz-background-clip: padding;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  max-width: 500px;
 }
 .job-quick-links strong {
   display: inline-block;
@@ -1179,7 +1181,7 @@ ol {
   font-weight: 700;
   color: #b0d4ff;
   padding: 10px 0;
-  background: #165097;
+  background: #293040;
 }
 .job-quick-links .now-hiring {
   -webkit-border-radius: 4px;
@@ -1196,24 +1198,26 @@ ol {
   display: inline-block;
   letter-spacing: -0.03em;
   font-weight: bold;
-  background: #fff;
-  color: #165097;
+  padding: 16px 30px;
+  background: #1f8ee6;
+  color: #fff;
   margin-bottom: 15px;
 }
 .job-quick-links .now-hiring i {
   opacity: 0.5;
 }
 .job-quick-links .now-hiring:hover {
-  background: #d8eaff;
+  color: #fff;
+  background: #1477c5;
 }
 .job-quick-links .hiring {
-  color: #b0d4ff;
-  font-size: 1.1em;
+  color: #7e97ad;
+  font-size: 1em;
   margin: 0 2px;
 }
 .job-quick-links .hiring:after {
   content: "•";
-  color: #779ecd;
+  color: #7e97ad;
   margin: 0 0 0 5px;
 }
 .job-quick-links .hiring:last-child:after {
@@ -1251,9 +1255,9 @@ ol {
   font-weight: 700;
   color: #b0d4ff;
   padding: 10px 0;
-  background: #165097;
+  background: #293040;
 }
-.branding-download-all .now-hiring {
+.branding-download-all .download-all {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1270,26 +1274,14 @@ ol {
   font-weight: bold;
   background: #fff;
   color: #165097;
+  color: #0282da;
   margin-bottom: 15px;
 }
-.branding-download-all .now-hiring i {
+.branding-download-all .download-all i {
   opacity: 0.5;
 }
-.branding-download-all .now-hiring:hover {
+.branding-download-all .download-all:hover {
   background: #d8eaff;
-}
-.branding-download-all .hiring {
-  color: #b0d4ff;
-  font-size: 1.1em;
-  margin: 0 2px;
-}
-.branding-download-all .hiring:after {
-  content: "•";
-  color: #779ecd;
-  margin: 0 0 0 5px;
-}
-.branding-download-all .hiring:last-child:after {
-  display: none;
 }
 .site-content h3 {
   display: inline-block;
@@ -1682,6 +1674,7 @@ ol {
 }
 .job-openings-area .jobs .job-item .job-desc .button-area {
   padding: 30px 0 20px;
+  text-align: center;
 }
 .job-openings-area .jobs .job-item .job-desc .button-area .learn-more {
   display: inline-block;
@@ -1708,9 +1701,8 @@ ol {
   background: #0a1b39;
   color: #fff;
   font-family: "brandon-grotesque", sans-serif;
-  letter-spacing: 0.1em;
-  font-size: 0.8em;
-  text-transform: uppercase;
+  font-size: 1em;
+  display: inline-block;
 }
 .job-openings-area .jobs .job-item .job-desc .button-area .apply i {
   opacity: 0.5;
@@ -1968,7 +1960,7 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .post-heading h1 {
-    font-size: 3em;
+    font-size: 4em;
   }
 }
 .post-heading h2 {
