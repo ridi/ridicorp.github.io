@@ -288,7 +288,7 @@ fb-img: "img/fb-img-ridicorp.png"
             article_tab.empty();
 
             for (var i = 0; i < articles.length; i++) {
-                var date = articles[i]['date'].substr(0, 4) + '.' + articles[i]['date'].substr(4, 5);
+                var date = articles[i]['date'].substr(0, 4) + '.' + articles[i]['date'].substr(4, 2);
                 var temp = "<li>" +
                         "<a id='article" + i + "' href=" + articles[i]['link_url'] + " target=_blank>" +
                         "<strong id='article_title" + i + "' class='title'>" + articles[i]['title'] + "</strong>" +
