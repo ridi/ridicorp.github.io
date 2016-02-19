@@ -78,22 +78,13 @@ ul, ol {
 	z-index: 5;
 
 	.navbar-brand {
-		font-weight: 900;
-		text-transform: uppercase;
-		letter-spacing: 0.3em;
-		font-size: 0.8em;
-		padding: 0;
+		font-size: 1.8em;
+		padding: 15px 0 0 20px;
+		margin: 0;
 		color: #fff;
-		text-indent: -9999px;
-		background: url(../img/ci.png) no-repeat;
-		width: 152px;
-		height: 24px;
-		background-size: 100% 100%;
-		margin: 18px 0 0 5px !important;
+		text-shadow: 0 1px 2px rgba(0,0,0,.3);
 		@media @queries_sm {
-			margin: 15px 0 0 15px !important;
-			width: 122px;
-			height: 19px;
+			padding: 15px 0 0 15px;
 		}
 	}
 	.nav {
@@ -147,8 +138,8 @@ ul, ol {
 		&.is-fixed {
 			/* when the user scrolls down, we hide the header right above the viewport */
 			position: fixed;
-			top: -61px;
-			background-color: fade(white, 90%);
+			top: -55px;
+			background-color: fade(white, 95%);
 			border-bottom: 1px solid darken(white, 5%);
 			-webkit-transition: -webkit-transform 0.3s;
 			-moz-transition: -moz-transform 0.3s;
@@ -159,7 +150,7 @@ ul, ol {
 				&:focus {
 					color: #000;
 				}
-				background-image: url(../img/ci_black.png);
+				text-shadow: none;
 			}
 			.nav {
 				li {
@@ -733,74 +724,49 @@ ul, ol {
 
 // Branding
 .branding-area {
-	width: 768px;
 	margin: 50px auto;
 	@media @queries_sm {
 		width: auto;
 	}
 	
-	h4 {
+	.branding-sub-area {
+		border-bottom: 1px solid #ccd5db;
 		text-align: center;
-		font-size: 14px;
-		color: #aaa;
-		letter-spacing: 0.2em;
-		margin: 30px 0 20px;
-		font-family: "brandon-grotesque", sans-serif;
-		@media @queries_sm {
-			text-align: left;
-			margin: 20px 20px 0;
+		.download-all {
+			.button-gray();
+			padding: 16px 24px;
+		}
+		p {
+			padding: 20px 0;
+			font-size: 14px;
+			color: #999;
 		}
 	}
+	
 	.branding-box {
-		border: 2px solid #ccc;
-		border-radius: 8px;
+		border-bottom: 1px solid #ccd5db;
 		padding: 40px;
-		margin-bottom: 50px;
 		@media @queries_sm {
-			border: none;
 			padding: 20px 20px 40px;
 		}
 
-		h5 {
-			font-size: 14px;
-			color: #555;
-			font-weight: bold;
-			line-height: 1;
-			span {
-				font-weight: normal;
-				color: #aaa;
-			}
-			@media @queries_sm {
-				border-top: 1px solid #999;
-				padding: 10px 0 0;
-			}
-		}
-		a.download {
-			.button-blue();
-		}
-		.bb-left {
-			float: left;
-			width: 270px;
+		.bb-header {
 			padding-right: 20px;
 			@media @queries_sm {
-				float: none;
-				width: auto;
-				width: auto;
 				padding-left: 0;
 			}
 		}
-		.bb-right {
-			float: left;
-			width: 410px;
+		.bb-body {
 			padding-left: 40px;
-			border-left: 1px solid #d6d6d6;
+			text-align: center;
 			@media @queries_sm {
-				float: none;
-				width: auto;
-				width: auto;
 				padding-left: 0;
 				border-left: none;
 			}
+		}
+		.bbb-box {
+			text-align: left;
+			display: inline-block;
 		}
 		.big-logo {
 			text-align: center;
@@ -808,9 +774,9 @@ ul, ol {
 			@media @queries_sm {
 				text-align: left;	
 			}
-			.icon-logo-ridibooks-full {
+			.icon-logo-ridibooks {
 				color: #1f8ee6;
-				font-size: 70px;
+				font-size: 120px;
 				margin: 60px 0 40px;
 				display: block;
 				@media @queries_sm {
@@ -819,7 +785,7 @@ ul, ol {
 			}
 			.icon-logo-paper {
 				color: #333;
-				font-size: 55px;
+				font-size: 80px;
 				margin: 60px 0 40px;
 				display: block;
 				@media @queries_sm {
@@ -827,10 +793,18 @@ ul, ol {
 				}
 			}
 		}
-		.logo-desc {
+		h5 {
 			font-size: 13px;
 			color: #555;
-			padding-top: 20px;
+			font-weight: bold;
+			line-height: 1;
+			font-family: "brandon-grotesque", sans-serif;
+			text-transform: uppercase;
+			letter-spacing: 0.03em;
+			@media @queries_sm {
+				border-top: 1px solid #999;
+				padding: 10px 0 0;
+			}
 		}
 		.logo-compact-wrap {
 			padding: 30px 0 40px;
@@ -874,6 +848,7 @@ ul, ol {
 			padding: 15px 0;
 			margin-top: 5px;
 			text-align: center;
+			font-size: 1.2em;
 			&.ridi-logo-sample-1 {background: #000; color: #fff;}
 			&.ridi-logo-sample-2 {background: #999; color: #fff;}
 			&.ridi-logo-sample-3 {background: #e5e5e5; color: #333;}
