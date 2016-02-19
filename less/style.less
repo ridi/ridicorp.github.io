@@ -767,6 +767,7 @@ ul, ol {
 		.bbb-box {
 			text-align: left;
 			display: inline-block;
+			vertical-align: top;
 		}
 		.big-logo {
 			text-align: center;
@@ -825,21 +826,27 @@ ul, ol {
 		}
 		.branding-color {
 			float: left;
-			width: 180px;
-			border-left: 8px solid;
-			padding-left: 10px;
-			font-size: 14px;
-			margin: 5px 0;
-			&.bc-blue {border-color: #1f8ee6;}
-			&.bc-black {border-color: #333;}
+			width: 100px;
+			margin-right: 10px;
+			font-size: 13px;
+			.brandon-grotesque();
 
-			dt {
-				color: #333;
-				width: 55px;
-				float: left;
+			.color-box {
+				width: 100px;
+				height: 100px;
+				box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+				&.cb-blue {background-color: #1f8ee6;}
+				&.cb-black {background-color: #333;}
 			}
-			dd {
-
+			strong {
+				display: block;
+				text-transform: uppercase;
+				padding: 12px 0 8px;
+				color: #000;
+			}
+			span {
+				display: block;
+				color: #333;
 			}
 		}
 		.logo-sample {

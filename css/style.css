@@ -935,6 +935,7 @@ ol {
 .branding-area .branding-box .bbb-box {
   text-align: left;
   display: inline-block;
+  vertical-align: top;
 }
 .branding-area .branding-box .big-logo {
   text-align: center;
@@ -1003,22 +1004,31 @@ ol {
 }
 .branding-area .branding-box .branding-color {
   float: left;
-  width: 180px;
-  border-left: 8px solid;
-  padding-left: 10px;
-  font-size: 14px;
-  margin: 5px 0;
+  width: 100px;
+  margin-right: 10px;
+  font-size: 13px;
+  font-family: "brandon-grotesque", sans-serif;
 }
-.branding-area .branding-box .branding-color.bc-blue {
-  border-color: #1f8ee6;
+.branding-area .branding-box .branding-color .color-box {
+  width: 100px;
+  height: 100px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
 }
-.branding-area .branding-box .branding-color.bc-black {
-  border-color: #333;
+.branding-area .branding-box .branding-color .color-box.cb-blue {
+  background-color: #1f8ee6;
 }
-.branding-area .branding-box .branding-color dt {
+.branding-area .branding-box .branding-color .color-box.cb-black {
+  background-color: #333;
+}
+.branding-area .branding-box .branding-color strong {
+  display: block;
+  text-transform: uppercase;
+  padding: 12px 0 8px;
+  color: #000;
+}
+.branding-area .branding-box .branding-color span {
+  display: block;
   color: #333;
-  width: 55px;
-  float: left;
 }
 .branding-area .branding-box .logo-sample {
   float: left;
