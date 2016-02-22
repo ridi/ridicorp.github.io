@@ -77,7 +77,7 @@ ol {
   font-size: 1.8em;
   padding: 15px 0 0 20px;
   margin: 0;
-  color: #fff;
+  color: #fff !important;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 @media only screen and (max-width: 767px) {
@@ -531,8 +531,8 @@ ol {
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  background: #484848;
-  color: #d4d4d4;
+  background: #333;
+  color: #fff;
 }
 .intro-header .contact-buttons .other-button i {
   opacity: 0.5;
@@ -889,8 +889,8 @@ ol {
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  background: #484848;
-  color: #d4d4d4;
+  background: #333;
+  color: #fff;
   padding: 16px 24px;
 }
 .branding-area .branding-sub-area .download-all i {
@@ -929,13 +929,14 @@ ol {
 @media only screen and (max-width: 767px) {
   .branding-area .branding-box .bb-body {
     padding-left: 0;
-    border-left: none;
+    text-align: left;
   }
 }
 .branding-area .branding-box .bbb-box {
   text-align: left;
   display: inline-block;
   vertical-align: top;
+  padding-right: 20px;
 }
 .branding-area .branding-box .big-logo {
   text-align: center;
@@ -955,6 +956,7 @@ ol {
 @media only screen and (max-width: 767px) {
   .branding-area .branding-box .big-logo .icon-logo-ridibooks {
     margin: 30px 0;
+    font-size: 80px;
   }
 }
 .branding-area .branding-box .big-logo .icon-logo-paper {
@@ -966,6 +968,7 @@ ol {
 @media only screen and (max-width: 767px) {
   .branding-area .branding-box .big-logo .icon-logo-paper {
     margin: 30px 0;
+    font-size: 60px;
   }
 }
 .branding-area .branding-box h5 {
@@ -977,109 +980,72 @@ ol {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-@media only screen and (max-width: 767px) {
-  .branding-area .branding-box h5 {
-    border-top: 1px solid #999;
-    padding: 10px 0 0;
-  }
-}
-.branding-area .branding-box .logo-compact-wrap {
-  padding: 30px 0 40px;
-  font-size: 30px;
-}
-@media only screen and (max-width: 767px) {
-  .branding-area .branding-box .logo-compact-wrap {
-    padding: 15px 0 20px;
-  }
-}
-.branding-area .branding-box .logo-compact-wrap .ridi-logo-compact-1 {
-  color: #1f8ee6;
-  margin-right: 30px;
-}
-.branding-area .branding-box .logo-compact-wrap .ridi-logo-compact-2 {
-  color: #333;
-}
 .branding-area .branding-box .branding-color-list {
   padding: 0 0 20px;
 }
-.branding-area .branding-box .branding-color {
+.branding-area .branding-box .branding-desc {
   float: left;
-  width: 100px;
   margin-right: 10px;
   font-size: 13px;
-  font-family: "brandon-grotesque", sans-serif;
+  padding-bottom: 20px;
 }
-.branding-area .branding-box .branding-color .color-box {
+.branding-area .branding-box .branding-desc .color-box {
   width: 100px;
   height: 100px;
-  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
 }
-.branding-area .branding-box .branding-color .color-box.cb-blue {
+.branding-area .branding-box .branding-desc .color-box.cb-blue {
   background-color: #1f8ee6;
 }
-.branding-area .branding-box .branding-color .color-box.cb-black {
+.branding-area .branding-box .branding-desc .color-box.cb-white {
+  background-color: #fff;
+}
+.branding-area .branding-box .branding-desc .color-box.cb-gray {
   background-color: #333;
 }
-.branding-area .branding-box .branding-color strong {
+.branding-area .branding-box .branding-desc > strong {
   display: block;
   text-transform: uppercase;
   padding: 12px 0 8px;
   color: #000;
+  font-family: "brandon-grotesque", sans-serif;
 }
-.branding-area .branding-box .branding-color span {
+.branding-area .branding-box .branding-desc > span {
   display: block;
-  color: #333;
+  color: #555;
 }
 .branding-area .branding-box .logo-sample {
-  float: left;
-  width: 120px;
-  padding: 15px 0;
-  margin-top: 5px;
+  width: 180px;
+  height: 100px;
+  line-height: 100px;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 2em;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
 }
 .branding-area .branding-box .logo-sample.ridi-logo-sample-1 {
-  background: #000;
-  color: #fff;
+  background: #fff;
+}
+.branding-area .branding-box .logo-sample.ridi-logo-sample-1 span {
+  color: #000;
 }
 .branding-area .branding-box .logo-sample.ridi-logo-sample-2 {
-  background: #999;
-  color: #fff;
+  background: #1f8ee6;
 }
-.branding-area .branding-box .logo-sample.ridi-logo-sample-3 {
-  background: #e5e5e5;
-  color: #333;
+.branding-area .branding-box .logo-sample.ridi-logo-sample-2 span {
+  color: #fff;
 }
 .branding-area .branding-box .logo-sample.paper-logo-sample-1 {
-  background: #000;
+  background: #333;
+}
+.branding-area .branding-box .logo-sample.paper-logo-sample-1 span {
   color: #fff;
 }
-.branding-area .branding-box .logo-sample.paper-logo-sample-2 {
-  background: #999;
-  color: #fff;
-}
-.branding-area .branding-box .logo-sample.paper-logo-sample-3 {
-  background: #e5e5e5;
-  color: #333;
+.branding-area .branding-box .logo-sample span {
+  vertical-align: middle;
 }
 @media only screen and (max-width: 767px) {
   .branding-area .branding-box .logo-sample {
-    width: 90px;
-    padding: 10px 0;
-  }
-}
-.branding-area .branding-box .logo-guideline {
-  font-size: 14px;
-  color: #555;
-  margin: 20px 0 0;
-}
-.branding-area .branding-box .logo-guideline li:before {
-  content: "•";
-  margin-right: 3px;
-}
-@media only screen and (max-width: 767px) {
-  .branding-area .branding-box .logo-guideline {
-    font-size: 13px;
+    width: 160px;
   }
 }
 .link-to {

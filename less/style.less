@@ -81,7 +81,7 @@ ul, ol {
 		font-size: 1.8em;
 		padding: 15px 0 0 20px;
 		margin: 0;
-		color: #fff;
+		color: #fff !important;
 		text-shadow: 0 1px 2px rgba(0,0,0,.3);
 		@media @queries_sm {
 			padding: 15px 0 0 15px;
@@ -761,13 +761,14 @@ ul, ol {
 			text-align: center;
 			@media @queries_sm {
 				padding-left: 0;
-				border-left: none;
+				text-align: left;
 			}
 		}
 		.bbb-box {
 			text-align: left;
 			display: inline-block;
 			vertical-align: top;
+			padding-right: 20px;
 		}
 		.big-logo {
 			text-align: center;
@@ -782,6 +783,7 @@ ul, ol {
 				display: block;
 				@media @queries_sm {
 					margin: 30px 0;
+					font-size: 80px;
 				}
 			}
 			.icon-logo-paper {
@@ -791,6 +793,7 @@ ul, ol {
 				display: block;
 				@media @queries_sm {
 					margin: 30px 0;
+					font-size: 60px;
 				}
 			}
 		}
@@ -802,81 +805,53 @@ ul, ol {
 			font-family: "brandon-grotesque", sans-serif;
 			text-transform: uppercase;
 			letter-spacing: 0.03em;
-			@media @queries_sm {
-				border-top: 1px solid #999;
-				padding: 10px 0 0;
-			}
 		}
-		.logo-compact-wrap {
-			padding: 30px 0 40px;
-			font-size: 30px;
-			@media @queries_sm {
-				padding: 15px 0 20px;
-			}
-			.ridi-logo-compact-1 {
-				color: #1f8ee6;
-				margin-right: 30px;
-			}
-			.ridi-logo-compact-2 {
-				color: #333;
-			}
-		}
+		
 		.branding-color-list {
 			padding: 0 0 20px;
 		}
-		.branding-color {
+		.branding-desc {
 			float: left;
-			width: 100px;
 			margin-right: 10px;
 			font-size: 13px;
-			.brandon-grotesque();
-
+			padding-bottom: 20px;
+			
 			.color-box {
 				width: 100px;
 				height: 100px;
-				box-shadow: inset 0 0 1px rgba(0,0,0,.5);
+				box-shadow: inset 0 0 2px rgba(0,0,0,.5);
 				&.cb-blue {background-color: #1f8ee6;}
-				&.cb-black {background-color: #333;}
+				&.cb-white {background-color: #fff;}
+				&.cb-gray {background-color: #333;}
 			}
-			strong {
+			&>strong {
 				display: block;
 				text-transform: uppercase;
 				padding: 12px 0 8px;
 				color: #000;
+				.brandon-grotesque();
 			}
-			span {
+			&>span {
 				display: block;
-				color: #333;
+				color: #555;
 			}
 		}
 		.logo-sample {
-			float: left;
-			width: 120px;
-			padding: 15px 0;
-			margin-top: 5px;
+			width: 180px;
+			height: 100px;
+			line-height: 100px;
 			text-align: center;
-			font-size: 1.2em;
-			&.ridi-logo-sample-1 {background: #000; color: #fff;}
-			&.ridi-logo-sample-2 {background: #999; color: #fff;}
-			&.ridi-logo-sample-3 {background: #e5e5e5; color: #333;}
-			&.paper-logo-sample-1 {background: #000; color: #fff;}
-			&.paper-logo-sample-2 {background: #999; color: #fff;}
-			&.paper-logo-sample-3 {background: #e5e5e5; color: #333;}
-			@media @queries_sm {
-				width: 90px;
-				padding: 10px 0;
-			}
-		}
-		.logo-guideline {
-			font-size: 14px;
-			color: #555;
-			margin: 20px 0 0;
-			li:before {
-				content: "•";
-				margin-right: 3px;
+			font-size: 2em;
+			box-shadow: inset 0 0 2px rgba(0,0,0,.5);
+			&.ridi-logo-sample-1 {background: #fff; span {color: #000;}}
+			&.ridi-logo-sample-2 {background: #1f8ee6; span {color: #fff;}}
+			&.paper-logo-sample-1 {background: #333; span {color: #fff;}}
+			
+			span {
+				vertical-align: middle;
 			}
 			@media @queries_sm {
-				font-size: 13px;
+				width: 160px;
 			}
 		}
 
