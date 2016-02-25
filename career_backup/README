@@ -1,5 +1,0 @@
-Textile formats are deprecated and will not supported after May 1st.
-All _textile should be converted to Kramdown before publishing.
-
-https://help.github.com/articles/updating-your-markdown-processor-to-kramdown.
-
