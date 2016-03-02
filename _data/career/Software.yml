@@ -1,0 +1,34 @@
+department: SW개발 부문
+head: SW개발 부문 (병역특례 가능)
+jobs:
+  - title: 리디북스 웹 개발자
+    description:
+      - 리디북스 서점 개발
+      - 늘어가는 트래픽에 대한 효율적인 대응
+      - API, CMS 개발
+    requirement:
+      - 웹 개발 경력 3년 이상
+      - RDBMS 숙련자
+      - 리눅스 환경에서의 개발, 서버 운영 경험
+      - 프론트엔드에 대한 기본적인 지식 보유
+    treatment:
+      - 대용량 트래픽 운영 경험
+      - 하나의 서비스를 지속적으로 개발한 경험
+      - 회사가 아닌, 개인 혹은 팀에서의 개발 경험
+      - 소셜커머스 경력
+    link: https://ridi.typeform.com/to/houRxO
+
+  - title: 데이터베이스 전문가 (경력)
+    description:
+      - MariaDB 운영 및 관리
+      - DB 성능 분석 및 튜닝
+      - 데이터베이스 보안 및 백업 관리
+    requirement:
+      - 관련 경력 5년 이상
+      - MySQL, MariaDB 운영 경력 3년 이상
+      - 성능 모니터링 장애 복구 경험
+      - 데이터베이스 설계 및 튜닝 경험
+    treatment:
+      - NoSQL 경험자 우대
+      - 스크립트 작성 능력 우대
+    link: https://ridi.typeform.com/to/houRxO

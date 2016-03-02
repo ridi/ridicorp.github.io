@@ -15,14 +15,9 @@ fb-img: "img/fb-img-ridicorp.png"
 
             <a href="#" class="now-hiring">채용중인 분야 <i class="icon-direct-down"></i></a>
             <br>
-            <span class="hiring">SW개발 부문</span>
-            <span class="hiring">사업분석 부문</span>
-            <span class="hiring">디자인 부문</span>
-            <span class="hiring">Store MD 부문</span>
-            <span class="hiring">서점운영 부문</span>
-            <span class="hiring">제휴 부문</span>
-            <span class="hiring">마케팅 부문</span>
-            <span class="hiring">재무 부문</span>
+            {% for career_hash in site.data.career %} {% assign career = career_hash[1] %}
+            <span class="hiring">{{ career.department }}</span>
+            {% endfor %}
         </div>
     </div>
 
@@ -174,266 +169,30 @@ fb-img: "img/fb-img-ridicorp.png"
         <h4>MUST-USE를 함께 만들어 갈 당신을 기다립니다.</h4>
     </div>
     <div class="jobs">
-        <h5>SW개발 부문 (병역특례 가능)</h5>
+        {% for career_hash in site.data.career %} {% assign career = career_hash[1] %}
+        <h5>{{ career.department }}</h5>
+        {% for job in career.jobs %}
         <div class="job-item">
             <input type="checkbox" checked>
             <div class="job-title">
-                리디북스 웹 개발자
+                {{ job.title }}
                 <i class="icon-arrow-down-1"></i>
             </div>
             <div class="job-desc">
                 <strong>Job Description</strong>
-                    <p>리디북스 서점 개발</p>
-                    <p>늘어가는 트래픽에 대한 효율적인 대응</p>
-                    <p>API, CMS 개발</p>
+                {% for desc in job.description %} <p>{{ desc }}</p> {% endfor %}
                 <strong>자격요건</strong>
-                    <p>웹 개발 경력 3년 이상</p>
-                    <p>RDBMS 숙련자</p>
-                    <p>리눅스 환경에서의 개발, 서버 운영 경험</p>
-                    <p>프론트엔드에 대한 기본적인 지식 보유</p>
+                {% for req in job.requirement %} <p>{{ req }}</p> {% endfor %}
                 <strong>우대사항</strong>
-                    <p>대용량 트래픽 운영 경험</p>
-                    <p>하나의 서비스를 지속적으로 개발한 경험</p>
-                    <p>회사가 아닌, 개인 혹은 팀에서의 개발 경험</p>
-                    <p>소셜커머스 경력</p>
-                
+                {% for treat in job.treatment %} <p>{{ treat }}</p> {% endfor %}
                 <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/houRxO" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
+                    <a class="typeform-share apply" href="{{ career.link }}" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
                     <div class="clear"></div>
                 </div>
             </div>
         </div>
-
-        <div class="job-item">
-            <input type="checkbox" checked>
-            <div class="job-title">
-                데이터베이스 전문가 (경력)
-                <i class="icon-arrow-down-1"></i>
-            </div>
-            <div class="job-desc">
-                <strong>Job Description</strong>
-                <p>MariaDB 운영 및 관리</p>
-                <p>DB 성능 분석 및 튜닝</p>
-                <p>데이터베이스 보안 및 백업 관리</p>
-                <strong>자격요건</strong>
-                <p>관련 경력 5년 이상</p>
-                <p>MySQL, MariaDB 운영 경력 3년 이상</p>
-                <p>성능 모니터링 장애 복구 경험</p>
-                <p>데이터베이스 설계 및 튜닝 경험</p>
-                <strong>우대사항</strong>
-                <p>NoSQL 경험자 우대</p>
-                <p>스크립트 작성 능력 우대</p>
-
-                <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/houRxO" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-
-        <h5>사업분석 부문</h5>
-        <div class="job-item">
-            <input type="checkbox" checked>
-            <div class="job-title">
-                데이터 애널리스트 (경력)
-                <i class="icon-arrow-down-1"></i>
-            </div>
-            <div class="job-desc">
-                <strong>Job Description</strong>
-                <p>리디북스 서점 운영에 필요한 데이터 수집 및 통계 작성</p>
-                <p>운영 및 마케팅 효과 분석을 통한 인사이트 도출</p>
-                <strong>자격요건</strong>
-                <p>[경력] 3년 이상</p>
-                <p>SQL 등 기본적인 데이터베이스에 대한 지식 및 리포팅 능력을 가지신 분</p>
-                <p>Excel, SPSS, SAS, R 등 하나 이상의 통계 툴을 이용하여 기술통계 분석이 가능하신 분</p>
-                <p>데이터마이닝, CRM, 클러스터 분석에 대한 경험을 보유하신 분</p>
-                <strong>우대사항</strong>
-                <p>통계 혹은 수학, 컴퓨터 전공자</p>
-                <p>숫자로 이야기하는 것을 좋아하는 분</p>
-                <p>다양한 사업적인 정보/리서치 능력</p>
-
-                <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/P3rDRk" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-
-        <h5>디자인 부문</h5>
-        <div class="job-item">
-            <input type="checkbox" checked>
-            <div class="job-title">
-                UI 디자이너 (경력)
-                <i class="icon-arrow-down-1"></i>
-            </div>
-            <div class="job-desc">
-                <strong>Job Description</strong>
-                    <p>리디북스 Android/iOS/Mac/Windows/PAPER 앱 디자인</p>
-                    <p>리디북스 서점 웹사이트 디자인</p>
-                    <p>UX 프로젝트 매니징</p>
-
-                <strong>자격요건</strong>
-                    <p>PM 경력 2년 이상</p>
-                    <p>디자인 경력 3년 이상</p>
-                    <p>웹 또는 앱 서비스의 디자인에 깊이 참여한 경험</p>
-                    <p>높은 수준의 커뮤니케이션 능력</p>
-
-                <strong>우대사항</strong>
-                    <p>아이콘/일러스트레이션 능력</p>
-                    <p>HTML/CSS/Javascript 능력</p>
-
-                <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/G1L0xH" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-
-        <h5>Store MD 부문</h5>
-        <div class="job-item">
-            <input type="checkbox" checked>
-            <div class="job-title">
-                일반도서 MD (경력)
-                <i class="icon-arrow-down-1"></i>
-            </div>
-            <div class="job-desc">
-                <strong>Job Description</strong>
-                <p>서점 내 이벤트/프로모션 및 디자인 기획 감수</p>
-                <p>서점 내 배너 및 노출 프로그램 기획/관리</p>
-                <p>일반도서 서점 노출 도서 선정 및 노출 기획</p>
-                <p>도서 프로모션 및 이벤트 기획 및 실행</p>
-                <p>판매 관리 및 이벤트 성과 분석</p>
-
-                <strong>자격요건</strong>
-                <p>일반도서 분야 MD 경력 5년 이상 (온라인 서점 및 종이책 MD 경력 포함)</p>
-                <p>소설, 인문사회, 경영경제, 자기계발 분야 경력 특히 우대</p>
-
-                <strong>우대사항</strong>
-                <p>동종업계 유통사의 장르도서 운영 경력 보유자</p>
-
-                <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/dN2ieA" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-
-        <h5>서점운영 부문</h5>
-        <div class="job-item">
-            <input type="checkbox" checked>
-            <div class="job-title">
-                지원파트 매니저 (경력)
-                <i class="icon-arrow-down-1"></i>
-            </div>
-            <div class="job-desc">
-                <strong>Job Description</strong>
-                <p>서점 운영 업무 지원 및 운영 정보 시스템 입력</p>
-                <p>업무 프로세스 설계 및 매뉴얼 작성</p>
-                <p>아르바이트생 관리 및 업무 교육</p>
-
-                <strong>자격요건</strong>
-                <p>꼼꼼하고 치밀하며 끈기있는 성격</p>
-                <p>원활하고 정확한 커뮤니케이션 능력</p>
-                <p>절차 정리 및 문서화에 소질 있는 분</p>
-
-                <strong>우대사항</strong>
-                <p>리디북스 이용자</p>
-                <p>엑셀, 각종 office 프로그램, HTML 등 컴퓨터 활용에 능숙한 분</p>
-                <p>다수의 아르바이트 직원을 관리/감독해 본 경험이 있는 분</p>
-
-                <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/RBhsUe" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-
-        <h5>제휴 부문</h5>
-        <div class="job-item">
-            <input type="checkbox" checked>
-            <div class="job-title">
-                출판사 제휴 담당자 [로맨스] (경력)
-                <i class="icon-arrow-down-1"></i>
-            </div>
-            <div class="job-desc">
-                <strong>Job Description</strong>
-                <p>출판사와의 커뮤니케이션/ 도서 콘텐츠 소싱</p>
-                <p>신생 출판사 발굴 및 신규 계약</p>
-
-                <strong>자격요건</strong>
-                <p>콘텐츠관련 영업 경력 2~5년 (도서, 영화, 음악, 게임 등)</p>
-                <p>리디북스 사용자</p>
-                <p>적극적이고 원활한 커뮤니케이션 능력</p>
-
-                <strong>우대사항</strong>
-                <p>출판사의 영업/마케팅 경력 보유자 (로맨스 소설 출판사 경력 선호)</p>
-                <p>로맨스 소설에 대한 애정도 높으신 분</p>
-
-                <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/amEd60" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-
-        <h5>마케팅 부문</h5>
-        <div class="job-item">
-            <input type="checkbox" checked>
-            <div class="job-title">
-                온라인 마케팅 담당자 (경력)
-                <i class="icon-arrow-down-1"></i>
-            </div>
-            <div class="job-desc">
-                <strong>Job Description</strong>
-                <p>데이터 분석을 통한 광고 전략 수립, 운영, 성과 측정, 효율화 업무 담당</p>
-
-                <strong>자격요건</strong>
-                <p>인터넷 서비스 마케팅 또는 프로덕트 마케팅 경력 4년 이상</p>
-                <p>온라인 광고 캠페인 기획 및 운영 경험</p>
-                <p>외부 에이전시 파트너 및 대행사 협업 경험</p>
-                <p>리디북스 이용자</p>
-
-                <strong>우대사항</strong>
-                <p>커머스 또는 게임 마케팅 경력 우대</p>
-                <p>데이터 분석 경력 우대</p>
-
-                <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/B9fK1A" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
-
-        <h5>재무 부문</h5>
-        <div class="job-item">
-            <input type="checkbox" checked>
-            <div class="job-title">
-                회계 담당자 (경력)
-                <i class="icon-arrow-down-1"></i>
-            </div>
-            <div class="job-desc">
-                <strong>Job Description</strong>
-                <p>더존을 활용하여 회계처리/재무제표 작성 및 검토</p>
-                <p>원천세신고/부가세신고서 작성 및 검토</p>
-                <p>재무보고자료 기획/작성 및 보고</p>
-                <p>거래처 정산액 검토 및 정산 실행</p>
-
-                <strong>자격요건</strong>
-                <p>회계팀 경력 2~5년</p>
-                <p>더존 및 엑셀 사용 능숙</p>
-                <p>커뮤니케이션능력 우수</p>
-
-                <strong>우대사항</strong>
-                <p>IT 기업 및 서비스에 대한 이해도가 풍부한 지원자</p>
-                <p>전자책 또는 콘텐츠 유통사에서 근무경험이 있는 지원자</p>
-                <p>커뮤니케이션능력 우수</p>
-
-                <div class="button-area">
-                    <a class="typeform-share apply" href="https://ridi.typeform.com/to/gPMmFV" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+        {% endfor %}
         <!-- 채용공고 리스트 끝 -->
 
         <div class="apply-instruction">
