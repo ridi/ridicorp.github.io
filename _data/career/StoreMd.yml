@@ -8,9 +8,9 @@ jobs:
       - 일반도서 서점 노출 도서 선정 및 노출 기획
       - 도서 프로모션 및 이벤트 기획 및 실행
       - 판매 관리 및 이벤트 성과 분석
-    requirement:
+    required:
       - 일반도서 분야 MD 경력 5년 이상 (온라인 서점 및 종이책 MD 경력 포함)
       - 소설, 인문사회, 경영경제, 자기계발 분야 경력 특히 우대
-    treatment:
+    preferred:
       - 동종업계 유통사의 장르도서 운영 경력 보유자
     link: https://ridi.typeform.com/to/dN2ieA

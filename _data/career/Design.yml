@@ -6,12 +6,12 @@ jobs:
       - 리디북스 Android/iOS/Mac/Windows/PAPER 앱 디자인
       - 리디북스 서점 웹사이트 디자인
       - UX 프로젝트 매니징
-    requirement:
+    required:
       - PM 경력 2년 이상
       - 디자인 경력 3년 이상
       - 웹 또는 앱 서비스의 디자인에 깊이 참여한 경험
       - 높은 수준의 커뮤니케이션 능력
-    treatment:
+    preferred:
       - 아이콘/일러스트레이션 능력
       - HTML/CSS/Javascript 능력
     link: https://ridi.typeform.com/to/G1L0xH

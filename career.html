@@ -182,9 +182,9 @@ fb-img: "img/fb-img-ridicorp.png"
                 <strong>Job Description</strong>
                 {% for desc in job.description %} <p>{{ desc }}</p> {% endfor %}
                 <strong>자격요건</strong>
-                {% for req in job.requirement %} <p>{{ req }}</p> {% endfor %}
+                {% for req in job.required %} <p>{{ req }}</p> {% endfor %}
                 <strong>우대사항</strong>
-                {% for treat in job.treatment %} <p>{{ treat }}</p> {% endfor %}
+                {% for treat in job.preferred %} <p>{{ treat }}</p> {% endfor %}
                 <div class="button-area">
                     <a class="typeform-share apply" href="{{ job.link }}" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
                     <div class="clear"></div>
