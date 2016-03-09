@@ -6,6 +6,7 @@ jobs:
       - 리디북스 서점 개발
       - 늘어가는 트래픽에 대한 효율적인 대응
       - API, CMS 개발
+      - 보다 상세한 소개는 <a href="/career/store-engineer/">이곳</a>을 참고하세요
     required:
       - 웹 개발 경력 3년 이상
       - RDBMS 숙련자
