@@ -1,0 +1,13 @@
+department: 인사 부문
+head: 인사 부문
+jobs:
+  - title: 인사팀 매니저 (경력/신입)
+    description:
+      - 채용, 조직 운영, 임직원 복지, 사내 교육, 총무 등 인사팀 업무 수행
+    required:
+      - (경력) 인사 업무 경력 2~5
+      - (신입) 졸업 또는 졸업 예정자
+      - 꼼꼼하고 책임감이 강하며, 적극적으로 의사소통하는 분
+    preferred:
+      - 인터넷, 게임 업계에서 근무경험 있는 지원자 (경력)
+    link: https://ridi.typeform.com/to/DaoucW
