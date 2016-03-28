@@ -10,7 +10,7 @@ function initialize() {
   var styledMap = new google.maps.StyledMapType(styles,
     {name: "Styled Map"});
     
-    var LatLng = new google.maps.LatLng(37.50503, 127.0549725);
+    var LatLng = new google.maps.LatLng(37.5042023, 127.0468607);
 
   // Create a map object, and include the MapTypeId to add
   // to the map type control.
