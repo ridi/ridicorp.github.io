@@ -1779,7 +1779,7 @@ ol {
   }
 }
 .how-to-contact .htc-left {
-  width: 30%;
+  width: 60%;
   float: left;
   padding-bottom: 20px;
 }
@@ -1790,7 +1790,7 @@ ol {
   }
 }
 .how-to-contact .htc-right {
-  width: 70%;
+  width: 40%;
   float: left;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
