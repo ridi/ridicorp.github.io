@@ -149,7 +149,7 @@ fb-img: "img/fb-img-ridicorp.png"
         var ARTICLES_PER_PAGE = 8;
 
         var posts = [
-            {% for post in paginator.posts %}
+            {% for post in site.categories.press %}
             {
                 url: '{{ post.url | prepend: site.baseurl }}',
                 date: '{{ post.date | date: "%Y. %m. %d." }}',
