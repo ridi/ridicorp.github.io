@@ -169,7 +169,7 @@ fb-img: "img/fb-img-ridicorp.png"
         attachHandler();
         refreshPageInfo();
 
-        //이벤트 핸들러 달기
+        // 이벤트 핸들러 달기
         function attachHandler() {
             var parentTab = $(".paa-tab em");
 
@@ -241,20 +241,20 @@ fb-img: "img/fb-img-ridicorp.png"
             var i = 0;
             total_pages = calculateTotalPages(posts.length, MATERIALS_PER_PAGE);
 
-            //다음페이지가 존재하는 경우
-            if (total_pages > cur_page) {
+            // 다음페이지가 존재하는 경우
+            if (total_pages > cur_page + 1) {
                 for (i = 0; i < MATERIALS_PER_PAGE; i++) {
                     setPressMaterial(i);
                 }
             } else {
-                //마지막 페이지
+                // 마지막 페이지
                 var remain_press_material = posts.length - (cur_page * MATERIALS_PER_PAGE);
 
                 for (i = 0; i < remain_press_material; i++) {
                     setPressMaterial(i);
                 }
 
-                //set 되지 않은 html element hide
+                // set 되지 않은 html element hide
                 for (i = remain_press_material; i < MATERIALS_PER_PAGE; i++) {
                     $("#press_material" + i).hide();
                 }
