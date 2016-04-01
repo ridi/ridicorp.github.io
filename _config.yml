@@ -11,7 +11,9 @@ encoding: utf-8
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
-gems: [jekyll-paginate]
-paginate: 100
-paginate_path: "press/page:num/"
-exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md", "config.ru", "Gemfile", "Gemfile.lock", "vendor", "Procfile", "Rakefile"]
+
+gems:
+  - jekyll-paginate
+  - octopress-paginate
+
+exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md", "config.ru", "Gemfile", "Gemfile.lock"]
