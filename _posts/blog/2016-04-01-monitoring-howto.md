@@ -1,9 +1,7 @@
 ---
 layout: blog
 title: "DevOps를 지향하는 개발팀을 위한 모니터링 팁"
-description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
 header-img: "img/career-bg-5.jpg"
-permalink: /blog/monitoring
 date: 2016-04-01
 ---
 
