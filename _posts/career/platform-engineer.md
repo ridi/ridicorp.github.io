@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: career
 title: "Web Developer - Platform"
 subtitle: "리디북스 플랫폼팀"
 header-img: "img/career-bg-4.jpg"

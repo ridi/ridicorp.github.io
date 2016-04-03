@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: career
 title: "PR Manager"
 subtitle: "리디북스 마케팅팀"
 header-img: "img/career-bg-3.jpg"

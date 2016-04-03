@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: career
 title: "Customer Communicator"
 subtitle: "리디북스 고객커뮤니케이션팀"
 description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
