@@ -6,37 +6,34 @@ header-img: "img/career-bg-5.jpg"
 date: 2016-04-01
 ---
 
-# iOS에서 간결한 API 클라이언트 구현하기 (like Retrofit+GSON)
-
 _이 글은 안드로이드 개발에서 웹 서버 API 클라이언트를 간결하게 구현할 수 있도록 도와주는 강력한 오픈소스 라이브러리인 [Retrofit](http://square.github.io/retrofit/)과 [GSON](https://github.com/google/gson)의 조합을 iOS 개발에서도 따라해보고 싶은 분들을 위해 작성되었습니다. Retrofit+GSON를 실제로 사용하는 좋은 예제는 [다른 블로그 글](http://blog.robinchutaux.com/blog/a-smart-way-to-use-retrofit/)에서도 찾아볼 수 있습니다._
 
-## 배경
+# 배경
 리디북스 서비스가 발전하면서 점점 복잡해지고, 자연히 앱의 기능도 다양해지기 시작했습니다. 기능이 다양해지면서 웹 서버와의 연동을 위한 API 종류도 늘어났고 앱 내에서 API 호출이 필요한 부분도 다양해지면서 관련된 중복 코드가 이곳 저곳에 산재하게 되었고 전체적인 코드 퀄리티 향상을 위해 이를 최소화하고 모듈화 할 필요성이 생겼습니다.
 
 안드로이드에서는 Pure Java로 작성되어 어노테이션을 통한 간결한 코드를 사용할 수 있게 해주는 Retrofit을 GSON과 연동하여 JSON 응답을 손쉽게 객체에 맵핑 하여 사용함으로써 이러한 문제를 성공적으로 해결할 수 있었습니다. 이후 iOS 개발을 진행하면서 비슷한 역할을 할 수 있는 도구가 있을까 찾아봤지만 마땅하지 않아 결국 사용 가능한 도구들을 이용해 비슷하게 따라해보기로 했습니다.
 
-## 목표
+# 목표
 Retrofit+GSON 조합을 최대한 따라해서 iOS 앱의 코드 퀄리티를 높이기 위한 작업을 진행하기는 하지만 모방하는 것 자체가 목적이 될 수는 없으므로, 구체적인 목적은 다음과 같은 것들로 상정해보았습니다.
 
 * API 통신 부분을 모듈화하여 관련 중복 코드를 최소화하기
 * NSArray, NSDictionary를 직접 사용하여 제어 했던 JSON 처리 부분을 추상화하여 모델 클래스를 정의, JSON 응답을 자동으로 객체에 맵핑 해서 사용할 수 있도록 하기
 
-## 필요한 것
+# 필요한 것
 * Retrofit과 GSON의 동작에 대한 이해
 * [AFNetworking](https://github.com/AFNetworking/AFNetworking)
-
-비동기 HTTP 요청 처리에 용이 하므로 기존에도 이미 API 호출을 위해서도 사용하고 있었습니다. 이 글의 내용은 버전 2.6.3 기준입니다.
-
+  * 비동기 HTTP 요청 처리에 용이하므로 기존에도 이미 API 호출을 위해서도 사용하고 있었습니다.
+  * 이 글의 내용은 버전 2.6.3 기준입니다.
 * [Swift 언어](https://developer.apple.com/swift/)와 그에 대한 이해
+  * 사실 Objective-C를 사용해도 무방하지만, 작업 당시 Swift가 발표된 지 얼마 되지 않은 시점 이었기 때문에 시험 삼아 선택 되었으며 실제로 Swift가 Objective-C 대비 가진 장점들이 적지 않게 활용되었습니다. 
+  * 이 글의 내용은 버전 2.0 기준입니다.
 
-사실 Objective-C를 사용해도 무방하지만, 작업 당시 Swift가 발표된 지 얼마 되지 않은 시점 이었기 때문에 시험 삼아 선택 되었으며 실제로 Swift가 Objective-C 대비 가진 장점들이 적지 않게 활용되었습니다. 이 글의 내용은 버전 2.0 기준입니다.
-
-## 구조와 동작
+# 구조와 동작
 클래스 이름 앞에 붙어 있는 RB는 리디북스에서 사용하는 클래스 접두어 입니다.
 
----
+## RBApiService
 
-![enter image description here](https://i.imgur.com/AakhSry.png)
+![RBApiService class diagram](https://i.imgur.com/AakhSry.png)
 
 API 통신을 담당하는 부분의 핵심은 중앙의 RBApiService 클래스를 관통하며 이루어진 상속 구조라고 할 수 있으며 상술하면 다음과 같습니다.
 
@@ -65,9 +62,9 @@ GET 메소드는 AFHTTPRequestOperationManager의 메소드로 새로운 HTTP GE
 
 RBFooBarResponse 클래스는 이 API 호출의 JSON 응답을 맵핑하기 위한 모델 클래스입니다. 이 API 요청의 응답은 RBJSONResponseSerializer 클래스를 통해 사전에 정의된 규칙에 따라 적절히 RBFooBarResponse 인스턴스로 변환되고 이 모든 과정이 성공적으로 진행되면 ApiSuccessCallback의 responseObject 인자로 전달됩니다. 
 
----
+## 모델 클래스와 RBJSONResponseSerializer
 
-RBJSONResponseSerializer는 JSON 형태로 온 응답을 특정 모델 클래스의 인스턴스로 맵핑 시키는 작업을 수행합니다(Retrofit+GSON 조합에서 GsonConverter의 역할에 대응한다고 볼 수 있습니다).
+앞서 이야기했듯이 RBJSONResponseSerializer는 JSON 형태로 온 응답을 특정 모델 클래스의 인스턴스로 맵핑시키는 작업을 수행합니다(Retrofit+GSON 조합에서 GsonConverter의 역할에 대응한다고 볼 수 있습니다).
 
 iOS 개발에서 전통적으로 JSON을 다루는 방식은 Cocoa 프레임워크에서 기본적으로 제공하는 NSJSONSerialization 클래스를 이용하여 JSON Array->NSArray로, 그 외의 JSON Object는 NSDictionary로 변환하여 사용하는 방식입니다. 이러한 방식을 사용할 경우 별다른 가공이 필요 없다는 장점이 있는 대신 다음과 같은 문제들에 직면할 수 있습니다.
 
@@ -112,6 +109,8 @@ class RBJSONResponseSerializer: AFJSONResponseSerializer {
 }
 ~~~
 
+## Key translator
+
 fromDictionary 메소드 호출 시 함께 인자로 전달되는 keyTraslator는 JSON에서 사용되는 키로부터 모델 클래스의 프로퍼티 이름으로의 변환을 나타내는 람다 함수로 개발자가 원하는 규칙에 따라 정의하면 됩니다. 위의 코드에서 사용 중인 PropertyKeyTranslator는 리디북스 API에서 사용 중인 규칙 및 Swift의 네이밍 컨벤션에 따라 다음과 같이 언더스코어(_) 케이스로 된 이름을 카멜 케이스로 바꾸는 형태로 정의되었으며 이는 GSON의 FieldNamingPolicy 중 LOWERCASE_WITH_UNDERSCORES와 유사합니다.
 
 ~~~ swift
@@ -124,6 +123,8 @@ let PropertyKeyTranslator = { (keyName: String) -> String in
     return translation
 }
 ~~~
+
+## NSObject.fromDictionary 메소드
 
 fromDictionary 메소드는 NSDictionary로 표현된 데이터를 실제 모델 클래스의 인스턴스로 변환하는 작업을 수행하며 NSObject의 extension(Objective-C의 category 개념과 유사합니다)으로 정의하여 원하는 모델 클래스가 어떤 것이든지 간에 공통적인 방법을 사용할 수 있게끔 했습니다.
 
@@ -190,6 +191,8 @@ extension NSObject {
 
 주어진 dictionary에 존재하는 모든 키-밸류 쌍에 대해 밸류가 가진 타입과 이에 대응하는 프로퍼티의 타입에 따라 적절히 프로퍼티에 대응될 객체를 구한 다음 Cocoa 프레임워크에서 제공하는 [KVC](https://developer.apple.com/library/ios/documentation/General/Conceptual/DevPedia-CocoaCore/KeyValueCoding.html)를 이용해 채워넣습니다.
 
+## 프로퍼티 타입 정보 가져오기
+
 모델 클래스가 반드시 Int, String, Float과 같은 기본적인 타입들로만 이루어져 있을 필요는 없고 다른 모델 클래스의 인스턴스나 배열을 포함하고 있어도 타입 정보를 런타임에 가져와 재귀적으로 데이터를 채워나가는 것이 가능합니다. 프로퍼티의 타입을 알아내는 과정은 다음과 같이 Swift에서 제공하는 [Mirror 구조체](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Mirror_Structure/index.html)를 통해 이루어지는데 이는 마치 (이름에서도 느낄 수 있듯이) Java의 리플렉션을 떠올리게 합니다.
 
 ~~~ swift
@@ -247,7 +250,7 @@ func object_getElementTypeOfProperty(object: AnyObject, propertyName name: Strin
 
 RidibooksClassPrefix는 커스텀 클래스들의 접두어를 나타내는 상수이며(리디북스의 경우 앞서 이야기했듯 “RB”), 이 접두어가 붙어있는 경우에만 모델 클래스로 간주해 해당 타입 인스턴스가 반환됩니다.
 
----
+## 예시
 
 앞서 정의한 PropertyKeyTranslator를 사용했을 때, 위에 예시로 사용했던 /foo/bar API 요청의 JSON 응답과 모델 클래스 및 생성되는 인스턴스 형태의 예를 들면 다음과 같을 것입니다.
 
@@ -278,9 +281,9 @@ class RBBazQux : NSObject {
     var arrayValue: [Int]!          // [1, 2, 3]
 }
 ~~~
+---
 
-
-## 맺음말
+# 맺음말
 이런 작업들을 통해 당초 목표했던 두 가지, API 통신 관련 중복 코드를 최소화 하는 것과 JSON 응답을 가독성이 더 좋고 실수할 확률이 적은 모델 클래스의 인스턴스로 자동 변환 하도록 하는 것 모두 달성하는 데에 성공했습니다.
 
 다만 당연히 모든 것이 뜻대로 될 수는 없었는데 Retrofit+GSON과 비교했을 때 플랫폼 혹은 언어의 특성에 기인하는 다음과 같은 한계들 또한 존재했습니다.
