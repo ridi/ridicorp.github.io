@@ -1,5 +1,6 @@
 ---
 layout: blog
+category: blog
 title: "DevOps를 지향하는 개발팀을 위한 모니터링 팁"
 header-img: "img/career-bg-5.jpg"
 date: 2016-04-01

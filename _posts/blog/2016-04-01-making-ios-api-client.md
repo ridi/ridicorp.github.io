@@ -1,5 +1,6 @@
 ---
 layout: blog
+category: blog
 title: "iOS에서 간결한 API 클라이언트 구현하기 (like Retrofit+GSON)"
 header-img: "img/career-bg-5.jpg"
 date: 2016-04-01

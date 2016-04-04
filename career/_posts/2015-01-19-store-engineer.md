@@ -6,6 +6,7 @@ description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고�
 header-img: "img/career-bg-1.jpg"
 fb-img: "img/fb-store.jpg"
 date: 2015-01-19 01:46:41
+permalink: /career/store-engineer
 footer: apply
 link: https://ridi.typeform.com/to/houRxO
 ---
