@@ -122,14 +122,16 @@ Load Average는 마치 서버의 종합 성적표 같으므로, 이 역시 주�
 
 우리가 시도했던 방법은 2초이상 수행되는 쿼리에 대해 로그를 남기는 것이었습니다. MySQL에서는 아래 설정으로 로그를 활성화시킬 수 있습니다.
 
-    [mysqld]
-    long_query_time=2  # 2초 이상 수행되는 쿼리에 대해서
-    slow_query_log=1   # 로그를 남겨주세요
+~~~ conf
+[mysqld]
+long_query_time=2  # 2초 이상 수행되는 쿼리에 대해서
+slow_query_log=1   # 로그를 남겨주세요
+~~~
 
 쿼리 분석에는 Percona의 [pt-query-digest](https://www.percona.com/doc/percona-toolkit/2.2/pt-query-digest.html) 를 추천합니다. [VividCortext](https://www.vividcortex.com/monitoring/mysql/) 혹은 [MONyog](https://www.webyog.com/product/monyog) 등의 솔루션은 시각적으로 화려하고 실제로도 강력한 기능을 갖추고 있지만, 유료라는 큰 단점이 있습니다.
 
 ![똑똑. 누구시죠? 슬로우쿼리입니다.](https://i.imgur.com/iMeR94W.png)
-[똑똑. 누구시죠? 슬로우쿼리입니다.]
+[부하가 감지될 경우 최근 쿼리 리포트를 받아보는것 만으로도 큰 도움이 됩니다.]
 
 모니터링을 통해 알림을 받게 되면 문제가 더 커지기 전에 해당 기능을 수정하거나 중단시킬 기회가 생깁니다. 특히 새롭게 추가한 기능을 배포할 때 서비스가 불안해 질 수 있는데, 퍼포먼스 문제를 미리 발견하고 롤백을 서두를 수 있다는 것도 장점입니다.
 
