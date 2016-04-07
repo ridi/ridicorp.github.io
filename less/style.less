@@ -1611,7 +1611,7 @@ ul, ol {
 		text-shadow: 0 1px 3px rgba(0,0,0,.25),
 			0 5px 20px rgba(0,0,0,.5);
 		@media @queries_sm {
-			font-size: 4em;
+			font-size: 2em;
 		}
 	}
 	h2 {
@@ -2271,6 +2271,7 @@ article.press-article {
 			position: relative;
 			z-index: 1;
 			transition: all .1s;
+			outline: none;
 			
 			.post-content {
 				display: table-cell;
@@ -2307,6 +2308,13 @@ article.press-article {
 				vertical-align: top;
 				border-left: 1px solid #eee;
 				padding-left: 15px;
+
+				@media @queries_sm {
+					border-left: none;
+					width: auto;
+					display: block;
+					padding-left: 0;
+				}
 				
 				.profile-img {
 					width: 30px;
@@ -2332,10 +2340,12 @@ article.press-article {
 			border-radius: 5px;
 			border: 2px solid transparent;
 		}
-		&:hover a {
+		&:hover a,
+		&:focus a {
 			-webkit-transform: translateY(-1px);
 		}
-		&:hover figure {
+		&:hover figure,
+		&:focus figure {
 			border: 1px solid #ddd;
 			-webkit-transform: scale(1.05);
 		}

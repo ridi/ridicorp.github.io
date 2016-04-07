@@ -1922,7 +1922,7 @@ ol {
 }
 @media only screen and (max-width: 767px) {
   .post-heading h1 {
-    font-size: 4em;
+    font-size: 2em;
   }
 }
 .post-heading h2 {
@@ -2743,6 +2743,7 @@ article.press-article blockquote {
   position: relative;
   z-index: 1;
   transition: all .1s;
+  outline: none;
 }
 .blog-post-list li .list-item .post-content {
   display: table-cell;
@@ -2780,6 +2781,14 @@ article.press-article blockquote {
   border-left: 1px solid #eee;
   padding-left: 15px;
 }
+@media only screen and (max-width: 767px) {
+  .blog-post-list li .list-item .post-meta {
+    border-left: none;
+    width: auto;
+    display: block;
+    padding-left: 0;
+  }
+}
 .blog-post-list li .list-item .post-meta .profile-img {
   width: 30px;
   height: 30px;
@@ -2802,10 +2811,12 @@ article.press-article blockquote {
   border-radius: 5px;
   border: 2px solid transparent;
 }
-.blog-post-list li:hover a {
+.blog-post-list li:hover a,
+.blog-post-list li:focus a {
   -webkit-transform: translatey(-1px);
 }
-.blog-post-list li:hover figure {
+.blog-post-list li:hover figure,
+.blog-post-list li:focus figure {
   border: 1px solid #ddd;
   -webkit-transform: scale(1.05);
 }
