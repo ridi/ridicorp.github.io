@@ -5,7 +5,9 @@ title: "iOS에서 간결한 API 클라이언트 구현하기 (like Retrofit+GSON
 header-img: "img/career-bg-5.jpg"
 date: 2016-04-01
 author: "kering"
-description: "이 글은 안드로이드 개발에서 웹 서버 API 클라이언트를 간결하게 구현할 수 있도록 도와주는 강력한 오픈소스 라이브러리인 Retrofit과 GSON의 조합을 iOS 개발에서도 따라해보고 싶은 분들을 위해 작성되었습니다. Retrofit+GSON를 실제로 사용하는 좋은 예제는 다른 블로그 글에서도 찾아볼 수 있습니다."
+profile-img: "img/profile-kering.png"
+profile-text: "저는 이러저러한 사람입니다."
+description: "API 통신 관련 중복 코드를 최소화하면서."
 ---
 
 _이 글은 안드로이드 개발에서 웹 서버 API 클라이언트를 간결하게 구현할 수 있도록 도와주는 강력한 오픈소스 라이브러리인 [Retrofit](http://square.github.io/retrofit/)과 [GSON](https://github.com/google/gson)의 조합을 iOS 개발에서도 따라해보고 싶은 분들을 위해 작성되었습니다. Retrofit+GSON를 실제로 사용하는 좋은 예제는 [다른 블로그 글](http://blog.robinchutaux.com/blog/a-smart-way-to-use-retrofit/)에서도 찾아볼 수 있습니다._

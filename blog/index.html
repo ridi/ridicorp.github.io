@@ -21,12 +21,14 @@ title: "Engineering Blog"
         {% for post in site.categories.blog %}
         <li>
             <a href="{{ post.url }}" class="list-item">
-                <p class="title">{{ post.title }}</p>
-                <p class="desc">{{ post.description }}</p>
-                <div class="meta">
-                    <span class="author">{{ post.author }}</span>
-                    <span class="separator">∙</span>
-                    <span class="date">{{ post.date | date: "%Y. %m. %d." }}</span>
+                <div class="post-content">
+                    <div class="title">{{ post.title }}</div>
+                    <div class="desc">{{ post.description }}</div>
+                </div>
+                <div class="post-meta">
+                    <img src="{{ site.baseurl }}/{{ post.profile-img }}" alt="" class="profile-img">
+                    <div class="author">{{ post.author }}</div>
+                    <div class="date">{{ post.date | date: "%Y. %m. %d." }}</div>
                 </div>
             </a>
             <figure></figure>

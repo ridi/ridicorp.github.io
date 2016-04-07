@@ -1928,15 +1928,25 @@ ol {
 }
 article.post {
   padding-top: 40px;
+  padding-bottom: 80px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   article.post .container {
     width: 700px;
   }
 }
-article.post h3 {
-  font-size: 1.5em;
+article.post h1 {
+  margin-top: 50px;
+  font-size: 2em;
+}
+article.post h2 {
   color: #999;
+  font-size: 1.75em;
+  margin-top: 50px;
+}
+article.post h3 {
+  font-size: 1.4em;
+  color: #000;
   font-weight: 400;
   letter-spacing: -0.03em;
   margin-top: 50px;
@@ -1951,12 +1961,27 @@ article.post hr {
   border-top: 1px solid #ccc;
   margin: 60px auto;
 }
-article.post ul {
+article.post ul,
+article.post ol {
   padding-left: 1.5em;
   line-height: 1.6;
 }
-article.post ul li {
+article.post ul li,
+article.post ol li {
   position: relative;
+}
+article.post ul li a,
+article.post ol li a {
+  color: #000;
+  border-bottom: 2px solid #ccc;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+article.post ul li a:hover,
+article.post ol li a:hover {
+  color: #0282da;
+  border-color: #0282da;
 }
 article.post ul li:before {
   color: #aaa;
@@ -1969,16 +1994,17 @@ article.post ul li:before {
   top: 1px;
   font-size: 0.9em;
 }
-article.post li a {
-  color: #000;
-  border-bottom: 2px solid #ccc;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
+article.post ol {
+  counter-reset: ol-counter;
 }
-article.post li a:hover {
-  color: #0282da;
-  border-color: #0282da;
+article.post ol li:before {
+  content: counter(ol-counter);
+  counter-increment: ol-counter;
+  float: left;
+  width: 25px;
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 14px;
+  color: #aaa;
 }
 article.post img {
   position: relative;
@@ -2069,6 +2095,29 @@ article.post .back:hover {
 }
 article.post .back:hover {
   color: #484848;
+}
+article.post .post-meta {
+  font-family: "brandon-grotesque", sans-serif;
+  color: #545f6f;
+  font-size: 14px;
+  vertical-align: top;
+  padding-top: 15px;
+  padding-left: 15px;
+  margin-top: 50px;
+  border-top: 1px solid #eee;
+  max-width: 300px;
+}
+article.post .post-meta .profile-img {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 5px 8px 0 0;
+  border-radius: 4px;
+}
+article.post .post-meta .author {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px;
 }
 .post-preview h2 {
   color: #333;
@@ -2684,6 +2733,11 @@ article.press-article blockquote {
   z-index: 1;
   transition: all .1s;
 }
+.blog-post-list li .list-item .post-content {
+  display: table-cell;
+  vertical-align: top;
+  width: 550px;
+}
 .blog-post-list li .list-item .title {
   display: block;
   font-size: 26px;
@@ -2693,8 +2747,8 @@ article.press-article blockquote {
   font-weight: bold;
 }
 .blog-post-list li .list-item .desc {
-  font-size: 14px;
-  color: #545f6f;
+  font-size: 16px;
+  color: #6c8094;
   padding-bottom: 8px;
   line-height: 1.5;
   height: 42px;
@@ -2705,12 +2759,24 @@ article.press-article blockquote {
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
-.blog-post-list li .list-item .meta {
+.blog-post-list li .list-item .post-meta {
+  font-family: "brandon-grotesque", sans-serif;
   color: #545f6f;
   font-size: 14px;
-  font-family: "brandon-grotesque", sans-serif;
+  width: 150px;
+  display: table-cell;
+  vertical-align: top;
+  border-left: 1px solid #eee;
+  padding-left: 15px;
 }
-.blog-post-list li .list-item .author {
+.blog-post-list li .list-item .post-meta .profile-img {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 5px 8px 0 0;
+  border-radius: 4px;
+}
+.blog-post-list li .list-item .post-meta .author {
   font-weight: bold;
 }
 .blog-post-list li figure {
