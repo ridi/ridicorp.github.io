@@ -1706,7 +1706,9 @@ ol {
 }
 .job-openings-area .jobs .apply-instruction {
   margin: 30px auto;
-  padding: 30px 0 16px;
+  padding: 20px 30px;
+  border: 1px solid #165097;
+  border-radius: 8px;
 }
 @media only screen and (max-width : 1023px) {
   .job-openings-area .jobs .apply-instruction {
@@ -1714,17 +1716,14 @@ ol {
   }
 }
 .job-openings-area .jobs .apply-instruction h4 {
-  font-size: 2em;
-  padding-bottom: 10px;
+  font-size: 1.4em;
   color: #165097;
-  border-top: 1px solid #165097;
-  padding-top: 20px;
 }
 .job-openings-area .jobs .apply-instruction strong {
   display: block;
   padding: 30px 0 10px;
   color: #333;
-  font-size: 1.4em;
+  font-size: 1em;
   font-weight: 400;
   color: #999;
 }
@@ -1735,13 +1734,6 @@ ol {
 .job-openings-area .jobs .apply-instruction p,
 .job-openings-area .jobs .apply-instruction li {
   margin: 0;
-  margin-left: 40px;
-}
-@media only screen and (max-width: 767px) {
-  .job-openings-area .jobs .apply-instruction p,
-  .job-openings-area .jobs .apply-instruction li {
-    margin-left: 0;
-  }
 }
 .job-openings-area .jobs .apply-instruction p {
   font-size: 1.2em;
