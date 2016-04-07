@@ -4,9 +4,7 @@ category: blog
 title: "DevOps를 지향하는 개발팀을 위한 모니터링 팁"
 header-img: "img/career-bg-5.jpg"
 date: 2016-04-01
-author: "namenu"
-profile-img: "img/profile-namenu.png"
-profile-text: "저는 이러저러한 사람입니다."
+author: namenu
 description: "효율적인 모니터링을 위한 꿀팁"
 ---
 

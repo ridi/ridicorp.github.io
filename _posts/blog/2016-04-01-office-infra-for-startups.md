@@ -4,9 +4,7 @@ category: blog
 title: "스타트업을 위한 리디북스의 사내 인프라 구축경험기"
 header-img: "img/career-bg-5.jpg"
 date: 2016-04-01
-author: "Juhyeon Park"
-profile-img: "img/profile-juhyeonpark.png"
-profile-text: "저는 이러저러한 사람입니다."
+author: blu
 description: "스타트업도 다 같은 스타트업이 아닙니다."
 ---
 

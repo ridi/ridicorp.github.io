@@ -4,9 +4,7 @@ category: blog
 title: "iOS에서 간결한 API 클라이언트 구현하기 (like Retrofit+GSON)"
 header-img: "img/career-bg-5.jpg"
 date: 2016-04-01
-author: "kering"
-profile-img: "img/profile-kering.png"
-profile-text: "저는 이러저러한 사람입니다."
+author: kering
 description: "API 통신 관련 중복 코드를 최소화하면서."
 ---
 

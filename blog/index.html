@@ -26,8 +26,9 @@ title: "Engineering Blog"
                     <div class="desc">{{ post.description }}</div>
                 </div>
                 <div class="post-meta">
-                    <img src="{{ site.baseurl }}/{{ post.profile-img }}" alt="" class="profile-img">
-                    <div class="author">{{ post.author }}</div>
+                    {% assign author = site.data.authors[post.author] %}
+                    <img src="{{ author.email | get_gravatar }}" alt="" class="profile-img">
+                    <div class="author">{{ author.name }}</div>
                     <div class="date">{{ post.date | date: "%Y. %m. %d." }}</div>
                 </div>
             </a>
