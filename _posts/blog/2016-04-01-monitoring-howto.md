@@ -2,7 +2,7 @@
 layout: blog
 category: blog
 title: "DevOps를 지향하는 개발팀을 위한 모니터링 팁"
-header-img: "img/career-bg-5.jpg"
+header-img: "img/career-bg-9.jpg"
 date: 2016-04-01
 author: namenu
 description: "효율적인 모니터링을 위한 꿀팁"
