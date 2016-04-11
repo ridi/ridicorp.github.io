@@ -85,6 +85,10 @@ ol {
     padding: 15px 0 0 15px;
   }
 }
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus {
+  color: #fff;
+}
 .navbar-custom .nav li a {
   text-transform: uppercase;
   font-size: 12px;
