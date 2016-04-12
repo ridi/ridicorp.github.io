@@ -68,8 +68,8 @@ description: "스타트업도 다 같은 스타트업이 아닙니다."
  * 무선공유기의 WAN을 사용하지 않기
  * 물론 유선 DHCP망은 구축되어있어야 합니다.
 
-TP-LINK 설명 : http://www.tp-link.com/en/faq-417.html
-IP TIME 설명 : http://iptime.com/iptime/?pageid=2&page_id=67&uid=7433&mod=document
+[TP-LINK 설정 방법](http://www.tp-link.com/en/faq-417.html)
+[IP TIME 설정 방법](http://iptime.com/iptime/?pageid=2&page_id=67&uid=7433&mod=document)
 
 
 ---

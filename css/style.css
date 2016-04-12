@@ -38,6 +38,7 @@ p a {
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
   transition: all 0.2s;
+  vertical-align: baseline;
 }
 p a:hover {
   color: #0282da;
@@ -1906,10 +1907,10 @@ ol {
   }
 }
 .post-heading h1 {
-  font-size: 4em;
+  font-size: 2.5em;
   color: #fff;
-  font-family: "brandon-grotesque", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), 0 5px 20px rgba(0, 0, 0, 0.5);
 }
 @media only screen and (max-width: 767px) {
@@ -1960,9 +1961,17 @@ article.post p {
   padding-top: 15px;
 }
 article.post hr {
-  width: 100px;
-  border-top: 1px solid #ccc;
-  margin: 60px auto;
+  border: none;
+  margin: 40px auto 80px;
+  text-align: center;
+}
+article.post hr:before {
+  content: "...";
+  color: #555;
+  display: inline-block;
+  letter-spacing: .6em;
+  font-size: 1.5em;
+  font-family: serif;
 }
 article.post ul,
 article.post ol {
@@ -2121,6 +2130,27 @@ article.post .post-meta .author {
   font-weight: bold;
   font-size: 18px;
   padding: 10px;
+}
+article.post .post-content {
+  width: 700px;
+  margin: 0 auto;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  article.post .post-content {
+    width: 83%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  article.post .post-content {
+    width: 90%;
+  }
+}
+article.post .button-area {
+  text-align: center;
+  padding-top: 50px;
+}
+article.post .button-area a {
+  display: inline-block;
 }
 .post-preview h2 {
   color: #333;
@@ -2696,6 +2726,7 @@ article.press-article p {
 article.press-article ol,
 article.press-article ul {
   margin: 30px 0;
+  font-size: 1.125em;
 }
 article.press-article li {
   list-style: disc;
@@ -2749,6 +2780,7 @@ article.press-article blockquote {
   padding-bottom: 4px;
   letter-spacing: -0.03em;
   font-weight: bold;
+  line-height: 1.3;
 }
 .blog-post-list li .list-item .desc {
   font-size: 16px;
