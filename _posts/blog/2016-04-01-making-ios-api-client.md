@@ -45,20 +45,20 @@ API 통신을 담당하는 부분의 핵심은 중앙의 RBApiService 클래스�
 
 이 설명에 따르면 웹 서버의 /api/foo/bar API를 요청하는 메소드는 RBFooService 클래스에 다음과 같이 정의될 것입니다.
 
-~~~ swift
+{% highlight swift linenos %}
 func bar(param1: String, param2: String, success: ApiSuccessCallback, failure: ApiFailureCallback) -> AFHTTPRequestOperation! {
     let paramters = ["param1": param1, "param2": param2]
     responseSerializer = RBJSONResponseSerializer(responseClass: RBFooBarResponse.class)
     return GET("/api/foo/bar", parameters: parameters, success: success, failure: failure)
 }
-~~~
+{% endhighlight %}
 
 ApiSuccessCallback과 ApiFailureCallback은 요청과 응답이 완료되고 각각 성공, 실패일 때 호출되는 람다 함수(Objective-C의 block에 대응되는 개념) 타입으로 다음과 같이 typealias를 통해 선언되어 있습니다.
 
-~~~ swift
+{% highlight swift linenos %}
 typealias ApiSuccessCallback = ((operation: AFHTTPRequestOperation, responseObject: AnyObject) -> Void)?
 typealias ApiFailureCallback = ((operation: AFHTTPRequestOperation?, error: NSError) -> Void)?
-~~~
+{% endhighlight %}
 
 GET 메소드는 AFHTTPRequestOperationManager의 메소드로 새로운 HTTP GET 요청 작업을 생성하고 큐에 넣은 뒤 그 인스턴스를 반환합니다. bar 메소드는 이렇게 반환된 인스턴스를 다시 그대로 반환하는데 API 호출을 의도한 측에서는 이 인스턴스를 통해 필요한 경우 요청 처리를 취소할 수 있습니다. API에 따라 GET 이외의 다른 방식의 요청이 필요하다면 POST, PUT, DELETE등의 메소드들 또한 사용할 수 있습니다.
 
@@ -77,7 +77,7 @@ iOS 개발에서 전통적으로 JSON을 다루는 방식은 Cocoa 프레임워�
 
 RBJSONResponseSerializer를 통한 인스턴스로의 변환은 이런 문제 의식에서 출발했고 Retrofit에 GSON을 연계하여 사용하기 위한 GsonConverter가 해결을 위한 힌트를 제공한 셈입니다.
 
-~~~ swift
+{% highlight swift linenos %}
 // AFJsonResponseSerializer는 NSJSONSerializer를 이용해 NSArray/NSDictionary로 변환하는 기본적인 작업을 해줌
 class RBJSONResponseSerializer: AFJSONResponseSerializer {
     var responseClass: NSObject.Type!
@@ -109,13 +109,13 @@ class RBJSONResponseSerializer: AFJSONResponseSerializer {
         return responseObject
     }
 }
-~~~
+{% endhighlight %}
 
 ## Key translator
 
 fromDictionary 메소드 호출 시 함께 인자로 전달되는 keyTraslator는 JSON에서 사용되는 키로부터 모델 클래스의 프로퍼티 이름으로의 변환을 나타내는 람다 함수로 개발자가 원하는 규칙에 따라 정의하면 됩니다. 위의 코드에서 사용 중인 PropertyKeyTranslator는 리디북스 API에서 사용 중인 규칙 및 Swift의 네이밍 컨벤션에 따라 다음과 같이 언더스코어(_) 케이스로 된 이름을 카멜 케이스로 바꾸는 형태로 정의되었으며 이는 GSON의 FieldNamingPolicy 중 LOWERCASE_WITH_UNDERSCORES와 유사합니다.
 
-~~~ swift
+{% highlight swift linenos %}
 let PropertyKeyTranslator = { (keyName: String) -> String in
     let words = keyName.characters.split { $0 == "_" }.map { String($0) }
     var translation: String = words[0]
@@ -124,13 +124,13 @@ let PropertyKeyTranslator = { (keyName: String) -> String in
     }
     return translation
 }
-~~~
+{% endhighlight %}
 
 ## NSObject.fromDictionary 메소드
 
 fromDictionary 메소드는 NSDictionary로 표현된 데이터를 실제 모델 클래스의 인스턴스로 변환하는 작업을 수행하며 NSObject의 extension(Objective-C의 category 개념과 유사합니다)으로 정의하여 원하는 모델 클래스가 어떤 것이든지 간에 공통적인 방법을 사용할 수 있게끔 했습니다.
 
-~~~ swift
+{% highlight swift linenos %}
 extension NSObject {
     class func fromDictionary(dictionary: NSDictionary) -> Self {
         // keyTranslator가 주어지지 않으면 디폴트 translator 사용
@@ -189,7 +189,7 @@ extension NSObject {
         }
     }
 }
-~~~
+{% endhighlight %}
 
 주어진 dictionary에 존재하는 모든 키-밸류 쌍에 대해 밸류가 가진 타입과 이에 대응하는 프로퍼티의 타입에 따라 적절히 프로퍼티에 대응될 객체를 구한 다음 Cocoa 프레임워크에서 제공하는 [KVC](https://developer.apple.com/library/ios/documentation/General/Conceptual/DevPedia-CocoaCore/KeyValueCoding.html)를 이용해 채워넣습니다.
 
@@ -197,7 +197,7 @@ extension NSObject {
 
 모델 클래스가 반드시 Int, String, Float과 같은 기본적인 타입들로만 이루어져 있을 필요는 없고 다른 모델 클래스의 인스턴스나 배열을 포함하고 있어도 타입 정보를 런타임에 가져와 재귀적으로 데이터를 채워나가는 것이 가능합니다. 프로퍼티의 타입을 알아내는 과정은 다음과 같이 Swift에서 제공하는 [Mirror 구조체](https://developer.apple.com/library/watchos/documentation/Swift/Reference/Swift_Mirror_Structure/index.html)를 통해 이루어지는데 이는 마치 (이름에서도 느낄 수 있듯이) Java의 리플렉션을 떠올리게 합니다.
 
-~~~ swift
+{% highlight swift linenos %}
 // 타입 이름에서 특정 접두어("Optional", "Array", "Dictionary" 등)를 찾아 제거 
 func encodeType_getUnwrappingType(encodeType: String, keyword: String) -> String {
     if encodeType.hasPrefix(keyword) {
@@ -248,7 +248,7 @@ func object_getElementTypeOfProperty(object: AnyObject, propertyName name: Strin
     }
     return nil
 }
-~~~
+{% endhighlight %}
 
 RidibooksClassPrefix는 커스텀 클래스들의 접두어를 나타내는 상수이며(리디북스의 경우 앞서 이야기했듯 “RB”), 이 접두어가 붙어있는 경우에만 모델 클래스로 간주해 해당 타입 인스턴스가 반환됩니다.
 
@@ -258,7 +258,7 @@ RidibooksClassPrefix는 커스텀 클래스들의 접두어를 나타내는 상�
 
 _(Int, Bool, Float과 같은 기존 NSNumber 기반의 타입을 가지는 프로퍼티들은 아직 정확한 원인은 알 수 없으나 nil 이외의 값으로 초기화 해주지 않으면 프로퍼티가 존재하는지 확인하기 위해 사용하는 respondsToSelector 메소드가 false를 뱉게 되어 사용할 수 없으므로 클래스 선언시 적절한 초기값을 주어야 합니다.)_
 
-~~~ json
+{% highlight json linenos %}
 {
     "success": true,
     "int_value": 1,
@@ -268,9 +268,9 @@ _(Int, Bool, Float과 같은 기존 NSNumber 기반의 타입을 가지는 프�
         "array_value": [1, 2, 3]
     }
 }
-~~~
+{% endhighlight %}
 
-~~~ swift
+{% highlight swift linenos %}
 class RBFooBarResponse : NSObject {
     var success = false             // true
     var intValue = 0                // 1
@@ -282,7 +282,7 @@ class RBFooBarResponse : NSObject {
 class RBBazQux : NSObject {
     var arrayValue: [Int]!          // [1, 2, 3]
 }
-~~~
+{% endhighlight %}
 ---
 
 # 맺음말

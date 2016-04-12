@@ -53,6 +53,9 @@ ul,
 ol {
   list-style: none;
 }
+blockquote {
+  padding: 0 20px 20px;
+}
 ::selection {
   background: #ccc;
 }
