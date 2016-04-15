@@ -22,14 +22,17 @@ body {
 .clear-md {
   display: none;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width : 1023px) {
   .clear-md {
     display: block;
   }
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .clear-md {
-    display: block;
+.clear-lg {
+  display: block;
+}
+@media only screen and (max-width : 1023px) {
+  .clear-lg {
+    display: none;
   }
 }
 p a {
@@ -129,6 +132,7 @@ blockquote {
     -moz-transition: background-color 0.3s;
     transition: background-color 0.3s;
     /* Force Hardware Acceleration in WebKit */
+  
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -139,6 +143,7 @@ blockquote {
   }
   .navbar-custom.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
+  
     position: fixed;
     top: -55px;
     background-color: rgba(255, 255, 255, 0.95);
@@ -170,6 +175,7 @@ blockquote {
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
+  
     -webkit-transform: translate3d(0, 100%, 0);
     -moz-transform: translate3d(0, 100%, 0);
     -ms-transform: translate3d(0, 100%, 0);
@@ -316,7 +322,7 @@ blockquote {
 }
 @media only screen and (max-width: 767px) {
   .intro-header.ih-blog {
-    background-size: 1000px auto;
+    background-size: 1400px auto;
   }
 }
 .intro-header .site-heading,
@@ -399,13 +405,12 @@ blockquote {
 }
 .intro-header .sub-heading {
   display: inline-block;
-  font-size: 2.375em;
+  font-size: 1.5em;
   font-weight: 700;
   letter-spacing: -0.03em;
   color: #fff;
   position: relative;
   padding-bottom: 8px;
-  margin-bottom: 30px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .intro-header .sub-heading {
@@ -417,32 +422,11 @@ blockquote {
     font-size: 1.2em;
   }
 }
-.intro-header .sub-heading:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background: #fff;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
 .intro-header .about-sub-area .sub-heading {
   color: #fff;
 }
-.intro-header .about-sub-area .sub-heading:after {
-  background: #6f729a;
-}
 .intro-header .career-sub-area .sub-heading {
   color: #5b6f7f;
-}
-.intro-header .career-sub-area .sub-heading:after {
-  background: #b5d6e5;
 }
 .intro-header .sub-description {
   padding-bottom: 70px;
@@ -459,7 +443,7 @@ blockquote {
   color: #697c8a;
 }
 .intro-header .sub-description.sd-blog {
-  color: #fff;
+  color: #78caf3;
 }
 @media only screen and (max-width: 767px) {
   .intro-header .sub-description {
@@ -581,6 +565,15 @@ blockquote {
     margin-bottom: 10px !important;
   }
 }
+.intro-header .blog-sub-area {
+  text-align: center;
+}
+@media only screen and (max-width: 767px) {
+  .intro-header .blog-sub-area {
+    text-align: left;
+    padding: 0 20px;
+  }
+}
 .must-use-area {
   background: #36333f;
   position: relative;
@@ -602,6 +595,7 @@ blockquote {
   text-align: center;
   color: #36333f;
   /* fall back */
+
   color: rgba(54, 51, 63, 0.9);
   font-size: 8em;
   font-weight: 900;
@@ -1669,6 +1663,7 @@ blockquote {
   transition: all 0.2s;
   font-size: 0.875em;
   padding: 12px 30px;
+  display: inline-block;
   letter-spacing: -0.03em;
   font-weight: bold;
   background: #0a1b39;
@@ -1699,7 +1694,7 @@ blockquote {
   z-index: 1;
   opacity: 0;
 }
-.job-openings-area .jobs .job-item input[type=checkbox] ~ .job-title i {
+.job-openings-area .jobs .job-item input[type=checkbox]  ~ .job-title i {
   float: right;
   margin-right: 5px;
   color: #165097;
@@ -1712,7 +1707,7 @@ blockquote {
   padding: 0 24px;
   transform: translate(0, 5%);
 }
-.job-openings-area .jobs .job-item input[type=checkbox] ~ .job-desc {
+.job-openings-area .jobs .job-item input[type=checkbox]  ~ .job-desc {
   background: #f6f7f8;
 }
 .job-openings-area .jobs .apply-instruction {
@@ -1952,21 +1947,21 @@ article.post {
 article.post h1 {
   margin-top: 50px;
   font-size: 2em;
+  color: #000;
 }
 article.post h2 {
-  color: #999;
-  font-size: 1.75em;
   margin-top: 50px;
+  font-size: 1.25em;
+  color: #222;
 }
 article.post h3 {
-  font-size: 1.4em;
-  color: #000;
+  font-size: 1.1em;
+  color: #222;
   font-weight: 400;
-  letter-spacing: -0.03em;
   margin-top: 50px;
 }
 article.post p {
-  font-size: 1.125em;
+  font-size: 18px;
   line-height: 1.5;
   padding-top: 15px;
 }
@@ -1991,6 +1986,7 @@ article.post ol {
 article.post ul li,
 article.post ol li {
   position: relative;
+  font-size: 18px;
 }
 article.post ul li a,
 article.post ol li a {
@@ -2038,6 +2034,12 @@ article.post figcaption {
   font-size: 0.875em;
   color: #999;
   padding: 10px 0 20px;
+}
+article.post code td.code {
+  width: 100%;
+}
+article.post .highlight > pre {
+  border: none;
 }
 article.post .btn-apply {
   margin: 10px 0;
@@ -2104,6 +2106,7 @@ article.post .back {
   font-weight: bold;
   background: transparent;
   border: 2px solid #c9c9c9;
+  color: #484848;
   margin: 10px 5px 10px;
   color: #484848;
   padding: 14px 30px;
@@ -2122,10 +2125,10 @@ article.post .post-meta {
   color: #545f6f;
   font-size: 14px;
   vertical-align: top;
-  padding-top: 15px;
-  padding-left: 15px;
-  margin-top: 50px;
-  border-top: 1px solid #eee;
+  padding: 20px 25px 25px;
+  margin: 50px auto 0;
+  border: 2px solid #eee;
+  border-radius: 5px;
   max-width: 300px;
 }
 article.post .post-meta .profile-img {
@@ -2137,7 +2140,7 @@ article.post .post-meta .profile-img {
 }
 article.post .post-meta .author {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   padding: 10px;
 }
 article.post .post-content {
@@ -2337,7 +2340,7 @@ article.post .button-area a {
   border-radius: 5px;
 }
 .press-articles-area .articles-list li:hover a {
-  -webkit-transform: translateY(-3px);
+  -webkit-transform: translatey(-3px);
 }
 .press-articles-area .articles-list li:hover figure {
   background: #fff;
@@ -2431,7 +2434,7 @@ article.post .button-area a {
   border-radius: 5px;
 }
 .press-articles-area .report-list li:hover a {
-  -webkit-transform: translateY(-3px);
+  -webkit-transform: translatey(-3px);
 }
 .press-articles-area .report-list li:hover figure {
   background: #fff;
@@ -2487,7 +2490,7 @@ article.post .button-area a {
   transition: all .1s;
 }
 .ridi-insights .ri-list li a:hover {
-  -webkit-transform: translateY(-3px);
+  -webkit-transform: translatey(-3px);
 }
 .ridi-insights .ri-list li strong {
   display: block;
@@ -2608,6 +2611,9 @@ article.post .button-area a {
   float: left;
   margin: 50px 20px 0 0;
   text-align: center;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  
 }
 @media only screen and (max-width: 767px) {
   .photos-list li {
@@ -2768,7 +2774,7 @@ article.press-article blockquote {
 }
 .blog-post-list li .list-item {
   display: block;
-  padding: 25px 10px 20px;
+  padding: 25px 20px 20px;
   position: relative;
   z-index: 1;
   transition: all .1s;
@@ -2843,7 +2849,7 @@ article.press-article blockquote {
 }
 .blog-post-list li:hover a,
 .blog-post-list li:focus a {
-  -webkit-transform: translateY(-1px);
+  -webkit-transform: translatey(-1px);
 }
 .blog-post-list li:hover figure,
 .blog-post-list li:focus figure {
