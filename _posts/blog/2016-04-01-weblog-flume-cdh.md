@@ -71,8 +71,31 @@ Flume 의 기본 구조는 단순합니다.
 * 모든 에이전트가 정상적으로 리포트를 보내면 {“status”: “OKAY”} 를, 아니면 {“status”: “ERROR”} 를 보여줌.
 * 이 health 페이지의 내용을 모니터링하도록 Pingdom 설정. {“status”: “OKAY”} 가 응답에 없으면 알람 메일이 오도록 함.
 
-![Health 페이지 캡쳐 화면](http://i.imgur.com/cHRPJft.png)
-
+{% highlight json %}
+{
+    "status": "OKAY",
+    "metrics": {
+        "192.168.0.101": {
+            "SOURCE.log_src": { ... },
+            "SINK.avro_sink": {
+                "BatchCompleteCount": 562110,
+                "ConnectionFailedCount": 294,
+                "EventDrainAttemptCount": 56246850,
+                "ConnectionCreatedCount": 31,
+                "Type": "SINK",
+                "BatchEmptyCount": 16,
+                "ConnectionClosedCount": 30,
+                "EventDrainSuccessCount": 56243927,
+                "StopTime": 0,
+                "StartTime": 1459135471379,
+                "BatchUnderflowCount": 610
+            },
+            "CHANNEL.mem_channel": { ... }
+        },
+        "192.168.0.102": { ... }
+    }
+}
+{% endhighlight %}
 *Health 페이지 캡쳐 화면*
 
 ### JSON 리포팅의 문제
