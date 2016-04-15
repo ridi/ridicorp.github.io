@@ -2,6 +2,8 @@
 layout: default
 ---
 
+{% assign author = site.data.authors[page.author] %}
+
 <!-- Post Header -->
 <header class="intro-header post-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
     <div class="container">
@@ -12,7 +14,7 @@ layout: default
                     {% if page.subtitle %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
                     {% endif %}
-                    <span class="meta">Posted by <span class="author">{{ page.author }}</span><!--  on {{ page.date | date: "%B %-d, %Y" }} --></span>
+                    <span class="meta">Posted by <span class="author">{{ author.name }}</span><!--  on {{ page.date | date: "%B %-d, %Y" }} --></span>
                 </div>
             </div>
         </div>
@@ -27,6 +29,11 @@ layout: default
 
 				{{ content }}
 
+            </div>
+            <hr>
+            <div class="post-meta">
+                {{ author.name }} - {{ author.profile-text }}
+                <img src="{{ author.email | get_gravatar }}" alt="" class="profile-img">
             </div>
         </div>
         <div class="button-area">
