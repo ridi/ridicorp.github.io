@@ -17,3 +17,8 @@ chanu.lee:
   name: Chanu Lee
   email: chanu.lee@ridi.com
   profile-text: "저는 이러저러한 사람입니다."
+
+hc.kim:
+  name: HyunChul Kim
+  email: hc.kim@ridi.com
+  profile-text: "리디 서점 개발을 맡고 있으며, 복잡한 요구사항을 빨리 구현해낼 수 있는 구조를 만들기 위해 노력 중입니다."
