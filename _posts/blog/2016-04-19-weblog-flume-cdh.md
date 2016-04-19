@@ -28,7 +28,7 @@ description: "API 통신 관련 중복 코드를 최소화하면서."
 Flume 의 기본 구조는 단순합니다.
 
 ![기본적인 에이전트 구성](http://i.imgur.com/w5awy6k.png)
-<figcaption><기본적인 에이전트 구성 (제공: Apache Flume 홈페이지)></figcaption>
+<figcaption>기본적인 에이전트 구성 (이미지 출처: Apache Flume 홈페이지)</figcaption>
 
 * 에이전트(agent)는 Source, Channel, Sink 로 이루어진 자바 프로세스이다.
 * 소스(source)는 외부에서 이벤트를 입력받아 채널(channel)로 전달하고, 채널은 이벤트를 저장하고 있다가 싱크(sink)로 전달한다. 싱크는 이벤트를 외부로 출력한다.
@@ -39,7 +39,7 @@ Flume 의 기본 구조는 단순합니다.
 예를 들면 아래와 같습니다.
 
 ![좀 더 복잡한 Agent 구성](http://i.imgur.com/3gFrUT6.png)
-<figcaption>좀 더 복잡한 에이전트 구성 (제공: Apache Flume 홈페이지)</figcaption>
+<figcaption>좀 더 복잡한 에이전트 구성 (이미지 출처: Apache Flume 홈페이지)</figcaption>
 
 
 ## 초기 에이전트 구성: [Avro](https://avro.apache.org/)를 통해 클러스터에 로그 전송
@@ -107,8 +107,7 @@ Flume 에서는 [모니터링 인터페이스](https://flume.apache.org/FlumeUse
     }
 }
 {% endhighlight %}
-<figcaption>Health 페이지의 JSON 결과</figcaption>
-
+<figcaption>Health 페이지의 JSON 내용</figcaption>
 
 ## JSON 리포팅의 문제
 
@@ -176,7 +175,6 @@ log_to_avro.sinks.avro_sink.hostname = hostname.of.cluster.agent
 log_to_avro.sinks.avro_sink.port = 4141
 ...
 {% endhighlight %}
-
 <figcaption>웹서버 에이전트 설정파일</figcaption>
 
 
@@ -216,7 +214,6 @@ avro_to_hdfs.channels.c_102.transactionCapacity = 10000
 avro_to_hdfs.channels.c_102.byteCapacityBufferPercentage = 20
 avro_to_hdfs.channels.c_102.byteCapacity = 10485760
 {% endhighlight %}
-
 <figcaption>클러스터 에이전트 설정파일</figcaption>
 
 p.s. Flume 설정 파일은 변수 또는 외부 파일 include 등을 지원하지는 않아서, 위와 같이 반복되는 설정을 여러 번 써 주어야 합니다. 
