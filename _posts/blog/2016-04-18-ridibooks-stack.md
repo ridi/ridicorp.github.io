@@ -1,12 +1,12 @@
 ---
 layout: blog
 category: blog
-title: "리디북스 스택 소개"
+title: "리디북스 서버 스택 소개"
 header-img: "img/career-bg-5.jpg"
 date: 2016-04-18
 author: hc.kim
 published: true
-description: "리디북스의 스택을 간단히 소개합니다."
+description: "리디북스의 서버 스택을 간단히 소개합니다."
 ---
 
 2대의 서버로 시작한 리디북스는 각 기능의 요구사항에 최적인 솔루션들을 채용하고, 고가용성(High Availability)을 지향하면서 매우 복잡하고 다양한 구성으로 변모해왔습니다. 이 글에서는 리디북스가 어떤 스택에서 서비스를 제공하고 있는지 간략히 소개하려고 합니다. 각 스택의 선택 이유나 문제에 부딪히며 배운 노하우 등은 차차 포스팅하겠습니다.

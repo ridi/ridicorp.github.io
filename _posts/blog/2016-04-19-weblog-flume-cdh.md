@@ -3,10 +3,10 @@ layout: blog
 category: blog
 title: "웹서버 로그 수집과 모니터링 설정"
 header-img: "img/career-bg-5.jpg"
-date: 2016-04-19
+date: 2016-04-01
 author: chanu.lee
 published: true
-description: "API 통신 관련 중복 코드를 최소화하면서."
+description: "Apache Flume 과 CDH 를 사용한 로그 수집 시스템을 구성 및 모니터링 설정법"
 ---
 
 우리는 고객이 무엇에 관심 있어 하고 무엇에 관심 없어하는지, 어떤 것을 보았을 때 클릭해 들어가고 어떤 것을 보았을 때 사이트에서 이탈하는지 궁금해 합니다. 이러한 정보를 얻기 위해 봐야 할 것은 역시 웹서버의 접속 로그입니다.
