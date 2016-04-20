@@ -1,0 +1,49 @@
+---
+layout: default
+title: "Engineering Blog"
+---
+
+<header class="intro-header ih-blog">
+    <div class="site-heading blog-heading">
+        <h1 data-effect="slide-top">
+
+            How We<br>
+            Build
+
+        </h1>
+    </div>
+    <div class="blog-sub-area">
+        <h2 class="sub-heading">
+            리디북스가 만들어지는 과정을 소개합니다
+        </h2>
+        <p class="sub-description sd-blog">
+            리디북스는 여러 개발 블로그와 커뮤니티, 그리고 수많은 오픈소스의 도움으로 만들어졌습니다.<br class="clear-lg">
+            이에 보답하며 우리 역시 보다 나은 개발 환경을 만들기 위하여<br class="clear-lg">
+            우리가 겪었던 다양한 문제들과 해결 과정 및 개발 문화를 공유하고자 합니다.
+        </p>
+    </div>
+</header>
+
+<div class="site-content">
+    
+    <ol class="blog-post-list">
+        <!-- This loops through the paginated posts -->
+        {% for post in site.categories.blog %}
+        <li>
+            <a href="{{ post.url }}" class="list-item">
+                <div class="post-content">
+                    <div class="title">{{ post.title }}</div>
+                    <div class="desc">{{ post.description }}</div>
+                </div>
+                <div class="post-meta">
+                    {% assign author = site.data.authors[post.author] %}
+                    <img src="{{ author.email | get_gravatar }}" alt="" class="profile-img">
+                    <div class="author">{{ author.name }}</div>
+                    <div class="date">{{ post.date | date: "%Y. %m. %d." }}</div>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ol>
+
+</div>

@@ -32,7 +32,7 @@ fb-img: "img/fb-img-ridicorp.png"
         <img src="{{ 'site.baseurl }}/img/press-illust-photos.png" alt="" class="pql-illust">
         <strong>사진 자료실</strong>
         <span>리디북스 서비스 및 제품 관련<br>공식 이미지를 다운받을 수 있습니다.</span>
-        <a href="{{ '/press-photos/' | prepend: site.baseurl }}">자세히 보기 <i class="icon-direct-right"></i></a>
+        <a href="{{ '/press/photos/' | prepend: site.baseurl }}">자세히 보기 <i class="icon-direct-right"></i></a>
     </div>
     <div class="clear"></div>
 </div>
@@ -149,9 +149,9 @@ fb-img: "img/fb-img-ridicorp.png"
         var ARTICLES_PER_PAGE = 8;
 
         var posts = [
-            {% for post in paginator.posts %}
+            {% for post in site.categories.press %}
             {
-                url: '{{ post.url | prepend: site.baseurl }}',
+                url: '{{ post.permalink }}',
                 date: '{{ post.date | date: "%Y. %m. %d." }}',
                 title: '{{ post.title | json | escape }}',
                 category: '{{ post.categories }}',
@@ -256,7 +256,7 @@ fb-img: "img/fb-img-ridicorp.png"
 
                 // set 되지 않은 html element hide
                 for (i = remain_press_material; i < MATERIALS_PER_PAGE; i++) {
-                    $("#press_material" + i).hide();
+                    hidePressMaterial(i);
                 }
             }
         }
@@ -277,6 +277,10 @@ fb-img: "img/fb-img-ridicorp.png"
             $("#press_material_title" + (index + 1)).html(post.title);
             $("#press_material_desc" + (index + 1)).html(post.description);
             $("#press_material" + (index + 1)).show();
+        }
+
+        function hidePressMaterial(index) {
+            $("#press_material" + (index + 1)).hide();
         }
 
         function setArticles(data) {
