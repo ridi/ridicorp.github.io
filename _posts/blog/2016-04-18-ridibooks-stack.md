@@ -2,7 +2,7 @@
 layout: blog
 category: blog
 title: "리디북스 서버 스택 소개"
-header-img: "img/career-bg-5.jpg"
+header-img: "img/blog-bg-2.jpg"
 date: 2016-04-18
 author: hc.kim
 published: true

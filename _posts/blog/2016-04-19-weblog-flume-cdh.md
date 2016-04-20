@@ -2,7 +2,7 @@
 layout: blog
 category: blog
 title: "웹서버 로그 수집과 모니터링 설정"
-header-img: "img/career-bg-5.jpg"
+header-img: "img/blog-bg-1.jpg"
 date: 2016-04-19
 author: chanu.lee
 published: true
