@@ -37,7 +37,7 @@ title: "Engineering Blog"
                 </div>
                 <div class="post-meta">
                     {% assign author = site.data.authors[post.author] %}
-                    <img src="{{ author.email | get_gravatar }}" alt="" class="profile-img">
+                    <img src="{{ author.email | to_gravatar }}" alt="" class="profile-img">
                     <div class="author">{{ author.name }}</div>
                     <div class="date">{{ post.date | date: "%Y. %m. %d." }}</div>
                 </div>
