@@ -1742,13 +1742,21 @@ article.post {
 		text-align: center;
 		font-size: 1em;
 		color: #999;
-		padding: 5px 0 20px;
+		padding: 15px 0 20px;
 	}
 	code td.code {
 		width: 100%;
 	}
-	.highlight > pre {
+	.highlight {
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+	.highlight pre {
 		border: none;
+		margin: 0;
+	}
+	.highlight pre.lineno {
+		color: #999;
 	}
 	.btn-apply {
 		margin: 10px 0;

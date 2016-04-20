@@ -28,4 +28,5 @@
 ## 작성 가이드 (TODO)
 
 - 타이틀 쓸 때 # 갯수는 1개부터 시작하기 (h1, h2..)
-- 이미지 밑에 캡션은 figcaption태그 활용
+- 이미지 아래 캡션은 figcaption태그 활용
+- 코드 블록 줄 번호 표시를 위해 linenos 옵션 표기 ex) {% highlight json linenos %}

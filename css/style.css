@@ -2051,13 +2051,21 @@ article.post figcaption {
   text-align: center;
   font-size: 1em;
   color: #999;
-  padding: 5px 0 20px;
+  padding: 15px 0 20px;
 }
 article.post code td.code {
   width: 100%;
 }
-article.post .highlight > pre {
+article.post .highlight {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+article.post .highlight pre {
   border: none;
+  margin: 0;
+}
+article.post .highlight pre.lineno {
+  color: #999;
 }
 article.post .btn-apply {
   margin: 10px 0;

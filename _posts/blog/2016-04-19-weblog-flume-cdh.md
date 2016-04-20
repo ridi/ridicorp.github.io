@@ -82,7 +82,7 @@ Flume 에서는 [모니터링 인터페이스](https://flume.apache.org/FlumeUse
 * 모든 에이전트가 정상적으로 리포트를 보내면 {“status”: “OKAY”} 를, 아니면 {“status”: “ERROR”} 를 보여줌.
 * 이 health 페이지의 내용을 모니터링하도록 Pingdom 설정. {“status”: “OKAY”} 가 응답에 없으면 알람 메일이 오도록 함.
 
-{% highlight json %}
+{% highlight json linenos %}
 {
     "status": "OKAY",
     "metrics": {
@@ -151,7 +151,7 @@ Flume 에서는 [모니터링 인터페이스](https://flume.apache.org/FlumeUse
 
 그리고 에이전트 설정 파일은 아래와 같이 작성했습니다.
 
-{% highlight ini %}
+{% highlight ini linenos %}
 ...
 log_to_avro.sources.log_src.type = exec
 log_to_avro.sources.log_src.command = tail -F /path/to/log/file
@@ -178,7 +178,7 @@ log_to_avro.sinks.avro_sink.port = 4141
 <figcaption>웹서버 에이전트 설정파일</figcaption>
 
 
-{% highlight ini %}
+{% highlight ini linenos %}
 ...
 avro_to_hdfs.sources.avro_src.type = avro
 avro_to_hdfs.sources.avro_src.bind = 0.0.0.0
