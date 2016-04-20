@@ -1,24 +1,29 @@
 kering:
   name: Seonkuk Kim
   email: kering@ridi.com
+  gravatar: bd28c8bb476c237b2e3eb90a82f78a9f
   profile-text: "리디북스 뷰어 개발을 맡고 있습니다."
 
 namenu:
   name: Hyunwoo
   email: hw.nam@ridi.com
+  gravatar: ce77b5f0d1d4fb9f6eb34af856c1ae46
   profile-text: "저는 이러저러한 사람입니다."
 
 blu:
   name: Ju-hyun Park
   email: blu@ridi.com
+  gravatar: 619a9a2e04269c4352188cfd53513c3e
   profile-text: "개발을 통해 출판사와의 효율적이면서 긍정적인 방법을 찾고 있습니다."
 
 chanu.lee:
   name: Chanu Lee
   email: chanu.lee@ridi.com
+  gravatar: db042aed00e9d0268bfd720988bda4d4
   profile-text: "리디북스의 데이터 수집, 분석, 마이닝 등<br>데이터와 관련된 다양한 일을 합니다."
 
 hc.kim:
   name: HyunChul Kim
   email: hc.kim@ridi.com
+  gravatar: b2a4e78d73cfe3724dac0a947d04c3ac
   profile-text: "리디북스 서점 개발을 맡고 있습니다.<br>보다 쉽고 빠르고 편하게 책을 구매할 수 있는 서점을 만들고 있습니다."
