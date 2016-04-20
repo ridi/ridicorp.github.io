@@ -40,30 +40,30 @@ Retrofit+GSON 조합을 최대한 따라해서 iOS 앱의 코드 퀄리티를 �
 
 API 통신을 담당하는 부분의 핵심은 중앙의 RBApiService 클래스를 관통하며 이루어진 상속 구조라고 할 수 있으며 상술하면 다음과 같습니다.
 
-* AFNetworking에서 HTTP 요청 작업을 큐에 넣는 것에서부터 작업의 시작, 종료까지 관리하는 역할을 맡고있는 AFHTTPRequestOperationManager를 상속받는 ApiService 클래스를 정의
-* 각 API들은 역할군에 따라 BookService(책 정보 관련 API), AccountService(사용자 계정/인증 관련 API) 등과 같은 ApiService의 하위 클래스들의 메소드로 정의
+* AFNetworking에서 HTTP 요청 작업을 큐에 넣는 것에서부터 작업의 시작, 종료까지 관리하는 역할을 맡고있는 AFHTTPRequestOperationManager를 상속받는 RBApiService 클래스를 정의
+* 각 API들은 역할군에 따라 RBBookService(책 정보 관련 API), RBAccountService(사용자 계정/인증 관련 API) 등과 같은 RBApiService의 하위 클래스들의 메소드로 정의
 * 이 하위 클래스들이 AFHTTPRequestOperationManager의 역할을 그대로 이어받아 자신을 통해 이루어지는 API HTTP 요청 작업들을 관리
 
 이 설명에 따르면 웹 서버의 /api/foo/bar API를 요청하는 메소드는 RBFooService 클래스에 다음과 같이 정의될 것입니다.
 
 {% highlight swift linenos %}
-func bar(param1: String, param2: String, success: ApiSuccessCallback, failure: ApiFailureCallback) -> AFHTTPRequestOperation! {
+func bar(param1: String, param2: String, success: RBApiSuccessCallback, failure: RBApiFailureCallback) -> AFHTTPRequestOperation! {
     let paramters = ["param1": param1, "param2": param2]
     responseSerializer = RBJSONResponseSerializer(responseClass: RBFooBarResponse.class)
     return GET("/api/foo/bar", parameters: parameters, success: success, failure: failure)
 }
 {% endhighlight %}
 
-ApiSuccessCallback과 ApiFailureCallback은 요청과 응답이 완료되고 각각 성공, 실패일 때 호출되는 람다 함수(Objective-C의 block에 대응되는 개념) 타입으로 다음과 같이 typealias를 통해 선언되어 있습니다.
+RBApiSuccessCallback과 RBApiFailureCallback은 요청과 응답이 완료되고 각각 성공, 실패일 때 호출되는 람다 함수(Objective-C의 block에 대응되는 개념) 타입으로 다음과 같이 typealias를 통해 선언되어 있습니다.
 
 {% highlight swift linenos %}
-typealias ApiSuccessCallback = ((operation: AFHTTPRequestOperation, responseObject: AnyObject) -> Void)?
-typealias ApiFailureCallback = ((operation: AFHTTPRequestOperation?, error: NSError) -> Void)?
+typealias RBApiSuccessCallback = ((operation: AFHTTPRequestOperation, responseObject: AnyObject) -> Void)?
+typealias RBApiFailureCallback = ((operation: AFHTTPRequestOperation?, error: NSError) -> Void)?
 {% endhighlight %}
 
 GET 메소드는 AFHTTPRequestOperationManager의 메소드로 새로운 HTTP GET 요청 작업을 생성하고 큐에 넣은 뒤 그 인스턴스를 반환합니다. bar 메소드는 이렇게 반환된 인스턴스를 다시 그대로 반환하는데 API 호출을 의도한 측에서는 이 인스턴스를 통해 필요한 경우 요청 처리를 취소할 수 있습니다. API에 따라 GET 이외의 다른 방식의 요청이 필요하다면 POST, PUT, DELETE등의 메소드들 또한 사용할 수 있습니다.
 
-RBFooBarResponse 클래스는 이 API 호출의 JSON 응답을 맵핑하기 위한 모델 클래스입니다. 이 API 요청의 응답은 RBJSONResponseSerializer 클래스를 통해 사전에 정의된 규칙에 따라 적절히 RBFooBarResponse 인스턴스로 변환되고 이 모든 과정이 성공적으로 진행되면 ApiSuccessCallback의 responseObject 인자로 전달됩니다. 
+RBFooBarResponse 클래스는 이 API 호출의 JSON 응답을 맵핑하기 위한 모델 클래스입니다. 이 API 요청의 응답은 RBJSONResponseSerializer 클래스를 통해 사전에 정의된 규칙에 따라 적절히 RBFooBarResponse 인스턴스로 변환되고 이 모든 과정이 성공적으로 진행되면 RBApiSuccessCallback의 responseObject 인자로 전달됩니다. 
 
 ## 모델 클래스와 RBJSONResponseSerializer
 
@@ -291,7 +291,7 @@ class RBBazQux : NSObject {
 
 다만 당연히 모든 것이 뜻대로 될 수는 없었는데 Retrofit+GSON과 비교했을 때 플랫폼 혹은 언어의 특성에 기인하는 다음과 같은 한계들 또한 존재했습니다.
 
-* Retrofit에서는 Java 어노테이션을 이용해 API 메소드의 인터페이스만 정의하면 됐지만 iOS 구현에서는 GET, POST 등의 실제 요청 생성 메소드를 호출 것 까지는 직접 구현해줘야 함
-* 키->프로퍼티 이름 변환 규칙에 예외 사항이 필요할 때 GSON에서는 @SerializedName 어노테이션을 통해 손쉽게 지정할 수 있지만 iOS 구현에서는 예외 허용을 위한 위한 깔끔한 방법을 찾기가 힘듬 (다만, 예외가 필요한 경우가 특별히 많지는 않기 때문에 큰 문제는 되지 않음)
+* Retrofit에서는 Java 어노테이션을 이용해 API 메소드의 인터페이스만 정의하면 됐지만 iOS 구현에서는 GET, POST 등의 실제 요청 생성 메소드를 호출 하는 것 까지는 직접 구현해줘야 함
+* 키->프로퍼티 이름 변환 규칙에 예외 사항이 필요할 때 GSON에서는 @SerializedName 어노테이션을 통해 손쉽게 지정할 수 있지만 iOS 구현에서는 예외 허용을 위한 깔끔한 방법을 찾기가 힘듬 (다만, 예외가 필요한 경우가 특별히 많지는 않기 때문에 큰 문제는 되지 않음)
 
 향후에는 HTTP 통신을 위해 사용 중인 AFNetworking(Objective-C로 작성됨)을 온전히 Swift로만 작성된 [Alamofire](https://github.com/Alamofire/Alamofire)로 교체하는 것을 검토 중이며 기존에 비해 좀 더 간결한 코드를 사용할 수 있을 것으로 기대하고 있습니다. 다만 Alamofire의 최신 버전이 iOS 8 이상을 지원하고 있어 iOS 7을 아직 지원 중인 리디북스인 관계로 언제 적용할 수 있을지는 아직 미지수입니다.
