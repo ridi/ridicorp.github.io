@@ -1812,16 +1812,31 @@ article.post {
 			width: 40px;
 			height: 40px;
 			margin: 0 auto;
-			border-radius: 4px;
 			img {
 				margin: 0;
+				border-radius: 4px;
 			}
 		}
 		.author {
 			.brandon-grotesque();
 			font-weight: bold;
 			font-size: 20px;
-			padding: 14px 0 4px;
+			padding: 14px 0 6px;
+		}
+		.author-desc:before,
+		.author-desc:after {
+			text-align: center;
+			display: block;
+			font-family: Georgia, serif;
+			font-size: 30px;
+			color: #999;
+		}
+		.author-desc:before {
+			content: '“';
+			margin-bottom: -15px;
+		}
+		.author-desc:after {
+			content: '”';
 		}
 	}
 	.post-content {
