@@ -132,6 +132,7 @@ blockquote {
     -moz-transition: background-color 0.3s;
     transition: background-color 0.3s;
     /* Force Hardware Acceleration in WebKit */
+  
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -142,6 +143,7 @@ blockquote {
   }
   .navbar-custom.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
+  
     position: fixed;
     top: -55px;
     background-color: rgba(255, 255, 255, 0.95);
@@ -173,6 +175,7 @@ blockquote {
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
+  
     -webkit-transform: translate3d(0, 100%, 0);
     -moz-transform: translate3d(0, 100%, 0);
     -ms-transform: translate3d(0, 100%, 0);
@@ -238,6 +241,15 @@ blockquote {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+}
+.intro-header.post-header .header-container {
+  width: 700px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 767px) {
+  .intro-header.post-header .header-container {
+    width: 90%;
+  }
 }
 .intro-header.ih-about {
   background-color: #30356e;
@@ -592,6 +604,7 @@ blockquote {
   text-align: center;
   color: #36333f;
   /* fall back */
+
   color: rgba(54, 51, 63, 0.9);
   font-size: 8em;
   font-weight: 900;
@@ -1659,6 +1672,7 @@ blockquote {
   transition: all 0.2s;
   font-size: 0.875em;
   padding: 12px 30px;
+  display: inline-block;
   letter-spacing: -0.03em;
   font-weight: bold;
   background: #0a1b39;
@@ -1689,7 +1703,7 @@ blockquote {
   z-index: 1;
   opacity: 0;
 }
-.job-openings-area .jobs .job-item input[type=checkbox] ~ .job-title i {
+.job-openings-area .jobs .job-item input[type=checkbox]  ~ .job-title i {
   float: right;
   margin-right: 5px;
   color: #165097;
@@ -1702,7 +1716,7 @@ blockquote {
   padding: 0 24px;
   transform: translate(0, 5%);
 }
-.job-openings-area .jobs .job-item input[type=checkbox] ~ .job-desc {
+.job-openings-area .jobs .job-item input[type=checkbox]  ~ .job-desc {
   background: #f6f7f8;
 }
 .job-openings-area .jobs .apply-instruction {
@@ -1899,7 +1913,7 @@ blockquote {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 .post-heading {
-  padding: 250px 25px;
+  padding: 250px 0;
 }
 @media only screen and (max-width: 767px) {
   .post-heading {
@@ -1943,18 +1957,21 @@ article.post h1 {
   margin-top: 60px;
   font-size: 2em;
   color: #000;
+  margin-left: -0.05em;
 }
 article.post h2 {
   margin-top: 30px;
   padding: 10px 0;
   font-size: 1.5em;
   color: #222;
+  margin-left: -0.05em;
 }
 article.post h3 {
   margin-top: 20px;
   font-size: 1.1em;
   color: #222;
   font-weight: 400;
+  margin-left: -0.02em;
 }
 article.post p {
   margin: 10px 0;
@@ -2025,7 +2042,7 @@ article.post img {
   margin: 15px 0;
   position: relative;
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 article.post figure {
   margin-top: 20px;
@@ -2107,6 +2124,7 @@ article.post .back {
   font-weight: bold;
   background: transparent;
   border: 2px solid #c9c9c9;
+  color: #484848;
   margin: 10px 5px 10px;
   color: #484848;
   padding: 14px 30px;
@@ -2121,36 +2139,33 @@ article.post .back:hover {
   color: #484848;
 }
 article.post .post-meta {
-  font-family: "brandon-grotesque", sans-serif;
+  text-align: center;
   color: #545f6f;
   font-size: 14px;
   vertical-align: top;
-  padding: 20px 25px 25px;
+  padding: 30px 10px;
   margin: 50px auto 0;
-  border: 2px solid #eee;
-  border-radius: 5px;
+  border-top: 2px solid #eee;
   max-width: 300px;
 }
 article.post .post-meta .profile-img {
-  width: 30px;
-  height: 30px;
-  float: left;
-  margin: 5px 8px 0 0;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
   border-radius: 4px;
 }
+article.post .post-meta .profile-img img {
+  margin: 0;
+}
 article.post .post-meta .author {
+  font-family: "brandon-grotesque", sans-serif;
   font-weight: bold;
   font-size: 20px;
-  padding: 10px;
+  padding: 14px 0 4px;
 }
 article.post .post-content {
   width: 700px;
   margin: 0 auto;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  article.post .post-content {
-    width: 85%;
-  }
 }
 @media only screen and (max-width: 767px) {
   article.post .post-content {
@@ -2340,7 +2355,7 @@ article.post .button-area a {
   border-radius: 5px;
 }
 .press-articles-area .articles-list li:hover a {
-  -webkit-transform: translateY(-3px);
+  -webkit-transform: translatey(-3px);
 }
 .press-articles-area .articles-list li:hover figure {
   background: #fff;
@@ -2434,7 +2449,7 @@ article.post .button-area a {
   border-radius: 5px;
 }
 .press-articles-area .report-list li:hover a {
-  -webkit-transform: translateY(-3px);
+  -webkit-transform: translatey(-3px);
 }
 .press-articles-area .report-list li:hover figure {
   background: #fff;
@@ -2490,7 +2505,7 @@ article.post .button-area a {
   transition: all .1s;
 }
 .ridi-insights .ri-list li a:hover {
-  -webkit-transform: translateY(-3px);
+  -webkit-transform: translatey(-3px);
 }
 .ridi-insights .ri-list li strong {
   display: block;
@@ -2611,6 +2626,9 @@ article.post .button-area a {
   float: left;
   margin: 50px 20px 0 0;
   text-align: center;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  
 }
 @media only screen and (max-width: 767px) {
   .photos-list li {
@@ -2790,25 +2808,24 @@ article.press-article blockquote {
   letter-spacing: -0.03em;
   font-weight: bold;
   line-height: 1.3;
+  margin-left: -0.05em;
 }
 .blog-post-list li .list-item .desc {
   font-size: 16px;
   color: #6c8094;
   padding-bottom: 8px;
-  line-height: 1.5;
-  height: 42px;
-  word-wrap: break-word;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
+  line-height: 1.4;
+}
+@media only screen and (max-width: 767px) {
+  .blog-post-list li .list-item .desc {
+    padding-bottom: 14px;
+  }
 }
 .blog-post-list li .list-item .post-meta {
   font-family: "brandon-grotesque", sans-serif;
   color: #545f6f;
   font-size: 14px;
-  width: 150px;
+  width: 170px;
   display: table-cell;
   vertical-align: top;
   border-left: 1px solid #eee;
@@ -2823,14 +2840,15 @@ article.press-article blockquote {
   }
 }
 .blog-post-list li .list-item .post-meta .profile-img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   float: left;
   margin: 5px 8px 0 0;
   border-radius: 4px;
 }
 .blog-post-list li .list-item .post-meta .author {
   font-weight: bold;
+  font-size: 16px;
 }
 .blog-post-list li figure {
   position: absolute;
@@ -2846,7 +2864,7 @@ article.press-article blockquote {
 }
 .blog-post-list li:hover a,
 .blog-post-list li:focus a {
-  -webkit-transform: translateY(-1px);
+  -webkit-transform: translatey(-1px);
 }
 .blog-post-list li:hover figure,
 .blog-post-list li:focus figure {

@@ -253,6 +253,15 @@ blockquote {
 	&.post-header {
 		background-position: center center;
 		.background-cover();
+
+		.header-container {
+			width: 700px;
+			margin: 0 auto;
+
+			@media @queries_sm {
+				width: 90%;
+			}
+		}
 	}
 
 	&.ih-about {
@@ -1598,7 +1607,7 @@ blockquote {
 
 // Post 
 .post-heading {
-	padding: 250px 25px;
+	padding: 250px 0;
 	
 	@media @queries_sm {
 		padding: 100px 25px;
@@ -1641,18 +1650,21 @@ article.post {
 		margin-top: 60px;
 		font-size: 2em;
 		color: #000;
+		margin-left: -0.05em;
 	}
 	h2 {
 		margin-top: 30px;
 		padding: 10px 0;
 		font-size: 1.5em;
 		color: #222;
+		margin-left: -0.05em;
 	}
 	h3 {
 		margin-top: 20px;
 		font-size: 1.1em;
 		color: #222;
 		font-weight: 400;
+		margin-left: -0.02em;
 	}
 	p {
 		margin: 10px 0;
@@ -1721,7 +1733,7 @@ article.post {
 		margin: 15px 0;
 		position: relative;
 		display: block;
-		width: 100%;
+		max-width: 100%;
 	}
 	figure {
 		margin-top: 20px;
@@ -1774,35 +1786,35 @@ article.post {
 		}
 	}
 	.post-meta {
-		.brandon-grotesque();
+		text-align: center;
 		color: #545f6f;
 		font-size: 14px;
 		vertical-align: top;
-		padding: 20px 25px 25px;
+		padding: 30px 10px;
 		margin: 50px auto 0;
-		border: 2px solid #eee;
-		border-radius: 5px;
+		border-top: 2px solid #eee;
 		max-width: 300px;
 		
 		.profile-img {
-			width: 30px;
-			height: 30px;
-			float: left;
-			margin: 5px 8px 0 0;
+			width: 40px;
+			height: 40px;
+			margin: 0 auto;
 			border-radius: 4px;
+			img {
+				margin: 0;
+			}
 		}
 		.author {
+			.brandon-grotesque();
 			font-weight: bold;
 			font-size: 20px;
-			padding: 10px;
+			padding: 14px 0 4px;
 		}
 	}
 	.post-content {
 		width: 700px;
 		margin: 0 auto;
-		@media @queries_md {
-			width: 85%;
-		}
+
 		@media @queries_sm {
 			width: 90%;
 		}
@@ -2325,25 +2337,23 @@ article.press-article {
 				letter-spacing: -0.03em;
 				font-weight: bold;
 				line-height: 1.3;
+				margin-left: -0.05em;
 			}
 			.desc {
 				font-size: 16px;
 				color: #6c8094;
 				padding-bottom: 8px;
-				line-height: 1.5;
-			    height: 42px;
-			    word-wrap: break-word;
-			    text-overflow: ellipsis;
-			    overflow: hidden;
-			    -webkit-line-clamp: 2;
-			    display: -webkit-box;
-			    -webkit-box-orient: vertical;
+				line-height: 1.4;
+
+				@media @queries_sm {
+					padding-bottom: 14px;
+				}
 			}
 			.post-meta {
 				.brandon-grotesque();
 				color: #545f6f;
 				font-size: 14px;
-				width: 150px;
+				width: 170px;
 				display: table-cell;
 				vertical-align: top;
 				border-left: 1px solid #eee;
@@ -2357,14 +2367,15 @@ article.press-article {
 				}
 				
 				.profile-img {
-					width: 30px;
-					height: 30px;
+					width: 40px;
+					height: 40px;
 					float: left;
 					margin: 5px 8px 0 0;
 					border-radius: 4px;
 				}
 				.author {
 					font-weight: bold;
+					font-size: 16px;
 				}
 			}
 		}
