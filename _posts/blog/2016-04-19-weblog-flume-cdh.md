@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "웹서버 로그 수집과 모니터링 설정"
 header-img: "img/career-bg-5.jpg"
-date: 2016-04-01
+date: 2016-04-19
 author: chanu.lee
 published: true
 description: "Apache Flume 과 CDH 를 사용한 로그 수집 시스템을 구성 및 모니터링 설정법"
@@ -27,7 +27,7 @@ description: "Apache Flume 과 CDH 를 사용한 로그 수집 시스템을 구�
 
 Flume 의 기본 구조는 단순합니다.
 
-![기본적인 에이전트 구성](http://i.imgur.com/w5awy6k.png)
+![기본적인 에이전트 구성](http://i.imgur.com/w5awy6k.png){: .center }
 <figcaption>기본적인 에이전트 구성 (이미지 출처: Apache Flume 홈페이지)</figcaption>
 
 * 에이전트(agent)는 Source, Channel, Sink 로 이루어진 자바 프로세스이다.
@@ -157,10 +157,10 @@ log_to_avro.sources.log_src.type = exec
 log_to_avro.sources.log_src.command = tail -F /path/to/log/file
 log_to_avro.sources.log_src.restart = true
 log_to_avro.sources.log_src.channels = mem_channel
-log_to_avro.sources.log_src.interceptors = ts_ic host_ic                      # 호스트 인터셉터 설정
-log_to_avro.sources.log_src.interceptors.ts_ic.type = timestamp               # 이벤트 헤더에 timestamp 삽입 (날짜별 구분을 위해)
-log_to_avro.sources.log_src.interceptors.host_ic.type = host                  # 이벤트 헤더에 호스트명 삽입 (호스트별 구분을 위해)
-log_to_avro.sources.log_src.interceptors.host_ic.useIP = true                 # 호스트명 대신에 IP 사용
+log_to_avro.sources.log_src.interceptors = ts_ic host_ic          # 호스트 인터셉터 설정
+log_to_avro.sources.log_src.interceptors.ts_ic.type = timestamp   # 이벤트 헤더에 timestamp 삽입 (날짜별 구분을 위해)
+log_to_avro.sources.log_src.interceptors.host_ic.type = host      # 이벤트 헤더에 호스트명 삽입 (호스트별 구분을 위해)
+log_to_avro.sources.log_src.interceptors.host_ic.useIP = true     # 호스트명 대신에 IP 사용
 
 log_to_avro.channels.mem_channel.type = memory
 log_to_avro.channels.mem_channel.capacity = 10000
@@ -184,10 +184,10 @@ avro_to_hdfs.sources.avro_src.type = avro
 avro_to_hdfs.sources.avro_src.bind = 0.0.0.0
 avro_to_hdfs.sources.avro_src.port = 4141
 avro_to_hdfs.sources.avro_src.channels = c_101 c_102
-avro_to_hdfs.sources.avro_src.selector.type = multiplexing                # Multiplexing Selector 설정
-avro_to_hdfs.sources.avro_src.selector.header = host                      # 호스트 이름으로 채널 나누기
-avro_to_hdfs.sources.avro_src.selector.mapping.192.168.0.101 = c_101      # 192.168.0.101 에서 온 이벤트는 c_101 채널로
-avro_to_hdfs.sources.avro_src.selector.mapping.192.168.0.102 = c_102      # 192.168.0.102 에서 온 이벤트는 c_102 채널로
+avro_to_hdfs.sources.avro_src.selector.type = multiplexing            # Multiplexing Selector 설정
+avro_to_hdfs.sources.avro_src.selector.header = host                  # 호스트 이름으로 채널 나누기
+avro_to_hdfs.sources.avro_src.selector.mapping.192.168.0.101 = c_101  # 192.168.0.101 에서 온 이벤트는 c_101 채널로
+avro_to_hdfs.sources.avro_src.selector.mapping.192.168.0.102 = c_102  # 192.168.0.102 에서 온 이벤트는 c_102 채널로
 
 # 채널 c_101 설정
 avro_to_hdfs.channels.c_101.type = memory
@@ -200,7 +200,7 @@ avro_to_hdfs.channels.c_101.byteCapacity = 10485760
 avro_to_hdfs.sinks.k_101.type = hdfs
 avro_to_hdfs.sinks.k_101.channel = c_101
 avro_to_hdfs.sinks.k_101.hdfs.fileSuffix = .log.gz
-avro_to_hdfs.sinks.k_101.hdfs.path = hdfs://namenode/path/to/logs/dir/%Y%m%d/%{host}     # 날짜별, 호스트별로 다른 디렉토리에
+avro_to_hdfs.sinks.k_101.hdfs.path = hdfs://namenode/path/to/logs/dir/%Y%m%d/%{host}  # 날짜별, 호스트별로 다른 디렉토리에
 avro_to_hdfs.sinks.k_101.hdfs.rollSize = 104857600
 avro_to_hdfs.sinks.k_101.hdfs.rollInterval = 7200
 avro_to_hdfs.sinks.k_101.hdfs.rollCount = 0 
@@ -222,7 +222,7 @@ p.s. Flume 설정 파일은 변수 또는 외부 파일 include 등을 지원하
 
 그리고 CDH 상에서도 웹서버 호스트의 개수만큼 알람 트리거를 만들어 줍니다. 초당 이벤트 개수가 0에 가깝게 떨어지면 알람이 오도록 해 주면 됩니다. 채널/싱크 중 어느 것을 기준으로 해도 크게 상관은 없는데, 저희는 싱크가 초당 이동완료한 이벤트 개수를 기준으로 했습니다.
 
-![CDH 에서의 알람 트리거 상태 화면](http://i.imgur.com/I5UDuDq.png)
+![CDH 에서의 알람 트리거 상태 화면](http://i.imgur.com/I5UDuDq.png){: .center }
 <figcaption>CDH에서의 알람 트리거 상태 화면</figcaption>
 
 이렇게 해 놓으면 또 한가지 좋은 점은, CDH가 알아서 차트를 그려 주기 때문에, 웹서버마다 트래픽 추이를 한눈에 볼 수 있다는 것입니다.
@@ -230,7 +230,6 @@ p.s. Flume 설정 파일은 변수 또는 외부 파일 include 등을 지원하
 ![HDFS Sink의 초당 이벤트 개수 그래프](http://i.imgur.com/T0N6TGN.png)
 <figcaption>HDFSSink의 초당 이벤트 개수 그래프</figcaption>
 
----
 
 # 맺음말
 

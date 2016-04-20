@@ -132,7 +132,6 @@ blockquote {
     -moz-transition: background-color 0.3s;
     transition: background-color 0.3s;
     /* Force Hardware Acceleration in WebKit */
-  
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
@@ -143,7 +142,6 @@ blockquote {
   }
   .navbar-custom.is-fixed {
     /* when the user scrolls down, we hide the header right above the viewport */
-  
     position: fixed;
     top: -55px;
     background-color: rgba(255, 255, 255, 0.95);
@@ -175,7 +173,6 @@ blockquote {
   }
   .navbar-custom.is-visible {
     /* if the user changes the scrolling direction, we show the header */
-  
     -webkit-transform: translate3d(0, 100%, 0);
     -moz-transform: translate3d(0, 100%, 0);
     -ms-transform: translate3d(0, 100%, 0);
@@ -604,7 +601,6 @@ blockquote {
   text-align: center;
   color: #36333f;
   /* fall back */
-
   color: rgba(54, 51, 63, 0.9);
   font-size: 8em;
   font-weight: 900;
@@ -1672,7 +1668,6 @@ blockquote {
   transition: all 0.2s;
   font-size: 0.875em;
   padding: 12px 30px;
-  display: inline-block;
   letter-spacing: -0.03em;
   font-weight: bold;
   background: #0a1b39;
@@ -1703,7 +1698,7 @@ blockquote {
   z-index: 1;
   opacity: 0;
 }
-.job-openings-area .jobs .job-item input[type=checkbox]  ~ .job-title i {
+.job-openings-area .jobs .job-item input[type=checkbox] ~ .job-title i {
   float: right;
   margin-right: 5px;
   color: #165097;
@@ -1716,7 +1711,7 @@ blockquote {
   padding: 0 24px;
   transform: translate(0, 5%);
 }
-.job-openings-area .jobs .job-item input[type=checkbox]  ~ .job-desc {
+.job-openings-area .jobs .job-item input[type=checkbox] ~ .job-desc {
   background: #f6f7f8;
 }
 .job-openings-area .jobs .apply-instruction {
@@ -2044,6 +2039,10 @@ article.post img {
   display: block;
   max-width: 100%;
 }
+article.post img.center {
+  margin: 0 auto;
+  display: block;
+}
 article.post figure {
   margin-top: 20px;
 }
@@ -2132,7 +2131,6 @@ article.post .back {
   font-weight: bold;
   background: transparent;
   border: 2px solid #c9c9c9;
-  color: #484848;
   margin: 10px 5px 10px;
   color: #484848;
   padding: 14px 30px;
@@ -2363,7 +2361,7 @@ article.post .button-area a {
   border-radius: 5px;
 }
 .press-articles-area .articles-list li:hover a {
-  -webkit-transform: translatey(-3px);
+  -webkit-transform: translateY(-3px);
 }
 .press-articles-area .articles-list li:hover figure {
   background: #fff;
@@ -2457,7 +2455,7 @@ article.post .button-area a {
   border-radius: 5px;
 }
 .press-articles-area .report-list li:hover a {
-  -webkit-transform: translatey(-3px);
+  -webkit-transform: translateY(-3px);
 }
 .press-articles-area .report-list li:hover figure {
   background: #fff;
@@ -2513,7 +2511,7 @@ article.post .button-area a {
   transition: all .1s;
 }
 .ridi-insights .ri-list li a:hover {
-  -webkit-transform: translatey(-3px);
+  -webkit-transform: translateY(-3px);
 }
 .ridi-insights .ri-list li strong {
   display: block;
@@ -2634,9 +2632,6 @@ article.post .button-area a {
   float: left;
   margin: 50px 20px 0 0;
   text-align: center;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  
 }
 @media only screen and (max-width: 767px) {
   .photos-list li {
@@ -2872,7 +2867,7 @@ article.press-article blockquote {
 }
 .blog-post-list li:hover a,
 .blog-post-list li:focus a {
-  -webkit-transform: translatey(-1px);
+  -webkit-transform: translateY(-1px);
 }
 .blog-post-list li:hover figure,
 .blog-post-list li:focus figure {

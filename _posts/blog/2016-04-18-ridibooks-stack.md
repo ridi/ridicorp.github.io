@@ -14,6 +14,7 @@ description: "리디북스의 서버 스택을 간단히 소개합니다."
 ## 대략적인 구조
 
 ![대략적인 구조](http://i.imgur.com/tffrCHz.png)
+<figcaption>리디북스 백엔드 구조도</figcaption>
 
 ## 로드 밸런싱
 
