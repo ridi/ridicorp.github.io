@@ -2843,7 +2843,7 @@ article.press-article blockquote {
   width: 40px;
   height: 40px;
   float: left;
-  margin: 5px 8px 0 0;
+  margin: 0 8px 0 0;
   border-radius: 4px;
 }
 .blog-post-list li .list-item .post-meta .author {
