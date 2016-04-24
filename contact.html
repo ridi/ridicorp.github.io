@@ -18,46 +18,47 @@ fb-img: "img/fb-img-ridicorp.png"
     </div>
 </header>
 
+<div class="contact-fader"></div>
+
 <div id="map_canvas"></div>
 <div id="map_controls">
     <a href="#" class="close-map"><i class="icon-close"></i></a>
 </div>
 
 <div class="how-to-contact">
-    <div class="container">
-        <div class="htc-left">
-            <h2>주소와 연락처</h2>
-            <h3>서울시 강남구 역삼동 702-28 어반벤치빌딩 10층 (테헤란로 325)</h3>
-            <ul class="contact-point">
-                <li><i class="icon-telephone"></i> 대표번호 : 02-2051-0331</li>
-                <li><i class="icon-telephone"></i> 채용문의 : 02-6196-0330</li>
-            </ul>
-        </div>
-        <div class="htc-right">
-            <h2>오시는 길</h2>
-            <div class="hr-box">
-                <h3>지하철 이용 시</h3>
-                <p class="steps">
-                    <i class="icon-num-1"></i> 선릉역(2호선, 분당선) 5번 출구로 나와서 100m 직진하세요.
-                </p>
-                <p class="steps">
-                    <i class="icon-num-2"></i> 길 건너 오른편 1층에 왓슨즈가 보이는 건물의 10층 입니다.
-                </p>
-            </div>
+    <div class="htc-left">
+        <h2>주소와 연락처</h2>
+        <h3>서울시 강남구 역삼동 702-28 <br>어반벤치빌딩 10층 (테헤란로 325)</h3>
+        <ul class="contact-point">
+            <li>대표번호 : 02-2051-0331</li>
+            <li>채용문의 : 02-6196-0330</li>
+        </ul>
+    </div>
+    <div class="htc-right">
+        <h2>오시는 길</h2>
+        <div class="hr-box">
+            <h3>지하철 이용 시</h3>
+            <p class="steps">
+                <i class="icon-num-1"></i> 선릉역(2호선, 분당선) 5번 출구로 나와서 100m 직진하세요.
+            </p>
+            <p class="steps">
+                <i class="icon-num-2"></i> 길 건너 오른편 1층에 왓슨즈가 보이는 건물의 10층 입니다.
+            </p>
         </div>
     </div>
+    <div class="clear"></div>
 </div>
 
 <script>
     $(function(){
         $(".view-map").click(function(){
-            $("header, .how-to-contact, nav").fadeOut();
+            $("header, .how-to-contact, nav, .contact-fader").fadeOut();
             $("#map_controls").fadeIn();
             return false;
         });
         $(".close-map").click(function(){
            $("#map_controls").fadeOut();
-           $("header, .how-to-contact, nav").fadeIn();
+           $("header, .how-to-contact, nav, .contact-fader").fadeIn();
             return false; 
         })
     })();

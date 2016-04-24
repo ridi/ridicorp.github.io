@@ -293,9 +293,11 @@ blockquote {
 		
 	}
 	&.ih-contact {
-		background: rgba(0,0,0,.75) url(../img/bg-fader.png) repeat;
+		background: transparent;
 		margin-bottom: 0;
 		padding-bottom: 140px;
+		position: relative;
+		z-index: 2;
 
 		@media @queries_sm {
 			padding-bottom: 40px;
@@ -1485,25 +1487,31 @@ blockquote {
 }
 
 // Contact 
+.contact-fader {
+	background: rgba(0,0,0,.75) url(../img/bg-fader.png) repeat;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
 .how-to-contact {
 	background: #000;
-	padding: 50px 0;
+	padding: 30px 50px;
 	position: relative;
+	border-radius: 10px;
+	width: 840px;
+	margin: 0 auto;
 	z-index: 1;
 	@media @queries_smmd {
-		padding: 20px 10px 50px;
-	}
-
-	.container {
-		width: 960px;
-		margin: 0 auto;
-		@media @queries_smmd {
-			width: auto;
-		}
+		border-radius: 0;
+		width: auto;
+		padding: 20px 20px 50px;
 	}
 
 	.htc-left {
-		width: 30%;
+		width: 40%;
 		float: left;
 		padding-bottom: 20px;
 		@media @queries_smmd {
@@ -1512,7 +1520,7 @@ blockquote {
 		}
 	}
 	.htc-right {
-		width: 70%;
+		width: 60%;
 		float: left;
 		@media @queries_md {
 			width: auto;
@@ -1539,6 +1547,7 @@ blockquote {
 	p {
 		color: #919191;
 		line-height: 1.4;
+		margin-bottom: 5px;
 		&.steps {
 			text-indent: -1.2em;
 			padding-left: 1.2em;			
@@ -1562,8 +1571,6 @@ blockquote {
 		}
 	}
 	.hr-box {
-		float: left;
-		width: 50%;
 		padding-right: 5%;
 		@media @queries_smmd {
 			width: auto;
@@ -1577,11 +1584,13 @@ blockquote {
 	left: 0;
 	top: 0;
 	width: 100%;
-	height: 920px;
+	height: 100%;
 	z-index: 0;
 }
 #map_controls {
 	display: none;
+	position: relative;
+	z-index: 4;
 
 	.close-map {
 		position: fixed;
