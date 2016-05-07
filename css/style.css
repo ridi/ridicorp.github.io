@@ -57,7 +57,7 @@ ol {
   list-style: none;
 }
 blockquote {
-  padding: 0 20px 20px;
+  padding: 10px 20px;
 }
 ::selection {
   background: #ccc;
@@ -2782,13 +2782,12 @@ article.press-article .download:hover {
 }
 article.press-article p {
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.65;
   margin-bottom: 15px;
 }
 article.press-article ol,
 article.press-article ul {
   margin: 30px 0;
-  font-size: 1.125em;
 }
 article.press-article li {
   list-style: disc;
@@ -2801,6 +2800,9 @@ article.press-article h4 {
 article.press-article blockquote {
   font-size: 1em;
   color: #888;
+}
+article.press-article blockquote p {
+  margin: 0;
 }
 .blog-post-list {
   width: 700px;
