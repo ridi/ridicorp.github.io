@@ -3,10 +3,10 @@ layout: blog
 category: blog
 title: "iOS에서 간결한 API 클라이언트 구현하기 (like Retrofit+GSON)"
 header-img: "img/career-bg-5.jpg"
-date: 2016-04-01
+date: 2016-05-22
 author: kering
 published: false
-description: "API 통신 관련 중복 코드를 최소화하면서."
+description: "API 통신 관련 중복 코드를 최소화하면서"
 ---
 
 _이 글은 안드로이드 개발에서 웹 서버 API 클라이언트를 간결하게 구현할 수 있도록 도와주는 강력한 오픈소스 라이브러리인 [Retrofit](http://square.github.io/retrofit/)과 [GSON](https://github.com/google/gson)의 조합을 iOS 개발에서도 따라해보고 싶은 분들을 위해 작성되었습니다. Retrofit+GSON를 실제로 사용하는 좋은 예제는 [다른 블로그 글](http://blog.robinchutaux.com/blog/a-smart-way-to-use-retrofit/)에서도 찾아볼 수 있습니다._
@@ -38,10 +38,10 @@ Retrofit+GSON 조합을 최대한 따라해서 iOS 앱의 코드 퀄리티를 �
 
 ![RBApiService class diagram](https://i.imgur.com/AakhSry.png)
 
-API 통신을 담당하는 부분의 핵심은 중앙의 RBApiService 클래스를 관통하며 이루어진 상속 구조라고 할 수 있으며 상술하면 다음과 같습니다.
+API 통신을 담당하는 부분의 핵심은 중앙의 RBApiService 클래스를 포함한 상속 구조라고 할 수 있으며 상술하면 다음과 같습니다.
 
-* AFNetworking에서 HTTP 요청 작업을 큐에 넣는 것에서부터 작업의 시작, 종료까지 관리하는 역할을 맡고있는 AFHTTPRequestOperationManager를 상속받는 RBApiService 클래스를 정의
-* 각 API들은 역할군에 따라 RBBookService(책 정보 관련 API), RBAccountService(사용자 계정/인증 관련 API) 등과 같은 RBApiService의 하위 클래스들의 메소드로 정의
+* AFNetworking에서, HTTP 요청 작업의 큐잉부터 시작과 종료까지 라이프 사이클 전반을 관리하는 역할을 하는 AFHTTPRequestOperationManager를 상속받는 RBApiService 클래스를 정의
+* 각 API들은 역할군에 따라 RBBookService(책 정보 관련 API), RBAccountService(사용자 계정/인증 관련 API) 등과 같은 RBApiService의 하위 클래스들의 메소드로 정의됨
 * 이 하위 클래스들이 AFHTTPRequestOperationManager의 역할을 그대로 이어받아 자신을 통해 이루어지는 API HTTP 요청 작업들을 관리
 
 이 설명에 따르면 웹 서버의 /api/foo/bar API를 요청하는 메소드는 RBFooService 클래스에 다음과 같이 정의될 것입니다.
@@ -74,7 +74,7 @@ iOS 개발에서 전통적으로 JSON을 다루는 방식은 Cocoa 프레임워�
 * 데이터가 명시적으로 정의된 프로퍼티로 접근되지 않고 문자열 키 기반의 키-밸류 형태로만 접근되므로 데이터의 타입이 명시적이지 않아 타입 검사와 캐스팅이 난무하게 되어 가독성을 해침
 * 오타와 같은 개발자의 단순 실수로 인한 버그를 유발할 가능성도 커짐
 
-특히 오타로 인한 버그의 경우 명시적인 모델 클래스의 프로퍼티로 맵핑 해서 사용한다면 최소한 IDE가 에러를 검출해주거나 빌드 에러가 발생 할테니 미연에 방지할 수 있습니다. 이러한 문제는 사소한 실수가 찾기 힘든 버그를 만들고 코드 리뷰를 통해서도 발견하기가 힘들다는 점에서 지속적으로 개발자를 괴롭힐 수 있습니다.
+특히 오타로 인한 버그의 경우 명시적인 모델 클래스의 프로퍼티로 맵핑 해서 사용한다면 IDE가 에러를 검출해주거나 최소한 빌드 타임 에러가 발생할테니 미연에 방지할 수 있습니다. 이러한 문제는 사소한 실수로 인해 찾기 힘든 버그가 발생한다는 점과 코드 리뷰를 통해서도 발견하기가 힘들다는 점에서 지속적으로 개발자를 괴롭힐 수 있습니다.
 
 RBJSONResponseSerializer를 통한 인스턴스로의 변환은 이런 문제 의식에서 출발했고 Retrofit에 GSON을 연계하여 사용하기 위한 GsonConverter가 해결을 위한 힌트를 제공한 셈입니다.
 
@@ -287,9 +287,9 @@ class RBBazQux : NSObject {
 ---
 
 # 맺음말
-이런 작업들을 통해 당초 목표했던 두 가지, API 통신 관련 중복 코드를 최소화 하는 것과 JSON 응답을 가독성이 더 좋고 실수할 확률이 적은 모델 클래스의 인스턴스로 자동 변환 하도록 하는 것 모두 달성하는 데에 성공했습니다.
+이런 작업들을 통해 당초 목표했던 두 가지, API 통신 관련 중복 코드를 최소화 하면서 JSON 응답을 가독성이 더 좋고 실수할 확률이 적은 모델 클래스의 인스턴스로 자동 변환 하도록 하는 것 모두 달성하는 데에 성공했습니다.
 
-다만 당연히 모든 것이 뜻대로 될 수는 없었는데 Retrofit+GSON과 비교했을 때 플랫폼 혹은 언어의 특성에 기인하는 다음과 같은 한계들 또한 존재했습니다.
+다만 모든 것이 뜻대로 될 수는 없었는데 Retrofit+GSON과 비교했을 때 플랫폼 혹은 언어의 특성에 기인하는 다음과 같은 한계들 또한 존재했습니다.
 
 * Retrofit에서는 Java 어노테이션을 이용해 API 메소드의 인터페이스만 정의하면 됐지만 iOS 구현에서는 GET, POST 등의 실제 요청 생성 메소드를 호출 하는 것 까지는 직접 구현해줘야 함
 * 키->프로퍼티 이름 변환 규칙에 예외 사항이 필요할 때 GSON에서는 @SerializedName 어노테이션을 통해 손쉽게 지정할 수 있지만 iOS 구현에서는 예외 허용을 위한 깔끔한 방법을 찾기가 힘듬 (다만, 예외가 필요한 경우가 특별히 많지는 않기 때문에 큰 문제는 되지 않음)
