@@ -1657,6 +1657,7 @@ article.post {
 	}
 	h1 {
 		margin-top: 60px;
+		padding-bottom: 10px;
 		font-size: 2em;
 		color: #000;
 		margin-left: -0.05em;
@@ -1742,11 +1743,15 @@ article.post {
 		margin: 15px 0;
 		position: relative;
 		display: block;
-		max-width: 100%;
+		max-width: 600px;
 
 		&.center {
 			margin: 0 auto;
 			display: block;
+		}
+
+		&.box {
+			box-shadow: 0 2px 6px rgba(0,0,0,.4);
 		}
 	}
 	figure {
@@ -1824,6 +1829,7 @@ article.post {
 			img {
 				margin: 0;
 				border-radius: 4px;
+				max-width: 100%;
 			}
 		}
 		.author {
