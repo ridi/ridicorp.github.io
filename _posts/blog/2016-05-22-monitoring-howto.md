@@ -47,7 +47,7 @@ description: "개발과 운영을 동시에 하느라 고통받는 DevOps를 위
 | **심각하지 않음** | 로그 수집이 누락됨 <br>사무실 무선인터넷이 안됨 | RAID6 구성 디스크의 마모<br>OS의 서비스기간이 종료됨 |
 -->
 
-![종류에 따른 장애 구분](//i.imgur.com/OoSU4br.png){: .center }
+<img src="//i.imgur.com/OoSU4br.png" alt="종류에 따른 장애 구분" class="center" style="max-width: 503px" />
 <figcaption>종류에 따른 장애 구분</figcaption>
 
 
@@ -55,7 +55,7 @@ description: "개발과 운영을 동시에 하느라 고통받는 DevOps를 위
 
 <br>
 
-![장애 종류에 따른 대응 원칙](//i.imgur.com/PIWVeUs.png){: .center }
+<img src="//i.imgur.com/PIWVeUs.png" alt="장애 종류에 따른 대응 원칙" class="center" style="max-width: 503px" />
 <figcaption>장애 종류에 따른 대응 원칙</figcaption>
 
 이러한 원칙은 해야할 일을 4가지로 분류하는 [아이젠하워 의사결정 매트릭스](https://en.wikipedia.org/wiki/First_Things_First_(book))에서 차용하였는데, 시사하는 바도 동일합니다. 즉, 중요한 것은 대부분 긴급하지 않고, 긴급한 것은 대체로 중요하지 않다는 점입니다.
