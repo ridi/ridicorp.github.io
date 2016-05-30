@@ -1959,7 +1959,7 @@ article.post {
 article.post h1 {
   margin-top: 60px;
   padding-bottom: 10px;
-  font-size: 2em;
+  font-size: 1.8em;
   color: #000;
   margin-left: -0.05em;
 }
@@ -1979,7 +1979,7 @@ article.post h3 {
 article.post p {
   margin: 10px 0;
   padding-top: 5px;
-  font-size: 17px;
+  font-size: 1em;
   line-height: 1.5;
 }
 article.post hr {
@@ -2003,7 +2003,7 @@ article.post ol {
 article.post ul li,
 article.post ol li {
   position: relative;
-  font-size: 17px;
+  font-size: 1em;
 }
 article.post ul li a,
 article.post ol li a {
@@ -2212,10 +2212,12 @@ article.post .post-meta .author-desc:after {
 article.post .post-content {
   width: 700px;
   margin: 0 auto;
+  font-size: 1.0625em;
 }
 @media only screen and (max-width: 767px) {
   article.post .post-content {
     width: 95%;
+    font-size: 1.0em;
   }
 }
 article.post .button-area {
