@@ -1971,16 +1971,15 @@ article.post h2 {
   margin-left: -0.05em;
 }
 article.post h3 {
-  margin-top: 20px;
-  font-size: 1.1em;
+  margin-top: 30px;
+  font-size: 1.2em;
   color: #222;
-  font-weight: 400;
   margin-left: -0.02em;
 }
 article.post p {
   margin: 10px 0;
   padding-top: 5px;
-  font-size: 18px;
+  font-size: 17px;
   line-height: 1.5;
 }
 article.post hr {
@@ -2004,7 +2003,7 @@ article.post ol {
 article.post ul li,
 article.post ol li {
   position: relative;
-  font-size: 18px;
+  font-size: 17px;
 }
 article.post ul li a,
 article.post ol li a {
@@ -2041,6 +2040,19 @@ article.post ol li:before {
   font-family: "brandon-grotesque", sans-serif;
   font-size: 14px;
   color: #aaa;
+}
+article.post table {
+  line-height: 1.5em;
+  text-align: center;
+  margin: 20px auto;
+}
+article.post table th,
+article.post table td {
+  padding: 6px 20px;
+}
+article.post table th {
+  text-align: center;
+  border-bottom: 1px solid #e3e3e3;
 }
 article.post img {
   margin: 15px 0;
@@ -2203,7 +2215,7 @@ article.post .post-content {
 }
 @media only screen and (max-width: 767px) {
   article.post .post-content {
-    width: 90%;
+    width: 95%;
   }
 }
 article.post .button-area {
