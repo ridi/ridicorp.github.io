@@ -19,20 +19,20 @@ jobs:
       - 소셜커머스 경력
     link: https://ridi.typeform.com/to/houRxO
 
-  - title: 데이터 엔지니어
-    description:
-      - 리디북스 서비스 분석 시스템 개발
-      - 대용량 로그 처리 시스템 개발
-      - 추천 및 랭킹 알고리즘 개발
-    required:
-      - 컴퓨터공학/전산학 4년제 대학 학사 이상 또는 개발 경력 3년 이상
-      - 알고리즘 및 데이터구조에 대한 기본적인 이해
-      - 새로운 기술 또는 지식 습득 능력
-    preferred:
-      - Java, Python, Scala, R 을 이용한 개발 경험
-      - 머신러닝 또는 통계 관련 지식
-      - Hadoop 및 분산 처리 기술 관련 경험
-    link: https://ridi.typeform.com/to/houRxO
+#  - title: 데이터 엔지니어
+#    description:
+#      - 리디북스 서비스 분석 시스템 개발
+#      - 대용량 로그 처리 시스템 개발
+#      - 추천 및 랭킹 알고리즘 개발
+#    required:
+#      - 컴퓨터공학/전산학 4년제 대학 학사 이상 또는 개발 경력 3년 이상
+#      - 알고리즘 및 데이터구조에 대한 기본적인 이해
+#      - 새로운 기술 또는 지식 습득 능력
+#    preferred:
+#      - Java, Python, Scala, R 을 이용한 개발 경험
+#      - 머신러닝 또는 통계 관련 지식
+#      - Hadoop 및 분산 처리 기술 관련 경험
+#    link: https://ridi.typeform.com/to/houRxO
 
   - title: 데이터베이스 전문가 (경력)
     description:
