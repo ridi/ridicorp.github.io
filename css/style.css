@@ -2043,8 +2043,6 @@ article.post ol li:before {
 }
 article.post table {
   line-height: 1.5em;
-  text-align: center;
-  margin: 20px auto;
 }
 article.post table th,
 article.post table td {
