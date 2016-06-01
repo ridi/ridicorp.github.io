@@ -2041,17 +2041,6 @@ article.post ol li:before {
   font-size: 14px;
   color: #aaa;
 }
-article.post table {
-  line-height: 1.5em;
-}
-article.post table th,
-article.post table td {
-  padding: 6px 20px;
-}
-article.post table th {
-  text-align: center;
-  border-bottom: 1px solid #e3e3e3;
-}
 article.post img {
   margin: 15px 0;
   position: relative;
@@ -2087,6 +2076,18 @@ article.post .highlight pre {
 }
 article.post .highlight pre.lineno {
   color: #999;
+}
+article.post .post-table {
+  line-height: 1.5em;
+  margin: 20px auto;
+}
+article.post .post-table th,
+article.post .post-table td {
+  padding: 15px 20px;
+}
+article.post .post-table th {
+  text-align: center;
+  border-bottom: 1px solid #e3e3e3;
 }
 article.post .btn-apply {
   margin: 10px 0;
