@@ -1959,7 +1959,7 @@ article.post {
 article.post h1 {
   margin-top: 60px;
   padding-bottom: 10px;
-  font-size: 2em;
+  font-size: 1.8em;
   color: #000;
   margin-left: -0.05em;
 }
@@ -1971,16 +1971,15 @@ article.post h2 {
   margin-left: -0.05em;
 }
 article.post h3 {
-  margin-top: 20px;
-  font-size: 1.1em;
+  margin-top: 30px;
+  font-size: 1.2em;
   color: #222;
-  font-weight: 400;
   margin-left: -0.02em;
 }
 article.post p {
   margin: 10px 0;
   padding-top: 5px;
-  font-size: 18px;
+  font-size: 1em;
   line-height: 1.5;
 }
 article.post hr {
@@ -2004,7 +2003,7 @@ article.post ol {
 article.post ul li,
 article.post ol li {
   position: relative;
-  font-size: 18px;
+  font-size: 1em;
 }
 article.post ul li a,
 article.post ol li a {
@@ -2077,6 +2076,18 @@ article.post .highlight pre {
 }
 article.post .highlight pre.lineno {
   color: #999;
+}
+article.post .post-table {
+  line-height: 1.5em;
+  margin: 20px auto;
+}
+article.post .post-table th,
+article.post .post-table td {
+  padding: 15px 20px;
+}
+article.post .post-table th {
+  text-align: center;
+  border-bottom: 1px solid #e3e3e3;
 }
 article.post .btn-apply {
   margin: 10px 0;
@@ -2200,10 +2211,12 @@ article.post .post-meta .author-desc:after {
 article.post .post-content {
   width: 700px;
   margin: 0 auto;
+  font-size: 1.0625em;
 }
 @media only screen and (max-width: 767px) {
   article.post .post-content {
-    width: 90%;
+    width: 95%;
+    font-size: 1.0em;
   }
 }
 article.post .button-area {
