@@ -190,6 +190,7 @@ fb-img: "img/fb-img-ridicorp.png"
                 {% for req in job.required %} <p>{{ req }}</p> {% endfor %}
                 <strong>우대사항</strong>
                 {% for treat in job.preferred %} <p>{{ treat }}</p> {% endfor %}
+                {% for etc in job.etc %} {{ etc }} {% endfor %}
                 <div class="button-area">
                     <a class="typeform-share apply" href="{{ job.link }}" data-mode="1" target="_blank">지원하기 <i class="icon-direct-right"></i></a>
                     <div class="clear"></div>
