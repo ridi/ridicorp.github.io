@@ -24,8 +24,8 @@ jobs:
       - 리디북스 서비스 페이지 퍼블리싱 업무
     required:
       - 실제 서비스중인 페이지 퍼블리싱 경험 필수
-      - 모바일 페이지 퍼블리싱 경험 필수
-      - HTML5, CSS3, jQuery 능숙한 활용 능력 필수
+      - HTML5, CSS3, jQuery, less 능숙한 활용 능력 필수
+      - Photoshop, Illustrator 능숙한 활용 능력 필수
     preferred:
       - 디자인 전공자, UI디자인 업무 경험자 우대
     link: https://ridi.typeform.com/to/houRxO
