@@ -2,11 +2,13 @@
 layout: career
 title: "Senior UI Designer"
 subtitle: "리디북스 UI팀"
-description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
+description: "리디북스를 이끌어 나갈 최고의 UI디자이너를 찾고 있습니다."
 header-img: "img/career-bg-4.jpg"
 fb-img: "img/fb-senior-ui-designer.jpg"
 date: 2015-11-19 11:46:41
+permalink: /career/senior-ui-designer
 footer: apply
+link: https://ridi.typeform.com/to/G1L0xH
 ---
 
 
@@ -19,12 +21,12 @@ UI팀은 **즐거운 독서 경험**을 설계하고 만드는 일을 합니다.
 ### 리디북스의 UI 디자이너
 
 
-우리는 *Full-stack Designer*를 지향합니다. UX Research, Wireframing, UI Design, 때로는 Front-end 개발까지 하기도 합니다. 이처럼 많은 역할을 담당하는 것은 쉽지 않은 일입니다. 하지만 복잡한 문제의 본질을 이해하고 깔끔한 해결방법을 찾으려면 프로젝트의 가장 처음부터 고민하기 시작해야 한다고 생각합니다. 
+우리는 **Full-stack Designer**를 지향합니다. Research, Wireframing, Prototyping, UI Design, 때로는 Front-end 개발까지 하기도 합니다. 이처럼 많은 역할을 담당하는 것은 결코 쉽지 않은 일입니다. 하지만 복잡한 문제의 본질을 이해하고 깔끔한 해결방법을 찾으려면 프로젝트의 가장 처음부터 고민하기 시작해야 합니다.
 
 ![](/img/post-full-stack-designer.jpg)
 <figcaption>출처: http://designation.io/blog/what-is-full-stack-design/</figcaption>
 
-우리는 뷰어와 서점이 어떻게 동작해야 할지 설계합니다. 풀어야 할 문제를 잘 정의하고, 작은 기능을 만들더라도 깊이 고민하며 고객들에게 어떠한 영향이 있을지 예측합니다. 또 그것을 논리적으로 설명하며 개발자들과 편안하게 커뮤니케이션합니다. 
+구체적으로 하는 일을 살펴보자면, 먼저 뷰어 앱과 서점이 어떻게 동작해야 할지 설계합니다. 풀어야 할 문제를 잘 정의하고, 작은 기능을 만들더라도 깊이 고민하며 고객들에게 어떠한 영향이 있을지 예측합니다. 개발자들과 논리적으로 토론하며 좋은 해결책을 찾아냅니다.
 
 우리는 깔끔하고 아름다운 GUI 디자인을 만들어내는 데 어려움이 없습니다. 훌륭한 미학적 취향을 바탕으로 스스로 높은 기준을 설정하여 아름답게 디자인합니다. 디테일을 중요하게 여기며 선과 면, 공간을 적절히 활용하여 시각적으로 명료하고 편안하게 보이도록 합니다. 
 
@@ -36,7 +38,7 @@ UI팀은 **즐거운 독서 경험**을 설계하고 만드는 일을 합니다.
 
 ### UI팀에 합류하게 된다면...
 
-우리 회사가 일하는 방식, 제공하는 혜택은 ["이 곳"](http://www.ridicorp.com/career/)에서 확인하실 수 있습니다.
+우리 회사가 일하는 방식, 제공하는 혜택을 확인해보세요. – [How we work & Benefits](http://www.ridicorp.com/career/)
 
 
 3개월 이내에는 다음과 같은 일을 하게 됩니다.
@@ -59,11 +61,9 @@ UI팀은 **즐거운 독서 경험**을 설계하고 만드는 일을 합니다.
 
 ### 지원자격
 
-* PM 경력 2년 이상
 * 디자인 경력 3년 이상
 * 웹 또는 앱 서비스의 디자인에 깊이 참여한 경험
 * 높은 수준의 커뮤니케이션 능력
-
-* 온라인 포트폴리오 웹사이트 (지원 시에 표기)
+* 온라인 포트폴리오 웹사이트 (지원서에 표기)
 * 아이콘/일러스트레이션 능력 (우대 사항)
 * HTML/CSS/Javascript 능력 (우대 사항)
