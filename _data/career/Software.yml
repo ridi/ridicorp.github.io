@@ -1,7 +1,7 @@
 department: SW개발 부문
 head: SW개발 부문 (병역특례 가능)
 jobs:
-  - title: 리디북스 웹 개발자
+  - title: 웹 개발자
     description:
       - 리디북스 서점 개발
       - 늘어가는 트래픽에 대한 효율적인 대응
@@ -19,7 +19,7 @@ jobs:
       - 소셜커머스 경력
     link: https://ridi.typeform.com/to/houRxO
 
-  - title: 리디북스 웹 퍼블리셔
+  - title: 웹 퍼블리셔
     description:
       - 리디북스 서비스 페이지 퍼블리싱 업무
     required:
@@ -30,32 +30,18 @@ jobs:
       - 디자인 전공자, UI디자인 업무 경험자 우대
     link: https://ridi.typeform.com/to/houRxO
 
-#  - title: 데이터 엔지니어
-#    description:
-#      - 리디북스 서비스 분석 시스템 개발
-#      - 대용량 로그 처리 시스템 개발
-#      - 추천 및 랭킹 알고리즘 개발
-#    required:
-#      - 컴퓨터공학/전산학 4년제 대학 학사 이상 또는 개발 경력 3년 이상
-#      - 알고리즘 및 데이터구조에 대한 기본적인 이해
-#      - 새로운 기술 또는 지식 습득 능력
-#    preferred:
-#      - Java, Python, Scala, R 을 이용한 개발 경험
-#      - 머신러닝 또는 통계 관련 지식
-#      - Hadoop 및 분산 처리 기술 관련 경험
-#    link: https://ridi.typeform.com/to/houRxO
-
-  - title: 데이터베이스 전문가 (경력)
+  - title: 데이터 엔지니어
     description:
-      - MariaDB 운영 및 관리
-      - DB 성능 분석 및 튜닝
-      - 데이터베이스 보안 및 백업 관리
+      - 리디북스 서비스 분석 시스템 개발
+      - 대용량 로그 처리 시스템 개발
+      - 추천 및 랭킹 알고리즘 개발
     required:
-      - 관련 경력 5년 이상
-      - MySQL, MariaDB 운영 경력 3년 이상
-      - 성능 모니터링 장애 복구 경험
-      - 데이터베이스 설계 및 튜닝 경험
+      - 알고리즘 및 데이터구조에 대한 기본적인 이해
+      - 리눅스 환경에서의 개발 경험
+      - 서버 및 백엔드 개발 경험
     preferred:
-      - NoSQL 경험자 우대
-      - 스크립트 작성 능력 우대
+      - 컴퓨터공학/전산학 관련 학위 우대
+      - 머신러닝 또는 통계 관련 학위 우대
+      - Java, Python, Scala, R 을 이용한 개발 경험 우대
+      - Hadoop 및 분산 처리 기술 관련 경험 우대
     link: https://ridi.typeform.com/to/houRxO
