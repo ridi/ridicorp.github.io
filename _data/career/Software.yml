@@ -4,8 +4,8 @@ jobs:
   - title: 웹 개발자
     description:
       - 리디북스 서점 개발
-      - 늘어가는 트래픽에 대한 효율적인 대응
       - API, CMS 개발
+      - 늘어가는 트래픽에 대한 효율적인 대응
       - 보다 상세한 소개는 <a href="/career/store-engineer">이곳</a>을 참고하세요
     required:
       - 웹 개발 경력 3년 이상
@@ -16,20 +16,20 @@ jobs:
       - 대용량 트래픽 운영 경험
       - 하나의 서비스를 지속적으로 개발한 경험
       - 회사가 아닌, 개인 혹은 팀에서의 개발 경험
-      - 소셜커머스 경력
+      - 콘텐츠 혹은 커머스 서비스 개발 경험
     link: https://ridi.typeform.com/to/houRxO
 
-  - title: 웹 퍼블리셔
+  - title: 프론트엔드 개발자
     description:
-      - 리디북스 서점(PC, Mobile, Paper) 퍼블리싱 업무
-      - <a href="http://paper.ridibooks.com">페이퍼샵</a>(PC, Mobile) 퍼블리싱 업무
+      - 리디북스 서점(PC, Mobile, Paper) 프론트엔드 개발
+      - <a href="http://paper.ridibooks.com">페이퍼샵</a>(PC, Mobile) 프론트엔드 개발
     required:
-      - 실제 서비스중인 페이지 퍼블리싱 경험
+      - 개발 경력 3년 이상
       - HTML5, CSS3, jQuery, less 능숙한 활용 능력
-      - 버전관리(git), 빌드툴(grunt) 사용 환경에서의 퍼블리싱 경험
+      - 버전관리(git), 빌드툴(Grunt/Webpack) 개발 경험
     preferred:
       - 디자인 전공자, UI디자인 업무 경험자 우대
-      - react, ES6 활용한 프론트엔드 개발 경험자 우대
+      - React, ES6 활용한 프론트엔드 개발 경험자 우대
     link: https://ridi.typeform.com/to/houRxO
 
   - title: 데이터 엔지니어
