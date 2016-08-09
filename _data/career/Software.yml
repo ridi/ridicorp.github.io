@@ -1,9 +1,9 @@
 department: SW개발 부문
 head: SW개발 부문 (병역특례 가능)
 jobs:
-  - title: 웹 개발자
+  - title: 백엔드 개발자
     description:
-      - 리디북스 서점 개발
+      - 리디북스 백엔드 개발
       - API, CMS 개발
       - 늘어가는 트래픽에 대한 효율적인 대응
       - 보다 상세한 소개는 <a href="/career/store-engineer">이곳</a>을 참고하세요
