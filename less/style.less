@@ -1280,6 +1280,16 @@ blockquote {
 // Job Openings
 .job-openings-area {
 	padding: 0 0 50px;
+	width: 960px;
+	margin: 0 auto;
+
+	@media @queries_md {
+		width: 90%;
+	}
+	@media @queries_sm {
+		width: auto;
+
+	}
 
 	h3 {
 		color: #333;
@@ -1303,12 +1313,15 @@ blockquote {
 
 	.jobs {
 		width: 600px;
-		margin: 0 auto;
+		float: left;
 		
 		@media @queries_md {
+			float: none;
 			width: 90%;
+			margin: 0 auto;
 		}
 		@media @queries_sm {
+			float: none;
 			width: auto;
 			margin: 50px 0 10px;
 		}
@@ -1483,6 +1496,71 @@ blockquote {
 			}
 		}
 	} // 채용공고
+	.talent-pool {
+		margin-top: 40px;
+		float: right;
+		width: 320px;
+		background: #f5faff;
+		padding: 25px 30px;
+		border-radius: 10px;
+		box-sizing: border-box;
+
+		@media @queries_md {
+			float: none;
+			width: 86%;
+			margin: 0 auto;
+		}
+		@media @queries_sm {
+			float: none;
+			width: auto;
+			margin: 30px 0 10px;
+		}
+
+		h4 {
+			color: #124c79;
+			font-size: 1.5em;
+			padding-bottom: 5px;
+			line-height: 1.2;
+			font-weight: 700;
+			letter-spacing: -0.03em;
+		}
+		p {
+			color: #303745;
+			font-size: 0.875em;
+			line-height: 1.5;
+			padding-bottom: 15px;
+		}
+		.talent-pool-list {
+			.job-item {
+				display: block;
+				border-bottom: 1px solid #cddce5;
+				padding: 15px 0 11px;
+				transition: all 0.15s ease-in-out;
+				.job-title {
+					color: #02406f;
+					font-size: 1.125em;
+					transition: all 0.15s ease-in-out;
+				}
+				.arrow {
+					float: right;
+					color: #02406f;
+					font-size: 1.125em;
+					margin-top: 2px;
+					margin-right: 10px;
+					transition: all 0.15s ease-in-out;
+				}
+				&:hover {
+					border-color: #124c79;
+					.job-title {
+						padding-left: 3px;
+					}
+					.arrow {
+						margin-right: 5px;
+					}
+				}
+			}
+		}
+	} // 인재풀
 
 }
 
