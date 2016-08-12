@@ -1536,7 +1536,7 @@ blockquote {
 }
 .job-openings-area {
   padding: 0 0 50px;
-  width: 960px;
+  width: 900px;
   margin: 0 auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
@@ -1577,7 +1577,7 @@ blockquote {
   padding: 40px 0 0 25px;
 }
 .job-openings-area .jobs {
-  width: 600px;
+  width: 540px;
   float: left;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
@@ -1796,9 +1796,9 @@ blockquote {
 .job-openings-area .talent-pool {
   margin-top: 40px;
   float: right;
-  width: 320px;
+  width: 330px;
   background: #f5faff;
-  padding: 25px 30px;
+  padding: 20px 25px 30px;
   border-radius: 10px;
   box-sizing: border-box;
 }
@@ -1818,7 +1818,7 @@ blockquote {
 }
 .job-openings-area .talent-pool h4 {
   color: #124c79;
-  font-size: 1.5em;
+  font-size: 1.4em;
   padding-bottom: 5px;
   line-height: 1.2;
   font-weight: 700;
