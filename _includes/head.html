@@ -1,4 +1,4 @@
-<head>
+<head itemscope itemtype="http://schema.org/WebSite">
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,14 +10,14 @@
     <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% endif %}" />
     <meta property="og:description" content="{% if page.description %}{{ page.subtitle }} - {{ page.description }}{% endif %}" />
 
-    <title>
+    <title itemprop="name">
         {% if page.title == "About" %}
         {{ site.title }}
         {% else %}
         {{ page.title | strip_html }} - {{ site.title }}
         {% endif %}</title>
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
     
     <!-- Icon -->
     <link rel="shortcut icon" href="//static.ridibooks.com/books/images/favicon/ridibooks.ico" />
