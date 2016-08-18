@@ -27,7 +27,7 @@ description: "Flume 과 CDH 를 사용해서 끊김없이 로그 수집하기"
 
 Flume 의 기본 구조는 단순합니다.
 
-![기본적인 에이전트 구성](http://i.imgur.com/w5awy6k.png){: .center }
+![기본적인 에이전트 구성](https://i.imgur.com/w5awy6k.png){: .center }
 <figcaption>기본적인 에이전트 구성 (이미지 출처: Apache Flume 홈페이지)</figcaption>
 
 * 에이전트(agent)는 Source, Channel, Sink 로 이루어진 자바 프로세스이다.
@@ -38,14 +38,14 @@ Flume 의 기본 구조는 단순합니다.
 
 예를 들면 아래와 같습니다.
 
-![좀 더 복잡한 Agent 구성](http://i.imgur.com/3gFrUT6.png)
+![좀 더 복잡한 Agent 구성](https://i.imgur.com/3gFrUT6.png)
 <figcaption>좀 더 복잡한 에이전트 구성 (이미지 출처: Apache Flume 홈페이지)</figcaption>
 
 
 ## 초기 에이전트 구성: [Avro](https://avro.apache.org/)를 통해 클러스터에 로그 전송
 
 저희가 맨 처음 설정한 Flume 에이전트의 구성은 다음과 같습니다.
-![에이전트 구성2](http://i.imgur.com/1sZJQ9B.png)
+![에이전트 구성2](https://i.imgur.com/1sZJQ9B.png)
 <figcaption>초기 에이전트 구성</figcaption>
 
 * 각 웹서버
@@ -126,7 +126,7 @@ Flume 에서는 [모니터링 인터페이스](https://flume.apache.org/FlumeUse
 
 리디북스에서는 기본 하둡 패키지가 아닌, Cloudera에서 제공하는 하둡 배포판인 [Cloudera CDH](https://www.cloudera.com/products/apache-hadoop/key-cdh-components.html)를 사용하고 있습니다. CDH는 클러스터 상에서 사용되는 서비스마다 각종 테스트를 자동으로 실행하여, 테스트가 통과되지 않을 때마다 메일로 알람을 보내줍니다. 그리고 웬만한 필수 테스트는 기본적으로 설정되어 있지만, 사용자가 커스텀 서비스를 직접 제작할 수도 있습니다. CDH가 각 에이전트의 소스, 채널, 싱크마다 초당 전송한 이벤트 개수 등의 측정치(metric)을 모두 기록하고 있기 때문에, 이 값들이 일정 수준 이상/이하가 될 때마다 알람이 트리거되도록 설정할 수 있습니다.
 
-![CDH 의 알람 트리거 편집 화면](http://i.imgur.com/3Wi4FS8.png)
+![CDH 의 알람 트리거 편집 화면](https://i.imgur.com/3Wi4FS8.png)
 <figcaption>CDH의 알람 트리거 편집 화면</figcaption>
 
 ## 웹서버마다 알람 설정하기
@@ -146,7 +146,7 @@ Flume 에서는 [모니터링 인터페이스](https://flume.apache.org/FlumeUse
 
 최종적으로 나온 에이전트의 구성은 다음과 같습니다.
 
-![에이전트 구성3](http://i.imgur.com/qcHkjKH.png)
+![에이전트 구성3](https://i.imgur.com/qcHkjKH.png)
 <figcaption>최종 에이전트 구성</figcaption>
 
 그리고 에이전트 설정 파일은 아래와 같이 작성했습니다.
@@ -222,12 +222,12 @@ p.s. Flume 설정 파일은 변수 또는 외부 파일 include 등을 지원하
 
 그리고 CDH 상에서도 웹서버 호스트의 개수만큼 알람 트리거를 만들어 줍니다. 초당 이벤트 개수가 0에 가깝게 떨어지면 알람이 오도록 해 주면 됩니다. 채널/싱크 중 어느 것을 기준으로 해도 크게 상관은 없는데, 저희는 싱크가 초당 이동완료한 이벤트 개수를 기준으로 했습니다.
 
-![CDH 에서의 알람 트리거 상태 화면](http://i.imgur.com/I5UDuDq.png){: .center }
+![CDH 에서의 알람 트리거 상태 화면](https://i.imgur.com/I5UDuDq.png){: .center }
 <figcaption>CDH에서의 알람 트리거 상태 화면</figcaption>
 
 이렇게 해 놓으면 또 한가지 좋은 점은, CDH가 알아서 차트를 그려 주기 때문에, 웹서버마다 트래픽 추이를 한눈에 볼 수 있다는 것입니다.
 
-![HDFS Sink의 초당 이벤트 개수 그래프](http://i.imgur.com/T0N6TGN.png)
+![HDFS Sink의 초당 이벤트 개수 그래프](https://i.imgur.com/T0N6TGN.png)
 <figcaption>HDFSSink의 초당 이벤트 개수 그래프</figcaption>
 
 
