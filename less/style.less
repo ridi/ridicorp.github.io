@@ -1760,6 +1760,18 @@ article.post {
 		font-size: 1em;
 		line-height: 1.5;
 	}
+	em {
+		font-style: normal;
+	}
+	a {
+		color: inherit;
+		border-bottom: 2px solid #ccc;
+		.transition();
+	}
+	a:hover {
+		color: #0282da;
+		border-color: #0282da;	
+	}
 	hr {
 		border: none;
 		margin: 40px auto 80px;
@@ -1774,25 +1786,19 @@ article.post {
 		}
 	}
 	ul, ol {
-		padding-left: 1.6em;
+		padding-left: 2em;
 		line-height: 1.6;
 		li {
 			position: relative;
 			font-size: 1em;
-		}
-		li a {
-			color: #000;
-			border-bottom: 2px solid #ccc;
-			.transition();
-		}
-		li a:hover {
-			color: #0282da;
-			border-color: #0282da;	
+			&:last-child {
+				padding-bottom: 10px;
+			}
 		}
 	}
 	ul {
-		li:before {
-			color: #aaa;
+		> li:before {
+			color: #555;
 			content: "•";
 			display: block;
 			position: relative;
@@ -1801,18 +1807,23 @@ article.post {
 			left: -16px;
 			top: 1px;
 			font-size: 0.9em;			
+			text-align: right;
 		}
 	}
 	ol {
 		counter-reset: ol-counter;
-		li:before {
-			content: counter(ol-counter);
+		> li:before {
+			content: counter(ol-counter) ".";
 			counter-increment: ol-counter;
-			float: left;
-			width: 25px;
-			.brandon-grotesque();
-			font-size: 14px;
-			color: #aaa;
+			position: relative;
+			max-width: 0;
+			max-height: 0;
+			left: -8px;
+			font-size: 1em;
+			color: #555;
+			font-weight: bold;
+			font-size: 0.875em;
+			text-align: right;
 		}
 	}
 
@@ -1898,6 +1909,12 @@ article.post {
 		padding: 14px 30px;
 		&:hover {
 			color: #484848;
+		}
+	}
+	.post-footer {
+		.share {
+			text-align: center;
+			padding-top: 40px;
 		}
 	}
 	.post-meta {

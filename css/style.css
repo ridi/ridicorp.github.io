@@ -2067,6 +2067,20 @@ article.post p {
   font-size: 1em;
   line-height: 1.5;
 }
+article.post em {
+  font-style: normal;
+}
+article.post a {
+  color: inherit;
+  border-bottom: 2px solid #ccc;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+article.post a:hover {
+  color: #0282da;
+  border-color: #0282da;
+}
 article.post hr {
   border: none;
   margin: 40px auto 80px;
@@ -2082,7 +2096,7 @@ article.post hr:before {
 }
 article.post ul,
 article.post ol {
-  padding-left: 1.6em;
+  padding-left: 2em;
   line-height: 1.6;
 }
 article.post ul li,
@@ -2090,21 +2104,12 @@ article.post ol li {
   position: relative;
   font-size: 1em;
 }
-article.post ul li a,
-article.post ol li a {
-  color: #000;
-  border-bottom: 2px solid #ccc;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
+article.post ul li:last-child,
+article.post ol li:last-child {
+  padding-bottom: 10px;
 }
-article.post ul li a:hover,
-article.post ol li a:hover {
-  color: #0282da;
-  border-color: #0282da;
-}
-article.post ul li:before {
-  color: #aaa;
+article.post ul > li:before {
+  color: #555;
   content: "•";
   display: block;
   position: relative;
@@ -2113,18 +2118,23 @@ article.post ul li:before {
   left: -16px;
   top: 1px;
   font-size: 0.9em;
+  text-align: right;
 }
 article.post ol {
   counter-reset: ol-counter;
 }
-article.post ol li:before {
-  content: counter(ol-counter);
+article.post ol > li:before {
+  content: counter(ol-counter) ".";
   counter-increment: ol-counter;
-  float: left;
-  width: 25px;
-  font-family: "brandon-grotesque", sans-serif;
-  font-size: 14px;
-  color: #aaa;
+  position: relative;
+  max-width: 0;
+  max-height: 0;
+  left: -8px;
+  font-size: 1em;
+  color: #555;
+  font-weight: bold;
+  font-size: 0.875em;
+  text-align: right;
 }
 article.post img {
   margin: 15px 0;
@@ -2252,6 +2262,10 @@ article.post .back:hover {
 }
 article.post .back:hover {
   color: #484848;
+}
+article.post .post-footer .share {
+  text-align: center;
+  padding-top: 40px;
 }
 article.post .post-meta {
   text-align: center;
