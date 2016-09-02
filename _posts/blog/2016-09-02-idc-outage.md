@@ -5,7 +5,7 @@ title: "IDC Outage Postmortem"
 header-img: "img/career-bg-10.jpg"
 date: 2016-09-02
 author: namenu
-published: true
+published: false
 description: "데이터센터의 장애를 통해 겪은 서비스중단 및 극복 후기"
 ---
 
