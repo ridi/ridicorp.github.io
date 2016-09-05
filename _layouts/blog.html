@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.6&appId=208688205808637";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 {% assign author = site.data.authors[page.author] %}
 
@@ -24,13 +32,26 @@ layout: default
             <div class="post-content">
 				{{ content }}
             </div>
-            <div class="post-meta">
-                <div class="profile-img">
-                    <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="">
+            <footer class="post-footer">
+                <section class="share">
+                    <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                    {% for social in site.social %}
+                    {% if social.share_url != null %}
+                    <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{page.title | cgi_escape}}{{ social.share_link }}{{site.url}}{{page.id}}"
+                       onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
+                        <i class="fa fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
+                    </a>
+                    {% endif %}
+                    {% endfor %}
+                </section>
+                <div class="post-meta">
+                    <div class="profile-img">
+                        <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="">
+                    </div>
+                    <div class="author">{{ author.name }}</div>
+                    <div class="author-desc">{{ author.profile-text }}</div>
                 </div>
-                <div class="author">{{ author.name }}</div>
-                <div class="author-desc">{{ author.profile-text }}</div>
-            </div>
+            </footer>
         </div>
         <div class="button-area">
             <a href="{{ site.baseurl }}/blog" class="back"><i class="icon-direct-left"></i> 목록으로</a>
