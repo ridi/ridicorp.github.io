@@ -134,7 +134,7 @@ Load Average(평균 부하)는 마치 서버의 종합 성적표 같아서, 이 
 
 단, 현재까지 가성비로는 Sentry가 제일 뛰어납니다. Python의 Flask와 Jinja의 개발자로 유명한 Armin Ronacher가 팀에 합류했기에 발전가능성 측면에서도 많은 기대가 됩니다.
 
-![Sentry의 실시간 에러 대시보드](https://i.imgur.com/EQ216Mn.jpg){: .center }
+![Sentry의 실시간 에러 대시보드](https://i.imgur.com/EQ216Mn.jpg){: data-action="zoom" }
 <figcaption>Sentry의 실시간 에러 대시보드</figcaption>
 
 
@@ -160,7 +160,7 @@ slow_query_log=1   # 로그를 남겨주세요
 
 물론 가장 이상적인 상황은 n초 이상 수행되는 쿼리를 모두 없애는 것입니다. 하지만 현실은 튜닝을 포기하고 테이블을 풀스캔하도록 두는게 나은 선택일 수 있으며, OLAP/ETL 인프라가 별도로 구축되어 있지 않은 상황에서는 어쩔 수 없이 슬로우쿼리가 발생하게 됩니다. 우리가 초당 로그 갯수로 판단을 하게된 것도 이러한 이유 때문이었습니다.
 
-![슬로우쿼리 메일](https://i.imgur.com/iMeR94W.png){: .center }
+![슬로우쿼리 메일](https://i.imgur.com/iMeR94W.png){: data-action="zoom" }
 <figcaption>자동으로 슬로우 쿼리를 받아보면 문제해결에 도움이 됩니다.</figcaption>
 
 
@@ -183,7 +183,7 @@ PushMon은 정해진 시간에 ping을 보내지 않으면 이메일이나 SMS�
 
 불필요하게 많은 인원이 알림을 받는 상황도 문제입니다. 알림 수신자를 늘리면 모니터링의 퀄리티가 높아질 것이라고 생각하지만 절대 그렇지 않습니다. 오히려 [방관자 효과](https://ko.wikipedia.org/wiki/%EB%B0%A9%EA%B4%80%EC%9E%90_%ED%9A%A8%EA%B3%BC)가 발생하여 아무도 알림에 대응하지 않는 상황이 발생하게 됩니다. 따라서 알림이 발생했을 때에는 1차, 2차 담당자를 사전에 지정하고 운영할 필요가 있습니다.
 
-![방관자 효과의 적절한 예](https://i.imgur.com/0TBF9Dr.gif){: .center }
+![방관자 효과의 적절한 예](https://i.imgur.com/0TBF9Dr.gif){: data-action="zoom" }
 <figcaption>방관자 효과의 적절한 예</figcaption>
 
 팀에서 [Slack](https://slack.com)을 사용한다면 기능 연동을 통해 실시간으로 이슈를 파악할 수 있고, 담당자 지정을 보다 쉽고 명확하게 할 수 있습니다. 특히, 별것 아닌 이모티콘(emoji) 만으로도 방관자 효과를 크게 줄일 수 있는데, 예를 들면 아래와 같습니다.
@@ -192,7 +192,7 @@ PushMon은 정해진 시간에 ping을 보내지 않으면 이메일이나 SMS�
 > ✅ - 확인 완료 <br> 
 > 😱 - 확인은 하였으나 나는 해결을 못하겠음
 
-![Sentry를 Slack에 연동한 모습](https://i.imgur.com/54YxUPu.png){: .center .box-shadow }
+![Sentry를 Slack에 연동한 모습](https://i.imgur.com/54YxUPu.png){: .box-shadow data-action="zoom" }
 <figcaption>Sentry를 Slack에 연동한 모습</figcaption>
 
 

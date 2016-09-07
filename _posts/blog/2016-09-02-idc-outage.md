@@ -55,18 +55,18 @@ AWS로 비유를 하자면 가용 영역(Availability Zone)의 장애라고 할 
 그림으로 표현해 보자면, 대략 아래와 같은 상황에서...
 <br>
 
-![before](https://i.imgur.com/Y5gUdVr.png)
+![before](https://i.imgur.com/Y5gUdVr.png){: data-action="zoom" }
 <br>
 
 아래와 같은 상황이 된 셈입니다.
 
-![after](https://i.imgur.com/PgcWSNB.png)
+![after](https://i.imgur.com/PgcWSNB.png){: data-action="zoom" }
 <figcaption>서버 스택의 여러곳에 순간적으로 장애가 발생한 상황</figcaption>
 
 공인 IP가 할당된 메인 프록시 서버 중 1대가 내려갔지만, 실제로는 아래와 같이 가상 IP로 구성을 한 상태였기 때문에
 대기 중인(stand-by) 프록시가 동작하여 곧 서점에 장애 공지를 띄울 수 있었습니다.
 
-![Image from DigitalOcean™](https://i.imgur.com/EOz8sIl.gif){: .center }
+![Image from DigitalOcean™](https://i.imgur.com/EOz8sIl.gif){: .center data-action="zoom" }
 <figcaption><sub>[이미지 출처: <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-highly-available-haproxy-servers-with-keepalived-and-floating-ips-on-ubuntu-14-04">DigitalOcean™]</a></sub></figcaption>
 
 <br>

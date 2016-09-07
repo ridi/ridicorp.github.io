@@ -36,7 +36,7 @@ Retrofit+GSON 조합을 최대한 따라해서 iOS 앱의 코드 퀄리티를 �
 
 ## RBApiService
 
-![RBApiService class diagram](https://i.imgur.com/AakhSry.png)
+![RBApiService class diagram](https://i.imgur.com/AakhSry.png){: data-action="zoom" }
 
 API 통신을 담당하는 부분의 핵심은 중앙의 RBApiService 클래스를 포함한 상속 구조라고 할 수 있으며 상술하면 다음과 같습니다.
 

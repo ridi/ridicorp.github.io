@@ -1,4 +1,6 @@
 @import "../icon/css/ridicorp-icon.css";
+
+@import "../css/zoom.css";
 .clear {
   clear: both;
 }
@@ -2137,7 +2139,7 @@ article.post ol > li:before {
   text-align: right;
 }
 article.post img {
-  margin: 15px 0;
+  margin: 15px auto 0;
   position: relative;
   display: block;
   max-width: 100%;
