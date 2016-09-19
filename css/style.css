@@ -2551,7 +2551,7 @@ article.post .button-area a {
   }
 }
 .press-articles-area .report-list {
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
@@ -2572,9 +2572,9 @@ article.post .button-area a {
 }
 .press-articles-area .report-list li .title {
   display: block;
-  font-size: 1em;
+  font-size: 1.2em;
   color: #0282da;
-  line-height: 1.3;
+  line-height: 1.4;
   letter-spacing: -0.03em;
 }
 .press-articles-area .report-list li span {

@@ -41,13 +41,16 @@ fb-img: "img/fb-img-ridicorp.png"
 <!-- Press Articles -->
 <div class="press-articles-area site-content">
     <div class="paa-tab">
-        <em class="active" rel="material">보도자료</em>
+        <em class="active" rel="article">언론보도</em>
         <span class="separator">∙</span>
-        <em rel="article">언론보도</em>
+        <em rel="material">보도자료</em>
     </div>
     <div class="tab_container">
+        <!-- 언론보도 -->
+        <ol class="report-list tab_content" id="article">
+        </ol>
         <!-- 보도자료 -->
-        <ol class="articles-list tab_content" id="material">
+        <ol class="articles-list tab_content" id="material" hidden>
             <li id="press_material1" hidden>
                 <a id="press_material_url1" href="">
                     <span id="press_material_date1" class="date"></span>
@@ -86,10 +89,10 @@ fb-img: "img/fb-img-ridicorp.png"
             </li>
         </ol>
 
-        <ol class="report-list tab_content" id="article" hidden>
-        </ol>
-
+    
         <div class="clear"></div>
+
+        <!-- Pager -->
         <div class="pager">
             <div class="page-button" id="prev_page" data-flag="material"><i class="icon-direct-left"></i> 이전</div>
 
