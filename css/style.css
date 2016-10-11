@@ -2949,7 +2949,7 @@ article.press-article blockquote p {
 .blog-post-list li .list-item .post-content {
   display: table-cell;
   vertical-align: top;
-  width: 550px;
+  width: 480px;
 }
 .blog-post-list li .list-item .title {
   display: block;
@@ -2976,7 +2976,7 @@ article.press-article blockquote p {
   font-family: "brandon-grotesque", sans-serif;
   color: #545f6f;
   font-size: 14px;
-  width: 170px;
+  width: 180px;
   display: table-cell;
   vertical-align: top;
   border-left: 1px solid #eee;
