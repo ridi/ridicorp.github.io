@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "리디북스 서점 GNB 리뉴얼"
 header-img: "img/blog-bg-2-new.jpg"
-date: 2016-10-10
+date: 2016-10-13
 author: jsung
 published: true
 description: "GNB 디자인 작업 후기 Make-Break-Make!"
@@ -23,7 +23,7 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 커머스의 경우 제품이나 서비스 등이 변경, 추가되면서 GNB가 달라지게 됩니다.
 그 예로 아마존 웹사이트의 탭 내비게이션 디자인의 변화를 보면 아마존의 제품, 서비스가 어떻게 달라졌는지 한눈에 확인할 수 있습니다.
 
-![아마존 탭 네비게이션의 변화](/img/blog/amazon.jpg){: data-action="zoom" }
+![아마존 탭 네비게이션의 변화](/img/blog/20161013-jsung/amazon.jpg){: data-action="zoom" }
 <figcaption>아마존 탭 네비게이션의 변화</figcaption>
 
 출처 : [The History of Amazon’s Tab Navigation](http://www.lukew.com/ff/entry.asp?178)<br><br>
@@ -36,11 +36,11 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 
 ## 과정을 설명하기 전에 결과부터 보여드립니다.
 
-![그림 1) PC GNB 개편 전/후](/img/blog/result_pc_bg.png){: data-action="zoom" }
+![그림 1) PC GNB 개편 전/후](/img/blog/20161013-jsung/result_pc_bg.png){: data-action="zoom" }
 <figcaption>그림 1) PC GNB 개편 전/후</figcaption>
 
 
-![B.모바일 GNB 개편 전/후](/img/blog/result_m_bg.png){: data-action="zoom" }
+![B.모바일 GNB 개편 전/후](/img/blog/20161013-jsung/result_m_bg.png){: data-action="zoom" }
 <figcaption>그림 2) 모바일 GNB 개편 전/후</figcaption>
 
 
@@ -55,16 +55,16 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 - 메인 카테고리가 서브 메뉴 보다 상위 개념인데 **모바일에서는 상/하**로 배치되어 있는 반면,<br>
   **PC는 좌/우로 배치되어** 시각적으로 위계를 구분하기 어렵습니다.
 
-![그림 3) 모바일 GNB 개편 전](/img/blog/before_m_bg.png){: data-action="zoom" }
+![그림 3) 모바일 GNB 개편 전](/img/blog/20161013-jsung/before_m_bg.png){: data-action="zoom" }
 <figcaption>그림 3) 모바일 GNB 개편 전</figcaption>
 
-![그림 4) PC GNB 개편 전](/img/blog/before_pc_bg.png){: data-action="zoom" }
+![그림 4) PC GNB 개편 전](/img/blog/20161013-jsung/before_pc_bg.png){: data-action="zoom" }
 <figcaption>그림 4) PC GNB 개편 전</figcaption>
 
 
 #### 2. 탭 디자인이 카테고리별로 다름
 
-![그림 5) 카테고리별 탭 디자인](/img/blog/categories_design_bg_2.png){: data-action="zoom" }
+![그림 5) 카테고리별 탭 디자인](/img/blog/20161013-jsung/categories_design_bg_2.png){: data-action="zoom" }
 <figcaption>그림 5) 카테고리별 탭 디자인</figcaption>
 
 
@@ -92,7 +92,7 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 기존의 레이아웃 유지하면서 수정을 하기엔 한계가 있다고 생각했습니다.
 
 
-![6) 메뉴 위치만 카테고리 하단으로 아래로 수정함](/img/blog/design_a.png){: data-action="zoom" }
+![6) 메뉴 위치만 카테고리 하단으로 아래로 수정함](/img/blog/20161013-jsung/design_a.png){: data-action="zoom" }
 <figcaption>그림 6) 메뉴 위치만 카테고리 하단으로 아래로 수정함</figcaption>
 
 
@@ -114,7 +114,7 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 검색창은 서점에서 중요한 요소인데 좌측엔 배치할 공간이 없고,
 그렇다고 메인 카테고리를 우측으로 하면 하위 메뉴들과 멀어져 연관성이 적어 보이겠죠.
 
-![7) 검색창을 우측에 배치한 시안](/img/blog/design_b.png){: data-action="zoom" }
+![7) 검색창을 우측에 배치한 시안](/img/blog/20161013-jsung/design_b.png){: data-action="zoom" }
 <figcaption>그림 7) 검색창을 우측에 배치한 시안</figcaption>
 
 
@@ -129,7 +129,7 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 
 이 고민을 하게 되었습니다.
 
-![8) 4단 vs. 3단 비교 이미지](/img/blog/design_c_bg.png){: data-action="zoom" }
+![8) 4단 vs. 3단 비교 이미지](/img/blog/20161013-jsung/design_c_bg.png){: data-action="zoom" }
 <figcaption>그림 8) 4단 vs. 3단 비교 이미지</figcaption>
 
 
@@ -140,7 +140,7 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 4단으로 하니 기존 메뉴들을 다 넣을 수 있지만 높이가 늘어나고 메뉴가 너무 많아 보여 한눈에 내비게이션을 파악하기 어려워 보였습니다.
 또, 높이가 늘어나는 만큼 서점 콘텐츠 영역이 줄어드는 결과를 가져옵니다.
 
-![9) PC GNB 4단](/img/blog/design_d_4.png){: data-action="zoom" }
+![9) PC GNB 4단](/img/blog/20161013-jsung/design_d_4.png){: data-action="zoom" }
 <figcaption>그림 9) PC GNB 4단 (height: 177px)</figcaption>
 
 그럼 '3단으로 하면서 기존 메뉴들을 그대로 살릴 수 있는 방법은 없을까?'
@@ -151,7 +151,7 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 고객센터 / 뷰어 다운로드 / 리디캐시 충전은 리디북스 서점 페이지인데 같이 나열되는 것이 사용자에게 혼란을 줄 수 있다고 생각했습니다.
 
 
-![10) PC GNB 3단](/img/blog/design_d_3.png){: data-action="zoom" }
+![10) PC GNB 3단](/img/blog/20161013-jsung/design_d_3.png){: data-action="zoom" }
 <figcaption>그림 10) PC GNB 3단 (height: 149px)</figcaption>
 
 
@@ -162,13 +162,13 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 아래 이미지가 지금의 GNB에 기초가 된 시안입니다.
 이전 시안과 비교하면 ‘고객센터’와 ‘뷰어 다운로드’가 없어지고, 'PAPER' 좌측에 아이콘이 추가되었습니다.
 
-![11) PC GNB 최종 시안](/img/blog/design_final.png){: data-action="zoom" }
+![11) PC GNB 최종 시안](/img/blog/20161013-jsung/design_final.png){: data-action="zoom" }
 <figcaption>그림 11) PC GNB 최종 시안</figcaption>
 
 기존 GNB에 있던 메뉴라서 없애는 것을 결정하기가 쉽지 않았는데
 ‘고객센터’와 ‘뷰어 다운로드’는 다른 서비스에서의 경험을 바탕으로 사이트 하단 Footer에 있을 것이라고 예측 가능하다고 판단했습니다.
 
-![12) PC Footer](/img/blog/footer.png){: data-action="zoom" }
+![12) PC Footer](/img/blog/20161013-jsung/footer.png){: data-action="zoom" }
 <figcaption>그림 12) PC Footer</figcaption>
 
 <br>
