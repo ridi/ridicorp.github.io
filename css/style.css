@@ -2044,30 +2044,40 @@ article.post {
   }
 }
 article.post h1 {
-  margin-top: 60px;
+  margin-top: 3em;
+  margin-bottom: 1em;
   padding-bottom: 10px;
   font-size: 1.8em;
   color: #000;
   margin-left: -0.05em;
 }
 article.post h2 {
-  margin-top: 30px;
+  margin-top: 2em;
+  margin-bottom: 1em;
   padding: 10px 0;
   font-size: 1.5em;
   color: #222;
   margin-left: -0.05em;
 }
 article.post h3 {
-  margin-top: 30px;
-  font-size: 1.2em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 1.3em;
   color: #222;
   margin-left: -0.02em;
+}
+article.post h4 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 1.1em;
+  color: #222;
 }
 article.post p {
   margin: 10px 0;
   padding-top: 5px;
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #333;
 }
 article.post em {
   font-style: normal;
@@ -2105,6 +2115,7 @@ article.post ul li,
 article.post ol li {
   position: relative;
   font-size: 1em;
+  color: #333;
 }
 article.post ul li:last-child,
 article.post ol li:last-child {
@@ -2317,7 +2328,7 @@ article.post .post-content {
 }
 @media only screen and (max-width: 767px) {
   article.post .post-content {
-    width: 95%;
+    width: 92%;
     font-size: 1.0em;
   }
 }
