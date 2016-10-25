@@ -58,6 +58,9 @@ ul,
 ol {
   list-style: none;
 }
+blockquote {
+  padding: 10px 20px;
+}
 ::selection {
   background: #ccc;
 }
@@ -2167,13 +2170,6 @@ article.post figcaption {
   font-size: 1em;
   color: #999;
   padding: 15px 0 20px;
-}
-article.post blockquote {
-  padding: 0 30px;
-  margin: 20px 0;
-}
-article.post blockquote p {
-  color: #888;
 }
 article.post code td.code {
   width: 100%;
