@@ -2947,6 +2947,13 @@ article.press-article blockquote p {
     width: auto;
     margin: 20px 0 10px;
   }
+  .blog-post-list li {
+  width:100%;
+  border-bottom:1px #eee solid;
+  }
+  .blog-post-list li .list-item .post-content {
+  width:100% !important;
+  }
 }
 .blog-post-list li {
   display: inline-block;
