@@ -2953,14 +2953,14 @@ article.press-article blockquote p {
     margin: 5px 0 10px;
   }
   .blog-post-list li {
-  width:100%;
+    width:100%;
   }
   .blog-post-list li .list-item {
-  display: block;
-  padding: 25px 20px 20px !important;
+    display: block;
+    padding: 25px 20px 20px !important;
   }
   .blog-post-list li .list-item .post-content {
-  width:100% !important;
+    width:100% !important;
   }
 }
 .blog-post-list li {
