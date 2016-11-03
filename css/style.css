@@ -2940,12 +2940,27 @@ article.press-article blockquote p {
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .blog-post-list {
     width: 90%;
+    margin:20px auto;  
+  }
+  .blog-post-list li .list-item {
+  display: block;
+  margin: 0 25px;
   }
 }
 @media only screen and (max-width: 767px) {
   .blog-post-list {
     width: auto;
-    margin: 20px 0 10px;
+    margin: 5px 0 10px;
+  }
+  .blog-post-list li {
+    width:100%;
+  }
+  .blog-post-list li .list-item {
+    display: block;
+    padding: 25px 20px 20px !important;
+  }
+  .blog-post-list li .list-item .post-content {
+    width:100% !important;
   }
 }
 .blog-post-list li {
@@ -2955,11 +2970,12 @@ article.press-article blockquote p {
 }
 .blog-post-list li .list-item {
   display: block;
-  padding: 25px 20px 20px;
+  padding: 25px 5px 20px;
   position: relative;
   z-index: 1;
   transition: all .1s;
   outline: none;
+  border-bottom:1px #eee solid;
 }
 .blog-post-list li .list-item .post-content {
   display: table-cell;
@@ -2994,7 +3010,6 @@ article.press-article blockquote p {
   width: 180px;
   display: table-cell;
   vertical-align: top;
-  border-left: 1px solid #eee;
   padding-left: 15px;
 }
 @media only screen and (max-width: 767px) {
