@@ -2474,29 +2474,40 @@ article.press-article {
 	margin: 20px auto;
 
 	@media @queries_md {
-		width: 90%;
+		margin: 20px auto;
 	}
 	@media @queries_sm {
 		width: auto;
-		margin: 20px 0 10px;
+		margin: 0 auto;
 	}
 	li {
 		display: inline-block;
 		vertical-align: top;
 		position: relative;
+		border-bottom: 1px #eee solid;
+		@media @queries_sm {
+			display: block;
+		}
 		
 		.list-item {
 			display: block;			
-			padding: 25px 20px 20px;
+			padding: 25px 5px 20px;
 			position: relative;
 			z-index: 1;
 			transition: all .1s;
 			outline: none;
+			@media @queries_sm {
+				width: 90%;
+				margin: 5px auto;
+			}
 			
 			.post-content {
 				display: table-cell;
 				vertical-align: top;
 				width: 480px;
+				@media @queries_sm {
+					width: 100%;
+				}
 			}
 			.title {
 				display: block;
@@ -2525,11 +2536,9 @@ article.press-article {
 				width: 180px;
 				display: table-cell;
 				vertical-align: top;
-				border-left: 1px solid #eee;
 				padding-left: 15px;
 
 				@media @queries_sm {
-					border-left: none;
 					width: auto;
 					display: block;
 					padding-left: 0;

@@ -2939,34 +2939,25 @@ article.press-article blockquote p {
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .blog-post-list {
-    width: 90%;
-    margin:20px auto;  
-  }
-  .blog-post-list li .list-item {
-  display: block;
-  margin: 0 25px;
+    margin: 20px auto;
   }
 }
 @media only screen and (max-width: 767px) {
   .blog-post-list {
     width: auto;
-    margin: 5px 0 10px;
-  }
-  .blog-post-list li {
-    width:100%;
-  }
-  .blog-post-list li .list-item {
-    display: block;
-    padding: 25px 20px 20px !important;
-  }
-  .blog-post-list li .list-item .post-content {
-    width:100% !important;
+    margin: 0 auto;
   }
 }
 .blog-post-list li {
   display: inline-block;
   vertical-align: top;
   position: relative;
+  border-bottom: 1px #eee solid;
+}
+@media only screen and (max-width: 767px) {
+  .blog-post-list li {
+    display: block;
+  }
 }
 .blog-post-list li .list-item {
   display: block;
@@ -2975,12 +2966,22 @@ article.press-article blockquote p {
   z-index: 1;
   transition: all .1s;
   outline: none;
-  border-bottom:1px #eee solid;
+}
+@media only screen and (max-width: 767px) {
+  .blog-post-list li .list-item {
+    width: 90%;
+    margin: 5px auto;
+  }
 }
 .blog-post-list li .list-item .post-content {
   display: table-cell;
   vertical-align: top;
   width: 480px;
+}
+@media only screen and (max-width: 767px) {
+  .blog-post-list li .list-item .post-content {
+    width: 100%;
+  }
 }
 .blog-post-list li .list-item .title {
   display: block;
@@ -3014,7 +3015,6 @@ article.press-article blockquote p {
 }
 @media only screen and (max-width: 767px) {
   .blog-post-list li .list-item .post-meta {
-    border-left: none;
     width: auto;
     display: block;
     padding-left: 0;
