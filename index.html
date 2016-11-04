@@ -49,47 +49,48 @@ fb-img: "img/fb-img-ridicorp.png"
 <div class="numbers-area site-content">
     <div class="text-center">
         <h3>Numbers</h3>
-        <h4>2016년 07월 기준</h4>
+        {% assign numbers = site.data.numbers %}
+        <h4>{{ numbers.date }} 기준</h4>
         <ul class="number-boxes" data-effect="slide-top">
             <li>
                 <i class="icon-download"></i>
-                <strong>104,939,846</strong>
-                <span>누적 책 다운로드 수</span>
+                <strong>{{ numbers['downloads'].value }}</strong>
+                <span>{{ numbers['downloads'].label }}</span>
             </li>
             <li>
                 <i class="icon-book"></i>
-                <strong>538,727</strong>
-                <span>서비스 도서 수</span>
+                <strong>{{ numbers['books'].value }}</strong>
+                <span>{{ numbers['books'].label }}</span>
             </li>
             <li>
                 <i class="icon-review"></i>
-                <strong>372,403</strong>
-                <span>등록된 리뷰 수</span>
+                <strong>{{ numbers['reviews'].value }}</strong>
+                <span>{{ numbers['reviews'].label }}</span>
             </li>
             <li>
                 <i class="icon-note"></i>
-                <strong>31,245,044</strong>
-                <span>등록된 독서노트 수</span>
+                <strong>{{ numbers['notes'].value }}</strong>
+                <span>{{ numbers['notes'].label }}</span>
             </li>
             <li>
                 <i class="icon-globe"></i>
-                <strong>215</strong>
-                <span>고객들이 거주하는<br>국가 수</span>
+                <strong>{{ numbers['regions'].value }}</strong>
+                <span>{{ numbers['regions'].label }}</span>
             </li>
             <li>
                 <i class="icon-tree"></i>
-                 <strong>1,679,038</strong>
-                <span>리디북스가 지금까지<br>살려낸 나무 수</span>
+                <strong>{{ numbers['trees'].value }}</strong>
+                <span>{{ numbers['trees'].label }}</span>
             </li>
             <li>
                 <i class="icon-drawers"></i>
-                <strong>16,593</strong>
-                <span>가장 많은 책을 보유한<br>고객의 소장권수</span>
+                <strong>{{ numbers['vip'].value }}</strong>
+                <span>{{ numbers['vip'].label }}</span>
             </li>
             <li>
                 <i class="icon-smile"></i>
-                <strong>1,837</strong>
-                <span>제휴 출판사 수</span>
+                <strong>{{ numbers['cp'].value }}</strong>
+                <span>{{ numbers['cp'].label }}</span>
             </li>
         </ul>
         <div class="clear"></div>
