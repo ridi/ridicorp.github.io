@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "리디북스 뷰어 형광펜 개선 후기"
 header-img: "img/career-bg-13.jpg"
-date: 2016-10-24
+date: 2016-11-10
 author: jihyeleee
 published: true
 description: "'형광펜 이어서 남기기' 기능 추가 과정을 공유합니다."
