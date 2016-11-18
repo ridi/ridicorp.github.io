@@ -1,0 +1,38 @@
+department: 소설 PD 부문
+head: 소설 PD 부문
+jobs:
+  - title: 로맨스 PD (신입 및 경력)
+    description:
+      - 로맨스 소설 작품 기획 및 프로듀싱
+      - 로맨스 소설 편집 및 교정/교열
+    required:
+      - 로맨스 소설에 많은 애정을 가지고 있는 지원자
+    preferred:
+      - 로맨스 소설 작품 기획 및 프로듀싱 경험자
+      - 전자책 로맨스 업계 근무 경력 (출판사 및 유통사, 관련 서비스 회사)
+      - 포토샵, 일러스트 사용 가능자
+    link: https://ridi.typeform.com/to/TnYoyf
+
+  - title: 로맨스판타지 PD (신입 및 경력)
+    description:
+      - 로맨스판타지 소설 작품 기획 및 프로듀싱 
+      - 로맨스판타지 소설 편집 및 교정/교열
+    required:
+      - 로맨스판타지 소설에 많은 애정을 가지고 있는 지원자
+    preferred:
+      - 로맨스판타지 소설 작품 기획 및 프로듀싱 경험자
+      - 전자책 로맨스판타지 업계 근무 경력 (출판사 및 유통사, 관련 서비스 회사)
+      - 포토샵, 일러스트 사용 가능자
+    link: https://ridi.typeform.com/to/NrG4BK
+
+  - title: BL PD (신입 및 경력)
+    description:
+      - BL 소설 작품 기획 및 프로듀싱 
+      - BL 소설 편집 및 교정/교열
+    required:
+      - BL 소설에 많은 애정을 가지고 있는 지원자
+    preferred:
+      - BL 소설 작품 기획 및 프로듀싱 경험자
+      - 전자책 BL 업계 근무 경력 (출판사 및 유통사, 관련 서비스 회사)
+      - 포토샵, 일러스트 사용 가능자
+    link: https://ridi.typeform.com/to/BIWKxg
