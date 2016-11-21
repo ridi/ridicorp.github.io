@@ -6,7 +6,7 @@ header-img: "img/blog-bg-2-new.jpg"
 date: 2016-11-21
 author: jsung
 published: true
-description: "GNB 디자인 작업 후기 Make-Break-Make!"
+description: "네비게이션 디자인 과정과 작업 후기"
 ---
 
 
