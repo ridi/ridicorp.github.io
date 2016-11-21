@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "리디북스 서점 GNB 리뉴얼"
 header-img: "img/blog-bg-2-new.jpg"
-date: 2016-10-13
+date: 2016-11-21
 author: jsung
 published: true
 description: "GNB 디자인 작업 후기 Make-Break-Make!"
@@ -15,7 +15,7 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 마트에 물건을 사러 갔는데 내가 찾는 상품이 어디 있는지 몰라 당황스러웠던 경험 있으신가요?<br>
 
 이와 비슷하게 웹사이트를 방문했을 때 어떤 곳은 메뉴 파악이 쉽고 원하는 페이지로 이동이 쉬운 반면 <br>
-어떤 곳은 메뉴가 너무 복잡하거나 메뉴를 찾는데 오래 걸려 짜증이 날 때도 있습니다.<br><br>
+어떤 곳은 메뉴가 너무 복잡하거나 메뉴를 찾는데 오래 걸려 짜증이 날 때도 있습니다.
 
 이렇게 웹사이트에서 사용자 경험에 큰 영향을 미치는 요소는 바로 **GNB (Global Navigation Bar) 디자인**입니다.
 때문에 GNB는 매우 중요한 영역이고, 구조를 변경하는 일은 드뭅니다.<br>
@@ -24,18 +24,16 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 그 예로 아마존 웹사이트의 탭 내비게이션 디자인의 변화를 보면 아마존의 제품, 서비스가 어떻게 달라졌는지 한눈에 확인할 수 있습니다.
 
 ![아마존 탭 네비게이션의 변화](/img/blog/20161013-jsung/amazon.jpg){: data-action="zoom" }
-<figcaption>아마존 탭 네비게이션의 변화</figcaption>
-
-출처 : [The History of Amazon’s Tab Navigation](http://www.lukew.com/ff/entry.asp?178)<br><br>
+<figcaption>출처: <a href="http://www.flickr.com/photos/rclark/">아마존 탭 네비게이션의 변화</a></figcaption><br>
 
 
 리디북스 서점의 경우, 최근 몇 년간 GNB에 큰 변화는 없었습니다.
 그런데 이번에 GNB 개편을 하게 된 이유는 판타지 연재 서비스를 준비하면서 '판타지' 서브 메뉴로 '연재'를 추가하기 위한 작업이 필요했기 때문입니다.
-이번 작업을 하면서 GNB의 사용성과 디자인 완성도를 위해 고민했던 그 과정을 공유합니다.<br><br>
+이번 작업을 하면서 GNB의 사용성과 디자인 완성도를 위해 고민했던 그 과정을 공유합니다.
 
 
-<br>
-<br>
+---
+
 
 ## 다음 문제를 해결해야 했습니다.
 
@@ -65,9 +63,7 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 #### 5. 메인 카테고리에 'BL'을 추가하기 위해 공간 확보해야 함
 
 
-<br>
-
-<br>
+---
 
 
 ## 디자인 과정
@@ -127,16 +123,16 @@ description: "GNB 디자인 작업 후기 Make-Break-Make!"
 
 
 ![7) PC GNB 3단](/img/blog/20161013-jsung/design_d_3.png){: data-action="zoom" }
-<figcaption>그림 7) PC GNB 3단 (height: 149px)</figcaption>
+<figcaption>그림 7) PC GNB 3단 (height: 149px)</figcaption><br>
 
 
-<br>
+---
 
 
 ## 최종 시안
 GNB 개편 이전과 이후 시안입니다.
 PC에서는 ‘고객센터’와 ‘뷰어 다운로드’가 없어지고, 'PAPER' 좌측에 아이콘이 추가되었습니다.
-기존 GNB에 있던 메뉴라서 없애는 것을 결정하기가 쉽지 않았는데 ‘고객센터’와 ‘뷰어 다운로드’는 다른 서비스에서의 경험을 바탕으로 사이트 하단 Footer에 있을 것이라고 예측 가능하다고 판단했습니다.
+'고객센터'와 '뷰어 다운로드'는 기존 GNB에 있던 메뉴라서 없애는 것을 결정하기가 쉽지 않았는데, 다른 서비스에서의 경험을 바탕으로 사이트 하단 Footer에 있을 것이라고 예측 가능하다고 판단했습니다.
 
 ![그림 8) PC GNB 개편 전/후](/img/blog/20161013-jsung/result_pc_bg.png){: data-action="zoom" }
 <figcaption>그림 8) PC GNB 개편 전/후</figcaption>
@@ -146,15 +142,12 @@ PC에서는 ‘고객센터’와 ‘뷰어 다운로드’가 없어지고, 'PA
 <figcaption>그림 9) 모바일 GNB 개편 전/후</figcaption>
 
 
-
-
-
-
 ![10) PC Footer](/img/blog/20161013-jsung/footer.png){: data-action="zoom" }
-<figcaption>그림 10) PC Footer</figcaption>
+<figcaption>그림 10) PC Footer</figcaption><br>
 
-<br>
-<br>
+
+---
+
 
 ## 평가 및 느낀 점
 
@@ -169,7 +162,7 @@ PC에서는 ‘고객센터’와 ‘뷰어 다운로드’가 없어지고, 'PA
 
 특히 제한된 공간에 다양한 요소들을 욱여넣어야 했기 때문에
 간격, 컬러, 선, 면, 점, 폰트 크기 등 모든 것을 세밀하게 조정해야 했습니다.
-1px처럼 아주 작은 차이가 완성도를 높이는데 중요하다는 것을 어느 때보다 깊이 느꼈죠.<br><br>
+1px처럼 아주 작은 차이가 완성도를 높이는데 중요하다는 것을 어느 때보다 깊이 느꼈죠.
 
 
 
@@ -183,10 +176,11 @@ PC에서는 ‘고객센터’와 ‘뷰어 다운로드’가 없어지고, 'PA
 
 리디북스에서 일하시는 분들은 디자이너, 개발자, 운영자, 누구 할 것 없이
 우리 프로덕트의 퀄리티를 중요하게 생각하기 때문에 디자인과 사용성에 대해 높은 기준을 갖고 있습니다.
-이번 작업에도 많은 분들이 디자인을 꼼꼼히 확인해주시고 의견을 주셔서 큰 도움이 되었습니다.
+이번 작업에도 많은 분들이 디자인을 꼼꼼히 확인해주시고 의견을 주셔서 큰 도움이 되었습니다.<br>
 
-<br>
-<br>
+
+---
+
 
 ## 마무리
 리디북스 면접 때 면접관님이 해주셨던 말씀을 기억합니다.
