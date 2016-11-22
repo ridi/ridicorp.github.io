@@ -1883,7 +1883,8 @@ ol {
   }
 }
 .how-to-contact .htc-left {
-  width: 40%;
+  width: 35%;
+  margin-right: 5%;
   float: left;
   padding-bottom: 20px;
 }
@@ -1916,10 +1917,15 @@ ol {
   margin-bottom: 0;
 }
 .how-to-contact h3 {
-  font-size: 1.25em;
+  font-size: 1.125em;
   line-height: 1.5;
   color: #dadada;
   font-weight: 500;
+}
+.how-to-contact h4 {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #919191;
 }
 .how-to-contact p {
   color: #919191;
@@ -1937,7 +1943,7 @@ ol {
 }
 .how-to-contact .contact-point {
   color: #dadada;
-  font-size: 1.1em;
+  font-size: 1em;
   padding-top: 10px;
 }
 .how-to-contact .contact-point li {
