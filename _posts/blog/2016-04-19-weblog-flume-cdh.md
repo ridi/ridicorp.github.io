@@ -2,11 +2,12 @@
 layout: blog
 category: blog
 title: "웹서버 로그 수집과 모니터링 설정"
+description: "Flume 과 CDH 를 사용해서 끊김없이 로그 수집하기"
 header-img: "img/blog-bg-1.jpg"
 date: 2016-04-19
 author: chanu.lee
+type: engineering
 published: true
-description: "Flume 과 CDH 를 사용해서 끊김없이 로그 수집하기"
 ---
 
 우리는 고객이 무엇에 관심 있어 하고 무엇에 관심 없어하는지, 어떤 것을 보았을 때 클릭해 들어가고 어떤 것을 보았을 때 사이트에서 이탈하는지 궁금해 합니다. 이러한 정보를 얻기 위해 봐야 할 것은 역시 웹서버의 접속 로그입니다.

@@ -2,11 +2,12 @@
 layout: blog
 category: blog
 title: "리디북스 서비스 장애 복구 후기"
+description: "데이터센터의 장애를 통해 겪은 서비스중단 및 복구 후기"
 header-img: "img/career-bg-11.jpg"
 date: 2016-09-02
 author: namenu
+type: engineering
 published: true
-description: "데이터센터의 장애를 통해 겪은 서비스중단 및 복구 후기"
 ---
 
 지난 8월 26일에는 약 21분간 리디북스 서비스 전체가 중단되는 장애가 있었습니다.
