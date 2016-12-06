@@ -48,17 +48,16 @@ jobs:
       - Hadoop 및 분산 처리 기술 관련 경험 우대
     link: https://ridi.typeform.com/to/houRxO
 
-  - title: 안드로이드 개발자
+  - title: 모바일 앱 개발자
     description:
       - 리디북스 서비스 개발
       - 최고의 독서경험 제공을 위한 뷰어 개발
       - 동기화를 비롯한 각종 서버 API 개발
     required:
-      - Java를 능숙하게 다루시는 분
+      - 네이티브 모바일 앱 개발 경력 2년 이상
       - 새로운 기술을 익히고 적용하는 데에 거부감이 없으신 분
       - 멀티플랫폼 개발에 자신이 있는 분
     preferred:
-      - 안드로이드 네이티브 개발 경력 2년 이상
       - Javascript를 능숙하게 다루시는 분
       - ePub/PDF/웹툰 관련 개발 경험이 있으신 분
       - 분야 불문 전자책 독서를 즐기시는 분
