@@ -7,7 +7,7 @@ header-img: "img/blog-bg-1.jpg"
 date: 2016-12-26
 author: antiline
 type: engineering
-published: false
+published: true
 ---
 
 최근 리디북스에서는 판타지 연재물을 웹에서 바로 볼 수 있는 기능을 새롭게 선보였습니다.
