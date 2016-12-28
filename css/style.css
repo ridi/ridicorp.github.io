@@ -3028,6 +3028,12 @@ article.press-article blockquote p {
   letter-spacing: 0.05em;
   margin: 5px 0 10px 0;
 }
+.blog-post-list li .list-item .type.type-design {
+  color: #00a259;
+}
+.blog-post-list li .list-item .type.type-engineering {
+  color: #284f8c;
+}
 .blog-post-list li .list-item .title {
   display: block;
   font-size: 26px;
