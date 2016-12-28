@@ -2297,6 +2297,24 @@ article.post .back:hover {
 article.post .back:hover {
   color: #484848;
 }
+article.post .link-to-career {
+  margin: 80px auto 40px;
+  max-width: 400px;
+  background: #f3f3f3;
+  border-radius: 10px;
+  padding: 50px 40px;
+  text-align: center;
+  line-height: 1.5;
+}
+article.post .link-to-career .title {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #222;
+}
+article.post .link-to-career a {
+  font-weight: bold;
+}
 article.post .post-footer .share {
   text-align: center;
   padding-top: 40px;
