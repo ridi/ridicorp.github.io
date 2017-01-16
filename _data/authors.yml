@@ -46,8 +46,22 @@ mg.kim:
   gravatar: 97367c5eb3af540f45f50eb4d0178734
   profile-text: "페이퍼와 PC 뷰어 UI 디자인을 맡고 있습니다. <br>다양한 플랫폼에서 편리한 독서 경험을<br>느낄 수 있도록 노력하고 있습니다."
 
+<<<<<<< HEAD
 sooyoung:
   name: Sooyoung Ahn
   email: sooyoung.ahn@ridi.com
   gravatar: 8f0de2fab065f2926e497a5ba5b5b72f
   profile-text: "리디북스에서 콘텐츠디자인을 담당하고 있습니다. 콘텐츠를 이해하기 쉽고 예쁘게 포장하는 일을 합니다."
+=======
+yoonjin:
+  name: Yoonjin Cho
+  email: yj.cho@ridi.com
+  gravatar: f6b9072405f0c11c34d83c19c3ca22b0
+  profile-text: "리디북스의 좋은 콘텐츠가 더 많은 분들을 만날 수 있도록 노력하겠습니다."
+
+antiline:
+  name: Junhyung Park
+  email: jh.park@ridi.com
+  gravatar: ff28ebf4d2cc9ada1a84694322ec59ad
+  profile-text: "책읽는 즐거움을 전파하기 위해 노력하고 있습니다."
+>>>>>>> master
