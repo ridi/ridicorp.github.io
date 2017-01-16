@@ -4,7 +4,7 @@ category: blog
 title: "모바일에 최적화된 이벤트 디자인 방법"
 description: "리디북스에서는 모바일 이벤트를 어떻게 디자인할까"
 header-img: "img/blog/20161128-sooyoung/article-bg.jpg"
-date: 2016-11-21
+date: 2017-01-15
 author: sooyoung
 type: design
 published: true
