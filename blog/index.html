@@ -32,7 +32,11 @@ title: "Blog"
         <li>
             <a href="{{ post.url }}" class="list-item">
                 <div class="post-content">
-                    <div class="type">{{ post.type }}</div>
+                    {% if post.type == 'design' %}
+                    <div class="type type-design">{{ post.type }}</div>
+                    {% elsif post.type == 'engineering' %}
+                    <div class="type type-engineering">{{ post.type }}</div>
+                    {% endif %}
                     <div class="title">{{ post.title }}</div>
                     <div class="desc">{{ post.description }}</div>
                 </div>

@@ -1,0 +1,16 @@
+department: 사업분석 부문
+head: 사업분석 부문
+jobs:
+  - title: 데이터 애널리스트 (경력)
+    description:
+      - 리디북스 서비스를 통해 발생하는 각종 데이터의 측정과 분석
+      - 비즈니스 운영을 위한 KPI 작성 및 리포팅
+      - 운영 및 마케팅 효과 분석을 통한 인사이트 도출
+    required:
+      - 리디북스 사용 경험이 있으신 분
+      - 모바일 웹  또는 앱 데이터 분석 경험 2년 이상
+      - SQL을 사용하여 DB에서 자유롭게 데이터를 추출 하실 수 있는 분
+    preferred:
+      - Google Analytics 경험자
+      - 통계학과, 수학과 등 관련 전공자
+    link: https://ridi.typeform.com/to/P3rDRk

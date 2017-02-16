@@ -72,7 +72,7 @@ ul, ol {
 
 // Navigation
 
-.navbar-custom {
+.navbar {
 	.brandon-grotesque();
 	background: transparent;
 	position: absolute;
@@ -80,16 +80,16 @@ ul, ol {
 	left: 0;
 	width: 100%;
 	z-index: 5;
+	padding-left: 16px;
 
-	.navbar-brand {
-		font-size: 1.8em;
-		padding: 15px 0 0 20px;
-		margin: 0;
+	&>.container-fluid .navbar-brand {
+		margin-top: 4px;
 		color: #fff;
 		text-shadow: 0 1px 2px rgba(0,0,0,.3);
+		.svg_logo_ridi(#fff);
+		width: 50px;
 
 		@media @queries_sm {
-			padding: 15px 0 0 15px;
 		}
 
 		&:hover, &:focus {
@@ -404,13 +404,6 @@ ul, ol {
 		position: relative;
 		padding-bottom: 8px;
 
-		@media @queries_md {
-			font-size: 2em;
-		}
-		@media @queries_sm {
-			font-size: 1.2em;
-		}
-
 	}
 	.about-sub-area .sub-heading {
 		color: #fff;
@@ -495,96 +488,90 @@ ul, ol {
 
 // Must Use
 .must-use-area {
-	background: #36333f;
+	background: #2c5aa9;
+	background: rgb(44,90,169);
 	position: relative;
 	overflow: hidden;
 
 	&.site-content h3 {
-		color: #97969b;
+		color: #fff;
 		position: relative;
 		z-index: 3;
 		&:after {
-			background: #97969b;
+			background: #fff;
 		}
 	}
 	.must-use {
-		display: inline-block;
+		.svg_must_use(#fff);
+		width: 600px;
+		height: 210px;
+		margin: 50px 0 -30px;
 		position: relative;
 		z-index: 3;
-		.brandon-grotesque();
-		text-align: center;
-		color: #36333f; /* fall back */
-		color: rgba(54,51,63,.9);
-		font-size: 8em;
-		font-weight: 900;
-		letter-spacing: -0.03em;
-		margin: 20px 0 0;
-		background: @must-use;
-		line-height: 1.2;
-		.border-radius();
-		box-shadow: 0 3px 3px rgba(0,0,0,.5),
-			0 14px 10px rgba(0,0,0,.15),
-			0 24px 14px rgba(0,0,0,.1);
-		text-shadow: 0 3px 0 #100f13,
-            0 14px 10px rgba(0,0,0,0.15),
-            0 24px 2px rgba(0,0,0,0.1),
-            0 34px 30px rgba(0,0,0,0.1);
 		
-		@media @queries_sm {
-			font-size: 2.5em;
-			text-shadow: 0 2px 0 #100f13,
-            0 4px 10px rgba(0,0,0,0.15),
-            0 8px 2px rgba(0,0,0,0.1),
-            0 12px 15px rgba(0,0,0,0.1);
+		@media @queries_md {
+			width: 300px;
+			height: 105px;
 		}
-		span {
-			display: block;
-			position: relative;
-			margin: 5px;
-			padding: 0 30px;
-			border: 4px solid #f56741;
+
+		@media @queries_sm {
+			width: 200px;
+			height: 70px;
 		}
 	}
 	.must-use-desc {
 		.text-shadow();
-		font-size: 1.125em;
-		color: #e54e26;
+		font-weight: bold;
+		font-size: 1.5em;
+		color: #fff;
 		margin: 20px 0 0;
 		position: relative;
 		z-index: 3;
+		letter-spacing: -0.03em;
 		@media @queries_sm {
-			margin-top: 10px;
+			margin-top: 80px;
 		}
 	}
 	.description {
-		padding: 40px 0 80px;
+		padding: 20px 0 80px;
 		text-align: center;
-		color: #97969b;
+		color: #acbedd;
 		position: relative;
 		z-index: 3;
 		@media @queries_sm {
 			font-size: 0.9em;
-			padding: 40px 0 60px;
+			padding: 20px 0 60px;
 		}
 	}
 	[class^="bg-text-"] {
-		.brandon-grotesque();
-		font-size: 25em;
-		font-weight: 100;
+		.svg_must_use_extended(#2479ce);
+		width: 570px;
+		height: 424px;
 		position: absolute;
-		z-index: 1;
-		color: #3b3844;
-		line-height: 1;
-		-webkit-user-select: none;
-		white-space: nowrap;
+		z-index: 2;
+		top: 76px;
+
+		@media @queries_md {
+			width: 285px;
+			height: 212px;
+			top: 100px;
+		}
+
+		@media @queries_sm {
+			width: 570/3px;
+			height: 424/3px;
+			top: 120px;
+		}
 	}
 	.bg-text-1 {
-		left: -100px;
-		top: -100px;
+		left: -360px;
+		@media @queries_md {left: -100px;}
+		@media @queries_sm {left: -100px;}
 	}
 	.bg-text-2 {
-		left: -200px;
-		bottom: -100px;
+		right: -360px;
+		@media @queries_md {right: -100px;}
+		@media @queries_sm {right: -100px;}
 	}
 }
 
@@ -677,7 +664,7 @@ ul, ol {
 		padding-bottom: 0;
 	}
 	.products {
-		padding: 30px 0;
+		padding: 0 0 30px;
 		width: 960px;
 		margin: 0 auto;
 
@@ -687,9 +674,10 @@ ul, ol {
 		@media @queries_sm {
 			width: auto;
 		}
+
 		li {
-			width: 30%;
-			margin-right: 3%;
+			width: 33%;
+			padding-top: 36px;
 			float: left;
 			text-align: center;
 			@media @queries_sm {
@@ -705,12 +693,27 @@ ul, ol {
 				margin: 0 auto;
 				width: 100%;
 			}
+			.logo-ridibooks {
+				.svg_logo_ridibooks(#333);
+				width: 125px;
+				height: 32px;
+			}
+			.logo-paper {
+				.svg_logo_paper(#333);
+				width: 98px;
+				height: 26px;
+			}
+			.logo-ridistory {
+				.svg_logo_ridistory(#333);
+				width: 166px;
+				height: 32px;
+			}
 			strong {
 				display: block;
-				font-size: 1.4em;
+				font-size: 1.8em;
 				font-weight: 700;
 				color: #333;
-				padding: 20px 0 5px;
+				padding: 16px 0 8px;
 			}
 			span {
 				display: block;
@@ -770,14 +773,8 @@ ul, ol {
 			padding: 20px 20px 40px;
 		}
 
-		.bb-header {
-			padding-right: 20px;
-			@media @queries_sm {
-				padding-left: 0;
-			}
-		}
 		.bb-body {
-			padding-left: 40px;
+			padding-left: 24px;
 			text-align: center;
 			@media @queries_sm {
 				padding-left: 0;
@@ -792,29 +789,42 @@ ul, ol {
 		}
 		.big-logo {
 			text-align: center;
+			margin-top: 24px;
 			padding-bottom: 20px;
 			@media @queries_sm {
 				text-align: left;	
 			}
-			.icon-logo-ridibooks {
-				color: #1f8ee6;
-				font-size: 120px;
-				margin: 60px 0 40px;
-				display: block;
+			&>span {
+				margin: 48px 0;
+				vertical-align: top;
 				@media @queries_sm {
-					margin: 30px 0;
-					font-size: 80px;
+					margin: 20px 0;
 				}
 			}
-			.icon-logo-paper {
-				color: #333;
-				font-size: 80px;
-				margin: 60px 0 40px;
-				display: block;
-				@media @queries_sm {
-					margin: 30px 0;
-					font-size: 60px;
-				}
+
+			.logo-ridi {
+				.svg_logo_ridi(#1f8ee6);	
+				width: 76px;
+				height: 31px;
+				margin-right: 56px;
+			}
+			.logo-ridibooks {
+				.svg_logo_ridibooks(#1f8ee6);
+				width: 205px;
+				height: 50px;
+				margin-right: 56px;
+				
+			}
+			.logo-ridistory {
+				.svg_logo_ridistory(#1f8ee6);
+				width: 218px;
+				height: 40px;
+				
+			}
+			.logo-paper {
+				.svg_logo_paper(#333);
+				width: 120px;
+				height: 31px;
 			}
 		}
 		h5 {
@@ -839,7 +849,7 @@ ul, ol {
 			.color-box {
 				width: 100px;
 				height: 100px;
-				box-shadow: inset 0 0 2px rgba(0,0,0,.5);
+				box-shadow: inset 0 0 0px 1px rgba(0,0,0,0.1);
 				&.cb-blue {background-color: #1f8ee6;}
 				&.cb-white {background-color: #fff;}
 				&.cb-gray {background-color: #333;}
@@ -861,11 +871,31 @@ ul, ol {
 			height: 100px;
 			line-height: 100px;
 			text-align: center;
-			font-size: 2em;
-			box-shadow: inset 0 0 2px rgba(0,0,0,.5);
-			&.ridi-logo-sample-1 {background: #fff; span {color: #000;}}
-			&.ridi-logo-sample-2 {background: #1f8ee6; span {color: #fff;}}
-			&.paper-logo-sample-1 {background: #333; span {color: #fff;}}
+			box-shadow: inset 0 0 0px 1px rgba(0,0,0,0.1);
+			&.ridibooks-logo-sample-1 {
+				background: #fff; 
+				.logo-ridibooks {
+					.svg_logo_ridibooks(#222);
+					width: 107px;
+					height: 27px;
+				}
+			}
+			&.ridibooks-logo-sample-2 {
+				background: #1f8ee6; 
+				.logo-ridibooks {
+					.svg_logo_ridibooks(#fff);
+					width: 107px;
+					height: 27px;
+				}
+			}
+			&.paper-logo-sample-1 {
+				background: #333; 
+				.logo-paper {
+					.svg_logo_paper(#fff);
+					width: 85px;
+					height: 22px;
+				}
+			}
 			
 			span {
 				vertical-align: middle;
@@ -1943,6 +1973,24 @@ article.post {
 			color: #484848;
 		}
 	}
+	.link-to-career {
+		margin: 80px auto 40px;
+		max-width: 400px;
+		background: #f3f3f3;
+		border-radius: 10px;
+		padding: 50px 40px;
+		text-align: center;
+		line-height: 1.5;
+		.title {
+			font-weight: bold;
+			font-size: 1.2em;
+			margin-bottom: 20px;
+			color: #222;
+		}
+		a {
+			font-weight: bold;
+		}
+	}
 	.post-footer {
 		.share {
 			text-align: center;
@@ -2534,6 +2582,13 @@ article.press-article {
 				text-transform: uppercase;
 				letter-spacing: 0.05em;
 				margin: 5px 0 10px 0;
+				
+				&.type-design {
+					color: #00a259;
+				}
+				&.type-engineering {
+					color: #284f8c;
+				}
 			}
 			.title {
 				display: block;
