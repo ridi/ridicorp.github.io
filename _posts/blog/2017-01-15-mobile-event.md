@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "모바일에 최적화된 이벤트 디자인 방법"
 description: "리디북스에서는 모바일 이벤트를 어떻게 디자인할까"
-header-img: "img/blog/20161128-sooyoung/article-bg.jpg"
+header-img: "img/blog/2016-11-28/article-bg.jpg"
 date: 2017-01-15
 author: sooyoung
 type: design
@@ -27,7 +27,7 @@ B는 우리가 수립한 모바일 이벤트 디자인 가이드를 적용한 �
 어느 것이 모바일 환경에서 보기에 더 좋을까요?
 <br>
 
-![image01](/img/blog/20161128-sooyoung/image01.jpg){: data-action="zoom" }
+![image01](/img/blog/2016-11-28/image01.jpg){: data-action="zoom" }
 
 <br>
 A와 B를 비교해보면 확실히 A가 폰트의 크기가 작아서 가독성이 떨어지고,
@@ -46,7 +46,7 @@ B와 같이 **모바일에 최적화된 디자인**은 어떻게 할 수 있을�
 그 작은 화면에 '키 비주얼과 타이틀', 혹은 '도서와 콘텐츠 소개'가 나란한 구조로 배치되어 있다면 어떨까요?
 디자인적으로 보기에도 무척 갑갑하게 느껴지고, 호흡이 긴 문장이나 많은 내용을 담아내기가 어렵습니다.
 
-![image02](/img/blog/20161128-sooyoung/image02.jpg){: data-action="zoom" }
+![image02](/img/blog/2016-11-28/image02.jpg){: data-action="zoom" }
 
 <br>
 
@@ -56,7 +56,7 @@ B와 같이 **모바일에 최적화된 디자인**은 어떻게 할 수 있을�
 모바일 작은 화면에서 공간을 여유 있게 쓴다면 시각적으로 답답해 보이지 않고 하고 싶은 말도 더 많이 나타낼 수 있습니다.
 <br>
 
-![image03](/img/blog/20161128-sooyoung/image03.jpg){: data-action="zoom" }
+![image03](/img/blog/2016-11-28/image03.jpg){: data-action="zoom" }
 
 <br>
 
@@ -78,7 +78,7 @@ B와 같이 **모바일에 최적화된 디자인**은 어떻게 할 수 있을�
 그래서 작업할 땐 다소 부담스럽게 느껴져도 막상 모바일 기기에 적용되었을 때는 위화감 없는 디자인을 볼 수 있는 것입니다.</p>
 <br>
 
-![image04](/img/blog/20161128-sooyoung/image04.jpg){: data-action="zoom" }
+![image04](/img/blog/2016-11-28/image04.jpg){: data-action="zoom" }
 
 <br>
 
@@ -114,7 +114,7 @@ B와 같이 **모바일에 최적화된 디자인**은 어떻게 할 수 있을�
 22pt가 결코 크게 느껴지지 않죠.
 <br>
 
-![image06](/img/blog/20161128-sooyoung/image06.jpg){: data-action="zoom" }
+![image06](/img/blog/2016-11-28/image06.jpg){: data-action="zoom" }
 
 만약 주 고객층의 연령이 리디북스보다 더 높다면 우리가 정한 22pt보다 더 커질 것이고,
 서비스를 이용할 때 가장 많은 비율을 차지하는 기기가 어느 것이냐에 따라 최저 폰트 크기는 달라질 것입니다.
