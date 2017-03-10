@@ -1,5 +1,5 @@
-department: 소설 PD 부문
-head: 소설 PD 부문
+department: PD 부문
+head: PD 부문
 jobs:
   - title: 로맨스 PD (신입 및 경력)
     description:
@@ -36,3 +36,15 @@ jobs:
       - 전자책 BL 업계 근무 경력 (출판사 및 유통사, 관련 서비스 회사)
       - 포토샵, 일러스트 사용 가능자
     link: https://ridi.typeform.com/to/BIWKxg
+
+  - title: 출판기획 담당자
+    description:
+      - e-book 상품 출판기획 및 편집개발, 편집디자인
+    required:
+      - 해당 직무 경력 3년 이상
+      - 디지털 콘텐츠 및 전자책 서비스에 대한 높은 관심
+    preferred:
+      - EPUB 제작 가능
+      - 리디북스 사용자
+      - 교정교열 능숙자
+    link: https://ridi.typeform.com/to/er46DE
