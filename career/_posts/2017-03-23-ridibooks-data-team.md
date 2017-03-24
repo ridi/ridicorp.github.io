@@ -3,8 +3,8 @@ layout: career
 title: "리디북스 데이터팀 소개합니다"
 subtitle: "리디북스 데이터팀"
 description: "리디북스 데이터팀이 하는 일"
-header-img: "img/career-bg-1.jpg"
-fb-img: "img/fb-data.jpg"
+header-img: "img/career-bg-14.jpg"
+fb-img: "img/fb-data-team.jpg"
 date: 2017-03-05
 permalink: /career/data-engineer
 link: https://ridi.typeform.com/to/houRxO
