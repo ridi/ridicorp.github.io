@@ -1,8 +1,8 @@
 ---
 layout: career
-title: "리디북스 데이터팀 소개합니다"
-subtitle: "리디북스 데이터팀"
-description: "리디북스 데이터팀이 하는 일"
+title: "리디북스 데이터팀 소개"
+subtitle: "전자책 회사의 데이터팀에서 하는 일"
+description: "리디북스 데이터팀이 하는 일을 소개합니다"
 header-img: "img/career-bg-14.jpg"
 fb-img: "img/fb-data-team.jpg"
 date: 2017-03-05
