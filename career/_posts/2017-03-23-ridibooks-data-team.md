@@ -58,7 +58,7 @@ link: https://ridi.typeform.com/to/houRxO
 그리고 서점이나 뷰어 API 서버의 로그를 클러스터로 수집하는 데에는 [Flume](https://flume.apache.org/) 과 [Kafka](https://kafka.apache.org/) 를 사용하고 있습니다. 이전에 Flume 을 사용해 웹서버 로그를 수집하고 모니터링하도록 설정한 것에 대해서 [포스팅](http://www.ridicorp.com/blog/2016/04/19/weblog-flume-cdh/)한 것이 있으니 참고하시면 좋습니다.
 
 ### 배치 작업 운영 - Luigi, Spark
-데이터팀 업무 중에서 압도적으로 많은 비중을 차지하는 것이 배치 작업입니다. 배치 작업은 하나의 데이터 집합으로부터 다른 데이터 집합을 생성하는 일입니다. [<빅 데이터>](https://ridibooks.com/v2/Detail?id=1170000013)에서 Nathan Marz 가 이야기한, 람다 아키텍처에서의 일괄처리 계층에 해당한다고 볼 수 있습니다. 베스트셀러, 맞춤 추천, 분석용 통계 데이터 등을 생성하는 데에 사용됩니다.
+데이터팀 업무 중에서 압도적으로 많은 비중을 차지하는 것이 배치 작업입니다. 배치 작업은 하나의 데이터 집합으로부터 다른 데이터 집합을 생성하는 일입니다. [&lt;빅 데이터&gt;](https://ridibooks.com/v2/Detail?id=1170000013)에서 Nathan Marz 가 이야기한, 람다 아키텍처에서의 일괄처리 계층에 해당한다고 볼 수 있습니다. 베스트셀러, 맞춤 추천, 분석용 통계 데이터 등을 생성하는 데에 사용됩니다.
 
 [Luigi](https://luigi.readthedocs.io/en/latest/) 는 배치 작업들간의 의존성을 정의하고 배치 작업의 실행을 관리하는 데에 사용되는 프레임워크입니다. Spotify 에서 만든 프로젝트이며, 파이썬으로 되어 있습니다. 
 
