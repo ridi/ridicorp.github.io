@@ -48,6 +48,21 @@ jobs:
       - Hadoop 및 분산 처리 기술 관련 경험 우대
     link: https://ridi.typeform.com/to/houRxO
 
+  - title: 시스템 엔지니어
+    description:
+      - 리디북스 서비스 인프라 관리
+      - 사내 네트워크 관리
+      - 장애에 대비한 안정적인 인프라 구축 및 모니터링
+    required:
+      - 리눅스 기반 IT 인프라 관리 경험 3년 이상
+      - IaaS 운영 경험 1년 이상
+      - 보안장비(WAF, VPN 등) 운영 경험 1년 이상
+    preferred:
+      - Bash, Python 등을 활용한 관리 스크립트 작성 능력
+      - ISMS, PIMS 인증 관련 업무 진행 경험
+      - 글로벌 서비스 혹은 대규모 트래픽 대응 경험
+    link: https://ridi.typeform.com/to/houRxO
+
   - title: 모바일 앱 개발자
     description:
       - 리디북스 서비스 개발
