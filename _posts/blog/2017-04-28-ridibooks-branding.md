@@ -36,7 +36,7 @@ published: true
 
 이렇게 리뉴얼된 로고는 애플리케이션, 웹사이트, 각종 서식류, 현판에 이르기까지 로고가 쓰인 모든 매체에 순차적으로 적용되었습니다. (서식류는 이후 리디주식회사의 로고로 대체되었습니다.)
 
-![리디북스 앱 아이콘](/img/blog/2017-04-28/ridibooks-app-icon.png){: data-action="zoom" }
+![리디북스 앱 아이콘](/img/blog/2017-04-28/ridibooks-app-icon.png){: data-action="zoom"  class="mini-img"}
 ![리디북스 스테이셔너리](/img/blog/2017-04-28/ridibooks-stationery.jpg){: data-action="zoom" }
 ![리디북스 현판](/img/blog/2017-04-28/ridibooks-sign.jpg){: data-action="zoom" }
 
@@ -69,7 +69,7 @@ published: true
 
 또, 앞선 시도에서 한 번에 완벽한 시스템을 만들기란 불가능하다는 것을 깨달았습니다. 그렇다면 비용이 많이 들지 않는 선에서 이것저것 많이 던져보고, 직원들의 반응을 살피고, 반응이 괜찮은 것을 확장해본다면 결국 좋은 결과로 이어지리라 생각했습니다. 어라, 이거 어디서 많이 들어본 건데? 하신다면 스타트업에 관심이 많은 분일 겁니다. 바로 Lean Startup Process. 
 
-![Lean Startup Process](/img/blog/2017-04-28/lean-startup.png){: data-action="zoom" }
+![Lean Startup Process](/img/blog/2017-04-28/lean-startup.png){: data-action="zoom" class="mini-img" }
 <figcaption>Lean Startup Process</figcaption>
 
 
@@ -82,7 +82,7 @@ published: true
 
 린 방법론을 적용한 브랜딩이니 **Lean Branding - 린 브랜딩**이라고 이름 붙였습니다. 찾아보니 이미 이를 다루고 있는 책 <Lean Branding>도 있었습니다. 이 책에서 주장하는 것은 Story, Symbols, Strategy 세 가지 축에서 린 방법론을 적용하는 것입니다.
 
-![Lean Branding](/img/blog/2017-04-28/lean-branding.png){: data-action="zoom" }
+![Lean Branding](/img/blog/2017-04-28/lean-branding.png){: data-action="zoom" class="mini-img" }
 <figcaption>Lean Branding Cycle (출처: leanbranding.com)</figcaption>
 
 
