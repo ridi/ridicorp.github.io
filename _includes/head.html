@@ -1,65 +1,63 @@
 <head itemscope itemtype="http://schema.org/WebSite">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
-    <meta name="ROBOTS" content="ALL"/>
-    <meta name="description" content="리디북스 서비스 제공 기업. 회사 소개 및 채용정보를 제공합니다."/>
-    <meta name="keywords" content="리디북스 RidiBooks 리디샵 RidiShop 리디 리디주식회사 ridicorp ridi"/>
-    <meta name="format-detection" content="telephone=no">
-    <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% endif %}" />
-    <meta property="og:description" content="{% if page.description %}{{ page.subtitle }} - {{ page.description }}{% endif %}" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+  <meta name="ROBOTS" content="ALL"/>
+  <meta name="description" content="리디북스 서비스 제공 기업. 회사 소개 및 채용정보를 제공합니다."/>
+  <meta name="keywords" content="리디북스 RidiBooks 리디샵 RidiShop 리디 리디주식회사 ridicorp ridi"/>
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% endif %}" />
+  <meta property="og:description" content="{% if page.description %}{{ page.subtitle }} - {{ page.description }}{% endif %}" />
 
-    <title itemprop="name">
-        {% if page.title == "About" %}
-        {{ site.title }}
-        {% else %}
-        {{ page.title | strip_html }} - {{ site.title }}
-        {% endif %}</title>
+  <title itemprop="name">
+    {% if page.title == "About" %}
+    {{ site.title }}
+    {% else %}
+    {{ page.title | strip_html }} - {{ site.title }}
+    {% endif %}</title>
 
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
-    
-    <!-- Icon -->
-    <link rel="shortcut icon" href="//static.ridibooks.com/books/dist/favicon/ridibooks.ico" />
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" itemprop="url">
 
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
+  <!-- Icon -->
+  <link rel="shortcut icon" href="//static.ridibooks.com/books/dist/favicon/ridibooks.ico" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ "/css/style.css?" | prepend: site.baseurl }}{{ site.time | date: '%s' }}">
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | prepend: site.baseurl }}">
 
-    <link rel="stylesheet" href="{{ "/css/custom-animation.css" | prepend: site.baseurl }}">    
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{{ "/css/style.css?" | prepend: site.baseurl }}{{ site.time | date: '%s' }}">
 
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/custom-animation.css" | prepend: site.baseurl }}">
 
-    <!-- Custom Fonts -->
-    <script src="//use.typekit.net/fhc5rmd.js"></script>
-    <script>try{Typekit.load();}catch(e){}</script>
+  <!-- Pygments Github CSS -->
+  <link rel="stylesheet" href="{{ "/css/syntax.css" | prepend: site.baseurl }}">
 
-    <!-- jQuery -->
-    <script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script>
+  <!-- Custom Fonts -->
+  <script src="//use.typekit.net/fhc5rmd.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+  <!-- jQuery -->
+  <script src="{{ "/js/jquery.min.js" | prepend: site.baseurl }}"></script>
 
-    <!-- Animate Scroll -->
-    <script src="{{ "/js/animatescroll.min.js" | prepend: site.baseurl }}"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
 
-    <!-- Unveil -->
-    <script src="{{ "/js/jquery.unveilEffects.js" | prepend: site.baseurl }}"></script>
+  <!-- Animate Scroll -->
+  <script src="{{ "/js/animatescroll.min.js" | prepend: site.baseurl }}"></script>
 
-    <!-- Image Zoom -->
-    <script src="{{ "/js/zoom.min.js" | prepend: site.baseurl }}"></script>
+  <!-- Unveil -->
+  <script src="{{ "/js/jquery.unveilEffects.js" | prepend: site.baseurl }}"></script>
 
-    <!-- Google Maps -->
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?sensor=false">
-    </script>
-    <script src="{{ "/js/maps.js" | prepend: site.baseurl }}"></script>
+  <!-- Image Zoom -->
+  <script src="{{ "/js/zoom.min.js" | prepend: site.baseurl }}"></script>
 
-    <!-- Google Analytics -->
-    <script>
+  <!-- Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script src="{{ "/js/maps.js" | prepend: site.baseurl }}"></script>
+
+  <!-- Google Analytics -->
+  <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -67,6 +65,6 @@
 
     ga('create', 'UA-10567409-3', 'auto');
     ga('send', 'pageview');
-   </script>
+  </script>
 
 </head>

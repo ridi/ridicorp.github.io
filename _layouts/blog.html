@@ -14,60 +14,60 @@ layout: default
 
 <!-- Post Header -->
 <header class="intro-header post-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-    <div class="header-container">
-        <div class="post-heading">
-            <h1>{{ page.title }}</h1>
-            {% if page.description %}
-            <h2 class="subheading">{{ page.description }}</h2>
-            {% endif %}
-            <span class="meta">by {{ author.name }}</span>
-        </div>
+  <div class="header-container">
+    <div class="post-heading">
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}
+      <h2 class="subheading">{{ page.description }}</h2>
+      {% endif %}
+      <span class="meta">by {{ author.name }}</span>
     </div>
+  </div>
 </header>
 
 <!-- Post Content -->
 <article class="post">
-    <div class="container">
-        <div class="row">
-            <div class="post-content">
-				{{ content }}
-                <div class="link-to-career">
-                    <div class="title">당신과 함께 일하고 싶습니다!</div>
-                    {% if page.type == 'engineering' %}
-                    기술적인 고민과 문제해결을<br>
-                    함께 할 개발자를 찾고 있습니다.<br>
-                    {% elsif page.type == 'design' %}
-                    저희와 함께 즐거운 독서 경험을 <br>
-                    만들어 갈 훌륭한 디자이너를 모시고 있습니다.<br>
-                    {% endif %}
-                    자세한 내용은 <a href="https://www.ridicorp.com/career/">채용공고</a>를 확인해주세요!
-                </div>
-            </div>
-            <footer class="post-footer">
-                <section class="share">
-                    <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-                    {% for social in site.social %}
-                    {% if social.share_url != null %}
-                    <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{page.title | cgi_escape}}{{ social.share_link }}{{site.url}}{{page.id}}"
-                       onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-                        <i class="fa fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
-                    </a>
-                    {% endif %}
-                    {% endfor %}
-                </section>
-                <div class="post-meta">
-                    <div class="profile-img">
-                        <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="">
-                    </div>
-                    <div class="author">{{ author.name }}</div>
-                    <div class="author-desc">{{ author.profile-text }}</div>
-                </div>
-            </footer>
+  <div class="container">
+    <div class="row">
+      <div class="post-content">
+        {{ content }}
+        <div class="link-to-career">
+          <div class="title">당신과 함께 일하고 싶습니다!</div>
+          {% if page.type == 'engineering' %}
+          기술적인 고민과 문제해결을<br>
+          함께 할 개발자를 찾고 있습니다.<br>
+          {% elsif page.type == 'design' %}
+          저희와 함께 즐거운 독서 경험을 <br>
+          만들어 갈 훌륭한 디자이너를 모시고 있습니다.<br>
+          {% endif %}
+          자세한 내용은 <a href="https://www.ridicorp.com/career/">채용공고</a>를 확인해주세요!
         </div>
-        <div class="button-area">
-            <a href="{{ site.baseurl }}/blog" class="back"><i class="icon-direct-left"></i> 목록으로</a>
+      </div>
+      <footer class="post-footer">
+        <section class="share">
+          <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+          {% for social in site.social %}
+          {% if social.share_url != null %}
+          <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{page.title | cgi_escape}}{{ social.share_link }}{{site.url}}{{page.id}}"
+             onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
+            <i class="fa fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
+          </a>
+          {% endif %}
+          {% endfor %}
+        </section>
+        <div class="post-meta">
+          <div class="profile-img">
+            <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="">
+          </div>
+          <div class="author">{{ author.name }}</div>
+          <div class="author-desc">{{ author.profile-text }}</div>
         </div>
+      </footer>
     </div>
+    <div class="button-area">
+      <a href="{{ site.baseurl }}/blog" class="back"><i class="icon-direct-left"></i> 목록으로</a>
+    </div>
+  </div>
 </article>
 
 <hr>
