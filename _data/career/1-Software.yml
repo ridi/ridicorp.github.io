@@ -50,6 +50,7 @@ jobs:
     link: https://ridi.typeform.com/to/houRxO
 
   - title: 시스템 엔지니어
+    opened: false
     description:
       - 리디북스 서비스 인프라 관리
       - 사내 네트워크 관리
