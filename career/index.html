@@ -15,9 +15,8 @@ fb-img: "img/fb-img-ridicorp.png"
 
       <a href="#" class="now-hiring">채용중인 분야 <i class="icon-direct-down"></i></a>
       <br>
-      {% for career_hash in site.data.career %} {% assign career = career_hash[1] %}
-      <span class="hiring">{{ career.department }}</span>
-      {% endfor %}
+
+      <!-- 채용공고 퀵링크 위치 -->
     </div>
   </div>
 
@@ -169,34 +168,7 @@ fb-img: "img/fb-img-ridicorp.png"
     <h4>MUST-USE를 함께 만들어 갈 당신을 기다립니다.</h4>
   </div>
   <div class="jobs">
-    {% for career_hash in site.data.career %} {% assign career = career_hash[1] %}
-    <h5>{{ career.department }}</h5>
-    {% for job in career.jobs %}
-    {% if job.opened == false %} {% continue %} {% endif %}
-    <div class="job-item">
-      <input type="checkbox" checked>
-      <div class="job-title">
-        {{ job.title }}
-        <i class="icon-arrow-down-1"></i>
-      </div>
-      <div class="job-desc">
-        <strong>주요업무</strong>
-        {% for desc in job.description %} <p>{{ desc }}</p> {% endfor %}
-        <strong>자격요건</strong>
-        {% for req in job.required %} <p>{{ req }}</p> {% endfor %}
-        <strong>우대사항</strong>
-        {% for treat in job.preferred %} <p>{{ treat }}</p> {% endfor %}
-        {% for etc in job.etc %} {{ etc }} {% endfor %}
-        <div class="button-area">
-          <a class="typeform-share apply" href="{{ job.link }}" data-mode="1" target="_blank">지원하기
-            <i class="icon-direct-right"></i></a>
-          <div class="clear"></div>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-    {% endfor %}
-    <!-- 채용공고 리스트 끝 -->
+    <!-- 채용공고 정보 위치 -->
 
     <div class="apply-instruction">
       <h4>모집 상세</h4>
@@ -264,14 +236,46 @@ fb-img: "img/fb-img-ridicorp.png"
   $(function () {
 
     // 채용공고로 바로 이동
-    $('.now-hiring').click(function () {
-      $('.job-openings-area').animatescroll({scrollSpeed: 1000, easing: 'easeInOutQuad'});
+    $('.now-hiring').click(function(){
+      $('.job-openings-area').animatescroll({scrollSpeed:1000, easing:'easeInOutQuad'});
     });
 
-    // 채용공고 아코디언 토글
-    $('.job-item').click(function () {
-      var iconArrow = $(this).find('.icon-arrow-down-1');
-      iconArrow.toggleClass('icon-arrow-up-1');
+    //SmartRecruiters
+    $.getJSON('https://api.smartrecruiters.com/v1/companies/RIDICorp/postings', null, function (data) {
+      var postings = [];
+      data.content.forEach(function (job) {
+        if (!postings[job.department.id]) {
+          postings[job.department.id] = {
+            label: job.department.label,
+            jobs: []
+          };
+        }
+
+        postings[job.department.id].jobs.push({
+          title:job.name,
+          link:'https://jobs.smartrecruiters.com/RIDICorp/'+job.id,
+        });
+      });
+
+      var jobs = '';
+      var quickLinks = '';
+
+      for (var departmentId in postings) {
+        var department = postings[departmentId];
+        jobs += '<h5>'+department.label+'</h5>';
+        quickLinks += '<span class="hiring">'+department.label+'</span>';
+
+        department.jobs.forEach(function (job) {
+          jobs += '<div class="job-item">\
+                    <div class="job-title">\
+                      <a href="'+job.link+'">'+job.title+'</a>\
+                    </div>\
+                  </div>';
+        });
+      }
+
+      $('.job-quick-links .wrapper').append(quickLinks);
+      $('.jobs').prepend(jobs);
     });
 
   });
