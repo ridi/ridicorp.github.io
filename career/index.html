@@ -267,9 +267,10 @@ fb-img: "img/fb-img-ridicorp.png"
 
         department.jobs.forEach(function (job) {
           jobs += '<div class="job-item">\
-                    <div class="job-title">\
-                      <a href="'+job.link+'">'+job.title+'</a>\
-                    </div>\
+                    <a href="'+job.link+'" class="job-title">\
+                      '+job.title+'\
+                      <i class="icon-arrow-right-1"></i>\
+                    </a>\
                   </div>';
         });
       }
