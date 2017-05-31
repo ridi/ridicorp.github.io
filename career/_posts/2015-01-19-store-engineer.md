@@ -8,7 +8,7 @@ fb-img: "img/fb-store.jpg"
 date: 2015-01-19 01:46:41
 permalink: /career/store-engineer
 footer: apply
-link: https://ridi.typeform.com/to/houRxO
+link: https://jobs.smartrecruiters.com/RIDICorp/116476670
 ---
 
 

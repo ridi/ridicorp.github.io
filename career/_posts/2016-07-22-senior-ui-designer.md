@@ -8,7 +8,7 @@ fb-img: "img/fb-senior-ui-designer.jpg"
 date: 2015-11-19 11:46:41
 permalink: /career/senior-ui-designer
 footer: apply
-link: https://ridi.typeform.com/to/G1L0xH
+link: https://jobs.smartrecruiters.com/RIDICorp/743999650632551
 ---
 
 
