@@ -265,7 +265,7 @@ fb-img: "img/fb-img-ridicorp.png"
     }
 
     function refreshArticleInfo() {
-      $.getJSON('http://intra.ridi.com/press/list?callback=?&page=' + (cur_page + 1) + '&items_per_page=' + ARTICLES_PER_PAGE, null, function (data) {
+      $.getJSON('https://intra.ridi.com/press/list?callback=?&page=' + (cur_page + 1) + '&items_per_page=' + ARTICLES_PER_PAGE, null, function (data) {
         setArticles(data)
       });
     }
