@@ -7,7 +7,7 @@ header-img: "img/career-bg-14.jpg"
 fb-img: "img/fb-data-team.jpg"
 date: 2017-03-05
 permalink: /career/data-engineer
-link: https://ridi.typeform.com/to/houRxO
+link: https://jobs.smartrecruiters.com/RIDICorp/116476653
 ---
 
 “너는 회사에서 무슨 일을 해?” 직장인들, 특히 취직한 지 얼마 안 된 분들이 종종 듣는 질문입니다. 오랜만에 만난 친구들과의 술자리에서, 또는 명절 때 친척들이 모인 자리에서, 아니면 소개팅 자리에서도 들을 수 있는 질문이지요. 이 쉬운 질문에 어쩐지 간단히 대답하기가 곤란한 사람들이 있는데, 주로 B2B 기업에 다니는 분들입니다. B2C 기업에서 하는 일들은 일반 소비자와 맞닿아 있기 때문에 대부분의 사람들이 업무의 종류와 필요성을 쉽게 상상할 수 있습니다. 하지만 B2B 기업에서 하는 일은 설명을 해 줘도 막상 듣는 사람은 그 일이 왜 필요한지, 어떤 식으로 이루어지는지 잘 그려지지 않을 수 있죠.
