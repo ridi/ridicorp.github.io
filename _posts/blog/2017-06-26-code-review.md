@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "코드 리뷰어 활동 후기"
 description: "코드 리뷰를 진행하면서 고민했던 점들을 공유합니다"
-header-img: "img/career-bg-9.jpg"
+header-img: "img/blog/bg-8.jpg"
 date: 2017-06-26
 author: kgwangrae
 type: engineering
