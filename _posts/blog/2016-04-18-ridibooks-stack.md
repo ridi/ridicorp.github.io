@@ -1,12 +1,11 @@
 ---
 layout: blog
-category: blog
 title: "리디북스 서버 스택 소개"
 description: "리디북스의 서버 스택을 간단히 소개합니다."
 header-img: "img/blog/bg-2.jpg"
 date: 2016-04-18
 author: hc.kim
-type: engineering
+categories: engineering
 published: true
 ---
 

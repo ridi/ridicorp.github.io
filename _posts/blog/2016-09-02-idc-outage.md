@@ -1,12 +1,11 @@
 ---
 layout: blog
-category: blog
 title: "리디북스 서비스 장애 복구 후기"
 description: "데이터센터의 장애를 통해 겪은 서비스중단 및 복구 후기"
 header-img: "img/blog/bg-11.jpg"
 date: 2016-09-02
 author: namenu
-type: engineering
+categories: engineering
 published: true
 ---
 
