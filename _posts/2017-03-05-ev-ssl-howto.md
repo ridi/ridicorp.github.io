@@ -5,7 +5,7 @@ description: "녹색 주소창을 위해 EV SSL 인증서를 발급받은 과정
 header-img: "img/blog/bg-11.jpg"
 date: 2017-03-05
 author: namenu
-categories: engineering
+category: engineering
 published: true
 ---
 

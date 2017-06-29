@@ -5,7 +5,7 @@ description: "스타트업도 다 같은 스타트업이 아닙니다."
 header-img: "img/blog/bg-8.jpg"
 date: 2016-04-01
 author: blu
-categories: engineering
+category: engineering
 published: false
 ---
 

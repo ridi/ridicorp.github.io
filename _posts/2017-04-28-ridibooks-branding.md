@@ -6,7 +6,7 @@ header-img: "img/blog/bg-4.jpg"
 fb-img: "img/blog/2017-04-28/fb-img.jpg"
 date: 2017-04-28
 author: simple
-categories: design
+category: design
 published: true
 ---
 

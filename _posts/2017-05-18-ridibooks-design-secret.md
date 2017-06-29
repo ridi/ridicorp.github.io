@@ -6,7 +6,7 @@ header-img: "img/blog/2017-05-18/blog-bg.jpg"
 fb-img: "img/blog/2017-05-18/fb-img.jpg"
 date: 2017-05-18
 author: yeonju.kim
-categories: design
+category: design
 published: true
 ---
 

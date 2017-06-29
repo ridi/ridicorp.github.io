@@ -5,7 +5,7 @@ description: "Couchbase로 빈번한 쓰기 요청을 처리하기"
 header-img: "img/blog/bg-1.jpg"
 date: 2016-12-26
 author: antiline
-categories: engineering
+category: engineering
 published: true
 ---
 

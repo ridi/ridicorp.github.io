@@ -5,7 +5,7 @@ description: "네비게이션 디자인 과정과 작업 후기"
 header-img: "img/blog/bg-2-new.jpg"
 date: 2016-11-21
 author: jsung
-categories: design
+category: design
 published: true
 ---
 
@@ -52,7 +52,7 @@ published: true
 
 #### 2. 탭 디자인이 카테고리별로 다름
 
-![그림 3) 카테고리별 탭 디자인](/img/blog/2016-10-13/categories_design_bg_2.png){: data-action="zoom" }
+![그림 3) 카테고리별 탭 디자인](/img/blog/2016-10-13/category_design_bg_2.png){: data-action="zoom" }
 <figcaption>그림 3) 카테고리별 탭 디자인</figcaption>
 
 

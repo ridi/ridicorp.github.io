@@ -25,15 +25,13 @@ title: "Blog"
 </header>
 
 <div class="site-content">
-
   <ol class="blog-post-list">
     <!-- This loops through the paginated posts -->
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     <li>
       <a href="{{ post.url }}" class="list-item">
         <div class="post-content">
-          {% assign category = post.categories[0] %}
-          <div class="type type-{{ category }}">{{ category }}</div>
+          <div class="type type-{{ post.category }}">{{ post.category }}</div>
           <div class="title">{{ post.title }}</div>
           <div class="desc">{{ post.description }}</div>
         </div>
@@ -47,5 +45,20 @@ title: "Blog"
     </li>
     {% endfor %}
   </ol>
+</div>
 
+
+<!-- Pagination links -->
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+  {% else %}
+    <span class="previous">Previous</span>
+  {% endif %}
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+  {% else %}
+    <span class="next ">Next</span>
+  {% endif %}
 </div>

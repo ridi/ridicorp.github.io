@@ -5,7 +5,7 @@ description: "리디북스에서는 모바일 이벤트를 어떻게 디자인�
 header-img: "img/blog/2016-11-28/article-bg.jpg"
 date: 2017-01-15
 author: sooyoung
-categories: design
+category: design
 published: true
 ---
 
