@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "스타트업을 위한 리디북스의 사내 인프라 구축경험기"
 description: "스타트업도 다 같은 스타트업이 아닙니다."
-header-img: "img/career-bg-8.jpg"
+header-img: "img/blog/bg-8.jpg"
 date: 2016-04-01
 author: blu
 type: engineering

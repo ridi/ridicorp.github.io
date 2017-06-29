@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "회사 안에서 브랜딩 시작하기"
 description: "Lean Branding을 이용해서 한걸음씩 전진하기"
-header-img: "img/blog-bg-4.jpg"
+header-img: "img/blog/bg-4.jpg"
 fb-img: "img/blog/2017-04-28/fb-img.jpg"
 date: 2017-04-28
 author: simple

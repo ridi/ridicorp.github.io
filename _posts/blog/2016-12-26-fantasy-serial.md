@@ -3,7 +3,7 @@ layout: blog
 category: blog
 title: "리디북스 웹뷰어의 이어보기를 개발하며"
 description: "Couchbase로 빈번한 쓰기 요청을 처리하기"
-header-img: "img/blog-bg-1.jpg"
+header-img: "img/blog/bg-1.jpg"
 date: 2016-12-26
 author: antiline
 type: engineering

@@ -3,7 +3,7 @@ layout: career
 title: "Store MD - Romance"
 subtitle: "리디북스 로맨스팀 서점 운영 매니저"
 description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
-header-img: "img/career-bg-6.jpg"
+header-img: "img/career/bg-6.jpg"
 fb-img: "img/fb-store-md-romance.jpg"
 date: 2015-04-02 14:53:00
 ---
