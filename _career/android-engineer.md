@@ -6,7 +6,6 @@ description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고�
 header-img: "img/career/bg-5.jpg"
 fb-img: "img/fb-android.jpg"
 date: 2015-01-19 01:46:41
-footer: apply
 ---
 
 ### 리디북스 앱팀은?

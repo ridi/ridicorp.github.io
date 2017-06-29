@@ -5,7 +5,6 @@ subtitle: "리디북스 플랫폼팀"
 header-img: "img/career/bg-4.jpg"
 fb-img: "img/fb-platform.jpg"
 date: 2015-01-19 01:46:41
-footer: apply
 ---
 
 ### 리디북스 플랫폼팀은?

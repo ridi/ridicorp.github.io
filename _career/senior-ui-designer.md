@@ -6,8 +6,6 @@ description: "리디북스를 이끌어 나갈 최고의 UI디자이너를 찾�
 header-img: "img/career/bg-4.jpg"
 fb-img: "img/fb-senior-ui-designer.jpg"
 date: 2015-11-19 11:46:41
-permalink: /career/senior-ui-designer
-footer: apply
 link: https://jobs.smartrecruiters.com/RIDICorp/743999650632551
 ---
 

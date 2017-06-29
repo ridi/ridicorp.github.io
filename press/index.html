@@ -152,7 +152,7 @@ fb-img: "img/fb-img-ridicorp.png"
     var ARTICLES_PER_PAGE = 8;
 
     var posts = [
-      {% for post in site.categories.press %}
+      {% for post in site.press %}
       {
         url: '{{ post.permalink }}',
         date: '{{ post.date | date: "%Y. %m. %d." }}',
@@ -266,7 +266,7 @@ fb-img: "img/fb-img-ridicorp.png"
 
     function refreshArticleInfo() {
       $.getJSON('https://intra.ridi.com/press/list?callback=?&page=' + (cur_page + 1) + '&items_per_page=' + ARTICLES_PER_PAGE, null, function (data) {
-        setArticles(data)
+        setArticles(data);
       });
     }
 

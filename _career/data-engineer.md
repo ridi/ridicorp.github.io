@@ -6,7 +6,6 @@ description: "리디북스 데이터팀이 하는 일을 소개합니다"
 header-img: "img/career/bg-14.jpg"
 fb-img: "img/fb-data-team.jpg"
 date: 2017-03-05
-permalink: /career/data-engineer
 link: https://jobs.smartrecruiters.com/RIDICorp/116476653
 ---
 
