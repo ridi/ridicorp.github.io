@@ -1,13 +1,12 @@
 ---
 layout: blog
-category: blog
 title: "리디북스 이벤트 디자인에 숨겨진 비밀"
 description: "간단하지만 요긴하게 써먹을 수 있는 방법"
 header-img: "img/blog/2017-05-18/blog-bg.jpg"
 fb-img: "img/blog/2017-05-18/fb-img.jpg"
 date: 2017-05-18
 author: yeonju.kim
-type: design
+categories: design
 published: true
 ---
 

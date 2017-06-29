@@ -1,12 +1,11 @@
 ---
 layout: blog
-category: blog
 title: "EV SSL 인증서 발급 과정에서 알게된 것들"
 description: "녹색 주소창을 위해 EV SSL 인증서를 발급받은 과정을 소개합니다"
 header-img: "img/blog/bg-11.jpg"
 date: 2017-03-05
 author: namenu
-type: engineering
+categories: engineering
 published: true
 ---
 

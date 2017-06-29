@@ -28,15 +28,12 @@ title: "Blog"
 
   <ol class="blog-post-list">
     <!-- This loops through the paginated posts -->
-    {% for post in site.categories.blog %}
+    {% for post in site.posts %}
     <li>
       <a href="{{ post.url }}" class="list-item">
         <div class="post-content">
-          {% if post.type == 'design' %}
-          <div class="type type-design">{{ post.type }}</div>
-          {% elsif post.type == 'engineering' %}
-          <div class="type type-engineering">{{ post.type }}</div>
-          {% endif %}
+          {% assign category = post.categories[0] %}
+          <div class="type type-{{ category }}">{{ category }}</div>
           <div class="title">{{ post.title }}</div>
           <div class="desc">{{ post.description }}</div>
         </div>
