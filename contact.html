@@ -50,6 +50,9 @@ fb-img: "img/fb-img-ridicorp.png"
     <div class="clear"></div>
 </div>
 
+<!-- Google Maps -->
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="{{ "/js/maps.js" | prepend: site.baseurl }}"></script>
 <script>
     $(function(){
         $(".view-map").click(function(){
@@ -61,8 +64,10 @@ fb-img: "img/fb-img-ridicorp.png"
            $("#map_controls").fadeOut();
            $("header, .how-to-contact, nav, .contact-fader").fadeIn();
             return false; 
-        })
-    })();
+        });
+
+        initialize();
+    });
 </script>
 
 
