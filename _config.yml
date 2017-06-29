@@ -13,11 +13,11 @@ markdown: kramdown
 highlighter: rouge
 permalink: pretty
 
-gems:
-  - jekyll-paginate
-
-paginate: 5
-paginate_path: "/blog/page:num/"
+collections:
+  career:
+    output: true
+  press:
+    output: true
 
 google_analytics:
   ua: "UA-10567409-3"
