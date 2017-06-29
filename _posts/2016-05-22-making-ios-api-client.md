@@ -5,7 +5,7 @@ description: "API 통신 관련 중복 코드를 최소화하면서"
 header-img: "img/career/bg-5.jpg"
 date: 2016-05-22
 author: kering
-categories: engineering
+category: engineering
 published: true
 ---
 

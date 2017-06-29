@@ -5,7 +5,7 @@ description: "데이터센터의 장애를 통해 겪은 서비스중단 및 복
 header-img: "img/blog/bg-11.jpg"
 date: 2016-09-02
 author: namenu
-categories: engineering
+category: engineering
 published: true
 ---
 

@@ -5,7 +5,7 @@ description: "Flume 과 CDH 를 사용해서 끊김없이 로그 수집하기"
 header-img: "img/blog/bg-1.jpg"
 date: 2016-04-19
 author: chanu.lee
-categories: engineering
+category: engineering
 published: true
 ---
 
