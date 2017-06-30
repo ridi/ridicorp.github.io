@@ -24,7 +24,7 @@ collections:
 # pagination for blog posts
 gems:
   - jekyll-paginate
-paginate: 7
+paginate: 8
 paginate_path: "/blog/page:num/"
 
 exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md", "config.ru", "Gemfile", "Gemfile.lock"]
