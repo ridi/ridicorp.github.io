@@ -25,7 +25,7 @@ title: "Blog"
 </header>
 
 <div class="site-content">
-  <ol class="blog-post-list">
+  <ol class="blog-post-list" id="Posts">
     <!-- This loops through the paginated posts -->
     {% for post in paginator.posts %}
     <li>
@@ -49,16 +49,14 @@ title: "Blog"
 
 
 <!-- Pagination links -->
-<div class="pagination">
+<div class="pager">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    <a href="{{ paginator.previous_page_path }}#Posts" class="page-button"><i class="icon-direct-left"></i> 이전</div>
   {% else %}
-    <span class="previous">Previous</span>
   {% endif %}
-  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+  
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    <a href="{{ paginator.next_page_path }}#Posts" class="page-button">다음 <i class="icon-direct-right"></i></div>
   {% else %}
-    <span class="next ">Next</span>
   {% endif %}
 </div>

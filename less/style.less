@@ -2291,13 +2291,6 @@ article.post {
 			}
 		}
 	}
-	.pager {
-		.page-button {
-			margin-right: 10px;
-			cursor: pointer;
-			.button-blue-stroke();
-		}
-	}
 }
 .ridi-insights {
 	h3 {
@@ -2544,7 +2537,6 @@ article.press-article {
 		display: inline-block;
 		vertical-align: top;
 		position: relative;
-		border-bottom: 1px #eee solid;
 		@media @queries_sm {
 			display: block;
 		}
@@ -2556,6 +2548,7 @@ article.press-article {
 			z-index: 1;
 			transition: all .1s;
 			outline: none;
+			border-bottom: 1px #eee solid;
 			@media @queries_sm {
 				width: 90%;
 				margin: 5px auto;
@@ -2649,11 +2642,22 @@ article.press-article {
 		&:hover a,
 		&:focus a {
 			-webkit-transform: translateY(-1px);
+			border-color: #ccc;
 		}
 		&:hover figure,
 		&:focus figure {
 			border: 1px solid #ddd;
 			-webkit-transform: scale(1.05);
 		}
+	}
+}
+
+// Pager
+.pager {
+	padding-top: 20px;
+	.page-button {
+		margin-right: 10px;
+		cursor: pointer;
+		.button-blue-stroke();
 	}
 }
