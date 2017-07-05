@@ -17,7 +17,7 @@ published: true
 
 # 좋은 도구에 대한 고민
 
-git을 사용하면서 [GitHub Flow](https://guides.github.com/introduction/flow) 등의 전략에 따라 branch를 적절히 관리한다면 어떤 방법으로든 코드 리뷰를 원활하게 진행할 수 있는 토대가 갖추어진 셈이라고 생각합니다.
+Git을 사용하면서 [GitHub Flow](https://guides.github.com/introduction/flow) 등의 전략에 따라 브랜치를 적절히 관리한다면 어떤 방법으로든 코드 리뷰를 원활하게 진행할 수 있는 토대가 갖추어진 셈이라고 생각합니다.
 
 이와 더불어 좋은 도구를 사용하면 더 편리하게 리뷰를 진행할 수 있었는데요, 아래와 같은 특징을 가지고 있는 도구가 편리하게 느껴졌던 것 같습니다.
 
