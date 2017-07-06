@@ -152,7 +152,8 @@ fb-img: "img/fb-img-ridicorp.png"
     var ARTICLES_PER_PAGE = 8;
 
     var posts = [
-      {% for post in site.press %}
+      {% assign presses = site.press | sort: 'date' | reverse %}
+      {% for post in presses %}
       {
         url: '{{ post.permalink }}',
         date: '{{ post.date | date: "%Y. %m. %d." }}',
