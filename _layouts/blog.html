@@ -10,6 +10,23 @@ layout: default
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
+
 {% assign author = site.data.authors[page.author] %}
 
 <!-- Post Header -->
@@ -45,15 +62,14 @@ layout: default
       </div>
       <footer class="post-footer">
         <section class="share">
-          <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
-          {% for social in site.social %}
-          {% if social.share_url != null %}
-          <a class="icon-{{ social.icon }}" href="{{ social.share_url }}{{ social.share_title }}{{page.title | cgi_escape}}{{ social.share_link }}{{site.url}}{{page.id}}"
-             onclick="window.open(this.href, '{{ social.icon }}-share', 'width=550,height=255');return false;">
-            <i class="fa fa-{{ social.icon }}"></i><span class="hidden">{{ social.icon }}</span>
-          </a>
-          {% endif %}
-          {% endfor %}
+          <div class="fb-share-button"
+               data-href="https://www.ridicorp.com/blog/2017/04/28/ridibooks-branding/"
+               data-layout="button">
+            <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">공유하기</a>
+          </div>
+          <a class="twitter-share-button"
+             href="https://twitter.com/intent/tweet">
+            Tweet</a>
         </section>
         <div class="post-meta">
           <div class="profile-img">
