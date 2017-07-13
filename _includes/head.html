@@ -8,7 +8,7 @@
   <meta name="keywords" content="리디 ridi 리디주식회사 ridicorp 리디북스 ridibooks 리디스토리 ridistory"/>
   <meta name="format-detection" content="telephone=no">
   <meta property="og:title" content="{{ page.title | strip_html }}">
-  <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url | replace:'https','http' }}" />
+  <meta property="og:url" content="http://www.ridicorp.com{{ page.url | replace:'index.html','' | prepend: site.baseurl }}" />
   <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% endif %}" />
   <meta property="og:description" content="{% if page.description %}{{ page.subtitle }} - {{ page.description }}{% endif %}" />
 
