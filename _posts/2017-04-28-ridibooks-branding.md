@@ -2,8 +2,8 @@
 layout: blog
 title: "회사 안에서 브랜딩 시작하기"
 description: "Lean Branding을 이용해서 한걸음씩 전진하기"
-header-img: "img/blog/bg-4.jpg"
-fb-img: "img/blog/2017-04-28/fb-img.jpg"
+header-img: "blog/img/bg-4.jpg"
+fb-img: "blog/img/2017-04-28/fb-img.jpg"
 date: 2017-04-28
 author: simple
 category: design
@@ -16,7 +16,7 @@ published: true
 
 ## 브랜딩, 어디서부터 시작하지?
 
-![Standard Brand Framework](/img/blog/2017-04-28/standard-brand-framework.png){: data-action="zoom" }
+![Standard Brand Framework](/blog/img/2017-04-28/standard-brand-framework.png){: data-action="zoom" }
 
 <br>
 
@@ -27,7 +27,7 @@ published: true
 
 ## 리디북스 비주얼 아이덴티티 리뉴얼
 
-![리디북스 로고 리뉴얼](/img/blog/2017-04-28/ridibooks-logo-before-after.jpg){: data-action="zoom" }
+![리디북스 로고 리뉴얼](/blog/img/2017-04-28/ridibooks-logo-before-after.jpg){: data-action="zoom" }
 <figcaption>리디북스 로고 리뉴얼</figcaption>
 
 우리는 먼저 로고를 비롯한 비주얼 아이덴티티를 점검하기로 했습니다. 리디북스의 기존 로고는 투박하고 오래된 느낌이 들어서 개선이 필요했습니다. 또, 작게 쓰였을 때 글씨 안의 공간이 좁아서 뭉개져 보이고, 워드마크 아래의 책모양 밑줄이 얇아서 가독성이 떨어지는 문제가 있었습니다. 요즘 같이 작은 화면이 대세인 모바일 시대에 꼭 해결해야 할 문제였습니다.
@@ -36,9 +36,9 @@ published: true
 
 이렇게 리뉴얼된 로고는 애플리케이션, 웹사이트, 각종 서식류, 현판에 이르기까지 로고가 쓰인 모든 매체에 순차적으로 적용되었습니다. (서식류는 이후 리디주식회사의 로고로 대체되었습니다.)
 
-![리디북스 앱 아이콘](/img/blog/2017-04-28/ridibooks-app-icon.png){: data-action="zoom"  class="mini-img"}
-![리디북스 스테이셔너리](/img/blog/2017-04-28/ridibooks-stationery.jpg){: data-action="zoom" }
-![리디북스 현판](/img/blog/2017-04-28/ridibooks-sign.jpg){: data-action="zoom" }
+![리디북스 앱 아이콘](/blog/img/2017-04-28/ridibooks-app-icon.png){: data-action="zoom"  class="mini-img"}
+![리디북스 스테이셔너리](/blog/img/2017-04-28/ridibooks-stationery.jpg){: data-action="zoom" }
+![리디북스 현판](/blog/img/2017-04-28/ridibooks-sign.jpg){: data-action="zoom" }
 
 우리는 여기서 그치지 않고 다음 목표를 브랜드 이미지를 강하게 만드는 것으로 잡았습니다. 리디북스라는 단어를 들었을 때 떠오르는 것이 있으면 좋겠다고 생각했습니다. 
 
@@ -47,11 +47,11 @@ published: true
 
 브랜딩을 주제로 다룬 책을 많이 읽었습니다. 브랜드 디자인 회사의 사례도 많이 살펴보았습니다. 주로 사용되는 방법론은 다음과 같았습니다. 먼저 브랜드에서 떠오르는 단어, 새로 담았으면 하는 느낌의 단어를 골라냅니다. 그와 연결되는 그래픽 모티브를 뽑아내어 애플리케이션, 웹사이트, 노트, 명함 등 다양한 매체로 확장하는 것이었습니다. 브랜드 에셋을 재료로 하는 멋진 요리를 만드는 과정과 같다고 느껴졌습니다.
 
-![리디북스 브랜드 키워드](/img/blog/2017-04-28/ridibooks-keywords.png){: data-action="zoom" }
+![리디북스 브랜드 키워드](/blog/img/2017-04-28/ridibooks-keywords.png){: data-action="zoom" }
  
 우리도 이 방법론을 적용해 보기로 했습니다. 먼저 사내 직원 인터뷰와 외부 설문조사를 진행하여 리디북스에서 떠오르는 단어들을 골라내었습니다. 그리고 그 단어로부터 디자인 에센스를 뽑아내었습니다. 
 
-![아쉽게도 빛을 보지 못한 머그](/img/blog/2017-04-28/ridibooks-mug-first-draft.jpg){: data-action="zoom" }
+![아쉽게도 빛을 보지 못한 머그](/blog/img/2017-04-28/ridibooks-mug-first-draft.jpg){: data-action="zoom" }
 <figcaption>아쉽게도 빛을 보지 못한 머그</figcaption>
 
 실제로 이 이미지를 이용해 머그컵도 만들어 보았습니다만 직원들의 반응은 차가웠습니다. ‘리디북스답지 않다’는 반응이었죠. 다시 키워드로 돌아가서 보니 의문점이 많이 생겼습니다. '과연 스트라이프 패턴이 신뢰감을 줄까?’, ‘비비드한 컬러가 친근한 느낌을 줄까?’, ‘얼마나 많은 사람이 공감할 수 있을까?’, ‘우리의 실력이 부족한 건가?’
@@ -69,7 +69,7 @@ published: true
 
 또, 앞선 시도에서 한 번에 완벽한 시스템을 만들기란 불가능하다는 것을 깨달았습니다. 그렇다면 비용이 많이 들지 않는 선에서 이것저것 많이 던져보고, 직원들의 반응을 살피고, 반응이 괜찮은 것을 확장해본다면 결국 좋은 결과로 이어지리라 생각했습니다. 어라, 이거 어디서 많이 들어본 건데? 하신다면 스타트업에 관심이 많은 분일 겁니다. 바로 Lean Startup Process. 
 
-![Lean Startup Process](/img/blog/2017-04-28/lean-startup.png){: data-action="zoom" class="mini-img" }
+![Lean Startup Process](/blog/img/2017-04-28/lean-startup.png){: data-action="zoom" class="mini-img" }
 <figcaption>Lean Startup Process</figcaption>
 
 
@@ -82,7 +82,7 @@ published: true
 
 린 방법론을 적용한 브랜딩이니 **Lean Branding - 린 브랜딩**이라고 이름 붙였습니다. 찾아보니 이미 이를 다루고 있는 책 <Lean Branding>도 있었습니다. 이 책에서 주장하는 것은 Story, Symbols, Strategy 세 가지 축에서 린 방법론을 적용하는 것입니다.
 
-![Lean Branding](/img/blog/2017-04-28/lean-branding.png){: data-action="zoom" class="mini-img" }
+![Lean Branding](/blog/img/2017-04-28/lean-branding.png){: data-action="zoom" class="mini-img" }
 <figcaption>Lean Branding Cycle (출처: leanbranding.com)</figcaption>
 
 
@@ -97,9 +97,9 @@ published: true
 TOC 중에서도 칭찬을 낭독할 때면 개발자들의 표정이 한껏 밝아지는 모습을 볼 수 있습니다. 우리가 하는 일의 가치를 재발견하는 순간입니다. 칭찬이야말로 리디북스의 소중한 자산임을 깨달았습니다. 이것을 스티커, 디지털 사이니지, 배경화면 등으로 만들어 배포해보았습니다. 직원들의 반응이 아주 좋았습니다. 하긴, 진심 어린 칭찬을 듣고 기분 좋지 않은 사람이 있을까요?
 
 
-![노트북에 붙어있는 칭찬 스티커](/img/blog/2017-04-28/toc-on-macbook.jpg){: data-action="zoom" }
+![노트북에 붙어있는 칭찬 스티커](/blog/img/2017-04-28/toc-on-macbook.jpg){: data-action="zoom" }
 
-![디지털 사이니지에 떠 있는 칭찬글](/img/blog/2017-04-28/toc-on-digital-signage.jpg){: data-action="zoom" }
+![디지털 사이니지에 떠 있는 칭찬글](/blog/img/2017-04-28/toc-on-digital-signage.jpg){: data-action="zoom" }
 
 
 측정한 지표는 ‘노트북에 얼마나 스티커를 붙이고 다니는지’, 그리고 ‘디지털 사이니지 앞에 서서 얼마나 관심을 보이는지’였습니다. 개발팀에서는 스티커를 노트북에 붙이는 분들은 그다지 많지 않았습니다. MD 분들은 서점에 관련된 스티커를 주로 붙였습니다. 우리는 이를 통해 업무 관련성이 높은 제품을 전달했을 때 반응률이 높아질 것이라는 가설을 세웠습니다. 안드로이드 개발자에게 ‘안드로이드 리디북스 뷰어 짱이예요’라는 스티커를 주면 좋아하게 마련이라는 생각이었습니다.
@@ -109,10 +109,10 @@ TOC 중에서도 칭찬을 낭독할 때면 개발자들의 표정이 한껏 밝
 
 그래서 두번째 시도를 해보았습니다. 개발팀에는 Sentinel이라 불리는 소수의 DevOps분들이 있습니다. 개발과 운영을 모두 책임지면서 고생 많은 능력자분들입니다. 중세 기사의 메타포를 활용하여 멋진 스티커를 만들었습니다.
 
-![Sentinel Sticker](/img/blog/2017-04-28/sentinel-sticker.png){: data-action="zoom" }
+![Sentinel Sticker](/blog/img/2017-04-28/sentinel-sticker.png){: data-action="zoom" }
 
 
-![Sentinel Sticker](/img/blog/2017-04-28/sentinel-sticker-on-macbook.png){: data-action="zoom" }
+![Sentinel Sticker](/blog/img/2017-04-28/sentinel-sticker-on-macbook.png){: data-action="zoom" }
 
 
 예상대로 대부분의 Sentinel분들이 스티커를 부착했습니다. 이를 통해 ‘업무 관련성이 높으면 좋아한다’라는 가설을 확인했습니다. 수령자의 숫자가 적어서 더 소중한 느낌이 들었던 이유도 있었던 것 같습니다. 그래서 다음 프로젝트도 업무 관련성에 초점을 두고 한 번 더 제작을 해보기로 했습니다.
@@ -122,17 +122,17 @@ TOC 중에서도 칭찬을 낭독할 때면 개발자들의 표정이 한껏 밝
 
 리디북스에는 ‘개밥 먹기’라는 문화가 있습니다. 개밥을 먹어봐야 개의 마음을 이해할 수 있듯이, 우리가 만든 제품을 직접 사용해보면서 불편한 점을 느끼고, 이를 개선하여 퀄리티를 끌어 올리는 것을 의미합니다. 이것은 리디만의 고유한 문화는 아니지만, 제대로 이를 실천하고 있는 몇 안 되는 회사라고 생각합니다. 우리 기업부설 연구소 앞에는 개밥그릇 모양의 현판이 붙어있기도 합니다. 
 
-![리디북스 개발팀 현판](/img/blog/2017-04-28/ridi-lab.jpg){: data-action="zoom" }
+![리디북스 개발팀 현판](/blog/img/2017-04-28/ridi-lab.jpg){: data-action="zoom" }
 
 
 우리는 개밥그릇을 모티브로 하여, 개발자들이 좋아할 만한 다양한 스티커를 만들어 보았습니다. 404 에러가 떠서 자리에 없는 개밥그릇, 버그가 생겨서 파리가 주변에 가득한 개밥그릇 등이었습니다. 또 같은 컨셉으로 PC, 스마트폰 배경화면도 만들어서 배포했습니다. 측정한 지표는 마찬가지로 ‘얼마나 스티커를 많이 붙이는가?’, ‘얼마나 배경화면으로 많이 사용하는가?'였습니다. 
 
 
-![개밥먹기 스티커](/img/blog/2017-04-28/dogfood-sticker.png){: data-action="zoom" }
+![개밥먹기 스티커](/blog/img/2017-04-28/dogfood-sticker.png){: data-action="zoom" }
 <figcaption>다양한 개밥먹기 스티커</figcaption>
 
 
-![개밥먹기 스티커로 무장된 맥북](/img/blog/2017-04-28/dogfood-sticker-on-macbook.jpg){: data-action="zoom" }
+![개밥먹기 스티커로 무장된 맥북](/blog/img/2017-04-28/dogfood-sticker-on-macbook.jpg){: data-action="zoom" }
 <figcaption>개밥먹기 스티커로 무장한 맥북</figcaption>
 
 아무래도 Sentinel 스티커에 비해서는 업무 연관성이 낮았지만, 재미있는 컨셉과 심플한 디자인 덕분에 꽤 많은 분들의 노트북을 장식했습니다. 또, 스티커가 아닌 뱃지의 형태로 지급했으면 좋겠다는 의견이 있어서 제작을 논의해보고 있는 중입니다.

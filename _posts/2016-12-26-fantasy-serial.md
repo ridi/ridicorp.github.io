@@ -2,7 +2,7 @@
 layout: blog
 title: "리디북스 웹뷰어의 이어보기를 개발하며"
 description: "Couchbase로 빈번한 쓰기 요청을 처리하기"
-header-img: "img/blog/bg-1.jpg"
+header-img: "blog/img/bg-1.jpg"
 date: 2016-12-26
 author: antiline
 category: engineering
@@ -18,7 +18,7 @@ published: true
 혹은 잠시 읽기를 중단했다가 다시 돌아왔을 때, 어디까지 보고 있었는지를 빠르게 알려준다면 호흡을 이어서 작품에 더욱 몰입할 수 있을 것입니다.
 
 
-![이어보기](/img/blog/2016-12-26/serial-desc.png){: data-action="zoom" }
+![이어보기](/blog/img/2016-12-26/serial-desc.png){: data-action="zoom" }
 <figcaption>이어보기가 구현된 모습</figcaption>
 
 리디북스에 로그인되어 있다면, [이곳](https://ridibooks.com/library/recently-read-serial/fantasy_serial)에서 확인하실 수 있습니다.
@@ -153,7 +153,7 @@ Couchbase는 기본적으로 5,000ms마다 Index를 업데이트합니다.[2] �
 - Buckle zone : 시스템 과부하로 인해 내부 자원이 서로 경쟁상태나 적체 상태가 심해지기 때문에 최대 처리량보다 더 떨어지는 경우가 발생함
 
 
-![benchmark](/img/blog/2016-12-26/serial-benchmark.png)
+![benchmark](/blog/img/2016-12-26/serial-benchmark.png)
 <figcaption>성능테스트 결과</figcaption>
 
 그래프를 보면 요청이 늘어남에 따라 RPS가 선형으로 증가하지만, SP인 8,000 RPS에 도달하고 나서 Buckle zone에서 7,000 RPS로 수렴하고 있습니다. 물론 1개의 클라이언트에서 세션을 생성해서 테스트를 진행했기 때문에 서버의 성능 부족이 아닌 클라이언트의 병목 현상이 원인일 수 있습니다. 또한 JMeter나 다른 부하 테스트 툴을 사용하지 않고 간략하게 만든 테스트 툴을 사용하였기 때문에 수치가 부정확할 수 있습니다. 그러나 어디에서 병목이 있었든 현재 이 이상의 성능이 필요하지 않기 때문에 테스트 결과에 만족할 수 있었습니다.

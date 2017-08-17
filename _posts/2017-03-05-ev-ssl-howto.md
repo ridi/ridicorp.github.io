@@ -2,7 +2,7 @@
 layout: blog
 title: "EV SSL 인증서 발급 과정에서 알게된 것들"
 description: "녹색 주소창을 위해 EV SSL 인증서를 발급받은 과정을 소개합니다"
-header-img: "img/blog/bg-11.jpg"
+header-img: "blog/img/bg-11.jpg"
 date: 2017-03-05
 author: namenu
 category: engineering
@@ -90,7 +90,7 @@ COMODO 측에서 마지막으로 확인하는 것이 회사의 전화번호입�
 
 
 
-![EV SSL이 적용된 모습](/img/blog/2017-03-05/greenbar.png){: data-action="zoom" }
+![EV SSL이 적용된 모습](/blog/img/2017-03-05/greenbar.png){: data-action="zoom" }
 <figcaption>예전처럼 크게 강조되는 모습의 주소창은 아니지만, 회사명을 표시할 수 있게 되었습니다!</figcaption>
 
 

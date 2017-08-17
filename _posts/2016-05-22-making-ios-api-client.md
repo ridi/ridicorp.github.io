@@ -2,7 +2,7 @@
 layout: blog
 title: "iOS에서 간결한 API 클라이언트 구현하기 (like Retrofit+GSON)"
 description: "API 통신 관련 중복 코드를 최소화하면서"
-header-img: "img/career/bg-5.jpg"
+header-img: "blog/img/bg-1.jpg"
 date: 2016-05-22
 author: kering
 category: engineering

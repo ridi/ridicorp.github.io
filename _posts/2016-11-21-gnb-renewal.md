@@ -2,7 +2,7 @@
 layout: blog
 title: "리디북스 서점 GNB 리뉴얼"
 description: "네비게이션 디자인 과정과 작업 후기"
-header-img: "img/blog/bg-2-new.jpg"
+header-img: "blog/img/bg-2-new.jpg"
 date: 2016-11-21
 author: jsung
 category: design
@@ -23,7 +23,7 @@ published: true
 커머스의 경우 제품이나 서비스 등이 변경, 추가되면서 GNB가 달라지게 됩니다.
 그 예로 아마존 웹사이트의 탭 내비게이션 디자인의 변화를 보면 아마존의 제품, 서비스가 어떻게 달라졌는지 한눈에 확인할 수 있습니다.
 
-![아마존 탭 네비게이션의 변화](/img/blog/2016-10-13/amazon.jpg){: data-action="zoom" }
+![아마존 탭 네비게이션의 변화](/blog/img/2016-10-13/amazon.jpg){: data-action="zoom" }
 <figcaption>출처: <a href="http://www.flickr.com/photos/rclark/">아마존 탭 네비게이션의 변화</a></figcaption><br>
 
 
@@ -43,16 +43,16 @@ published: true
 - 메인 카테고리가 서브 메뉴 보다 상위 개념인데 **모바일에서는 상/하**로 배치되어 있는 반면,<br>
   **PC는 좌/우로 배치되어** 시각적으로 위계를 구분하기 어렵습니다.
 
-![그림 1) 모바일 GNB 개편 전](/img/blog/2016-10-13/before_m_bg.png){: data-action="zoom" }
+![그림 1) 모바일 GNB 개편 전](/blog/img/2016-10-13/before_m_bg.png){: data-action="zoom" }
 <figcaption>그림 1) 모바일 GNB 개편 전</figcaption>
 
-![그림 2) PC GNB 개편 전](/img/blog/2016-10-13/before_pc_bg.png){: data-action="zoom" }
+![그림 2) PC GNB 개편 전](/blog/img/2016-10-13/before_pc_bg.png){: data-action="zoom" }
 <figcaption>그림 2) PC GNB 개편 전</figcaption>
 
 
 #### 2. 탭 디자인이 카테고리별로 다름
 
-![그림 3) 카테고리별 탭 디자인](/img/blog/2016-10-13/category_design_bg_2.png){: data-action="zoom" }
+![그림 3) 카테고리별 탭 디자인](/blog/img/2016-10-13/category_design_bg_2.png){: data-action="zoom" }
 <figcaption>그림 3) 카테고리별 탭 디자인</figcaption>
 
 
@@ -78,7 +78,7 @@ published: true
 기존의 레이아웃 유지하면서 수정을 하기엔 한계가 있다고 생각했습니다.
 
 
-![4) 메뉴 위치만 카테고리 하단으로 아래로 수정함](/img/blog/2016-10-13/design_a.png){: data-action="zoom" }
+![4) 메뉴 위치만 카테고리 하단으로 아래로 수정함](/blog/img/2016-10-13/design_a.png){: data-action="zoom" }
 <figcaption>그림 4) 메뉴 위치만 카테고리 하단으로 아래로 수정함</figcaption>
 
 
@@ -100,7 +100,7 @@ published: true
 검색창은 서점에서 중요한 요소인데 좌측엔 배치할 공간이 없고,
 그렇다고 메인 카테고리를 우측으로 하면 하위 메뉴들과 멀어져 연관성이 적어 보이겠죠.
 
-![5 검색창을 우측에 배치한 시안](/img/blog/2016-10-13/design_b.png){: data-action="zoom" }
+![5 검색창을 우측에 배치한 시안](/blog/img/2016-10-13/design_b.png){: data-action="zoom" }
 <figcaption>그림 5) 검색창을 우측에 배치한 시안</figcaption>
 
 
@@ -111,7 +111,7 @@ published: true
 4단으로 하니 기존 메뉴들을 다 넣을 수 있지만 높이가 늘어나고 메뉴가 너무 많아 보여 한눈에 내비게이션을 파악하기 어려워 보였습니다.
 또, 높이가 늘어나는 만큼 서점 콘텐츠 영역이 줄어드는 결과를 가져옵니다.
 
-![6) PC GNB 4단](/img/blog/2016-10-13/design_d_4.png){: data-action="zoom" }
+![6) PC GNB 4단](/blog/img/2016-10-13/design_d_4.png){: data-action="zoom" }
 <figcaption>그림 6) PC GNB 4단 (height: 177px)</figcaption>
 
 그럼 '3단으로 하면서 기존 메뉴들을 그대로 살릴 수 있는 방법은 없을까?'
@@ -122,7 +122,7 @@ published: true
 고객센터 / 뷰어 다운로드 / 리디캐시 충전은 리디북스 서점 페이지인데 같이 나열되는 것이 사용자에게 혼란을 줄 수 있다고 생각했습니다.
 
 
-![7) PC GNB 3단](/img/blog/2016-10-13/design_d_3.png){: data-action="zoom" }
+![7) PC GNB 3단](/blog/img/2016-10-13/design_d_3.png){: data-action="zoom" }
 <figcaption>그림 7) PC GNB 3단 (height: 149px)</figcaption><br>
 
 
@@ -134,15 +134,15 @@ GNB 개편 이전과 이후 시안입니다.
 PC에서는 ‘고객센터’와 ‘뷰어 다운로드’가 없어지고, 'PAPER' 좌측에 아이콘이 추가되었습니다.
 '고객센터'와 '뷰어 다운로드'는 기존 GNB에 있던 메뉴라서 없애는 것을 결정하기가 쉽지 않았는데, 다른 서비스에서의 경험을 바탕으로 사이트 하단 Footer에 있을 것이라고 예측 가능하다고 판단했습니다.
 
-![그림 8) PC GNB 개편 전/후](/img/blog/2016-10-13/result_pc_bg.png){: data-action="zoom" }
+![그림 8) PC GNB 개편 전/후](/blog/img/2016-10-13/result_pc_bg.png){: data-action="zoom" }
 <figcaption>그림 8) PC GNB 개편 전/후</figcaption>
 
 
-![9.모바일 GNB 개편 전/후](/img/blog/2016-10-13/result_m_bg.png){: data-action="zoom" }
+![9.모바일 GNB 개편 전/후](/blog/img/2016-10-13/result_m_bg.png){: data-action="zoom" }
 <figcaption>그림 9) 모바일 GNB 개편 전/후</figcaption>
 
 
-![10) PC Footer](/img/blog/2016-10-13/footer.png){: data-action="zoom" }
+![10) PC Footer](/blog/img/2016-10-13/footer.png){: data-action="zoom" }
 <figcaption>그림 10) PC Footer</figcaption><br>
 
 
