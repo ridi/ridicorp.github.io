@@ -4,7 +4,7 @@ title: "PAPER <br>Customer Communicator"
 subtitle: "리디북스 디바이스그룹"
 description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
 header-img: "career/img/bg-7.jpg"
-fb-img: "img/fb-cc.jpg"
+fb-img: "assets/img/fb-cc.jpg"
 date: 2015-03-26 12:38:00
 ---
 

@@ -3,7 +3,7 @@ layout: career
 title: "Web Developer - Platform"
 subtitle: "리디북스 플랫폼팀"
 header-img: "career/img/bg-4.jpg"
-fb-img: "img/fb-platform.jpg"
+fb-img: "assets/img/fb-platform.jpg"
 date: 2015-01-19 01:46:41
 ---
 

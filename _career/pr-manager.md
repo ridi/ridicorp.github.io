@@ -3,7 +3,7 @@ layout: career
 title: "PR Manager"
 subtitle: "리디북스 마케팅팀"
 header-img: "career/img/bg-3.jpg"
-fb-img: "img/fb-pr-manager.jpg"
+fb-img: "assets/img/fb-pr-manager.jpg"
 date: 2015-02-11 13:01:00
 ---
 

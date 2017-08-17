@@ -4,7 +4,7 @@ title: "Senior UI Designer"
 subtitle: "리디북스 UI팀"
 description: "리디북스를 이끌어 나갈 최고의 UI디자이너를 찾고 있습니다."
 header-img: "career/img/bg-4.jpg"
-fb-img: "img/fb-senior-ui-designer.jpg"
+fb-img: "assets/img/fb-senior-ui-designer.jpg"
 date: 2015-11-19 11:46:41
 link: https://jobs.smartrecruiters.com/RIDICorp/743999650632551
 ---

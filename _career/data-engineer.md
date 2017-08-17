@@ -4,7 +4,7 @@ title: "리디북스 데이터팀 소개"
 subtitle: "전자책 회사의 데이터팀에서 하는 일"
 description: "리디북스 데이터팀이 하는 일을 소개합니다"
 header-img: "career/img/bg-14.jpg"
-fb-img: "img/fb-data-team.jpg"
+fb-img: "assets/img/fb-data-team.jpg"
 date: 2017-03-05
 link: https://jobs.smartrecruiters.com/RIDICorp/116476653
 ---

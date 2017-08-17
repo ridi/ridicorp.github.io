@@ -4,7 +4,7 @@ title: "Software Engineer - Store"
 subtitle: "리디북스 스토어팀"
 description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
 header-img: "career/img/bg-1.jpg"
-fb-img: "img/fb-store.jpg"
+fb-img: "assets/img/fb-store.jpg"
 date: 2015-01-19 01:46:41
 link: https://jobs.smartrecruiters.com/RIDICorp/743999652720024
 ---

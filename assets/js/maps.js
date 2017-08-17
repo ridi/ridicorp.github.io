@@ -32,7 +32,7 @@ function initialize() {
   map.mapTypes.set('map_style', styledMap);
   map.setMapTypeId('map_style');
   
-    var mapMarkerImg = new google.maps.MarkerImage("../img/marker.png");
+    var mapMarkerImg = new google.maps.MarkerImage("/assets/img/marker.png");
     var mapMarker = new google.maps.Marker({
       position: LatLng,
       map: map,
