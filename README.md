@@ -27,10 +27,11 @@ $ less-watch-compiler less css
 
 ## 2. Jekyll 설치하기
 
-간단한 명령어로 설치할 수 있습니다. 상세한 내용은 [Jekyll 웹사이트](https://jekyllrb-ko.github.io/)를 참고하세요.
+간단한 명령어로 설치할 수 있습니다. 상세한 내용은 [Jekyll 웹사이트](https://jekyllrb.com/)를 참고하세요.
 
 ```
-$ (sudo) gem install jekyll
+$ (sudo) gem install bundler
+$ bundle install
 ```
 
 ## 3. 로컬에서 확인하기
