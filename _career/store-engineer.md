@@ -3,7 +3,7 @@ layout: career
 title: "Software Engineer - Store"
 subtitle: "리디북스 스토어팀"
 description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
-header-img: "img/career/bg-1.jpg"
+header-img: "career/img/bg-1.jpg"
 fb-img: "img/fb-store.jpg"
 date: 2015-01-19 01:46:41
 link: https://jobs.smartrecruiters.com/RIDICorp/743999652720024
@@ -14,7 +14,7 @@ link: https://jobs.smartrecruiters.com/RIDICorp/743999652720024
 
 스토어팀에서는 리디북스의 고객들이 책을 고르고 구매하는 '모든 것'에 관련된 '모든 것'을 개발합니다. 빠르게 성장하는 커머스 서비스에서 다양한 이벤트를 운영하며 발생하는 웹서버 및 데이터베이스의 부하를 감당하는 일은 매우 도전적입니다. 2017년 2월 현재, 리디북스의 서버 스택은 아래와 같이 구성되어 있습니다.
 
-![](/img/career/ridibooks-backend-architecture.png)
+![](/career/img/ridibooks-backend-architecture.png)
 <figcaption>Ridibooks Backend Architecture</figcaption>
 
 그림에서 나타나듯 리디북스 서점은 매우 다양한 서버들로 구성되어 있습니다. 스토어팀은 다양한 서버에서 발생하는 수많은 이슈를 안정적으로 처리하기 위해 노력하고 있습니다. 좋은 코드를 작성하는 것만큼이나 중요한 것은 철저한 모니터링입니다.
@@ -36,7 +36,7 @@ link: https://jobs.smartrecruiters.com/RIDICorp/743999652720024
 
 ### 마이크로서비스 아키텍쳐
 
-리디북스의 서버 아키텍쳐는 모놀리식이 아닌 서비스 기반의 마이크로 형태를 지향합니다. 아래와 같이 서점의 다양한 모듈들은 별도의 서비스로 구현되어 있습니다. (마이크로서비스 아키텍쳐가 모놀리식 아키텍쳐에 비해 가지는 장단점은 <del><a href="/img/career/monolithic-vs-micro.jpg" target="_blank">여기</a></del> [이곳](http://bcho.tistory.com/948)에서 매우 자세히 설명하고 있습니다.)
+리디북스의 서버 아키텍쳐는 모놀리식이 아닌 서비스 기반의 마이크로 형태를 지향합니다. 아래와 같이 서점의 다양한 모듈들은 별도의 서비스로 구현되어 있습니다. (마이크로서비스 아키텍쳐가 모놀리식 아키텍쳐에 비해 가지는 장단점은 <del><a href="/career/img/monolithic-vs-micro.jpg" target="_blank">여기</a></del> [이곳](http://bcho.tistory.com/948)에서 매우 자세히 설명하고 있습니다.)
 
 * 개인화 추천 서비스
 * 실시간 많이 보는 책 서비스

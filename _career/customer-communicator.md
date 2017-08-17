@@ -3,7 +3,7 @@ layout: career
 title: "Customer Communicator"
 subtitle: "리디북스 고객커뮤니케이션팀"
 description: "1등 전자책 서비스 리디북스를 이끌어 나갈 최고의 인재를 찾고 있습니다."
-header-img: "img/career/bg-3.jpg"
+header-img: "career/img/bg-3.jpg"
 fb-img: "img/fb-cc.jpg"
 date: 2015-03-26 12:38:00
 ---

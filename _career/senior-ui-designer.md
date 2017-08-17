@@ -3,7 +3,7 @@ layout: career
 title: "Senior UI Designer"
 subtitle: "리디북스 UI팀"
 description: "리디북스를 이끌어 나갈 최고의 UI디자이너를 찾고 있습니다."
-header-img: "img/career/bg-4.jpg"
+header-img: "career/img/bg-4.jpg"
 fb-img: "img/fb-senior-ui-designer.jpg"
 date: 2015-11-19 11:46:41
 link: https://jobs.smartrecruiters.com/RIDICorp/743999650632551
@@ -21,7 +21,7 @@ UI팀은 **즐거운 독서 경험**을 설계하고 만드는 일을 합니다.
 
 우리는 **Full-stack Designer**를 지향합니다. Research, Wireframing, Prototyping, UI Design, 때로는 Front-end 개발까지 하기도 합니다. 이처럼 많은 역할을 담당하는 것은 결코 쉽지 않은 일입니다. 하지만 복잡한 문제의 본질을 이해하고 깔끔한 해결방법을 찾으려면 프로젝트의 가장 처음부터 고민하기 시작해야 합니다.
 
-![](/img/career/full-stack-designer.jpg)
+![](/career/img/full-stack-designer.jpg)
 <figcaption>출처: http://designation.io/blog/what-is-full-stack-design/</figcaption>
 
 구체적으로 하는 일을 살펴보자면, 먼저 뷰어 앱과 서점이 어떻게 동작해야 할지 설계합니다. 풀어야 할 문제를 잘 정의하고, 작은 기능을 만들더라도 깊이 고민하며 고객들에게 어떠한 영향이 있을지 예측합니다. 개발자들과 논리적으로 토론하며 좋은 해결책을 찾아냅니다.
