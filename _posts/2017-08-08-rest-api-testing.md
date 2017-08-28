@@ -31,7 +31,7 @@
 
 JSONPath는 JSON을 위한 [XPath](https://en.wikipedia.org/wiki/XPath)입니다. 즉, **쿼리**를 사용하여 JSON 객체 내의 특정 위치의 값들을 가지고 오기위해 만든 것입니다. 이를 JSON 객체의 검증에 사용하려면 검증에 대한 규칙 및 방법을 직접 만들어야 합니다. 테스팅 툴 중에서는 **SoupUI**가 JSONPath를 테스트 케이스 작성에 사용합니다.
 
-JSON Schema는 JSON 객체의 구조를 표현하고 검증하려고 만든 것입니다. 그만큼 검증 규칙이 잘 짜여져 있습니다. 다만, 검증 대상의 구조와 검증 규칙을 함께 적어야 하기 때문에, JSONPath에 비해 장황한 테스트 케이스를 작성해야 합니다. JSON Schema를 사용하는 테스팅 툴은 찾지 못 했지만, [30개가 넘는 라이브러리들](https://github.com/json-schema-org/JSON-Schema-Test-Suite#who-uses-the-test-suite)이 JSON Schema로 JSON 객체를 검증하는 기능을 제공하고 있다는 것을 확인했습니다.
+JSON Schema는 JSON 객체의 구조를 표현하고 검증하려고 만든 것입니다. 그만큼 검증 규칙이 잘 짜여져 있습니다. 다만, 검증 대상의 구조와 검증 규칙을 함께 적어야 하기 때문에, JSONPath에 비해 장황한 테스트 케이스를 작성해야 합니다. JSON Schema를 사용하는 테스팅 툴은 찾지 못 하고, [30개가 넘는 라이브러리들](https://github.com/json-schema-org/JSON-Schema-Test-Suite#who-uses-the-test-suite)이 JSON Schema로 JSON 객체를 검증하는 기능을 제공하고 있다는 것을 확인했습니다.
 
 JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비했습니다. 이 객체의 `results`는 `id`와 `value`로 구성된 객체들을 리스트로 가지고 있습니다. `id`는 문자열이고, `value`는  `0.0` 이상 `1.0` 이하의 숫자입니다:
 
@@ -112,9 +112,9 @@ JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비�
 }
 ```
 
-JSON Schema는 검증 대상의 구조와 검증 규칙을 함께 표현합니다. 예를 들어, `results`의 `items` 아래에는 `id`와 `value`가  있습니다. `items`는 JSON 리스트의 원소들을 나타냅니다. `value`에 대한 검증 규칙은 `type`, `minumum`, `maximum`으로 정의합니다. 여기서 정의된 검증 규칙에 따르면, `value`는 `0.0` 이상 `1.0` 이하의 숫자 (`number`) 입니다.
+JSON Schema는 검증 대상의 구조와 검증 규칙을 함께 표현합니다. 예를 들어, `value`는 `results` 아래에 `id`와 함께 있습니다. `value`에 대한 검증 규칙은 `type`, `minumum`, `maximum`으로 정의합니다. 여기서 정의된 검증 규칙에 따르면, `value`는 `0.0` 이상 `1.0` 이하의 숫자 (`number`) 여야 합니다.
 
-이와같이 JSON Schema가 잘 정의된 검증 규칙을 가지고 있고 또 그에 대한 검증기가 잘 구현되어 있다는 것을 고려하여, JSON Schema를 사용하기로 했습니다.
+이처럼 JSON Schema가 잘 정의된 검증 규칙을 가지고 있고 또 그에 대한 검증기가 잘 구현되어 있기 때문에, JSON Schema를 사용하기로 했습니다.
 
 ### 집중과 선택
 
@@ -124,15 +124,15 @@ JSON Schema는 검증 대상의 구조와 검증 규칙을 함께 표현합니�
 
 ## REST API 테스팅 프레임워크
 
-**lightweight-rest-tester**는  JSON Schema로 작성된 테스트 케이스를 읽어들여 자동으로 Python의 unittest를 생성하고 실행해주는 가벼운 테스팅 프레임워크입니다. [Inversion of Control](https://martinfowler.com/bliki/InversionOfControl.html)의 정의에 따라, **툴**보다는 **프레임워크**라고 부르기로 했습니다.
+[lightweight-rest-tester](https://github.com/ridibooks/lightweight-rest-tester)는  JSON Schema로 작성된 테스트 케이스를 읽어들여 자동으로 Python의 unittest를 생성하고 실행해주는 가벼운 테스팅 프레임워크입니다. [Inversion of Control](https://martinfowler.com/bliki/InversionOfControl.html)의 정의에 따라, **툴**보다는 **프레임워크**라고 부르기로 했습니다.
 
 이 프레임워크가 어떻게 동작하는지에 대해서 간단히 설명 드리도록 하겠습니다. 입력 부분인 테스트 케이스의 작성부터 시작합니다.
 
 ### 테스트 케이스의 작성
 
-테스트 케이스에는 대상 API의 정보를 넣는 `api`와 API 호출로 발생한 결과를 검증하는 `tests`를 작성합니다. `api`에는 API 주소와 HTTP 메소드 등을 명시합니다. 이 프레임워크에서는 **GET**, **POST**, **PUT**, **DELETE**, **PATCH** 메소드를 지원합니다. `tests`에는 JSON Schema와 응답 코드 등을 작성합니다.
+테스트 케이스에는 대상 API의 정보를 넣는 `api`와 API 호출로 발생한 결과를 검증하는 `tests`를 작성해야 합니다. `api`에는 API 주소와 HTTP 메소드 등을 명시해야 합니다. 이 프레임워크에서는 **GET**, **POST**, **PUT**, **DELETE**, **PATCH** 메소드를 지원합니다. `tests`에는 JSON Schema와 응답 코드 등을 작성해야 합니다.
 
-다음은 `http://localhost:3000/comments` 주소의 API를 테스트하는 테스트 케이스입니다:
+다음은 테스트 케이스의 예제입니다:
 
 ```json
 {
@@ -159,7 +159,7 @@ JSON Schema는 검증 대상의 구조와 검증 규칙을 함께 표현합니�
 
 이 프레임워크에 JSON 테스트 케이스를 전달하면, Python unittest의 **TestCase**를 생성하고 실행합니다. 조금 더 자세히 설명하면, 먼저 테스트 케이스의 `api`에 정의된 `url`과 `params`로 API를 호출하여 결과 값을 받아옵니다. 그 후, 받은 값에 대하여 `tests`에 정의된 항목들을 하나씩 검증합니다. 특히, 결과로 얻은 JSON 객체를 검증할 때는 JSON Schema의 검증기인 [jsonschema](https://github.com/Julian/jsonschema)를 사용합니다. jsonschema는 JSON Schema에서 제시한 [Draft 3](https://github.com/json-schema-org/JSON-Schema-Test-Suite)과 [Draft 4](https://github.com/json-schema-org/JSON-Schema-Test-Suite)를 완벽하게 지원하는 라이브러리입니다.
 
-방금 설명드린 기본적인 기능 외에, 사용할 때 느꼈던 불편함을 해소하는 기능들을 추가로 넣었습니다. 예를 들어, 테스트 케이스의 `api.params`에 있는 각 파라미터에 배열을 넣으면, 배열 내의 각 값에 해당하는 TestCase를 생성합니다. 또, 두 개 이상의 파라미터에 배열을 넣으면, 생성이 가능한 모든 조합의 **파라미터 셋**들의 TestCase를 생성합니다. `tests.statusCode`에도 역시 배열을 넣을 수 있습니다. 이 경우에는 응답 코드가 그 배열의 값들 중 하나이기만 하면, 검증을 통과합니다. 또, PUT과 같이 데이터 베이스의 상태를 변화시키는 메소드에 대해서는, 바로 GET 메소드로 확인할 수 있는 기능을 지원하고 있습니다. 실행 순서가 중요하기 때문에, 한 TestCase내에서 순서대로 처리합니다. 더 자세한 사항은 이 프레임워크의 GitHub 레파지토리에서 다양한 예제와 함께 확인하실 수 있습니다:
+방금 설명드린 기본적인 기능 외에, 사용할 때 느꼈던 불편함을 해소하는 기능들을 추가로 넣었습니다. 예를 들어, 테스트 케이스의 `api.params`에 있는 각 파라미터에 배열을 넣으면, 배열 내의 각 값에 해당하는 TestCase를 생성합니다. 또, 두 개 이상의 파라미터에 배열을 넣으면, 생성이 가능한 모든 조합의 **파라미터 셋**들의 TestCase를 생성합니다. `tests.statusCode`에도 역시 배열을 넣을 수 있습니다. 이 경우에는 응답 코드가 그 배열의 값들 중 하나이기만 하면 검증을 통과합니다. 또, PUT과 같이 데이터 베이스의 상태를 변화시키는 메소드에 대해서는, 바로 GET 메소드로 확인할 수 있는 기능을 지원하고 있습니다. 실행 순서가 중요하기 때문에, 한 TestCase내에서 순서대로 처리합니다. 더 자세한 사항은 이 프레임워크의 GitHub 레파지토리에서 다양한 예제와 함께 확인하실 수 있습니다:
 
 [https://github.com/ridibooks/lightweight-rest-tester](https://github.com/ridibooks/lightweight-rest-tester)
 
