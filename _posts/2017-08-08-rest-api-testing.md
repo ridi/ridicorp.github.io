@@ -33,7 +33,7 @@ JSONPath는 JSON을 위한 [XPath](https://en.wikipedia.org/wiki/XPath)입니다
 
 JSON Schema는 JSON 객체의 구조를 표현하고 검증하려고 만든 것입니다. 그만큼 검증 규칙이 잘 짜여져 있습니다. 다만, 검증 대상의 구조와 검증 규칙을 함께 적어야 하기 때문에, JSONPath에 비해 장황한 테스트 케이스를 작성해야 합니다. JSON Schema를 사용하는 테스팅 툴은 찾지 못 했고, [30개가 넘는 라이브러리들](https://github.com/json-schema-org/JSON-Schema-Test-Suite#who-uses-the-test-suite)이 JSON Schema로 JSON 객체를 검증하는 기능을 제공하고 있다는 것을 확인했습니다.
 
-JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비했습니다. 이 객체의 `results`는 `id`와 `value`로 구성된 객체들의 리스트입니다. 여기서 `id`는 `1`, `2`, `3`의 값을 갖는 문자열이고, `value`는  `0.5`, `0.7`, `0.9`의 값을 갖는 숫자입니다:
+JSONPath와 JSON Schema에 대한 이해를 돕기위해 다음 JSON 객체를 준비했습니다:
 
 ```json
 {
@@ -54,7 +54,7 @@ JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비�
 }
 ```
 
-이 객체의 `results` 리스트의 길이와 `id`와 `value`를 검증하는 JSONPath는 다음과 같습니다:
+이 객체의 `results`는 `id`와 `value`로 구성된 객체들의 리스트입니다. 여기서 `id`는 `1`, `2`, `3`의 값을 갖는 문자열이고, `value`는  `0.9`, `0.7`, `0.5`의 값을 갖는 숫자입니다. `results` 리스트의 길이와 `id`와 `value`를 검증하는 JSONPath 테스트 케이스는 다음과 같습니다:
 
 ```json
 [
@@ -81,7 +81,7 @@ JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비�
 
 여기서 `jsonpath`를 제외한 `type`및 `validation` 등은 제가 추가한 것입니다. 값의 종류를 결정하는 `type`과 어떤 것을 검증할지 정하는 `validation`, 그리고 예상 값 `expected`와 예상 값이 어떤 것을 의미하는지 알려주는 `condition`을 추가했습니다. 예를 들어, 마지막 항목은 `value`의 값을 검증합니다. 모든 `value`의  값 (`all`) 은 `0.5` 이상 `0.9` 이하의 범위 (`range`) 에 속하는 숫자 (`number`) 여야 합니다.
 
-위의 JSONPath를 이용한 검증과 동일한 역할을 하는 JSON Schema는 다음과 같습니다:
+위의 JSONPath 테스트 케이스와 동일한 역할을 하는 JSON Schema 테스트 케이스는 다음과 같습니다:
 
 ```json
 {
@@ -116,7 +116,7 @@ JSON Schema는 검증 대상의 구조와 검증 규칙을 함께 표현합니�
 
 JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용해보고 나서, JSON Schema를 사용하는 것이 더 낫다는 결론을 내렸습니다. 이유는 다음과 같습니다:
 
-- JSON Schema는 이미 잘 정의된 검증 규칙을 가지고 있다.
+- JSON Schema는 잘 정의된 검증 규칙을 가지고 있고, 이 수준의 검증 규칙을 만드는 것은 쉬운 일이 아니다.
 - JSON Schema의 검증 규칙을 적용한 잘 구현된 [검증기들](https://github.com/json-schema-org/JSON-Schema-Test-Suite#who-uses-the-test-suite)이 있다.
 - 검증 항목들이 늘어나도, JSON Schema를 사용한 테스트 케이스의 길이는 크게 늘어나지 않는다.
 
@@ -124,7 +124,7 @@ JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용�
 
 이 테스팅 툴로 **기능 테스트**만을 지원하기로 결정했습니다. 기능 테스트를 할 때마다 소요되는 시간과 노력을 줄이는 것에 초점을 두었습니다. 다른 종류의 테스트에 대해서는 다른 툴에서 충분히 잘 해주고 있다고 생각하여 과감히 포기했습니다.
 
-또한, 지원하는 기능에 비해 쓸데없이 무거운 툴로 만들고 싶지 않았습니다. 그래서, 가능하면 빌트인 라이브러리를 사용하고 써드 파티 라이브러리에 대한 의존을 최대한 줄였습니다.
+또한, 지원하는 기능에 비해 쓸데없이 무거운 툴로 만들고 싶지 않았습니다. 빌트인 라이브러리를 주로 사용하고 써드 파티 라이브러리에 대한 의존을 최대한 줄였습니다.
 
 ### GitHub의 REST API 테스팅 툴
 
@@ -134,7 +134,7 @@ JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용�
 
 ## REST API 테스팅 프레임워크
 
-앞서 얘기했던 디자인을 만족하는 [lightweight-rest-tester](https://github.com/ridibooks/lightweight-rest-tester)라는 REST API 테스팅 프레임워크를 개발했습니다! lightweight-rest-tester는 JSON Schema로 작성된 테스트 케이스를 읽어들여 자동으로 Python의 unittest를 생성하고 실행해주는 가벼운 테스팅 프레임워크입니다. [Inversion of Control](https://martinfowler.com/bliki/InversionOfControl.html)의 정의에 따라, **툴**보다는 **프레임워크**라고 부르기로 했습니다.
+저희가 개발한 [lightweight-rest-tester](https://github.com/ridibooks/lightweight-rest-tester)는 JSON Schema로 작성된 테스트 케이스를 읽어들여 자동으로 Python의 unittest를 생성하고 실행해주는 가벼운 테스팅 프레임워크입니다. [Inversion of Control](https://martinfowler.com/bliki/InversionOfControl.html)의 정의에 따라, **툴**보다는 **프레임워크**라고 부르기로 했습니다.
 
 이 프레임워크가 어떻게 동작하는지에 대해서 간단히 설명 드리도록 하겠습니다. 입력 부분인 테스트 케이스의 작성부터 시작합니다.
 
