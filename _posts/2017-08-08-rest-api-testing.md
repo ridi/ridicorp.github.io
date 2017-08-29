@@ -2,7 +2,7 @@
 
 ### REST API 테스팅 프레임워크의 개발 과정을 소개합니다.
 
-리디북스는 **마이크로서비스 아키텍쳐**를 지향하고 있습니다. 그래서 팀간 데이터 전달에 종종 REST API를 사용하고는 합니다. 예를 들어, 제가 속한 데이터팀은 **나를 위한 추천책** API를 다른 팀들에게 제공하고 있습니다. 저희들은 이런 API들이 정상적으로 작동하는지 확인하기 위해 **기능 테스트**를 주기적으로 실행하고 있습니다. 이 과정을 조금 더 편하게 만든 **REST API 테스팅 프레임워크의 개발 과정**을 소개합니다.
+리디북스는 **마이크로서비스 아키텍쳐**를 지향하고 있습니다. 그래서 팀간 데이터 전달에 종종 REST API를 사용하고는 합니다. 예를 들어, 제가 속한 데이터팀은 **나를 위한 추천책** API를 다른 팀들에게 제공하고 있습니다. 저희들은 이런 API들이 정상적으로 작동하는지 확인하기 위해, **기능 테스트**를 주기적으로 실행하고 있습니다. 이 과정을 조금 더 편하게 만든 **REST API 테스팅 프레임워크의 개발 과정**을 소개합니다.
 
 ## 직접 만들게 된 이유
 
@@ -128,13 +128,13 @@ JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용�
 
 ### GitHub의 REST API 테스팅 툴
 
-이 테스팅 툴을 개발하고나서, GitHub에도 비슷한 역할을 하는 [jsonapitest](https://github.com/peter/jsonapitest)와 [rest-assured](https://github.com/rest-assured/rest-assured)와 같은 테스팅 툴들이 있다는 것을 알게 되었습니다. 하지만, 이 툴들은 저희가 원하는 기능과 조금 거리가 있었습니다. **rest-assured**는 소스 코드로 작성한 테스트 케이스를 사용합니다. **jsonapitest**는 JSON으로 작성된 테스트 케이스를 사용하지만, 그 구조가 상당히 복잡합니다.
+이 테스팅 툴을 개발하고나서, GitHub에도 비슷한 역할을 하는 [jsonapitest](https://github.com/peter/jsonapitest)와 [rest-assured](https://github.com/rest-assured/rest-assured)와 같은 테스팅 툴들이 있다는 것을 알게 되었습니다. 하지만, 이 툴들은 저희가 원하는 기능과 조금 거리가 있었습니다. **rest-assured**는 소스 코드로 작성된 테스트 케이스를 사용했습니다. **jsonapitest**는 JSON으로 작성된 테스트 케이스를 사용했지만 구조가 상당히 복잡했습니다.
 
-참 다행이었습니다. 이번 일을 계기로 검색을 더 철저히 해야겠다는 교훈을 얻었습니다.
+참 다행이었습니다. 이번 일을 계기로 검색을 더 철저히 해야겠다는 큰 교훈을 얻었습니다.
 
 ## REST API 테스팅 프레임워크
 
-[lightweight-rest-tester](https://github.com/ridibooks/lightweight-rest-tester)는  JSON Schema로 작성된 테스트 케이스를 읽어들여 자동으로 Python의 unittest를 생성하고 실행해주는 가벼운 테스팅 프레임워크입니다. [Inversion of Control](https://martinfowler.com/bliki/InversionOfControl.html)의 정의에 따라, **툴**보다는 **프레임워크**라고 부르기로 했습니다.
+앞서 얘기했던 디자인을 만족하는 [lightweight-rest-tester](https://github.com/ridibooks/lightweight-rest-tester)라는 REST API 테스팅 프레임워크를 개발했습니다! lightweight-rest-tester는 JSON Schema로 작성된 테스트 케이스를 읽어들여 자동으로 Python의 unittest를 생성하고 실행해주는 가벼운 테스팅 프레임워크입니다. [Inversion of Control](https://martinfowler.com/bliki/InversionOfControl.html)의 정의에 따라, **툴**보다는 **프레임워크**라고 부르기로 했습니다.
 
 이 프레임워크가 어떻게 동작하는지에 대해서 간단히 설명 드리도록 하겠습니다. 입력 부분인 테스트 케이스의 작성부터 시작합니다.
 
@@ -163,7 +163,7 @@ JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용�
 }
 ```
 
-위의 테스트 케이스는 `http://localhost:3000/comments`의 주소에 `postId` 파라미터의 값을 `1`로 명시하여 GET 메소드를 호출합니다. 그 호출에 대한 응답은 `10`초 이내에 받을 수 있어야 하고, 응답 코드가 `200`이어야 합니다. 또, 결과 값인 JSON 객체는 주어진 `jsonSchema`의 내용과 일치해야 합니다.
+위의 테스트 케이스는 `http://localhost:3000/comments`의 주소에 `postId` 파라미터의 값을 `1`로 넣고 GET 메소드를 호출합니다. 그 호출에 대한 응답은 `10`초 이내에 받을 수 있어야 하고, 응답 코드는 `200`이어야 합니다. 또, 결과 값인 JSON 객체는 주어진 `jsonSchema`의 내용과 일치해야 합니다.
 
 ### 단위 테스트의 생성과 실행
 
@@ -175,13 +175,13 @@ JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용�
 
 ### 프로젝트의 품질 향상을 위해서
 
-이 프로젝트의 신뢰 향상과 기능의 수정 및 추가를 대비하여 단위 테스트를 열심히 만들었습니다. (테스팅 프레임워크를 테스트하는 테스트 케이스…) 이 프레임워크가 외부에서 실행 중인 API 서버를 대상으로 하다보니, 단위 테스트를 실행시킬 수 있는 가상 환경이 필요했습니다. 그래서, **Docker**와 *full fake REST API with zero coding*인 [json-server](https://github.com/typicode/json-server)를 사용했습니다. 참고로, **Travis**와 **coveralls**의 조합으로 만족할만한 커버리지 (**90% 이상!!!**) 도 달성했습니다.
+이 프로젝트에 대한 신뢰 향상과 기능의 수정 및 추가를 대비하여 단위 테스트를 열심히 만들었습니다. (테스팅 프레임워크를 테스트하는 테스트 케이스…) 이 프레임워크가 외부에서 실행 중인 API 서버를 대상으로 하다보니, 단위 테스트를 실행시킬 수 있는 가상 환경이 필요했습니다. 그래서, **Docker**와 *full fake REST API with zero coding*인 [json-server](https://github.com/typicode/json-server)를 사용했습니다. 참고로, **Travis**와 **coveralls**의 조합으로 만족할만한 커버리지 (**90% 이상!!!**) 도 달성했습니다.
 
 이 프레임워크를 만들면서 가장 고생한 부분인데, 막상 얘기하려고 하니까 별로 쓸게 없군요. 역시 테스트 환경을 만들어 프로젝트의 품질을 측정하는 일은 간단하지 않은 것 같습니다.
 
 ### To-Do: 테스트 케이스 자동 생성
 
-저희 팀의 API 서버를 테스트하면서 JSON Schema를 처음부터 작성하는게 번거롭다는 것을 발견했습니다. 그리고, JSON Schema를 접해보지 않은 상태에서 작성하려고 하면 좀 막막할 수 있다는 것도 알게되었습니다. 그래서,  JSON Schema를 자동으로 생성해주는 기능을 계획했습니다.
+저희 팀의 API 서버를 테스트하면서 JSON Schema를 처음부터 작성하는게 번거롭다는 것을 발견했습니다. 그리고, JSON Schema를 접해보지 않은 상태에서 작성하려고 하면 좀 막막할 수도 있다는 것도 알게되었습니다. 그래서,  JSON Schema를 자동으로 생성해주는 기능을 계획했습니다.
 
 다음 방법으로 테스트 케이스를 자동으로 생성할 계획입니다:
 
@@ -192,6 +192,6 @@ JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용�
 
 ## 맺음말
 
-lightweight-rest-tester를 개발하면서 예상했던 것보다 더 많은 것들을 접하고 배울 수 있었습니다. REST API의 기능 테스트에 대해서 A부터 Z까지 쭉 한 번 살펴본 것 같습니다. 또한, JSON Schema와 같은 표준의 편리함과 jsonschema와 같은 오픈 소스의 유용성도 경험할 수 있었습니다. 이 프레임워크도 다른 오픈 소스들처럼 누군가에게 도움이 되었으면 합니다! 
+REST API 테스팅 프레임워크를 개발하면서 예상했던 것보다 더 많은 것들을 접하고 배울 수 있었습니다. REST API의 기능 테스트에 대해서 A부터 Z까지 쭉 한 번 살펴본 것 같습니다. 또한, JSON Schema와 같은 표준의 편리함과 jsonschema와 같은 오픈 소스의 유용성도 경험할 수 있었습니다. 이 프레임워크도 다른 오픈 소스들처럼 누군가에게 도움이 되었으면 합니다! 
 
 이 프레임워크를 개선할 수 있는 좋은 아이디어가 있으면 [GitHub 레파지토리](https://github.com/ridibooks/lightweight-rest-tester)에 남겨주세요 :) 개선에 직접 참여하시는 것도 환영합니다!
