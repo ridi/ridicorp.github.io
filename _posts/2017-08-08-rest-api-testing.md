@@ -29,11 +29,11 @@
 
 이 툴을 개발할 때 가장 고민을 많이 한 부분은 API 호출의 결과로 받는 **JSON 객체를 검증**하는 부분입니다. 여기에 흔히 사용하는 것이 [JSONPath](http://goessner.net/articles/JsonPath/)와 [JSON Schema](http://json-schema.org)입니다.
 
-JSONPath는 JSON을 위한 [XPath](https://en.wikipedia.org/wiki/XPath)입니다. 즉, **쿼리**를 사용하여 JSON 객체 내의 특정 위치의 값들을 가지고 오기위해 만든 것입니다. 이를 JSON 객체의 검증에 사용하려면 검증에 대한 규칙 및 방법을 직접 만들어야 합니다. 테스팅 툴 중에서는 **SoupUI**가 JSONPath를 테스트 케이스 작성에 사용합니다.
+JSONPath는 JSON을 위한 [XPath](https://en.wikipedia.org/wiki/XPath)입니다. 즉, **쿼리**를 사용하여 JSON 객체 내의 특정 위치의 값들을 가지고 오기위해 만든 것입니다. 이를 JSON 객체의 검증에 사용하려면 검증에 대한 규칙 및 방법을 직접 만들어야 합니다. 테스팅 툴 중에서는 SoupUI가 JSONPath를 테스트 케이스 작성에 사용합니다.
 
-JSON Schema는 JSON 객체의 구조를 표현하고 검증하려고 만든 것입니다. 그만큼 검증 규칙이 잘 짜여져 있습니다. 다만, 검증 대상의 구조와 검증 규칙을 함께 적어야 하기 때문에, JSONPath에 비해 장황한 테스트 케이스를 작성해야 합니다. JSON Schema를 사용하는 테스팅 툴은 찾지 못 하고, [30개가 넘는 라이브러리들](https://github.com/json-schema-org/JSON-Schema-Test-Suite#who-uses-the-test-suite)이 JSON Schema로 JSON 객체를 검증하는 기능을 제공하고 있다는 것을 확인했습니다.
+JSON Schema는 JSON 객체의 구조를 표현하고 검증하려고 만든 것입니다. 그만큼 검증 규칙이 잘 짜여져 있습니다. 다만, 검증 대상의 구조와 검증 규칙을 함께 적어야 하기 때문에, JSONPath에 비해 장황한 테스트 케이스를 작성해야 합니다. JSON Schema를 사용하는 테스팅 툴은 찾지 못 했고, [30개가 넘는 라이브러리들](https://github.com/json-schema-org/JSON-Schema-Test-Suite#who-uses-the-test-suite)이 JSON Schema로 JSON 객체를 검증하는 기능을 제공하고 있다는 것을 확인했습니다.
 
-JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비했습니다. 이 객체의 `results`는 `id`와 `value`로 구성된 객체들을 리스트로 가지고 있습니다. `id`는 문자열이고, `value`는  `0.0` 이상 `1.0` 이하의 숫자입니다:
+JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비했습니다. 이 객체의 `results`는 `id`와 `value`로 구성된 객체들의 리스트입니다. 여기서 `id`는 `1`, `2`, `3`의 값을 갖는 문자열이고, `value`는  `0.5`, `0.7`, `0.9`의 값을 갖는 숫자입니다:
 
 ```json
 {
@@ -54,7 +54,7 @@ JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비�
 }
 ```
 
-이 객체를 검증하는 JSONPath는 다음과 같습니다:
+이 객체의 `results` 리스트의 길이와 `id`와 `value`를 검증하는 JSONPath는 다음과 같습니다:
 
 ```json
 [
@@ -74,12 +74,12 @@ JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비�
     "validation": "all",
     "condition": "range",
     "jsonpath": "$.results[*].value",
-    "expected": [0.0, 1.0]
+    "expected": [0.5, 0.9]
   }
 ]
 ```
 
-여기서 `jsonpath`를 제외한 `type`및 `validation` 등은 제가 추가한 것입니다. 값의 종류를 결정하는 `type`과 어떤 것을 검증할지 정하는 `validation`, 그리고 예상 값 `expected`와 예상 값이 어떤 것을 의미하는지 알려주는 `condition`을 추가했습니다. 예를 들어, 마지막 항목은 `value`의 값을 검증합니다. 모든 `value`의  값 (`all`) 은 `0.0` 이상 `1.0` 이하의 범위 (`range`) 에 속하는 숫자 (`number`) 여야 합니다.
+여기서 `jsonpath`를 제외한 `type`및 `validation` 등은 제가 추가한 것입니다. 값의 종류를 결정하는 `type`과 어떤 것을 검증할지 정하는 `validation`, 그리고 예상 값 `expected`와 예상 값이 어떤 것을 의미하는지 알려주는 `condition`을 추가했습니다. 예를 들어, 마지막 항목은 `value`의 값을 검증합니다. 모든 `value`의  값 (`all`) 은 `0.5` 이상 `0.9` 이하의 범위 (`range`) 에 속하는 숫자 (`number`) 여야 합니다.
 
 위의 JSONPath를 이용한 검증과 동일한 역할을 하는 JSON Schema는 다음과 같습니다:
 
@@ -102,8 +102,8 @@ JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비�
           },
           "value": {
             "type" : "number",
-            "minimum" : 0.0,
-            "maximum" : 1.0
+            "minimum" : 0.5,
+            "maximum" : 0.9
           }
         }
       }
@@ -112,15 +112,25 @@ JSONPath와 JSON Schema에 대한 이해를 돕기위해 JSON 객체를 준비�
 }
 ```
 
-JSON Schema는 검증 대상의 구조와 검증 규칙을 함께 표현합니다. 예를 들어, `value`는 `results` 아래에 `id`와 함께 있습니다. `value`에 대한 검증 규칙은 `type`, `minumum`, `maximum`으로 정의합니다. 여기서 정의된 검증 규칙에 따르면, `value`는 `0.0` 이상 `1.0` 이하의 숫자 (`number`) 여야 합니다.
+JSON Schema는 검증 대상의 구조와 검증 규칙을 함께 표현합니다. 예를 들어, `value`는 `results` 아래에 `id`와 함께 있습니다. `value`에 대한 검증 규칙은 `type`, `minumum`, `maximum`으로 정의합니다. 앞의 JSONPath 검증과 동일하게, `value`의 조건을 `0.5` 이상 `0.9` 이하의 숫자 (`number`) 로 표현하고 있습니다.
 
-이처럼 JSON Schema가 잘 정의된 검증 규칙을 가지고 있고 또 그에 대한 검증기가 잘 구현되어 있기 때문에, JSON Schema를 사용하기로 했습니다.
+JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용해보고 나서, JSON Schema를 사용하는 것이 더 낫다는 결론을 내렸습니다. 이유는 다음과 같습니다:
+
+- JSON Schema는 이미 잘 정의된 검증 규칙을 가지고 있다.
+- JSON Schema의 검증 규칙을 적용한 잘 구현된 [검증기들](https://github.com/json-schema-org/JSON-Schema-Test-Suite#who-uses-the-test-suite)이 있다.
+- 검증 항목들이 늘어나도, JSON Schema를 사용한 테스트 케이스의 길이는 크게 늘어나지 않는다.
 
 ### 집중과 선택
 
 이 테스팅 툴로 **기능 테스트**만을 지원하기로 결정했습니다. 기능 테스트를 할 때마다 소요되는 시간과 노력을 줄이는 것에 초점을 두었습니다. 다른 종류의 테스트에 대해서는 다른 툴에서 충분히 잘 해주고 있다고 생각하여 과감히 포기했습니다.
 
 또한, 지원하는 기능에 비해 쓸데없이 무거운 툴로 만들고 싶지 않았습니다. 그래서, 가능하면 빌트인 라이브러리를 사용하고 써드 파티 라이브러리에 대한 의존을 최대한 줄였습니다.
+
+### GitHub의 REST API 테스팅 툴
+
+이 테스팅 툴을 개발하고나서, GitHub에도 비슷한 역할을 하는 [jsonapitest](https://github.com/peter/jsonapitest)와 [rest-assured](https://github.com/rest-assured/rest-assured)와 같은 테스팅 툴들이 있다는 것을 알게 되었습니다. 하지만, 이 툴들은 저희가 원하는 기능과 조금 거리가 있었습니다. **rest-assured**는 소스 코드로 작성한 테스트 케이스를 사용합니다. **jsonapitest**는 JSON으로 작성된 테스트 케이스를 사용하지만, 그 구조가 상당히 복잡합니다.
+
+참 다행이었습니다. 이번 일을 계기로 검색을 더 철저히 해야겠다는 교훈을 얻었습니다.
 
 ## REST API 테스팅 프레임워크
 
