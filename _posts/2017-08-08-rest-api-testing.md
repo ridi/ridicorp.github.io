@@ -164,7 +164,7 @@ JSONPath와 JSON Schema로 테스트 케이스를 작성하여 검증에 사용�
     "timeout" : 10,
     "statusCode": 200,
     "jsonSchema": {
-      "JSONSchema 내용"
+      "JSONSchema 내용": "{ ... }"
     }
   }
 }
