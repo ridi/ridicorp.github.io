@@ -1,10 +1,13 @@
 ---
-published: false
+layout: blog
+title: "REST API 테스팅 프레임워크"
+description: "REST API 테스팅 프레임워크의 개발 과정을 소개합니다."
+header-img: "blog/img/bg-1.jpg"
+date: 2017-08-31
+author: jeehoon.yoo
+category: engineering
+published: true
 ---
-
-# REST API 테스팅 프레임워크
-
-### REST API 테스팅 프레임워크의 개발 과정을 소개합니다.
 
 리디북스는 **마이크로서비스 아키텍쳐**를 지향하고 있습니다. 그래서 팀간 데이터 전달에 종종 REST API를 사용하고는 합니다. 예를 들어, 제가 속한 데이터팀은 **나를 위한 추천책** API를 다른 팀들에게 제공하고 있습니다. 저희들은 이런 API들이 정상적으로 작동하는지 확인하기 위해, **기능 테스트**를 주기적으로 실행하고 있습니다. 이 과정을 조금 더 편하게 만든 **REST API 테스팅 프레임워크의 개발 과정**을 소개합니다.
 
