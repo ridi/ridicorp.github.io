@@ -1,7 +1,7 @@
 ---
 layout: blog
 title: "리디스토리 프론트엔드 개발기"
-description: "웹앱을 네이트브앱처럼 보이게 하기"
+description: "웹앱을 네이티브앱처럼 보이게 하기"
 header-img: "blog/img/bg-11.jpg"
 date: 2017-09-13
 author: leejy
