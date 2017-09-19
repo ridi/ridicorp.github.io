@@ -6,7 +6,7 @@ header-img: "blog/img/bg-5.jpg"
 date: 2017-09-13
 author: leejy
 category: engineering
-published: false
+published: true
 ---
 
 
