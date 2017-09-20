@@ -5,27 +5,27 @@ module.exports = function (grunt) {
             build: {
                 expand: true,
                 flatten: true,
-                cwd: 'less',
+                cwd: 'assets/less',
                 src: ['*.less',
                     '!mixins.less',
                     '!icon.less',
                     '!variables.less'
                 ],
-                dest: 'css/',
+                dest: 'assets/css/',
                 ext: '.css',
                 extDot: 'last'
             }
         },
         watch: {
             scripts: {
-                files: ['js/<%= pkg.name %>.js'],
+                files: ['assets/js/<%= pkg.name %>.js'],
                 tasks: ['uglify'],
                 options: {
                     spawn: false
                 }
             },
             less: {
-                files: ['less/*.less'],
+                files: ['assets/less/*.less'],
                 tasks: ['less'],
                 options: {
                     spawn: false
