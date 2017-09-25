@@ -1,34 +1,34 @@
-date: 2017년 06월
+date: 2017년 09월
 
 downloads:
   label: 누적 책 다운로드 수
-  value: "187,844,220"
+  value: "214,170,979"
 
 books:
   label: 서비스 도서 수
-  value: "822,041"
+  value: "926,179"
 
 reviews:
   label: 등록된 리뷰 수
-  value: "621,068"
+  value: "687,674"
 
 notes:
   label: 등록된 독서노트 수
-  value: "46,825,785"
+  value: "50,967,345"
 
 regions:
   label: 고객들이 거주하는<br>국가 수
-  value: "224"
+  value: "226"
 
 trees:
   label: 리디북스가 지금까지<br>살려낸 나무 수
-  value: "3,005,508"
+  value: "3,426,736"
 
 vip:
   label: 가장 많은 책을 보유한<br>고객의 소장권수
-  value: "54,589"
+  value: "62,925"
 
 cp:
   label: 제휴 출판사 수
-  value: "2,045"
+  value: "2,092"
 
