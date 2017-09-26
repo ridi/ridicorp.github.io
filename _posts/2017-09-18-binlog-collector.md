@@ -102,7 +102,7 @@ Modern PHP 기반인 **[php-mysql-replication](https://github.com/krowinski/php-
             * 테이블 정보(PK IDs, ...)
             * Write/Delete시 행 정보, Update시 이전/이후 행 정보
     * 스키마가 중간에 변경될 경우
-        * Query 이벤트가 발생
+        * Query 이벤트(쿼리문 포함)가 발생
 3. **특정 위치로 부터 데이터 조회가 가능한가?** (장애 발생시, 해당 위치로부터 분석하기 위해서)
     *  다음과 같이 2가지로 시작 위치 지정 가능
         * Binlog 파일명과 위치
@@ -200,7 +200,7 @@ DELETE FROM binlog_sample.test_target WHERE admin_id = 'test_id';
     이벤트가 발생할 때 어떤 서버로 부터 오는지 추적이 힘듦                   
         * **MariaDB GTID Log 이벤트:** domainID, sequenceNumber, flag
         * **MariaDB GTID 형식:** {domainID}-{serverID}-{sequenceNumber},...
-    * **해결:** GTID를 계산하지 않고 항상 `SELECT BINLOG_GTID_POS` 쿼리를 이용하여 변환하도록 수정
+    * **해결:** GTID를 직접 계산하지 않고 항상 `SELECT BINLOG_GTID_POS` 쿼리를 이용하여 변환하도록 수정
             
 위의 문제를 해결하고 실제 상용에 적용해보니, Binlog Collector가 추적하고자 하는 테이블은 적으나 
 불필요한 테이블에 대한 데이터를 거르는데 시간이 너무 많이 걸려서 Master의 현재 위치를 따라 잡지 못하고 계속 지연되는 현상이 발생하였습니다.
