@@ -19,8 +19,8 @@ published: true
 
 ![그림 1. Logs For Infrastructure](/blog/img/binlog01.png){: data-action="zoom" }
 
-일반적인 DB 기반 구조는(왼쪽)는 시스템이 확장될 때 마다 다양한 외부 저장소들의 추가 및 각 저장소들의 데이터 불일치 문제로 시스템이 점점 복잡해집니다.
-그러나 로그 기반의 구조는(오른쪽)는 CDC 기술을 이용해서 변경 데이터를 추출하고 메시지 큐에 넣어서 한 곳으로부터
+일반적인 DB 기반 구조(왼쪽)는 시스템이 확장될 때 마다 다양한 외부 저장소들의 추가 및 각 저장소들의 데이터 불일치 문제로 시스템이 점점 복잡해집니다.
+그러나 로그 기반의 구조(오른쪽)는 CDC 기술을 이용해서 변경 데이터를 추출하고 메시지 큐에 넣어서 한 곳으로부터
 다양한 곳에서 사용하기 때문에 데이터를 관리하는 입장에서는 단순합니다.
 또한 장애가 발생했을 경우에도 Append 로그 방식의 데이터에서 필요한 위치부터 가져오면 되기 때문에 데이터를 오염없이 활용할 수 있습니다. 
 
@@ -91,7 +91,7 @@ Modern PHP 기반인 **[php-mysql-replication](https://github.com/krowinski/php-
 라이브러리 선택 시 고려한 사항은 다음과 같습니다.
 
 1. **사용 및 권한 제약은 없는가?**
-    * 서버세팅: binlog-format:row 만 지원
+    * 서버세팅: binlog-format:row 방식 사용
     * Client 접근 및 스키마 정보 조회 권한이 필요
         * REPLICATION SLAVE, REPLICATION CLIENT, SELECT
     * Mariadb-10.X 버전 지원
@@ -104,7 +104,7 @@ Modern PHP 기반인 **[php-mysql-replication](https://github.com/krowinski/php-
     * 스키마가 중간에 변경될 경우
         * Query 이벤트가 발생
 3. **특정 위치로 부터 데이터 조회가 가능한가?** (장애 발생시, 해당 위치로부터 분석하기 위해서)
-    *  다음과 같이 2가지로 시작 위치 가능
+    *  다음과 같이 2가지로 시작 위치 지정 가능
         * Binlog 파일명과 위치
         * GTID(Global Transaction ID)
             * 범용적인 트랜잭션 ID로 **Binlog 파일명과 위치(이하 BinlogOffset)**으로부터 독립적
@@ -203,7 +203,7 @@ DELETE FROM binlog_sample.test_target WHERE admin_id = 'test_id';
     * **해결:** GTID를 계산하지 않고 항상 `SELECT BINLOG_GTID_POS` 쿼리를 이용하여 변환하도록 수정
             
 위의 문제를 해결하고 실제 상용에 적용해보니, Binlog Collector가 추적하고자 하는 테이블은 적으나 
-불필요한 테이블을 SKIP 하는데 시간이 너무 많이 걸려서 Master의 현재 위치를 따라 잡지 못하고 계속 지연되는 현상이 발생하였습니다.
+불필요한 테이블에 대한 데이터를 거르는데 시간이 너무 많이 걸려서 Master의 현재 위치를 따라 잡지 못하고 계속 지연되는 현상이 발생하였습니다.
 성능 저하의 원인은 나중에 파악하고, 우선 Binlog 파일이 Append 로그 방식의 데이터 구조라서 분할 정복(divide and conquer)이 쉬운구조로 판단되어, 
 바로 병렬처리로 설계하게 되었습니다.
 
