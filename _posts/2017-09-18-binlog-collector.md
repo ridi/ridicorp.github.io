@@ -128,7 +128,7 @@ Binlog 이벤트 관련 쿼리와 위의 고려사항과 관련된 기능을 테
 
 ## 3. Binlog 이벤트 흐름
 특정 GTID를 이용해서, Binlog 이벤트를 가져온다는 것은 확인했지만 실제 사용하기 위해서는 Binlog 이벤트 흐름에 대해서 좀 더 구체적인 이해가 필요 했습니다.
-그래서 MySQL 이벤트 클래스와 유형[3]의 스펙문서와 오픈소스 라이브러리를 통해 Binlog 이벤트 흐름을 아래와 같이 정리할 수 있었습니다.
+그래서 MySQL 이벤트 문서[3]와 오픈소스 라이브러리를 통해 Binlog 이벤트 흐름을 아래와 같이 정리할 수 있었습니다.
 
 ![그림 3. Binlog Event 흐름](/blog/img/binlog03.png){: data-action="zoom" }
 
@@ -401,7 +401,7 @@ Kafka와 같은 외부 메시지 큐를 이용해서 좀 더 범용적인 방법
 
 [2] [php-mysql-replication](https://github.com/krowinski/php-mysql-replication)는 github에 공개된 Kacper Rowiński가 만든 php용 mysql replication 라이브러리입니다.
 
-[3] [MySQL 이벤트 클래스와 유형](https://dev.mysql.com/doc/internals/en/event-classes-and-types.html)에는 Binlog 이벤트 클래스와 타입 정도들이 설명되어 있습니다.
+[3] MySQL 이벤트 문서([이벤트 종류](https://dev.mysql.com/doc/internals/en/event-meanings.html)와 [이벤트 클래스와 유형](https://dev.mysql.com/doc/internals/en/event-classes-and-types.html))에는 Binlog 이벤트와 타입들이 설명되어 있습니다.
 
 [4] [How is the tableID generated?](http://dba.stackexchange.com/questions/51873/replication-binary-log-parsingtableid-generation-on-delete-cascade-handling)
 
