@@ -14,8 +14,8 @@ published: true
 해당 이벤트들을 스트리밍 방식으로 다른 DB에 복제하는 기술입니다. 
 요즘은 DB의 CDC를 이용하여 변경 정보를 메세지 큐에 넣고 데이터를 가져와 검색 엔진, 캐쉬, 통계, 데이터 변경 감사 정보로 활용하는 추세입니다.
 왜냐하면 아키텍쳐가 간단하고 구조적으로 데이터 불일치 문제가 없기 때문입니다.
-아래 그림은 [Designing Data-Intensive Applications](https://dataintensive.net)의 저자, Martin Kleppmann[1]가 쓴 [Logs for Data Infrastructure](https://martin.kleppmann.com/2015/05/27/logs-for-data-infrastructure.html) 
-라는 글에서 가져왔습니다.
+아래 그림은 Martin Kleppmann[1]가 쓴 [Logs for Data Infrastructure](https://martin.kleppmann.com/2015/05/27/logs-for-data-infrastructure.html) 
+라는 글을 참조하였습니다.
 
 ![그림 1. Logs For Infrastructure](/blog/img/binlog01.png){: data-action="zoom" }
 
@@ -397,7 +397,7 @@ Kafka와 같은 외부 메시지 큐를 이용해서 좀 더 범용적인 방법
 
 #### 참고자료
 
-[1] [Martin Kleppmann](https://martin.kleppmann.com/)는 캠브리지 대학에서 분산 시스템 리서쳐로 활동하며 다양한 분산 시스템 관련 글을 썼습니다.
+[1] [Martin Kleppmann](https://martin.kleppmann.com/)는 캠브리지 대학에서 분산 시스템 리서쳐로 활동하며 다양한 분산 시스템 관련 글을 썼습니다. 특히 [Designing Data-Intensive Applications](https://dataintensive.net)의 저자로 잘 알려져 있습니다.
 
 [2] [php-mysql-replication](https://github.com/krowinski/php-mysql-replication)는 github에 공개된 Kacper Rowiński가 만든 php용 mysql replication 라이브러리입니다.
 
