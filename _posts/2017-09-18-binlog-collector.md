@@ -324,7 +324,7 @@ Partitioner와 Worker를 통한 BinlogOffset 변화 및 분석 데이터 시간�
 ([200bytes data], [200bytes data], [10bytes admin_id]'), ...;
 ...
 ```
-    * **대량 Insert 100개씩 1건:** (4 + 201 + 201 + 11) * 100 = 417,00 bytes 
+    * **대량 Insert 100개씩 1건:** (4 + 201 + 201 + 11) * 100 = 41,700 bytes 
     * **전체 Insert 크기:** 41,700 * 800 =  33,360,000 bytes
     * **실제 Binlog 크기:** 34,789,200 bytes
         * SHOW BINLOG EVENTS로 계산
