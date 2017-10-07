@@ -112,9 +112,9 @@ Modern PHP 기반인 **[php-mysql-replication](https://github.com/krowinski/php-
         * Query 이벤트(쿼리문 포함)가 발생
 3. **특정 위치로 부터 데이터 조회가 가능한가?** (장애 발생시, 해당 위치로부터 분석하기 위해서)
     *  다음과 같이 2가지로 시작 위치 지정 가능
-        * Binlog 파일명과 위치
+        * **Binlog 파일명과 위치(이하 BinlogOffset)**
         * GTID(Global Transaction ID)
-            * 범용적인 트랜잭션 ID로 **Binlog 파일명과 위치(이하 BinlogOffset)**으로부터 독립적
+            * 범용적인 트랜잭션 ID로 BinlogOffset 으로부터 독립적
             * MySQL, MariaDB 각각 지원(서로 호환 X)
 
 또한 위의 오픈소스 라이브러리를 보완할 수 있는 Binlog 이벤트 관련 쿼리들을 찾아보았는데,
@@ -139,8 +139,15 @@ Binlog 이벤트 관련 쿼리와 위의 고려사항과 관련된 기능을 테
 
 ![그림 3. Binlog Event 흐름](/blog/img/binlog03.png){: data-action="zoom" }
 
-분석이 필요한 **Write/Update/Delete** 이벤트인 경우는 **MariaDB GTID Log** 이벤트를 시작으로 
-여러 이벤트들이 수신되고, 최종적으로는 **Transaction ID** 이벤트까지 하나의 트랜잭션 단위로 Binlog 이벤트들을 계속 가져오게 됩니다.
+분석이 필요한 **Write/Update/Delete** 이벤트인 경우는 **MariaDBGtidLog** 이벤트에서
+**Xid(Transaction Id = Commit)** 이벤트까지 하나의 트랜잭션 단위로 가져옵니다.
+**Query** 이벤트는 일반적으로 **MariaDBGtidLog** 이벤트로 시작하여 **Query** 이벤트(DDL 문)로 종료됩니다.
+Binlog 파일의 용량이 다 차서 파일이 변경되면 **FileRotate** 이벤트가 발생하는데,
+해당 이벤트는 **MariaDBGtidLog** 이벤트 없이 독립적으로 발생합니다.
+
+한편, 특정 GTID 위치로부터 구동하면, 그 다음 GTID의 **MariaDBGtidLog** Event 부터 스트림을 가져오게 되는데(예: 0-1-7140로 시작하면, 다음 0-1-7141부터 가져옴), 
+그것은 DB Replication이 내부적으로 정상 복제 처리된 경우 해당 GTID를 Commit해 두었다가 
+다음 복제 시에는 정상 처리된 이후의 GTID로부터 데이터를 가져오도록 설계되었기 때문입니다.
 
 실제 Binlog 이벤트들을 처음 보신 분들이 계실 수 있어서, 샘플 쿼리를 실행 한 후 `SHOW BINLOG EVENTS` 로 조회한 내용입니다.
 
@@ -152,11 +159,6 @@ DELETE FROM binlog_sample.test_target WHERE admin_id = 'test_id';
 ```
 
 ![그림 4. SHOW BINLOG EVENTS 결과](/blog/img/binlog04.png){: data-action="zoom" }
-
-한편, 특정 GTID 위치로부터 구동하였을 때 그 다음 GTID부터 이벤트 스트림을 가져오게 되는데(예: 0-1-7140로 시작하면, 다음 0-1-7141부터 가져옴), 
-그것은 DB Replication이 내부적으로 정상 복제 처리된 경우 해당 GTID를 Commit해 두었다가 
-다음 복제 시에는 정상 처리된 이후의 GTID로부터 데이터를 가져오도록 설계되었기 때문입니다.
-그리고 파일이 변경되면 File Rotate 이벤트가 발생하여 Binlog 파일이 변경되었음을 알려줍니다.
 
 ## 4. Binlog Collector 프로토타입 개발
 분석한 내용을 토대로 Binlog를 분석하여 수집, 저장하는 Binlog Collector를 아래와 같이 설계 했습니다.
