@@ -86,14 +86,8 @@ RDB의 특성상 모든 변경사항(Insert/Update/Delete)이 적용된 최종�
 Binlog 복제 프로토콜을 이용하면 현재 작동 중인 프로그램과 관계 없이 테이블의 변경사항 추적에는 유용할 것이라 판단했습니다.
 
 ## 2. 오픈소스 선정 및 요구사항 분석
-CDC 기술을 이용하여 MariaDB의 테이블 변경사항을 추적하는 방법을 찾아보니, 
-대부분 MySQL 복제 프로토콜을 직접 구현한 오픈 소스 라이브러리들이었습니다. 
-MySQL 복제 프로토콜은 Master/Slave 구조에서 Slave가 복제를 위해 Master와 통신을 할 때, 
-DB 파일의 모든 변경정보를 포함하는 Binlog 이벤트들을 스트리밍 방식으로 가져옵니다. 이 부분이 라이브러리로 제공되어 있어, 
-관심 있는 데이터를 입맛에 맞게 사용할 수 있었습니다.
-
 여러 언어**(Java/Python/PHP/Node.js/Go)**로 구현된, 
-다양한 오픈소스 라이브러리들 중에서 플랫폼팀이 주요하게 쓰고 있는 
+다양한 오픈소스 MySQL Replication 라이브러리들 중에서 플랫폼팀이 주요하게 쓰고 있는 
 Modern PHP 기반인 **[php-mysql-replication](https://github.com/krowinski/php-mysql-replication)**[2]을 선택하였고, 
 라이브러리 선택 시 고려한 사항은 다음과 같습니다.
 
