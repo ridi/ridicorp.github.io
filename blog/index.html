@@ -51,12 +51,12 @@ title: "Blog"
 <!-- Pagination links -->
 <div class="pager">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}#Posts" class="page-button"><i class="icon-direct-left"></i> 이전</div>
+    <a href="{{ paginator.previous_page_path }}#Posts" class="page-button"><i class="icon-direct-left"></i> 이전</a>
   {% else %}
   {% endif %}
   
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}#Posts" class="page-button">다음 <i class="icon-direct-right"></i></div>
+    <a href="{{ paginator.next_page_path }}#Posts" class="page-button">다음 <i class="icon-direct-right"></i></a>
   {% else %}
   {% endif %}
 </div>
