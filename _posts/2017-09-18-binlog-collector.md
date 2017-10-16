@@ -348,11 +348,10 @@ Memory: 8 GB
 docker 3대: mariadb:10.0.27 db-master, db-slave, db-slave-slave
 db-slave를 읽어서 db-slave-slave에 이력 로그 저장
 
-gtid_partition_max_count = 1000 // child BinlogOffsetRage 최대 개수
-jump_offset_for_next_partition = 10000 // Partitioner에서 범위를 나누기 위한 Binlog Jump Rows 개수
-child_process_max_count = 10 // 동시 실행 worker 개수로 1,2,4,10,16으로 변경해서 테스트
-once_processed_max_event_count_in_gtid = 100 // 한 GTID 안에서 이벤트를 묶어서 저장할 개수 
-gtid_count_for_persist_per_partition = 500 // 분석 완료 범위 갱신을 위한 GTID 개수 
+Partitioner에서 범위를 나누기 위한 Binlog Jump Rows = 10000 
+동시 실행 worker 개수 = 10 (테스트: 1,2,4,10)
+한 GTID 안에서 이벤트를 묶어서 저장할 개수 = 100
+분석 완료 범위 Commit을 위한 GTID 개수 = 500
 ```
 
 |동시 실행 개수 | Worker 총 시간|가장 오래 걸린 Worker 초
@@ -361,7 +360,6 @@ gtid_count_for_persist_per_partition = 500 // 분석 완료 범위 갱신을 위
 | 2개 | 60s | 16s
 | 4개 | 54s | 21s
 | 10개 | 54s | 54s
-| 16개 | 54s | 54s
 {: .post-table }
 (**Partitioner 실행 시간:** 1~2s로 동일)
 
