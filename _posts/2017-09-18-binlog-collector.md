@@ -94,19 +94,18 @@ MySQL Replication 라이브러리들은 다양한 언어**(Java/Python/PHP/Node.
     * Client 접근 및 스키마 정보 조회 권한이 필요
         * REPLICATION SLAVE, REPLICATION CLIENT, SELECT
     * Mariadb-10.X 버전 지원
-        * 실제 MariaDB는 테스트가 별로 안되어 있어서, 몇가지 버그들이 발견되어서 Pull Request을 통해서 버그 수정에 공헌 (^_^;)
 2. **필요한 데이터를 추출 할 수 있는가?**
     * DB에서 Insert/Update/Delete를 할 경우
         * TableMap과 Write/Update/Delete 이벤트가 발생
             * 테이블 정보(PK IDs, ...)
-            * Write/Delete시 행 정보, Update시 이전/이후 행 정보
+            * Write/Delete시 Rows 정보, Update시 이전/이후 Rows 정보
     * 스키마가 중간에 변경될 경우
         * Query 이벤트(쿼리문 포함)가 발생
 3. **특정 위치로 부터 데이터 조회가 가능한가?** (장애 발생시, 해당 위치로부터 분석하기 위해서)
     *  다음과 같이 2가지로 시작 위치 지정 가능
         * **Binlog 파일명과 위치(이하 BinlogOffset)**
         * GTID(Global Transaction ID)
-            * 범용적인 트랜잭션 ID로 BinlogOffset 으로부터 독립적
+            * 범용적인 트랜잭션 ID로 BinlogOffset으로부터 독립적
             * MySQL, MariaDB 각각 지원(서로 호환 X)
 
 또한 위의 오픈소스 라이브러리를 보완할 수 있는 Binlog 이벤트 관련 쿼리들을 찾아보았는데,
@@ -122,7 +121,7 @@ DB 복제 기능을 사용해 본 분들이라면 아래의 하위 2개의 Binlo
 Binlog 이벤트 관련 쿼리와 위의 고려사항과 관련된 기능을 테스트해보고, 아래와 같은 방법으로 개발이 가능함을 확인하였습니다.
 - MariaDB의 BinlogOffset을 GTID로 변환
 - 변환한 GTID를 사용하여 Binlog 이벤트들을 가져옴
-- 원하는 테이블의 Write/Update/Delete 정보를 가공하여 추출
+- 원하는 테이블의 Write/Update/Delete 이벤트를 가공하여 데이터 추출
 - 장애 발생시, 재처리를 위해서 현재까지 처리한 GTID 위치를 트래킹
 
 ## 3. Binlog 이벤트 흐름
@@ -132,12 +131,12 @@ Binlog 이벤트 관련 쿼리와 위의 고려사항과 관련된 기능을 테
 ![그림 3. Binlog Event 흐름](/blog/img/binlog03.png){: data-action="zoom" }
 
 분석이 필요한 **Write/Update/Delete** 이벤트인 경우는 **MariaDBGtidLog** 이벤트에서
-**Xid(Transaction Id = Commit)** 이벤트까지 하나의 트랜잭션 단위로 가져옵니다.
+**Xid**(Transaction Id = Commit) 이벤트까지 하나의 트랜잭션 단위로 가져옵니다.
 **Query** 이벤트는 일반적으로 **MariaDBGtidLog** 이벤트로 시작하여 **Query** 이벤트(DDL 문)로 종료됩니다.
 Binlog 파일의 용량이 다 차서 파일이 변경되면 **FileRotate** 이벤트가 발생하는데,
 해당 이벤트는 **MariaDBGtidLog** 이벤트 없이 독립적으로 발생합니다.
 
-한편, 특정 GTID 위치로부터 구동하면, 그 다음 GTID의 **MariaDBGtidLog** Event 부터 스트림을 가져오게 되는데(예: 0-1-7140로 시작하면, 다음 0-1-7141부터 가져옴), 
+한편, 특정 GTID 위치로부터 구동하면, 그 다음 GTID의 **MariaDBGtidLog** 이벤트부터 스트림을 가져오게 되는데(예: 0-1-7140로 시작하면, 다음 0-1-7141부터 가져옴), 
 그것은 DB Replication이 내부적으로 정상 복제 처리된 경우 해당 GTID를 Commit해 두었다가 
 다음 복제 시에는 정상 처리된 이후의 GTID로부터 데이터를 가져오도록 설계되었기 때문입니다.
 
@@ -162,7 +161,7 @@ DELETE FROM binlog_sample.test_target WHERE admin_id = 'test_id';
     * **master_status**로 타겟 DB의 현재 BinlogOffset 조회 가능
 2. 해당 BinlogOffset을 GTID로 변환하여 타겟 DB에 연결
 3. Binlog 이벤트 스트림을 연결 - 입력한 GTID의 다음 GTID부터 시작
-4. 이벤트 스트림을 처리하여, Write/Update/Delete Rows 데이터를 수집
+4. 이벤트 스트림을 처리하여, Write/Update/Delete Rows를 수집
 5. 모아진 이력 Rows를 JSON 데이터로 저장
 6. 현재 GTID 위치를 DB로 업데이트
 7. 4-6 과정을 반복
@@ -174,33 +173,32 @@ DELETE FROM binlog_sample.test_target WHERE admin_id = 'test_id';
     * **해결:** 특정 조건에 맞는 데이터만 수집하도록 예외 처리 추가
         * 예) 가격 테이블의 삭제만 수집
 2. **한 GTID 안의 대량의 데이터 처리 문제**
-    * 한 트랜잭션 안에서 대량의 데이터가 있는 경우, 한 번에 저장시 오류
-        * 테이블 백업으로 인한 대량 insert
-        * 테이블 구조 변경으로 인한 테이블 전체 Update 
+    * 한 트랜잭션 안에서 대량의 데이터가 있어서, 메모리 오류 발생
+        * 데이터 이관으로 인한 대량 Bulk insert 시 발생
+        * 테이블 구조 변경으로 인한 전체 Update 시 발생
     * **해결:** 한 트랜잭션 안에서 설정된 개수의 이벤트 데이터만큼 쪼개서 저장
-3. **현재 GTID의 BinlogOffset의 잦은 위치 저장으로 인한 오버헤드**
-    * **해결방안연구:** 
-        * 오버헤드를 줄이기 위해 메모리 DB에 저장하면 효율이 올라가지만 외부 DB가 필요
-        * 수집 데이터가 Append 로그 방식이기 때문에 중복이 발생해도 사용하는 쪽에서 보정이 쉬움 (메모리 DB X)
-    * **해결:** 분석완료된 BinlogOffset의 갱신을 설정된 개수(예: 500개)마다 실행
-        * 장애가 발생할 경우, 재처리시 중복 데이터 허용
+3. **분석 완료된 BinlogOffset의 잦은 갱신으로 인한 DB 오버헤드**
+    * **해결방안연구:**
+        * 메모리 Table을 사용하면 장애시 휘발성
+        * 외부 DB를 사용하면 구조가 복잡해짐
+    * **해결:** 분석완료된 BinlogOffset의 갱신을 설정된 GTID 개수(예: 500개)마다 실행
+        * 따라서 장애가 발생할 경우, 재처리시 중복 데이터 허용
+        * 수집 데이터가 Append 로그 방식이기 때문에 중복이 발생해도 사용하는 쪽에서 보정이 쉬움
 4. **Binlog TableMap 이벤트의 테이블 ID 매핑 문제**
     * 테이블 ID를 조회해 보니 DB에 존재하지 않았고, 실제 Binlog 복제시에 내부 테이블 정보 캐쉬용 ID임[3]을 알게 됨
     * **해결:** 테이블 ID 대신 테이블명을 저장하도록 수정
-5. **Binlog 파일명을 못 찾는 문제**
-    * 위에서 설명한 것처럼 Binlog 이벤트 스트림은 시작시 입력한 BinlogOffset의 GTID의 다음 GTID 이벤트 스트림으로부터 가져오는데 
-    두 GTID 사이에 File Rotate 이벤트가 있으면 해당 이벤트를 인식못하는 문제를 확인
-        * File Rotate 이벤트는 GTID 밖에 존재하기 때문에(그림3. Binlog 이벤트 스트림) 
+5. **시작시 Binlog 파일명을 못 찾는 문제**
+    * 시작 GTID와 다음 GTID 사이에 File Rotate 이벤트가 있으면 구동시 파일명을 못 찾음
+        * File Rotate 이벤트는 GTID 밖에 존재하기 때문에(그림3. Binlog 이벤트 스트림) 구동시
+        다음 GTID부터 이벤트를 가져올 때 File 변경 이벤트는 무시됨으로, 처음에 입력한 Binlog 파일명의 변경을 알지 못함
     * **해결:** 처음 실행시, GTID 계산이 실패할 경우 Binlog 파일의 다음 시퀀스 파일명을 계산하여 보정
         * 예) maraidb-bin.000044 → maraidb-bin.000045,  
           maraidb-bin.999999 → maraidb-bin.000000
-6. **멀티서버 환경의 BinlogOffset에서 GTID 변환 문제** 
-    * 복제 프로토콜의 MariaDB GTID Log 이벤트 정보는 서버 ID가 포함되어 있지 않아서 
-    따로 ID를 기억하여 GTID를 직접 계산하였지만, 
-    GTID가 멀티서버 환경인 경우(ex: 0-44-1222,0-45-1223,...) 하나 이상의 GTID가 섞여 있으므로, 
-    이벤트가 발생할 때 어떤 서버로 부터 오는지 추적이 힘듦                   
-        * **MariaDB GTID Log 이벤트:** domainID, sequenceNumber, flag
-        * **MariaDB GTID 형식:** {domainID}-{serverID}-{sequenceNumber},...
+6. **다중 GTID 환경의 BinlogOffset에서 GTID 변환 문제** 
+    * MariaDBGTIDLog 이벤트(domainID, sequenceNumber, flag)에는 서버 ID가 포함되어 있지 않아서 
+    따로 ID를 기억하여 조합하여 GTID를 직접 계산
+        * **단일 GTID:** {domainID}-{serverID}-{sequenceNumber}
+    * 멀티 GTID 환경인 경우 하나 이상의 GTID가 섞여 있으므로, MariaDBGTIDLog 이벤트가 발생할 때 어떤 서버 ID로부터 오는지 추적이 힘듦                   
     * **해결:** GTID를 직접 계산하지 않고 항상 `SELECT BINLOG_GTID_POS` 쿼리를 이용하여 변환하도록 수정
             
 위의 문제를 해결하고 실제 상용에 적용해보니, Binlog Collector가 추적하고자 하는 테이블은 적으나 
@@ -218,7 +216,7 @@ DB 복제를 위한 Binlog 이벤트 스트림은 태생적으로 GTID 기반으
 ![그림 6-1. Binlog Collector Partitioner 설계](/blog/img/binlog06-1.png){: data-action="zoom" }
 
 파티셔닝은  **1)** 최종적으로 분석하거나, 새롭게 입력받은 위치로부터(Parent BinlogOffset)
-**2)** 'SHOW BINLOG EVENTS'를 반복 사용하여 이벤트를 조회하여,
+**2)** `SHOW BINLOG EVENTS`를 반복 사용하여 이벤트를 조회하여,
 **3)** 설정된 GTID 개수만큼 Child BinlogOffsetRanges들 만큼 나누게 되는데, 구체적으로 나누는 예는 다음과 같습니다.
 ![그림 6-2. Binlog 파일 Partitioning 예제](/blog/img/binlog06-2.png){: data-action="zoom" }
 
@@ -231,11 +229,12 @@ DB 복제를 위한 Binlog 이벤트 스트림은 태생적으로 GTID 기반으
 2. 정해진 수만큼 Child Process를 생성하며, 각각 독립적으로 아래 과정을 거침
     1. 해당 BinlogOffsetRange의 시작 위치를 사용하여 타겟 DB에 연결
     2. Binlog 이벤트 스트림을 연결
-    3. MariaDB GTID 로그 이벤트와 트랜잭션 ID 이벤트 사이의 데이터를 모음
+    3. MariaDBGTIDLog 이벤트와 트랜잭션 ID 이벤트 사이의 데이터를 모음
         * 관심없는 Rows들은 무시(RowEventValueSkipperInterface 구현체 사용)
     4. 수집한 데이터를 가공하여 저장
     5. 다음 조건에 따라 분석을 계속하거나 종료
-        * 설정된 개수(ex:500개)의 GTID를 지날 때마다 BinlogOffsetRange의 시작 부분을 갱신(**분석 완료 Commit**)
+        * 설정된 개수(ex:500개)의 GTID를 지날 때마다 BinlogOffsetRange의 시작 부분을 갱신
+            * 분석 완료 Commit
         * End에 도달하면, 해당 BinlogOffsetRange의 Row를 지우고 종료
     6. 2.3-2.5 과정을 반복
 
@@ -256,13 +255,14 @@ DB 복제를 위한 Binlog 이벤트 스트림은 태생적으로 GTID 기반으
     * **해결:** 이력 적재 테이블을 binlog, row, column으로 테이블을 정규화하여 적재하고, 정규화 적재를 할 때 바로 사용할 수 있도록 중복 데이터도 제외하도록 수정
         
 ## 6. 데이터 분석 완료 시점 조회 및 모니터링
-실제 업무에서 Binlog 기반으로 데이터 변경사항을 추적하다보니, 실시간은 아니더라도 특정 시간 이내에 데이터 분석이 완료되었는지 보장해줄 필요성이 있었습니다.
-예를 들어 한 시간 단위로 비공개된 도서에 대한 무결성을 체크하여 이상시 메일로 알리는 기능을 제공한다면
+실제 업무에서 Binlog 기반으로 데이터 변경사항을 추적하다보니,
+실시간은 아니더라도 특정 시간 이내에 데이터 분석이 완료되었는지 보장해줄 필요성이 있었습니다.
+예를 들어 한 시간 단위로 판매불가로 바뀐 도서에 대한 무결성을 체크하여 이상시 메일로 알리는 기능을 제공해야할 때
 Binlog Collector가 5분의 지연 시간을 보장해준다면 매시 6분 이후에 체크하면 됩니다.
 
 따라서 지연 시간 보장을 위해 현재까지 분석된 BinlogOffset에 발생 시간을 함께 추가하려고 했으나 파티션을 나누기 위해 조회한 `SHOW BINLOG EVENTS`의 결과에는 아쉽게도 날짜 정보가 포함되어 있지 않았습니다.
 대신 DB 복제 프로토콜에는 이벤트 발생 시간 정보가 포함되어 있어서,
-파티션을 나눌때 각각의 시작 위치에 대한 Binlog Collector를 구동하여 **다음 이벤트 시간**을 넣었습니다. 
+파티션을 나눌때 각각의 시작 위치에 대한 Binlog Collector를 구동하여 **다음 GTID의 첫번째 이벤트 시간**을 넣었습니다. 
 
 Partitioner와 Worker를 통한 BinlogOffset에 데이터 분석 시간을 보장할 수 있도록 개선한 그림은 아래와 같습니다.
 
@@ -272,13 +272,13 @@ Partitioner와 Worker를 통한 BinlogOffset에 데이터 분석 시간을 보�
  ```
  1. Child 분석 범위가 없으면, Parent의 end_position_date (그림 1번)
      (처음 시작일 때 또는 Child 분석 범위가 모두 완료되어 전부 삭제된 경우)
- 2. Child 분석 범위가 있으면, Child 중 가장 오래된 curent_position_date (그림 2,3번) 
+ 2. Child 분석 범위가 있으면, Child 중 가장 오래된 curent_position_date (그럼 2,3번) 
  ```
 
 추가적으로 지연 모니터링은 Partitioner와 Worker가 정상적으로 동작 중인지 그리고 현재 시간 기준으로 지연이 얼마 이상되면 알려줄 수 있도록 Sentry와 메일을 활용했습니다.
 
 실제 지연 모니터링은 좀 더 복잡하고(예: DB의 변경사항이 발생하지 않아서 10분 째 데이터 변경사항이 없는 경우), 
-개선해야될 내용(예: 멀티서버 환경에서 master 2대가 번갈아서 계속 변경이 발생하는 경우)이 더 있지만 여기에서 간단하게 마무리하려고 합니다.
+개선해야될 내용(예: 멀티 GTID 환경에서 master 2대가 번갈아서 계속 변경이 발생하는 경우)이 더 있지만 여기에서 간단하게 마무리하려고 합니다.
 
 ## 7. 성능 측정
 
