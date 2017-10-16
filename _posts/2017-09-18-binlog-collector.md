@@ -215,16 +215,12 @@ DB 복제를 위한 Binlog 이벤트 스트림은 태생적으로 GTID 기반으
 적재하는 Worker'** 로 변경하였습니다. 
 
 #### 1) BinlogCollect Partitioner를 설계한 그림은 다음과 같습니다.
-![그림 6. Binlog Collector Partitioner 설계](/blog/img/binlog06.png){: data-action="zoom" }
+![그림 6-1. Binlog Collector Partitioner 설계](/blog/img/binlog06-1.png){: data-action="zoom" }
 
-자세한 동작 방식은 다음과 같습니다.
-
-1. 최초 BinlogOffset 입력 및 Command 실행: **change_pos**
-2. Parent BinlogOffset에서 `SHOW BINLOG EVENTS`를 반복 사용하여 설정된 GTID 개수만큼 Child BinlogOffsetRange들로 나눔
-    * BinlogOffsetRange: 시작 BinlogOffset ~ 종료 BinlogOffset
-3. 파티션 정보를 DB에 저장
-    * Child BinlogOffsetRanges를 DB에 추가
-    * Parent BinlogOffset 위치를 마지막으로 갱신
+파티셔닝은  **1)** 최종적으로 분석하거나, 새롭게 입력받은 위치로부터(Parent BinlogOffset)
+**2)** 'SHOW BINLOG EVENTS'를 반복 사용하여 이벤트를 조회하여,
+**3)** 설정된 GTID 개수만큼 Child BinlogOffsetRanges들 만큼 나누게 되는데, 구체적으로 나누는 예는 다음과 같습니다.
+![그림 6-2. Binlog 파일 Partitioning 예제](/blog/img/binlog06-2.png){: data-action="zoom" }
 
 #### 2) BinlogCollect Worker를 설계한 그림은 다음과 같습니다.
 ![그림 7. Binlog Collector Worker 설계](/blog/img/binlog07.png){: data-action="zoom" }
