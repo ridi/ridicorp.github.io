@@ -227,7 +227,7 @@ DB 복제를 위한 Binlog 이벤트 스트림은 태생적으로 GTID 기반으
 
 자세한 동작 방식은 다음과 같습니다.
 
-1. Child BinlogOffsetRange들을 조회
+1. 수집할 Child BinlogOffsetRanges를 조회
 2. 정해진 수만큼 Child Process를 생성하며, 각각 독립적으로 아래 과정을 거침
     1. 해당 BinlogOffsetRange의 시작 위치를 사용하여 타겟 DB에 연결
     2. Binlog 이벤트 스트림을 연결
@@ -235,19 +235,16 @@ DB 복제를 위한 Binlog 이벤트 스트림은 태생적으로 GTID 기반으
         * 관심없는 Rows들은 무시(RowEventValueSkipperInterface 구현체 사용)
     4. 수집한 데이터를 가공하여 저장
     5. 다음 조건에 따라 분석을 계속하거나 종료
-        * 설정된 개수(ex:500개)의 GTID를 지날 때마다 BinlogOffsetRange의 시작 부분을 갱신
+        * 설정된 개수(ex:500개)의 GTID를 지날 때마다 BinlogOffsetRange의 시작 부분을 갱신(**분석 완료 Commit**)
         * End에 도달하면, 해당 BinlogOffsetRange의 Row를 지우고 종료
     6. 2.3-2.5 과정을 반복
 
 이런 구조로 Binlog Collector를 개발하여 수집을 해 보았습니다. 그런데 설계시 예상하지 못한 몇가지 문제가 발견 되었습니다.
 1. **Partitioner 분할 범위가 커짐에 따라 속도 저하**
     * `SHOW BINLOG EVENTS`가 검색 기능이 없으므로, 분할 범위가 커짐에 따라 GTID 이벤트를 세는데 오버헤드가 커짐 
-        * ```
-          SHOW BINLOG EVENTS [IN 'log_name'] [FROM pos] [LIMIT [offset,] row_count]
-          ```
-    * **해결:** 위의 `LIMIT`를 이용해서 시작 위치부터 설정된 ROW 개수만큼 이동 후, 나오는 첫번째 GTID의 BinlogOffset으로 파티션을 나눔
-        * 새로운 점프 설정값: **jump_offset_for_next_partition**
-        * GTID 개수로 분할하던 기존 방법에 비해서 불필요한 연산이 줄어들어 빠름
+    * **해결:** 아래의 `LIMIT`를 이용해서 시작 위치부터 설정된 ROW 개수만큼 이동 후에 나오는 첫번째 GTID의 BinlogOffset으로 파티션을 나눔
+        * ```SHOW BINLOG EVENTS [IN 'log_name'] [FROM pos] [LIMIT [offset,] row_count]```
+        * GTID 개수로 정확하게 분할하던 기존 방법에 비해서 불필요한 연산이 줄어들어 빠름
 2. **상용에서 GTID 변환(`SELECT BINLOG_GTID_POS`) 속도 저하**
     * 상용환경에서 분석하고자 하는 테이블이 소량임에도 Master의 현재 위치를 따라 잡지 못하고, 계속 차이가 벌어지는 현상이 발생
     * **Binlog 파일이 클수록 GTID 변환 쿼리 속도가 느려지는 것**을 발견
