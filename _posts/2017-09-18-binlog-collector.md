@@ -4,7 +4,7 @@ title: "CDC 기술 기반의 MariaDB Binlog을 이용한 이력 개발"
 description: "데이터베이스의 Change Data Capture(CDC) 기술을 이용하여 테이블의 변경 사항 추적을 설계 및 개발했던 내용을 공유합니다"
 header-img: ""
 fb-img: ""
-date: 2017-09-18
+date: 2017-10-17
 author: gilwon.oh
 category: engineering
 published: true
