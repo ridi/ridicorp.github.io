@@ -86,10 +86,8 @@ RDB의 특성상 모든 변경사항(Insert/Update/Delete)이 적용된 최종�
 Binlog 복제 프로토콜을 이용하면 현재 작동 중인 프로그램과 관계 없이 테이블의 변경사항 추적에는 유용할 것이라 판단했습니다.
 
 ## 2. 오픈소스 선정 및 요구사항 분석
-여러 언어**(Java/Python/PHP/Node.js/Go)**로 구현된, 
-다양한 오픈소스 MySQL Replication 라이브러리들 중에서 플랫폼팀이 주요하게 쓰고 있는 
-Modern PHP 기반인 **[php-mysql-replication](https://github.com/krowinski/php-mysql-replication)**[2]을 선택하였고, 
-라이브러리 선택 시 고려한 사항은 다음과 같습니다.
+MySQL Replication 라이브러리들은 다양한 언어**(Java/Python/PHP/Node.js/Go)**로 포팅되어 오픈소스로 구현되어 있었고,
+라이브러리 사용시 주요하게 고려한 사항은 다음과 같습니다.
 
 1. **사용 및 권한 제약은 없는가?**
     * 서버세팅: binlog-format:row 방식 사용
@@ -129,7 +127,7 @@ Binlog 이벤트 관련 쿼리와 위의 고려사항과 관련된 기능을 테
 
 ## 3. Binlog 이벤트 흐름
 특정 GTID를 이용해서, Binlog 이벤트를 가져온다는 것은 확인했지만 실제 사용하기 위해서는 Binlog 이벤트 흐름에 대해서 좀 더 구체적인 이해가 필요 했습니다.
-그래서 MySQL 이벤트 문서[3]와 오픈소스 라이브러리를 통해 Binlog 이벤트 흐름을 아래와 같이 정리할 수 있었습니다.
+그래서 MySQL 이벤트 문서[2]와 오픈소스 라이브러리를 통해 Binlog 이벤트 흐름을 아래와 같이 정리할 수 있었습니다.
 
 ![그림 3. Binlog Event 흐름](/blog/img/binlog03.png){: data-action="zoom" }
 
@@ -187,7 +185,7 @@ DELETE FROM binlog_sample.test_target WHERE admin_id = 'test_id';
     * **해결:** 분석완료된 BinlogOffset의 갱신을 설정된 개수(예: 500개)마다 실행
         * 장애가 발생할 경우, 재처리시 중복 데이터 허용
 4. **Binlog TableMap 이벤트의 테이블 ID 매핑 문제**
-    * 테이블 ID를 조회해 보니 DB에 존재하지 않았고, 실제 Binlog 복제시에 내부 테이블 정보 캐쉬용 ID임[4]을 알게 됨
+    * 테이블 ID를 조회해 보니 DB에 존재하지 않았고, 실제 Binlog 복제시에 내부 테이블 정보 캐쉬용 ID임[3]을 알게 됨
     * **해결:** 테이블 ID 대신 테이블명을 저장하도록 수정
 5. **Binlog 파일명을 못 찾는 문제**
     * 위에서 설명한 것처럼 Binlog 이벤트 스트림은 시작시 입력한 BinlogOffset의 GTID의 다음 GTID 이벤트 스트림으로부터 가져오는데 
@@ -307,7 +305,7 @@ Partitioner와 Worker를 통한 BinlogOffset 변화 및 분석 데이터 시간�
 1. 테스트 테이블 생성
 ```SQL
 예) CREATE TABLE binlog_sample.test_target (
-    id int NOT NULL AUTO_INCREMENT, -- size: 4bytes [5]
+    id int NOT NULL AUTO_INCREMENT, -- size: 4bytes [4]
     data VARCHAR(255),              -- size: 1bytes + data bytes
     data2 VARCHAR(255),             -- size: 1bytes + data bytes
     admin_id VARCHAR(255)           -- size: 1bytes + data bytes
@@ -402,10 +400,8 @@ Kafka와 같은 외부 메시지 큐를 이용해서 좀 더 범용적인 방법
 
 [1] [Martin Kleppmann](https://martin.kleppmann.com/)는 캠브리지 대학에서 분산 시스템 리서쳐로 활동하며 다양한 분산 시스템 관련 글을 썼습니다. 특히 [Designing Data-Intensive Applications](https://dataintensive.net)의 저자로 잘 알려져 있습니다.
 
-[2] [php-mysql-replication](https://github.com/krowinski/php-mysql-replication)는 github에 공개된 Kacper Rowiński가 만든 php용 mysql replication 라이브러리입니다.
+[2] MySQL 이벤트 문서([이벤트 종류](https://dev.mysql.com/doc/internals/en/event-meanings.html)와 [이벤트 클래스와 유형](https://dev.mysql.com/doc/internals/en/event-classes-and-types.html))에는 Binlog 이벤트와 타입들이 설명되어 있습니다.
 
-[3] MySQL 이벤트 문서([이벤트 종류](https://dev.mysql.com/doc/internals/en/event-meanings.html)와 [이벤트 클래스와 유형](https://dev.mysql.com/doc/internals/en/event-classes-and-types.html))에는 Binlog 이벤트와 타입들이 설명되어 있습니다.
+[3] [How is the tableID generated?](http://dba.stackexchange.com/questions/51873/replication-binary-log-parsingtableid-generation-on-delete-cascade-handling)
 
-[4] [How is the tableID generated?](http://dba.stackexchange.com/questions/51873/replication-binary-log-parsingtableid-generation-on-delete-cascade-handling)
-
-[5] [Data Type Storage Requirements](https://mariadb.com/kb/en/the-mariadb-library/data-type-storage-requirements)
+[4] [Data Type Storage Requirements](https://mariadb.com/kb/en/the-mariadb-library/data-type-storage-requirements)
