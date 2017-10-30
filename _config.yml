@@ -21,7 +21,7 @@ collections:
     output: true
 
 # pagination for blog posts
-gems:
+plugins:
   - jekyll-paginate
 paginate: 8
 paginate_path: "/blog/page:num/"
