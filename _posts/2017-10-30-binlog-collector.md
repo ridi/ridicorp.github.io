@@ -4,10 +4,10 @@ title: "CDC 기술 기반의 MariaDB Binlog을 이용한 이력 개발"
 description: "데이터베이스의 Change Data Capture(CDC) 기술을 이용하여 테이블의 변경 사항 추적을 설계 및 개발했던 내용을 공유합니다"
 header-img: ""
 fb-img: ""
-date: 2017-10-17
+date: 2017-10-30
 author: gilwon.oh
 category: engineering
-published: true
+published: false
 ---
 이 글은 GTID 기반의 **MySQL Replication**에 관심있는 **Backend 개발자**를 대상으로 합니다.
 변경 사항을 추적할 수 있는 이력 데이터를 쌓아서 활용해본 개발자라면 아마도 그 일이 얼마나 번거로운지 잘 알고 있을 것입니다.
@@ -22,7 +22,8 @@ published: true
 아래 그림은 Martin Kleppmann[1]가 쓴 [Logs for Data Infrastructure](https://martin.kleppmann.com/2015/05/27/logs-for-data-infrastructure.html) 
 라는 글을 참조하였습니다.
 
-![그림 1. Logs For Infrastructure](/blog/img/binlog01.png){: data-action="zoom" }
+![그림 1. Logs For Infrastructure](/blog/img/2017-10-30/
+binlog01.png){: data-action="zoom" }
 
 **일반적인 DB 기반 구조**(왼쪽)는 시스템이 확장될 때 마다 다양한 외부 저장소들이 추가되고,
 각 저장소들 간에 서로 데이터를 가져다 사용하므로, 데이터 불일치가 발생하여 시스템이 점점 복잡해집니다.
@@ -34,7 +35,8 @@ published: true
 그래서 **범용적인 DB 테이블의 변경 사항 추적** 이라는 단일 목적으로,
 DB의 CDC 기술을 검토하고 기존 환경에서 더 간단한 구조로 활용했던 사례를 공유하겠습니다.
 
-![그림 2. 목표](/blog/img/binlog02.png){: data-action="zoom" }
+![그림 2. 목표](/blog/img/2017-10-30/
+binlog02.png){: data-action="zoom" }
 
 글의 순서는 다음과 같습니다.
 
@@ -128,7 +130,8 @@ Binlog 이벤트 관련 쿼리와 위의 고려사항과 관련된 기능을 테
 특정 GTID를 이용해서, Binlog 이벤트를 가져온다는 것은 확인했지만 실제 사용하기 위해서는 Binlog 이벤트 흐름에 대해서 좀 더 구체적인 이해가 필요 했습니다.
 그래서 MySQL 이벤트 문서[2]와 오픈소스 라이브러리를 통해 Binlog 이벤트 흐름을 아래와 같이 정리할 수 있었습니다.
 
-![그림 3. Binlog Event 흐름](/blog/img/binlog03.png){: data-action="zoom" }
+![그림 3. Binlog Event 흐름](/blog/img/2017-10-30/
+binlog03.png){: data-action="zoom" }
 
 분석이 필요한 **Write/Update/Delete** 이벤트인 경우는 **MariaDBGtidLog** 이벤트에서
 **Xid**(Transaction Id = Commit) 이벤트까지 하나의 트랜잭션 단위로 가져옵니다.
@@ -149,11 +152,13 @@ UPDATE binlog_sample.test_target SET data = 'update_data' WHERE admin_id = 'test
 DELETE FROM binlog_sample.test_target WHERE admin_id = 'test_id';
 ```
 
-![그림 4. SHOW BINLOG EVENTS 결과](/blog/img/binlog04.png){: data-action="zoom" }
+![그림 4. SHOW BINLOG EVENTS 결과](/blog/img/2017-10-30/
+binlog04.png){: data-action="zoom" }
 
 ## 4. Binlog Collector 프로토타입 개발
 분석한 내용을 토대로 Binlog를 분석하여 수집, 저장하는 Binlog Collector를 아래와 같이 설계 했습니다.
-![그림 5. Binlog Collector 설계](/blog/img/binlog05.png){: data-action="zoom" }
+![그림 5. Binlog Collector 설계](/blog/img/2017-10-30/
+binlog05.png){: data-action="zoom" }
 
 자세한 동작 방식은 다음과 같습니다.
 
@@ -213,15 +218,18 @@ DB 복제를 위한 Binlog 이벤트 스트림은 태생적으로 GTID 기반으
 적재하는 Worker'** 로 변경하였습니다. 
 
 #### 1) BinlogCollect Partitioner를 설계한 그림은 다음과 같습니다.
-![그림 6-1. Binlog Collector Partitioner 설계](/blog/img/binlog06-1.png){: data-action="zoom" }
+![그림 6-1. Binlog Collector Partitioner 설계](/blog/img/2017-10-30/
+binlog06-1.png){: data-action="zoom" }
 
 파티셔닝은  **1)** 최종적으로 분석하거나, 새롭게 입력받은 위치로부터(Parent BinlogOffset)
 **2)** `SHOW BINLOG EVENTS`를 반복 사용하여 이벤트를 조회하여,
 **3)** 설정된 GTID 개수만큼 Child BinlogOffsetRanges들 만큼 나누게 되는데, 구체적으로 나누는 예는 다음과 같습니다.
-![그림 6-2. Binlog 파일 Partitioning 예제](/blog/img/binlog06-2.png){: data-action="zoom" }
+![그림 6-2. Binlog 파일 Partitioning 예제](/blog/img/2017-10-30/
+binlog06-2.png){: data-action="zoom" }
 
 #### 2) BinlogCollect Worker를 설계한 그림은 다음과 같습니다.
-![그림 7. Binlog Collector Worker 설계](/blog/img/binlog07.png){: data-action="zoom" }
+![그림 7. Binlog Collector Worker 설계](/blog/img/2017-10-30/
+binlog07.png){: data-action="zoom" }
 
 자세한 동작 방식은 다음과 같습니다.
 
@@ -266,7 +274,8 @@ Binlog Collector가 5분의 지연 시간을 보장해준다면 매시 6분 이�
 
 Partitioner와 Worker를 통한 BinlogOffset에 데이터 분석 시간을 보장할 수 있도록 개선한 그림은 아래와 같습니다.
 
-![그림 8. Binlog Collector에 수집보장 날짜추가](/blog/img/binlog08.png){: data-action="zoom" }
+![그림 8. Binlog Collector에 수집보장 날짜추가](/blog/img/2017-10-30/
+binlog08.png){: data-action="zoom" }
 
 위의 그림에서 보는 것처럼 분석 보장 시간은 아래와 같습니다.
  ```
