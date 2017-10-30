@@ -1,13 +1,12 @@
 ---
 layout: blog
-title: "CDC 기술 기반의 MariaDB Binlog을 이용한 이력 개발"
-description: "데이터베이스의 Change Data Capture(CDC) 기술을 이용하여 테이블의 변경 사항 추적을 설계 및 개발했던 내용을 공유합니다"
-header-img: ""
-fb-img: ""
+title: "MariaDB Binlog을 이용한 변경사항 추적"
+description: "MariaDB(MySQL)의 Change Data Capture(CDC) 기술을 이용하여 테이블의 변경 사항 추적을 설계 및 개발했던 내용을 공유합니다"
+header-img: "blog/img/bg-9.jpg"
 date: 2017-10-30
 author: gilwon.oh
 category: engineering
-published: false
+published: true
 ---
 이 글은 GTID 기반의 **MySQL Replication**에 관심있는 **Backend 개발자**를 대상으로 합니다.
 변경 사항을 추적할 수 있는 이력 데이터를 쌓아서 활용해본 개발자라면 아마도 그 일이 얼마나 번거로운지 잘 알고 있을 것입니다.

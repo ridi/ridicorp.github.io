@@ -3060,7 +3060,7 @@ article.press-article blockquote p {
 .blog-post-list li .list-item .post-content {
   display: table-cell;
   vertical-align: top;
-  width: 480px;
+  width: 520px;
 }
 @media only screen and (max-width: 767px) {
   .blog-post-list li .list-item .post-content {
@@ -3111,7 +3111,7 @@ article.press-article blockquote p {
   width: 180px;
   display: table-cell;
   vertical-align: top;
-  padding: 25px 0 0;
+  padding: 25px 0 0 25px;
 }
 @media only screen and (max-width: 767px) {
   .blog-post-list li .list-item .post-meta {
