@@ -36,7 +36,7 @@ DB의 CDC 기술을 검토하고 기존 환경에서 더 간단한 구조로 활
 
 ![그림 2. 목표](/blog/img/binlog02.png){: data-action="zoom" }
 
-글의 순서는 다음과 같이 진행됩니다.
+글의 순서는 다음과 같습니다.
 
 1. Binlog 분석기의 필요성 및 사용 계기
 2. 오픈소스 선정 및 요구사항 분석
@@ -91,7 +91,7 @@ MySQL Replication 라이브러리들은 다양한 언어**(Java/Python/PHP/Node.
 
 1. **사용 및 권한 제약은 없는가?**
     * 서버세팅: binlog-format:row 방식 사용
-    * Client 접근 및 스키마 정보 조회 권한이 필요
+    * Client 접근 및 스키마 정보 조회 권한 필요
         * REPLICATION SLAVE, REPLICATION CLIENT, SELECT
     * Mariadb-10.X 버전 지원
 2. **필요한 데이터를 추출 할 수 있는가?**
@@ -190,7 +190,7 @@ DELETE FROM binlog_sample.test_target WHERE admin_id = 'test_id';
 5. **시작시 Binlog 파일명을 못 찾는 문제**
     * 시작 GTID와 다음 GTID 사이에 File Rotate 이벤트가 있으면 구동시 파일명을 못 찾음
         * File Rotate 이벤트는 GTID 밖에 존재하기 때문에(그림3. Binlog 이벤트 스트림) 구동시
-        다음 GTID부터 이벤트를 가져올 때 File 변경 이벤트는 무시됨으로, 처음에 입력한 Binlog 파일명의 변경을 알지 못함
+        다음 GTID부터 이벤트를 가져올 때 File 변경 이벤트는 무시되므로, 처음에 입력한 Binlog 파일명의 변경을 알지 못함
     * **해결:** 처음 실행시, GTID 계산이 실패할 경우 Binlog 파일의 다음 시퀀스 파일명을 계산하여 보정
         * 예) maraidb-bin.000044 → maraidb-bin.000045,  
           maraidb-bin.999999 → maraidb-bin.000000
@@ -345,7 +345,7 @@ MacBook Pro/A1502
 CPU: Intel Core i5 2.7 GHz
 SSD: 128GB
 Memory: 8 GB
-docker 3대: mariadb:10.0.27 db-master, db-slave, db-slave-slave
+Docker 컨테이너 3대: mariadb:10.0.27 db-master, db-slave, db-slave-slave
 db-slave를 읽어서 db-slave-slave에 이력 로그 저장
 
 Partitioner에서 범위를 나누기 위한 Binlog Jump Rows = 10000 
@@ -364,7 +364,7 @@ Partitioner에서 범위를 나누기 위한 Binlog Jump Rows = 10000
 (**Partitioner 실행 시간:** 1~2s로 동일)
 
 결론적으로 Worker 개수가 증가함에 따라 총 걸린시간이 균등하게 줄지는 않았습니다만, 총 소요시간이 의미있게 감소되었음을 확인 할 수 있었습니다.
-docker 기반으로 테스트 환경을 구축했고, 쉽게 검증할 수 있는 구조로 만들어 놓았기 때문에, 계속 테스트 하며 문제를 해결하고 개선할 예정입니다.
+Docker 컨테이너 기반으로 테스트 환경을 구축해서 쉽게 검증할 수 있는 구조로 만들어 놓았기 때문에 계속 테스트 하며 문제를 해결하고 개선할 예정입니다.
 
 ## 8. 현재 상황과 앞으로의 과제들
 현재 Binlog 기반 이력 로그는 이력 테이블이 없거나, 변경 사항 추적이 중요한 일부 테이블, 그리고 중요 데이터의 무결성 체크를 위해서 사용하고 있습니다. 
