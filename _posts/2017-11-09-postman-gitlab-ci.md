@@ -2,8 +2,8 @@
 layout: blog
 title: "Postman과 GitLab CI 연동하기"
 description: "Postman Test와 GitLab CI를 사용해 자동화된 RESTful API 테스트 환경을 구성하는 방법에 대해 알아봅니다."
-header-img: "blog/img/2017-11-01/background.png"
-date: 2017-11-01
+header-img: "blog/img/2017-11-09/background.png"
+date: 2017-11-09
 author: "kyungmi.k"
 category: engineering
 published: true
@@ -17,7 +17,7 @@ API는 사용자와의 약속입니다. 따라서 API를 개발하는 데 있어
 
 보통의 API 개발과정은 다음과 비슷합니다.
 
-![보통의 API 개발과정](/blog/img/2017-11-01/develop_process.png){:data-action="zoom"}
+![보통의 API 개발과정](/blog/img/2017-11-09/develop_process.png){:data-action="zoom"}
 
 위와 같이 새로운 기능을 개발한다는 것은 테스트를 작성하고 문서를 업데이트해야 한다는 것을 의미합니다. 개발자라면 분명히 이 부분의 오버헤드를 줄이고 싶을 것입니다.
 
@@ -42,7 +42,7 @@ API는 사용자와의 약속입니다. 따라서 API를 개발하는 데 있어
 
 ## Postman: 100퍼센트의 테스트 도구
 
-![Postman Logo](/blog/img/2017-11-01/postman.png)
+![Postman Logo](/blog/img/2017-11-09/postman.png)
 
 [Postman](https://www.getpostman.com/)은 2012년에 서비스를 시작한 REST 클라이언트로 API 개발 전반에 걸쳐 필수적인 기능들을 제공합니다.
 서비스 초반에는 단순한 기능들만을 제공했지만, 곧 문서화, 테스트를 위한 기능과 동기화, 공유와 모니터링 같은 고급 기능도 서비스하게 되었습니다.
@@ -70,7 +70,7 @@ Postman에서는 [Newman](https://github.com/postmanlabs/newman)이라는 CLI를
 
 ## GitLab CI: 설정 기반의 소스 통합/배포 파이프라인
 
-![GitLab Logo](/blog/img/2017-11-01/gitlab.png)
+![GitLab Logo](/blog/img/2017-11-09/gitlab.png)
 
 [GitLab](https://about.gitlab.com)이 설치형 GitHub라고 한다면, [GitLab CI](https://about.gitlab.com/features/gitlab-ci-cd/)는 [Travis CI](https://travis-ci.org/)에 비견될 수 있을 것입니다. GitLab에서는 CI/CD를 위한 파이프라인을 제공함으로써, 소스 반영과 함께 빌드/테스트/배포 등의 프로세스가 자동 실행되도록 설정할 수 있습니다.
 
@@ -97,7 +97,7 @@ Postman의 기본 요소들은 다음과 같습니다.
 
 환경을 하나 생성해 아래 그림과 같이 필요한 변수들을 먼저 세팅합니다.
 
-![Postman 환경 변수 설정](/blog/img/2017-11-01/api_env.png){:data-action="zoom"}
+![Postman 환경 변수 설정](/blog/img/2017-11-09/api_env.png){:data-action="zoom"}
 <figcaption>우측 상단의 설정 버튼을 눌러 Manage Environments를 선택해 환경 변수들을 관리할 수 있습니다.</figcaption>
 
 위의 그림에서는 `Local`이라는 이름의 새로운 환경을 만들고 아래와 같이 두 가지 변수들을 추가하고 요청과 테스트를 작성할 때 사용합니다.
@@ -105,14 +105,14 @@ Postman의 기본 요소들은 다음과 같습니다.
 * `prefix`: 공통 URL 접두어로 사용합니다.
 * `pet_id`: 리소스에 접근하기 위한 ID로 요청을 작성할 때 사용합니다.
 
-![환경 변수 사용하기](/blog/img/2017-11-01/use_environment_variables.png){:data-action="zoom"}
+![환경 변수 사용하기](/blog/img/2017-11-09/use_environment_variables.png){:data-action="zoom"}
 <figcaption>환경 변수를 활용해 요청 작성이 가능합니다. URL 뿐만 아니라 HTTP 헤더, 바디, 파라미터, 테스트 스크립트 등 요청 빌더의 모든 곳에서 사용할 수 있습니다.</figcaption>
 
 ### 테스트 작성
 
 각각의 CRUD API에 대해서 간단한 테스트를 작성해 보겠습니다.
 
-![Postman 테스트 컬렉션 작성](/blog/img/2017-11-01/test_suites.png){:data-action="zoom"}
+![Postman 테스트 컬렉션 작성](/blog/img/2017-11-09/test_suites.png){:data-action="zoom"}
 <figcaption>테스트 용도의 컬렉션을 만들고 폴더를 활용해 테스트를 구조화합니다.</figcaption>
 
 일단 **(1) 테스트 용도로 컬렉션(PetStore Test)을 하나 생성**합니다. 테스트를 구조화하는 방식은 개인마다 다르겠지만 저는 검증할 API 당 하나의 폴더를 생성했습니다. 그 하위에 공통 요청(예: 로그인)을 위한 폴더와 성공/실패 케이스에 대한 폴더를 생성합니다. 
@@ -120,7 +120,7 @@ Postman의 기본 요소들은 다음과 같습니다.
 그리고 **(2) 각각의 폴더에 테스트를 위한 요청들을 생성합니다.** 이 요청들은 다른 설정[^2]을 하지 않는 이상 **눈에 보이는 그대로의 순서로 실행**됩니다. 문서 용도의 컬렉션(PetStore)에서 요청을 복제(duplicate)해 테스트 용도의 컬렉션에 추가하는 것으로 시작하면 더 편합니다.
 
 이렇게 작성한 하나의 요청은 아래와 같은 순서로 실행됩니다.
-![Postman 요청 실행 순서](/blog/img/2017-11-01/request_lifecycle.png){:data-action="zoom"}
+![Postman 요청 실행 순서](/blog/img/2017-11-09/request_lifecycle.png){:data-action="zoom"}
 
 이렇게 복제한 **(3) 요청에 테스트 스크립트를 추가**합니다. 요청 하나에 여러 개의 테스트 assertion을 포함할 수 있으며 테스트 assertion 하나는 다음의 형태로 작성합니다.
 
@@ -158,19 +158,19 @@ Postman UI 상에서 테스트를 진행하는 방법은 두 가지입니다. **
 
 요청 내용과 테스트 스크립트를 작성한 뒤 URL 필드 우측의 [Send] 버튼을 눌러 요청을 바로 실행하고 Body 탭에서 요청의 결과를, Test Results 탭에서 테스트 결과를 확인할 수 있습니다.
 
-![Postman의 Test Result 탭](/blog/img/2017-11-01/request_test_results.png){:data-action="zoom"}
+![Postman의 Test Result 탭](/blog/img/2017-11-09/request_test_results.png){:data-action="zoom"}
 <figcaption>하단의 Test Results 탭에서 성공/실패한 테스트를 확인할 수 있습니다.</figcaption>
 
 #### 컬렉션 러너(Collection Runner)에서 테스트 실행하기
 
 컬렉션 내의 모든 요청을 순차적으로 테스트하려면 **(1) 컬렉션의 [>] 버튼을 클릭해 메뉴를 열고 파란색 [Run] 버튼을 누릅니다**.
 
-![Postman Collection Runner 실행하기](/blog/img/2017-11-01/collection_run.png){:data-action="zoom"}
+![Postman Collection Runner 실행하기](/blog/img/2017-11-09/collection_run.png){:data-action="zoom"}
 <figcaption>[>] 버튼을 눌러 나오는 컬렉션 상세 화면에서는 컬렉션 러너를 실행하는 것 외에도 다운로드, 모니터링, 목업 API 생성, 문서 배포 등의 추가 기능들을 제공합니다.</figcaption>
 
 이 버튼을 누르면 Collection Runner 창이 새로 열립니다. 여기에서 **(2) 환경, 요청 반복 횟수, 지연 시간 등의 기본적인 설정을 한 후 [Run PetStore Test] 버튼을 눌러 컬렉션 전체를 실행**합니다.
 
-![Postman Collection Runner 결과 확인](/blog/img/2017-11-01/collection_run_result.png){:data-action="zoom"}
+![Postman Collection Runner 결과 확인](/blog/img/2017-11-09/collection_run_result.png){:data-action="zoom"}
 
 위와 같이 **(3) Run Result 화면에서 테스트 결과를 한눈에 확인**할 수 있으며, 각 요청의 제목을 클릭해 요청/응답 결과를 상세하게 확인할 수 있습니다.
 
@@ -208,14 +208,14 @@ newman run [collection_json] -e [environment_json]
 
 이제 **(4) 저장소에 작업 결과를 반영(commit)하면 바로 작업 파이프라인이 실행**됩니다. 결과는 다음과 같이 출력됩니다. 작업결과에 오류가 발생하면 오류 코드를 발생시키고 끝나게 되므로, 안전하게 다음 파이프라인은 실행되지 않습니다.
 
-![GitLab CI 작업 결과 확인](/blog/img/2017-11-01/gitlab_ci_result.png){:data-action="zoom"}
+![GitLab CI 작업 결과 확인](/blog/img/2017-11-09/gitlab_ci_result.png){:data-action="zoom"}
 <figcaption>테스트가 성공했습니다. 콘솔에 전체 테스트 결과와 요약 내용이 출력됩니다.</figcaption>
 
 ## 문서화
 
 위에서 설명 드린 것처럼, Postman은 문서화 기능도 함께 제공합니다. API 스펙 용도로 만들었던 PetStore 컬렉션의 [Publish Docs] 기능을 이용해 다음과 같은 페이지를 확인할 수 있습니다. 이 주소는 public에 공개됩니다(무료 계정일 경우 1달에 1000번의 조회만 가능합니다).
 
-![PetStore API 문서](/blog/img/2017-11-01/document.png){:data-action="zoom"}
+![PetStore API 문서](/blog/img/2017-11-09/document.png){:data-action="zoom"}
 <figcaption>문서 상에서 [Run in Postman] 버튼을 클릭해 Postman에 추가해 직접 실행할 수 있고, 오른쪽에서 등록한 응답 샘플들과 이 응답 샘플을 얻기 위한 코드 예제들을 확인할 수 있습니다.</figcaption>
 
 ## 마무리
