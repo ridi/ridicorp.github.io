@@ -1,5 +1,5 @@
-@import "variables.less";
-@import "mixins.less";
+@import "variables";
+@import "mixins";
 @import "../icon/css/ridicorp-icon.css";
 @import "../css/zoom.css";
 
@@ -1809,6 +1809,7 @@ article.post {
 	}
 	hr {
 		border: none;
+		height: auto !important;
 		margin: 40px auto 80px;
 		text-align: center;
 		&:before {
@@ -1895,7 +1896,6 @@ article.post {
 		}
 	}
 	code {
-		background-color: rgba(0,0,0,0.04);
 		color: #333;
 	}
 	code td.code {
@@ -2054,6 +2054,25 @@ article.post {
 		padding-top: 50px;
 		a {
 			display: inline-block;
+		}
+	}
+	// Footnotes
+	.footnotes {
+		ol {
+			padding: 0 2em;
+			& > li {
+				display: flex;
+				margin: 10px 0;
+				&:before {
+				    left: -22px;
+					max-width: 10px;
+				}
+				p {
+					padding-top: 0;
+					margin: 0;
+					flex: 1;
+				}
+			}
 		}
 	}
 }

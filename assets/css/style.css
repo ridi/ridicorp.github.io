@@ -2171,6 +2171,7 @@ article.post a:hover {
 }
 article.post hr {
   border: none;
+  height: auto !important;
   margin: 40px auto 80px;
   text-align: center;
 }
@@ -2255,7 +2256,6 @@ article.post blockquote p {
   color: #888;
 }
 article.post code {
-  background-color: rgba(0, 0, 0, 0.04);
   color: #333;
 }
 article.post code td.code {
@@ -2459,6 +2459,22 @@ article.post .button-area {
 }
 article.post .button-area a {
   display: inline-block;
+}
+article.post .footnotes ol {
+  padding: 0 2em;
+}
+article.post .footnotes ol > li {
+  display: flex;
+  margin: 10px 0;
+}
+article.post .footnotes ol > li:before {
+  left: -22px;
+  max-width: 10px;
+}
+article.post .footnotes ol > li p {
+  padding-top: 0;
+  margin: 0;
+  flex: 1;
 }
 .post-preview h2 {
   color: #333;
