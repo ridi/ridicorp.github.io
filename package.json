@@ -9,10 +9,15 @@
     "grunt": "^1.0.1",
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-webfont": "^1.4.0"
+    "grunt-webfont": "^1.4.0",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ridi/ridi.github.io"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   }
 }
