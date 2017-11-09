@@ -211,6 +211,13 @@ newman run [collection_json] -e [environment_json]
 ![GitLab CI 작업 결과 확인](/blog/img/2017-11-01/gitlab_ci_result.png){:data-action="zoom"}
 <figcaption>테스트가 성공했습니다. 콘솔에 전체 테스트 결과와 요약 내용이 출력됩니다.</figcaption>
 
+## 문서화
+
+위에서 설명 드린 것처럼, Postman은 문서화 기능도 함께 제공합니다. API 스펙 용도로 만들었던 PetStore 컬렉션의 [Publish Docs] 기능을 이용해 다음과 같은 페이지를 확인할 수 있습니다. 이 주소는 public에 공개됩니다(무료 계정일 경우 1달에 1000번의 조회만 가능합니다).
+
+![PetStore API 문서](/blog/img/2017-11-01/document.png){:data-action="zoom"}
+<figcaption>문서 상에서 [Run in Postman] 버튼을 클릭해 Postman에 추가해 직접 실행할 수 있고, 오른쪽에서 등록한 응답 샘플들과 이 응답 샘플을 얻기 위한 코드 예제들을 확인할 수 있습니다.</figcaption>
+
 ## 마무리
 
 RESTful API를 작성하고 배포한 경험이 있는 분들이라면 API 문서화와 테스트에 대해 한 번쯤은 고민해 보셨을 것입니다. Postman은 API 테스트에 필요한 다양한 기능들을 제공하고 굉장히 편리한 UI를 가지고 있습니다. 또, Newman CLI와 결합하면, 각기 다른 환경에서 동일한 방법으로 테스트를 실행할 수 있습니다. 그래서 로컬 환경이나 GitLab CI에서 Newman을 동작시켜 보셨던 분들이라면 다른 CI 도구에 적용하는 것은 매우 간단할 것입니다.
