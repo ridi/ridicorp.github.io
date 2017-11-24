@@ -55,7 +55,7 @@ link: https://jobs.smartrecruiters.com/RIDICorp/743999652720024
 
 개발 스택은 각 기능의 요구사항을 구현하는데 최적인 플랫폼을 적극적으로 수용합니다. 현재 서점을 구성하고 있는 스택은 다음과 같습니다.
 
-* IDC 인프라 이외에 마이크로서비스 아키텍쳐 확장을 위해 **Amazon Web Service** 지속 도입 중
+* IDC 인프라 이외에 마이크로서비스 아키텍쳐 확장을 위해 **Amazon Web Services** 지속 도입 중
 * 주요 서점 이용 정보를 저장하는 **MariaDB**
 * 개인화 추천 및 실시간 도서 랭킹을 위한 **Node.js, Redis**
 * 각종 동기화를 위한 **Couchbase**
