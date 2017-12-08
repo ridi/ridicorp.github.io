@@ -52,8 +52,8 @@ link: https://jobs.smartrecruiters.com/RIDICorp/116476653
 
 데이터팀에 지원하는 개발자들은 업무의 목적과 내용 뿐만 아니라, 어떤 기술을 사용해 보고 익힐 수 있는지도 관심있어 합니다. 데이터팀에서 사용하는 기술들을 간략하게나마 설명해 보겠습니다.
 
-### 1. 서점 및 뷰어 로그 수집 - Javascript, Flume, Kafka
-위에서 이야기했듯이, 사용자 브라우저 상에서 Google Analytics 등과의 연동을 위해 Javascript를 사용합니다.
+### 1. 서점 및 뷰어 로그 수집 - JavaScript, Flume, Kafka
+위에서 이야기했듯이, 사용자 브라우저 상에서 Google Analytics 등과의 연동을 위해 JavaScript를 사용합니다.
 그리고 서점이나 뷰어 API 서버의 로그를 클러스터로 수집하는 데에는 [Flume](https://flume.apache.org/) 과 [Kafka](https://kafka.apache.org/) 를 사용하고 있습니다. 이전에 Flume 을 사용해 웹서버 로그를 수집하고 모니터링하도록 설정한 것에 대해서 [포스팅](http://www.ridicorp.com/blog/2016/04/19/weblog-flume-cdh/)한 것이 있으니 참고하시면 좋습니다.
 
 ### 2. 배치 작업 운영 - Luigi, Spark
