@@ -25,6 +25,31 @@ title: "Blog"
 </header>
 
 <div class="site-content">
+  <style>
+    .blog-slide-list {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .blog-slide-list li {
+      display: inline-block;
+      width: 400px;
+      margin: 20px;
+      vertical-align: top;
+    }
+  </style>
+  <ol id="slides" class="blog-slide-list">
+    {% for slide in site.data.slides limit:6 %}
+    <li>
+      <div>
+        <script async class="speakerdeck-embed" data-id="{{ slide.data-id }}" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+      </div>
+      <caption>{{ slide.title }}</caption>
+      <caption>{{ slide.date }} by {{ slide.author }}</caption>
+    </li>
+    {% endfor %}
+  </ol>
+
   <ol class="blog-post-list" id="Posts">
     <!-- This loops through the paginated posts -->
     {% for post in paginator.posts %}
