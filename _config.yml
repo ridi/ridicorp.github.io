@@ -19,6 +19,8 @@ collections:
     output: true
   press:
     output: true
+  slides:
+    output: true
 
 # pagination for blog posts
 plugins:

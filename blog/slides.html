@@ -1,6 +1,5 @@
 ---
 layout: default
-title: "Blog"
 ---
 
 <header class="intro-header ih-blog">
@@ -25,22 +24,27 @@ title: "Blog"
 </header>
 
 <div class="site-content">
-  <ol class="blog-post-list" id="Posts">
-    <!-- This loops through the paginated posts -->
-    {% for post in paginator.posts %}
+  <style>
+    .blog-slide-list {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .blog-slide-list li {
+      display: inline-block;
+      width: 360px;
+      margin: 15px;
+    }
+    .blog-slide-list li img {
+      width: 100%;
+    }
+  </style>
+  <ol id="slides" class="blog-slide-list">
+    {% for slide in site.slides %}
     <li>
-      <a href="{{ post.url }}" class="list-item">
-        <div class="post-content">
-          <div class="type type-{{ post.category }}">{{ post.category }}</div>
-          <div class="title">{{ post.title }}</div>
-          <div class="desc">{{ post.description }}</div>
-        </div>
-        <div class="post-meta">
-          {% assign author = site.data.authors[post.author] %}
-          <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="" class="profile-img">
-          <div class="author">{{ author.name }}</div>
-          <div class="date">{{ post.date | date: "%Y. %m. %d." }}</div>
-        </div>
+      <a href="{{ slide.url }}">
+        <img src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
+        <caption>{{ slide.title }}</caption>
+        <caption>{{ slide.date }} by {{ slide.author }}</caption>
       </a>
     </li>
     {% endfor %}
