@@ -24,6 +24,16 @@ layout: default
 </header>
 
 <div class="site-content">
+  <div class="press-articles-area site-content">
+    <div class="paa-tab">
+      <a href="/blog#Posts">
+        <em rel="article">Articles</em>
+      </a>
+      <span class="separator">∙</span>
+      <em class="active" rel="material">Slides</em>
+    </div>
+  </div>
+
   <style>
     .blog-slide-list {
       margin: 0 auto;
@@ -31,20 +41,24 @@ layout: default
     }
     .blog-slide-list li {
       display: inline-block;
-      width: 360px;
+      width: 320px;
       margin: 15px;
     }
-    .blog-slide-list li img {
+    .blog-slide-list li .preview {
       width: 100%;
     }
   </style>
   <ol id="slides" class="blog-slide-list">
-    {% for slide in site.slides %}
+    {% assign sorted = site.slides | sort: 'date' | reverse %}
+    {% for slide in sorted %}
     <li>
       <a href="{{ slide.url }}">
-        <img src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
+        <img class="preview" src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
         <caption>{{ slide.title }}</caption>
-        <caption>{{ slide.date }} by {{ slide.author }}</caption>
+        {% assign author = site.data.authors[slide.author] %}
+        <!-- <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="" class="profile-img"> -->
+        <div class="author">{{ author.name }}</div>
+        <div class="date">{{ slide.date | date: "%Y. %m. %d." }}</div>
       </a>
     </li>
     {% endfor %}
