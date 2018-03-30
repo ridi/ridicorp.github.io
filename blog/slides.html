@@ -34,20 +34,6 @@ layout: default
     </div>
   </div>
 
-  <style>
-    .blog-slide-list {
-      margin: 0 auto;
-      text-align: center;
-    }
-    .blog-slide-list li {
-      display: inline-block;
-      width: 320px;
-      margin: 15px;
-    }
-    .blog-slide-list li .preview {
-      width: 100%;
-    }
-  </style>
   <ol id="slides" class="blog-slide-list">
     {% assign sorted = site.slides | sort: 'date' | reverse %}
     {% for slide in sorted %}

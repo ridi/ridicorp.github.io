@@ -2220,6 +2220,18 @@ article.post .footnotes ol > li p {
   border: 1px solid #ddd;
   -webkit-transform: scale(1.05);
 }
+.blog-slide-list {
+  margin: 0 auto;
+  text-align: center;
+}
+.blog-slide-list li {
+  display: inline-block;
+  width: 320px;
+  margin: 15px;
+}
+.blog-slide-list li .preview {
+  width: 100%;
+}
 .press-quick-links {
   width: 700px;
   margin: 50px auto;
