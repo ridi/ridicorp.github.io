@@ -26,16 +26,14 @@ root-class: blog posts
 </header>
 
 <div class="site-content">
-  <div class="press-articles-area">
-    <div class="paa-tab">
-      <em class="active" rel="article">Articles</em>
-      <span class="separator">∙</span>
-      <a href="/blog/slides#slides">
-        <em rel="material">Slides</em>
-      </a>
-    </div>
+  <div class="tab-container">
+    <em class="active" rel="article">Articles</em>
+    <span class="separator">∙</span>
+    <a href="/blog/slides#slides">
+      <em rel="material">Slides</em>
+    </a>
   </div>
-  
+
   <ol class="blog-post-list" id="Posts">
     <!-- This loops through the paginated posts -->
     {% for post in paginator.posts %}

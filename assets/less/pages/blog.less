@@ -1,27 +1,24 @@
 html.blog {
-  .press-articles-area {
+  .tab-container {
     background: #f5faff;
     padding: 80px 0;
 
-    .paa-tab {
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.5em;
-      padding-bottom: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
 
-      em, span {
-        color: #acc2d4;
-        display: inline-block;
-        padding: 0 2px;
-      }
+    em, span {
+      color: #acc2d4;
+      display: inline-block;
+      padding: 0 2px;
+    }
 
-      em {
-        font-style: normal;
-        transition: color .2s;
-        cursor: pointer;
-      }
+    em {
+      font-style: normal;
+      transition: color .2s;
+      cursor: pointer;
 
-      em.active, em:hover {
+      &.active, &:hover {
         color: #02406f;
       }
     }
