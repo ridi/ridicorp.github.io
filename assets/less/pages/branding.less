@@ -1,231 +1,233 @@
-.branding-area {
-  margin: 50px auto;
-
-  @media @queries_sm {
-    width: auto;
-  }
-
-  .branding-sub-area {
-    border-bottom: 1px solid #ccd5db;
-    text-align: center;
-
-    .download-all {
-      .button-gray();
-
-      padding: 16px 24px;
-    }
-
-    p {
-      padding: 20px 0;
-      font-size: 14px;
-      color: #999;
-    }
-  }
-
-  .branding-box {
-    border-bottom: 1px solid #ccd5db;
-    padding: 40px;
+html.branding {
+  .branding-area {
+    margin: 50px auto;
 
     @media @queries_sm {
-      padding: 20px 20px 40px;
+      width: auto;
     }
 
-    .bb-body {
-      padding-left: 24px;
+    .branding-sub-area {
+      border-bottom: 1px solid #ccd5db;
       text-align: center;
 
-      @media @queries_sm {
-        padding-left: 0;
-        text-align: left;
+      .download-all {
+        .button-gray();
+
+        padding: 16px 24px;
+      }
+
+      p {
+        padding: 20px 0;
+        font-size: 14px;
+        color: #999;
       }
     }
 
-    .bbb-box {
-      text-align: left;
-      display: inline-block;
-      vertical-align: top;
-      padding-right: 20px;
-    }
-
-    .big-logo {
-      text-align: center;
-      margin-top: 24px;
-      padding-bottom: 20px;
+    .branding-box {
+      border-bottom: 1px solid #ccd5db;
+      padding: 40px;
 
       @media @queries_sm {
-        text-align: left;
+        padding: 20px 20px 40px;
       }
 
-      &>span {
-        margin: 48px 0;
-        vertical-align: top;
+      .bb-body {
+        padding-left: 24px;
+        text-align: center;
 
         @media @queries_sm {
-          margin: 20px 0;
+          padding-left: 0;
+          text-align: left;
         }
       }
 
-      .logo-ridi {
-        .svg_logo_ridi(#1f8ee6);
-
-        width: 76px;
-        height: 31px;
-        margin-right: 56px;
+      .bbb-box {
+        text-align: left;
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 20px;
       }
 
-      .logo-ridibooks {
-        .svg_logo_ridibooks(#1f8ee6);
+      .big-logo {
+        text-align: center;
+        margin-top: 24px;
+        padding-bottom: 20px;
 
-        width: 205px;
-        height: 50px;
-        margin-right: 56px;
+        @media @queries_sm {
+          text-align: left;
+        }
 
-      }
+        &>span {
+          margin: 48px 0;
+          vertical-align: top;
 
-      .logo-ridistory {
-        .svg_logo_ridistory(#1f8ee6);
+          @media @queries_sm {
+            margin: 20px 0;
+          }
+        }
 
-        width: 218px;
-        height: 40px;
+        .logo-ridi {
+          .svg_logo_ridi(#1f8ee6);
 
-      }
-
-      .logo-paper {
-        .svg_logo_paper(#333);
-
-        width: 120px;
-        height: 31px;
-      }
-    }
-
-    h5 {
-      font-size: 13px;
-      color: #555;
-      font-weight: bold;
-      line-height: 1;
-      font-family: "brandon-grotesque", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .branding-color-list {
-      padding: 0 0 20px;
-    }
-
-    .branding-desc {
-      float: left;
-      margin-right: 10px;
-      font-size: 13px;
-      padding-bottom: 20px;
-
-      .color-box {
-        width: 100px;
-        height: 100px;
-        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
-        &.cb-blue {background-color: #1f8ee6;}
-        &.cb-white {background-color: #fff;}
-        &.cb-gray {background-color: #333;}
-      }
-
-      &>strong {
-        display: block;
-        text-transform: uppercase;
-        padding: 12px 0 8px;
-        color: #000;
-        .brandon-grotesque();
-      }
-
-      &>span {
-        display: block;
-        color: #555;
-      }
-    }
-
-    .logo-sample {
-      width: 180px;
-      height: 100px;
-      line-height: 100px;
-      text-align: center;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
-
-      &.ridibooks-logo-sample-1 {
-        background: #fff;
+          width: 76px;
+          height: 31px;
+          margin-right: 56px;
+        }
 
         .logo-ridibooks {
-          .svg_logo_ridibooks(#222);
+          .svg_logo_ridibooks(#1f8ee6);
 
-          width: 107px;
-          height: 27px;
+          width: 205px;
+          height: 50px;
+          margin-right: 56px;
+
         }
-      }
 
-      &.ridibooks-logo-sample-2 {
-        background: #1f8ee6;
+        .logo-ridistory {
+          .svg_logo_ridistory(#1f8ee6);
 
-        .logo-ridibooks {
-          .svg_logo_ridibooks(#fff);
+          width: 218px;
+          height: 40px;
 
-          width: 107px;
-          height: 27px;
         }
-      }
-
-      &.paper-logo-sample-1 {
-        background: #333;
 
         .logo-paper {
-          .svg_logo_paper(#fff);
+          .svg_logo_paper(#333);
 
-          width: 85px;
-          height: 22px;
+          width: 120px;
+          height: 31px;
         }
       }
 
-      span {
-        vertical-align: middle;
+      h5 {
+        font-size: 13px;
+        color: #555;
+        font-weight: bold;
+        line-height: 1;
+        font-family: "brandon-grotesque", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
       }
 
-      @media @queries_sm {
-        width: 160px;
+      .branding-color-list {
+        padding: 0 0 20px;
       }
+
+      .branding-desc {
+        float: left;
+        margin-right: 10px;
+        font-size: 13px;
+        padding-bottom: 20px;
+
+        .color-box {
+          width: 100px;
+          height: 100px;
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+          &.cb-blue {background-color: #1f8ee6;}
+          &.cb-white {background-color: #fff;}
+          &.cb-gray {background-color: #333;}
+        }
+
+        &>strong {
+          display: block;
+          text-transform: uppercase;
+          padding: 12px 0 8px;
+          color: #000;
+          .brandon-grotesque();
+        }
+
+        &>span {
+          display: block;
+          color: #555;
+        }
+      }
+
+      .logo-sample {
+        width: 180px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+
+        &.ridibooks-logo-sample-1 {
+          background: #fff;
+
+          .logo-ridibooks {
+            .svg_logo_ridibooks(#222);
+
+            width: 107px;
+            height: 27px;
+          }
+        }
+
+        &.ridibooks-logo-sample-2 {
+          background: #1f8ee6;
+
+          .logo-ridibooks {
+            .svg_logo_ridibooks(#fff);
+
+            width: 107px;
+            height: 27px;
+          }
+        }
+
+        &.paper-logo-sample-1 {
+          background: #333;
+
+          .logo-paper {
+            .svg_logo_paper(#fff);
+
+            width: 85px;
+            height: 22px;
+          }
+        }
+
+        span {
+          vertical-align: middle;
+        }
+
+        @media @queries_sm {
+          width: 160px;
+        }
+      }
+
+    }
+  }
+
+  .branding-download-all {
+    text-align: center;
+    .brandon-grotesque();
+
+    @media @queries_md {
+      margin-bottom: 100px;
     }
 
-  }
-}
+    @media @queries_sm {
+      margin-bottom: 50px;
+    }
 
-.branding-download-all {
-  text-align: center;
-  .brandon-grotesque();
+    .wrapper {
+      display: inline-block;
+      padding: 0 10px;
+      .border-radius();
+    }
 
-  @media @queries_md {
-    margin-bottom: 100px;
-  }
+    strong {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.95em;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: #b0d4ff;
+      padding: 10px 0;
+      background: @bg-career;
+    }
 
-  @media @queries_sm {
-    margin-bottom: 50px;
-  }
+    .download-all {
+      .button-white();
 
-  .wrapper {
-    display: inline-block;
-    padding: 0 10px;
-    .border-radius();
-  }
-
-  strong {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 0.95em;
-    letter-spacing: 0.2em;
-    font-weight: 700;
-    color: #b0d4ff;
-    padding: 10px 0;
-    background: @bg-career;
-  }
-
-  .download-all {
-    .button-white();
-
-    color: #0282da;
-    margin-bottom: 15px;
+      color: #0282da;
+      margin-bottom: 15px;
+    }
   }
 }
