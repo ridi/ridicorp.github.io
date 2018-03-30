@@ -19,7 +19,7 @@ collections:
     output: true
   press:
     output: true
-  slides:
+  slide:
     output: true
 
 # pagination for blog posts

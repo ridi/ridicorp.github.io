@@ -2106,32 +2106,32 @@ html.blog .tab-container em.active,
 html.blog .tab-container em:hover {
   color: #02406f;
 }
-html.blog.posts .blog-post-list {
+html.blog.article .blog-post-list {
   width: 700px;
   margin: 20px auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.blog.posts .blog-post-list {
+  html.blog.article .blog-post-list {
     margin: 20px auto;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.blog.posts .blog-post-list {
+  html.blog.article .blog-post-list {
     width: auto;
     margin: 0 auto;
   }
 }
-html.blog.posts .blog-post-list li {
+html.blog.article .blog-post-list li {
   display: inline-block;
   vertical-align: top;
   position: relative;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.posts .blog-post-list li {
+  html.blog.article .blog-post-list li {
     display: block;
   }
 }
-html.blog.posts .blog-post-list li .list-item {
+html.blog.article .blog-post-list li .list-item {
   display: block;
   padding: 25px 5px 20px;
   position: relative;
@@ -2141,22 +2141,22 @@ html.blog.posts .blog-post-list li .list-item {
   border-bottom: 1px #eee solid;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.posts .blog-post-list li .list-item {
+  html.blog.article .blog-post-list li .list-item {
     width: 90%;
     margin: 5px auto;
   }
 }
-html.blog.posts .blog-post-list li .list-item .post-content {
+html.blog.article .blog-post-list li .list-item .post-content {
   display: table-cell;
   vertical-align: top;
   width: 520px;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.posts .blog-post-list li .list-item .post-content {
+  html.blog.article .blog-post-list li .list-item .post-content {
     width: 100%;
   }
 }
-html.blog.posts .blog-post-list li .list-item .type {
+html.blog.article .blog-post-list li .list-item .type {
   display: inline-block;
   font-family: "brandon-grotesque", sans-serif;
   color: #284f8c;
@@ -2166,13 +2166,13 @@ html.blog.posts .blog-post-list li .list-item .type {
   letter-spacing: 0.05em;
   margin: 5px 0 10px 0;
 }
-html.blog.posts .blog-post-list li .list-item .type.type-design {
+html.blog.article .blog-post-list li .list-item .type.type-design {
   color: #00a259;
 }
-html.blog.posts .blog-post-list li .list-item .type.type-engineering {
+html.blog.article .blog-post-list li .list-item .type.type-engineering {
   color: #284f8c;
 }
-html.blog.posts .blog-post-list li .list-item .title {
+html.blog.article .blog-post-list li .list-item .title {
   display: block;
   font-size: 26px;
   color: #373a3c;
@@ -2182,18 +2182,18 @@ html.blog.posts .blog-post-list li .list-item .title {
   line-height: 1.3;
   margin-left: -0.05em;
 }
-html.blog.posts .blog-post-list li .list-item .desc {
+html.blog.article .blog-post-list li .list-item .desc {
   font-size: 16px;
   color: #6c8094;
   padding-bottom: 8px;
   line-height: 1.4;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.posts .blog-post-list li .list-item .desc {
+  html.blog.article .blog-post-list li .list-item .desc {
     padding-bottom: 14px;
   }
 }
-html.blog.posts .blog-post-list li .list-item .post-meta {
+html.blog.article .blog-post-list li .list-item .post-meta {
   font-family: "brandon-grotesque", sans-serif;
   color: #545f6f;
   font-size: 14px;
@@ -2203,24 +2203,24 @@ html.blog.posts .blog-post-list li .list-item .post-meta {
   padding: 25px 0 0 25px;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.posts .blog-post-list li .list-item .post-meta {
+  html.blog.article .blog-post-list li .list-item .post-meta {
     width: auto;
     display: block;
     padding-left: 0;
   }
 }
-html.blog.posts .blog-post-list li .list-item .post-meta .profile-img {
+html.blog.article .blog-post-list li .list-item .post-meta .profile-img {
   width: 40px;
   height: 40px;
   float: left;
   margin: 0 8px 0 0;
   border-radius: 4px;
 }
-html.blog.posts .blog-post-list li .list-item .post-meta .author {
+html.blog.article .blog-post-list li .list-item .post-meta .author {
   font-weight: bold;
   font-size: 16px;
 }
-html.blog.posts .blog-post-list li figure {
+html.blog.article .blog-post-list li figure {
   position: absolute;
   z-index: 0;
   left: 0;
@@ -2232,26 +2232,26 @@ html.blog.posts .blog-post-list li figure {
   border-radius: 5px;
   border: 2px solid transparent;
 }
-html.blog.posts .blog-post-list li:hover a,
-html.blog.posts .blog-post-list li:focus a {
+html.blog.article .blog-post-list li:hover a,
+html.blog.article .blog-post-list li:focus a {
   -webkit-transform: translateY(-1px);
   border-color: #ccc;
 }
-html.blog.posts .blog-post-list li:hover figure,
-html.blog.posts .blog-post-list li:focus figure {
+html.blog.article .blog-post-list li:hover figure,
+html.blog.article .blog-post-list li:focus figure {
   border: 1px solid #ddd;
   -webkit-transform: scale(1.05);
 }
-html.blog.slides .blog-slide-list {
+html.blog.slide .blog-slide-list {
   margin: 0 auto;
   text-align: center;
 }
-html.blog.slides .blog-slide-list li {
+html.blog.slide .blog-slide-list li {
   display: inline-block;
   width: 320px;
   margin: 15px;
 }
-html.blog.slides .blog-slide-list li .preview {
+html.blog.slide .blog-slide-list li .preview {
   width: 100%;
 }
 html.press .press-quick-links {
