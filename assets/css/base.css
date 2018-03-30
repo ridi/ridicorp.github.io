@@ -2084,29 +2084,26 @@ html.career .job-openings-area .talent-pool .talent-pool-list .job-item:hover .j
 html.career .job-openings-area .talent-pool .talent-pool-list .job-item:hover .arrow {
   margin-right: 5px;
 }
-html.blog .press-articles-area {
+html.blog .tab-container {
   background: #f5faff;
   padding: 80px 0;
-}
-html.blog .press-articles-area .paa-tab {
   text-align: center;
   font-weight: bold;
   font-size: 1.5em;
-  padding-bottom: 40px;
 }
-html.blog .press-articles-area .paa-tab em,
-html.blog .press-articles-area .paa-tab span {
+html.blog .tab-container em,
+html.blog .tab-container span {
   color: #acc2d4;
   display: inline-block;
   padding: 0 2px;
 }
-html.blog .press-articles-area .paa-tab em {
+html.blog .tab-container em {
   font-style: normal;
   transition: color .2s;
   cursor: pointer;
 }
-html.blog .press-articles-area .paa-tab em.active,
-html.blog .press-articles-area .paa-tab em:hover {
+html.blog .tab-container em.active,
+html.blog .tab-container em:hover {
   color: #02406f;
 }
 html.blog.posts .blog-post-list {
