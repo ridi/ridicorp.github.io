@@ -72,6 +72,23 @@ defaults:
     values:
       root_class: "blog post"
 
+  # Collections
+  -
+    scope:
+      type: "career"
+    values:
+      root_class: "career collection"
+  -
+    scope:
+      type: "press"
+    values:
+      root_class: "press collection"
+  -
+    scope:
+      type: "slides"
+    values:
+      root_class: "slides collection"
+
 # Pagination for blog posts
 plugins:
   - jekyll-paginate
