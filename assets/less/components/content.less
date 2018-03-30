@@ -1,0 +1,34 @@
+.site-content h3 {
+  display: inline-block;
+  font-size: 1.5em;
+  color: @base-gray;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  .brandon-grotesque();
+
+  @media @queries_md {
+    font-size: 1.5em;
+    margin-top: 60px;
+  }
+
+  @media @queries_sm {
+    font-size: 1.2em;
+    margin-top: 60px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: @base-gray;
+    .border-radius();
+  }
+}
