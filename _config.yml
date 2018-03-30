@@ -23,6 +23,7 @@ collections:
     output: true
 
 defaults:
+  # Pages
   -
     scope:
       path: "index.html"
@@ -64,7 +65,14 @@ defaults:
     values:
       root_class: "contact page"
 
-# pagination for blog posts
+  # Posts
+  -
+    scope:
+      type: "posts"
+    values:
+      root_class: "blog post"
+
+# Pagination for blog posts
 plugins:
   - jekyll-paginate
 paginate: 8
