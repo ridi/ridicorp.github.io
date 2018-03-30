@@ -1,5 +1,5 @@
 ---
-layout: collection_slide
+layout: collection_slides
 title: 새로운 서비스를 만들어 봤습니다
 author: leejy
 date: 2017-12-01

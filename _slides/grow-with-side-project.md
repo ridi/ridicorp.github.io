@@ -1,5 +1,5 @@
 ---
-layout: collection_slide
+layout: collection_slides
 title: 사이드 프로젝트로 성장하기
 author: 오남경
 date: 2017-12-01
