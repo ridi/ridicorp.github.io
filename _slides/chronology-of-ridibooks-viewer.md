@@ -1,5 +1,5 @@
 ---
-layout: collection_slides
+layout: slide
 title: 리디북스 뷰어 연대기
 author: kering
 date: 2017-06-09

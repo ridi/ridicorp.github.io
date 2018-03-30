@@ -1,5 +1,5 @@
 ---
-layout: collection_slides
+layout: slide
 title: CRM 더 잘 만들기
 author: limeburst
 date: 2018-03-30

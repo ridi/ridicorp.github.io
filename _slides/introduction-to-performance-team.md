@@ -1,5 +1,5 @@
 ---
-layout: collection_slides
+layout: slide
 title: 리디북스 퍼포먼스팀 소개
 author: 강기태
 date: 2017-03-10

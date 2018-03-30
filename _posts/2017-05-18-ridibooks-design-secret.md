@@ -1,5 +1,5 @@
 ---
-layout: post_blog
+layout: blog_post
 title: "리디북스 이벤트 디자인에 숨겨진 비밀"
 description: "간단하지만 요긴하게 써먹을 수 있는 방법"
 header-img: "blog/img/2017-05-18/blog-bg.jpg"

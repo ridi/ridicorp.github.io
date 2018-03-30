@@ -1,5 +1,5 @@
 ---
-layout: collection_career
+layout: career
 title: "Senior UI Designer"
 subtitle: "리디북스 UI팀"
 description: "리디북스를 이끌어 나갈 최고의 UI디자이너를 찾고 있습니다."

@@ -1,5 +1,5 @@
 ---
-layout: post_blog
+layout: blog_post
 title: "시원찮은 웹앱을 육성하는 방법"
 description: "웹앱을 네이티브앱처럼 보이게 하기"
 header-img: "blog/img/bg-5.jpg"
