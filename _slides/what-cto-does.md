@@ -1,5 +1,5 @@
 ---
-layout: collection_slide
+layout: collection_slides
 title: 리디북스 CTO가 하는 일
 author: namenu
 date: 2017-07-07
