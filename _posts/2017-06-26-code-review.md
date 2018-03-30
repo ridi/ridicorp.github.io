@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "코드 리뷰어 활동 후기"
 description: "코드 리뷰를 진행하면서 고민했던 점들을 공유합니다"
 header-img: "blog/img/bg-8.jpg"

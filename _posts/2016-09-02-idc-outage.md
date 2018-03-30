@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "리디북스 서비스 장애 복구 후기"
 description: "데이터센터의 장애를 통해 겪은 서비스중단 및 복구 후기"
 header-img: "blog/img/bg-11.jpg"

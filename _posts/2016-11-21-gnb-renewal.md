@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "리디북스 서점 GNB 리뉴얼"
 description: "네비게이션 디자인 과정과 작업 후기"
 header-img: "blog/img/bg-2-new.jpg"

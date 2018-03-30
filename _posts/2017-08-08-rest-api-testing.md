@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "REST API 테스팅 프레임워크"
 description: "REST API 테스팅 프레임워크의 개발 과정을 소개합니다"
 header-img: "blog/img/bg-12.jpg"

@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "MariaDB Binlog을 이용한 변경사항 추적"
 description: "MariaDB(MySQL)의 Change Data Capture(CDC) 기술을 이용하여 테이블의 변경 사항 추적을 설계 및 개발했던 내용을 공유합니다"
 header-img: "blog/img/bg-9.jpg"

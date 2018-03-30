@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "리디북스 웹뷰어의 이어보기를 개발하며"
 description: "Couchbase로 빈번한 쓰기 요청을 처리하기"
 header-img: "blog/img/bg-1.jpg"
