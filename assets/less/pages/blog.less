@@ -1,4 +1,40 @@
 html.page.blog {
+  .intro-header {
+    &.ih-blog {
+      background-image: url(../img/blog-bg.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 2000px auto;
+      background-color: #173057;
+
+      @media @queries_sm {
+        background-size: 1400px auto;
+      }
+    }
+
+    .site-heading,
+    .page-heading {
+      &.blog-heading {
+        padding: 80px 0 40px;
+      }
+    }
+
+    .sub-description {
+      &.sd-blog {
+        color: #78caf3;
+      }
+    }
+
+    .blog-sub-area {
+      text-align: center;
+
+      @media @queries_sm {
+        text-align: left;
+        padding: 0 20px;
+      }
+    }
+  }
+
   .tab-container {
     background: #f5faff;
     padding: 80px 0;

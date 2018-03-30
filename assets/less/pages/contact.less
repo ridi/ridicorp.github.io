@@ -7,6 +7,67 @@ html.page.contact {
     }
   }
 
+  .intro-header {
+    &.ih-contact {
+      background: transparent;
+      margin-bottom: 0;
+      padding-bottom: 140px;
+      position: relative;
+      z-index: 2;
+
+      @media @queries_sm {
+        padding-bottom: 40px;
+      }
+    }
+
+    .site-heading,
+    .page-heading {
+      &.contact-heading {
+        h1 {
+          color: @bright-orange;
+        }
+
+        padding-bottom: 40px;
+      }
+    }
+
+    .contact-buttons {
+      text-align: center;
+
+      a {
+        .button();
+      }
+
+      .view-map {
+        .button-orange();
+
+        margin-right: 10px;
+      }
+
+      .other-button {
+        .button-gray();
+
+        background: #5f5f5f;
+      }
+
+      @media @queries_smmd {
+        margin-top: 30px;
+
+        a {
+          display: block !important;
+          width: 240px;
+          margin: 0 auto 5px !important;
+          border: none !important;
+          border-radius: 4px !important;
+        }
+
+        .view-map {
+          margin-bottom: 10px !important;
+        }
+      }
+    }
+  }
+
   .contact-fader {
     background: rgba(0,0,0,.75) url(../img/bg-fader.png) repeat;
     position: absolute;

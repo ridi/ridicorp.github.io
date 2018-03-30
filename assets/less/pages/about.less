@@ -1,4 +1,32 @@
 html.page.about {
+  .intro-header {
+    &.ih-about {
+      background-color: #30356e;
+      background-image: url(../img/about-bg.png);
+      background-size: 1600px auto;
+      background-position: center -50px;
+      .drop-shadow();
+
+      @media @queries_md {
+        background-size: 1400px auto;
+      }
+
+      @media @queries_sm {
+        background-size: 600px auto;
+      }
+    }
+
+    .about-sub-area .sub-heading {
+      color: #fff;
+    }
+
+    .sub-description {
+      &.sd-about {
+        color: #78caf3;
+      }
+    }
+  }
+
   .must-use-area {
     background: #2c5aa9;
     background: rgb(44,90,169);
