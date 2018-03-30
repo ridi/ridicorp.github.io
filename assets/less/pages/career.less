@@ -1,4 +1,55 @@
 html.page.career {
+  .intro-header {
+    &.ih-career {
+      background-color: @bg-career;
+      background-image: url(../img/career-bg.png);
+      background-repeat: repeat-x;
+      background-position: center -80px;
+
+      @media @queries_md {
+        background-size: 1200px auto;
+      }
+
+      @media @queries_sm {
+        background-size: 1000px auto;
+      }
+    }
+
+    .site-heading,
+    .page-heading {
+      &.career-heading {
+        padding-bottom: 40px;
+      }
+    }
+
+    .career-sub-area .sub-heading {
+      color: #5b6f7f;
+    }
+
+    .sub-description {
+      &.sd-career {
+        color: #697c8a;
+      }
+    }
+
+    .career-sub-area {
+      background: #cbf0ff url(../img/career-sub-bg.png) repeat-x center center;
+      padding-top: 50px;
+      text-align: center;
+      .inner-shadow();
+
+      @media @queries_lg {
+        background-size: 1200px auto;
+      }
+
+      @media @queries_sm {
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+
   .job-quick-links {
     text-align: center;
     margin-bottom: 150px;

@@ -1,3 +1,30 @@
 html.collection.slides {
+  .intro-header {
+    &.ih-blog {
+      background-image: url(../img/blog-bg.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 2000px auto;
+      background-color: #173057;
 
+      @media @queries_sm {
+        background-size: 1400px auto;
+      }
+    }
+
+    .sub-description {
+      &.sd-blog {
+        color: #78caf3;
+      }
+    }
+
+    .blog-sub-area {
+      text-align: center;
+
+      @media @queries_sm {
+        text-align: left;
+        padding: 0 20px;
+      }
+    }
+  }
 }
