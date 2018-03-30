@@ -1114,20 +1114,20 @@ article.post .footnotes ol > li p {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-html.about .must-use-area {
+html.page.about .must-use-area {
   background: #2c5aa9;
   position: relative;
   overflow: hidden;
 }
-html.about .must-use-area.site-content h3 {
+html.page.about .must-use-area.site-content h3 {
   color: #fff;
   position: relative;
   z-index: 3;
 }
-html.about .must-use-area.site-content h3:after {
+html.page.about .must-use-area.site-content h3:after {
   background: #fff;
 }
-html.about .must-use-area .must-use {
+html.page.about .must-use-area .must-use {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1141,18 +1141,18 @@ html.about .must-use-area .must-use {
   z-index: 3;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.about .must-use-area .must-use {
+  html.page.about .must-use-area .must-use {
     width: 300px;
     height: 105px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.about .must-use-area .must-use {
+  html.page.about .must-use-area .must-use {
     width: 200px;
     height: 70px;
   }
 }
-html.about .must-use-area .must-use-desc {
+html.page.about .must-use-area .must-use-desc {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
   font-weight: bold;
   font-size: 1.5em;
@@ -1163,11 +1163,11 @@ html.about .must-use-area .must-use-desc {
   letter-spacing: -0.03em;
 }
 @media only screen and (max-width: 767px) {
-  html.about .must-use-area .must-use-desc {
+  html.page.about .must-use-area .must-use-desc {
     margin-top: 80px;
   }
 }
-html.about .must-use-area .description {
+html.page.about .must-use-area .description {
   padding: 20px 0 80px;
   text-align: center;
   color: #acbedd;
@@ -1175,12 +1175,12 @@ html.about .must-use-area .description {
   z-index: 3;
 }
 @media only screen and (max-width: 767px) {
-  html.about .must-use-area .description {
+  html.page.about .must-use-area .description {
     font-size: 0.9em;
     padding: 20px 0 60px;
   }
 }
-html.about .must-use-area [class^="bg-text-"] {
+html.page.about .must-use-area [class^="bg-text-"] {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1194,73 +1194,73 @@ html.about .must-use-area [class^="bg-text-"] {
   top: 76px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.about .must-use-area [class^="bg-text-"] {
+  html.page.about .must-use-area [class^="bg-text-"] {
     width: 285px;
     height: 212px;
     top: 100px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.about .must-use-area [class^="bg-text-"] {
+  html.page.about .must-use-area [class^="bg-text-"] {
     width: 190px;
     height: 141.33333333px;
     top: 120px;
   }
 }
-html.about .must-use-area .bg-text-1 {
+html.page.about .must-use-area .bg-text-1 {
   left: -360px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.about .must-use-area .bg-text-1 {
+  html.page.about .must-use-area .bg-text-1 {
     left: -100px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.about .must-use-area .bg-text-1 {
+  html.page.about .must-use-area .bg-text-1 {
     left: -100px;
   }
 }
-html.about .must-use-area .bg-text-2 {
+html.page.about .must-use-area .bg-text-2 {
   right: -360px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.about .must-use-area .bg-text-2 {
+  html.page.about .must-use-area .bg-text-2 {
     right: -100px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.about .must-use-area .bg-text-2 {
+  html.page.about .must-use-area .bg-text-2 {
     right: -100px;
   }
 }
-html.about .numbers-area {
+html.page.about .numbers-area {
   background: #b9b8bc url(../img/numbers-bg.png) repeat center center;
   padding: 0 0 80px;
 }
 @media only screen and (max-width: 767px) {
-  html.about .numbers-area {
+  html.page.about .numbers-area {
     padding: 0 0 40px;
     background-position: center top;
   }
 }
-html.about .numbers-area h3 {
+html.page.about .numbers-area h3 {
   color: #36333f;
   background: #b9b8bc;
 }
-html.about .numbers-area h3:after {
+html.page.about .numbers-area h3:after {
   color: #36333f;
 }
-html.about .numbers-area h4 {
+html.page.about .numbers-area h4 {
   font-size: 1em;
   color: #828086;
   margin-top: 0;
 }
-html.about .numbers-area .number-boxes {
+html.page.about .numbers-area .number-boxes {
   width: 960px;
   margin: 0 auto;
   padding: 0 0 0 2%;
 }
-html.about .numbers-area .number-boxes li {
+html.page.about .numbers-area .number-boxes li {
   float: left;
   width: 23%;
   padding: 30px 0 20px;
@@ -1277,81 +1277,81 @@ html.about .numbers-area .number-boxes li {
   background-clip: padding-box;
   border-bottom: 3px solid #e54e26;
 }
-html.about .numbers-area .number-boxes li i {
+html.page.about .numbers-area .number-boxes li i {
   font-size: 4em;
   color: #3b3844;
   padding-bottom: 5px;
 }
-html.about .numbers-area .number-boxes li strong {
+html.page.about .numbers-area .number-boxes li strong {
   display: block;
   font-size: 2.5em;
   font-family: "brandon-grotesque", sans-serif;
   color: #3b3844;
   padding-bottom: 5px;
 }
-html.about .numbers-area .number-boxes li span {
+html.page.about .numbers-area .number-boxes li span {
   display: block;
   font-size: 0.875em;
   color: #97969b;
   height: 2.5em;
 }
-html.about .numbers-area .number-boxes li em {
+html.page.about .numbers-area .number-boxes li em {
   vertical-align: super;
   font-style: normal;
   font-size: 0.5em;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.about .numbers-area .number-boxes {
+  html.page.about .numbers-area .number-boxes {
     width: 740px;
   }
-  html.about .numbers-area .number-boxes li strong {
+  html.page.about .numbers-area .number-boxes li strong {
     font-size: 2em;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.about .numbers-area .number-boxes {
+  html.page.about .numbers-area .number-boxes {
     width: auto;
     padding: 0 0 0 20px;
   }
-  html.about .numbers-area .number-boxes li {
+  html.page.about .numbers-area .number-boxes li {
     width: 45%;
     margin: 10px 3.3% 10px 0;
   }
-  html.about .numbers-area .number-boxes li strong {
+  html.page.about .numbers-area .number-boxes li strong {
     font-size: 1.5em;
   }
 }
-html.about .products-area {
+html.page.about .products-area {
   padding-bottom: 80px;
 }
 @media only screen and (max-width: 767px) {
-  html.about .products-area {
+  html.page.about .products-area {
     padding-bottom: 0;
   }
 }
-html.about .products-area .products {
+html.page.about .products-area .products {
   padding: 0 0 30px;
   width: 960px;
   margin: 0 auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.about .products-area .products {
+  html.page.about .products-area .products {
     width: 768px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.about .products-area .products {
+  html.page.about .products-area .products {
     width: auto;
   }
 }
-html.about .products-area .products li {
+html.page.about .products-area .products li {
   width: 50%;
   padding-top: 36px;
   float: left;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
-  html.about .products-area .products li {
+  html.page.about .products-area .products li {
     width: auto;
     float: none;
     padding: 0 20px 40px;
@@ -1359,12 +1359,12 @@ html.about .products-area .products li {
     margin: 0 auto;
   }
 }
-html.about .products-area .products li img {
+html.page.about .products-area .products li img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
-html.about .products-area .products li .logo-ridibooks {
+html.page.about .products-area .products li .logo-ridibooks {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1374,7 +1374,7 @@ html.about .products-area .products li .logo-ridibooks {
   width: 125px;
   height: 32px;
 }
-html.about .products-area .products li .logo-paper {
+html.page.about .products-area .products li .logo-paper {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1384,7 +1384,7 @@ html.about .products-area .products li .logo-paper {
   width: 98px;
   height: 26px;
 }
-html.about .products-area .products li .logo-ridistory {
+html.page.about .products-area .products li .logo-ridistory {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1394,14 +1394,14 @@ html.about .products-area .products li .logo-ridistory {
   width: 166px;
   height: 32px;
 }
-html.about .products-area .products li strong {
+html.page.about .products-area .products li strong {
   display: block;
   font-size: 1.8em;
   font-weight: 700;
   color: #333;
   padding: 16px 0 8px;
 }
-html.about .products-area .products li span {
+html.page.about .products-area .products li span {
   display: block;
   color: #555;
   font-weight: 400;
@@ -1409,7 +1409,7 @@ html.about .products-area .products li span {
   letter-spacing: -0.03em;
   font-size: 0.9em;
 }
-html.about .products-area .products li a {
+html.page.about .products-area .products li a {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1428,22 +1428,22 @@ html.about .products-area .products li a {
   border: 2px solid #c9c9c9;
   color: #484848;
 }
-html.about .products-area .products li a i {
+html.page.about .products-area .products li a i {
   opacity: 0.5;
 }
-html.about .products-area .products li a:hover {
+html.page.about .products-area .products li a:hover {
   border-color: #484848;
 }
-html.about .branding-link-area {
+html.page.about .branding-link-area {
   width: 768px;
   margin: 0 auto 100px;
 }
 @media only screen and (max-width: 767px) {
-  html.about .branding-link-area {
+  html.page.about .branding-link-area {
     width: auto;
   }
 }
-html.about .branding-link-area .go-to-branding {
+html.page.about .branding-link-area .go-to-branding {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1463,29 +1463,29 @@ html.about .branding-link-area .go-to-branding {
   color: #fff;
   margin-top: 20px;
 }
-html.about .branding-link-area .go-to-branding i {
+html.page.about .branding-link-area .go-to-branding i {
   opacity: 0.5;
 }
-html.about .branding-link-area .go-to-branding:hover {
+html.page.about .branding-link-area .go-to-branding:hover {
   color: #fff;
   background: #1477c5;
 }
-html.career .job-quick-links {
+html.page.career .job-quick-links {
   text-align: center;
   margin-bottom: 150px;
   font-family: "brandon-grotesque", sans-serif;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.career .job-quick-links {
+  html.page.career .job-quick-links {
     margin-bottom: 100px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.career .job-quick-links {
+  html.page.career .job-quick-links {
     margin-bottom: 50px;
   }
 }
-html.career .job-quick-links .wrapper {
+html.page.career .job-quick-links .wrapper {
   display: inline-block;
   padding: 0 10px;
   -webkit-border-radius: 4px;
@@ -1496,7 +1496,7 @@ html.career .job-quick-links .wrapper {
   background-clip: padding-box;
   max-width: 500px;
 }
-html.career .job-quick-links strong {
+html.page.career .job-quick-links strong {
   display: inline-block;
   text-transform: uppercase;
   font-size: 0.95em;
@@ -1506,7 +1506,7 @@ html.career .job-quick-links strong {
   padding: 10px 0;
   background: #293040;
 }
-html.career .job-quick-links .now-hiring {
+html.page.career .job-quick-links .now-hiring {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1526,35 +1526,35 @@ html.career .job-quick-links .now-hiring {
   color: #fff;
   margin-bottom: 15px;
 }
-html.career .job-quick-links .now-hiring i {
+html.page.career .job-quick-links .now-hiring i {
   opacity: 0.5;
 }
-html.career .job-quick-links .now-hiring:hover {
+html.page.career .job-quick-links .now-hiring:hover {
   color: #fff;
   background: #1477c5;
 }
-html.career .job-quick-links .hiring {
+html.page.career .job-quick-links .hiring {
   color: #7e97ad;
   font-size: 1em;
   margin: 0 2px;
 }
-html.career .job-quick-links .hiring:after {
+html.page.career .job-quick-links .hiring:after {
   content: "•";
   color: #7e97ad;
   margin: 0 0 0 5px;
 }
-html.career .job-quick-links .hiring:last-child:after {
+html.page.career .job-quick-links .hiring:last-child:after {
   display: none;
 }
-html.career .how-we-work-area {
+html.page.career .how-we-work-area {
   padding-bottom: 80px;
 }
 @media only screen and (max-width : 1023px) {
-  html.career .how-we-work-area {
+  html.page.career .how-we-work-area {
     padding-bottom: 0;
   }
 }
-html.career .how-we-work {
+html.page.career .how-we-work {
   counter-reset: hww-counter;
   list-style-type: none;
   padding-top: 180px;
@@ -1563,18 +1563,18 @@ html.career .how-we-work {
   margin: 0 auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.career .how-we-work {
+  html.page.career .how-we-work {
     width: auto;
     padding: 100px 40px 0;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.career .how-we-work {
+  html.page.career .how-we-work {
     width: auto;
     padding-top: 60px;
   }
 }
-html.career .how-we-work li {
+html.page.career .how-we-work li {
   border-bottom: 2px solid #f31717;
   padding-bottom: 30px;
   padding-left: 0;
@@ -1586,7 +1586,7 @@ html.career .how-we-work li {
   width: 45%;
   float: left;
 }
-html.career .how-we-work li:before {
+html.page.career .how-we-work li:before {
   content: "0" counter(hww-counter);
   position: absolute;
   z-index: 1;
@@ -1597,7 +1597,7 @@ html.career .how-we-work li:before {
   font-weight: 100;
   font-family: "brandon-grotesque", sans-serif;
 }
-html.career .how-we-work li h4 {
+html.page.career .how-we-work li h4 {
   font-size: 4em;
   font-weight: 100;
   letter-spacing: -0.03em;
@@ -1607,23 +1607,23 @@ html.career .how-we-work li h4 {
   position: relative;
   z-index: 2;
 }
-html.career .how-we-work li.hww-1 {
+html.page.career .how-we-work li.hww-1 {
   margin-top: 0;
 }
-html.career .how-we-work li.hww-2,
-html.career .how-we-work li.hww-4 {
+html.page.career .how-we-work li.hww-2,
+html.page.career .how-we-work li.hww-4 {
   float: right;
 }
-html.career .how-we-work li.hww-5 {
+html.page.career .how-we-work li.hww-5 {
   margin-bottom: 0;
 }
-html.career .how-we-work li p {
+html.page.career .how-we-work li p {
   letter-spacing: -0.02em;
   margin: 0 0 20px;
   font-size: 1.125em;
   font-weight: 400;
 }
-html.career .how-we-work li .hww-icon {
+html.page.career .how-we-work li .hww-icon {
   position: absolute;
   background-repeat: no-repeat;
   width: 200px;
@@ -1631,41 +1631,41 @@ html.career .how-we-work li .hww-icon {
   background-size: 200px 200px;
   z-index: 3;
 }
-html.career .how-we-work li .hww-icon.hwwi-1 {
+html.page.career .how-we-work li .hww-icon.hwwi-1 {
   background-image: url(../img/icon-howwework-1.png);
   right: -20px;
   top: -130px;
 }
-html.career .how-we-work li .hww-icon.hwwi-2 {
+html.page.career .how-we-work li .hww-icon.hwwi-2 {
   background-image: url(../img/icon-howwework-2.png);
   right: 10px;
   top: -120px;
 }
-html.career .how-we-work li .hww-icon.hwwi-3 {
+html.page.career .how-we-work li .hww-icon.hwwi-3 {
   background-image: url(../img/icon-howwework-3.png);
   right: 10px;
   top: -100px;
 }
-html.career .how-we-work li .hww-icon.hwwi-4 {
+html.page.career .how-we-work li .hww-icon.hwwi-4 {
   background-image: url(../img/icon-howwework-4.png);
   right: 0;
   top: -120px;
 }
-html.career .how-we-work li .hww-icon.hwwi-5 {
+html.page.career .how-we-work li .hww-icon.hwwi-5 {
   background-image: url(../img/icon-howwework-5.png);
   right: 0;
   top: -90px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.career .how-we-work li h4 {
+  html.page.career .how-we-work li h4 {
     font-size: 3em;
   }
-  html.career .how-we-work li:before {
+  html.page.career .how-we-work li:before {
     left: -0.1em;
     top: -0.8em;
     font-size: 4em;
   }
-  html.career .how-we-work li .hww-icon {
+  html.page.career .how-we-work li .hww-icon {
     position: absolute;
     top: -50px !important;
     left: auto !important;
@@ -1676,21 +1676,21 @@ html.career .how-we-work li .hww-icon.hwwi-5 {
   }
 }
 @media only screen and (max-width: 767px) {
-  html.career .how-we-work li {
+  html.page.career .how-we-work li {
     margin-top: 80px;
     float: none !important;
     padding: 0 20px;
     width: auto;
   }
-  html.career .how-we-work li h4 {
+  html.page.career .how-we-work li h4 {
     font-size: 3em;
   }
-  html.career .how-we-work li:before {
+  html.page.career .how-we-work li:before {
     left: 15px;
     top: -0.9em;
     font-size: 4em;
   }
-  html.career .how-we-work li .hww-icon {
+  html.page.career .how-we-work li .hww-icon {
     position: absolute;
     top: -50px !important;
     left: auto !important;
@@ -1700,16 +1700,16 @@ html.career .how-we-work li .hww-icon.hwwi-5 {
     background-size: 120px 120px;
   }
 }
-html.career .benefit-area {
+html.page.career .benefit-area {
   background: #f3f3f5;
   padding: 0 0 50px;
 }
-html.career .benefit-area .benefit-content {
+html.page.career .benefit-area .benefit-content {
   width: 750px;
   margin: 30px auto 0;
   clear: both;
 }
-html.career .benefit-area .benefit-content:after {
+html.page.career .benefit-area .benefit-content:after {
   content: ".";
   visibility: hidden;
   display: block;
@@ -1717,18 +1717,18 @@ html.career .benefit-area .benefit-content:after {
   clear: both;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.career .benefit-area .benefit-content {
+  html.page.career .benefit-area .benefit-content {
     width: 90%;
     margin: 30px auto 0;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.career .benefit-area .benefit-content {
+  html.page.career .benefit-area .benefit-content {
     width: auto;
     margin: 30px 20px 0;
   }
 }
-html.career .benefit-area .benefit-content h4 {
+html.page.career .benefit-area .benefit-content h4 {
   float: left;
   width: 170px;
   font-family: "brandon-grotesque", sans-serif;
@@ -1739,10 +1739,10 @@ html.career .benefit-area .benefit-content h4 {
   letter-spacing: 0.1em;
   margin: 0;
 }
-html.career .benefit-area .benefit-content .bc-box {
+html.page.career .benefit-area .benefit-content .bc-box {
   padding-bottom: 15px;
 }
-html.career .benefit-area .benefit-content .bc-box .bf-icon {
+html.page.career .benefit-area .benefit-content .bc-box .bf-icon {
   float: left;
   width: 60px;
   height: 60px;
@@ -1750,50 +1750,50 @@ html.career .benefit-area .benefit-content .bc-box .bf-icon {
   margin-top: -10px;
   background-repeat: no-repeat;
 }
-html.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-1 {
+html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-1 {
   background-image: url(../img/icon-benefit-1.png);
 }
-html.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-2 {
+html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-2 {
   background-image: url(../img/icon-benefit-2.png);
 }
-html.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-3 {
+html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-3 {
   background-image: url(../img/icon-benefit-3.png);
 }
-html.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-4 {
+html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-4 {
   background-image: url(../img/icon-benefit-4.png);
 }
-html.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-5 {
+html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-5 {
   background-image: url(../img/icon-benefit-5.png);
 }
-html.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-6 {
+html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-6 {
   background-image: url(../img/icon-benefit-6.png);
 }
-html.career .benefit-area .benefit-content .bc-box h5 {
+html.page.career .benefit-area .benefit-content .bc-box h5 {
   font-weight: 700;
   margin-left: 80px;
   font-size: 1em;
   line-height: 1.3;
 }
-html.career .benefit-area .benefit-content .bc-box p {
+html.page.career .benefit-area .benefit-content .bc-box p {
   line-height: 1.5;
   margin-left: 80px;
 }
-html.career .job-openings-area {
+html.page.career .job-openings-area {
   padding: 0 0 50px;
   width: 900px;
   margin: 0 auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.career .job-openings-area {
+  html.page.career .job-openings-area {
     width: 90%;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.career .job-openings-area {
+  html.page.career .job-openings-area {
     width: auto;
   }
 }
-html.career .job-openings-area h3 {
+html.page.career .job-openings-area h3 {
   color: #333;
   margin-bottom: 10px;
   -webkit-tap-highlight-color: transparent;
@@ -1804,54 +1804,54 @@ html.career .job-openings-area h3 {
   -ms-user-select: none;
   user-select: none;
 }
-html.career .job-openings-area h3:after {
+html.page.career .job-openings-area h3:after {
   background: #333;
 }
-html.career .job-openings-area h4 {
+html.page.career .job-openings-area h4 {
   color: #555;
 }
 @media only screen and (max-width: 767px) {
-  html.career .job-openings-area h4 {
+  html.page.career .job-openings-area h4 {
     font-size: 0.9em;
   }
 }
-html.career .job-openings-area h5 {
+html.page.career .job-openings-area h5 {
   color: #165097;
   font-size: 0.9em;
   padding: 40px 0 0 25px;
 }
-html.career .job-openings-area .jobs {
+html.page.career .job-openings-area .jobs {
   width: 540px;
   float: left;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.career .job-openings-area .jobs {
+  html.page.career .job-openings-area .jobs {
     float: none;
     width: 90%;
     margin: 0 auto;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.career .job-openings-area .jobs {
+  html.page.career .job-openings-area .jobs {
     float: none;
     width: auto;
     margin: 50px 0 10px;
   }
 }
-html.career .job-openings-area .jobs .job-item {
+html.page.career .job-openings-area .jobs .job-item {
   background: #fff;
   box-sizing: border-box;
   position: relative;
   border-bottom: 1px solid #eee;
   transition: all 0.25s ease-in-out;
 }
-html.career .job-openings-area .jobs .job-item:hover {
+html.page.career .job-openings-area .jobs .job-item:hover {
   border-color: #aaa;
 }
-html.career .job-openings-area .jobs .job-item:hover .job-title {
+html.page.career .job-openings-area .jobs .job-item:hover .job-title {
   padding-left: 28px;
 }
-html.career .job-openings-area .jobs .job-item .job-title {
+html.page.career .job-openings-area .jobs .job-item .job-title {
   display: block;
   color: #555;
   font-size: 1.4em;
@@ -1861,16 +1861,16 @@ html.career .job-openings-area .jobs .job-item .job-title {
   transition: all 0.15s ease-in-out;
 }
 @media only screen and (max-width: 767px) {
-  html.career .job-openings-area .jobs .job-item .job-title {
+  html.page.career .job-openings-area .jobs .job-item .job-title {
     font-size: 1.2em;
   }
 }
-html.career .job-openings-area .jobs .job-item .job-title i {
+html.page.career .job-openings-area .jobs .job-item .job-title i {
   float: right;
   margin-right: 5px;
   color: #165097;
 }
-html.career .job-openings-area .jobs .job-item .job-desc {
+html.page.career .job-openings-area .jobs .job-item .job-desc {
   padding: 14px 24px;
   position: relative;
   overflow: hidden;
@@ -1887,48 +1887,48 @@ html.career .job-openings-area .jobs .job-item .job-desc {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-html.career .job-openings-area .jobs .job-item .job-desc strong {
+html.page.career .job-openings-area .jobs .job-item .job-desc strong {
   display: block;
   color: #165097;
   padding: 15px 0 5px;
 }
-html.career .job-openings-area .jobs .job-item .job-desc p {
+html.page.career .job-openings-area .jobs .job-item .job-desc p {
   line-height: 1.5;
   position: relative;
   margin: 0 0 0 18px;
 }
-html.career .job-openings-area .jobs .job-item .job-desc p:before {
+html.page.career .job-openings-area .jobs .job-item .job-desc p:before {
   position: absolute;
   content: "•";
   left: -1em;
   top: 0;
   color: #ccc;
 }
-html.career .job-openings-area .jobs .job-item .job-desc p.heading {
+html.page.career .job-openings-area .jobs .job-item .job-desc p.heading {
   font-weight: bold;
   padding-top: 15px;
   padding-bottom: 5px;
 }
-html.career .job-openings-area .jobs .job-item .job-desc p.heading:before {
+html.page.career .job-openings-area .jobs .job-item .job-desc p.heading:before {
   content: "";
 }
 @media only screen and (max-width: 767px) {
-  html.career .job-openings-area .jobs .job-item .job-desc p {
+  html.page.career .job-openings-area .jobs .job-item .job-desc p {
     font-size: 0.9em;
   }
 }
-html.career .job-openings-area .jobs .job-item .job-desc .button-area {
+html.page.career .job-openings-area .jobs .job-item .job-desc .button-area {
   padding: 30px 0 20px;
   text-align: center;
 }
-html.career .job-openings-area .jobs .job-item .job-desc .button-area .learn-more {
+html.page.career .job-openings-area .jobs .job-item .job-desc .button-area .learn-more {
   display: inline-block;
   color: #000;
   font-weight: 700;
   border-bottom: 1px dotted #000;
   margin: 0 0 30px 20px;
 }
-html.career .job-openings-area .jobs .job-item .job-desc .button-area .apply {
+html.page.career .job-openings-area .jobs .job-item .job-desc .button-area .apply {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1948,36 +1948,36 @@ html.career .job-openings-area .jobs .job-item .job-desc .button-area .apply {
   font-size: 1em;
   display: inline-block;
 }
-html.career .job-openings-area .jobs .job-item .job-desc .button-area .apply i {
+html.page.career .job-openings-area .jobs .job-item .job-desc .button-area .apply i {
   opacity: 0.5;
 }
-html.career .job-openings-area .jobs .job-item .job-desc .button-area .apply:hover {
+html.page.career .job-openings-area .jobs .job-item .job-desc .button-area .apply:hover {
   color: #fff;
   background: #050f22;
 }
 @media only screen and (max-width: 767px) {
-  html.career .job-openings-area .jobs .job-item .job-desc .button-area .apply {
+  html.page.career .job-openings-area .jobs .job-item .job-desc .button-area .apply {
     margin-top: 20px;
     display: block;
     text-align: center;
   }
 }
-html.career .job-openings-area .jobs .apply-instruction {
+html.page.career .job-openings-area .jobs .apply-instruction {
   margin: 30px auto;
   padding: 20px 30px;
   border: 1px solid #165097;
   border-radius: 8px;
 }
 @media only screen and (max-width : 1023px) {
-  html.career .job-openings-area .jobs .apply-instruction {
+  html.page.career .job-openings-area .jobs .apply-instruction {
     margin: 20px;
   }
 }
-html.career .job-openings-area .jobs .apply-instruction h4 {
+html.page.career .job-openings-area .jobs .apply-instruction h4 {
   font-size: 1.4em;
   color: #165097;
 }
-html.career .job-openings-area .jobs .apply-instruction strong {
+html.page.career .job-openings-area .jobs .apply-instruction strong {
   display: block;
   padding: 30px 0 10px;
   color: #333;
@@ -1985,41 +1985,41 @@ html.career .job-openings-area .jobs .apply-instruction strong {
   font-weight: 400;
   color: #999;
 }
-html.career .job-openings-area .jobs .apply-instruction .icon-arrow-right-1 {
+html.page.career .job-openings-area .jobs .apply-instruction .icon-arrow-right-1 {
   margin: 0 5px;
   color: #999;
 }
-html.career .job-openings-area .jobs .apply-instruction p,
-html.career .job-openings-area .jobs .apply-instruction li {
+html.page.career .job-openings-area .jobs .apply-instruction p,
+html.page.career .job-openings-area .jobs .apply-instruction li {
   margin: 0;
 }
-html.career .job-openings-area .jobs .apply-instruction p {
+html.page.career .job-openings-area .jobs .apply-instruction p {
   font-size: 1.2em;
 }
-html.career .job-openings-area .jobs .apply-instruction p.subtext {
+html.page.career .job-openings-area .jobs .apply-instruction p.subtext {
   color: #888;
   font-size: 0.8em;
 }
-html.career .job-openings-area .jobs .apply-instruction p.contact-info {
+html.page.career .job-openings-area .jobs .apply-instruction p.contact-info {
   font-weight: 700;
   font-size: 1em;
 }
-html.career .job-openings-area .jobs .apply-instruction p.contact-info i {
+html.page.career .job-openings-area .jobs .apply-instruction p.contact-info i {
   font-size: 0.8em;
   margin-right: 5px;
 }
-html.career .job-openings-area .jobs .apply-instruction li {
+html.page.career .job-openings-area .jobs .apply-instruction li {
   font-size: 1em;
   position: relative;
 }
-html.career .job-openings-area .jobs .apply-instruction li:before {
+html.page.career .job-openings-area .jobs .apply-instruction li:before {
   position: absolute;
   content: "•";
   left: -1em;
   top: 0;
   color: #ccc;
 }
-html.career .job-openings-area .talent-pool {
+html.page.career .job-openings-area .talent-pool {
   margin-top: 40px;
   float: right;
   width: 330px;
@@ -2029,20 +2029,20 @@ html.career .job-openings-area .talent-pool {
   box-sizing: border-box;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.career .job-openings-area .talent-pool {
+  html.page.career .job-openings-area .talent-pool {
     float: none;
     width: 86%;
     margin: 0 auto;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.career .job-openings-area .talent-pool {
+  html.page.career .job-openings-area .talent-pool {
     float: none;
     width: auto;
     margin: 30px 0 10px;
   }
 }
-html.career .job-openings-area .talent-pool h4 {
+html.page.career .job-openings-area .talent-pool h4 {
   color: #124c79;
   font-size: 1.4em;
   padding-bottom: 5px;
@@ -2050,24 +2050,24 @@ html.career .job-openings-area .talent-pool h4 {
   font-weight: 700;
   letter-spacing: -0.03em;
 }
-html.career .job-openings-area .talent-pool p {
+html.page.career .job-openings-area .talent-pool p {
   color: #303745;
   font-size: 0.875em;
   line-height: 1.5;
   padding-bottom: 15px;
 }
-html.career .job-openings-area .talent-pool .talent-pool-list .job-item {
+html.page.career .job-openings-area .talent-pool .talent-pool-list .job-item {
   display: block;
   border-bottom: 1px solid #cddce5;
   padding: 15px 0 11px;
   transition: all 0.15s ease-in-out;
 }
-html.career .job-openings-area .talent-pool .talent-pool-list .job-item .job-title {
+html.page.career .job-openings-area .talent-pool .talent-pool-list .job-item .job-title {
   color: #02406f;
   font-size: 1.125em;
   transition: all 0.15s ease-in-out;
 }
-html.career .job-openings-area .talent-pool .talent-pool-list .job-item .arrow {
+html.page.career .job-openings-area .talent-pool .talent-pool-list .job-item .arrow {
   float: right;
   color: #02406f;
   font-size: 1.125em;
@@ -2075,63 +2075,63 @@ html.career .job-openings-area .talent-pool .talent-pool-list .job-item .arrow {
   margin-right: 10px;
   transition: all 0.15s ease-in-out;
 }
-html.career .job-openings-area .talent-pool .talent-pool-list .job-item:hover {
+html.page.career .job-openings-area .talent-pool .talent-pool-list .job-item:hover {
   border-color: #124c79;
 }
-html.career .job-openings-area .talent-pool .talent-pool-list .job-item:hover .job-title {
+html.page.career .job-openings-area .talent-pool .talent-pool-list .job-item:hover .job-title {
   padding-left: 3px;
 }
-html.career .job-openings-area .talent-pool .talent-pool-list .job-item:hover .arrow {
+html.page.career .job-openings-area .talent-pool .talent-pool-list .job-item:hover .arrow {
   margin-right: 5px;
 }
-html.blog .tab-container {
+html.page.blog .tab-container {
   background: #f5faff;
   padding: 80px 0;
   text-align: center;
   font-weight: bold;
   font-size: 1.5em;
 }
-html.blog .tab-container em,
-html.blog .tab-container span {
+html.page.blog .tab-container em,
+html.page.blog .tab-container span {
   color: #acc2d4;
   display: inline-block;
   padding: 0 2px;
 }
-html.blog .tab-container em {
+html.page.blog .tab-container em {
   font-style: normal;
   transition: color .2s;
   cursor: pointer;
 }
-html.blog .tab-container em.active,
-html.blog .tab-container em:hover {
+html.page.blog .tab-container em.active,
+html.page.blog .tab-container em:hover {
   color: #02406f;
 }
-html.blog.article .blog-post-list {
+html.page.blog.article .blog-post-list {
   width: 700px;
   margin: 20px auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.blog.article .blog-post-list {
+  html.page.blog.article .blog-post-list {
     margin: 20px auto;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.blog.article .blog-post-list {
+  html.page.blog.article .blog-post-list {
     width: auto;
     margin: 0 auto;
   }
 }
-html.blog.article .blog-post-list li {
+html.page.blog.article .blog-post-list li {
   display: inline-block;
   vertical-align: top;
   position: relative;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.article .blog-post-list li {
+  html.page.blog.article .blog-post-list li {
     display: block;
   }
 }
-html.blog.article .blog-post-list li .list-item {
+html.page.blog.article .blog-post-list li .list-item {
   display: block;
   padding: 25px 5px 20px;
   position: relative;
@@ -2141,22 +2141,22 @@ html.blog.article .blog-post-list li .list-item {
   border-bottom: 1px #eee solid;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.article .blog-post-list li .list-item {
+  html.page.blog.article .blog-post-list li .list-item {
     width: 90%;
     margin: 5px auto;
   }
 }
-html.blog.article .blog-post-list li .list-item .post-content {
+html.page.blog.article .blog-post-list li .list-item .post-content {
   display: table-cell;
   vertical-align: top;
   width: 520px;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.article .blog-post-list li .list-item .post-content {
+  html.page.blog.article .blog-post-list li .list-item .post-content {
     width: 100%;
   }
 }
-html.blog.article .blog-post-list li .list-item .type {
+html.page.blog.article .blog-post-list li .list-item .type {
   display: inline-block;
   font-family: "brandon-grotesque", sans-serif;
   color: #284f8c;
@@ -2166,13 +2166,13 @@ html.blog.article .blog-post-list li .list-item .type {
   letter-spacing: 0.05em;
   margin: 5px 0 10px 0;
 }
-html.blog.article .blog-post-list li .list-item .type.type-design {
+html.page.blog.article .blog-post-list li .list-item .type.type-design {
   color: #00a259;
 }
-html.blog.article .blog-post-list li .list-item .type.type-engineering {
+html.page.blog.article .blog-post-list li .list-item .type.type-engineering {
   color: #284f8c;
 }
-html.blog.article .blog-post-list li .list-item .title {
+html.page.blog.article .blog-post-list li .list-item .title {
   display: block;
   font-size: 26px;
   color: #373a3c;
@@ -2182,18 +2182,18 @@ html.blog.article .blog-post-list li .list-item .title {
   line-height: 1.3;
   margin-left: -0.05em;
 }
-html.blog.article .blog-post-list li .list-item .desc {
+html.page.blog.article .blog-post-list li .list-item .desc {
   font-size: 16px;
   color: #6c8094;
   padding-bottom: 8px;
   line-height: 1.4;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.article .blog-post-list li .list-item .desc {
+  html.page.blog.article .blog-post-list li .list-item .desc {
     padding-bottom: 14px;
   }
 }
-html.blog.article .blog-post-list li .list-item .post-meta {
+html.page.blog.article .blog-post-list li .list-item .post-meta {
   font-family: "brandon-grotesque", sans-serif;
   color: #545f6f;
   font-size: 14px;
@@ -2203,24 +2203,24 @@ html.blog.article .blog-post-list li .list-item .post-meta {
   padding: 25px 0 0 25px;
 }
 @media only screen and (max-width: 767px) {
-  html.blog.article .blog-post-list li .list-item .post-meta {
+  html.page.blog.article .blog-post-list li .list-item .post-meta {
     width: auto;
     display: block;
     padding-left: 0;
   }
 }
-html.blog.article .blog-post-list li .list-item .post-meta .profile-img {
+html.page.blog.article .blog-post-list li .list-item .post-meta .profile-img {
   width: 40px;
   height: 40px;
   float: left;
   margin: 0 8px 0 0;
   border-radius: 4px;
 }
-html.blog.article .blog-post-list li .list-item .post-meta .author {
+html.page.blog.article .blog-post-list li .list-item .post-meta .author {
   font-weight: bold;
   font-size: 16px;
 }
-html.blog.article .blog-post-list li figure {
+html.page.blog.article .blog-post-list li figure {
   position: absolute;
   z-index: 0;
   left: 0;
@@ -2232,46 +2232,46 @@ html.blog.article .blog-post-list li figure {
   border-radius: 5px;
   border: 2px solid transparent;
 }
-html.blog.article .blog-post-list li:hover a,
-html.blog.article .blog-post-list li:focus a {
+html.page.blog.article .blog-post-list li:hover a,
+html.page.blog.article .blog-post-list li:focus a {
   -webkit-transform: translateY(-1px);
   border-color: #ccc;
 }
-html.blog.article .blog-post-list li:hover figure,
-html.blog.article .blog-post-list li:focus figure {
+html.page.blog.article .blog-post-list li:hover figure,
+html.page.blog.article .blog-post-list li:focus figure {
   border: 1px solid #ddd;
   -webkit-transform: scale(1.05);
 }
-html.blog.slide .blog-slide-list {
+html.page.blog.slide .blog-slide-list {
   margin: 0 auto;
   text-align: center;
 }
-html.blog.slide .blog-slide-list li {
+html.page.blog.slide .blog-slide-list li {
   display: inline-block;
   width: 320px;
   margin: 15px;
 }
-html.blog.slide .blog-slide-list li .preview {
+html.page.blog.slide .blog-slide-list li .preview {
   width: 100%;
 }
-html.press .press-quick-links {
+html.page.press .press-quick-links {
   width: 700px;
   margin: 50px auto;
 }
 @media only screen and (max-width: 767px) {
-  html.press .press-quick-links {
+  html.page.press .press-quick-links {
     width: auto;
     margin: 30px auto;
   }
 }
-html.press .press-quick-links .pql-item {
+html.page.press .press-quick-links .pql-item {
   width: 33%;
   float: left;
   border-left: 1px dotted #767f8c;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
-  html.press .press-quick-links .pql-item {
+  html.page.press .press-quick-links .pql-item {
     float: none;
     min-width: 320px;
     padding-bottom: 30px;
@@ -2280,21 +2280,21 @@ html.press .press-quick-links .pql-item {
     margin: 0 auto;
   }
 }
-html.press .press-quick-links .pql-item:first-child {
+html.page.press .press-quick-links .pql-item:first-child {
   border-left: none;
 }
-html.press .press-quick-links .pql-item .pql-illust {
+html.page.press .press-quick-links .pql-item .pql-illust {
   display: block;
   width: 150px;
   margin: 0 auto 0;
 }
 @media only screen and (max-width: 767px) {
-  html.press .press-quick-links .pql-item .pql-illust {
+  html.page.press .press-quick-links .pql-item .pql-illust {
     float: left;
     margin: 0 20px 0 0;
   }
 }
-html.press .press-quick-links .pql-item strong {
+html.page.press .press-quick-links .pql-item strong {
   display: block;
   color: #545f6f;
   font-size: 1.125em;
@@ -2302,17 +2302,17 @@ html.press .press-quick-links .pql-item strong {
   letter-spacing: -0.03em;
 }
 @media only screen and (max-width: 767px) {
-  html.press .press-quick-links .pql-item strong {
+  html.page.press .press-quick-links .pql-item strong {
     padding-top: 20px;
   }
 }
-html.press .press-quick-links .pql-item span {
+html.page.press .press-quick-links .pql-item span {
   display: block;
   color: #545f6f;
   font-size: 0.8em;
   margin-bottom: 20px;
 }
-html.press .press-quick-links .pql-item a {
+html.page.press .press-quick-links .pql-item a {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -2333,61 +2333,61 @@ html.press .press-quick-links .pql-item a {
   padding: 8px 16px;
   font-size: 14px;
 }
-html.press .press-quick-links .pql-item a i {
+html.page.press .press-quick-links .pql-item a i {
   opacity: 0.5;
 }
-html.press .press-quick-links .pql-item a:hover {
+html.page.press .press-quick-links .pql-item a:hover {
   background-color: #eef8ff;
 }
-html.press .press-quick-links .pql-item a i {
+html.page.press .press-quick-links .pql-item a i {
   opacity: 1;
 }
-html.press .press-articles-area {
+html.page.press .press-articles-area {
   background: #f5faff;
   padding: 80px 0;
 }
-html.press .press-articles-area .paa-tab {
+html.page.press .press-articles-area .paa-tab {
   text-align: center;
   font-weight: bold;
   font-size: 1.5em;
   padding-bottom: 40px;
 }
-html.press .press-articles-area .paa-tab em,
-html.press .press-articles-area .paa-tab span {
+html.page.press .press-articles-area .paa-tab em,
+html.page.press .press-articles-area .paa-tab span {
   color: #acc2d4;
   display: inline-block;
   padding: 0 2px;
 }
-html.press .press-articles-area .paa-tab em {
+html.page.press .press-articles-area .paa-tab em {
   font-style: normal;
   transition: color .2s;
   cursor: pointer;
 }
-html.press .press-articles-area .paa-tab em.active,
-html.press .press-articles-area .paa-tab em:hover {
+html.page.press .press-articles-area .paa-tab em.active,
+html.page.press .press-articles-area .paa-tab em:hover {
   color: #02406f;
 }
-html.press .press-articles-area .articles-list {
+html.page.press .press-articles-area .articles-list {
   width: 780px;
   margin: 0 auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.press .press-articles-area .articles-list {
+  html.page.press .press-articles-area .articles-list {
     width: 90%;
     max-width: 690px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.press .press-articles-area .articles-list {
+  html.page.press .press-articles-area .articles-list {
     width: auto;
   }
 }
-html.press .press-articles-area .articles-list li {
+html.page.press .press-articles-area .articles-list li {
   display: inline-block;
   vertical-align: top;
   position: relative;
 }
-html.press .press-articles-area .articles-list li a {
+html.page.press .press-articles-area .articles-list li a {
   display: block;
   width: 380px;
   padding: 20px 15px 10px;
@@ -2396,17 +2396,17 @@ html.press .press-articles-area .articles-list li a {
   transition: all .1s;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.press .press-articles-area .articles-list li a {
+  html.page.press .press-articles-area .articles-list li a {
     width: 340px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.press .press-articles-area .articles-list li a {
+  html.page.press .press-articles-area .articles-list li a {
     width: auto;
     padding: 20px 20px 10px;
   }
 }
-html.press .press-articles-area .articles-list li figure {
+html.page.press .press-articles-area .articles-list li figure {
   position: absolute;
   z-index: 0;
   left: 0;
@@ -2417,15 +2417,15 @@ html.press .press-articles-area .articles-list li figure {
   transform-origin: 50% 50%;
   border-radius: 5px;
 }
-html.press .press-articles-area .articles-list li:hover a {
+html.page.press .press-articles-area .articles-list li:hover a {
   -webkit-transform: translateY(-3px);
 }
-html.press .press-articles-area .articles-list li:hover figure {
+html.page.press .press-articles-area .articles-list li:hover figure {
   background: #fff;
   -webkit-transform: scale(1.08);
   box-shadow: 0 3px 10px rgba(2, 64, 111, 0.15);
 }
-html.press .press-articles-area .articles-list li .date {
+html.page.press .press-articles-area .articles-list li .date {
   display: block;
   font-size: 0.8em;
   color: #a1afbb;
@@ -2433,7 +2433,7 @@ html.press .press-articles-area .articles-list li .date {
   font-family: "brandon-grotesque", sans-serif;
   font-weight: bold;
 }
-html.press .press-articles-area .articles-list li .title {
+html.page.press .press-articles-area .articles-list li .title {
   display: block;
   font-size: 1.5em;
   color: #0282da;
@@ -2442,11 +2442,11 @@ html.press .press-articles-area .articles-list li .title {
   letter-spacing: -0.03em;
 }
 @media only screen and (max-width: 767px) {
-  html.press .press-articles-area .articles-list li .title {
+  html.page.press .press-articles-area .articles-list li .title {
     font-size: 1.125em;
   }
 }
-html.press .press-articles-area .articles-list li p {
+html.page.press .press-articles-area .articles-list li p {
   font-size: 0.875em;
   color: #495262;
   line-height: 1.5;
@@ -2459,48 +2459,48 @@ html.press .press-articles-area .articles-list li p {
   -webkit-box-orient: vertical;
 }
 @media only screen and (max-width : 1023px) {
-  html.press .press-articles-area .articles-list li p {
+  html.page.press .press-articles-area .articles-list li p {
     -webkit-line-clamp: 3;
     height: 63px;
   }
 }
-html.press .press-articles-area .report-list {
+html.page.press .press-articles-area .report-list {
   width: 500px;
   margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
-  html.press .press-articles-area .report-list {
+  html.page.press .press-articles-area .report-list {
     width: 90%;
     margin: 0 auto;
   }
 }
-html.press .press-articles-area .report-list li {
+html.page.press .press-articles-area .report-list li {
   position: relative;
 }
-html.press .press-articles-area .report-list li a {
+html.page.press .press-articles-area .report-list li a {
   display: block;
   padding: 14px 0 2px;
   position: relative;
   z-index: 1;
   transition: all .1s;
 }
-html.press .press-articles-area .report-list li .title {
+html.page.press .press-articles-area .report-list li .title {
   display: block;
   font-size: 1.2em;
   color: #0282da;
   line-height: 1.4;
   letter-spacing: -0.03em;
 }
-html.press .press-articles-area .report-list li span {
+html.page.press .press-articles-area .report-list li span {
   font-weight: bold;
   color: #a1afbb;
   font-size: 0.8em;
 }
-html.press .press-articles-area .report-list li .date {
+html.page.press .press-articles-area .report-list li .date {
   font-family: "brandon-grotesque", sans-serif;
   margin-right: 6px;
 }
-html.press .press-articles-area .report-list li figure {
+html.page.press .press-articles-area .report-list li figure {
   position: absolute;
   z-index: 0;
   left: 0;
@@ -2511,51 +2511,51 @@ html.press .press-articles-area .report-list li figure {
   transform-origin: 50% 50%;
   border-radius: 5px;
 }
-html.press .press-articles-area .report-list li:hover a {
+html.page.press .press-articles-area .report-list li:hover a {
   -webkit-transform: translateY(-3px);
 }
-html.press .press-articles-area .report-list li:hover figure {
+html.page.press .press-articles-area .report-list li:hover figure {
   background: #fff;
   -webkit-transform: scale(1.08);
   box-shadow: 0 3px 10px rgba(2, 64, 111, 0.15);
 }
-html.press .ridi-insights h3 {
+html.page.press .ridi-insights h3 {
   letter-spacing: -0.03em;
 }
-html.press .ridi-insights .ri-list {
+html.page.press .ridi-insights .ri-list {
   text-align: center;
   margin-top: 30px;
 }
-html.press .ridi-insights .ri-list li {
+html.page.press .ridi-insights .ri-list li {
   display: inline-block;
   text-align: center;
   position: relative;
 }
-html.press .ridi-insights .ri-list li a {
+html.page.press .ridi-insights .ri-list li a {
   padding: 15px;
   display: block;
   position: relative;
   transition: all .1s;
 }
-html.press .ridi-insights .ri-list li a:hover {
+html.page.press .ridi-insights .ri-list li a:hover {
   -webkit-transform: translateY(-3px);
 }
-html.press .ridi-insights .ri-list li strong {
+html.page.press .ridi-insights .ri-list li strong {
   display: block;
   font-size: 1.25em;
   font-family: "brandon-grotesque", sans-serif;
   color: #000;
 }
-html.press .ridi-insights .ri-list li span {
+html.page.press .ridi-insights .ri-list li span {
   display: block;
   font-size: 0.8em;
   font-family: "brandon-grotesque", sans-serif;
   color: #abb3ba;
 }
-html.press .ridi-insights .ri-list li .book-thumbnail {
+html.page.press .ridi-insights .ri-list li .book-thumbnail {
   margin-bottom: 10px;
 }
-html.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image {
+html.page.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image {
   display: inline-block;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -2565,7 +2565,7 @@ html.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image {
   position: relative;
   background: #d9d9d9;
 }
-html.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image:before {
+html.page.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image:before {
   content: '';
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2583,11 +2583,11 @@ html.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image:before {
   background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
 }
-html.press .ridi-insights .ri-list li .book-thumbnail img {
+html.page.press .ridi-insights .ri-list li .book-thumbnail img {
   width: 150px;
   max-height: 232px;
 }
-html.press .ridi-insights .ri-list li .book-thumbnail .border {
+html.page.press .ridi-insights .ri-list li .book-thumbnail .border {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2603,17 +2603,17 @@ html.press .ridi-insights .ri-list li .book-thumbnail .border {
   z-index: 3;
   border: 1px solid #000;
 }
-html.press .ih-press .wrapper {
+html.page.press .ih-press .wrapper {
   width: 960px;
   margin: 0 auto;
   text-align: left;
 }
 @media only screen and (max-width : 1023px) {
-  html.press .ih-press .wrapper {
+  html.page.press .ih-press .wrapper {
     width: 90% !important;
   }
 }
-html.press .ih-press a.back {
+html.page.press .ih-press a.back {
   color: #fff;
   font-family: "brandon-grotesque", sans-serif;
   font-weight: bold;
@@ -2624,15 +2624,15 @@ html.press .ih-press a.back {
   margin-left: -1em;
   color: rgba(255, 255, 255, 0.8);
 }
-html.press .ih-press a.back:hover {
+html.page.press .ih-press a.back:hover {
   color: rgba(255, 255, 255, 0.6);
 }
 @media only screen and (max-width: 767px) {
-  html.press .ih-press a.back {
+  html.page.press .ih-press a.back {
     margin-left: 0;
   }
 }
-html.press .ih-press h2 {
+html.page.press .ih-press h2 {
   font-size: 2.5em;
   font-weight: 700;
   letter-spacing: -0.03em;
@@ -2641,37 +2641,37 @@ html.press .ih-press h2 {
   text-shadow: 0 1px 2px rgba(15, 93, 156, 0.5);
 }
 @media only screen and (max-width: 767px) {
-  html.press .ih-press h2 {
+  html.page.press .ih-press h2 {
     font-size: 1.75em;
   }
 }
-html.press .photos-list {
+html.page.press .photos-list {
   width: 960px;
   margin: 0 auto;
 }
 @media only screen and (max-width : 1023px) {
-  html.press .photos-list {
+  html.page.press .photos-list {
     width: 90%;
   }
 }
-html.press .photos-list li {
+html.page.press .photos-list li {
   width: 30%;
   float: left;
   margin: 50px 20px 0 0;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
-  html.press .photos-list li {
+  html.page.press .photos-list li {
     margin: 30px auto 30px;
     width: 90%;
     float: none;
   }
 }
-html.press .photos-list li img {
+html.page.press .photos-list li img {
   width: 100%;
   margin-bottom: 25px;
 }
-html.press .photos-list li strong {
+html.page.press .photos-list li strong {
   display: block;
   font-family: "brandon-grotesque", sans-serif;
   text-transform: uppercase;
@@ -2680,13 +2680,13 @@ html.press .photos-list li strong {
   font-size: 0.9em;
   margin-bottom: 2px;
 }
-html.press .photos-list li span {
+html.page.press .photos-list li span {
   display: block;
   font-size: 0.8em;
   color: #a1afbb;
   margin-bottom: 25px;
 }
-html.press .photos-list li .download {
+html.page.press .photos-list li .download {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -2705,29 +2705,29 @@ html.press .photos-list li .download {
   border: 2px solid #1f8ee6;
   color: #1f8ee6;
 }
-html.press .photos-list li .download i {
+html.page.press .photos-list li .download i {
   opacity: 0.5;
 }
-html.press .photos-list li .download:hover {
+html.page.press .photos-list li .download:hover {
   background-color: #eef8ff;
 }
-html.press .photos-list li .download i {
+html.page.press .photos-list li .download i {
   opacity: 1;
 }
-html.press article.press-article {
+html.page.press article.press-article {
   width: 700px;
   margin: 70px auto;
 }
 @media only screen and (max-width: 767px) {
-  html.press article.press-article {
+  html.page.press article.press-article {
     width: 90%;
     margin: 30px auto;
   }
 }
-html.press article.press-article .article-header {
+html.page.press article.press-article .article-header {
   margin-bottom: 30px;
 }
-html.press article.press-article h3 {
+html.page.press article.press-article h3 {
   font-weight: 700;
   letter-spacing: -0.03em;
   color: #1f8ee6;
@@ -2735,20 +2735,20 @@ html.press article.press-article h3 {
   line-height: 1.3;
 }
 @media only screen and (max-width: 767px) {
-  html.press article.press-article h3 {
+  html.page.press article.press-article h3 {
     font-size: 1.5em;
   }
 }
-html.press article.press-article .meta {
+html.page.press article.press-article .meta {
   font-size: 0.875em;
   color: #a1afbb;
   font-weight: bold;
   margin-bottom: 15px;
 }
-html.press article.press-article .meta .date {
+html.page.press article.press-article .meta .date {
   font-family: "brandon-grotesque", sans-serif;
 }
-html.press article.press-article .download {
+html.page.press article.press-article .download {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -2769,49 +2769,49 @@ html.press article.press-article .download {
   font-family: "brandon-grotesque", sans-serif;
   padding: 4px 8px;
 }
-html.press article.press-article .download i {
+html.page.press article.press-article .download i {
   opacity: 0.5;
 }
-html.press article.press-article .download:hover {
+html.page.press article.press-article .download:hover {
   border-color: #484848;
 }
-html.press article.press-article p {
+html.page.press article.press-article p {
   font-size: 1em;
   line-height: 1.65;
   margin-bottom: 15px;
 }
-html.press article.press-article ol,
-html.press article.press-article ul {
+html.page.press article.press-article ol,
+html.page.press article.press-article ul {
   margin: 30px 0;
 }
-html.press article.press-article li {
+html.page.press article.press-article li {
   list-style: disc;
   margin: 4px 20px;
 }
-html.press article.press-article h4 {
+html.page.press article.press-article h4 {
   margin: 50px 0 30px;
   font-weight: 700;
 }
-html.press article.press-article blockquote {
+html.page.press article.press-article blockquote {
   font-size: 1em;
   color: #888;
 }
-html.press article.press-article blockquote p {
+html.page.press article.press-article blockquote p {
   margin: 0;
 }
-html.branding .branding-area {
+html.page.branding .branding-area {
   margin: 50px auto;
 }
 @media only screen and (max-width: 767px) {
-  html.branding .branding-area {
+  html.page.branding .branding-area {
     width: auto;
   }
 }
-html.branding .branding-area .branding-sub-area {
+html.page.branding .branding-area .branding-sub-area {
   border-bottom: 1px solid #ccd5db;
   text-align: center;
 }
-html.branding .branding-area .branding-sub-area .download-all {
+html.page.branding .branding-area .branding-sub-area .download-all {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -2833,63 +2833,63 @@ html.branding .branding-area .branding-sub-area .download-all {
   color: #fff;
   padding: 16px 24px;
 }
-html.branding .branding-area .branding-sub-area .download-all i {
+html.page.branding .branding-area .branding-sub-area .download-all i {
   opacity: 0.5;
 }
-html.branding .branding-area .branding-sub-area .download-all:hover {
+html.page.branding .branding-area .branding-sub-area .download-all:hover {
   color: #eee;
   background: #222;
 }
-html.branding .branding-area .branding-sub-area p {
+html.page.branding .branding-area .branding-sub-area p {
   padding: 20px 0;
   font-size: 14px;
   color: #999;
 }
-html.branding .branding-area .branding-box {
+html.page.branding .branding-area .branding-box {
   border-bottom: 1px solid #ccd5db;
   padding: 40px;
 }
 @media only screen and (max-width: 767px) {
-  html.branding .branding-area .branding-box {
+  html.page.branding .branding-area .branding-box {
     padding: 20px 20px 40px;
   }
 }
-html.branding .branding-area .branding-box .bb-body {
+html.page.branding .branding-area .branding-box .bb-body {
   padding-left: 24px;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
-  html.branding .branding-area .branding-box .bb-body {
+  html.page.branding .branding-area .branding-box .bb-body {
     padding-left: 0;
     text-align: left;
   }
 }
-html.branding .branding-area .branding-box .bbb-box {
+html.page.branding .branding-area .branding-box .bbb-box {
   text-align: left;
   display: inline-block;
   vertical-align: top;
   padding-right: 20px;
 }
-html.branding .branding-area .branding-box .big-logo {
+html.page.branding .branding-area .branding-box .big-logo {
   text-align: center;
   margin-top: 24px;
   padding-bottom: 20px;
 }
 @media only screen and (max-width: 767px) {
-  html.branding .branding-area .branding-box .big-logo {
+  html.page.branding .branding-area .branding-box .big-logo {
     text-align: left;
   }
 }
-html.branding .branding-area .branding-box .big-logo > span {
+html.page.branding .branding-area .branding-box .big-logo > span {
   margin: 48px 0;
   vertical-align: top;
 }
 @media only screen and (max-width: 767px) {
-  html.branding .branding-area .branding-box .big-logo > span {
+  html.page.branding .branding-area .branding-box .big-logo > span {
     margin: 20px 0;
   }
 }
-html.branding .branding-area .branding-box .big-logo .logo-ridi {
+html.page.branding .branding-area .branding-box .big-logo .logo-ridi {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -2900,7 +2900,7 @@ html.branding .branding-area .branding-box .big-logo .logo-ridi {
   height: 31px;
   margin-right: 56px;
 }
-html.branding .branding-area .branding-box .big-logo .logo-ridibooks {
+html.page.branding .branding-area .branding-box .big-logo .logo-ridibooks {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -2911,7 +2911,7 @@ html.branding .branding-area .branding-box .big-logo .logo-ridibooks {
   height: 50px;
   margin-right: 56px;
 }
-html.branding .branding-area .branding-box .big-logo .logo-ridistory {
+html.page.branding .branding-area .branding-box .big-logo .logo-ridistory {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -2921,7 +2921,7 @@ html.branding .branding-area .branding-box .big-logo .logo-ridistory {
   width: 218px;
   height: 40px;
 }
-html.branding .branding-area .branding-box .big-logo .logo-paper {
+html.page.branding .branding-area .branding-box .big-logo .logo-paper {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -2931,7 +2931,7 @@ html.branding .branding-area .branding-box .big-logo .logo-paper {
   width: 120px;
   height: 31px;
 }
-html.branding .branding-area .branding-box h5 {
+html.page.branding .branding-area .branding-box h5 {
   font-size: 13px;
   color: #555;
   font-weight: bold;
@@ -2940,51 +2940,51 @@ html.branding .branding-area .branding-box h5 {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
-html.branding .branding-area .branding-box .branding-color-list {
+html.page.branding .branding-area .branding-box .branding-color-list {
   padding: 0 0 20px;
 }
-html.branding .branding-area .branding-box .branding-desc {
+html.page.branding .branding-area .branding-box .branding-desc {
   float: left;
   margin-right: 10px;
   font-size: 13px;
   padding-bottom: 20px;
 }
-html.branding .branding-area .branding-box .branding-desc .color-box {
+html.page.branding .branding-area .branding-box .branding-desc .color-box {
   width: 100px;
   height: 100px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
-html.branding .branding-area .branding-box .branding-desc .color-box.cb-blue {
+html.page.branding .branding-area .branding-box .branding-desc .color-box.cb-blue {
   background-color: #1f8ee6;
 }
-html.branding .branding-area .branding-box .branding-desc .color-box.cb-white {
+html.page.branding .branding-area .branding-box .branding-desc .color-box.cb-white {
   background-color: #fff;
 }
-html.branding .branding-area .branding-box .branding-desc .color-box.cb-gray {
+html.page.branding .branding-area .branding-box .branding-desc .color-box.cb-gray {
   background-color: #333;
 }
-html.branding .branding-area .branding-box .branding-desc > strong {
+html.page.branding .branding-area .branding-box .branding-desc > strong {
   display: block;
   text-transform: uppercase;
   padding: 12px 0 8px;
   color: #000;
   font-family: "brandon-grotesque", sans-serif;
 }
-html.branding .branding-area .branding-box .branding-desc > span {
+html.page.branding .branding-area .branding-box .branding-desc > span {
   display: block;
   color: #555;
 }
-html.branding .branding-area .branding-box .logo-sample {
+html.page.branding .branding-area .branding-box .logo-sample {
   width: 180px;
   height: 100px;
   line-height: 100px;
   text-align: center;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
 }
-html.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-1 {
+html.page.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-1 {
   background: #fff;
 }
-html.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-1 .logo-ridibooks {
+html.page.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-1 .logo-ridibooks {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -2994,10 +2994,10 @@ html.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-1 
   width: 107px;
   height: 27px;
 }
-html.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-2 {
+html.page.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-2 {
   background: #1f8ee6;
 }
-html.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-2 .logo-ridibooks {
+html.page.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-2 .logo-ridibooks {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -3007,10 +3007,10 @@ html.branding .branding-area .branding-box .logo-sample.ridibooks-logo-sample-2 
   width: 107px;
   height: 27px;
 }
-html.branding .branding-area .branding-box .logo-sample.paper-logo-sample-1 {
+html.page.branding .branding-area .branding-box .logo-sample.paper-logo-sample-1 {
   background: #333;
 }
-html.branding .branding-area .branding-box .logo-sample.paper-logo-sample-1 .logo-paper {
+html.page.branding .branding-area .branding-box .logo-sample.paper-logo-sample-1 .logo-paper {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -3020,29 +3020,29 @@ html.branding .branding-area .branding-box .logo-sample.paper-logo-sample-1 .log
   width: 85px;
   height: 22px;
 }
-html.branding .branding-area .branding-box .logo-sample span {
+html.page.branding .branding-area .branding-box .logo-sample span {
   vertical-align: middle;
 }
 @media only screen and (max-width: 767px) {
-  html.branding .branding-area .branding-box .logo-sample {
+  html.page.branding .branding-area .branding-box .logo-sample {
     width: 160px;
   }
 }
-html.branding .branding-download-all {
+html.page.branding .branding-download-all {
   text-align: center;
   font-family: "brandon-grotesque", sans-serif;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.branding .branding-download-all {
+  html.page.branding .branding-download-all {
     margin-bottom: 100px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.branding .branding-download-all {
+  html.page.branding .branding-download-all {
     margin-bottom: 50px;
   }
 }
-html.branding .branding-download-all .wrapper {
+html.page.branding .branding-download-all .wrapper {
   display: inline-block;
   padding: 0 10px;
   -webkit-border-radius: 4px;
@@ -3052,7 +3052,7 @@ html.branding .branding-download-all .wrapper {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-html.branding .branding-download-all strong {
+html.page.branding .branding-download-all strong {
   display: inline-block;
   text-transform: uppercase;
   font-size: 0.95em;
@@ -3062,7 +3062,7 @@ html.branding .branding-download-all strong {
   padding: 10px 0;
   background: #293040;
 }
-html.branding .branding-download-all .download-all {
+html.page.branding .branding-download-all .download-all {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -3082,19 +3082,19 @@ html.branding .branding-download-all .download-all {
   color: #0282da;
   margin-bottom: 15px;
 }
-html.branding .branding-download-all .download-all i {
+html.page.branding .branding-download-all .download-all i {
   opacity: 0.5;
 }
-html.branding .branding-download-all .download-all:hover {
+html.page.branding .branding-download-all .download-all:hover {
   background: #d8eaff;
 }
-html.contact body {
+html.page.contact body {
   background-color: #000;
 }
-html.contact body > footer {
+html.page.contact body > footer {
   display: none;
 }
-html.contact .contact-fader {
+html.page.contact .contact-fader {
   background: rgba(0, 0, 0, 0.75) url(../img/bg-fader.png) repeat;
   position: absolute;
   left: 0;
@@ -3103,7 +3103,7 @@ html.contact .contact-fader {
   height: 100%;
   z-index: 1;
 }
-html.contact .how-to-contact {
+html.page.contact .how-to-contact {
   background: #000;
   padding: 30px 50px;
   position: relative;
@@ -3113,93 +3113,93 @@ html.contact .how-to-contact {
   z-index: 1;
 }
 @media only screen and (max-width : 1023px) {
-  html.contact .how-to-contact {
+  html.page.contact .how-to-contact {
     border-radius: 0;
     width: auto;
     padding: 20px 20px 50px;
   }
 }
-html.contact .how-to-contact .htc-left {
+html.page.contact .how-to-contact .htc-left {
   width: 35%;
   margin-right: 5%;
   float: left;
   padding-bottom: 20px;
 }
 @media only screen and (max-width : 1023px) {
-  html.contact .how-to-contact .htc-left {
+  html.page.contact .how-to-contact .htc-left {
     width: auto;
     float: none;
   }
 }
-html.contact .how-to-contact .htc-right {
+html.page.contact .how-to-contact .htc-right {
   width: 60%;
   float: left;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.contact .how-to-contact .htc-right {
+  html.page.contact .how-to-contact .htc-right {
     width: auto;
     float: none;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.contact .how-to-contact .htc-right {
+  html.page.contact .how-to-contact .htc-right {
     width: auto;
     float: none;
     padding-top: 20px;
   }
 }
-html.contact .how-to-contact h2 {
+html.page.contact .how-to-contact h2 {
   color: #f55327;
   font-size: 1em;
   margin-bottom: 0;
 }
-html.contact .how-to-contact h3 {
+html.page.contact .how-to-contact h3 {
   font-size: 1.125em;
   line-height: 1.5;
   color: #dadada;
   font-weight: 500;
 }
-html.contact .how-to-contact h4 {
+html.page.contact .how-to-contact h4 {
   font-size: 1em;
   line-height: 1.5;
   color: #919191;
 }
-html.contact .how-to-contact p {
+html.page.contact .how-to-contact p {
   color: #919191;
   line-height: 1.4;
   margin-bottom: 5px;
 }
-html.contact .how-to-contact p.steps {
+html.page.contact .how-to-contact p.steps {
   text-indent: -1.2em;
   padding-left: 1.2em;
 }
-html.contact .how-to-contact p.bus-lines {
+html.page.contact .how-to-contact p.bus-lines {
   margin-bottom: 0;
   text-indent: -0.5em;
   padding-left: 0.5em;
 }
-html.contact .how-to-contact .contact-point {
+html.page.contact .how-to-contact .contact-point {
   color: #dadada;
   font-size: 1em;
   padding-top: 10px;
 }
-html.contact .how-to-contact .contact-point li {
+html.page.contact .how-to-contact .contact-point li {
   padding: 3px 0;
 }
-html.contact .how-to-contact .contact-point a {
+html.page.contact .how-to-contact .contact-point a {
   color: #dadada;
 }
-html.contact .how-to-contact .hr-box {
+html.page.contact .how-to-contact .hr-box {
   padding-right: 5%;
 }
 @media only screen and (max-width : 1023px) {
-  html.contact .how-to-contact .hr-box {
+  html.page.contact .how-to-contact .hr-box {
     width: auto;
     float: none;
     padding: 10px 0 0;
   }
 }
-html.contact #map_canvas {
+html.page.contact #map_canvas {
   position: absolute;
   left: 0;
   top: 0;
@@ -3207,12 +3207,12 @@ html.contact #map_canvas {
   height: 100%;
   z-index: 0;
 }
-html.contact #map_controls {
+html.page.contact #map_controls {
   display: none;
   position: relative;
   z-index: 4;
 }
-html.contact #map_controls .close-map {
+html.page.contact #map_controls .close-map {
   position: fixed;
   left: 20px;
   top: 20px;
@@ -3235,7 +3235,7 @@ html.contact #map_controls .close-map {
   -moz-transition: all 0.2s;
   transition: all 0.2s;
 }
-html.contact #map_controls .close-map:hover {
+html.page.contact #map_controls .close-map:hover {
   color: #222;
   border-color: #999;
   -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
