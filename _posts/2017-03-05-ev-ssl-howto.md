@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "EV SSL 인증서 발급 과정에서 알게된 것들"
 description: "녹색 주소창을 위해 EV SSL 인증서를 발급받은 과정을 소개합니다"
 header-img: "blog/img/bg-11.jpg"

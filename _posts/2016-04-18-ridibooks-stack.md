@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "리디북스 서버 스택 소개"
 description: "리디북스의 서버 스택을 간단히 소개합니다"
 header-img: "blog/img/bg-2.jpg"

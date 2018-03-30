@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: post_blog
 title: "회사 안에서 브랜딩 시작하기"
 description: "Lean Branding을 이용해서 한걸음씩 전진하기"
 header-img: "blog/img/bg-4.jpg"
