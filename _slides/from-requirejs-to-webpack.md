@@ -1,5 +1,5 @@
 ---
-layout: slide
+layout: collection_slide
 title: From RequireJS to Webpack
 author: 조규진
 date: 2017-11-03

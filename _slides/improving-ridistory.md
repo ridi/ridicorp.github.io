@@ -1,5 +1,5 @@
 ---
-layout: slide
+layout: collection_slide
 title: 리디스토리 성능 개선 이야기
 author: Ayon Choi
 date: 2017-07-07

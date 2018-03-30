@@ -1,5 +1,5 @@
 ---
-layout: slide
+layout: collection_slide
 title: 로맨스 연재 개발기 인생 첫 PM이 되었어요!
 author: Kyungjun Park
 date: 2017-11-03

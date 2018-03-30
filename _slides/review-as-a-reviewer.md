@@ -1,5 +1,5 @@
 ---
-layout: slide
+layout: collection_slide
 title: 코드 리뷰어 활동 후기
 author: kgwangrae
 date: 2017-02-10
