@@ -1,5 +1,5 @@
 ---
-layout: post_blog
+layout: blog_post
 title: "DevOps 팀을 위한 모니터링 팁"
 description: "개발과 운영을 동시에 하느라 고통받는 DevOps를 위한 모니터링 꿀팁"
 header-img: "blog/img/bg-9.jpg"

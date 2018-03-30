@@ -1,5 +1,5 @@
 ---
-layout: collection_slides
+layout: slide
 title: 팀장이 되었습니다
 author: blu
 date: 2017-01-06

@@ -1,5 +1,5 @@
 ---
-layout: collection_slides
+layout: slide
 title: Qt의 문제점과 PC뷰어의 미래
 author: YS Yoon
 date: 2017-11-03
