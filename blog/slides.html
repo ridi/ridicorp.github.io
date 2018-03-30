@@ -1,12 +1,12 @@
 ---
 layout: page_blog
-title: Slide
-root-class: slide blog page
+title: Slides
+root-class: slides blog page
 ---
 
 <div class="site-content">
   <div class="tab-container">
-    <a href="/blog#articles">
+    <a href="/blog#posts">
       <em rel="article">Articles</em>
     </a>
     <span class="separator">∙</span>
@@ -14,7 +14,7 @@ root-class: slide blog page
   </div>
 
   <ol id="slides" class="blog-slide-list">
-    {% assign sorted = site.slide | sort: 'date' | reverse %}
+    {% assign sorted = site.slides | sort: 'date' | reverse %}
     {% for slide in sorted %}
     <li>
       <a href="{{ slide.url }}">
@@ -34,12 +34,12 @@ root-class: slide blog page
 <!-- Pagination links -->
 <div class="pager">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}#articles" class="page-button"><i class="icon-direct-left"></i> 이전</a>
+    <a href="{{ paginator.previous_page_path }}#posts" class="page-button"><i class="icon-direct-left"></i> 이전</a>
   {% else %}
   {% endif %}
   
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}#articles" class="page-button">다음 <i class="icon-direct-right"></i></a>
+    <a href="{{ paginator.next_page_path }}#posts" class="page-button">다음 <i class="icon-direct-right"></i></a>
   {% else %}
   {% endif %}
 </div>

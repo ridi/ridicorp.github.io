@@ -1,19 +1,19 @@
 ---
 layout: page_blog
 title: "Blog"
-root-class: article blog page
+root-class: posts blog page
 ---
 
 <div class="site-content">
   <div class="tab-container">
     <em class="active" rel="article">Articles</em>
     <span class="separator">∙</span>
-    <a href="/blog/slide#slides">
+    <a href="/blog/slides#slides">
       <em rel="material">Slides</em>
     </a>
   </div>
   
-  <ol class="blog-post-list" id="articles">
+  <ol class="blog-post-list" id="posts">
     <!-- This loops through the paginated posts -->
     {% for post in paginator.posts %}
     <li>
@@ -39,12 +39,12 @@ root-class: article blog page
 <!-- Pagination links -->
 <div class="pager">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}#articles" class="page-button"><i class="icon-direct-left"></i> 이전</a>
+    <a href="{{ paginator.previous_page_path }}#posts" class="page-button"><i class="icon-direct-left"></i> 이전</a>
   {% else %}
   {% endif %}
   
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}#articles" class="page-button">다음 <i class="icon-direct-right"></i></a>
+    <a href="{{ paginator.next_page_path }}#posts" class="page-button">다음 <i class="icon-direct-right"></i></a>
   {% else %}
   {% endif %}
 </div>
