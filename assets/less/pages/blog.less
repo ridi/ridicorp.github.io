@@ -37,11 +37,19 @@ html.page.blog {
 
   .tab-container {
     background: #f5faff;
-    padding: 80px 0;
+    padding: 28px 0;
+    border-bottom: 1px solid rgba(172, 194, 212, .4);
 
     text-align: center;
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 1.2em;
+    font-family: @brandon;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    
+    a {
+        vertical-align: baseline;
+    }
 
     em, span {
       color: #acc2d4;
@@ -211,6 +219,7 @@ html.page.blog {
   &.slides {
     .blog-slide-list {
       margin: 0 auto;
+      padding: 40px 0;
       text-align: center;
 
       li {
@@ -220,6 +229,14 @@ html.page.blog {
 
         .preview {
           width: 100%;
+          border-radius: 4px;
+          cursor: pointer;
+          border: 1px solid #ddd;
+          background-size: cover;
+        }
+        
+        caption {
+          color: #000;
         }
       }
     }
