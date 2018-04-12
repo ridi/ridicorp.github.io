@@ -18,14 +18,16 @@ title: Slides
     <li>
       <a href="{{ slide.url }}">
         <div class="preview-box dissolve">
-            <img class="preview" src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
+            <img class="preview intro-animation" src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
         </div>
       </a>
         <div class="slide-info">
             
+<!--
             <div class="title">
                 {{ slide.title | truncatewords: 4 }}
             </div>
+-->
             
             {% assign author = site.data.authors[slide.author] %}
 
