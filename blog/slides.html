@@ -17,17 +17,17 @@ title: Slides
     {% for slide in sorted %}
     <li>
       <a href="{{ slide.url }}">
-        <div class="preview-box dissolve">
+        <div class="preview-hover dissolve">
+            <div class="title">
+                {{ slide.title }}
+            </div>
+            <div class="date">{{ slide.date | date: "%Y. %m. %d." }}</div>
+        </div>
+        <div class="preview-box">
             <img class="preview intro-animation" src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
         </div>
       </a>
         <div class="slide-info">
-            
-<!--
-            <div class="title">
-                {{ slide.title | truncatewords: 4 }}
-            </div>
--->
             
             {% assign author = site.data.authors[slide.author] %}
 
