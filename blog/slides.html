@@ -5,7 +5,7 @@ title: Slides
 
 <div class="site-content">
   <div class="tab-container">
-    <a href="/blog#posts">
+    <a href="/blog">
       <em rel="article">Articles</em>
     </a>
     <span class="separator">∙</span>
@@ -17,13 +17,27 @@ title: Slides
     {% for slide in sorted %}
     <li>
       <a href="{{ slide.url }}">
-        <img class="preview" src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
-        <caption>{{ slide.title }}</caption>
-        {% assign author = site.data.authors[slide.author] %}
-
-        <div class="author">{{ author.name }}</div>
-        <div class="date">{{ slide.date | date: "%Y. %m. %d." }}</div>
+        <div class="preview-box dissolve">
+            <img class="preview" src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
+        </div>
       </a>
+        <div class="slide-info">
+            
+            <div class="title">
+                {{ slide.title | truncatewords: 4 }}
+            </div>
+            
+            {% assign author = site.data.authors[slide.author] %}
+
+             <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="" class="profile-img"> 
+
+            <div class="author">
+                {{ author.name }}
+            </div>
+            
+            <div class="date">{{ slide.date | date: "%Y. %m. %d." }}</div>
+            
+        </div>    
     </li>
     {% endfor %}
   </ol>
