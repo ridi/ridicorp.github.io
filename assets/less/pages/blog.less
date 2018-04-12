@@ -204,7 +204,7 @@ html.page.blog {
         &:hover a,
         &:focus a {
           -webkit-transform: translateY(-1px);
-          border-color: #ccc;
+          border-color: @slate-gray-20;
         }
 
         &:hover figure,
@@ -219,25 +219,73 @@ html.page.blog {
   &.slides {
     .blog-slide-list {
       margin: 0 auto;
-      padding: 40px 0;
+      padding: 60px 0;
       text-align: center;
+      max-width: 1600px;
 
       li {
         display: inline-block;
         width: 320px;
-        margin: 15px;
-
-        .preview {
-          width: 100%;
-          border-radius: 4px;
-          cursor: pointer;
-          border: 1px solid #ddd;
-          background-size: cover;
-        }
+        margin: 0 33px;
         
-        caption {
-          color: #000;
+        .preview-box {
+            min-height: 240px;
+            background: #d6deeb;
+            border-radius: 4px;
+            display: inline-block;
+            vertical-align: middle;
+
+            .preview {
+                  border: 1px solid #ddd;
+                  border-radius: 4px;
+                  width: 100%;
+                  cursor: pointer;
+            }
+        
         }
+          
+          .preview-box:hover {
+              opacity: .7;
+          }
+          
+          .dissolve {
+              transition: all 0.25s ease-in-out;
+          }
+        
+          .slide-info {
+              text-align: left;
+              margin: 16px 0 60px 0;
+              
+              .title {
+                  color: @slate-gray-90;
+                  font-size: 20px;
+                  margin: 8px 0 6px 0;
+                  font-weight: 600;
+              }
+              
+              img {
+                    border-radius: 4px;
+                    width: 20px;
+                    height: 20px;
+              }
+              .author {
+                  display: inline-block;
+                  font-family: @brandon;
+                  color: @blue-gray-40;
+                  margin-left: 4px;
+                  font-weight: 600;
+              }
+              
+              .date {
+                font-family: @brandon;
+                color: @blue-gray-40;
+                font-size: 14px;
+                margin-top: 6px;
+                  
+              }
+              
+          }  
+
       }
     }
   }
