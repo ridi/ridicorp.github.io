@@ -66,7 +66,9 @@ layout: default
             <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="">
           </div>
           <div class="author">{{ author.name }}</div>
+          {% if author.profile-text %}
           <div class="author-desc">{{ author.profile-text }}</div>
+          {% endif %}
         </div>
         {% endif %}
       </footer>
