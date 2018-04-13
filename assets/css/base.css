@@ -2108,6 +2108,7 @@ html.page.blog.slides .blog-slide-list li .preview-hover .title {
   font-size: 25px;
   font-weight: 700;
   line-height: 1.25em;
+  letter-spacing: -0.03em;
 }
 html.page.blog.slides .blog-slide-list li .preview-hover .date {
   font-family: "brandon-grotesque", sans-serif;
@@ -2155,8 +2156,8 @@ html.page.blog.slides .blog-slide-list li .slide-info {
 }
 html.page.blog.slides .blog-slide-list li .slide-info img {
   border-radius: 4px;
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
 }
 html.page.blog.slides .blog-slide-list li .slide-info .author {
   display: inline-block;
@@ -2164,6 +2165,7 @@ html.page.blog.slides .blog-slide-list li .slide-info .author {
   color: #59667a;
   margin-left: 4px;
   font-weight: 600;
+  font-size: 17px;
 }
 html.page.blog.slides .blog-slide-list li .slide-info .date {
   font-family: "brandon-grotesque", sans-serif;
@@ -3408,11 +3410,8 @@ html.collection.press article.press-article blockquote p {
   margin: 0;
 }
 html.collection.slides .intro-header.ih-blog {
-  background-image: url(../img/blog-bg.png);
-  background-repeat: no-repeat;
-  background-position: center center;
   background-size: 2000px auto;
-  background-color: #173057;
+  background-color: #94a2b8;
 }
 @media only screen and (max-width: 767px) {
   html.collection.slides .intro-header.ih-blog {
@@ -3423,11 +3422,33 @@ html.collection.slides .intro-header .sub-description.sd-blog {
   color: #78caf3;
 }
 html.collection.slides .intro-header .blog-sub-area {
-  text-align: center;
+  height: 60px;
 }
-@media only screen and (max-width: 767px) {
-  html.collection.slides .intro-header .blog-sub-area {
-    text-align: left;
-    padding: 0 20px;
+html.collection.slides article.post {
+  padding: 80px 0;
+}
+@media only screen and (max-width : 1023px) {
+  html.collection.slides article.post {
+    padding: 40px 0;
   }
+}
+html.collection.slides article.post .post-content h1.slide-title {
+  margin: 30px 0 6px 0;
+  padding: 0;
+  letter-spacing: -0.03em;
+  color: #303538;
+  font-weight: 700;
+}
+html.collection.slides article.post .post-content .date {
+  font-family: "brandon-grotesque", sans-serif;
+  color: #738096;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+html.collection.slides article.post .post-content .description {
+  color: #525a61;
+  margin: 24px 0;
+  font-size: 0.95em;
 }

@@ -1,11 +1,12 @@
 html.collection.slides {
   .intro-header {
     &.ih-blog {
-      background-image: url(../img/blog-bg.png);
-      background-repeat: no-repeat;
-      background-position: center center;
+//      background-image: url(../img/blog-bg.png);
+//      background-repeat: no-repeat;
+//      background-position: center center;
       background-size: 2000px auto;
-      background-color: #173057;
+//      background-color: #173057;
+      background-color: @blue-gray-20;
 
       @media @queries_sm {
         background-size: 1400px auto;
@@ -19,12 +20,40 @@ html.collection.slides {
     }
 
     .blog-sub-area {
-      text-align: center;
-
-      @media @queries_sm {
-        text-align: left;
-        padding: 0 20px;
-      }
+        height: 60px;
     }
   }
+    
+    article.post {
+        padding: 80px 0;
+        
+        @media @queries_smmd {
+            padding: 40px 0;
+        }
+
+        .post-content {
+        
+            h1.slide-title {
+                margin: 30px 0 6px 0;
+                padding: 0;
+                letter-spacing: -0.03em;
+                color: @slate-gray-90;
+                font-weight: 700;
+            }
+            .date {
+                font-family: @brandon;
+                color: @blue-gray-30;
+                font-size: 16px;
+                font-weight: 500;
+                margin: 0;
+                padding: 0;
+            }
+            .description {
+                color: #525a61;
+                margin: 24px 0;
+                font-size: 0.95em;
+            }
+        }
+    }
+    
 }
