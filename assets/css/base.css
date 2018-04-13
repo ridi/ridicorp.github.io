@@ -3448,21 +3448,6 @@ html.collection.slides article.post {
     padding: 40px 0;
   }
 }
-html.collection.slides article.post .post-content h1.slide-title {
-  margin: 30px 0 6px 0;
-  padding: 0;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-  color: #303538;
-}
-html.collection.slides article.post .post-content .date {
-  font-family: "brandon-grotesque", sans-serif;
-  color: #738096;
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0;
-  padding: 0;
-}
 html.collection.slides article.post .post-content .description {
   color: #525a61;
   margin: 24px 0;
