@@ -31,6 +31,12 @@ layout: default
 
 <header class="intro-header ih-blog">
   <div class="blog-sub-area">
+      <h1 class="slide-title">
+            {{ page.title }}
+        </h1>  
+        <p class="date">
+            {{ page.date | date: "%Y. %m. %d." }} 
+        </p>
   </div>
 </header>
 
@@ -40,12 +46,14 @@ layout: default
     <div class="row">
       <div class="post-content">
         <script async class="speakerdeck-embed" data-id="{{ page.data-id }}" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+<!--
         <h1 class="slide-title">
             {{ page.title }}
         </h1>  
         <p class="date">
             {{ page.date | date: "%Y. %m. %d." }} 
         </p>
+-->
         <p class="description">
             {{ page.description }}
         </p>  
