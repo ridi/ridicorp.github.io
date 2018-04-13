@@ -2124,8 +2124,6 @@ html.page.blog.slides .blog-slide-list li .preview-box {
   min-height: 241px;
   background: #d6deeb;
   border-radius: 4px;
-  display: inline-block;
-  vertical-align: middle;
   position: relative;
 }
 html.page.blog.slides .blog-slide-list li .preview-box .preview {
@@ -3410,19 +3408,37 @@ html.collection.press article.press-article blockquote p {
   margin: 0;
 }
 html.collection.slides .intro-header.ih-blog {
+  background-image: url(../img/blog-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: 2000px auto;
-  background-color: #94a2b8;
+  background-color: #173057;
 }
 @media only screen and (max-width: 767px) {
   html.collection.slides .intro-header.ih-blog {
-    background-size: 1400px auto;
+    background-size: 1300px auto;
   }
 }
 html.collection.slides .intro-header .sub-description.sd-blog {
   color: #78caf3;
 }
 html.collection.slides .intro-header .blog-sub-area {
-  height: 60px;
+  text-align: center;
+  padding: 120px 20px 80px 20px;
+}
+html.collection.slides .intro-header .blog-sub-area h1.slide-title {
+  margin: 0 0 14px 0;
+  color: #fff;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+html.collection.slides .intro-header .blog-sub-area .date {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "brandon-grotesque", sans-serif;
+  margin: 0;
 }
 html.collection.slides article.post {
   padding: 80px 0;
@@ -3436,8 +3452,8 @@ html.collection.slides article.post .post-content h1.slide-title {
   margin: 30px 0 6px 0;
   padding: 0;
   letter-spacing: -0.03em;
-  color: #303538;
   font-weight: 700;
+  color: #303538;
 }
 html.collection.slides article.post .post-content .date {
   font-family: "brandon-grotesque", sans-serif;
