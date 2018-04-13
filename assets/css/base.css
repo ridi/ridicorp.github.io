@@ -2121,6 +2121,8 @@ html.page.blog.slides .blog-slide-list li .preview-hover:hover {
   opacity: 1;
 }
 html.page.blog.slides .blog-slide-list li .preview-box {
+  display: flex;
+  align-items: center;
   min-height: 241px;
   background: #d6deeb;
   border-radius: 4px;
