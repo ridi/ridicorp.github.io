@@ -1,0 +1,74 @@
+.intro-header {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #333;
+  position: relative;
+  z-index:1;
+
+  .site-heading,
+  .page-heading {
+    text-align: center;
+    padding: 120px 0;
+
+    @media @queries_md {
+      padding: 120px 0;
+    }
+
+    @media @queries_sm {
+      padding: 80px 0 40px;
+    }
+
+    h1 {
+      font-family: "ff-tisa-web-pro", sans-serif;
+      margin-top: 0;
+      font-size: 7em;
+      font-weight: 700;
+      font-style: italic;
+      color: #fff;
+      line-height: 0.9;
+      padding: 20px 0 0;
+      text-rendering:optimizeLegibility;
+      .text-shadow(0 2px 3px rgba(0,0,0,.3));
+
+      &.oneline {
+        padding-top: 80px;
+      }
+
+      @media @queries_md {
+        font-size: 7em;
+      }
+
+      @media @queries_sm {
+        font-size: 3.5em;
+
+        &.oneline {
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+
+  .sub-heading {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #fff;
+    position: relative;
+    padding-bottom: 8px;
+
+  }
+
+  .sub-description {
+    padding-bottom: 70px;
+    font-size: 1em;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    width: 700px;
+    margin: 0 auto;
+
+    @media @queries_sm {
+      width: auto;
+    }
+  }
+}

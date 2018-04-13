@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: blog_post
 title: "Postman과 GitLab CI 연동하기"
 description: "Postman Test와 GitLab CI를 사용해 자동화된 RESTful API 테스트 환경을 구성하는 방법에 대해 알아봅니다."
 header-img: "blog/img/2017-11-09/background.png"

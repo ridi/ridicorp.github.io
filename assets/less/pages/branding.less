@@ -1,0 +1,261 @@
+html.page.branding {
+  .intro-header {
+    &.ih-branding {
+      background-color: #0282da;
+      background-image: url(../img/branding-bg.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 1800px auto;
+      padding-bottom: 100px;
+
+
+      @media @queries_md {
+        background-size: 1200px auto;
+      }
+
+      @media @queries_sm {
+        background-size: 1000px auto;
+        padding-bottom: 20px;
+      }
+    }
+
+    .site-heading,
+    .page-heading {
+      &.branding-heading {
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  .branding-area {
+    margin: 50px auto;
+
+    @media @queries_sm {
+      width: auto;
+    }
+
+    .branding-sub-area {
+      border-bottom: 1px solid #ccd5db;
+      text-align: center;
+
+      .download-all {
+        .button-gray();
+
+        padding: 16px 24px;
+      }
+
+      p {
+        padding: 20px 0;
+        font-size: 14px;
+        color: #999;
+      }
+    }
+
+    .branding-box {
+      border-bottom: 1px solid #ccd5db;
+      padding: 40px;
+
+      @media @queries_sm {
+        padding: 20px 20px 40px;
+      }
+
+      .bb-body {
+        padding-left: 24px;
+        text-align: center;
+
+        @media @queries_sm {
+          padding-left: 0;
+          text-align: left;
+        }
+      }
+
+      .bbb-box {
+        text-align: left;
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 20px;
+      }
+
+      .big-logo {
+        text-align: center;
+        margin-top: 24px;
+        padding-bottom: 20px;
+
+        @media @queries_sm {
+          text-align: left;
+        }
+
+        &>span {
+          margin: 48px 0;
+          vertical-align: top;
+
+          @media @queries_sm {
+            margin: 20px 0;
+          }
+        }
+
+        .logo-ridi {
+          .svg_logo_ridi(#1f8ee6);
+
+          width: 76px;
+          height: 31px;
+          margin-right: 56px;
+        }
+
+        .logo-ridibooks {
+          .svg_logo_ridibooks(#1f8ee6);
+
+          width: 205px;
+          height: 50px;
+          margin-right: 56px;
+
+        }
+
+        .logo-ridistory {
+          .svg_logo_ridistory(#1f8ee6);
+
+          width: 218px;
+          height: 40px;
+
+        }
+
+        .logo-paper {
+          .svg_logo_paper(#333);
+
+          width: 120px;
+          height: 31px;
+        }
+      }
+
+      h5 {
+        font-size: 13px;
+        color: #555;
+        font-weight: bold;
+        line-height: 1;
+        font-family: "brandon-grotesque", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      .branding-color-list {
+        padding: 0 0 20px;
+      }
+
+      .branding-desc {
+        float: left;
+        margin-right: 10px;
+        font-size: 13px;
+        padding-bottom: 20px;
+
+        .color-box {
+          width: 100px;
+          height: 100px;
+          box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+          &.cb-blue {background-color: #1f8ee6;}
+          &.cb-white {background-color: #fff;}
+          &.cb-gray {background-color: #333;}
+        }
+
+        &>strong {
+          display: block;
+          text-transform: uppercase;
+          padding: 12px 0 8px;
+          color: #000;
+          .brandon-grotesque();
+        }
+
+        &>span {
+          display: block;
+          color: #555;
+        }
+      }
+
+      .logo-sample {
+        width: 180px;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+        box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+
+        &.ridibooks-logo-sample-1 {
+          background: #fff;
+
+          .logo-ridibooks {
+            .svg_logo_ridibooks(#222);
+
+            width: 107px;
+            height: 27px;
+          }
+        }
+
+        &.ridibooks-logo-sample-2 {
+          background: #1f8ee6;
+
+          .logo-ridibooks {
+            .svg_logo_ridibooks(#fff);
+
+            width: 107px;
+            height: 27px;
+          }
+        }
+
+        &.paper-logo-sample-1 {
+          background: #333;
+
+          .logo-paper {
+            .svg_logo_paper(#fff);
+
+            width: 85px;
+            height: 22px;
+          }
+        }
+
+        span {
+          vertical-align: middle;
+        }
+
+        @media @queries_sm {
+          width: 160px;
+        }
+      }
+
+    }
+  }
+
+  .branding-download-all {
+    text-align: center;
+    .brandon-grotesque();
+
+    @media @queries_md {
+      margin-bottom: 100px;
+    }
+
+    @media @queries_sm {
+      margin-bottom: 50px;
+    }
+
+    .wrapper {
+      display: inline-block;
+      padding: 0 10px;
+      .border-radius();
+    }
+
+    strong {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.95em;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: #b0d4ff;
+      padding: 10px 0;
+      background: @bg-career;
+    }
+
+    .download-all {
+      .button-white();
+
+      color: #0282da;
+      margin-bottom: 15px;
+    }
+  }
+}

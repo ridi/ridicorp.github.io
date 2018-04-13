@@ -19,8 +19,77 @@ collections:
     output: true
   press:
     output: true
+  slides:
+    output: true
 
-# pagination for blog posts
+defaults:
+  # Pages
+  -
+    scope:
+      path: "index.html"
+    values:
+      root_class: "about page"
+  -
+    scope:
+      path: "branding.html"
+    values:
+      root_class: "branding page"
+  -
+    scope:
+      path: "career/index.html"
+    values:
+      root_class: "career page"
+  -
+    scope:
+      path: "blog/index.html"
+    values:
+      root_class: "posts blog page"
+  -
+    scope:
+      path: "blog/slides.html"
+    values:
+      root_class: "slides blog page"
+  -
+    scope:
+      path: "press/index.html"
+    values:
+      root_class: "press page"
+  -
+    scope:
+      path: "press/photos.html"
+    values:
+      root_class: "photos press page"
+  -
+    scope:
+      path: "contact.html"
+    values:
+      root_class: "contact page"
+
+  # Posts
+  -
+    scope:
+      type: "posts"
+    values:
+      root_class: "blog post"
+
+  # Collections
+  -
+    scope:
+      type: "career"
+    values:
+      root_class: "career collection"
+  -
+    scope:
+      type: "press"
+    values:
+      root_class: "press collection"
+  -
+    scope:
+      type: "slides"
+    values:
+      root_class: "slides collection"
+
+# Pagination for blog posts
 plugins:
   - jekyll-paginate
 paginate: 8

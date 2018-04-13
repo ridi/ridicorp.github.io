@@ -1,0 +1,58 @@
+html.collection.slides {
+  .intro-header {
+    &.ih-blog {
+      background-image: url(../img/blog-bg.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 2000px auto;
+      background-color: #173057;
+
+      @media @queries_sm {
+        background-size: 1300px auto;
+      }
+    }
+
+    .sub-description {
+      &.sd-blog {
+        color: #78caf3;
+      }
+    }
+
+    .blog-sub-area {
+      text-align: center;
+      padding: 120px 20px 80px 20px;
+
+      h1.slide-title {
+        margin: 0 0 14px 0;
+        color: @white;
+        letter-spacing: -0.03em;
+        font-weight: 700;
+        line-height: 1.4;
+      }
+      .date {
+        color: @white;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: @brandon;
+        margin: 0;
+      }
+    }
+  }
+
+  article.post {
+    padding: 80px 0;
+
+    @media @queries_smmd {
+      padding: 40px 0;
+    }
+
+    .post-content {
+      .description {
+        color: #525a61;
+        margin: 24px 0;
+        font-size: 0.95em;
+      }
+    }
+  }
+
+}

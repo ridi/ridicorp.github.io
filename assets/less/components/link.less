@@ -1,0 +1,51 @@
+.link-to {
+  display: block;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  padding: 60px 0 70px;
+  width: 50%;
+  float: left;
+  transition: background .3s ease-out;
+
+  @media @queries_sm {
+    width: auto;
+    float: none;
+  }
+
+  h4 {
+    font-size: 1.8em;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    padding-bottom: 10px;
+    line-height: 1.3;
+    color: #0282da;
+  }
+
+  &.ltl {
+    padding-left: 50px;
+
+    @media @queries_sm {
+      padding-left: 0;
+    }
+  }
+
+  &.ltr {
+    padding-right: 50px;
+
+    @media @queries_sm {
+      padding-right: 0;
+      border-top: none;
+    }
+  }
+
+  .go-to {
+    color: #0282da;
+    font-weight: bold;
+    border-bottom: 1px dotted #0282da;
+  }
+
+  &:hover {
+    background: #e6f5ff;
+  }
+}

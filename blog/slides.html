@@ -1,0 +1,64 @@
+---
+layout: blog_page
+title: Slides
+---
+
+<div class="site-content">
+  <div class="tab-container">
+    <a href="/blog">
+      <em rel="article">Articles</em>
+    </a>
+    <span class="separator">∙</span>
+    <em class="active" rel="material">Slides</em>
+  </div>
+
+  <ol id="slides" class="blog-slide-list">
+    {% assign sorted = site.slides | sort: 'date' | reverse %}
+    {% for slide in sorted %}
+    <li>
+      <a href="{{ slide.url }}">
+        <div class="preview-hover dissolve">
+            <div class="title">
+                {{ slide.title }}
+            </div>
+            <div class="date">{{ slide.date | date: "%Y. %m. %d." }}</div>
+        </div>
+        <div class="preview-box">
+            <img class="preview intro-animation" src="https://speakerd.s3.amazonaws.com/presentations/{{ slide.data-id }}/preview_slide_0.jpg"/>
+        </div>
+      </a>
+        <div class="slide-info">
+            
+            {% assign author = site.data.authors[slide.author] %}
+
+             <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="" class="profile-img"> 
+
+            <div class="author">
+                {{ author.name }}
+            </div>
+            
+            <div class="date">{{ slide.date | date: "%Y. %m. %d." }}</div>
+            
+        </div>    
+    </li>
+    {% endfor %}
+    <li class="placeholder"></li>
+    <li class="placeholder"></li>
+    <li class="placeholder"></li>
+    <li class="placeholder"></li>
+  </ol>
+</div>
+
+
+<!-- Pagination links -->
+<div class="pager">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}#posts" class="page-button"><i class="icon-direct-left"></i> 이전</a>
+  {% else %}
+  {% endif %}
+  
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}#posts" class="page-button">다음 <i class="icon-direct-right"></i></a>
+  {% else %}
+  {% endif %}
+</div>

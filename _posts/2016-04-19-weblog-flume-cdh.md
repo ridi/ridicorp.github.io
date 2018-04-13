@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: blog_post
 title: "웹서버 로그 수집과 모니터링 설정"
 description: "Flume 과 CDH 를 사용해서 끊김없이 로그 수집하기"
 header-img: "blog/img/bg-1.jpg"
