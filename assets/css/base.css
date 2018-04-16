@@ -2091,6 +2091,11 @@ html.page.blog.slides .blog-slide-list li {
   width: 320px;
   margin: 0 33px;
 }
+@media only screen and (max-width: 767px) {
+  html.page.blog.slides .blog-slide-list li {
+    margin: 0 auto;
+  }
+}
 html.page.blog.slides .blog-slide-list li .preview-hover {
   opacity: 0;
   position: absolute;
