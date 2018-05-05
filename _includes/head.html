@@ -11,7 +11,7 @@
   <meta property="og:title" content="{{ page.title | strip_html }}" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="http://www.ridicorp.com{{ page.url | replace:'index.html','' | prepend: site.baseurl }}" />
-  <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% endif %}" />
+  <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% else %}{{ site.url}}/assets/img/fb-img-ridicorp.png{% endif %}" />
   <meta property="og:description" content="{% if page.description %}{{ page.subtitle }} - {{ page.description }}{% endif %}" />
 
   <title itemprop="name">
