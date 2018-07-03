@@ -1013,7 +1013,7 @@ html.page.about .numbers-area h4 {
   margin-top: 0;
 }
 html.page.about .numbers-area .number-boxes {
-  width: 960px;
+  width: 1024px;
   margin: 0 auto;
   padding: 0 0 0 2%;
 }
@@ -1041,7 +1041,7 @@ html.page.about .numbers-area .number-boxes li i {
 }
 html.page.about .numbers-area .number-boxes li strong {
   display: block;
-  font-size: 2.5em;
+  font-size: 2.25em;
   font-family: "brandon-grotesque", sans-serif;
   color: #3b3844;
   padding-bottom: 5px;
@@ -1059,10 +1059,10 @@ html.page.about .numbers-area .number-boxes li em {
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   html.page.about .numbers-area .number-boxes {
-    width: 740px;
+    width: 768px;
   }
   html.page.about .numbers-area .number-boxes li strong {
-    font-size: 2em;
+    font-size: 1.75em;
   }
 }
 @media only screen and (max-width: 767px) {
