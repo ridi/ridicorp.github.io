@@ -2,7 +2,7 @@
 layout: blog_post
 title: "리디북스 뷰어 터치 설정 개선"
 description: "터치 제스처의 문제점과 개선 과정을 공유합니다."
-header-img: "blog/img/2018-07-09/bg-16-3.png"
+header-img: "blog/img/2018-07-09/header.jpg"
 date: 2018-07-25
 author: "sunha.kim"
 category: design
