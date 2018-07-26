@@ -6,26 +6,20 @@ www.ridicorp.com 도메인으로 접속할 수 있는 리디 주식회사의 홈
 
 ## How to Build
 
-
-### 1. 스타일시트 빌드하기
+### 1. 의존성 설치하기
 
 ```shell
-$ npm install # 빌드에 필요한 모듈들을 설치합니다.
-$ npm run watch # less를 수정하면 자동으로 CSS로 빌드되도록 합니다.
+$ make install # 빌드에 필요한 의존성을 설치합니다.
 ```
 
-### 2. Jekyll 설치하기
+### 2. 스타일시트 빌드하기
 
-간단한 명령어로 설치할 수 있습니다. 상세한 내용은 [Jekyll 웹사이트](https://jekyllrb.com/)를 참고하세요.
-
-```
-$ (sudo) gem install bundler
-$ bundle install
+```shell
+$ make watch # less 파일를 수정하면 자동으로 CSS로 빌드되도록 합니다.
 ```
 
 ### 3. 로컬에서 확인하기
 
-Bundler를 사용하여 웹사이트를 테스트할 수 있습니다.
-```
-$ bundle exec jekyll serve
+```shell
+$ make serve # Jekyll을 통해 로컬에 웹 서버를 시작합니다.
 ```
