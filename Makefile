@@ -1,7 +1,4 @@
-.PHONY: run
-
-run:
-	bundle exec jekyll server
+.PHONY: install serve watch
 
 install:
 	gem install bundler --conservative # Skip installing when it's already installed
