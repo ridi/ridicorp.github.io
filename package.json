@@ -17,6 +17,10 @@
     "type": "git",
     "url": "https://github.com/ridi/ridi.github.io"
   },
+  "scripts": {
+    "start": "grunt",
+    "watch": "grunt watch"
+  },
   "stylelint": {
     "extends": "stylelint-config-standard"
   }
