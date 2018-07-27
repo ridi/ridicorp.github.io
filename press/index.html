@@ -44,9 +44,9 @@ root_class: "press page"
 <!-- Press Articles -->
 <div class="press-articles-area site-content">
   <div class="paa-tab">
-    <em class="active" rel="article">언론보도</em>
+    <button class="active" rel="article">언론보도</button>
     <span class="separator">∙</span>
-    <em rel="material">보도자료</em>
+    <button rel="material">보도자료</button>
   </div>
   <div class="tab_container">
     <!-- 언론보도 -->
@@ -97,9 +97,9 @@ root_class: "press page"
 
     <!-- Pager -->
     <div class="pager">
-      <div class="page-button" id="prev_page" data-flag="material"><i class="icon-direct-left"></i> 이전</div>
+      <button class="page-button" id="prev_page" data-flag="material"><i class="icon-direct-left"></i> 이전</button>
 
-      <div class="page-button" id="next_page" data-flag="material">다음 <i class="icon-direct-right"></i></div>
+      <button class="page-button" id="next_page" data-flag="material">다음 <i class="icon-direct-right"></i></button>
     </div>
   </div>
   <div class="clear"></div>
@@ -133,7 +133,7 @@ root_class: "press page"
 
     // 이벤트 핸들러 달기
     function attachHandler() {
-      var parentTab = $(".paa-tab em");
+      var parentTab = $(".paa-tab button");
 
       parentTab.click(function () {
         tabChanged(this);
@@ -151,7 +151,7 @@ root_class: "press page"
     }
 
     function getActiveTab() {
-      return $(".paa-tab em[class='active']");
+      return $(".paa-tab button[class='active']");
     }
 
     function calculateTotalPages(items_count, items_per_page) {

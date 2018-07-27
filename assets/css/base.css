@@ -2349,19 +2349,23 @@ html.page.press .press-articles-area .paa-tab {
   font-size: 1.5em;
   padding-bottom: 40px;
 }
-html.page.press .press-articles-area .paa-tab em,
+html.page.press .press-articles-area .paa-tab button,
 html.page.press .press-articles-area .paa-tab span {
   color: #acc2d4;
   display: inline-block;
   padding: 0 2px;
 }
-html.page.press .press-articles-area .paa-tab em {
+html.page.press .press-articles-area .paa-tab button {
   font-style: normal;
   transition: color .2s;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
 }
-html.page.press .press-articles-area .paa-tab em.active,
-html.page.press .press-articles-area .paa-tab em:hover {
+html.page.press .press-articles-area .paa-tab button.active,
+html.page.press .press-articles-area .paa-tab button:hover {
   color: #02406f;
 }
 html.page.press .press-articles-area .articles-list {
