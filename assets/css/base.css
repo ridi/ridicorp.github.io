@@ -1985,7 +1985,6 @@ html.page.blog.posts .blog-post-list li .list-item {
   position: relative;
   z-index: 1;
   transition: all .1s;
-  outline: none;
   border-bottom: 1px #eee solid;
 }
 @media only screen and (max-width: 767px) {
