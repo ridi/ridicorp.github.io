@@ -141,19 +141,23 @@ html.page.press {
       font-size: 1.5em;
       padding-bottom: 40px;
 
-      em, span {
+      button, span {
         color: #acc2d4;
         display: inline-block;
         padding: 0 2px;
       }
 
-      em {
+      button {
         font-style: normal;
         transition: color .2s;
         cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        background: none;
+        border: 0;
       }
 
-      em.active, em:hover {
+      button.active, button:hover {
         color: #02406f;
       }
     }
