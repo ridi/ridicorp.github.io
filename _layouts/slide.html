@@ -46,7 +46,7 @@ root_class: "slides collection"
   <div class="container">
     <div class="row">
       <div class="post-content">
-        <script async class="speakerdeck-embed" data-id="{{ page.data-id }}" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+        <script async class="speakerdeck-embed" data-id="{{ page.data-id }}" data-ratio="{{ page.data-ratio | default: 1.33333333333333 }}" src="//speakerdeck.com/assets/embed.js"></script>
         <p class="description">
           {{ page.description }}
         </p>
