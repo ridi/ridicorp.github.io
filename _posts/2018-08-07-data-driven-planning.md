@@ -1,4 +1,4 @@
-﻿---
+---
 layout: blog_post
 title: "데이터 기반 기획하기"
 description: "데이터 기반 기획을 위한 분석툴과 진행 사례를 공유합니다."
