@@ -4,7 +4,7 @@ title: "데이터 기반 기획하기"
 description: "데이터 기반 기획을 위한 분석툴과 진행 사례를 공유합니다."
 header-img: "blog/img/bg-5.jpg"
 date: 2018-08-07
-author: hyeonseok.kim
+author: "hyeonseok.kim"
 category: planning
 published: false
 ---
