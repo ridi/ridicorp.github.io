@@ -1,4 +1,4 @@
----
+﻿---
 layout: blog_post
 title: "데이터 기반 기획하기"
 description: "데이터 기반 기획을 위한 분석툴과 진행 사례를 공유합니다."
@@ -23,7 +23,7 @@ published: false
 보통 일정 수준의 트래픽까지는 무료로 사용할 수 있습니다.  
 리디북스는 웹로그 분석툴인 Google Analytics (이하 "GA") 를 주로 사용합니다.
 
-![구글어날리틱스](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/GA_logo_small.png){:data-action="zoom"}
+![구글어날리틱스](/blog/ga_logo_small.png){:data-action="zoom"}
 
 GA는 아래와 같은 장점이 있습니다.
 
@@ -40,7 +40,7 @@ GA는 아래와 같은 장점이 있습니다.
 
 사용자는 어떤 메뉴를 더 많이 클릭할까요?
 
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/fantasy_quick_menu.png){:data-action="zoom"}
+![](/blog/fantasy_quick_menu.png){:data-action="zoom"}
 
 예를 들어 MD가 운영을 위해 참고차 위 메뉴의 클릭 비중을 파악하고 싶을 수 있습니다.  
 간단해 보이지만 GTM을 사용하지 않고 이를 파악하려면 개발팀에 해당 영역의 클릭 이벤트를 붙이는 작업을 요청해야 합니다. 데이터 로깅의 담당자가 있더라도 처리에 시간이 소요될 수 밖에 없습니다.  
@@ -49,29 +49,29 @@ GTM을 사용하면 트리거와 태그를 생성하여 손쉽게 이벤트 로�
 1\. 트리거 만들기  
 먼저 메뉴의 각 링크가 클릭될때 이벤트가 발생하도록 트리거를 만듭니다.
 
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/gtm_trigger.PNG){:data-action="zoom"}
+![](/blog/gtm_trigger.png){:data-action="zoom"}
 
 2\. 태그 만들기  
 그리고 해당 트리거 발생시 GA에 어떤 값의 이벤트로 남길지 태그를 생성합니다.
 
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/gtm_tag.PNG){:data-action="zoom"}
+![](/blog/gtm_tag.png){:data-action="zoom"}
 
 3\. GA 이벤트수 확인  
 이렇게 태그를 만들고 적용하면 아래처럼 GA에서 바로 이벤트 로그를 확인할 수 있습니다.
 
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/fantasy-serial_quick_menu_GA_kor.png){:data-action="zoom"}
+![](/blog/fantasy-serial_quick_menu_ga_kor.png){:data-action="zoom"}
 
 # GTM 사용 예시 #2
 
 최근에는 아래와 같은 상황을 파악하기 위해 GTM으로 이벤트 로깅을 사용했습니다.  
 사용자가 동일한 목록으로 이동할 때 붉은 영역의 메뉴를 많이 클릭할까요? 아니면 파랑 영역의 '전체보기'를 눌러 이동을 많이 할까요?
 
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/category_home_marked_small.PNG){:data-action="zoom"}
+![](/blog/category_home_marked_small.png){:data-action="zoom"}
 
 사용자가 파랑 영역의 ‘전체보기’를 많이 누른다면 홈화면에서 섹션을 보다가 ‘전체보기’를 눌러서 각 목록으로 이동하는 수가 많다고 추정할 수 있습니다.  
 이벤트 로깅 결과를 GA에서 보니 사용자가 붉은 영역에서 각 메뉴로 이동하는 수 보다 홈 메뉴에서 섹션을 쭉 보면서 '전체보기'를 클릭하여 각 목록으로 이동하는 수가 약 4배 더 많습니다.
 
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/GA_%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%99%88_%EC%A0%84%EC%B2%B4%EB%B3%B4%EA%B8%B0%ED%81%B4%EB%A6%AD_%ED%83%AD%EB%A9%94%EB%89%B4%ED%81%B4%EB%A6%AD_%EC%A4%84%EC%9E%84.PNG){:data-action="zoom"}
+![](/blog/ga_click_cnt.png){:data-action="zoom"}
 
 사용자에게 새로운 컨텐츠의 노출을 확보하고 싶을 때 홈탭 화면에 구성해도 좋다고 판단할 수 있습니다.  
 GA는 훌륭한 분석툴이지만 이것만으로 다양한 상황에 맞는 분석은 어렵습니다.  
@@ -91,7 +91,7 @@ GA는 훌륭한 분석툴이지만 이것만으로 다양한 상황에 맞는 �
 
 이들 중 AI 추천이 효과적인 사용자 그룹은 누구일지 알기 위해 AI 추천과 유사한 로직으로 구성된 '이 책을 구매한 분들의 선택' 섹션이 어떤 독자층에게 효과적일지 보았습니다. 장르별로 구매가 발생하는 섹션에 점수를 매겨 순위를 살펴보니 아래와 같았습니다.
 
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/genre_section_rank.PNG){:data-action="zoom"}
+![](/blog/genre_section_rank.png){:data-action="zoom"}
 
 동일한 디자인과 위치인데도 장르별로 알고리즘에 의한 구매 효과가 다르다는걸 알 수 있습니다. 알고리즘이 서로 다른 장르별 독자의 성향을 커버하지 못하기 때문으로 보입니다. AI 추천도 먼저 일반과 만화 독자를 대상으로 시작하는게 좋을 것 같습니다.
 
@@ -99,7 +99,7 @@ GA는 훌륭한 분석툴이지만 이것만으로 다양한 상황에 맞는 �
 
 서점의 주요 구매 경로가 어디일지 살펴보았습니다.
 
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/%EC%A3%BC%EC%9A%94%ED%99%94%EB%A9%B4%EC%9D%98PV_%EA%B5%AC%EB%A7%A4%EB%B9%84%EC%A4%91.PNG){:data-action="zoom"}
+![](/blog/pv_purchase_rate.png){:data-action="zoom"}
 
 홈 화면, 도서 상세, 검색 결과, 카테고리 화면은 각 맥락에 맞게 사용자의 많은 접근 또는 구매를 일으키는 영역입니다. 가령 도서상세 화면은 높은 PV와 구매 비중을 차지하고 있어서 구매 경로에 매우 중요합니다. 이 화면에서는 사용자가 조회하고 있는 도서 기반의 추천을 잘 하는 것이 적합할 것 같습니다.  
 반면 장르홈의 경우는 첫 진입 경로이기 때문에 PV는 높지만 구매 비중은 상대적으로 낮습니다. 높은 PV를 구매 전환시키기 위해 먼저 홈화면에 'OOO 님을 위한 AI 추천' 이라는 섹션으로 사용자에게 종합적인 도서 추천을 하기로 했습니다.  
@@ -124,10 +124,10 @@ GA 데이터로 모두 파악 가능하지만 구매, 판매 같은 정확한 �
 (수치는 보안상 공개 할 수 없어서 이해를 돕기 위해 임의의 숫자로 대체했습니다.)
 
 일반도서 홈의 섹션별 KPI
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/KPI_result_general.PNG){:data-action="zoom"}
+![](/blog/kpi_result_general.png){:data-action="zoom"}
 
 만화장르 홈의 섹션별 KPI
-![](https://ridicorp.atlassian.net/wiki/download/attachments/666534908/kpi_result_comic.PNG){:data-action="zoom"}
+![](/blog/kpi_result_comic.png){:data-action="zoom"}
 
 이 후 장르물 독자에게도 AI 추천 섹션을 오픈했습니다. 오픈 후 사용자의 피드백을 일부 공개하면 아래와 같습니다.
 
