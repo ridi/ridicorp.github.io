@@ -2,7 +2,7 @@
 layout: blog_post
 title: "리디북스 뷰어 터치 설정 개선"
 description: "터치 제스처의 문제점과 개선 과정을 공유합니다."
-header-img: "blog/img/2018-07-09/header.jpg"
+header-img: "blog/img/2018-07-25/header.jpg"
 date: 2018-07-25
 author: "sunha.kim"
 category: design
@@ -73,7 +73,7 @@ published: true
 
 그리고 데이터를 통해 사용자가 책을 볼 때는 **'이전 페이지'**로 이동하는 것보다 **'다음 페이지'**로 이동하고자 하는 경우가 24배 많다는 것을 확인할 수 있었습니다. 
 
-![GA_ViewerPagingKeyEvent](/blog/img/2018-07-09/1.GA_ViewerPagingKeyEvent.png){:data-action="zoom"}
+![GA_ViewerPagingKeyEvent](/blog/img/2018-07-25/1.GA_ViewerPagingKeyEvent.png){:data-action="zoom"}
 
 따라서 단순하게 **좌/우를 바꾸는 옵션**과 더불어 좌/우 터치 영역 **모두 다음 페이지로 이동**할 수 있는 옵션도 제공하기로 했습니다.
 
@@ -84,7 +84,7 @@ published: true
 
 ### 3. 최종 시안
 최종 확정된 5가지 옵션을 토대로 결정한 시안입니다.
-![기존_터치로 페이지 이동](/blog/img/2018-07-09/2.before.png){:data-action="zoom"}
+![기존_터치로 페이지 이동](/blog/img/2018-07-25/2.before.png){:data-action="zoom"}
 <figcaption>'터치로 페이지 이동'이라는 메뉴를 추가하고, 옵션을 이해하기 쉽도록 일러스트를 넣었습니다.
 </figcaption>
 
@@ -99,7 +99,7 @@ published: true
 
 테스트 중, 일본 만화책을 보는 사용자에게 좌/우로 페이지 넘기는 방향을 바꾸어서 사용해보길 요청했고, 다음과 같은 문제들을 발견할 수 있었습니다.
 
-![문제점](/blog/img/2018-07-09/3.problems.png){:data-action="zoom"}
+![문제점](/blog/img/2018-07-25/3.problems.png){:data-action="zoom"}
 
 
 이러한 문제들로 인해 다시 해당 기능을 개선하기로 했습니다.
@@ -108,7 +108,7 @@ published: true
 ## 2) 문제 해결 과정
 ### 1. 제공 옵션 줄이기
 한 번에 다섯 가지나 되는 옵션을 제공하다 보니 원하는 옵션을 바로 고르기가 어려웠습니다. 따라서 불필요한 옵션을 제거하여 최적의 선택지만을 남기기로 했습니다.
-![GA_PageMoveMode_LTR&RTL](/blog/img/2018-07-09/4.GA_PageMoveMode_LTR&RTL.png){:data-action="zoom"}
+![GA_PageMoveMode_LTR&RTL](/blog/img/2018-07-25/4.GA_PageMoveMode_LTR&RTL.png){:data-action="zoom"}
 
 Android, iOS 각 플랫폼별로 수집된 데이터에 따르면, 대부분 옵션을 바꾸지 않고 기본 설정을 그대로 사용하고 있었습니다. 잘 쓰지 않을 것이라 예상했던 **위: 이전/ 아래: 다음** 옵션은 예상 보다 많이 쓰이고 있었고, **위:다음 / 아래:이전** 옵션은 예상 보다 쓰이지 않았습니다. 사용률이 적은 옵션을 선택지에 계속 남겨두는 것은 사용자에게 불필요한 고민을 줄 수도 있다고 생각했습니다. 따라서 해당 옵션을 과감히 없애기로 했습니다.
 
@@ -121,7 +121,7 @@ Android, iOS 각 플랫폼별로 수집된 데이터에 따르면, 대부분 옵
 설정을 적용했을 때 결과를 쉽게 예측할 수 있도록 더 친절하고 정확한 일러스트가 필요했습니다.
 
 기존의 일러스트는 한 줄에 여러 개를 보여주고 페이지 넘김 방향을 표시하는 화살표의 크기도 작아서 한눈에 인지하기 어려웠습니다. 이에 일러스트의 크기를 키우고 이전/다음 화살표의 방향을 보다 크게 표시해주었습니다. 그리고 다음과 같은 두 가지 방식으로 문제를 해결해 보고자 했습니다.
-![개선_좌우 터치 영역 AB](/blog/img/2018-07-09/5.after_AB.png){:data-action="zoom"}
+![개선_좌우 터치 영역 AB](/blog/img/2018-07-25/5.after_AB.png){:data-action="zoom"}
 <!-- <figcaption>A.옵션을 선택하면서 기능을 익힐 수 있는 방법 / B.크고 직관적인 일러스트 버튼 방법</figcaption> -->
 
  - `A`: '왼쪽을 터치했을 때', '오른쪽을 터치했을 때'로 영역을 구분해 직접 조작하며 기능을 익힌다는 느낌을 줄 수 있습니다. 
@@ -136,7 +136,7 @@ Android, iOS 각 플랫폼별로 수집된 데이터에 따르면, 대부분 옵
 
 ### 5. 최종 개선된 시안
 최종적으로 개선된 방법은 아래와 같습니다.
-![개선_최종](/blog/img/2018-07-09/touch.gif){:data-action="zoom"}
+![개선_최종](/blog/img/2018-07-25/touch.gif){:data-action="zoom"}
 
 1) 책을 보다 **'뷰어 설정'**을 들어갑니다. <br>
 2) 맨 위 **'좌/우 터치 영역'** 메뉴를 누른 후, 원하는 옵션을 선택합니다. <br>
