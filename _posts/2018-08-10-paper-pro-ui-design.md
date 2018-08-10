@@ -2,14 +2,14 @@
 layout: blog_post
 title: "리디북스 PAPER PRO UI 디자인하기"
 description: "리디북스 전자 잉크 리더기의 UI 디자인 과정을 공유합니다."
-header-img: "blog/img/2018-07-25/header.jpg"
-date: 2018-07-25
+header-img: "blog/img/2018-08-10/header.jpg"
+date: 2018-08-10
 author: "jihyeleee"
 category: design
 published: true
 ---
 
-![PAPER PRO의 등장](/blog/img/2018-07-25/1-paper-pro.jpg){:data-action="zoom"}
+![PAPER PRO의 등장](/blog/img/2018-08-10/1-paper-pro.jpg){:data-action="zoom"}
 
 # PAPER PRO의 등장
 
@@ -29,11 +29,11 @@ published: true
 
 ### 회전 아이콘 버튼 디자인하기
 
-![회전 아이콘 버튼 디자인하기](/blog/img/2018-07-25/2-rotation-btn-design.jpg){:data-action="zoom"}
+![회전 아이콘 버튼 디자인하기](/blog/img/2018-08-10/2-rotation-btn-design.jpg){:data-action="zoom"}
 
 회전 아이콘 버튼을 만든다고 생각하면 간단하게 디바이스 또는 화면을 나타내는 직사각형에 회전하는 방향을 향하는 화살표 하나를 추가하면 끝이라고 생각할 수 있습니다. 잠깐, 여기서 화살표는 기기가 돌아가는 방향을 나타내는 걸까요, 아니면 화면이 돌아가는 방향을 나타내는 걸까요? 물론 아시겠지만 기기가 돌아가는 방향과 화면이 돌아가는 방향은 반대입니다.
 
-![기기가 회전하는 방향, 화면이 회전하는 방향](/blog/img/2018-07-25/3-rotation.gif){:data-action="zoom"}
+![기기가 회전하는 방향, 화면이 회전하는 방향](/blog/img/2018-08-10/3-rotation.gif){:data-action="zoom"}
 
 <figcaption>기기가 회전하는 방향과 화면이 돌아가는 방향은 반대입니다.</figcaption>
 
@@ -49,7 +49,7 @@ published: true
 
 한 손으로 책을 읽기 위해 씽크빅을 발휘한 고객님도 있었습니다. 방법은 다음과 같습니다. 왼쪽 버튼을 다음 페이지로, 오른쪽 버튼을 이전 페이지로 이동하도록 설정합니다. 그리고 왼손으로 기기를 들고 버튼을 누르며 다음 페이지로 넘기며 읽습니다. 그러다가 이전 페이지로 이동할 때만 화면의 왼쪽을 터치합니다.
 
-![씽크빅을 발휘하신 고객님의 페이지 넘김 버튼 설정](/blog/img/2018-07-25/4-thinkbig.jpg){:data-action="zoom"}
+![씽크빅을 발휘하신 고객님의 페이지 넘김 버튼 설정](/blog/img/2018-08-10/4-thinkbig.jpg){:data-action="zoom"}
 
 <figcaption>왼쪽 버튼을 다음 페이지로, 오른쪽 버튼을 이전 페이지로 이동하도록 설정한 뒤, 왼손으로 기기를 들고 버튼을 누르며 읽다가 이전 페이지로 이동할 때는 터치를 사용하는 참신한 방법을 고안해내신 고객님도 계셨습니다.</figcaption>
 
@@ -57,11 +57,11 @@ published: true
 
 이전 모델에서는 페이지 넘김 버튼 설정에 '이전 / 다음', '다음 / 이전', '다음 / 다음' 이렇게 세 가지 선택지만 제공했습니다. 하지만 버튼이 4개로 늘어남에 따라서 제안할 수 있는 옵션의 경우의 수가 훨씬 많아졌습니다. 하지만 고민 끝에 최적의 옵션 2가지만 제안하기로 했습니다.
 
-![처음에 고민했던 옵션](/blog/img/2018-07-25/6-before.jpg){:data-action="zoom"}
+![처음에 고민했던 옵션](/blog/img/2018-08-10/6-before.jpg){:data-action="zoom"}
 
 <figcaption>처음에 고민했던 모든 옵션 </figcaption>
 
-![최종으로 선택된 옵션 2가지](/blog/img/2018-07-25/7-after.jpg){:data-action="zoom"}
+![최종으로 선택된 옵션 2가지](/blog/img/2018-08-10/7-after.jpg){:data-action="zoom"}
 
 <figcaption>최종으로 선택된 옵션 2가지</figcaption>
 
@@ -78,17 +78,17 @@ published: true
 더불어 최적의 옵션만 제공하게 됨에 따라 이 두 가지 방향을 쉽게 전환할 수 있는 '넘김 버튼 전환' 기능도 함께 추가하였습니다. 방향을 빠르게 전환할 수 있을 뿐 아니라 현재 페이지 넘김 버튼의 방향도 알 수 있게 아이콘에 아주 간단하게 표시했습니다.
 
 이 버튼이 추가되기 전까지는 많은 단계를 거쳐야 페이지 넘김 버튼의 방향을 변경할 수 있었습니다. 하지만 어떤 자세로, 어떤 손으로 읽냐에 따라서 페이지 넘김 버튼을 누르는 손가락이 닿기 편한 위치가 달라지기 때문에 빠르게 변경하는 기능이 필요했습니다.
-![PAPER PRO의 등장](/blog/img/2018-07-25/8-page-turn-switching.jpg){:data-action="zoom"}
+![PAPER PRO의 등장](/blog/img/2018-08-10/8-page-turn-switching.jpg){:data-action="zoom"}
 
 예를 들면, 위의 그림처럼 왼쪽 면을 보고 눕고 PAPER PRO를 벽에 기대어 가로모드로 보는 경우, 왼쪽 페이지 넘김 버튼의 방향이 다음 페이지로 할당되는 게 사용하기 편합니다. 이때 책 읽기 화면과 가까운 위치에 있는 넘김 버튼 전환 기능으로 방향을 쉽게 전환할 수 있습니다.
 
 # 퀵 버튼과 퀵 런처
 
-![퀵 버튼](/blog/img/2018-07-25/9-quick-btn-quick-launcher.jpg){:data-action="zoom"}
+![퀵 버튼](/blog/img/2018-08-10/9-quick-btn-quick-launcher.jpg){:data-action="zoom"}
 
 이전 모델과 다르게 PAPER PRO에는 전원 버튼, 페이지 넘김 버튼 외에 하나의 버튼이 더 있습니다. 버튼의 이름은 ‘퀵 버튼'으로 오른쪽 측면에 위치합니다. 퀵 버튼을 누르면 버튼에 할당된 기능이 실행되고 퀵 버튼을 길게 누르면 ‘퀵 런처'라는 콘텍스트 메뉴가 뜹니다. 퀵 런처에서는 할당된 기능을 변경할 수도 있습니다. 또 빠르게 사용할 수 있는 액션도 모아져 있고 이를 ’퀵 액션’이라고 부릅니다.
 
-![퀵 버튼](/blog/img/2018-07-25/9-quick-actions-dropdown.jpg){:data-action="zoom"}
+![퀵 버튼](/blog/img/2018-08-10/9-quick-actions-dropdown.jpg){:data-action="zoom"}
 
 <figcaption>퀵 런처 안의 퀵 액션에 접근할 수 있고 퀵 버튼에 자주 쓰는 기능을 설정할 수 있습니다.</figcaption>
 
@@ -104,19 +104,19 @@ published: true
 
 퀵 런처는 퀵 버튼을 길게 누르면 어디서든 접근할 수 있습니다. 그래서 퀵 버튼에 할당된 기능을 변경하게 하는 것뿐 아니라, '퀵 액션'을 추가하여 여러 기능을 어디서든 빠르게 사용할 수 있도록 했습니다.
 
-![퀵 런처](/blog/img/2018-07-25/9-quick-launcher.jpg){:data-action="zoom"}
+![퀵 런처](/blog/img/2018-08-10/9-quick-launcher.jpg){:data-action="zoom"}
 
 <figcaption>퀵 버튼을 길게 누르면 어디서든 퀵 런처를 접근할 수 있습니다.</figcaption>
 
 # 색 온도
 
-![PAPER PRO의 등장](/blog/img/2018-07-25/10-color-temperature-1.jpg){:data-action="zoom"}
+![PAPER PRO의 등장](/blog/img/2018-08-10/10-color-temperature-1.jpg){:data-action="zoom"}
 
 PAPER PRO에서는 프론트라이트의 밝기와 더불어 색 온도를 조절할 수 있습니다. 색 온도는 차가운 백색부터 황백색까지 화면의 색을 조절할 수 있는 기능입니다. 색 온도를 사용하면 특히 밤에 책을 읽을 때 도움이 됩니다. 황백색에 가까울수록 숙면을 방해하는 블루라이트가 줄어들기 때문입니다.
 
 ## 색 온도 조절 제스처
 
-![PAPER PRO의 등장](/blog/img/2018-07-25/10-color-temperature-2.jpg){:data-action="zoom"}
+![PAPER PRO의 등장](/blog/img/2018-08-10/10-color-temperature-2.jpg){:data-action="zoom"}
 
 색 온도 조절 기능 추가 시 고민했던 부분은 바로 제스처입니다. 이전 모델뿐 아니라 리디북스 모바일 앱에서도 화면에 손을 얹고 위아래로 밀어서 밝기를 조절하는 기능은 리디북스 아이덴티티의 하나로 자리 잡았습니다. 이렇게 밝기 조절 사용법이 꽤 명확한 상태에서 색 온도 조절 제스처는 어떤 방식으로 추가할지 고민했습니다.
 
@@ -132,7 +132,7 @@ PAPER PRO에서는 프론트라이트의 밝기와 더불어 색 온도를 조�
 
 # PAPER PRO 사용법 배워보기
 
-![PAPER PRO 사용법 배워보기!](/blog/img/2018-07-25/11-tutorial.jpg)
+![PAPER PRO 사용법 배워보기!](/blog/img/2018-08-10/11-tutorial.jpg)
 
 튜토리얼은 온보딩에 속하는 한 가지 방법이라 볼 수 있습니다. 구글 머티리얼 디자인 가이드라인 (Google Material Design Guideline)에서 온보딩을 다음과 같이 정의하고 있습니다.
 
@@ -154,7 +154,7 @@ PAPER PRO를 처음 사용하는 사용자를 우선으로 한다면 배워야 �
 
 # UI 일러스트레이션 (UI illustration)
 
-![웰컴 화면](/blog/img/2018-07-25/12-paper-ui-illustration-1.jpg)
+![웰컴 화면](/blog/img/2018-08-10/12-paper-ui-illustration-1.jpg)
 
 사실 일러스트레이션은 PAPER PRO UI 디자인의 아주 작은 부분을 차지합니다. 하지만 처음 사용자가 PAPER PRO를 켜고 만나는 화면에 필요한 일러스트레이션이라면 얘기가 조금 달라집니다. 바로 웰컴 화면입니다.
 
@@ -171,13 +171,13 @@ PAPER PRO는 하드웨어를 봤을 때 이전 기기보다 업그레이드된 �
 
 ## PAPER PRO와 어울리는 UI 일러스트레이션
 
-![축하합니다!](/blog/img/2018-07-25/12-paper-ui-illustration-2.jpg)
+![축하합니다!](/blog/img/2018-08-10/12-paper-ui-illustration-2.jpg)
 
 온보딩에 쓰인 모든 일러스트레이션에 차분하고 우아한 느낌을 주기 위해 곡선 요소를 가미했습니다. 캐릭터보다는 풍경, 식물, 사물 등을 사용하여 중립적인 느낌을, 귀여운 느낌의 라인보다는 무게감을 줄 수 있는 면으로 구성했습니다. 흑백 디스플레이에서 다양한 요소를 면으로만 명확히 구분되도록 흑백 컬러 테스트도 많이 진행했습니다.
 
 웰컴 화면 일러스트레이션 스타일을 변경하면서 일러스트레이션이 쓰인 다른 온보딩 화면들에도 같은 스타일을 적용했습니다. 하지만 색 온도를 설명하는 일러스트레이션에만 다른 스타일을 사용했습니다. 라인에 캐릭터 요소가 가미된 귀여운 스타일로 스타일이 다릅니다.
 
-![색 온도를 잘 설명해주는 귀여운 캐릭터입니다.](/blog/img/2018-07-25/13-color-temperature-character.jpg)
+![색 온도를 잘 설명해주는 귀여운 캐릭터입니다.](/blog/img/2018-08-10/13-color-temperature-character.jpg)
 
 <figcaption>색 온도 설명하는 페이지. 이 페이지에 쓰인 일러스트레이션 스타일만 조금 다릅니다.</figcaption>
 
@@ -191,4 +191,4 @@ PAPER PRO 이전 모델은 부분적으로 개선하는 일이 주였습니다. 
 
 앞으로도 PAPER PRO를 계속 사랑해주시기를 바라며, 이 글을 마치도록 하겠습니다. 읽어주셔서 감사합니다.
 
-[^1]: [색 온도 설명 캐릭터 슬립화면 다운로드](https://www.dropbox.com/s/znu66iw4u14be9i/sleeping.png?dl=0)
+[^1]: [색 온도 설명 캐릭터 슬립화면 다운로드](https://www.dropbox.com/s/znu66iw4u14be9i/sleeping.png?dl=0){:target="_blank"}
