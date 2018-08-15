@@ -43,7 +43,7 @@ published: true
 대부분의 IDE에는 `Toggle auto-test`같은 옵션이 있습니다. 이는 코드가 변경되면 자동으로 테스트를 실행시켜줍니다.
 이처럼 IDE가 도와준다면 코드를 리팩토링하고 단위 테스트가 잘 돌아가고 있다는 걸 빠르게 확인해 자신감을 상승시킬 수 있습니다.
 ![https://www.jetbrains.com/help/phpstorm/enabling-php-unit-support.html](/blog/img/2018-08-09/ps-test-result.png)
-[https://www.jetbrains.com/help/phpstorm/enabling-php-unit-support.html](https://www.jetbrains.com/help/phpstorm/enabling-php-unit-support.html)
+<figcaption><a href="https://www.jetbrains.com/help/phpstorm/enabling-php-unit-support.html">https://www.jetbrains.com/help/phpstorm/enabling-php-unit-support.html</a></figcaption>
 
 마치 코드를 한 줄 수정했을 때 녹색 막대가 생기면 멘토가 고개를 끄떡 끄덕이며 `오케이`라고 이야기하는 것 같아 기분이 좋습니다. 한번 기분이 좋아지면, 이런 느낌을 더 강하게 얻기 위해 단위 테스트가 물 샐 틈 없이 코드 이곳저곳을 커버하고 다양한 방향으로 테스트 코드를 작성합니다.
 
@@ -68,7 +68,7 @@ CI로만 테스트하려고 레파지터리에 저장한 후 테스트 결과를
 
 테스트 더블이란 용어가 있습니다. 아래 그림을 보세요.
 ![Sketch Types Of Test Doubles embedded from Types Of Test Doubles.gif](/blog/img/2018-08-09/Types-Of-Test-Doubles.gif)
-[http://xunitpatterns.com/Test Double.html](http://xunitpatterns.com/Test%20Double.html)
+<figcaption><a href="http://xunitpatterns.com/Test%20Double.html">http://xunitpatterns.com/Test Double.html</a></figcaption>
 
 유래는 위험한 일을 하는 대역 배우를 일컫는 [스턴트 더블](https://en.wikipedia.org/wiki/Stunt_double)에서 왔다고 하니 설명하지 않아도 직관적인 의미를 알 수 있을 것입니다.
 단위 테스트를 작성하는데 대역 배우는 왜 필요할까요? 누구를 대신 할까요?
