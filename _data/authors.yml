@@ -1,108 +1,90 @@
 kering:
   name: Seonkuk Kim
-  email: kering@ridi.com
   gravatar: bd28c8bb476c237b2e3eb90a82f78a9f
   profile-text: "리디북스 뷰어 개발을 맡고 있습니다.<br>플랫폼에 관계없는 최상의 독서 경험을 추구합니다."
 
 namenu:
   name: Hyunwoo Nam
-  email: hw.nam@ridi.com
   gravatar: ce77b5f0d1d4fb9f6eb34af856c1ae46
   profile-text: "리디북스의 개발자와 디자이너들이 즐겁고<br>효율적으로 일하는 방법을 고민하고 있습니다.😎"
 
 blu:
   name: Ju-hyun Park
-  email: blu@ridi.com
   gravatar: 619a9a2e04269c4352188cfd53513c3e
   profile-text: "개발을 통해 출판사와의 효율적이면서 긍정적인 방법을 찾고 있습니다."
 
 chanu.lee:
   name: Chanu Lee
-  email: chanu.lee@ridi.com
   gravatar: db042aed00e9d0268bfd720988bda4d4
   profile-text: "리디북스의 데이터 수집, 분석, 마이닝 등<br>데이터와 관련된 다양한 일을 합니다."
 
 hc.kim:
   name: HyunChul Kim
-  email: hc.kim@ridi.com
   gravatar: b2a4e78d73cfe3724dac0a947d04c3ac
   profile-text: "리디북스 서점 개발을 맡고 있습니다.<br>보다 쉽고 빠르고 편하게 책을 구매할 수 있는 서점을 만들고 있습니다."
 
 jsung:
   name: Jungkyung Sung
-  email: jsung@ridi.com
   gravatar: 272d408755e22c910fc54b0f9165276b
   profile-text: "리디북스 서점의 쉽고 편한 구매 경험을 디자인하는 일을 맡고 있습니다."
 
 jihyeleee:
   name: Jihye Lee
-  email: jihye.lee@ridi.com
   gravatar: 052658fb507b8389d7ecb943e80bf741
   profile-text: "다양한 플랫폼의 리디북스 앱을 디자인합니다.<br>최고의 독서 경험을 만듭니다."
 
 mg.kim:
   name: Mungyu Kim
-  email: mg.kim@ridi.com
   gravatar: 97367c5eb3af540f45f50eb4d0178734
   profile-text: "페이퍼와 PC 뷰어 UI 디자인을 맡고 있습니다. <br>다양한 플랫폼에서 편리한 독서 경험을<br>느낄 수 있도록 노력하고 있습니다."
 
 sooyoung:
   name: Sooyoung Ahn
-  email: sooyoung.ahn@ridi.com
   gravatar: 8f0de2fab065f2926e497a5ba5b5b72f
   profile-text: "리디북스에서 콘텐츠디자인을 담당하고 있습니다. 콘텐츠를 이해하기 쉽고 예쁘게 포장하는 일을 합니다."
 
 yoonjin:
   name: Yoonjin Cho
-  email: yj.cho@ridi.com
   gravatar: f6b9072405f0c11c34d83c19c3ca22b0
   profile-text: "리디북스의 좋은 콘텐츠가 더 많은 분들을 만날 수 있도록 노력하겠습니다."
 
 antiline:
   name: Junhyung Park
-  email: jh.park@ridi.com
   gravatar: ff28ebf4d2cc9ada1a84694322ec59ad
   profile-text: "책읽는 즐거움을 전파하기 위해 노력하고 있습니다."
 
 simple:
   name: Jaemin Bae
-  email: simple@ridi.com
   gravatar: a4fd3ccc716ab33301eca22b9bd98e14
   profile-text: "리디의 디자이너들이 더 만족하면서 일할 수 있도록, 더 잘하도록 돕고 있습니다."
 
 yeonju.kim:
   name: Yeonju Kim
-  email: yeondu@ridi.com
   gravatar: d14709293e01dc91d023981798b82f6e
   profile-text: "리디북스에서 콘텐츠 디자인을 담당하고 있습니다. 신뢰 가득한 디자인을 위해 노력합니다."
 
 kgwangrae:
   name: Gwangrae Kim
-  email: k.gwangrae@ridi.com
   gravatar: fe71d0475ad57bdc7a56a3b5141dff9c
   profile-text: "더 좋은 뷰어를 만들기 위해 노력하고 있습니다."
 
 jeehoon.yoo:
   name: Jeehoon Yoo
-  email: jeehoon.yoo@ridi.com
   gravatar: 662421af02d901d0eab06374c45d2dd2
   profile-text: "리디북스에서 데이터 분석과 마이닝에 관련된 일을 합니다."
 
 leejy:
   name: Jaeyong Lee
-  email: leejy@ridi.com
   gravatar: 64b58eff79998185ed72a8a807aca71b
   profile-text: "리디스토리 서비스를 만들고 있습니다."
 
 gilwon.oh:
   name: Gilwon Oh
-  email: kobi97@ridi.com
   gravatar: 66435fd3adadf3dd8b61b0d4ac84cb44
   profile-text: "리디북스에서 안정적인 플랫폼을 만드는데 노력하고 있습니다."
 
 kyungmi.k:
   name: Kyungmi Koong
-  email: kyungmi.k@ridi.com
   gravatar: bd5c0403f65ae4ce0db5b2290d5cf8fc
   profile-text: "뷰어팀에서 웹 서버와 프론트엔드를 담당합니다. 고객과 동료 개발자들에게 최선의 서비스를 하기 위해 노력하고 있습니다."
 
@@ -124,7 +106,6 @@ kt.kang:
 namk:
   name: Namkyung Oh
   gravatar: 0211b420a9c21d2c9e7c088d9372a028
-  email: namk@ridi.com
 
 davin.ahn:
   name: Davin Ahn
@@ -144,17 +125,14 @@ devgrapher:
 ayon.c:
   name: Ayon Choi
   gravatar: dba6cbadd91e4f97a3efe41d5719e19c
-  email: ayon.c@ridi.com
 
 junglekim:
   name: Jeonggeun Kim
-  email: snorlax@ridi.com
   gravatar: c0785618da899857ebb359b1ff3d3f7f
   profile-text: "링크... 키오츠케테..."
 
 sunha.kim:
   name: Sunha Kim
-  email: stacy.kim@ridi.com
   gravatar: c797ab8580677fbe1ecc929576151d46
   profile-text: "언제 어디서나 편리하게 독서를 즐길 수 있도록 </br> 더 나은 UI를 고민합니다."
 
@@ -163,13 +141,11 @@ design-spectrum:
 
 minq:
   name: Mingyu Park
-  email: minq@ridi.com
   gravatar: a449fba57b8af98faf9023a951e0ec10
   profile-text: "재미를 추구하지만<br>재미없는 놈입니다."
 
 inyoung.aum:
   name: Inyoung Aum
-  email: inyoung.aum@ridi.com
 
 hyeonseok.kim:
-  name: Hyunweok Kim
+  name: Hyeonseok Kim
