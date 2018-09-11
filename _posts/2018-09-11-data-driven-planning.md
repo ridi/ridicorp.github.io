@@ -3,7 +3,7 @@ layout: blog_post
 title: "데이터 기반 기획하기"
 description: "데이터 기반 기획을 위한 분석툴과 진행 사례를 공유합니다."
 header-img: "blog/img/bg-5.jpg"
-date: 2018-08-07
+date: 2018-09-11
 author: "hyeonseok.kim"
 category: design
 published: true
@@ -25,7 +25,7 @@ published: true
 
 데이터 측정을 위한 다양한 분석툴이 있습니다. 리디북스는 그 중 대표적인 웹로그 분석툴인 Google Analytics(이하 "GA")를 사용합니다.
 
-![구글어날리틱스](/blog/img/2018-08-07/ga_logo_small.png){:data-action="zoom"}
+![구글애널리틱스](/blog/img/2018-09-11/ga_logo_small.png){:data-action="zoom"}
 
 GA는 아래와 같은 장점이 있습니다.
 
@@ -44,7 +44,7 @@ GA 활용법은 인터넷에 많이 검색되지만 GTM 활용법은 상대적�
 
 사용자는 어떤 메뉴를 더 많이 클릭할까요?
 
-![퀵메뉴](/blog/img/2018-08-07/fantasy_quick_menu.png){:data-action="zoom"}
+![퀵메뉴](/blog/img/2018-09-11/fantasy_quick_menu.png){:data-action="zoom"}
 
 예를 들어 MD가 운영을 위해 참고차 위 메뉴의 클릭 비중을 파악하고 싶어할 수 있습니다.
 GTM 없이 MD가 개발자에게 이벤트 로깅을 요청한다면 아래와 같은 대화가 전개될 수 있습니다.
@@ -64,17 +64,17 @@ GTM 없이 MD가 개발자에게 이벤트 로깅을 요청한다면 아래와 �
 ### 1. 트리거 만들기  
 먼저 메뉴의 각 링크가 클릭될때 이벤트가 발생하도록 트리거를 만듭니다.
 
-![트리거 생성](/blog/img/2018-08-07/gtm_trigger.png){:data-action="zoom"}
+![트리거 생성](/blog/img/2018-09-11/gtm_trigger.png){:data-action="zoom"}
 
 ### 2. 태그 만들기  
 그리고 해당 트리거 발생시 GA에 어떤 값의 이벤트로 남길지 태그를 생성합니다.
 
-![태그 생성](/blog/img/2018-08-07/gtm_tag.png){:data-action="zoom"}
+![태그 생성](/blog/img/2018-09-11/gtm_tag.png){:data-action="zoom"}
 
 ### 3. GA 이벤트수 확인  
 이렇게 태그를 만들고 적용하면 아래처럼 GA에서 바로 이벤트 로그를 확인할 수 있습니다.
 
-![GA 확인](/blog/img/2018-08-07/fantasy-serial_quick_menu_ga_kor.png){:data-action="zoom"}
+![GA 확인](/blog/img/2018-09-11/fantasy-serial_quick_menu_ga_kor.png){:data-action="zoom"}
 <figcaption>독자가 '좋아요' 표시한 작품만 모아보는 '선호작품'이 메뉴에서 70% 비중으로 가장 많은 클릭이 발생하네요</figcaption>
 
 ## GTM 사용 예시 #2
@@ -83,13 +83,13 @@ GTM 없이 MD가 개발자에게 이벤트 로깅을 요청한다면 아래와 �
 
 사용자가 동일한 목록으로 이동할 때 붉은 영역의 메뉴를 많이 클릭할까요? 아니면 파란 영역의 '전체보기'를 눌러 이동을 많이 할까요?
 
-![카테고리목록](/blog/img/2018-08-07/category_home_marked_small.png){:data-action="zoom"}
+![카테고리목록](/blog/img/2018-09-11/category_home_marked_small.png){:data-action="zoom"}
 
 사용자가 파란 영역의 ‘전체보기’를 많이 누른다면 홈화면에서 섹션을 보다가‘전체보기’를 눌러서 각 목록으로 이동하는 수가 많다고 추정할 수 있습니다.
 
 이벤트 로깅 결과를 GA에서 보니 사용자가 붉은 영역에서 각 메뉴로 이동하는 수 보다 홈 메뉴에서 섹션을 쭉 보면서 ‘전체보기’를 클릭하여 각 목록으로 이동하는 수가 약 4배 더 많습니다.
 
-![GA 확인](/blog/img/2018-08-07/ga_click_cnt.png){:data-action="zoom"}
+![GA 확인](/blog/img/2018-09-11/ga_click_cnt.png){:data-action="zoom"}
 
 사용자에게 새로운 컨텐츠의 노출을 확보하고 싶을 때 홈탭 화면에 구성해도 좋다고 판단할 수 있습니다.  
 
@@ -99,7 +99,7 @@ GTM 없이 MD가 개발자에게 이벤트 로깅을 요청한다면 아래와 �
 
 최근 리디북스 서점은 도서 추천을 강화하고 있습니다.  
 그 일환으로 올해 초, 서점 내 AI 도서 추천 섹션을 론칭했는데요. 
-![AI 도서 추천](/blog/img/2018-08-07/ai_section.png){:data-action="zoom"}
+![AI 도서 추천](/blog/img/2018-09-11/ai_section.png){:data-action="zoom"}
 
 <figcaption>사용자의 도서 구매, 조회 등 데이터를 기반으로 개인화된 도서를 추천합니다</figcaption>
 
@@ -114,7 +114,7 @@ GTM 없이 MD가 개발자에게 이벤트 로깅을 요청한다면 아래와 �
 
 이들 중 AI 추천이 효과적인 사용자 그룹은 누구일지 알아보기 위해 AI 추천과 유사한 로직으로 구성된 '이 책을 구매한 분들의 선택' 섹션이 어떤 독자층에게 효과적일지 보았습니다. 장르별로 구매가 발생하는 섹션에 점수를 매겨 순위를 살펴보니 아래와 같았습니다.
 
-![주요 섹션별 구매기여도](/blog/img/2018-08-07/genre_section_rank.png){:data-action="zoom"}
+![주요 섹션별 구매기여도](/blog/img/2018-09-11/genre_section_rank.png){:data-action="zoom"}
 
 동일한 디자인과 위치인데도 장르별로 알고리즘에 의한 구매 효과가 다르다는걸 알 수 있습니다. 알고리즘이 서로 다른 장르별 독자의 성향을 커버하지 못하기 때문인 것으로 보입니다. AI 추천도 먼저 일반과 만화 독자를 대상으로 시작하는게 좋을 것 같았습니다.
 
@@ -122,7 +122,7 @@ GTM 없이 MD가 개발자에게 이벤트 로깅을 요청한다면 아래와 �
 
 서점의 주요 구매 경로가 어디일지 살펴보았습니다.
 
-![서점의 주요 구매경로](/blog/img/2018-08-07/pv_purchase_rate.png){:data-action="zoom"}
+![서점의 주요 구매경로](/blog/img/2018-09-11/pv_purchase_rate.png){:data-action="zoom"}
 
 홈 화면, 도서 상세, 검색 결과, 카테고리 화면은 각 맥락에 맞게 사용자의 많은 접근 또는 구매를 일으키는 영역입니다. 가령 도서상세 화면은 높은 PV와 구매 비중을 차지하고 있어서 구매 경로에 매우 중요합니다. 이 화면에서는 사용자가 조회하고 있는 도서 기반의 추천을 잘 하는 것이 적합할 것 같습니다.
 
@@ -135,7 +135,7 @@ GTM 없이 MD가 개발자에게 이벤트 로깅을 요청한다면 아래와 �
 이제 도서 추천이 실제 어느 정도 효과가 있을지를 보여주는 KPI를 설정해야 합니다.  
 아래처럼 각 섹션별 효과 파악이 가능하도록 데이터 로깅을 준비했습니다.
 
-![KPI 설정](/blog/img/2018-08-07/kpi_table_small.png){:data-action="zoom"}
+![KPI 설정](/blog/img/2018-09-11/kpi_table_small.png){:data-action="zoom"}
 
 
 GA 데이터로 모두 파악 가능하지만 구매, 판매 같은 정확한 수치가 중요한 항목은 내부 서버 데이터로 확인할 수 있도록 준비했습니다.
@@ -146,10 +146,10 @@ GA 데이터로 모두 파악 가능하지만 구매, 판매 같은 정확한 �
 론칭 후 몇 달이 지나고 지표를 살펴보니 아래처럼 일반, 만화 독자에게서 주변 섹션 대비 큰 구매전환율을 보여주고 있습니다. 
 
 #### 일반도서 홈의 섹션별 KPI
-![일반도서 섹션별 KPI](/blog/img/2018-08-07/kpi_result_general.png){:data-action="zoom"}
+![일반도서 섹션별 KPI](/blog/img/2018-09-11/kpi_result_general.png){:data-action="zoom"}
 
 #### 만화장르 홈의 섹션별 KPI
-![만화장르 섹션별 KPI](/blog/img/2018-08-07/kpi_result_comic.png){:data-action="zoom"}
+![만화장르 섹션별 KPI](/blog/img/2018-09-11/kpi_result_comic.png){:data-action="zoom"}
 <figcaption>이상은 정확한 수치가 아닌, 임의로 대체된 수치입니다.</figcaption>
 
 <hr>
