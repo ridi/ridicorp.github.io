@@ -6,7 +6,7 @@ header-img: ""
 date: 2018-09-12
 author: "chanu.lee"
 category: engineering
-published: true
+published: false
 ---
 
 [Apache Spark](https://spark.apache.org/docs/latest/) 는 대용량 데이터의 범용 계산을 위한 분산처리 시스템입니다. 기존의 Hadoop Map-Reduce 에 비해 훨씬 빠르면서도 간편하게 복잡한 데이터 연산을 처리할 수 있습니다. 전 세계적으로도 많은 사용자층을 가지고 있으며, 2018년 8월 현재 2.3.1 버전까지 릴리즈되었을 정도로 유지보수도 꾸준히 이루어지고 있습니다. 이런 특성 때문에 리디 데이터팀에서도 베스트셀러, 개인화 추천, 각종 지표 집계 및 데이터 분석에 Spark 를 사용하고 있습니다.
@@ -212,7 +212,7 @@ val groupedRDD: RDD[(String, Iterable[Int])] = keyValuePairRDD
 
 Spark Web UI 를 보면 다음 화면과 같이 각 스테이지에 대한 상세한 태스크별 실행 내역이 나옵니다.
 
-![Spark 어플리케이션 히스토리](/blog/img/2018-09-12/spark-application-history.jpg)
+![Spark 어플리케이션 히스토리](/blog/img/2018-09-12/spark-application-history.png)
 
 스테이지를 구성하는 각각의 태스크 가 어느 익스큐터에서 실행되었는지, 그리고 얼마나 시간이 걸렸는지도 알 수 있고, 태스크 전반에 대한 실행시간 통계도 나옵니다. 특히 0, 25, 50, 75, 100 백분위수마다의 실행시간을 보여주기 때문에, 오래 걸리는 태스크와 적게 걸리는 태스크들이 어떻게 분포되어 있는지 파악하기가 쉽습니다.
 
@@ -244,11 +244,11 @@ Spark Web UI 를 보면 다음 화면과 같이 각 스테이지에 대한 상�
 
 #### 태스크별 실행시간 합계 비교
 
-![태스크별 실행시간 합계 비교](/blog/img/2018-09-12/task-duration-sum.jpg)
+![태스크별 실행시간 합계 비교](/blog/img/2018-09-12/task-duration-sum.png)
 
 #### 태스크별 실행시간 최댓값 비교
 
-![태스크별 실행시간 최댓값 비교](/blog/img/2018-09-12/task-duration-max.jpg)
+![태스크별 실행시간 최댓값 비교](/blog/img/2018-09-12/task-duration-max.png)
 
 # 실험 결과 분석
 
