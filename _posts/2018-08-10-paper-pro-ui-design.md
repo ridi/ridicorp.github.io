@@ -5,7 +5,7 @@ description: "리디북스 전자 잉크 리더기의 UI 디자인 과정을 공
 header-img: "blog/img/2018-08-10/header.jpg"
 date: 2018-08-10
 author: "jihyeleee"
-category: design
+category: ux/ui
 published: true
 ---
 

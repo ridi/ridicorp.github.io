@@ -5,7 +5,7 @@ description: "터치 제스처의 문제점과 개선 과정을 공유합니다.
 header-img: "blog/img/2018-07-25/header.jpg"
 date: 2018-07-25
 author: "sunha.kim"
-category: design
+category: ux/ui
 published: true
 ---
 

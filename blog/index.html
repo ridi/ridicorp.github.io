@@ -19,7 +19,7 @@ root_class: "posts blog page"
     <li>
       <a href="{{ post.url }}" class="list-item">
         <div class="post-content">
-          <div class="type type-{{ post.category }}">{{ post.category }}</div>
+          <div class="type type-{{ post.category | remove:'/' }}">{{ post.category }}</div>
           <div class="title">{{ post.title }}</div>
           <div class="desc">{{ post.description }}</div>
         </div>

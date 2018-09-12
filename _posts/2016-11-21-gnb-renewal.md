@@ -5,7 +5,7 @@ description: "네비게이션 디자인 과정과 작업 후기"
 header-img: "blog/img/bg-2-new.jpg"
 date: 2016-11-21
 author: jsung
-category: design
+category: ux/ui
 published: true
 ---
 

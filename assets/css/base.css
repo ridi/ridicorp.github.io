@@ -2014,10 +2014,13 @@ html.page.blog.posts .blog-post-list li .list-item .type {
   margin: 5px 0 10px 0;
 }
 html.page.blog.posts .blog-post-list li .list-item .type.type-design {
-  color: #00a259;
+  color: #ed6d5e;
+}
+html.page.blog.posts .blog-post-list li .list-item .type.type-uxui {
+  color: #469e03;
 }
 html.page.blog.posts .blog-post-list li .list-item .type.type-engineering {
-  color: #284f8c;
+  color: #1f8ce6;
 }
 html.page.blog.posts .blog-post-list li .list-item .title {
   display: block;

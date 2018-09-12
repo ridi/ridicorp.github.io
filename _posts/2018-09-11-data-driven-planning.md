@@ -5,7 +5,7 @@ description: "데이터 기반 기획을 위한 분석툴과 진행 사례를 �
 header-img: "blog/img/bg-5.jpg"
 date: 2018-09-11
 author: "hyeonseok.kim"
-category: design
+category: ux/ui
 published: true
 ---
 
