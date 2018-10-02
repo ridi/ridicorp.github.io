@@ -136,21 +136,23 @@ val groupedRDD2: RDD[(String, Iterable[Int])] = keyValuePairRDD
 그렇게 하기 전에 몇 가지 짚고 넘어가야 할 것이 있습니다.
 
 # groupByKey 소스코드 파헤치기
-우선, `Array`는 불변(immutable) 콜렉션이라는 것에 주목해 봅시다. 불변 콜렉션끼리의 연결 연산은 우리가 얼핏 생각하는 것보다 훨씬 비효율적입니다. 길이 `m` 짜리 `Array`와 길이 `n` 짜리 `Array`를 연결한다고 하면, 원래의 두 객체는 그대로 두고 새로운 객체를 만들어서 원소들을 각각 복사해 줘야 합니다. 따라서 연결 연산의 시간복잡도는 `O(1)`이 아니라 `O(m+n)`입니다. 그렇기 때문에, 길이 1짜리 `Array`를 `n`개 연결해서 길이 `n` 짜리 `Array`를 만드는 작업의 시간복잡도는 `O(n)`이 아니라 `O(n * log n )`이 됩니다.
+우선, `Array`의 연결 연산의 효율성에 대해 주목해 봅시다. `Array` 는 가변(mutable) 콜렉션이지만, 연결(`++`) 연산을 수행할 때는 마치 `List`와 같은 불변(immutable) 콜렉션들처럼 작동합니다. 즉, 길이 `m` 짜리 `Array`와 길이 `n` 짜리 `Array`를 연결한다고 하면, 원래의 두 객체는 그대로 두고 새로운 `Array` 객체를 만들어서 원소들을 각각 복사해 주는 식으로 작동합니다. 따라서 연결 연산의 시간복잡도는 `O(1)`이 아니라 `O(m+n)`입니다. 그렇기 때문에, 길이 1짜리 `Array`를 `n`개 연결해서 길이 `n` 짜리 `Array`를 만드는 작업의 시간복잡도는 `O(n)`이 아니라 `O(n * log n )`이 됩니다. 
 
-그러면 가변 콜렉션인 `ArrayBuffer`를 사용하면 되지 않을까요? 그 전에 [groupByKey 의 소스코드](https://github.com/apache/spark/blob/v2.3.1/core/src/main/scala/org/apache/spark/rdd/PairRDDFunctions.scala#L498)를 한번 들여다 봅시다. `groupByKey`의 메소드 구현을 정리해 보면 다음과 같습니다.
+이는 `++=` 연산을 제공하지 않고 `++` 연산만 제공하는 모든 콜렉션에 대해서 마찬가지입니다. `++=` 연산은 `++` 와는 달리, 기존 콜렉션에 다른 콜렉션의 원소들을 붙여서 업데이트하는 식으로 동작하므로 약간 더 효율적입니다. `Array`를 제외한 대부분의 가변 콜렉션은 `++=` 연산을 제공합니다. 그러면 `Array` 대신에 `ArrayBuffer`처럼 `++=` 연산을 제공하는 콜렉션을 사용하면 되지 않을까요?
+
+하지만 그 전에 [groupByKey 의 소스코드](https://github.com/apache/spark/blob/v2.3.1/core/src/main/scala/org/apache/spark/rdd/PairRDDFunctions.scala#L498)를 한번 들여다 봅시다. `groupByKey`의 메소드 구현을 정리해 보면 다음과 같습니다.
 
 1. `(K, V)`의 RDD 에서 각 `V`로부터 길이 1짜리 `CompactBuffer`를 생성해서, `(K, CompactBuffer[V])`의 RDD 로 변환한다.
 1. `(K, CompactBuffer[V])`의 RDD에 `CompactBuffer`끼리의 연결(`++=`) 연산, 또는 `CompactBuffer`에 원소를 추가(`+=`) 하는 연산을 적용해 `combineByKeyWithClassTag`를 실행한다. 단, map-side combine은 사용하지 않는다.
 
-`reduceByKey` 대신에 `combineByKeyWithClassTag`를 사용하기는 하지만, 우리가 위에서 `Array`와 `reduceByKey`를 사용해 작성했던 코드와 거의 유사합니다. (`reduceByKey`도 사실 내부적으로 `combineByKeyWithClassTag`를 사용합니다.) 게다가 `CompactBuffer` 자체가 `ArrayBuffer`와 비슷한 가변 콜렉션입니다. 
+`reduceByKey` 대신에 `combineByKeyWithClassTag`를 사용하기는 하지만, 우리가 위에서 `Array`와 `reduceByKey`를 사용해 작성했던 코드와 거의 유사합니다. (`reduceByKey`도 사실 내부적으로 `combineByKeyWithClassTag`를 사용합니다.) 게다가 `CompactBuffer` 자체가 `ArrayBuffer`와 비슷하게 `++=` 연산을 제공하는 가변 콜렉션입니다. 
 
 이번에는 [`CompactBuffer` 의 소스코드](https://github.com/apache/spark/blob/v2.3.1/core/src/main/scala/org/apache/spark/util/collection/CompactBuffer.scala)를 들여다 봅시다. 주석에 언급된 바로는, `CompactBuffer`는 `ArrayBuffer`에 비해 오버헤드를 줄이도록 설계되었다고 합니다. 원소가 2개 이하일 때는 내부 배열을 아예 사용하지 않고, 직접 객체의 필드에 저장하는 방식입니다. 이를 고려했을 때 적어도 `ArrayBuffer`보다는 높은 성능을 낼 것으로 보입니다.
 
 그러면 `ArrayBuffer`와 `reduceByKey`를 사용해 봤자 이미 `groupByKey`가 그보다 효율적으로 설계되었으므로 소용없는 일이 아닐까요? 꼭 그렇지만은 않을 것 같습니다. 두 가지 면에서 그렇습니다.
 
 1. `groupByKey`는 map-side combine을 사용하지 않도록 설계되었습니다. `groupByKey`의 소스코드 주석에 따르면, `groupByKey`의 경우는 map-side combine을 해봤자 셔플로 넘어가는 데이터의 크기는 그대로이기 때문에, 오히려 더 비효율적이라는 이유로 map-side combine을 비활성화했습니다. 그러나 과연 정말로 이 때문에 map-side combine을 포기하는 것이 좋은지는 의문입니다. `(K, V)`를 `(K, CompactBuffer[V])`로 만든다고 했을 때, 셔플을 통해 넘어가는 `V`의 개수는 map-side combine 을 한다고 해도 그대로인 것이 맞습니다. 그러나 `K`의 개수는 명백히 줄어듭니다. 간단히 말해서, 네트워크를 타고 `(Int, Long)`이 100개 넘어가는 것과 `(Int, 100개짜리 CompactBuffer[Long])`이 1개 넘어가는 것은, 아무리 생각해도 후자가 효율적입니다. 이로 인한 이득이 주석에서 이야기한 "해시테이블에 데이터를 집어넣는 비용" 과 비교했을 때 어떤 것이 더 큰지는 직접 실험해 봐야 알 수 있을 것입니다.
-1. `CompactBuffer`의 연결(`++=`) 연산 또한 `O(1)`이 아닙니다. 길이 `m` 짜리 `CompactBuffer`에 길이 `n` 짜리 `CompactBuffer`를 연결할 때, 길이 `n`짜리의 원소 전체가 길이 `m` 짜리 `CompactBuffer`로 복사됩니다. 복사하는 과정은 당연히 `O(n)`의 시간이 걸립니다. 이 과정이 `System.arraycopy` 호출을 통해 효율적으로 실행되기는 하지만, 길이가 아주 긴 콜렉션의 경우 그에 비례해서 시간이 늘어나는 것은 마찬가지입니다. 우리가 상식적으로 생각했을 때, 원본 콜렉션 두 개를 모두 유지할 필요가 없는 상황에서는, 콜렉션끼리 연결하는 연산은 `O(1)` 이면 충분합니다. 스칼라에서는 `UnrolledBuffer`라는 가변 콜렉션이 이런 특성을 구현하고 있습니다. 이 클래스의 `concat` 메소드를 사용하면 `O(1)`의 시간에 콜렉션끼리 연결할 수 있습니다.
+1. `CompactBuffer`의 `++=` 연산 또한 `O(1)`이 아닙니다. 길이 `m` 짜리 `CompactBuffer`에 길이 `n` 짜리 `CompactBuffer`를 연결할 때, 길이 `n`짜리의 원소 전체가 길이 `m` 짜리 `CompactBuffer`로 복사됩니다. 복사하는 과정은 당연히 `O(n)`의 시간이 걸립니다. 이 과정이 `System.arraycopy` 호출을 통해 효율적으로 실행되기는 하지만, 길이가 아주 긴 콜렉션의 경우 그에 비례해서 시간이 늘어나는 것은 마찬가지입니다. 우리가 상식적으로 생각했을 때, 원본 콜렉션 두 개를 모두 유지할 필요가 없는 상황에서는, 콜렉션끼리 연결하는 연산은 `O(1)` 이면 충분합니다. 스칼라에서는 `UnrolledBuffer`라는 가변 콜렉션이 이런 특성을 구현하고 있습니다. 이 클래스의 `concat` 메소드를 사용하면 `O(1)`의 시간에 콜렉션끼리 연결할 수 있습니다.
 
 정리해 보면, 다음과 같은 조건들에 대해 성능을 측정해 보면 될 것 같습니다.
 
@@ -265,9 +267,9 @@ Spark Web UI를 보면 다음 화면과 같이 각 스테이지에 대한 상세
 # 맺음말
 이번 포스팅을 준비하고 실험을 진행하면서 많은 것을 배울 수 있었습니다.
 
-먼저, API 를 사용하더라도 내부 구조를 알고 사용하는 것과 모르고 사용하는 것은 다르다는 것입니다. 사실 저희 팀에서도 처음에는 일부 코드에 불변 콜렉션인 `Array`를 `reduceByKey`와 함께 사용하면서, 막연히 이게 더 효율적이지 않을까? 라고 생각하고 있었습니다. 그러나 이 포스팅에는 자세히 적지 않았지만, `groupByKey`와 `Array` + `reduceByKey`의 성능을 직접 실험을 통해 비교해본 후에야 불변 콜렉션의 문제를 알게 되었습니다. 우리가 흔히 쓰는 `Array` 같은 콜렉션도 비효율적으로 구현된 메소드가 있을 수 있으니 신중하게 사용해야 한다는 교훈을 얻었습니다.
+먼저, API 를 사용하더라도 내부 구조를 알고 사용하는 것과 모르고 사용하는 것은 다르다는 것입니다. 사실 저희 팀에서도 처음에는 일부 코드에 `Array` 의 `++` 연산을 `reduceByKey`와 함께 사용하면서, 막연히 이게 더 효율적이지 않을까? 라고 생각하고 있었습니다. 그러나 이 포스팅에는 자세히 적지 않았지만, `groupByKey`와 `Array` + `reduceByKey`의 성능을 직접 실험을 통해 비교해본 후에야 `++` 연산의 문제를 알게 되었습니다. 우리가 흔히 쓰는 `Array` 같은 콜렉션도 비효율적으로 구현된 메소드가 있을 수 있으니 신중하게 사용해야 한다는 교훈을 얻었습니다.
 
-두 번째로, 소스코드에 답이 있다는 것입니다. 처음에 `groupByKey`가 `Array` + `reduceByKey`보다 효율적이라는 것을 알게 되었을 때, 처음에는 영문을 몰라 어리둥절했습니다. 그러나 `groupByKey` 의 소스코드를 찾아본 후에는 불변 콜렉션과 가변 콜렉션의 차이를 알게 되었습니다. 그리고 소스코드를 더 들여다본 후에 map-side combine에 대해서도 좀더 자세히 알게 되었고, 이어서 `ArrayBuffer`를 `reduceByKey`와 함께 사용하면 더 효율적일 수도 있다는 가설도 세울 수 있게 되었습니다. 앞으로 Spark를 사용하면서 다른 문제에 부딪치더라도 소스코드를 파악함으로써 좀더 쉽게 문제를 해결할 수 있지 않을까 합니다.
+두 번째로, 소스코드에 답이 있다는 것입니다. 처음에 `groupByKey`가 `Array` + `reduceByKey`보다 효율적이라는 것을 알게 되었을 때, 처음에는 영문을 몰라 어리둥절했습니다. 그러나 `groupByKey` 의 소스코드를 찾아본 후에는 `++` 연산과 `++=` 연산의 차이 때문이라는 것을 알게 되었습니다. 그리고 소스코드를 더 들여다본 후에 map-side combine에 대해서도 좀더 자세히 알게 되었고, 이어서 `ArrayBuffer`를 `reduceByKey`와 함께 사용하면 더 효율적일 수도 있다는 가설도 세울 수 있게 되었습니다. 앞으로 Spark를 사용하면서 다른 문제에 부딪치더라도 소스코드를 파악함으로써 좀더 쉽게 문제를 해결할 수 있지 않을까 합니다.
 
 이번 실험으로 얻은 결과는 Spark 개발 커뮤니티에 리포트하고, 가능하면 PR로 이어져서 프로젝트에 기여할 수 있도록 해 볼 예정입니다. 기여가 잘 진행된다면 다시 포스팅을 통해 공유해 드리도록 하겠습니다.
 
