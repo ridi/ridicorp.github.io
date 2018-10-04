@@ -1,13 +1,19 @@
 ---
 layout: blog_post
-title: "Spark RDD 에서 GROUP BY 를 가장 빠르게 하려면?"
+title: "Spark RDD에서 GROUP BY를 빠르게 하려면?"
 description: "분산 데이터 처리의 성능을 위해 Spark 의 소스코드를 파헤친 경험을 소개합니다."
-header-img: ""
-date: 2018-09-12
+header-img: "blog/img/bg-6.jpg"
+date: 2018-10-04
 author: "chanu.lee"
 category: engineering
-published: false
+published: true
 ---
+<style>
+article.post .post-table th,
+article.post .post-table td {
+  padding: 5px 5px;
+}
+</style>
 
 [Apache Spark](https://spark.apache.org/docs/latest/)는 대용량 데이터의 범용 계산을 위한 분산처리 시스템입니다. 기존의 Hadoop Map-Reduce에 비해 훨씬 빠르면서도 간편하게 복잡한 데이터 연산을 처리할 수 있습니다. 전 세계적으로도 많은 사용자층을 가지고 있으며, 2018년 8월 현재 2.3.1 버전까지 릴리즈되었을 정도로 유지보수도 꾸준히 이루어지고 있습니다. 이런 특성 때문에 리디 데이터팀에서도 베스트셀러, 개인화 추천, 각종 지표 집계 및 데이터 분석에 Spark 를 사용하고 있습니다.
 
@@ -117,7 +123,7 @@ val numPurchaseDatesByUser2: RDD[(LocalDate, Int)] = userPurchaseRDD
 연결(concatenation) 연산은 두 개의 콜렉션을 이어서 하나로 만드는 연산입니다. 두 개 이상의 콜렉션을 연결해서 하나로 만들 때, 콜렉션 내에서 원소의 순서가 중요하지 않다면, 연결 연산을 어떤 순서로 적용하든간에 결과 콜렉션은 실질적으로 동일합니다. 따라서, **연결 연산은 교환법칙과 결합법칙을 만족한다**고 할 수 있습니다. 이 점을 이용하면 다음과 같이 `groupByKey`와 결과가 완전히 동일한 연산을 `reduceByKey`를 가지고 만들어낼 수 있습니다.
 
 1. `(K, V)`의 RDD 에서 각 `V`로부터 길이 1짜리 배열을 생성해서, `(K, Array[V])`의 RDD 로 변환한다.
-1. `(K, Array[V])`의 RDD에 `Array` 끼리의 연결(`++`) 연산을 적용해 `reduceByKey`를 실행한다.
+2. `(K, Array[V])`의 RDD에 `Array` 끼리의 연결(`++`) 연산을 적용해 `reduceByKey`를 실행한다.
 
 코드로 작성해 보면 다음과 같습니다.
 
@@ -185,23 +191,24 @@ val groupedRDD2: RDD[(String, Iterable[Int])] = keyValuePairRDD
 
 정리하면 다음과 같이 되겠습니다.
 
-| 어플리케이션 | 그룹핑에 사용된 API | 콜렉션 타입 | reduce 연산 |
+| 애플리케이션 | 그룹핑에 사용된 API | 콜렉션 타입 | reduce 연산 |
 |-----------------------------------|-------------|----------------|--------|
 |`TestReduceByKeyWithArrayBuffer`   |`reduceByKey`|`ArrayBuffer`   |`++=`   |
 |`TestReduceByKeyWithListBuffer`    |`reduceByKey`|`ListBuffer`    |`++=`   |
 |`TestReduceByKeyWithUnrolledBuffer`|`reduceByKey`|`UnrolledBuffer`|`concat`|
 |`TestReduceByKeyWithCompactBuffer` |`reduceByKey`|`CompactBuffer` |`++=`   |
 |`TestGroupByKey`                   |`groupByKey` |N/A             |N/A     |
+{: .post-table }
 
 
 # 실험 결과
-위의 5가지 스파크 어플리케이션을 다음과 같은 조건의 클러스터에서 실행해 보았습니다.
+위의 5가지 스파크 애플리케이션을 다음과 같은 조건의 클러스터에서 실행해 보았습니다.
 
 - AWS EMR 버전 5.16.0
 - Spark 버전 2.3.1
 - 슬레이브 노드: r3.xlarge (4 vCPU, 30.5 GiB RAM) X 5대
 
-`reduceByKey`와 `groupByKey`를 사용했을 때 모두, 각 어플리케이션은 2개의 스테이지로 나누어서 실행됩니다.
+`reduceByKey`와 `groupByKey`를 사용했을 때 모두, 각 애플리케이션은 2개의 스테이지로 나누어서 실행됩니다.
 
 1. Stage 0
   - `RDD[Long]` 생성
@@ -217,7 +224,7 @@ val groupedRDD2: RDD[(String, Iterable[Int])] = keyValuePairRDD
 
 Spark Web UI를 보면 다음 화면과 같이 각 스테이지에 대한 상세한 태스크별 실행 내역이 나옵니다.
 
-![Spark 어플리케이션 히스토리](/blog/img/2018-09-12/spark-application-history.png)
+![Spark 애플리케이션 히스토리](/blog/img/2018-09-12/spark-application-history.png){:data-action="zoom"}
 
 스테이지를 구성하는 각각의 태스크 가 어느 익스큐터에서 실행되었는지, 그리고 얼마나 시간이 걸렸는지도 알 수 있고, 태스크 전반에 대한 실행시간 통계도 나옵니다. 특히 0, 25, 50, 75, 100 백분위수마다의 실행시간을 보여주기 때문에, 오래 걸리는 태스크와 적게 걸리는 태스크들이 어떻게 분포되어 있는지 파악하기가 쉽습니다.
 
@@ -227,33 +234,35 @@ Spark Web UI를 보면 다음 화면과 같이 각 스테이지에 대한 상세
 
 #### Stage 0 태스크별 실행시간 통계
 
-| 어플리케이션 | 합계 | 최솟값 | 25 백분위수 | 중앙값 | 75 백분위수 | 최댓값 |
-|-----------------------------------|-------|-----|-----|-----|-----|-----|
-|`TestReduceByKeyWithArrayBuffer`   |14 min |0.5 s|0.6 s|0.7 s|0.8 s|1 s  |
-|`TestReduceByKeyWithListBuffer`    |37 min |1s   |2s   |2s   |2s   |3s   |
-|`TestReduceByKeyWithUnrolledBuffer`|14 min |0.5 s|0.6 s|0.7 s|0.8 s|1 s  |
-|`TestReduceByKeyWithCompactBuffer` |5.9 min|0.2 s|0.2 s|0.3 s|0.3 s|0.8 s|
-|`TestGroupByKey`                   |15 min |0.4 s|0.5 s|0.7 s|1.0 s|2 s  |
+| 애플리케이션 | 합계 | 최솟값 | 25 백분위수 | 중앙값 | 75 백분위수 | 최댓값 |
+|---------------------------------|-------|-----|-----|-----|-----|-----|
+|TestReduceByKeyWithArrayBuffer   |14 min |0.5 s|0.6 s|0.7 s|0.8 s|1 s  |
+|TestReduceByKeyWithListBuffer    |37 min |1s   |2s   |2s   |2s   |3s   |
+|TestReduceByKeyWithUnrolledBuffer|14 min |0.5 s|0.6 s|0.7 s|0.8 s|1 s  |
+|TestReduceByKeyWithCompactBuffer |5.9 min|0.2 s|0.2 s|0.3 s|0.3 s|0.8 s|
+|TestGroupByKey                   |15 min |0.4 s|0.5 s|0.7 s|1.0 s|2 s  |
+{: .post-table }
 
 #### Stage 1 태스크별 실행시간 통계
 
-| 어플리케이션 | 합계 | 최솟값 | 25 백분위수 | 중앙값 | 75 백분위수 | 최댓값 |
-|-----------------------------------|-------|-----|-----|-----|-----|-------|
-|`TestReduceByKeyWithArrayBuffer`   |16 min |49 ms|89 ms|0.8 s|4 s  |22 s   |
-|`TestReduceByKeyWithListBuffer`    |56 min |66 ms|98 ms|0.9 s|23 s |1.6 min|
-|`TestReduceByKeyWithUnrolledBuffer`|15 min |57 ms|96 ms|0.9 s|3 s  |20 s   |
-|`TestReduceByKeyWithCompactBuffer` |12 min |52 ms|90 ms|0.8 s|3 s  |16 s   |
-|`TestGroupByKey`                   |14 min |81 ms|0.1 s|1.0 s|3 s  |18 s   |
+| 애플리케이션 | 합계 | 최솟값 | 25 백분위수 | 중앙값 | 75 백분위수 | 최댓값 |
+|---------------------------------|-------|-----|-----|-----|-----|-------|
+|TestReduceByKeyWithArrayBuffer   |16 min |49 ms|89 ms|0.8 s|4 s  |22 s   |
+|TestReduceByKeyWithListBuffer    |56 min |66 ms|98 ms|0.9 s|23 s |1.6 min|
+|TestReduceByKeyWithUnrolledBuffer|15 min |57 ms|96 ms|0.9 s|3 s  |20 s   |
+|TestReduceByKeyWithCompactBuffer |12 min |52 ms|90 ms|0.8 s|3 s  |16 s   |
+|TestGroupByKey                   |14 min |81 ms|0.1 s|1.0 s|3 s  |18 s   |
+{: .post-table }
 
-어플리케이션별로 쉽게 비교할 수 있도록 **합계**와 **최댓값** 수치만 차트로 그려 보았습니다.
+애플리케이션별로 쉽게 비교할 수 있도록 **합계**와 **최댓값** 수치만 차트로 그려 보았습니다.
 
 #### 태스크별 실행시간 합계 비교
 
-![태스크별 실행시간 합계 비교](/blog/img/2018-09-12/task-duration-sum.png)
+![태스크별 실행시간 합계 비교](/blog/img/2018-09-12/task-duration-sum.png){:data-action="zoom"}
 
 #### 태스크별 실행시간 최댓값 비교
 
-![태스크별 실행시간 최댓값 비교](/blog/img/2018-09-12/task-duration-max.png)
+![태스크별 실행시간 최댓값 비교](/blog/img/2018-09-12/task-duration-max.png){:data-action="zoom"}
 
 # 실험 결과 분석
 
