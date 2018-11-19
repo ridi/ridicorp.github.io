@@ -174,15 +174,15 @@ $ curl -X GET 'localhost:9200/log-index/log-type/2?pretty'
 ```
 
 그러면 지워진 데이터는 영원히 남아있는 걸까요? 그렇지 않습니다.
-지웠다는 표시를 단 채 디스크에 남아 있다가 백그라운드로 주기적으로 또는 특정 임계치를 넘기면 더 이상 필요없어진 데이터들을 정리하고 새로운 [세그먼트](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-segments.html)에 병합한 후 기존 세그먼트를 삭제합니다.
+지웠다는 표시를 단 채 디스크에 남아 있다가 백그라운드로 주기적으로 또는 특정 임계치를 넘기면 더 이상 필요없어진 데이터들을 정리하고 새로운 세그먼트에 병합한 후 기존 세그먼트를 삭제합니다.
 이때 비로소 디스크에서 완전히 삭제되는데 이를 세그먼트 병합(Segment Merging)[^1]이라고 합니다.
 
 세그먼트 병합은 In-Place 업데이트가 아닙니다.
 새로운 세그먼트를 만들 공간이 있어야 하기 때문에 디스크가 이미 꽉 찬 상태에서는 무용지물입니다.
 따라서 디스크가 가득찬 상태에서는 세그먼트 병합을 기반으로 하는 삭제 방법은 사용할 수 없습니다.
 
-게다가 세그먼트 병합은 시스템 자원을 비교적 많이 쓰는 부담스러운 작업입니다.
-그래서 시스템 자원이 여유로울 때 서비스에 영향을 주지 않는 선에서 조심스럽게 진행합니다. 원하는 시점에 강제로 세그먼트 병합을 하고 싶다면 [force merge](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-forcemerge.html) API를 사용할 수도 있습니다.[^2]
+세그먼트 병합은 시스템 자원을 비교적 많이 쓰는 부담스러운 작업이므로 시스템 자원이 여유로울 때 서비스에 영향을 주지 않는 선에서 조심스럽게 진행합니다.
+원하는 시점에 강제로 세그먼트 병합을 하고 싶다면 [force merge](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-forcemerge.html) API를 사용할 수도 있습니다.[^2]
 
 다른 방법으로 각 문서마다 TTL(Time To Live)을 설정해서 해당 시각이 지나면 자동으로 삭제되도록 할 수도 있습니다.
 하지만 이 역시 세그먼트 병합을 통해 삭제되기 때문에 비효율적입니다.
@@ -327,7 +327,6 @@ Elasticsearch 서비스를 안정적으로 운영하기 위한 다양한 방법�
 
 ---
 
-[^1]: [세그먼트 병합(Segment Merging)](https://www.elastic.co/guide/en/elasticsearch/guide/current/indexing-performance.html#segments-and-merging)
+[^1]: [세그먼트](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-segments.html)와 [세그먼트 병합(Segment Merging)](https://www.elastic.co/guide/en/elasticsearch/guide/current/indexing-performance.html#segments-and-merging)
 [^2]: Elasticsearch 2.1 미만에서는 force merge 대신 [optimize](https://www.elastic.co/guide/en/elasticsearch/reference/1.7/indices-optimize.html)를 이용합니다.
 [^3]: Log Rotation은 로그 파일을 날짜별로 만들고 가장 오래된 로그를 먼저 지워서 최근 N개의 로그 파일만 유지하도록 하는 방법입니다. `logrotate`라는 리눅스 유틸리티를 사용해 보셨다면 쉽게 이해가 되실 겁니다.
-
