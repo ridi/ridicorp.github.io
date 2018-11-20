@@ -2,8 +2,8 @@
 layout: blog_post
 title: "Index Aliases 활용 팁"
 description: "Elasticsearch를 안정적으로 운영하기 위해 Index Aliases를 활용한 사례를 공유합니다."
-header-img: "blog/img/2018-10-01/header.svg"
-date: 2018-10-01
+header-img: "blog/img/2018-11-20/header.svg"
+date: 2018-11-20
 author: "neo"
 category: engineering
 published: true
