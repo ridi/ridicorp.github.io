@@ -1,7 +1,7 @@
 ---
 layout: blog_post
-title: "Index Aliases 활용 팁"
-description: "Elasticsearch를 안정적으로 운영하기 위해 Index Aliases를 활용한 사례를 공유합니다."
+title: "Elasticsearch의 색인 별명 활용 팁"
+description: "Elasticsearch를 안정적으로 운영하기 위해 색인 별명을 활용한 사례를 공유합니다."
 header-img: "blog/img/2018-11-20/header.svg"
 date: 2018-11-20
 author: "neo"
@@ -18,7 +18,7 @@ published: true
 분산형이기 때문에 데이터 증가에 따라 유연하게 확장할 수 있고, RESTful API를 제공하기 때문에 손쉽게 색인, 검색, 분석이 가능합니다.
 오늘날 많은 기업 및 개인이 다양한 검색, 로깅, 분석 서비스에 Elasticsearch를 활용하고 있습니다.
 사용자 층이 두터운 만큼 관련 커뮤니티가 활발히 운영되고 있고 유스케이스 또한 풍부하여 다양한 상황에서 응용 가능합니다.
-본 글에서는 Elasticsearch를 안정적으로 운영하는데 유용한 색인 별명(Index Aliases)이라는 기능을 활용한 몇 가지 사례를 공유합니다.
+본 글에서는 Elasticsearch를 안정적으로 운영하는데 유용한 색인 별명이라는 기능을 활용한 몇 가지 사례를 공유합니다.
 
 # 색인 별명(Index Aliases)
 
