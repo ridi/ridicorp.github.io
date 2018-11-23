@@ -31,7 +31,6 @@ published: true
 그런데 이번에 GNB 개편을 하게 된 이유는 판타지 연재 서비스를 준비하면서 '판타지' 서브 메뉴로 '연재'를 추가하기 위한 작업이 필요했기 때문입니다.
 이번 작업을 하면서 GNB의 사용성과 디자인 완성도를 위해 고민했던 그 과정을 공유합니다.
 
-
 ---
 
 
@@ -52,7 +51,7 @@ published: true
 
 #### 2. 탭 디자인이 카테고리별로 다름
 
-![그림 3) 카테고리별 탭 디자인](/blog/img/2016-10-13/category_design_bg_2.png){: data-action="zoom" }
+![그림 3) 카테고리별 탭 디자인](/blog/img/2016-10-13/categories_design_bg_2.png){: data-action="zoom" }
 <figcaption>그림 3) 카테고리별 탭 디자인</figcaption>
 
 
@@ -61,7 +60,6 @@ published: true
 #### 4. 아이콘, 버튼 외곽선이 요소를 많아 보이게 함
 
 #### 5. 메인 카테고리에 'BL'을 추가하기 위해 공간 확보해야 함
-
 
 ---
 
@@ -125,7 +123,6 @@ published: true
 ![7) PC GNB 3단](/blog/img/2016-10-13/design_d_3.png){: data-action="zoom" }
 <figcaption>그림 7) PC GNB 3단 (height: 149px)</figcaption><br>
 
-
 ---
 
 
@@ -144,7 +141,6 @@ PC에서는 ‘고객센터’와 ‘뷰어 다운로드’가 없어지고, 'PA
 
 ![10) PC Footer](/blog/img/2016-10-13/footer.png){: data-action="zoom" }
 <figcaption>그림 10) PC Footer</figcaption><br>
-
 
 ---
 
@@ -177,7 +173,6 @@ PC에서는 ‘고객센터’와 ‘뷰어 다운로드’가 없어지고, 'PA
 리디북스에서 일하시는 분들은 디자이너, 개발자, 운영자, 누구 할 것 없이
 우리 프로덕트의 퀄리티를 중요하게 생각하기 때문에 디자인과 사용성에 대해 높은 기준을 갖고 있습니다.
 이번 작업에도 많은 분들이 디자인을 꼼꼼히 확인해주시고 의견을 주셔서 큰 도움이 되었습니다.<br>
-
 
 ---
 
