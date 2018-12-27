@@ -12,7 +12,7 @@ root_class: "contact page"
         </h1>
     </div>
     <div class="contact-buttons" data-effect="slide-bottom">
-        <a href="" class="view-map">지도 보기 <i class="icon-pin"></i></a>
+        <a href="http://naver.me/5vDFvyuJ" class="view-map">지도 보기 <i class="icon-pin"></i></a>
 
         <a href="https://drive.google.com/uc?export=download&id=1_-t_XTnmTBKRg66yF1nvcMji0yP0K0J7" class="other-button">
             제휴안내 <i class="icon-direct-right"></i>
@@ -62,7 +62,7 @@ root_class: "contact page"
         $(".view-map").click(function(){
             $("header, .how-to-contact, nav, .contact-fader").fadeOut();
             $("#map_controls").fadeIn();
-            return false;
+            return true;
         });
         $(".close-map").click(function(){
            $("#map_controls").fadeOut();
