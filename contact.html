@@ -12,7 +12,7 @@ root_class: "contact page"
         </h1>
     </div>
     <div class="contact-buttons" data-effect="slide-bottom">
-        <a href="" class="view-map">지도 보기 <i class="icon-pin"></i></a>
+        <a href="http://naver.me/5vDFvyuJ" class="view-map">지도 보기 <i class="icon-pin"></i></a>
 
         <a href="https://drive.google.com/uc?export=download&id=1_-t_XTnmTBKRg66yF1nvcMji0yP0K0J7" class="other-button">
             제휴안내 <i class="icon-direct-right"></i>
@@ -47,7 +47,7 @@ root_class: "contact page"
                 <i class="icon-num-1"></i> 선릉역(2호선, 분당선) 5번 출구로 나와서 80m 직진하세요.
             </p>
             <p class="steps">
-                <i class="icon-num-2"></i> 오른편 1층에 lalavla(구 왓슨즈)가 보이는 건물의 10층 입니다.
+                <i class="icon-num-2"></i> 대각선 형태의 골조가 들어간 검은 톤의 건물이며, 10층으로 방문해주시기 바랍니다.
             </p>
         </div>
     </div>
@@ -62,7 +62,7 @@ root_class: "contact page"
         $(".view-map").click(function(){
             $("header, .how-to-contact, nav, .contact-fader").fadeOut();
             $("#map_controls").fadeIn();
-            return false;
+            return true;
         });
         $(".close-map").click(function(){
            $("#map_controls").fadeOut();
