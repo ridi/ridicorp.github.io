@@ -158,13 +158,12 @@ html.page.about {
     .number-boxes {
       width: 1024px;
       margin: 0 auto;
-      padding: 0 0 0 2%;
 
       li {
         float: left;
         width: 23%;
         padding: 30px 0 20px;
-        margin: 10px 2% 10px 0;
+        margin: 10px 1% 10px 1%;
         background: #fff;
         .drop-shadow();
         .border-radius();
@@ -213,11 +212,11 @@ html.page.about {
 
       @media @queries_sm {
         width: auto;
-        padding: 0 0 0 20px;
+        padding: 0 10px 0 20px;
 
         li {
           width: 45%;
-          margin: 10px 3.3% 10px 0;
+          margin: 10px 2% 10px 2%;
 
           strong {
             font-size: 1.5em;
@@ -236,11 +235,12 @@ html.page.about {
 
     .products {
       padding: 0 0 30px;
-      width: 960px;
+      width: 1024px;
       margin: 0 auto;
 
       @media @queries_md {
         width: 768px;
+        padding: 0 0 30px;
       }
 
       @media @queries_sm {
@@ -248,8 +248,8 @@ html.page.about {
       }
 
       li {
-        width: 33.3%;
-        padding-top: 36px;
+        width: 50%;
+        padding: 36px 20px 10px;
         float: left;
         text-align: center;
 
@@ -294,6 +294,14 @@ html.page.about {
           width: 166px;
           height: 32px;
         }
+
+        .logo-outstanding {
+          .svg_logo_outstanding(#333);
+
+          width: 180px;
+          height: 40px;
+        }
+
 
         strong {
           display: block;
