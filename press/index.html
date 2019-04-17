@@ -224,7 +224,7 @@ root_class: "press page"
     }
 
     function refreshArticleInfo() {
-      $.getJSON('https://intra.ridi.com/press/list?page=' + (cur_page + 1) + '&items_per_page=' + ARTICLES_PER_PAGE, 1, function (data) {
+      $.getJSON('https://intra.ridi.com/press/list?page=' + (cur_page + 1) + '&items_per_page=' + ARTICLES_PER_PAGE, null, function (data) {
         setArticles(data);
       });
     }
