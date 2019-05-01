@@ -396,7 +396,7 @@ apply:
 앞으로 많은 사람들이 테라폼을 사용해서 테라폼 커뮤니티가 더 발전했으면 하는 마음입니다. 이 글이 조금이라도 도움이 되었으면 좋겠네요. 😊️
 
 ## 참고자료
-- [Gruntwork Blog - How do I structure my Terraform projects?](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
+- [Gruntwork Blog - How to manage Terraform state](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
 - [Charity Majors - TERRAFORM, VPC, AND WHY YOU WANT A TFSTATE FILE PER ENV](https://charity.wtf/2016/03/30/terraform-vpc-and-why-you-want-a-tfstate-file-per-env/)
 - [J.D. Hollis - Working with Terraform: 10 Months In](https://theconsultingcto.com/posts/working-with-terraform-10-months-in/)
 - [J.D. Hollis - How do I structure my Terraform projects?](https://theconsultingcto.com/posts/how-do-i-structure-my-terraform-project/)
