@@ -36,6 +36,7 @@ published: true
   - [apply 일시 정지](#apply-일시-정지)
   - [완성된 CI 설정 파일 예시](#완성된-ci-설정-파일-예시)
 - [마치며](#마치며)
+- [참고자료](#참고자료)
 
 
 ## 코드 관리
@@ -393,3 +394,9 @@ apply:
 자연스럽게 저장소에 기록하고 버전을 관리하며 리뷰도 진행합니다. 문서로 관리할 때와 다르게 일이 진행되는 것이 신기했습니다.
 
 앞으로 많은 사람들이 테라폼을 사용해서 테라폼 커뮤니티가 더 발전했으면 하는 마음입니다. 이 글이 조금이라도 도움이 되었으면 좋겠네요. 😊️
+
+## 참고자료
+- [Gruntwork Blog - How do I structure my Terraform projects?](https://blog.gruntwork.io/how-to-manage-terraform-state-28f5697e68fa)
+- [Charity Majors - TERRAFORM, VPC, AND WHY YOU WANT A TFSTATE FILE PER ENV](https://charity.wtf/2016/03/30/terraform-vpc-and-why-you-want-a-tfstate-file-per-env/)
+- [J.D. Hollis - Working with Terraform: 10 Months In](https://theconsultingcto.com/posts/working-with-terraform-10-months-in/)
+- [J.D. Hollis - How do I structure my Terraform projects?](https://theconsultingcto.com/posts/how-do-i-structure-my-terraform-project/)
