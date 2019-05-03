@@ -62,10 +62,9 @@ module.exports = function (grunt) {
   // Load the plugins.
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-webfont');
 
 
   // Default task(s).
-  grunt.registerTask('default', ['less', 'webfont']);
+  grunt.registerTask('default', ['less']);
 
 };
