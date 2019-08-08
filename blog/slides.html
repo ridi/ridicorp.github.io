@@ -16,6 +16,7 @@ root_class: "slides blog page"
   <ol id="slides" class="blog-slide-list">
     {% assign sorted = site.slides | sort: 'date' | reverse %}
     {% for slide in sorted %}
+    {% if slide.published and slide.published == false %}{% continue %}{% endif %}
     <li>
       <a href="{{ slide.url }}">
         <div class="preview-hover dissolve">
