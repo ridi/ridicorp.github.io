@@ -1148,8 +1148,8 @@ html.page.about .products-area .products li .logo-paper {
   overflow: hidden;
   background: url('data:image/svg+xml,%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20187%2048%22%3E%3Cstyle%3Epath,%20polygon%20%7B%20fill%3A%23333%3B%20%7D%3C/style%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M18,0H0v48h4.1V3.7h13.5C24,3.7,28.2,7.9,28.2,14c0,6-4.2,10.3-10.6,10.3H8.1L8.2,28H18c9.2,0,14.4-6.5,14.4-14S27.2,0,18,0%0A%09z%20M48.5,0L28.8,48h4.7l4.7-11.8H60l-1.4-3.7h-19L51,4.4L68.4,48h4.7L53.7,0H48.5z%20M95.1,0H77v48h4.1V3.7h13.5%0A%09c6.4,0,10.6,4.2,10.6,10.3c0,6-4.2,10.3-10.6,10.3h-9.5V28H95c9.2,0,14.4-6.5,14.4-14C109.5,6.5,104.3,0,95.1,0z%20M114.9,48h30.5%0A%09v-3.7H119v-19h25.8v-3.7H119V3.8h26.4V0.1h-30.5L114.9,48L114.9,48z%20M171.5,27.8c7.2-0.3,13.3-5.1,13.3-13.8c0-8.8-6.3-14-14.6-14%0A%09h-17.9v48h4.1V3.7h13.5c6.4,0,10.6,4.2,10.6,10.3s-4.2,10.4-10.6,10.4h-10.3l0.1,3.7h7.3L180.4,48h4.9L171.5,27.8z%22/%3E%3C/svg%3E') center center no-repeat;
   background-size: 100% 100%;
-  width: 98px;
-  height: 26px;
+  width: 80px;
+  height: 20px;
 }
 html.page.about .products-area .products li .logo-laftel {
   display: inline-block;
