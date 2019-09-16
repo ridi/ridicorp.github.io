@@ -3282,6 +3282,355 @@ html.page.contact #map_controls .close-map:hover {
   -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
+html.page.ridibatang .intro-header {
+  background-image: url(../img/ridibatang_bg.png);
+  background-repeat: repeat-x;
+  background-position: center 0;
+  background-size: 1060px auto;
+  background-color: #212B3B;
+  padding: 190px 0;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .intro-header {
+    padding: 160px 0;
+  }
+}
+html.page.ridibatang .intro-header h1 {
+  font-family: RIDIBatangOTF;
+  text-align: left;
+  font-weight: 300;
+  text-shadow: none;
+  font-style: normal;
+  font-size: 54px;
+  letter-spacing: -0.03em;
+  line-height: 1.35em;
+  color: #FFFFFF;
+  max-width: 1040px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .intro-header h1 {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .intro-header {
+    background-size: 1200px auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .intro-header {
+    background-size: 820px auto;
+  }
+}
+html.page.ridibatang .intro-header .site-heading.ridibatang-heading,
+html.page.ridibatang .intro-header .page-heading.ridibatang-heading {
+  text-align: left;
+}
+html.page.ridibatang .ridibatang-explanation-box {
+  font-family: RIDIBatangOTF;
+  max-width: 740px;
+  margin: 0 auto;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .ridibatang-explanation-box {
+    max-width: none;
+    padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-explanation-box {
+    max-width: none;
+    padding: 0 16px;
+  }
+}
+html.page.ridibatang .ridibatang-title {
+  font-size: 36px;
+  color: #000000;
+  letter-spacing: -0.03em;
+  line-height: 1.45em;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-title {
+    font-size: 26px;
+    line-height: 1.35em;
+  }
+}
+html.page.ridibatang .ridibatang-body {
+  padding-top: 12px;
+  font-size: 24px;
+  color: #525A61;
+  letter-spacing: -0.02em;
+  line-height: 1.65em;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-body {
+    font-size: 20px;
+  }
+}
+html.page.ridibatang .ridibatang-caption {
+  font-size: 30px;
+  color: #7D8E9E;
+  letter-spacing: -0.01em;
+  margin-top: 140px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-caption {
+    margin-top: 100px;
+    font-size: 23px;
+  }
+}
+html.page.ridibatang figure {
+  text-align: center;
+}
+html.page.ridibatang figcaption {
+  display: inline-block;
+  font-size: 19px;
+  color: #738096;
+  letter-spacing: -0.01em;
+  line-height: 1.5em;
+  padding-top: 12px;
+}
+html.page.ridibatang img {
+  width: 100%;
+  border: 1px solid #E3EDF7;
+  border-radius: 3px;
+}
+html.page.ridibatang .ridibatang-img {
+  margin-top: 30px;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-img {
+    display: inline-block;
+  }
+}
+html.page.ridibatang .ridibatang-img-size-half {
+  display: inline-block;
+  width: 49%;
+  margin-right: 1%;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-img-size-half {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+html.page.ridibatang .ridibatang-img-size-half:last-child {
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-img-size-half:last-child {
+    margin: 30px 0 0 0;
+  }
+}
+html.page.ridibatang .ridibatang-img-size-full:last-child {
+  margin: 30px 0 0 0;
+}
+html.page.ridibatang .history-area {
+  background: #E3EDF7;
+  padding: 120px 0 380px 0;
+  background-image: url(../img/ridibatang_history_bg.png);
+  background-repeat: no-repeat;
+  background-position: center 310px;
+  background-size: 1400px auto;
+}
+@media only screen and (max-width : 1024px) {
+  html.page.ridibatang .history-area {
+    padding: 100px 0 360px 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .history-area {
+    padding: 100px 0 320px 0;
+    background-position: center 84%;
+    background-size: 1200px auto;
+  }
+}
+html.page.ridibatang .history-area .user-cards {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+@media only screen and (max-width: 1280px) {
+  html.page.ridibatang .history-area .user-cards {
+    margin-top: 60px;
+  }
+}
+html.page.ridibatang .history-area .user-cards .user-card.second-card {
+  margin-top: 42px;
+}
+html.page.ridibatang .history-area .user-cards .user-card.fourth-card {
+  margin-top: 20px;
+}
+html.page.ridibatang .history-area .user-cards .user-card {
+  padding: 32px;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 10px;
+  max-height: 190px;
+}
+@media only screen and (max-width: 1280px) {
+  html.page.ridibatang .history-area .user-cards .user-card {
+    padding: 24px;
+    max-height: 148px;
+  }
+}
+html.page.ridibatang .history-area .user-cards .user-card .user-voice {
+  font-family: RIDIBatangOTF;
+  font-size: 22px;
+  color: #000000;
+  letter-spacing: -0.55px;
+  line-height: 32px;
+  max-width: 250px;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 1280px) {
+  html.page.ridibatang .history-area .user-cards .user-card .user-voice {
+    font-size: 18px;
+    letter-spacing: -0.44px;
+    line-height: 25px;
+    max-width: 184px;
+    margin-bottom: 16px;
+  }
+}
+html.page.ridibatang .history-area .user-cards .user-card .user-info {
+  font-family: RIDIBatangOTF;
+  font-size: 18px;
+  color: #9EA7AD;
+  letter-spacing: -0.45px;
+}
+@media only screen and (max-width: 1280px) {
+  html.page.ridibatang .history-area .user-cards .user-card .user-info {
+    font-size: 14px;
+  }
+}
+html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap {
+  display: inline-block;
+  margin-right: 6px;
+}
+html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile {
+  border-radius: 50%;
+  background: #E3EDF7;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 1280px) {
+  html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile {
+    width: 32px;
+    height: 32px;
+  }
+}
+html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile svg {
+  fill: #94A2B8;
+  width: 18px;
+  height: 18px;
+}
+@media only screen and (max-width: 1280px) {
+  html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+html.page.ridibatang .download-area {
+  background: #2E3847;
+  background-image: url(../img/ridibatang_bg.png);
+  background-repeat: repeat-x;
+  background-position: center 0;
+  background-size: 1060px auto;
+  padding: 140px 0;
+  margin-top: 140px;
+}
+html.page.ridibatang .download-area .ridibatang-title {
+  color: #fff;
+}
+html.page.ridibatang .download-area .ridibatang-body {
+  color: rgba(255, 255, 255, 0.8);
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .download-area {
+    padding: 100px 0;
+    margin-top: 100px;
+  }
+}
+html.page.ridibatang footer {
+  display: none;
+}
+html.page.ridibatang .ridibatang-download {
+  font-family: RIDIBatang;
+  max-width: 740px;
+  padding: 24px 0 26px 0;
+  background: #fff;
+  color: #2E3847;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  margin: 50px auto 100px;
+  text-align: center;
+  border-radius: 3px;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .ridibatang-download {
+    max-width: none;
+    margin: 50px 24px 100px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-download {
+    max-width: none;
+    margin: 50px 16px 100px;
+  }
+}
+html.page.ridibatang .ridibatang-download .icon-download {
+  margin-left: 12px;
+}
+html.page.ridibatang .ridibatang-download:hover,
+html.page.ridibatang .ridibatang-download:active {
+  opacity: 0.8;
+  cursor: pointer;
+}
+html.page.ridibatang .ridibatang-license {
+  max-width: 740px;
+  margin: 0 auto;
+  font-family: RIDIBatangOTF;
+  color: #70808F;
+  font-size: 14px;
+  line-height: 1.9em;
+  letter-spacing: -0.02em;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .ridibatang-license {
+    max-width: none;
+    padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .ridibatang-license {
+    max-width: none;
+    padding: 0 16px;
+  }
+}
+html.page.ridibatang .ridibatang-footer {
+  text-align: center;
+}
+html.page.ridibatang .ridibatang-footer .copyright {
+  font-family: RIDIBatangOTF;
+  font-weight: 300;
+  font-size: 16px;
+  color: #9EAFBF;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding: 0;
+  margin-top: 50px;
+  display: inline-block;
+}
 html.post.blog .intro-header.post-header {
   background-position: center center;
   -webkit-background-size: cover;
