@@ -3304,7 +3304,7 @@ html.page.ridibatang .intro-header h1 {
   font-size: 54px;
   letter-spacing: -0.03em;
   line-height: 1.35em;
-  color: #FFFFFF;
+  color: #fff;
   max-width: 1040px;
   width: 90%;
   margin: 0 auto;
@@ -3348,7 +3348,7 @@ html.page.ridibatang .ridibatang-explanation-box {
 }
 html.page.ridibatang .ridibatang-title {
   font-size: 36px;
-  color: #000000;
+  color: #000;
   letter-spacing: -0.03em;
   line-height: 1.45em;
 }
@@ -3396,7 +3396,7 @@ html.page.ridibatang figcaption {
 }
 html.page.ridibatang img {
   width: 100%;
-  border: 1px solid #E3EDF7;
+  border: 1px solid #e3edf7;
   border-radius: 3px;
 }
 html.page.ridibatang .ridibatang-img {
@@ -3430,7 +3430,7 @@ html.page.ridibatang .ridibatang-img-size-full:last-child {
   margin: 30px 0 0 0;
 }
 html.page.ridibatang .history-area {
-  background: #E3EDF7;
+  background: #e3edf7;
   padding: 120px 0 380px 0;
   background-image: url(../img/ridibatang_history_bg.png);
   background-repeat: no-repeat;
@@ -3483,7 +3483,7 @@ html.page.ridibatang .history-area .user-cards .user-card {
 html.page.ridibatang .history-area .user-cards .user-card .user-voice {
   font-family: RIDIBatangOTF;
   font-size: 22px;
-  color: #000000;
+  color: #000;
   letter-spacing: -0.55px;
   line-height: 32px;
   max-width: 250px;
@@ -3530,7 +3530,7 @@ html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profi
   }
 }
 html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile svg {
-  fill: #94A2B8;
+  fill: #94a2b8;
   width: 18px;
   height: 18px;
 }
@@ -3541,7 +3541,7 @@ html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profi
   }
 }
 html.page.ridibatang .download-area {
-  background: #2E3847;
+  background: #2e3847;
   background-image: url(../img/ridibatang_bg.png);
   background-repeat: repeat-x;
   background-position: center 0;
@@ -3569,7 +3569,7 @@ html.page.ridibatang .ridibatang-download {
   max-width: 740px;
   padding: 24px 0 26px 0;
   background: #fff;
-  color: #2E3847;
+  color: #2e3847;
   font-size: 20px;
   letter-spacing: -0.02em;
   margin: 50px auto 100px;
@@ -3600,7 +3600,7 @@ html.page.ridibatang .ridibatang-license {
   max-width: 740px;
   margin: 0 auto;
   font-family: RIDIBatangOTF;
-  color: #70808F;
+  color: #70808f;
   font-size: 14px;
   line-height: 1.9em;
   letter-spacing: -0.02em;
@@ -3624,7 +3624,7 @@ html.page.ridibatang .ridibatang-footer .copyright {
   font-family: RIDIBatangOTF;
   font-weight: 300;
   font-size: 16px;
-  color: #9EAFBF;
+  color: #9eafbf;
   letter-spacing: 0;
   line-height: 1.5em;
   padding: 0;
