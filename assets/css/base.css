@@ -3436,112 +3436,30 @@ html.page.ridibatang .ridibatang-img-size-full:last-child {
 html.page.ridibatang .history-area {
   background: #e3edf7;
   padding: 120px 0 380px 0;
-  background-image: url(../img/ridibatang-history-bg.png);
+  background-image: url(../img/ridibatang-toc-desktop.png);
   background-repeat: no-repeat;
   background-position: center 310px;
   background-size: 1400px auto;
 }
-@media only screen and (max-width : 1024px) {
+@media only screen and (max-width: 767px) {
   html.page.ridibatang .history-area {
+    background-size: 1200px auto;
+    background-position: center 280px;
     padding: 100px 0 360px 0;
   }
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 568px) {
   html.page.ridibatang .history-area {
-    padding: 100px 0 320px 0;
-    background-position: center 84%;
-    background-size: 1200px auto;
+    background-position: center 320px;
+    padding: 100px 0 340px 0;
   }
 }
-html.page.ridibatang .history-area .user-cards {
-  display: flex;
-  justify-content: center;
-  margin-top: 100px;
-}
-@media only screen and (max-width: 1280px) {
-  html.page.ridibatang .history-area .user-cards {
-    margin-top: 60px;
-  }
-}
-html.page.ridibatang .history-area .user-cards .user-card.second-card {
-  margin-top: 42px;
-}
-html.page.ridibatang .history-area .user-cards .user-card.fourth-card {
-  margin-top: 20px;
-}
-html.page.ridibatang .history-area .user-cards .user-card {
-  padding: 32px;
-  background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  display: inline-block;
-  margin: 0 10px;
-  max-height: 190px;
-}
-@media only screen and (max-width: 1280px) {
-  html.page.ridibatang .history-area .user-cards .user-card {
-    padding: 24px;
-    max-height: 148px;
-  }
-}
-html.page.ridibatang .history-area .user-cards .user-card .user-voice {
-  font-family: 'RIDIBatang';
-  font-size: 22px;
-  color: #000;
-  letter-spacing: -0.55px;
-  line-height: 32px;
-  max-width: 250px;
-  margin-bottom: 20px;
-}
-@media only screen and (max-width: 1280px) {
-  html.page.ridibatang .history-area .user-cards .user-card .user-voice {
-    font-size: 18px;
-    letter-spacing: -0.44px;
-    line-height: 25px;
-    max-width: 184px;
-    margin-bottom: 16px;
-  }
-}
-html.page.ridibatang .history-area .user-cards .user-card .user-info {
-  font-family: 'RIDIBatang';
-  font-size: 18px;
-  color: #9EA7AD;
-  letter-spacing: -0.45px;
-}
-@media only screen and (max-width: 1280px) {
-  html.page.ridibatang .history-area .user-cards .user-card .user-info {
-    font-size: 14px;
-  }
-}
-html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap {
-  display: inline-block;
-  margin-right: 6px;
-}
-html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile {
-  border-radius: 50%;
-  background: #E3EDF7;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media only screen and (max-width: 1280px) {
-  html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile {
-    width: 32px;
-    height: 32px;
-  }
-}
-html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile svg {
-  fill: #94a2b8;
-  width: 18px;
-  height: 18px;
-}
-@media only screen and (max-width: 1280px) {
-  html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profile-wrap .user-profile svg {
-    width: 14px;
-    height: 14px;
+@media only screen and (max-width: 414px) {
+  html.page.ridibatang .history-area {
+    background-image: url(../img/ridibatang-toc-mobile.png);
+    background-size: 530px auto;
+    background-position: center 340px;
+    padding: 100px 0 500px 0;
   }
 }
 html.page.ridibatang .download-area {

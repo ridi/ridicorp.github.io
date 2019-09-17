@@ -154,122 +154,29 @@ html.page.ridibatang {
   .history-area {
     background: @lightsteelblue-20;
     padding: 120px 0 380px 0;
-    background-image: url(../img/ridibatang-history-bg.png);
+    background-image: url(../img/ridibatang-toc-desktop.png);
     background-repeat: no-repeat;
     background-position: center 310px;
     background-size: 1400px auto;
 
-    @media @queries_lg {
+    @media @queries_sm {
+      background-size: 1200px auto;
+      background-position: center 280px;
       padding: 100px 0 360px 0;
     }
 
-    @media @queries_sm {
-      padding: 100px 0 320px 0;
-      background-position: center 84%;
-      background-size: 1200px auto;
+    @media @queries_568 {
+      background-position: center 320px;
+      padding: 100px 0 340px 0;
     }
 
-    // 지울 예정
-    .user-cards {
-      display: flex;
-      justify-content: center;
-      margin-top: 100px;
-
-      @media @queries_1280 {
-        margin-top: 60px;
-      }
-
-      .user-card.second-card {
-        margin-top: 42px;
-      }
-
-      .user-card.fourth-card {
-        margin-top: 20px;
-      }
-
-      .user-card {
-        padding: 32px;
-        background: @white;
-        box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
-        border-radius: 5px;
-        display: inline-block;
-        margin: 0 10px;
-        max-height: 190px;
-
-        @media @queries_1280 {
-          padding: 24px;
-          max-height: 148px;
-        }
-
-        .user-voice {
-          font-family: @ridibatang;
-          font-size: 22px;
-          color: @black;
-          letter-spacing: -0.55px;
-          line-height: 32px;
-          max-width: 250px;
-          margin-bottom: 20px;
-
-          @media @queries_1280 {
-            font-size: 18px;
-            letter-spacing: -0.44px;
-            line-height: 25px;
-            max-width: 184px;
-            margin-bottom: 16px;
-          }
-
-        }
-
-        .user-info {
-          font-family: @ridibatang;
-          font-size: 18px;
-          color: @slategray-40;
-          letter-spacing: -0.45px;
-
-          @media @queries_1280 {
-            font-size: 14px;
-          }
-
-          .user-profile-wrap {
-            display: inline-block;
-            margin-right: 6px;
-
-            .user-profile {
-              border-radius: 50%;
-              background: #E3EDF7;
-              border: 1px solid rgba(0,0,0,0.1);
-              width: 40px;
-              height: 40px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-
-              @media @queries_1280 {
-                width: 32px;
-                height: 32px;
-              }
-            
-              svg {
-                fill: @bluegray-20;
-                width: 18px;
-                height: 18px;
-
-                @media @queries_1280 {
-                  width: 14px;
-                  height: 14px;
-                }
-
-              }
-            } 
-          }
-        } 
-        // user info
+    @media @queries_414 {
+      background-image: url(../img/ridibatang-toc-mobile.png);
+      background-size: 530px auto;
+      background-position: center 340px;
+      padding: 100px 0 500px 0;
     }
-    // user cards
   }
-
-
-  } 
 
   .download-area {
     background: @bluegray-70;
