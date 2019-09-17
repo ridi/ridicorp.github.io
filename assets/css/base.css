@@ -1,5 +1,9 @@
 @import "../icon/css/ridicorp-icon.css";
 @import "../css/zoom.css";
+@font-face {
+  font-family: 'RIDIBatang';
+  src: url('../fonts/RIDIBatang.woff');
+}
 .clear {
   clear: both;
 }
@@ -3296,7 +3300,7 @@ html.page.ridibatang .intro-header {
   }
 }
 html.page.ridibatang .intro-header h1 {
-  font-family: RIDIBatangOTF;
+  font-family: 'RIDIBatang';
   text-align: left;
   font-weight: 300;
   text-shadow: none;
@@ -3330,7 +3334,7 @@ html.page.ridibatang .intro-header .page-heading.ridibatang-heading {
   text-align: left;
 }
 html.page.ridibatang .ridibatang-explanation-box {
-  font-family: RIDIBatangOTF;
+  font-family: 'RIDIBatang';
   max-width: 740px;
   margin: 0 auto;
 }
@@ -3481,7 +3485,7 @@ html.page.ridibatang .history-area .user-cards .user-card {
   }
 }
 html.page.ridibatang .history-area .user-cards .user-card .user-voice {
-  font-family: RIDIBatangOTF;
+  font-family: 'RIDIBatang';
   font-size: 22px;
   color: #000;
   letter-spacing: -0.55px;
@@ -3499,7 +3503,7 @@ html.page.ridibatang .history-area .user-cards .user-card .user-voice {
   }
 }
 html.page.ridibatang .history-area .user-cards .user-card .user-info {
-  font-family: RIDIBatangOTF;
+  font-family: 'RIDIBatang';
   font-size: 18px;
   color: #9EA7AD;
   letter-spacing: -0.45px;
@@ -3599,7 +3603,7 @@ html.page.ridibatang .ridibatang-download:active {
 html.page.ridibatang .ridibatang-license {
   max-width: 740px;
   margin: 0 auto;
-  font-family: RIDIBatangOTF;
+  font-family: 'RIDIBatang';
   color: #70808f;
   font-size: 14px;
   line-height: 1.9em;
@@ -3621,7 +3625,7 @@ html.page.ridibatang .ridibatang-footer {
   text-align: center;
 }
 html.page.ridibatang .ridibatang-footer .copyright {
-  font-family: RIDIBatangOTF;
+  font-family: 'RIDIBatang';
   font-weight: 300;
   font-size: 16px;
   color: #9eafbf;
