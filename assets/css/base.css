@@ -3287,7 +3287,7 @@ html.page.contact #map_controls .close-map:hover {
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 html.page.ridibatang .intro-header {
-  background-image: url(../img/ridibatang_bg.png);
+  background-image: url(../img/ridibatang-bg.png);
   background-repeat: repeat-x;
   background-position: center 0;
   background-size: 1060px auto;
@@ -3436,7 +3436,7 @@ html.page.ridibatang .ridibatang-img-size-full:last-child {
 html.page.ridibatang .history-area {
   background: #e3edf7;
   padding: 120px 0 380px 0;
-  background-image: url(../img/ridibatang_history_bg.png);
+  background-image: url(../img/ridibatang-history-bg.png);
   background-repeat: no-repeat;
   background-position: center 310px;
   background-size: 1400px auto;
@@ -3546,7 +3546,7 @@ html.page.ridibatang .history-area .user-cards .user-card .user-info .user-profi
 }
 html.page.ridibatang .download-area {
   background: #2e3847;
-  background-image: url(../img/ridibatang_bg.png);
+  background-image: url(../img/ridibatang-bg.png);
   background-repeat: repeat-x;
   background-position: center 0;
   background-size: 1060px auto;
