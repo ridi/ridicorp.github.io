@@ -3488,15 +3488,18 @@ html.page.ridibatang footer {
   display: none;
 }
 html.page.ridibatang .rb-download {
+  transition: all 0.25s ease-in-out;
   max-width: 740px;
   padding: 24px 0 26px 0;
   background: #fff;
-  color: #2e3847;
   font-size: 20px;
   letter-spacing: -0.02em;
   margin: 50px auto 100px;
   text-align: center;
   border-radius: 3px;
+}
+html.page.ridibatang .rb-download a {
+  color: #2e3847;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   html.page.ridibatang .rb-download {
@@ -3515,8 +3518,9 @@ html.page.ridibatang .rb-download .icon-download {
 }
 html.page.ridibatang .rb-download:hover,
 html.page.ridibatang .rb-download:active {
-  opacity: 0.8;
+  opacity: 0.7;
   cursor: pointer;
+  transition: all 0.25s ease-in-out;
 }
 html.page.ridibatang .rb-license {
   max-width: 740px;

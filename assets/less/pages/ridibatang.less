@@ -206,10 +206,13 @@ html.page.ridibatang {
   }
 
   .rb-download {
+    a {
+      color: @bluegray-70;
+    }
+    transition: all .25s ease-in-out;
     max-width: 740px;
     padding: 24px 0 26px 0;
     background: @white;
-    color: @bluegray-70;
     font-size: 20px;
     letter-spacing: -.02em;
     margin: 50px auto 100px;
@@ -229,12 +232,14 @@ html.page.ridibatang {
     .icon-download {
       margin-left: 12px;
     } 
+
   }
 
   .rb-download:hover,
   .rb-download:active {
-    opacity: .8;
+    opacity: .7;
     cursor: pointer;
+    transition: all .25s ease-in-out;
   }
 
   .rb-license {
