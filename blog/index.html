@@ -27,7 +27,7 @@ root_class: "posts blog page"
           {% assign author = site.data.authors[post.author] %}
           <img src="//www.gravatar.com/avatar/{{ author.gravatar }}" alt="" class="profile-img">
           <div class="author">{{ author.name }}</div>
-          <div class="date">{{ post.date | date: "%Y. %m. %d." }}</div>
+          <!-- <div class="date">{{ post.date | date: "%Y. %m. %d." }}</div> -->
         </div>
       </a>
     </li>

@@ -381,7 +381,7 @@ ol {
 }
 article.post {
   padding-top: 40px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   article.post .container {
@@ -649,7 +649,7 @@ article.post .back:hover {
   color: #484848;
 }
 article.post .link-to-career {
-  margin: 80px auto 40px;
+  margin: 40px auto;
   max-width: 400px;
   background: #f3f3f3;
   border-radius: 10px;
@@ -724,7 +724,6 @@ article.post .post-content {
 }
 article.post .button-area {
   text-align: center;
-  padding-top: 50px;
 }
 article.post .button-area a {
   display: inline-block;
