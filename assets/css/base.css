@@ -3463,6 +3463,20 @@ html.page.ridibatang .rb-reason-area {
     padding: 100px 0 500px 0;
   }
 }
+html.page.ridibatang .rb-feature-area textarea {
+  width: 740px;
+  margin: 0 auto;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .rb-feature-area textarea {
+    padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-feature-area textarea {
+    padding: 0 16px;
+  }
+}
 html.page.ridibatang .rb-download-area {
   background: #2e3847;
   background-image: url(../img/ridibatang-bg.png);
