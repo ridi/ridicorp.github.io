@@ -3317,6 +3317,9 @@ html.page.ridibatang .intro-header h1 {
   padding: 0;
   word-break: keep-all;
 }
+html.page.ridibatang .intro-header h1 p {
+  margin: 0;
+}
 @media only screen and (max-width: 767px) {
   html.page.ridibatang .intro-header h1 {
     font-size: 32px;
