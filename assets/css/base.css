@@ -3287,6 +3287,7 @@ html.page.contact #map_controls .close-map:hover {
 }
 html.page.ridibatang body {
   font-family: 'RIDIBatang';
+  word-wrap: break-word;
 }
 html.page.ridibatang .intro-header {
   background-image: url(../img/ridibatang-bg.png);
@@ -3314,6 +3315,7 @@ html.page.ridibatang .intro-header h1 {
   width: 90%;
   margin: 0 auto;
   padding: 0;
+  word-break: keep-all;
 }
 @media only screen and (max-width: 767px) {
   html.page.ridibatang .intro-header h1 {
@@ -3355,6 +3357,7 @@ html.page.ridibatang .rb-title {
   color: #000;
   letter-spacing: -0.03em;
   line-height: 1.45em;
+  word-break: keep-all;
 }
 @media only screen and (max-width: 767px) {
   html.page.ridibatang .rb-title {
@@ -3542,6 +3545,10 @@ html.page.ridibatang .rb-license {
   font-size: 14px;
   line-height: 1.9em;
   letter-spacing: -0.02em;
+}
+html.page.ridibatang .rb-license span {
+  font-size: 16px;
+  line-height: 2em;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   html.page.ridibatang .rb-license {
