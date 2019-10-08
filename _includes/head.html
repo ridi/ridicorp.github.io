@@ -14,13 +14,11 @@
 
   {% if page.published == true %}
   <meta property="og:image" content="{{ site.url }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" />
-  {% else %}
-  <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% else %}{{ site.url}}/assets/img/fb-img-ridicorp.png{% endif %}" />
-  {% endif %}
-
   {% if page.ridibatang == true %}
   <meta property="og:image" content="{{ site.url }}/assets/img/og-ridibatang.jpg" />
   <meta property="og:description" content="더 선명하고, 긴 문장도 잘 읽을 수 있는 전자책 전용 글꼴 리디바탕을 소개합니다." />
+  {% else %}
+  <meta property="og:image" content="{% if page.fb-img %}{{ site.url }}/{{ page.fb-img }}{% else %}{{ site.url}}/assets/img/fb-img-ridicorp.png{% endif %}" />
   {% endif %}
 
   <meta property="og:description" content="{% if page.description %}{{ page.subtitle }} - {{ page.description }}{% endif %}" />
