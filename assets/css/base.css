@@ -3488,6 +3488,9 @@ html.page.ridibatang .rb-download-area {
   padding: 140px 0;
   margin-top: 140px;
 }
+html.page.ridibatang .rb-download-area a {
+  color: #2e3847;
+}
 html.page.ridibatang .rb-download-area .rb-title {
   color: #fff;
 }
@@ -3513,9 +3516,6 @@ html.page.ridibatang .rb-download {
   margin: 50px auto 100px;
   text-align: center;
   border-radius: 3px;
-}
-html.page.ridibatang .rb-download a {
-  color: #2e3847;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   html.page.ridibatang .rb-download {
