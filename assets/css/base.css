@@ -1,5 +1,9 @@
 @import "../icon/css/ridicorp-icon.css";
 @import "../css/zoom.css";
+@font-face {
+  font-family: 'RIDIBatang';
+  src: url('../fonts/RIDIBatang.woff');
+}
 .clear {
   clear: both;
 }
@@ -3280,6 +3284,290 @@ html.page.contact #map_controls .close-map:hover {
   -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+html.page.ridibatang body {
+  font-family: 'RIDIBatang';
+}
+html.page.ridibatang .intro-header {
+  background-image: url(../img/ridibatang-bg.png);
+  background-repeat: repeat;
+  background-position: center -40px;
+  background-size: 1049px auto;
+  background-color: #212B3B;
+  padding: 190px 0;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .intro-header {
+    padding: 160px 0;
+  }
+}
+html.page.ridibatang .intro-header h1 {
+  text-align: left;
+  font-weight: 300;
+  text-shadow: none;
+  font-style: normal;
+  font-size: 54px;
+  letter-spacing: -0.03em;
+  line-height: 1.35em;
+  color: #fff;
+  max-width: 1040px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .intro-header h1 {
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .intro-header {
+    background-size: 1200px auto;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .intro-header {
+    background-size: 820px auto;
+  }
+}
+html.page.ridibatang .intro-header .site-heading.rb-heading,
+html.page.ridibatang .intro-header .page-heading.rb-heading {
+  text-align: left;
+}
+html.page.ridibatang .rb-explanation-box {
+  max-width: 740px;
+  margin: 0 auto;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .rb-explanation-box {
+    max-width: none;
+    padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-explanation-box {
+    max-width: none;
+    padding: 0 16px;
+  }
+}
+html.page.ridibatang .rb-title {
+  font-size: 36px;
+  color: #000;
+  letter-spacing: -0.03em;
+  line-height: 1.45em;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-title {
+    font-size: 26px;
+    line-height: 1.35em;
+  }
+}
+html.page.ridibatang .rb-body {
+  padding-top: 12px;
+  font-size: 24px;
+  color: #525A61;
+  letter-spacing: -0.02em;
+  line-height: 1.65em;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-body {
+    font-size: 20px;
+  }
+}
+html.page.ridibatang .rb-caption {
+  font-size: 30px;
+  color: #7D8E9E;
+  letter-spacing: -0.01em;
+  margin-top: 140px;
+  line-height: 1.5em;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-caption {
+    margin-top: 100px;
+    font-size: 23px;
+  }
+}
+html.page.ridibatang figure {
+  text-align: center;
+}
+html.page.ridibatang figcaption {
+  display: inline-block;
+  font-size: 19px;
+  color: #738096;
+  letter-spacing: -0.01em;
+  line-height: 1.5em;
+  padding-top: 12px;
+}
+html.page.ridibatang img {
+  width: 100%;
+  border: 1px solid #e3edf7;
+  border-radius: 3px;
+}
+html.page.ridibatang .rb-img {
+  margin-top: 30px;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-img {
+    display: inline-block;
+  }
+}
+html.page.ridibatang .rb-img-size-half {
+  display: inline-block;
+  width: 49%;
+  margin-right: 1%;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-img-size-half {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+html.page.ridibatang .rb-img-size-half:last-child {
+  margin: 0;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-img-size-half:last-child {
+    margin: 30px 0 0 0;
+  }
+}
+html.page.ridibatang .rb-img-size-full:last-child {
+  margin: 30px 0 0 0;
+}
+html.page.ridibatang .rb-reason-area {
+  background: #e3edf7;
+  padding: 120px 0 380px 0;
+  background-image: url(../img/ridibatang-toc-desktop.png);
+  background-repeat: no-repeat;
+  background-position: center 310px;
+  background-size: 1400px auto;
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-reason-area {
+    background-size: 1200px auto;
+    background-position: center 280px;
+    padding: 100px 0 360px 0;
+  }
+}
+@media only screen and (max-width: 568px) {
+  html.page.ridibatang .rb-reason-area {
+    background-position: center 320px;
+    padding: 100px 0 340px 0;
+  }
+}
+@media only screen and (max-width: 414px) {
+  html.page.ridibatang .rb-reason-area {
+    background-image: url(../img/ridibatang-toc-mobile.png);
+    background-size: 530px auto;
+    background-position: center 340px;
+    padding: 100px 0 500px 0;
+  }
+}
+html.page.ridibatang .rb-feature-area textarea {
+  width: 740px;
+  margin: 0 auto;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .rb-feature-area textarea {
+    padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-feature-area textarea {
+    padding: 0 16px;
+  }
+}
+html.page.ridibatang .rb-download-area {
+  background: #2e3847;
+  background-image: url(../img/ridibatang-bg.png);
+  background-repeat: repeat;
+  background-position: center -40px;
+  background-size: 1049px auto;
+  padding: 140px 0;
+  margin-top: 140px;
+}
+html.page.ridibatang .rb-download-area .rb-title {
+  color: #fff;
+}
+html.page.ridibatang .rb-download-area .rb-body {
+  color: rgba(255, 255, 255, 0.8);
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-download-area {
+    padding: 100px 0;
+    margin-top: 100px;
+  }
+}
+html.page.ridibatang footer {
+  display: none;
+}
+html.page.ridibatang .rb-download {
+  transition: all 0.25s ease-in-out;
+  max-width: 740px;
+  padding: 24px 0 26px 0;
+  background: #fff;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  margin: 50px auto 100px;
+  text-align: center;
+  border-radius: 3px;
+}
+html.page.ridibatang .rb-download a {
+  color: #2e3847;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .rb-download {
+    max-width: none;
+    margin: 50px 24px 100px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-download {
+    max-width: none;
+    margin: 50px 16px 100px;
+  }
+}
+html.page.ridibatang .rb-download .icon-download {
+  margin-left: 12px;
+}
+html.page.ridibatang .rb-download:hover,
+html.page.ridibatang .rb-download:active {
+  opacity: 0.7;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+html.page.ridibatang .rb-license {
+  max-width: 740px;
+  margin: 0 auto;
+  color: #70808f;
+  font-size: 14px;
+  line-height: 1.9em;
+  letter-spacing: -0.02em;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.ridibatang .rb-license {
+    max-width: none;
+    padding: 0 24px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.ridibatang .rb-license {
+    max-width: none;
+    padding: 0 16px;
+  }
+}
+html.page.ridibatang .rb-footer {
+  text-align: center;
+}
+html.page.ridibatang .rb-footer .copyright {
+  font-family: 'RIDIBatang';
+  font-weight: 300;
+  font-size: 16px;
+  color: #9eafbf;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding: 0;
+  margin-top: 50px;
+  display: inline-block;
 }
 html.post.blog .intro-header.post-header {
   background-position: center center;
