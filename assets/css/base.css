@@ -3550,11 +3550,19 @@ html.page.ridibatang .rb-license {
   letter-spacing: -0.02em;
 }
 html.page.ridibatang .rb-license span {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 2em;
 }
 html.page.ridibatang .rb-license p {
   margin: 0;
+}
+html.page.ridibatang .rb-license p a {
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+html.page.ridibatang .rb-license p a:hover,
+html.page.ridibatang .rb-license p a:active {
+  color: rgba(255, 255, 255, 0.6);
 }
 html.page.ridibatang .rb-license .rb-license-info {
   margin-bottom: 16px;
