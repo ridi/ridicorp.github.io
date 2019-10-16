@@ -1,7 +1,8 @@
 ---
 layout: blog_post
 title: "Cloudflare 도입 후기"
-description: "5년간의 사용 후기를 공유합니다."
+description: "5년간의 Cloudflare 사용 후기를 공유합니다."
+header-img: "blog/img/2019-10-14/header-bg.jpg"
 date: 2019-10-14
 author: "namenu"
 category: engineering
@@ -18,7 +19,7 @@ Cloudflare는 주로 CDN 업체로 알려져 있습니다. 리디를 포함한 �
 
 # 이렇게 하고 있습니다
 
-## 1. 전송 프로토콜을 현대화해주는 기능은 적극적으로 활용한다.
+## 1. 전송 프로토콜을 현대화해주는 기능은 적극적으로 활용합니다.
 
 Cloudflare는 현대화된 압축 알고리즘과 향상된 보안 프로토콜을 사용할 수 있게 해줍니다.
 
@@ -26,25 +27,30 @@ Cloudflare는 현대화된 압축 알고리즘과 향상된 보안 프로토콜�
 
 웹서비스를 구축할 때 텍스트 위주의 리소스는 압축을 해서 내려줘야 한다는 것은 잘 알려져 있지만, gzip 이외의 압축 알고리즘을 지정할 수 있다는 사실은 잘 알려져 있지 않습니다.
 
-최신 버전의 파이어폭스 혹은 크롬 브라우저에서 전송되는 압축이 적용된 요청/응답 헤더는 아래와 같습니다.
+최신 브라우저의 개발자 도구를 통해 송수신되는 헤더를 살펴보면 아래와 같은 내용이 있습니다.
 
 ```
+(Request)
 Accept-Encoding: gzip, deflate, br
-Content-Encoding: gzip
+
+(Response)
+Content-Encoding: br
 ```
+
+이는 [컨텐츠 협상](https://developer.mozilla.org/ko/docs/Web/HTTP/Content_negotiation)이라고 부르는 과정의 일부로, 브라우저가 먼저 `Accept-Encoding` 헤더를 통해 수용 가능한 인코딩 방식을 제시하면 서버에서는 그에 부합하는 인코딩을 사용하게 되는 것입니다.
 
 여기서 마지막 `br`이라고 표기된 것은 Brotli 알고리즘을 가리키는 것으로, 2016년 7월에 웹에 사용될 수 있도록 [RFC](https://tools.ietf.org/html/rfc7932)로 등록되었습니다.
 
-알고리즘의 핵심 아이디어나 구현 방식을 이해하기는 어렵지만, 우리에게 중요한 사실은 Brotli의 성능과 안정성은 이미 충분히 검증되었고 구글 및 여러 대형 사이트에서 널리 쓰이고 있다는 사실입니다.
+알고리즘의 핵심 아이디어나 구현 방식을 이해하기는 어렵지만, 우리에게 중요한 사실은 Brotli의 성능과 안정성은 이미 충분히 검증되었고 구글 및 여러 대형 사이트에서 널리 쓰이고 있다는 것입니다.
 
 <img srcset="/blog/img/2019-10-14/brotli_logo.png 2x" alt="Brotli">
-<figcaption>Brotli 로고</figcaption>
+<figcaption>로고를 가진 Brotli 압축 알고리즘</figcaption>
 
-여튼 Brotli는 비교적 최근에 도입되고 있는 인코딩 방식이므로, 아마 운용 중인 웹서버의 상황에 따라서는 지원이 어려울 수 있습니다. 2019년 10월 현재 CloudFront에서도 gzip 이외의 방식은 지원하지 않고 있습니다. 그러나 Cloudflare는 이를 손쉽게 활성화 할 수 있습니다.
+여튼 Brotli는 비교적 최근에 도입되고 있는 인코딩 방식이므로, 아마 운용 중인 웹서버의 상황에 따라서는 지원을 위한 업데이트가 부담스러울 수 있습니다. 2019년 10월 현재 CloudFront에서도 gzip 이외의 방식은 지원하지 않고 있습니다. 그러나 Cloudflare는 이를 손쉽게 활성화 할 수 있게 해줍니다.
 
-성능 비교와 관련된 글은 Cloudflare의 [공식블로그](https://blog.cloudflare.com/results-experimenting-brotli/)(영문)에서 확인하실 수 있습니다. 요약하면, 통상적으로 다루어지는 콘텐츠의 크기를 고려했을 때 평균적으로 **1.19~1.38배** 작은 결과물을 생성하므로 gzip과 비교하여 매우 큰 이득이 있다는 결론입니다.
+성능 비교와 관련된 글은 Cloudflare의 [공식 블로그(영어)](https://blog.cloudflare.com/results-experimenting-brotli/)에서 확인하실 수 있습니다. 요약하면, 통상적으로 다루어지는 콘텐츠의 크기를 고려했을 때 평균적으로 **1.19~1.38배** 작은 결과물을 생성하므로 gzip과 비교하여 매우 큰 이득이 있다는 결론입니다.
 
-다만 특정 상황에 있어서는 연산량이 많아 gzip보다 지연이 발생할 수 있으므로, 리디에서는 정적인 콘텐츠에 한해서만 brotli를 적용하고 있습니다.
+다만 특정 상황에 있어서는 연산량이 많아 gzip보다 지연이 발생할 수 있으므로, 리디에서는 정적인 콘텐츠에 한해서만 Brotli를 적용하고 있습니다.
 
 
 ### TLS v1.3
@@ -77,10 +83,13 @@ Verify return code: 0 (ok)
 
 이 외에도 HTTP/3(QUIC), 보안 헤더(HSTS), DNSSEC 등을 지원하며 애플리케이션 개발자들이 크게 신경 쓰지 않고도 누릴 수 있는 여러 가지 공짜 점심을 제공하고 있습니다.
 
-특히 HTTP/3와 같은 웹 기술의 최선단을 빠르게 체험해볼 수 있다는 것은 큰 장점입니다. 보다 상세한 내용은 [공식 블로그](https://blog.cloudflare.com/ko/http3-the-past-present-and-future-ko/)에 잘 설명되어 있으니 궁금하신 분들은 읽어보시기 바랍니다. 아래는 최신 버전의 cURL을 통해 리디북스에 적용된 HTTP/3를 확인한 결과입니다.
+특히 HTTP/3와 같은 웹 기술의 최선단을 빠르게 체험해볼 수 있다는 것은 큰 장점입니다. HTTP/3의 탄생 배경에 관한 내용은 [HTTP/3 explained](https://http3-explained.haxx.se/ko/) 및 [공식 블로그](https://blog.cloudflare.com/ko/http3-the-past-present-and-future-ko/)에 매우 상사하게 설명되어 있으니 궁금하신 분들은 읽어보시기를 추천합니다.
+
+아래는 최신 버전의 cURL을 통해 리디북스에 적용된 HTTP/3를 확인한 결과입니다.
+참고로 `--http3` 옵션을 사용하기 위해서는 최신 버전의 curl을 직접 빌드해야 합니다.
 
 ```
-$ curl --http3 https://blog.cloudflare.com
+$ curl --http3 https://ridibooks.com/\?genre\=comic -I
 
 HTTP/3 200
 date: Mon, 14 Oct 2019 10:38:14 GMT
@@ -91,14 +100,14 @@ expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi
 server: cloudflare
 ```
 
-아직은 초기 단계인 만큼 QUIC 사용으로 인한 성능 개선을 체감할 수 없었습니다만, 향후 최적화를 통해 나아질 것을 기대해 봅니다.
+아직은 초기 단계인 만큼 HTTP/3 사용으로 인한 성능 개선을 체감할 수 없었습니다만, 향후 최적화를 통해 나아질 것을 기대해 봅니다.
 
 
-## 2. 동적 콘텐츠 전송에도 CDN을 활용한다.
+## 2. 동적 콘텐츠 전송에도 CDN을 활용합니다.
 
 리디에서는 동적 콘텐츠 전송에도 CDN을 사용합니다. 얼핏 생각하면 어차피 오리진에 도달해야 하는 요청이 프록시 서버를 한 번 더 경유하니까(홉이 증가하니까) RTT가 더 길어질 것이라 생각할 수 있겠으나 실제로는 대부분 예상과는 반대의 결과가 나타난다고 합니다. 이러한 현상에 관해서는 이미 많은 글들이 있으므로 링크로 설명을 대신합니다.
 
-- [Dynamic site acceleration](https://en.wikipedia.org/wiki/Dynamic_site_acceleration)
+- [Dynamic site acceleration (영어)](https://en.wikipedia.org/wiki/Dynamic_site_acceleration)
 - [Amazon CloudFront를 활용한 동적 콘텐츠 전송 성능 개선하기](https://aws.amazon.com/ko/blogs/korea/how-to-improve-dynamic-contents-delievery-using-amazon-cloudfront/)
 - [Akamai, 고용량 동적 콘텐츠 전송을 위한 네트워크 최적화](https://www.akamai.com/kr/ko/products/performance/dynamic-site-accelerator.jsp)
 
@@ -178,10 +187,11 @@ TCP SYN/SYNACK와 TLS 핸드셰이킹 단계가 크게 줄어듦으로 인해 TT
 엔터프라이즈 플랜부터 사용할 수 있는 기능인만큼 성능 향상에 대한 기대도 컸는데요. 실제로 적용해보니 해외 트래픽의 경우 평균적으로 50% 이상의 성능 향상이 있었습니다. 홍보용 소개 페이지의 수치가 결코 과장이 아니었습니다.
 
 ![Argo Analytics](/blog/img/2019-10-14/argo-graph.png)
+<figcaption>Argo 사용 전후 성능 비교</figcaption>
 
 지역적으로는 아시아보다 유럽이, 유럽보다 북미 지역의 성능 개선이 두드러졌습니다.
-
 ![Argo Geo](/blog/img/2019-10-14/argo-geo.png)
+<figcaption>오리진이 한국에 있는 경우 지역별 변화량</figcaption>
 
 최근 Cloudflare에서는 일반 사용자를 위한 Warp라는 VPN 서비스를 출시한 바 있는데요. Smart Routing의 성능이 궁금하다면 Warp를 통해 직접 체험해 볼 수 있을 것입니다.
 
@@ -191,9 +201,9 @@ TCP SYN/SYNACK와 TLS 핸드셰이킹 단계가 크게 줄어듦으로 인해 TT
 
 Cloudflare에는 매우 다양한 기능들이 제공되지만, 모든 것들이 저희에게 유용한 것은 아니었습니다. 운영되는 서비스의 상황에 따라 불필요하거나 오히려 사용하지 않는 것이 좋은 것들도 있었습니다.
 
-## 1. Cloudflare가 애플리케이션 계층의 역할을 대신해서는 안 된다.
+## 1. 애플리케이션 계층의 역할을 위임하지 않습니다.
 
-Cloudflare는 본질은 프록시 서버이므로, 오리진 응답 자체로도 서비스에 문제가 없어야 합니다. 이는 서비스 인프라가 Cloudflare에 강한 의존성이 생기는 것을 방지하는 데에도 도움이 됩니다. 만약 CDN을 이중화하고자 할 경우에도 큰 비용 없이 도입이 가능하게 됩니다.
+Cloudflare는 본질은 프록시 서버이므로, 오리진 응답 자체로도 서비스에 문제가 없어야 합니다. 이는 서비스 인프라가 Cloudflare에 강한 의존성이 생기는 것을 방지하는 데에도 도움이 됩니다. 그래야 만약 CDN을 이중화하고자 할 경우에도 큰 비용 없이 도입이 가능하게 됩니다.
 
 이러한 원칙에 따라 리디에서는 종단 간 요청과 응답의 내부(body)를 변조하는 기능은 매우 보수적으로 사용하고 있습니다.
 
@@ -205,10 +215,10 @@ Cloudflare는 본질은 프록시 서버이므로, 오리진 응답 자체로도
 
 기능들이 이에 해당합니다. 이들은 매력적으로 보이지만 사용을 자제하고 있습니다. 오리진의 응답을 충실하게 전달하지 않기 때문입니다.
 
-캐싱 정책 역시 CDN에 위임하지 않습니다. 캐시을 투명하게 관리하기 위해서는 **오로지 오리진에서 설정된 HTTP 캐시 헤더에만 의존하도록** 애플리케이션이 설계되어야 합니다. 그리고 프록시 서버에서는 이 헤더를 오버라이딩하지 않아야 합니다.
+캐싱 정책 역시 CDN에 위임하지 않습니다. 캐시를 투명하게 관리하기 위해서는 **오로지 오리진에서 설정된 HTTP 캐시 헤더에만 의존하도록** 애플리케이션이 설계되어야 합니다. 그리고 프록시 서버에서는 이 헤더를 오버라이딩하지 않아야 합니다.
 
 
-## 2. 개발자가 신경 써야 할 보안을 방화벽에 의탁하지 않는다.
+## 2. 개발자가 신경 써야 할 보안을 방화벽에 의탁하지 않습니다.
 
 웹서버의 보안은 대응 관점에서 크게 두 종류로 구분할 수 있습니다.
 
@@ -229,16 +239,22 @@ Cloudflare에서는 수십 개에 달하는 관리형 방화벽 룰셋을 제공
 시뮬레이션 결과를 정기적으로 리뷰하는 것은 위에 언급한 부작용을 피하며 보안 지식수준을 높일 수 있는 좋은 방법입니다.
 
 
-위 구분에서 2번에 대당하는, 즉 방화벽을 활용해야 하는 것의 예는 아래와 같습니다.
+위 구분에서 2번에 해당하는, 즉 방화벽을 활용해야 하는 것의 예는 아래와 같습니다.
 
 - 각종 DDoS 공격
 - 악성 크롤러, 스캐닝 도구
 - 서비스 어뷰징 (계정 자동 생성, 무작위 쿠폰 번호 대입, 이벤트 자동 참여 등)
 
-특시 서비스 어뷰징과 관련된 브루트포스 공격에 대해서는 공격자의 요청 횟수를 제한하는 [Rate Limiting](https://www.cloudflare.com/ko-kr/rate-limiting/) 기능을 사용할 수 있습니다.
+특히 서비스 어뷰징과 관련된 브루트포스 공격에 대해서는 공격자의 요청 횟수를 제한하는 [Rate Limiting](https://www.cloudflare.com/ko-kr/rate-limiting/) 기능을 사용할 수 있습니다.
 
 ---
 
 CDN으로만 한정한다면 Cloudflare 이외에도 더 나은 품질과 안정성을 가진 대안이 많이 있을 것입니다.
 
-그러나 보다 나은 인터넷을 만들기 위한 이들의 시도에 공감하는 만큼, 앞으로의 행보도 기대해봅니다.
+그러나 앞서 살펴본 바와 같이 Cloudflare는 여러 현대화된 기술들을 손쉽게 활용할 수 있도록 도와줌으로서 단순한 CDN 이상의 가치를 제공합니다.
+
+보다 나은 인터넷을 만들기 위한 이들의 시도[^1]에 공감하는 만큼, 앞으로의 행보도 기대해봅니다.
+
+---
+
+[^1]: "we make sure to stay on top of the latest trends in the Internet so that every web site can ‘be Google’." - [Evenly Distributed Future](https://blog.cloudflare.com/evenly-distributed-future/)

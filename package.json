@@ -9,7 +9,7 @@
     "grunt": "^1.0.4",
     "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "stylelint": "^10.0.1",
+    "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0"
   },
   "repository": {
