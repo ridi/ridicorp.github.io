@@ -9,6 +9,25 @@ category: engineering
 published: true
 ---
 
+<style>
+article.post .my-table {
+  line-height: 1.5em;
+  margin: 20px auto;
+}
+article.post .my-table th, td {
+  text-align: center;
+  padding: 5px 20px;
+  border-top: 1px solid #e3e3e3;
+}
+article.post .table-caption {
+  text-align: center;
+  margin: 40px 0 20px;
+}
+article.post .quote-small {
+  font-size: small;
+}
+</style>
+
 리디에서는 2014년부터 Cloudflare를 사용해오고 있습니다.
 
 Cloudflare는 주로 CDN 업체로 알려져 있습니다. 리디를 포함한 국내의 많은 서비스들은 AWS 상에 구축되는 추세이고 AWS에서는 CloudFront라는 CDN을 제공하고 있기 때문에, 굳이 왜 별도의 CDN을 사용하느냐는 질문을 주시곤 합니다.
@@ -39,9 +58,9 @@ Content-Encoding: br
 
 이는 [컨텐츠 협상](https://developer.mozilla.org/ko/docs/Web/HTTP/Content_negotiation)이라고 부르는 과정의 일부로, 브라우저가 먼저 `Accept-Encoding` 헤더를 통해 수용 가능한 인코딩 방식을 제시하면 서버에서는 그에 부합하는 인코딩을 사용하게 되는 것입니다.
 
-여기서 마지막 `br`이라고 표기된 것은 Brotli 알고리즘을 가리키는 것으로, 2016년 7월에 웹에 사용될 수 있도록 [RFC](https://tools.ietf.org/html/rfc7932)로 등록되었습니다.
+여기서 `br`이라고 표기된 것은 Brotli 알고리즘을 가리키는 것으로, 2016년 7월에 웹에 사용될 수 있도록 [RFC](https://tools.ietf.org/html/rfc7932)로 등록되었습니다.
 
-알고리즘의 핵심 아이디어나 구현 방식을 이해하기는 어렵지만, 우리에게 중요한 사실은 Brotli의 성능과 안정성은 이미 충분히 검증되었고 구글 및 여러 대형 사이트에서 널리 쓰이고 있다는 것입니다.
+알고리즘의 핵심 아이디어나 구현 방식을 이해하기는 어렵지만, 우리에게 중요한 사실은 Brotli의 성능과 안정성은 이미 충분히 검증되었고 구글 및 여러 대형 사이트에서 널리 쓰이고 있다는 점입니다.
 
 <img srcset="/blog/img/2019-10-14/brotli_logo.png 2x" alt="Brotli">
 <figcaption>로고를 가진 Brotli 압축 알고리즘</figcaption>
@@ -59,8 +78,8 @@ Content-Encoding: br
 
 물론 최근에는 HTTP/2가 보편화되어 RTT 감소로 인한 성능 향상을 체감하기는 어렵지만, 그럼에도 불구하고 보다 나은 보안성을 손쉽게 확보할 수 있다는 것은 큰 장점입니다.
 
-![TLS](/blog/img/2019-10-14/tls-analytics.png)
-<figcaption>TLS v1.3을 활성화한 모습</figcaption>
+![TLS](/blog/img/2019-10-14/ssllabs.png)
+<figcaption><a href="https://www.ssllabs.com/ssltest/analyze.html?viaform=on&d=ridibooks.com">SSLLabs</a>에서 A+를 획득한 모습</figcaption>
 
 또한 TLS v1.3에는 [0-RTT](https://blog.cloudflare.com/introducing-0-rtt/)라는 모드가 있어서, 연속적인 요청에 대해서는 별도의 핸드셰이크 과정을 거치지 않고 데이터를 전송할 수도 있습니다. 결과적으로 라운트 트립이 없다 하여 0-RTT라고 부릅니다.
 
@@ -83,7 +102,7 @@ Verify return code: 0 (ok)
 
 이 외에도 HTTP/3(QUIC), 보안 헤더(HSTS), DNSSEC 등을 지원하며 애플리케이션 개발자들이 크게 신경 쓰지 않고도 누릴 수 있는 여러 가지 공짜 점심을 제공하고 있습니다.
 
-특히 HTTP/3와 같은 웹 기술의 최선단을 빠르게 체험해볼 수 있다는 것은 큰 장점입니다. HTTP/3의 탄생 배경에 관한 내용은 [HTTP/3 explained](https://http3-explained.haxx.se/ko/) 및 [공식 블로그](https://blog.cloudflare.com/ko/http3-the-past-present-and-future-ko/)에 매우 상사하게 설명되어 있으니 궁금하신 분들은 읽어보시기를 추천합니다.
+특히 HTTP/3와 같은 웹 기술의 최선단을 빠르게 체험해볼 수 있다는 것은 큰 장점입니다. HTTP/3의 탄생 배경에 관한 내용은 [HTTP/3 explained](https://http3-explained.haxx.se/ko/) 및 [공식 블로그](https://blog.cloudflare.com/ko/http3-the-past-present-and-future-ko/)에 매우 상세하게 설명되어 있으니 읽어보시기를 추천합니다.
 
 아래는 최신 버전의 cURL을 통해 리디북스에 적용된 HTTP/3를 확인한 결과입니다.
 참고로 `--http3` 옵션을 사용하기 위해서는 최신 버전의 curl을 직접 빌드해야 합니다.
@@ -100,39 +119,32 @@ expect-ct: max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi
 server: cloudflare
 ```
 
-아직은 초기 단계인 만큼 HTTP/3 사용으로 인한 성능 개선을 체감할 수 없었습니다만, 향후 최적화를 통해 나아질 것을 기대해 봅니다.
+아직은 초기 단계인 만큼 HTTP/3 사용으로 인한 성능 개선을 체감할 수 없었습니다. HTTP/2와 비슷하거나 오히려 더 느리게 느껴지기도 합니다만 이 부분은 향후 최적화를 통해 나아질 것을 기대해 봅니다.
 
 
 ## 2. 동적 콘텐츠 전송에도 CDN을 활용합니다.
 
-리디에서는 동적 콘텐츠 전송에도 CDN을 사용합니다. 얼핏 생각하면 어차피 오리진에 도달해야 하는 요청이 프록시 서버를 한 번 더 경유하니까(홉이 증가하니까) RTT가 더 길어질 것이라 생각할 수 있겠으나 실제로는 대부분 예상과는 반대의 결과가 나타난다고 합니다. 이러한 현상에 관해서는 이미 많은 글들이 있으므로 링크로 설명을 대신합니다.
+리디에서는 동적 콘텐츠 전송에도 CDN을 사용합니다. 얼핏 생각하면 어차피 오리진에 도달해야 하는 요청이 프록시 서버를 한 번 더 경유하니까(홉이 증가하니까) RTT가 더 길어질 것이라 생각할 수 있겠으나 실제로는 대부분 예상과는 반대의 결과가 나타난다고 합니다.
 
-- [Dynamic site acceleration (영어)](https://en.wikipedia.org/wiki/Dynamic_site_acceleration)
-- [Amazon CloudFront를 활용한 동적 콘텐츠 전송 성능 개선하기](https://aws.amazon.com/ko/blogs/korea/how-to-improve-dynamic-contents-delievery-using-amazon-cloudfront/)
-- [Akamai, 고용량 동적 콘텐츠 전송을 위한 네트워크 최적화](https://www.akamai.com/kr/ko/products/performance/dynamic-site-accelerator.jsp)
+이러한 현상과 관련하여 [위키(영어)](https://en.wikipedia.org/wiki/Dynamic_site_acceleration)에는 아래와 같은 요인들을 나열하고 있습니다.
 
-좋은 말들은 많은데요, 실제로는 어떨지 결과가 궁금하여 직접 테스트를 해보았습니다.
+>Improved connection management, by multiplexing client connections and HTTP keep-alive<br>
+>Prefetching of uncachable web responses<br>
+>Dynamic cache control<br>
+>On-the-fly compression<br>
+>Full page caching<br>
+>Off-loading SSL termination<br>
+>Response based TTL-assignment (bending)<br>
+>TCP optimization<br>
+>Route optimization
+{: .quote-small }
+
+많은 용어들이 나열되어 있는데요, 실제로는 어떨지 결과가 궁금하여 직접 테스트를 해보았습니다.
 
 
 ### 연결 생성 속도 개선
 
-가장 극적으로 개선되는 것은 연결 속도의 개선이라고 합니다. 이러한 개선이 가능한 경우를 간단히 시뮬레이션해보면 아래와 같습니다.
-
-<style>
-article.post .my-table {
-  line-height: 1.5em;
-  margin: 20px auto;
-}
-article.post .my-table th, td {
-  text-align: center;
-  padding: 5px 20px;
-  border-top: 1px solid #e3e3e3;
-}
-article.post .table-caption {
-  text-align: center;
-  margin: 40px 0 20px;
-}
-</style>
+가장 극적으로 개선되는 것은 연결 속도의 개선이라고 합니다. 이러한 개선이 가능한 상황을 시뮬레이션해보면 아래와 같습니다.
 
 {: .table-caption }
 A. 오리진에 직접 요청하는 경우
@@ -162,7 +174,7 @@ B. 엣지 프록시를 통해 요청하는 경우
 
 작위적인 예시이긴 하지만, 클라이언트의 요청을 처리하기 위해서는 TCP 연결 및 TLS 핸드셰이킹을 위한 패킷 교환이 필요하므로 오리진과의 딜레이가 클수록 지연이 커진다고 예상해볼 수 있습니다.
 
-실제로는 어떨지 궁금하여 직접 테스트를 해보았습니다. 먼저 오리진으로 직접 요청하는 경우입니다.
+아래는 시뮬레이션이 아닌 실제 결과입니다. 먼저 오리진으로 직접 요청하는 경우입니다.
 
 <img src="/blog/img/2019-10-14/argo-before.png" srcset="/blog/img/2019-10-14/argo-before.png 2x" alt="Argo before">
 
@@ -172,7 +184,7 @@ Connect 컬럼과 TLS컬럼의 수치를 보면 실제로 테스트를 수행한
 
 <img src="/blog/img/2019-10-14/argo-after.png" srcset="/blog/img/2019-10-14/argo-after.png 2x" alt="Argo after">
 
-TCP SYN/SYNACK와 TLS 핸드셰이킹 단계가 크게 줄어듦으로 인해 TTFB가 개선되었음을 알 수 있습니다.
+TCP SYN/SYNACK와 TLS 핸드셰이킹 단계가 크게 줄어듦으로 인해 TTFB(Time To First Byte)가 개선되었음을 알 수 있습니다.
 이러한 차이는 TCP 멀티플렉싱(HTTP keep-alive)을 통해 더욱 극대화됩니다.
 
 
@@ -215,7 +227,8 @@ Cloudflare는 본질은 프록시 서버이므로, 오리진 응답 자체로도
 
 기능들이 이에 해당합니다. 이들은 매력적으로 보이지만 사용을 자제하고 있습니다. 오리진의 응답을 충실하게 전달하지 않기 때문입니다.
 
-캐싱 정책 역시 CDN에 위임하지 않습니다. 캐시를 투명하게 관리하기 위해서는 **오로지 오리진에서 설정된 HTTP 캐시 헤더에만 의존하도록** 애플리케이션이 설계되어야 합니다. 그리고 프록시 서버에서는 이 헤더를 오버라이딩하지 않아야 합니다.
+캐싱 정책 역시 CDN에 위임하지 않습니다. 캐시를 투명하게 관리하기 위해서는 **오로지 오리진에서 설정된 HTTP 캐시 헤더에만 의존하도록** 애플리케이션이 설계되어야 합니다.
+그리고 프록시 서버에서는 이 헤더를 오버라이딩하지 않아야 하며, 부가적인 CDN 캐시 정리(purge) 로직을 필요로 하지 않아야 합니다.
 
 
 ## 2. 개발자가 신경 써야 할 보안을 방화벽에 의탁하지 않습니다.
