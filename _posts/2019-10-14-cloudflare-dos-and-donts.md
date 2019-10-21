@@ -128,7 +128,7 @@ server: cloudflare
 
 이러한 현상과 관련하여 [위키(영어)](https://en.wikipedia.org/wiki/Dynamic_site_acceleration)에는 아래와 같은 요인들을 나열하고 있습니다.
 
->Improved connection management, by multiplexing client connections and HTTP keep-alive<br>
+>Improved connection management<br>
 >Prefetching of uncachable web responses<br>
 >Dynamic cache control<br>
 >On-the-fly compression<br>
@@ -137,7 +137,6 @@ server: cloudflare
 >Response based TTL-assignment (bending)<br>
 >TCP optimization<br>
 >Route optimization
-{: .quote-small }
 
 많은 용어들이 나열되어 있는데요, 실제로는 어떨지 결과가 궁금하여 직접 테스트를 해보았습니다.
 
@@ -178,7 +177,7 @@ B. 엣지 프록시를 통해 요청하는 경우
 
 <img src="/blog/img/2019-10-14/argo-before.png" srcset="/blog/img/2019-10-14/argo-before.png 2x" alt="Argo before">
 
-Connect 컬럼과 TLS컬럼의 수치를 보면 실제로 테스트를 수행한 서버와의 물리적인 거리에 비례하여 지연이 발생함을 확인할 수 있습니다.
+Connect 컬럼과 TLS 컬럼의 수치를 보면 실제로 테스트를 수행한 서버와의 물리적인 거리에 비례하여 지연이 발생함을 확인할 수 있습니다.
 
 다음은 요청을 엣지 프록시를 통해 전송한 결과입니다.
 
@@ -244,7 +243,7 @@ Cloudflare에서는 수십 개에 달하는 관리형 방화벽 룰셋을 제공
 예를 들어, 클라이언트 요청의 입력값 검증은 웹서버에서 반드시 해야 할 일입니다. 이를 방화벽의 SQL 인젝션 방어 휴리스틱에 위임하는 것은 바람직하지 않습니다.
 
 또한 거짓 음성으로 공격이 유입되는 것보다, 거짓 양성으로 무고한 사용자가 차단되는 상황이 더 나쁘다는 인식도 필요합니다.
-예를 들어, 보안 설정으로 인해 인앱브라우저나 합법적인 봇 요청이 차단되는 경우가 있습니다. 이를 화이트리스트 대응하는 것은 바람직하지 않습니다.
+예를 들어, 보안 설정으로 인해 인앱브라우저나 합법적인 봇 요청이 차단되는 경우가 있습니다. 이러한 잘못된 차단이 발생하는 것, 이를 우회하기 위해 예외를 두는 것 모두 바람직하지 않습니다.
 
 그러나 보안적인 지식수준이 높지 않다면 현재 우리가 얼마나 위험한 상태인지, 또 어떤 공격에 대비를 해야 하는지조차 알기 어렵습니다.
 
@@ -263,7 +262,7 @@ Cloudflare에서는 수십 개에 달하는 관리형 방화벽 룰셋을 제공
 
 CDN으로만 한정한다면 Cloudflare 이외에도 더 나은 품질과 안정성을 가진 대안이 많이 있을 것입니다.
 
-그러나 앞서 살펴본 바와 같이 Cloudflare는 여러 현대화된 기술들을 손쉽게 활용할 수 있도록 도와줌으로서 단순한 CDN 이상의 가치를 제공합니다.
+그러나 앞서 살펴본 바와 같이 Cloudflare는 여러 현대화된 기술들을 손쉽게 활용할 수 있도록 도와줌으로써 단순한 CDN 이상의 가치를 제공합니다.
 
 보다 나은 인터넷을 만들기 위한 이들의 시도[^1]에 공감하는 만큼, 앞으로의 행보도 기대해봅니다.
 
