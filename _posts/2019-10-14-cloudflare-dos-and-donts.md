@@ -32,7 +32,7 @@ article.post .quote-small {
 
 Cloudflare는 주로 CDN 업체로 알려져 있습니다. 리디를 포함한 국내의 많은 서비스들은 Amazon Web Services(이하 AWS) 상에 구축되는 추세이고 AWS에서는 CloudFront라는 CDN을 제공하고 있기 때문에, 굳이 왜 별도의 CDN을 사용하느냐는 질문을 주시곤 합니다.
 
-그러나 현재 리디에서는 Cloudflare를 단순히 콘텐츠 전송을 빠르게 하기 위한 용도가 아닌(CloudFront의 대체재가 아닌), 별도의 가치를 부여하는 인프라로 간주하고 있습니다. 이 글에서는 리디에서 Cloudflare를 통해 어떤 이득을 얻었는지, 그간의 운영을 통해 얻은 경험에 대해 설명합니다.
+그러나 현재 리디에서는 Cloudflare를 CloudFront의 대체재가 아닌, 별도의 가치를 부여하는 인프라로 간주하고 있습니다. 이 글에서는 리디에서 Cloudflare를 통해 어떤 이득을 얻었는지와 그간의 운영 경험을 설명합니다.
 
 ---
 
@@ -100,7 +100,7 @@ Verify return code: 0 (ok)
 
 ### 기타
 
-이 외에도 HTTP/3(QUIC), 보안 헤더(HSTS), DNSSEC 등을 지원하며 애플리케이션 개발자들이 크게 신경 쓰지 않고도 누릴 수 있는 여러 가지 공짜 점심을 제공하고 있습니다.
+이 외에도 HTTP/3, 보안 헤더(HSTS), DNSSEC 등을 지원하며 애플리케이션 개발자들이 크게 신경 쓰지 않고도 누릴 수 있는 여러 가지 공짜 점심을 제공하고 있습니다.
 
 특히 HTTP/3와 같은 웹 기술의 최선단을 빠르게 체험해볼 수 있다는 것은 큰 장점입니다. HTTP/3의 탄생 배경에 관한 내용은 [HTTP/3 explained](https://http3-explained.haxx.se/ko/) 및 [공식 블로그](https://blog.cloudflare.com/ko/http3-the-past-present-and-future-ko/)에 매우 상세하게 설명되어 있으니 읽어보시기를 추천합니다.
 
@@ -184,7 +184,7 @@ Connect 컬럼과 TLS 컬럼의 수치를 보면 실제로 테스트를 수행�
 <img src="/blog/img/2019-10-14/argo-after.png" srcset="/blog/img/2019-10-14/argo-after.png 2x" alt="Argo after">
 
 TCP SYN/SYNACK와 TLS 핸드셰이킹 단계가 크게 줄어듦으로 인해 TTFB(Time To First Byte)가 개선되었음을 알 수 있습니다.
-이러한 차이는 TCP 멀티플렉싱(HTTP keep-alive)을 통해 더욱 극대화됩니다.
+이러한 차이는 TCP 멀티플렉싱과 HTTP keep-alive를 통해 더욱 극대화됩니다.
 
 
 ### 네트워크 경로 최적화
