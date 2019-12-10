@@ -1373,6 +1373,7 @@ html.page.career .job-quick-links .hiring:last-child:after {
   display: none;
 }
 html.page.career .how-we-work-area {
+  background: #f5faff;
   padding-bottom: 80px;
 }
 @media only screen and (max-width : 1023px) {
@@ -1383,7 +1384,7 @@ html.page.career .how-we-work-area {
 html.page.career .how-we-work {
   counter-reset: hww-counter;
   list-style-type: none;
-  padding-top: 180px;
+  padding-top: 100px;
   padding-left: 0;
   width: 960px;
   margin: 0 auto;
@@ -1401,7 +1402,7 @@ html.page.career .how-we-work {
   }
 }
 html.page.career .how-we-work li {
-  border-bottom: 2px solid #f31717;
+  border-bottom: 2px solid #1f8ce6;
   padding-bottom: 30px;
   padding-left: 0;
   margin-bottom: 20px;
@@ -1418,7 +1419,7 @@ html.page.career .how-we-work li:before {
   z-index: 1;
   left: -0.7em;
   top: -0.8em;
-  color: #f31717;
+  color: #1f8ce6;
   font-size: 6em;
   font-weight: 100;
   font-family: "brandon-grotesque", sans-serif;
@@ -1429,7 +1430,7 @@ html.page.career .how-we-work li h4 {
   letter-spacing: -0.03em;
   padding-bottom: 20px;
   margin-left: -0.1em;
-  background: #fff;
+  background: #f5faff;
   position: relative;
   z-index: 2;
 }
@@ -1445,7 +1446,6 @@ html.page.career .how-we-work li.hww-5 {
 }
 html.page.career .how-we-work li p {
   letter-spacing: -0.02em;
-  margin: 0 0 20px;
   font-size: 1.125em;
   font-weight: 400;
 }
