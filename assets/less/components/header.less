@@ -7,43 +7,18 @@
 
   .site-heading,
   .page-heading {
-    text-align: center;
-    padding: 120px 0;
-
-    @media @queries_md {
-      padding: 120px 0;
-    }
-
-    @media @queries_sm {
-      padding: 80px 0 40px;
-    }
-
     h1 {
-      font-family: "ff-tisa-web-pro", sans-serif;
-      margin-top: 0;
-      font-size: 7em;
-      font-weight: 700;
-      font-style: italic;
+      font-family: @Calibre;
+      text-align: left;
+      margin: 0;
+      font-size: 50px;
       color: #fff;
-      line-height: 0.9;
-      padding: 20px 0 0;
+      line-height: 1.2em;
+      padding: 170px 20px 150px;
       text-rendering:optimizeLegibility;
-      .text-shadow(0 2px 3px rgba(0,0,0,.3));
 
       &.oneline {
-        padding-top: 80px;
-      }
-
-      @media @queries_md {
-        font-size: 7em;
-      }
-
-      @media @queries_sm {
-        font-size: 3.5em;
-
-        &.oneline {
-          padding-top: 20px;
-        }
+        padding-top: 20px;
       }
     }
   }

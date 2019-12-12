@@ -1,8 +1,7 @@
 html.page.about {
   .intro-header {
     &.ih-about {
-      background-color: #30356e;
-      background-image: url(../img/about-bg.png);
+      background-color: #105DC1;
       background-size: 1600px auto;
       background-position: center -50px;
       .drop-shadow();
@@ -28,55 +27,32 @@ html.page.about {
   }
 
   .must-use-area {
-    background: #2c5aa9;
-    background: rgb(44,90,169);
+    background: @jet-black;
     position: relative;
     overflow: hidden;
-
-    &.site-content h3 {
-      color: #fff;
-      position: relative;
-      z-index: 3;
-
-      &:after {
-        background: #fff;
-      }
+    padding: 80px 0;
     }
 
-    .must-use {
-      .svg_must_use(#fff);
-
-      width: 600px;
-      height: 210px;
-      margin: 50px 0 -30px;
-      position: relative;
-      z-index: 3;
-
-      @media @queries_md {
-        width: 300px;
-        height: 105px;
-      }
-
-      @media @queries_sm {
-        width: 200px;
-        height: 70px;
-      }
-    }
-
-    .must-use-desc {
-      .text-shadow();
-
+    .must-use-main {
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 30px;
+      text-align: left;
+      line-height: 1.4em;
       color: #fff;
-      margin: 20px 0 0;
+      padding: 0 20px 24px 20px;
+      margin: 0;
       position: relative;
       z-index: 3;
       letter-spacing: -0.03em;
+    }
 
-      @media @queries_sm {
-        margin-top: 80px;
-      }
+    .must-use-dsc {
+      font-size: 18px;
+      color: white;
+      line-height: 1.6em;
+      padding: 0 20px;
+      font-weight: 200;
+      word-break: keep-all;
     }
 
     .description {
@@ -85,11 +61,6 @@ html.page.about {
       color: #acbedd;
       position: relative;
       z-index: 3;
-
-      @media @queries_sm {
-        font-size: 0.9em;
-        padding: 20px 0 60px;
-      }
     }
 
     [class^="bg-text-"] {
@@ -131,95 +102,59 @@ html.page.about {
     }
   }
 
-  .numbers-area {
-    background: #b9b8bc url(../img/numbers-bg.png) repeat center center;
-    padding: 0 0 80px;
+  .ridi-code-area {
+    padding: 80px 0;
 
-    @media @queries_sm {
-      padding: 0 0 40px;
-      background-position: center top;
+    .ridi-code-main {
+      font-family: @Calibre;
+      font-size: 36px;
+      text-align: left;
+      line-height: 1.4em;
+      color: @jet-black;
+      padding: 0 20px 24px 20px;
+      margin: 0;
+      letter-spacing: -0.03em;
     }
 
-    h3 {
-      color: #36333f;
-      background: #b9b8bc;
-
-      &:after {
-        color: #36333f;
-      }
+    .ridi-code-dsc {
+      font-size: 18px;
+      color: @slategray-80;
+      line-height: 1.6em;
+      padding: 0 20px;
+      word-break: keep-all;
     }
 
-    h4 {
-      font-size: 1em;
-      color: #828086;
-      margin-top: 0;
-    }
-
-    .number-boxes {
-      width: 1024px;
-      margin: 0 auto;
-
-      li {
-        float: left;
-        width: 23%;
-        padding: 30px 0 20px;
-        margin: 10px 1% 10px 1%;
-        background: #fff;
-        .drop-shadow();
-        .border-radius();
-
-        border-bottom: 3px solid #e54e26;
-
-        i {
-          font-size: 4em;
-          color: #3b3844;
-          padding-bottom: 5px;
-        }
-
-        strong {
+    .ridi-code-wrap {
+      padding: 0 20px;
+      margin-top: 80px;
+      figure {
+        margin: 80px 0;
+        img {
           display: block;
-          font-size: 2.25em;
-          .brandon-grotesque();
-
-          color: #3b3844;
-          padding-bottom: 5px;
+          width: 240px;
+          height: auto;
+          margin: 0 auto;
         }
-
-        span {
-          display: block;
-          font-size: 0.875em;
-          color: #97969b;
-          height: 2.5em;
-        }
-
-        em {
-          vertical-align: super;
-          font-style: normal;
-          font-size: 0.5em;
-        }
-
-      }
-
-      @media @queries_md {
-        width: 768px;
-
-        li {
-          strong {
-            font-size: 1.75em;
+        figcaption {
+          margin-top: 32px;
+          span {
+            font-family: @Acumin;
+            font-size: 18px;
+            color: @deep-blue;
+            letter-spacing: -0.03em
           }
-        }
-      }
-
-      @media @queries_sm {
-        width: auto;
-        padding: 0 10px 0 20px;
-
-        li {
-          width: 45%;
-          margin: 10px 2% 10px 2%;
-
-          strong {
-            font-size: 1.5em;
+          h3 {
+            font-family: @Acumin;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.4em;
+            color: @slategray-90;
+            margin: 8px 0 12px 0;
+          }
+          p {
+            font-size: 18px;
+            line-height: 1.6em;
+            color: @slategray-80;
           }
         }
       }
@@ -341,4 +276,3 @@ html.page.about {
       margin-top: 20px;
     }
   }
-}

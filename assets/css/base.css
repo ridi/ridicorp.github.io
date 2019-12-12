@@ -4,6 +4,14 @@
   font-family: 'RIDIBatang';
   src: url('../fonts/RIDIBatang.woff');
 }
+@font-face {
+  font-family: 'Calibre Bold';
+  src: url('../fonts/CalibreBold.woff');
+}
+@font-face {
+  font-family: 'Acumin Bold';
+  src: url('../fonts/Acumin-BdPro.woff');
+}
 .clear {
   clear: both;
 }
@@ -235,55 +243,20 @@ ol {
   position: relative;
   z-index: 1;
 }
-.intro-header .site-heading,
-.intro-header .page-heading {
-  text-align: center;
-  padding: 120px 0;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .intro-header .site-heading,
-  .intro-header .page-heading {
-    padding: 120px 0;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .intro-header .site-heading,
-  .intro-header .page-heading {
-    padding: 80px 0 40px;
-  }
-}
 .intro-header .site-heading h1,
 .intro-header .page-heading h1 {
-  font-family: "ff-tisa-web-pro", sans-serif;
-  margin-top: 0;
-  font-size: 7em;
-  font-weight: 700;
-  font-style: italic;
+  font-family: 'Calibre Bold', sans-serif;
+  text-align: left;
+  margin: 0;
+  font-size: 50px;
   color: #fff;
-  line-height: 0.9;
-  padding: 20px 0 0;
+  line-height: 1.2em;
+  padding: 170px 20px 150px;
   text-rendering: optimizeLegibility;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
 }
 .intro-header .site-heading h1.oneline,
 .intro-header .page-heading h1.oneline {
-  padding-top: 80px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .intro-header .site-heading h1,
-  .intro-header .page-heading h1 {
-    font-size: 7em;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .intro-header .site-heading h1,
-  .intro-header .page-heading h1 {
-    font-size: 3.5em;
-  }
-  .intro-header .site-heading h1.oneline,
-  .intro-header .page-heading h1.oneline {
-    padding-top: 20px;
-  }
+  padding-top: 20px;
 }
 .intro-header .sub-heading {
   display: inline-block;
@@ -809,49 +782,8 @@ article.post .footnotes ol > li p {
 .link-to:hover {
   background: #e6f5ff;
 }
-.site-content h3 {
-  display: inline-block;
-  font-size: 1.5em;
-  color: #3e3835;
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  position: relative;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-  margin-top: 80px;
-  font-family: "brandon-grotesque", sans-serif;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .site-content h3 {
-    font-size: 1.5em;
-    margin-top: 60px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .site-content h3 {
-    font-size: 1.2em;
-    margin-top: 60px;
-  }
-}
-.site-content h3:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 4px;
-  background: #3e3835;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
 html.page.about .intro-header.ih-about {
-  background-color: #30356e;
-  background-image: url(../img/about-bg.png);
+  background-color: #105DC1;
   background-size: 1600px auto;
   background-position: center -50px;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
@@ -875,72 +807,39 @@ html.page.about .intro-header .sub-description.sd-about {
   color: #78caf3;
 }
 html.page.about .must-use-area {
-  background: #2c5aa9;
+  background: #141517;
   position: relative;
   overflow: hidden;
+  padding: 80px 0;
 }
-html.page.about .must-use-area.site-content h3 {
-  color: #fff;
-  position: relative;
-  z-index: 3;
-}
-html.page.about .must-use-area.site-content h3:after {
-  background: #fff;
-}
-html.page.about .must-use-area .must-use {
-  display: inline-block;
-  text-indent: -444px;
-  font-size: 0;
-  overflow: hidden;
-  background: url('data:image/svg+xml,%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20137%2048%22%3E%3Cstyle%3Epath,%20polygon%20%7B%20fill%3A%23fff%3B%20%7D%3C/style%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M8.6,1L3.8,27l127.9,0l4.8-26L8.6,1z%20M31.9,22.3H27l1.2-11l-4.1,11h-5l-0.7-11l-2.2,11H12l3.4-15.7h6.9l0.7,9.2l3.6-9.2h6.9%0A%09L31.9,22.3z%20M41.4,22.6c-4.1,0-6.4-1.7-6.4-5.2c0-0.7,0.1-1.4,0.2-2.1l1.4-8.6h5l-1.5,9.1c-0.1,0.4-0.1,0.9-0.1,1.1%0A%09c0,1,0.5,1.6,1.6,1.6s1.7-0.6,1.9-2.1l1.5-9.7h5l-1.5,9.9C48,20.5,45.7,22.6,41.4,22.6z%20M57.9,12.3c3.7,1.2,5.2,2.3,5.2,4.9%0A%09c0,3.5-2.8,5.3-6.1,5.3c-2.6,0-5.2-0.7-6.9-1.5l1.2-3.9c1.9,0.9,4.1,1.5,5.8,1.5c1.1,0,1.4-0.4,1.4-0.9c0-0.4-0.4-0.7-1.6-1.1%0A%09c-3.3-1.1-5.1-2.1-5.1-5c0-3.1,2.3-5.3,5.8-5.3c2.5,0,4.5,0.6,6,1.4l-1.2,3.8c-1.3-0.6-3.3-1.3-4.7-1.3c-0.9,0-1.3,0.4-1.3,0.9%0A%09C56.3,11.6,56.5,11.8,57.9,12.3z%20M72.2,22.3H67l1.8-11.3h-3.9l0.7-4.3h12.7v4.3H74L72.2,22.3z%20M80.8,17.5h-4.5l0.8-4.5h4.5%0A%09L80.8,17.5z%20M89.7,22.6c-4.1,0-6.4-1.7-6.4-5.2c0-0.7,0.1-1.4,0.2-2.1l1.4-8.6h5l-1.5,9.1c-0.1,0.4-0.1,0.9-0.1,1.1%0A%09c0,1,0.5,1.6,1.6,1.6c1.1,0,1.7-0.6,1.9-2.1l1.5-9.7h5l-1.5,9.9C96.3,20.5,94,22.6,89.7,22.6z%20M106.2,12.3c3.7,1.2,5.2,2.3,5.2,4.9%0A%09c0,3.5-2.8,5.3-6.1,5.3c-2.6,0-5.2-0.7-6.9-1.5l1.2-3.9c1.9,0.9,4.1,1.5,5.8,1.5c1.1,0,1.4-0.4,1.4-0.9c0-0.4-0.4-0.7-1.6-1.1%0A%09c-3.3-1.1-5.1-2.1-5.1-5c0-3.1,2.3-5.3,5.8-5.3c2.5,0,4.5,0.6,6,1.4l-1.2,3.8c-1.3-0.6-3.3-1.3-4.7-1.3c-0.9,0-1.3,0.4-1.3,0.9%0A%09C104.6,11.6,104.8,11.8,106.2,12.3z%20M125.2,10.3h-5.9l-0.4,2.2h4.3v3.7h-4.9l-0.4,2.3h6.1l-0.6,3.7h-11.1l2.5-15.7h10.9L125.2,10.3z%0A%09%20M0,47.6l2.5,0l7.1-18.1l-6.3,0L0,47.6z%22/%3E%3C/svg%3E') center center no-repeat;
-  background-size: 100% 100%;
-  width: 600px;
-  height: 210px;
-  margin: 50px 0 -30px;
-  position: relative;
-  z-index: 3;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .must-use-area .must-use {
-    width: 300px;
-    height: 105px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.about .must-use-area .must-use {
-    width: 200px;
-    height: 70px;
-  }
-}
-html.page.about .must-use-area .must-use-desc {
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+html.page.about .must-use-main {
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 30px;
+  text-align: left;
+  line-height: 1.4em;
   color: #fff;
-  margin: 20px 0 0;
+  padding: 0 20px 24px 20px;
+  margin: 0;
   position: relative;
   z-index: 3;
   letter-spacing: -0.03em;
 }
-@media only screen and (max-width: 767px) {
-  html.page.about .must-use-area .must-use-desc {
-    margin-top: 80px;
-  }
+html.page.about .must-use-dsc {
+  font-size: 18px;
+  color: white;
+  line-height: 1.6em;
+  padding: 0 20px;
+  font-weight: 200;
+  word-break: keep-all;
 }
-html.page.about .must-use-area .description {
+html.page.about .description {
   padding: 20px 0 80px;
   text-align: center;
   color: #acbedd;
   position: relative;
   z-index: 3;
 }
-@media only screen and (max-width: 767px) {
-  html.page.about .must-use-area .description {
-    font-size: 0.9em;
-    padding: 20px 0 60px;
-  }
-}
-html.page.about .must-use-area [class^="bg-text-"] {
+html.page.about [class^="bg-text-"] {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -954,164 +853,132 @@ html.page.about .must-use-area [class^="bg-text-"] {
   top: 76px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .must-use-area [class^="bg-text-"] {
+  html.page.about [class^="bg-text-"] {
     width: 285px;
     height: 212px;
     top: 100px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .must-use-area [class^="bg-text-"] {
+  html.page.about [class^="bg-text-"] {
     width: 190px;
     height: 141.33333333px;
     top: 120px;
   }
 }
-html.page.about .must-use-area .bg-text-1 {
+html.page.about .bg-text-1 {
   left: -360px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .must-use-area .bg-text-1 {
+  html.page.about .bg-text-1 {
     left: -100px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .must-use-area .bg-text-1 {
+  html.page.about .bg-text-1 {
     left: -100px;
   }
 }
-html.page.about .must-use-area .bg-text-2 {
+html.page.about .bg-text-2 {
   right: -360px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .must-use-area .bg-text-2 {
+  html.page.about .bg-text-2 {
     right: -100px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .must-use-area .bg-text-2 {
+  html.page.about .bg-text-2 {
     right: -100px;
   }
 }
-html.page.about .numbers-area {
-  background: #b9b8bc url(../img/numbers-bg.png) repeat center center;
-  padding: 0 0 80px;
+.ridi-code-area {
+  padding: 80px 0;
 }
-@media only screen and (max-width: 767px) {
-  html.page.about .numbers-area {
-    padding: 0 0 40px;
-    background-position: center top;
-  }
+.ridi-code-area .ridi-code-main {
+  font-family: 'Calibre Bold', sans-serif;
+  font-size: 36px;
+  text-align: left;
+  line-height: 1.4em;
+  color: #141517;
+  padding: 0 20px 24px 20px;
+  margin: 0;
+  letter-spacing: -0.03em;
 }
-html.page.about .numbers-area h3 {
-  color: #36333f;
-  background: #b9b8bc;
+.ridi-code-area .ridi-code-dsc {
+  font-size: 18px;
+  color: #40474D;
+  line-height: 1.6em;
+  padding: 0 20px;
+  word-break: keep-all;
 }
-html.page.about .numbers-area h3:after {
-  color: #36333f;
+.ridi-code-area .ridi-code-wrap {
+  padding: 0 20px;
+  margin-top: 80px;
 }
-html.page.about .numbers-area h4 {
-  font-size: 1em;
-  color: #828086;
-  margin-top: 0;
+.ridi-code-area .ridi-code-wrap figure {
+  margin: 80px 0;
 }
-html.page.about .numbers-area .number-boxes {
-  width: 1024px;
+.ridi-code-area .ridi-code-wrap figure img {
+  display: block;
+  width: 240px;
+  height: auto;
   margin: 0 auto;
 }
-html.page.about .numbers-area .number-boxes li {
-  float: left;
-  width: 23%;
-  padding: 30px 0 20px;
-  margin: 10px 1% 10px 1%;
-  background: #fff;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  border-bottom: 3px solid #e54e26;
+.ridi-code-area .ridi-code-wrap figure figcaption {
+  margin-top: 32px;
 }
-html.page.about .numbers-area .number-boxes li i {
-  font-size: 4em;
-  color: #3b3844;
-  padding-bottom: 5px;
+.ridi-code-area .ridi-code-wrap figure figcaption span {
+  font-family: 'Acumin Bold', sans-serif;
+  font-size: 18px;
+  color: #105DC1;
+  letter-spacing: -0.03em;
 }
-html.page.about .numbers-area .number-boxes li strong {
-  display: block;
-  font-size: 2.25em;
-  font-family: "brandon-grotesque", sans-serif;
-  color: #3b3844;
-  padding-bottom: 5px;
+.ridi-code-area .ridi-code-wrap figure figcaption h3 {
+  font-family: 'Acumin Bold', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.4em;
+  color: #303538;
+  margin: 8px 0 12px 0;
 }
-html.page.about .numbers-area .number-boxes li span {
-  display: block;
-  font-size: 0.875em;
-  color: #97969b;
-  height: 2.5em;
+.ridi-code-area .ridi-code-wrap figure figcaption p {
+  font-size: 18px;
+  line-height: 1.6em;
+  color: #40474D;
 }
-html.page.about .numbers-area .number-boxes li em {
-  vertical-align: super;
-  font-style: normal;
-  font-size: 0.5em;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .numbers-area .number-boxes {
-    width: 768px;
-  }
-  html.page.about .numbers-area .number-boxes li strong {
-    font-size: 1.75em;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.about .numbers-area .number-boxes {
-    width: auto;
-    padding: 0 10px 0 20px;
-  }
-  html.page.about .numbers-area .number-boxes li {
-    width: 45%;
-    margin: 10px 2% 10px 2%;
-  }
-  html.page.about .numbers-area .number-boxes li strong {
-    font-size: 1.5em;
-  }
-}
-html.page.about .products-area {
+.products-area {
   padding-bottom: 80px;
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .products-area {
+  .products-area {
     padding-bottom: 0;
   }
 }
-html.page.about .products-area .products {
+.products-area .products {
   padding: 0 0 30px;
   width: 1024px;
   margin: 0 auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .products-area .products {
+  .products-area .products {
     width: 768px;
     padding: 0 0 30px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .products-area .products {
+  .products-area .products {
     width: auto;
   }
 }
-html.page.about .products-area .products li {
+.products-area .products li {
   width: 50%;
   padding: 36px 20px 10px;
   float: left;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .products-area .products li {
+  .products-area .products li {
     width: auto;
     float: none;
     padding: 0 20px 40px;
@@ -1119,12 +986,12 @@ html.page.about .products-area .products li {
     margin: 0 auto;
   }
 }
-html.page.about .products-area .products li img {
+.products-area .products li img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
-html.page.about .products-area .products li .logo-ridibooks {
+.products-area .products li .logo-ridibooks {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1134,7 +1001,7 @@ html.page.about .products-area .products li .logo-ridibooks {
   width: 125px;
   height: 32px;
 }
-html.page.about .products-area .products li .logo-ridiselect {
+.products-area .products li .logo-ridiselect {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1144,7 +1011,7 @@ html.page.about .products-area .products li .logo-ridiselect {
   width: 123px;
   height: 19px;
 }
-html.page.about .products-area .products li .logo-paper {
+.products-area .products li .logo-paper {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1154,7 +1021,7 @@ html.page.about .products-area .products li .logo-paper {
   width: 123px;
   height: 20px;
 }
-html.page.about .products-area .products li .logo-laftel {
+.products-area .products li .logo-laftel {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1164,7 +1031,7 @@ html.page.about .products-area .products li .logo-laftel {
   width: 84px;
   height: 20px;
 }
-html.page.about .products-area .products li .logo-outstanding {
+.products-area .products li .logo-outstanding {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1174,14 +1041,14 @@ html.page.about .products-area .products li .logo-outstanding {
   width: 180px;
   height: 40px;
 }
-html.page.about .products-area .products li strong {
+.products-area .products li strong {
   display: block;
   font-size: 1.8em;
   font-weight: 700;
   color: #333;
   padding: 16px 0 8px;
 }
-html.page.about .products-area .products li span {
+.products-area .products li span {
   display: block;
   color: #555;
   font-weight: 400;
@@ -1189,7 +1056,7 @@ html.page.about .products-area .products li span {
   letter-spacing: -0.03em;
   font-size: 0.9em;
 }
-html.page.about .products-area .products li a {
+.products-area .products li a {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1208,22 +1075,22 @@ html.page.about .products-area .products li a {
   border: 2px solid #c9c9c9;
   color: #484848;
 }
-html.page.about .products-area .products li a i {
+.products-area .products li a i {
   opacity: 0.5;
 }
-html.page.about .products-area .products li a:hover {
+.products-area .products li a:hover {
   border-color: #484848;
 }
-html.page.about .branding-link-area {
+.branding-link-area {
   width: 768px;
   margin: 0 auto 100px;
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .branding-link-area {
+  .branding-link-area {
     width: auto;
   }
 }
-html.page.about .branding-link-area .go-to-branding {
+.branding-link-area .go-to-branding {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1243,10 +1110,10 @@ html.page.about .branding-link-area .go-to-branding {
   color: #fff;
   margin-top: 20px;
 }
-html.page.about .branding-link-area .go-to-branding i {
+.branding-link-area .go-to-branding i {
   opacity: 0.5;
 }
-html.page.about .branding-link-area .go-to-branding:hover {
+.branding-link-area .go-to-branding:hover {
   color: #fff;
   background: #1477c5;
 }
