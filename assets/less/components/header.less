@@ -11,39 +11,16 @@
       font-family: @Calibre;
       text-align: left;
       margin: 0;
-      font-size: 50px;
+      font-size: 90px;
       color: #fff;
       line-height: 1.2em;
-      padding: 170px 20px 150px;
-      text-rendering:optimizeLegibility;
+      padding: 260px 100px 200px;
+      text-rendering: optimizeLegibility;
 
-      &.oneline {
-        padding-top: 20px;
+      @media @queries_sm {
+        font-size: 50px;
+        padding: 170px 20px 150px;
       }
-    }
-  }
-
-  .sub-heading {
-    display: inline-block;
-    font-size: 1.5em;
-    font-weight: 700;
-    letter-spacing: -0.03em;
-    color: #fff;
-    position: relative;
-    padding-bottom: 8px;
-
-  }
-
-  .sub-description {
-    padding-bottom: 70px;
-    font-size: 1em;
-    line-height: 1.5;
-    letter-spacing: -0.03em;
-    width: 700px;
-    margin: 0 auto;
-
-    @media @queries_sm {
-      width: auto;
     }
   }
 }

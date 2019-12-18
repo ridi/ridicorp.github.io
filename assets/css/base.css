@@ -248,36 +248,17 @@ ol {
   font-family: 'Calibre Bold', sans-serif;
   text-align: left;
   margin: 0;
-  font-size: 50px;
+  font-size: 90px;
   color: #fff;
   line-height: 1.2em;
-  padding: 170px 20px 150px;
+  padding: 260px 100px 200px;
   text-rendering: optimizeLegibility;
 }
-.intro-header .site-heading h1.oneline,
-.intro-header .page-heading h1.oneline {
-  padding-top: 20px;
-}
-.intro-header .sub-heading {
-  display: inline-block;
-  font-size: 1.5em;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: #fff;
-  position: relative;
-  padding-bottom: 8px;
-}
-.intro-header .sub-description {
-  padding-bottom: 70px;
-  font-size: 1em;
-  line-height: 1.5;
-  letter-spacing: -0.03em;
-  width: 700px;
-  margin: 0 auto;
-}
 @media only screen and (max-width: 767px) {
-  .intro-header .sub-description {
-    width: auto;
+  .intro-header .site-heading h1,
+  .intro-header .page-heading h1 {
+    font-size: 50px;
+    padding: 170px 20px 150px;
   }
 }
 .pager {
@@ -784,21 +765,10 @@ article.post .footnotes ol > li p {
 }
 html.page.about .intro-header.ih-about {
   background-color: #105DC1;
-  background-size: 1600px auto;
-  background-position: center -50px;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .intro-header.ih-about {
-    background-size: 1400px auto;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.about .intro-header.ih-about {
-    background-size: 600px auto;
-  }
+  background-image: url(../img/about/hero_bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
 }
 html.page.about .intro-header .about-sub-area .sub-heading {
   color: #fff;
@@ -808,133 +778,123 @@ html.page.about .intro-header .sub-description.sd-about {
 }
 html.page.about .must-use-area {
   background: #141517;
-  position: relative;
-  overflow: hidden;
-  padding: 80px 0;
+  padding: 100px 0 60px;
 }
-html.page.about .must-use-main {
+@media only screen and (max-width: 767px) {
+  html.page.about .must-use-area {
+    padding: 80px 0;
+  }
+}
+html.page.about .must-use-area .must-use-wrap {
+  padding: 60px 100px;
+  max-width: 900px;
+}
+html.page.about .must-use-area .must-use-wrap:last-child {
+  margin-left: 24%;
+}
+@media only screen and (max-width: 767px) {
+  html.page.about .must-use-area .must-use-wrap {
+    padding: 0 20px 24px 20px;
+  }
+}
+html.page.about .must-use-area .must-use-wrap .must-use-main {
   font-weight: bold;
-  font-size: 30px;
+  font-size: 42px;
   text-align: left;
   line-height: 1.4em;
-  color: #fff;
-  padding: 0 20px 24px 20px;
-  margin: 0;
-  position: relative;
-  z-index: 3;
   letter-spacing: -0.03em;
+  color: #fff;
+  padding-bottom: 24px;
+  margin: 0;
+  z-index: 3;
 }
-html.page.about .must-use-dsc {
-  font-size: 18px;
+html.page.about .must-use-area .must-use-wrap .must-use-main .line-break {
+  display: block;
+}
+@media only screen and (max-width: 767px) {
+  html.page.about .must-use-area .must-use-wrap .must-use-main .line-break {
+    display: inline;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.about .must-use-area .must-use-wrap .must-use-main {
+    font-size: 30px;
+  }
+}
+html.page.about .must-use-area .must-use-wrap .must-use-dsc {
+  font-size: 20px;
   color: white;
   line-height: 1.6em;
-  padding: 0 20px;
-  font-weight: 200;
+  font-weight: 300;
   word-break: keep-all;
-}
-html.page.about .description {
-  padding: 20px 0 80px;
-  text-align: center;
-  color: #acbedd;
-  position: relative;
-  z-index: 3;
-}
-html.page.about [class^="bg-text-"] {
-  display: inline-block;
-  text-indent: -444px;
-  font-size: 0;
-  overflow: hidden;
-  background: url('data:image/svg+xml,%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2067%2048%22%3E%3Cstyle%3Epath,%20polygon%20%7B%20fill%3A%232479ce%3B%20%7D%3C/style%3E%3Cpath%20fill%3D%22%232479ce%22%20d%3D%22M0,47.9l1.2,0l3.3-8.4l-2.9,0L0,47.9z%20M1.8,38.4l48.8,0l2.2-12L4,26.4L1.8,38.4z%20M45.4,33.1H48L47.6,36H45L45.4,33.1z%0A%09%20M39,33.6c0.9,0.4,1.9,0.7,2.7,0.7c0.5,0,0.6-0.2,0.6-0.4c0-0.2-0.2-0.3-0.8-0.5c-1.5-0.5-2.4-1-2.4-2.3c0-1.5,1.1-2.4,2.7-2.4%0A%09c1.1,0,2.1,0.3,2.8,0.6L44.2,31c-0.6-0.3-1.5-0.6-2.2-0.6c-0.4,0-0.6,0.2-0.6,0.4s0.1,0.3,0.7,0.6c1.7,0.6,2.4,1,2.4,2.3%0A%09c0,1.6-1.3,2.4-2.9,2.4c-1.2,0-2.4-0.3-3.2-0.7L39,33.6z%20M35.9,28.6c0.9,0,1.6,0.2,2.3,0.5L37.6,31c-0.6-0.3-1.1-0.4-1.7-0.4%0A%09c-1.1,0-1.9,0.9-1.9,2.2c0,1.1,0.5,1.5,1.3,1.5c0.2,0,0.4,0,0.5-0.1l0.1-1h-0.9v-1.5h3.2l-0.6,3.6c-0.8,0.4-1.6,0.7-2.7,0.7%0A%09c-2,0-3.3-1.2-3.3-3.2C31.7,30.4,33.4,28.6,35.9,28.6z%20M24.9,28.7h2.2l1.6,3.4l0.5-3.4h2.1L30.2,36h-2l-1.8-3.7L25.9,36h-2.1%0A%09L24.9,28.7z%20M21.3,28.7h2.3L22.5,36h-2.3L21.3,28.7z%20M16,28.7l-0.4,2.6h1.7l0.4-2.6H20L18.9,36h-2.3l0.4-2.7h-1.7L14.8,36h-2.3%0A%09l1.1-7.3H16z%20M6.7,28.7h5.9v2h-1.9L9.8,36H7.3l0.8-5.2H6.3L6.7,28.7z%20M24.7,4l-1.1,2.7H25L24.7,4L24.7,4z%20M46.7,0L8.9,0L6.6,12%0A%09l37.8,0L46.7,0z%20M17.2,9.6l0.6-5.1l-1.9,5.1h-2.3l-0.3-5.1l-1,5.1h-2l1.6-7.3h3.2l0.3,4.3l1.7-4.3h3.2l-0.7,7.3H17.2z%20M25.3,9.7%0A%09l-0.2-1.4h-2.4l-0.5,1.3H20l3.5-7.3h3.1l1.1,7L25.3,9.7z%20M32.4,9.7l-1.3-3.4l-0.5,3.3h-2.3l1.1-7.3h2.3l-0.5,3.2l2.1-3.2h2.6%0A%09l-2.6,3.5l1.5,3.5L32.4,9.7z%20M41.4,4.1h-2.8l-0.2,1h2v1.7h-2.3L38,7.9h2.8l-0.3,1.7h-5.2l1.1-7.3h5.1L41.4,4.1z%20M6.4,13.2l-2.2,12%0A%09l59.6,0l2.2-12L6.4,13.2z%20M17.3,22.9H15l0.6-5.1l-1.9,5.1h-2.3L11,17.8l-1,5.1H8l1.6-7.3h3.2l0.3,4.3l1.7-4.3H18L17.3,22.9z%0A%09%20M21.7,23c-1.9,0-3-0.8-3-2.4c0-0.3,0-0.6,0.1-1l0.6-4h2.3l-0.7,4.2c0,0.2-0.1,0.4-0.1,0.5c0,0.5,0.2,0.7,0.8,0.7%0A%09c0.5,0,0.8-0.3,0.9-1l0.7-4.5h2.3l-0.7,4.6C24.8,22,23.7,23,21.7,23z%20M29.4,18.2c1.7,0.6,2.4,1,2.4,2.3c0,1.6-1.3,2.4-2.9,2.4%0A%09c-1.2,0-2.4-0.3-3.2-0.7l0.6-1.8c0.9,0.4,1.9,0.7,2.7,0.7c0.5,0,0.6-0.2,0.6-0.4c0-0.2-0.2-0.3-0.8-0.5c-1.5-0.5-2.4-1-2.4-2.3%0A%09c0-1.5,1.1-2.4,2.7-2.4c1.1,0,2.1,0.3,2.8,0.6l-0.5,1.8c-0.6-0.3-1.5-0.6-2.2-0.6c-0.4,0-0.6,0.2-0.6,0.4%0A%09C28.6,17.9,28.7,18,29.4,18.2z%20M36.1,22.9h-2.5l0.8-5.2h-1.8l0.3-2h5.9v2h-1.9L36.1,22.9z%20M40,20.8h-2.1l0.4-2.1h2.1L40,20.8z%0A%09%20M44.2,23c-1.9,0-3-0.8-3-2.4c0-0.3,0-0.6,0.1-1l0.6-4h2.3l-0.7,4.2c0,0.2-0.1,0.4-0.1,0.5c0,0.5,0.2,0.7,0.8,0.7%0A%09c0.5,0,0.8-0.3,0.9-1l0.7-4.5h2.3l-0.7,4.6C47.3,22,46.2,23,44.2,23z%20M51.9,18.2c1.7,0.6,2.4,1,2.4,2.3c0,1.6-1.3,2.4-2.9,2.4%0A%09c-1.2,0-2.4-0.3-3.2-0.7l0.6-1.8c0.9,0.4,1.9,0.7,2.7,0.7c0.5,0,0.6-0.2,0.6-0.4c0-0.2-0.2-0.3-0.8-0.5c-1.5-0.5-2.4-1-2.4-2.3%0A%09c0-1.5,1.1-2.4,2.7-2.4c1.1,0,2.1,0.3,2.8,0.6l-0.5,1.8c-0.6-0.3-1.5-0.6-2.2-0.6c-0.4,0-0.6,0.2-0.6,0.4%0A%09C51.1,17.9,51.2,18,51.9,18.2z%20M60.7,17.3H58l-0.2,1h2V20h-2.3l-0.2,1.1h2.8l-0.3,1.7h-5.2l1.1-7.3H61L60.7,17.3z%22/%3E%3C/svg%3E') center center no-repeat;
-  background-size: 100% 100%;
-  width: 570px;
-  height: 424px;
-  position: absolute;
-  z-index: 2;
-  top: 76px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about [class^="bg-text-"] {
-    width: 285px;
-    height: 212px;
-    top: 100px;
-  }
+  margin-left: 30px;
 }
 @media only screen and (max-width: 767px) {
-  html.page.about [class^="bg-text-"] {
-    width: 190px;
-    height: 141.33333333px;
-    top: 120px;
+  html.page.about .must-use-area .must-use-wrap .must-use-dsc {
+    font-size: 18px;
   }
 }
-html.page.about .bg-text-1 {
-  left: -360px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .bg-text-1 {
-    left: -100px;
-  }
+html.page.about .ridi-code-area {
+  padding: 140px 100px;
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .bg-text-1 {
-    left: -100px;
+  html.page.about .ridi-code-area {
+    padding: 80px 20px;
   }
 }
-html.page.about .bg-text-2 {
-  right: -360px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.about .bg-text-2 {
-    right: -100px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.about .bg-text-2 {
-    right: -100px;
-  }
-}
-.ridi-code-area {
-  padding: 80px 0;
-}
-.ridi-code-area .ridi-code-main {
+html.page.about .ridi-code-area .ridi-code-main {
   font-family: 'Calibre Bold', sans-serif;
-  font-size: 36px;
+  font-size: 42px;
   text-align: left;
   line-height: 1.4em;
   color: #141517;
-  padding: 0 20px 24px 20px;
+  padding-bottom: 24px;
   margin: 0;
   letter-spacing: -0.03em;
 }
-.ridi-code-area .ridi-code-dsc {
-  font-size: 18px;
+@media only screen and (max-width: 767px) {
+  html.page.about .ridi-code-area .ridi-code-main {
+    font-size: 36px;
+  }
+}
+html.page.about .ridi-code-area .ridi-code-dsc {
+  font-size: 21px;
   color: #40474D;
   line-height: 1.6em;
-  padding: 0 20px;
   word-break: keep-all;
 }
-.ridi-code-area .ridi-code-wrap {
+@media only screen and (max-width: 767px) {
+  html.page.about .ridi-code-area .ridi-code-dsc {
+    font-size: 18px;
+  }
+}
+html.page.about .ridi-code-area .ridi-code-wrap {
   padding: 0 20px;
   margin-top: 80px;
 }
-.ridi-code-area .ridi-code-wrap figure {
+html.page.about .ridi-code-area .ridi-code-wrap figure {
   margin: 80px 0;
+  display: grid;
+  grid-template-columns: 30% 60%;
+  grid-gap: 10%;
 }
-.ridi-code-area .ridi-code-wrap figure img {
+html.page.about .ridi-code-area .ridi-code-wrap figure img {
   display: block;
   width: 240px;
   height: auto;
-  margin: 0 auto;
+  margin: 16px auto;
 }
-.ridi-code-area .ridi-code-wrap figure figcaption {
+html.page.about .ridi-code-area .ridi-code-wrap figure figcaption {
   margin-top: 32px;
+  word-break: keep-all;
 }
-.ridi-code-area .ridi-code-wrap figure figcaption span {
+html.page.about .ridi-code-area .ridi-code-wrap figure figcaption span {
   font-family: 'Acumin Bold', sans-serif;
   font-size: 18px;
   color: #105DC1;
   letter-spacing: -0.03em;
 }
-.ridi-code-area .ridi-code-wrap figure figcaption h3 {
+html.page.about .ridi-code-area .ridi-code-wrap figure figcaption h3 {
   font-family: 'Acumin Bold', sans-serif;
   font-size: 24px;
   font-weight: 700;
@@ -942,43 +902,58 @@ html.page.about .bg-text-2 {
   color: #303538;
   margin: 8px 0 12px 0;
 }
-.ridi-code-area .ridi-code-wrap figure figcaption p {
+html.page.about .ridi-code-area .ridi-code-wrap figure figcaption p {
   font-size: 18px;
   line-height: 1.6em;
   color: #40474D;
 }
-.products-area {
-  padding-bottom: 80px;
+html.page.about .products-area {
+  padding: 140px 100px;
 }
 @media only screen and (max-width: 767px) {
-  .products-area {
-    padding-bottom: 0;
+  html.page.about .products-area {
+    padding: 80px 20px;
   }
 }
-.products-area .products {
+html.page.about .products-area .products-main {
+  font-family: 'Calibre Bold', sans-serif;
+  font-size: 42px;
+  text-align: left;
+  line-height: 1.4em;
+  color: #141517;
+  padding-bottom: 24px;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+@media only screen and (max-width: 767px) {
+  html.page.about .products-area .products-main {
+    font-size: 36px;
+  }
+}
+html.page.about .products-area .products {
   padding: 0 0 30px;
   width: 1024px;
   margin: 0 auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .products-area .products {
+  html.page.about .products-area .products {
     width: 768px;
     padding: 0 0 30px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .products-area .products {
+  html.page.about .products-area .products {
     width: auto;
   }
 }
-.products-area .products li {
+html.page.about .products-area .products li {
   width: 50%;
   padding: 36px 20px 10px;
   float: left;
   text-align: center;
 }
 @media only screen and (max-width: 767px) {
-  .products-area .products li {
+  html.page.about .products-area .products li {
     width: auto;
     float: none;
     padding: 0 20px 40px;
@@ -986,12 +961,12 @@ html.page.about .bg-text-2 {
     margin: 0 auto;
   }
 }
-.products-area .products li img {
+html.page.about .products-area .products li img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
-.products-area .products li .logo-ridibooks {
+html.page.about .products-area .products li .logo-ridibooks {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1001,7 +976,7 @@ html.page.about .bg-text-2 {
   width: 125px;
   height: 32px;
 }
-.products-area .products li .logo-ridiselect {
+html.page.about .products-area .products li .logo-ridiselect {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1011,7 +986,7 @@ html.page.about .bg-text-2 {
   width: 123px;
   height: 19px;
 }
-.products-area .products li .logo-paper {
+html.page.about .products-area .products li .logo-paper {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1021,7 +996,7 @@ html.page.about .bg-text-2 {
   width: 123px;
   height: 20px;
 }
-.products-area .products li .logo-laftel {
+html.page.about .products-area .products li .logo-laftel {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1031,7 +1006,7 @@ html.page.about .bg-text-2 {
   width: 84px;
   height: 20px;
 }
-.products-area .products li .logo-outstanding {
+html.page.about .products-area .products li .logo-outstanding {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -1041,14 +1016,14 @@ html.page.about .bg-text-2 {
   width: 180px;
   height: 40px;
 }
-.products-area .products li strong {
+html.page.about .products-area .products li strong {
   display: block;
   font-size: 1.8em;
   font-weight: 700;
   color: #333;
   padding: 16px 0 8px;
 }
-.products-area .products li span {
+html.page.about .products-area .products li span {
   display: block;
   color: #555;
   font-weight: 400;
@@ -1056,7 +1031,7 @@ html.page.about .bg-text-2 {
   letter-spacing: -0.03em;
   font-size: 0.9em;
 }
-.products-area .products li a {
+html.page.about .products-area .products li a {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1075,22 +1050,22 @@ html.page.about .bg-text-2 {
   border: 2px solid #c9c9c9;
   color: #484848;
 }
-.products-area .products li a i {
+html.page.about .products-area .products li a i {
   opacity: 0.5;
 }
-.products-area .products li a:hover {
+html.page.about .products-area .products li a:hover {
   border-color: #484848;
 }
-.branding-link-area {
+html.page.about .branding-link-area {
   width: 768px;
   margin: 0 auto 100px;
 }
 @media only screen and (max-width: 767px) {
-  .branding-link-area {
+  html.page.about .branding-link-area {
     width: auto;
   }
 }
-.branding-link-area .go-to-branding {
+html.page.about .branding-link-area .go-to-branding {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -1110,10 +1085,10 @@ html.page.about .bg-text-2 {
   color: #fff;
   margin-top: 20px;
 }
-.branding-link-area .go-to-branding i {
+html.page.about .branding-link-area .go-to-branding i {
   opacity: 0.5;
 }
-.branding-link-area .go-to-branding:hover {
+html.page.about .branding-link-area .go-to-branding:hover {
   color: #fff;
   background: #1477c5;
 }

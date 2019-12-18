@@ -2,17 +2,10 @@ html.page.about {
   .intro-header {
     &.ih-about {
       background-color: #105DC1;
-      background-size: 1600px auto;
-      background-position: center -50px;
-      .drop-shadow();
-
-      @media @queries_md {
-        background-size: 1400px auto;
-      }
-
-      @media @queries_sm {
-        background-size: 600px auto;
-      }
+      background-image: url(../img/about/hero_bg.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% auto;
     }
 
     .about-sub-area .sub-heading {
@@ -28,115 +21,113 @@ html.page.about {
 
   .must-use-area {
     background: @jet-black;
-    position: relative;
-    overflow: hidden;
-    padding: 80px 0;
+    padding: 100px 0 60px;
+
+    @media @queries_sm {
+      padding: 80px 0;
     }
+    .must-use-wrap {
+      padding: 60px 100px;
+      max-width: 900px;
 
-    .must-use-main {
-      font-weight: bold;
-      font-size: 30px;
-      text-align: left;
-      line-height: 1.4em;
-      color: #fff;
-      padding: 0 20px 24px 20px;
-      margin: 0;
-      position: relative;
-      z-index: 3;
-      letter-spacing: -0.03em;
-    }
-
-    .must-use-dsc {
-      font-size: 18px;
-      color: white;
-      line-height: 1.6em;
-      padding: 0 20px;
-      font-weight: 200;
-      word-break: keep-all;
-    }
-
-    .description {
-      padding: 20px 0 80px;
-      text-align: center;
-      color: #acbedd;
-      position: relative;
-      z-index: 3;
-    }
-
-    [class^="bg-text-"] {
-      .svg_must_use_extended(#2479ce);
-
-      width: 570px;
-      height: 424px;
-      position: absolute;
-      z-index: 2;
-      top: 76px;
-
-      @media @queries_md {
-        width: 285px;
-        height: 212px;
-        top: 100px;
+      &:last-child {
+        margin-left: 24%;
       }
-
       @media @queries_sm {
-        width: 570/3px;
-        height: 424/3px;
-        top: 120px;
+        padding: 0 20px 24px 20px;
       }
-    }
 
-    .bg-text-1 {
-      left: -360px;
+      .must-use-main {
+        font-weight: bold;
+        font-size: 42px;
+        text-align: left;
+        line-height: 1.4em;
+        letter-spacing: -0.03em;
+        color: #fff;
+        padding-bottom: 24px;
+        margin: 0;
+        z-index: 3; 
+        
+        .line-break {
+          display: block;
+          
+          @media @queries_sm {
+            display: inline;
+          }
+        }
+        
+        @media @queries_sm {
+          font-size: 30px;
+        }
+      }
 
-      @media @queries_md {left: -100px;}
-
-      @media @queries_sm {left: -100px;}
-    }
-
-    .bg-text-2 {
-      right: -360px;
-
-      @media @queries_md {right: -100px;}
-
-      @media @queries_sm {right: -100px;}
+      .must-use-dsc {
+        font-size: 20px;
+        color: white;
+        line-height: 1.6em;
+        font-weight: 300;
+        word-break: keep-all;
+        margin-left: 30px;
+        
+        @media @queries_sm {
+          font-size: 18px;
+        }
+      }
     }
   }
 
   .ridi-code-area {
-    padding: 80px 0;
+    padding: 140px 100px;
+
+    @media @queries_sm {
+      padding: 80px 20px;
+    }
 
     .ridi-code-main {
       font-family: @Calibre;
-      font-size: 36px;
+      font-size: 42px;
       text-align: left;
       line-height: 1.4em;
       color: @jet-black;
-      padding: 0 20px 24px 20px;
+      padding-bottom: 24px;
       margin: 0;
       letter-spacing: -0.03em;
+      
+      @media @queries_sm {
+        font-size: 36px;
+      }
     }
 
     .ridi-code-dsc {
-      font-size: 18px;
+      font-size: 21px;
       color: @slategray-80;
       line-height: 1.6em;
-      padding: 0 20px;
       word-break: keep-all;
+      
+      @media @queries_sm {
+        font-size: 18px;
+      }
     }
 
     .ridi-code-wrap {
       padding: 0 20px;
       margin-top: 80px;
+
       figure {
         margin: 80px 0;
+        display: grid;
+        grid-template-columns: 30% 60%;
+        grid-gap: 10%;
+
         img {
           display: block;
           width: 240px;
           height: auto;
-          margin: 0 auto;
+          margin: 16px auto;
         }
         figcaption {
           margin-top: 32px;
+          word-break: keep-all;
           span {
             font-family: @Acumin;
             font-size: 18px;
@@ -162,12 +153,25 @@ html.page.about {
   }
 
   .products-area {
-    padding-bottom: 80px;
+    padding: 140px 100px;
 
     @media @queries_sm {
-      padding-bottom: 0;
+      padding: 80px 20px;
     }
-
+    .products-main {
+      font-family: @Calibre;
+      font-size: 42px;
+      text-align: left;
+      line-height: 1.4em;
+      color: @jet-black;
+      padding-bottom: 24px;
+      margin: 0;
+      letter-spacing: -0.03em;
+      
+      @media @queries_sm {
+        font-size: 36px;
+      }
+    }
     .products {
       padding: 0 0 30px;
       width: 1024px;
@@ -276,3 +280,4 @@ html.page.about {
       margin-top: 20px;
     }
   }
+}
