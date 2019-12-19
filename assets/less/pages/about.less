@@ -9,7 +9,7 @@ html.page.about {
     }
 
     .about-sub-area .sub-heading {
-      color: #fff;
+      color: @white;
     }
 
     .sub-description {
@@ -19,14 +19,14 @@ html.page.about {
     }
   }
 
-  .must-use-area {
+  .philosophy-area {
     background: @jet-black;
     padding: 100px 0 60px;
 
     @media @queries_sm {
       padding: 80px 0;
     }
-    .must-use-wrap {
+    .philosophy-wrap {
       padding: 60px 100px;
       max-width: 900px;
 
@@ -37,37 +37,28 @@ html.page.about {
         padding: 0 20px 24px 20px;
       }
 
-      .must-use-main {
+      .philosophy-main {
         font-weight: bold;
         font-size: 42px;
         text-align: left;
         line-height: 1.4em;
         letter-spacing: -0.03em;
-        color: #fff;
+        color: @white;
         padding-bottom: 24px;
         margin: 0;
         z-index: 3; 
-        
-        .line-break {
-          display: block;
-          
-          @media @queries_sm {
-            display: inline;
-          }
-        }
         
         @media @queries_sm {
           font-size: 30px;
         }
       }
 
-      .must-use-dsc {
+      .philosophy-dsc {
         font-size: 20px;
         color: white;
         line-height: 1.6em;
         font-weight: 300;
         word-break: keep-all;
-        margin-left: 30px;
         
         @media @queries_sm {
           font-size: 18px;
@@ -83,69 +74,44 @@ html.page.about {
       padding: 80px 20px;
     }
 
-    .ridi-code-main {
-      font-family: @Calibre;
-      font-size: 42px;
-      text-align: left;
-      line-height: 1.4em;
-      color: @jet-black;
-      padding-bottom: 24px;
-      margin: 0;
-      letter-spacing: -0.03em;
-      
-      @media @queries_sm {
-        font-size: 36px;
-      }
-    }
-
-    .ridi-code-dsc {
-      font-size: 21px;
-      color: @slategray-80;
-      line-height: 1.6em;
-      word-break: keep-all;
-      
-      @media @queries_sm {
-        font-size: 18px;
-      }
-    }
-
     .ridi-code-wrap {
       padding: 0 20px;
       margin-top: 80px;
+      li {
+        figure {
+          margin: 80px 0;
+          display: grid;
+          grid-template-columns: 30% 60%;
+          grid-gap: 10%;
 
-      figure {
-        margin: 80px 0;
-        display: grid;
-        grid-template-columns: 30% 60%;
-        grid-gap: 10%;
-
-        img {
-          display: block;
-          width: 240px;
-          height: auto;
-          margin: 16px auto;
-        }
-        figcaption {
-          margin-top: 32px;
-          word-break: keep-all;
-          span {
-            font-family: @Acumin;
-            font-size: 18px;
-            color: @deep-blue;
-            letter-spacing: -0.03em
+          img {
+            display: block;
+            width: 240px;
+            height: auto;
+            margin: 16px auto;
           }
-          h3 {
-            font-family: @Acumin;
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.4em;
-            color: @slategray-90;
-            margin: 8px 0 12px 0;
-          }
-          p {
-            font-size: 18px;
-            line-height: 1.6em;
-            color: @slategray-80;
+          figcaption {
+            margin-top: 32px;
+            word-break: keep-all;
+            span {
+              font-family: @Acumin;
+              font-size: 18px;
+              color: @deep-blue;
+              letter-spacing: -0.03em
+            }
+            h3 {
+              font-family: @Acumin;
+              font-size: 24px;
+              font-weight: 700;
+              line-height: 1.4em;
+              color: @slategray-90;
+              margin: 8px 0 12px 0;
+            }
+            p {
+              font-size: 18px;
+              line-height: 1.6em;
+              color: @slategray-80;
+            }
           }
         }
       }
@@ -158,109 +124,83 @@ html.page.about {
     @media @queries_sm {
       padding: 80px 20px;
     }
-    .products-main {
-      font-family: @Calibre;
-      font-size: 42px;
-      text-align: left;
-      line-height: 1.4em;
-      color: @jet-black;
-      padding-bottom: 24px;
-      margin: 0;
-      letter-spacing: -0.03em;
-      
-      @media @queries_sm {
-        font-size: 36px;
-      }
-    }
+
     .products {
-      padding: 0 0 30px;
-      width: 1024px;
-      margin: 0 auto;
-
-      @media @queries_md {
-        width: 768px;
-        padding: 0 0 30px;
-      }
-
-      @media @queries_sm {
-        width: auto;
-      }
-
       li {
-        width: 50%;
-        padding: 36px 20px 10px;
-        float: left;
-        text-align: center;
+        figure {
+          margin: 80px 0;
+          display: grid;
+          grid-template-columns: 50% 50%;
+          grid-gap: 60px;
+          img {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            border-radius: 6px;
+          }
+          figcaption{
+            strong {
+              display: block;
+              font-size: 22px;
+              font-weight: 700;
+              color: @slategray-90;
+              padding: 16px 0 12px;
+            }
 
-        @media @queries_sm {
-          width: auto;
-          float: none;
-          padding: 0 20px 40px;
-          max-width: 440px;
-          margin: 0 auto;
-        }
+            .logo-ridibooks {
+              .svg_logo_ridibooks(@slategray-90);
+              width: 200px;
+              height: auto;
+            }
 
-        img {
-          display: block;
-          margin: 0 auto;
-          width: 100%;
-        }
+            .logo-ridiselect {
+              .svg_logo_ridiselect(@slategray-90);
+              width: 200px;
+              height: auto;
+            }
 
-        .logo-ridibooks {
-          .svg_logo_ridibooks(#333);
+            .logo-paper {
+              .svg_logo_paper(@slategray-90);
+              width: 200px;
+              height: auto;
+            }
 
-          width: 125px;
-          height: 32px;
-        }
+            .logo-laftel {
+              .svg_logo_laftel(@slategray-90);
+              width: 130px;
+              height: 32px;
+            }
 
-        .logo-ridiselect {
-          .svg_logo_ridiselect(#333);
+            .logo-outstanding {
+              .svg_logo_outstanding(@slategray-90);
+              width: 150px;
+              height: 32px;
+            }
 
-          width: 123px;
-          height: 19px;
-        }
+            span {
+              display: block;
+              padding: 16px 0 20px;
+              font-size: 24px;
+              color: @slategray-80;
+              font-weight: 400;
+              letter-spacing: -0.03em;
+              word-break: keep-all;
+            }
 
-        .logo-paper {
-          .svg_logo_paper(#333);
-
-          width: 123px;
-          height: 20px;
-        }
-
-        .logo-laftel {
-          .svg_logo_laftel(#333);
-
-          width: 84px;
-          height: 20px;
-        }
-
-        .logo-outstanding {
-          .svg_logo_outstanding(#333);
-
-          width: 180px;
-          height: 40px;
-        }
-
-
-        strong {
-          display: block;
-          font-size: 1.8em;
-          font-weight: 700;
-          color: #333;
-          padding: 16px 0 8px;
-        }
-
-        span {
-          display: block;
-          color: #555;
-          font-weight: 400;
-          padding-bottom: 20px;
-          letter-spacing: -0.03em;
-          font-size: 0.9em;
-        }
-
-        a {
-          .button-gray-stroke();
+            .text-link {
+              display: block;
+              margin-top: 120px;
+              font-size: 24px;
+              color: @ultra-blue;
+              font-weight: 700;
+              -webkit-transition: color 0.3s;
+              -moz-transition: color 0.3s;
+              transition: color 0.3s;
+              &:hover {
+                color: @deep-blue;
+              }
+            }
+          }
         }
       }
     }

@@ -1,34 +1,77 @@
-// .site-content h3 {
-//   display: inline-block;
-//   font-size: 1.5em;
-//   color: @base-gray;
-//   font-weight: 900;
-//   text-transform: uppercase;
-//   letter-spacing: 0.1em;
-//   position: relative;
-//   padding-bottom: 10px;
-//   margin-bottom: 20px;
-//   margin-top: 80px;
-//   .brandon-grotesque();
+.site-content {
+  max-width: 1200px;
+  margin: auto;
 
-//   @media @queries_md {
-//     font-size: 1.5em;
-//     margin-top: 60px;
-//   }
+  h2 {
+    font-family: @Acumin;
+    font-size: 42px;
+    text-align: left;
+    line-height: 1.4em;
+    color: @jet-black;
+    padding-bottom: 12px;
+    margin: 0;
+    letter-spacing: -0.03em;
+    
+    @media @queries_sm {
+      font-size: 36px;
+    }
+  }
+  .dsc {
+    font-size: 21px;
+    color: @slategray-80;
+    line-height: 1.6em;
+    word-break: keep-all;
+    
+    @media @queries_sm {
+      font-size: 18px;
+    }
+  }
+}
 
-//   @media @queries_sm {
-//     font-size: 1.2em;
-//     margin-top: 60px;
-//   }
+.work-with-us-banner {
+  background-color: @jet-black;
+  .content-wrapper {
+    padding: 80px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      max-width: 500px;
+      span {
+        font-family: @Calibre;
+        font-size: 70px;
+        color: @white;
+      }
+      p {
+        font-size: 24px;
+        color: @white;
+      }
+    }
+    a {
+      display: block;
+      width: 330px;
+      height: 100px;
+      border-radius: 50px;
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 100px;
+      color: @white;
+      background-color: @ultra-blue;
+      -webkit-transition: background-color 0.3s;
+      -moz-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: @deep-blue;
+      }
+    }
+  }
+}
 
-//   &:after {
-//     content: "";
-//     position: absolute;
-//     left: 0;
-//     bottom: 0;
-//     width: 100%;
-//     height: 4px;
-//     background: @base-gray;
-//     .border-radius();
-//   }
-// }
+.line-break {
+  display: block;
+  
+  @media @queries_sm {
+    display: inline;
+  }
+}
