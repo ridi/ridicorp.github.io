@@ -9,16 +9,24 @@
   .page-heading {
     max-width: 1200px;
     margin: auto;
-    h1 {
+    .main-caption {
       font-family: @Calibre;
-      text-align: left;
-      margin: 0;
-      font-size: 130px;
-      color: #fff;
-      line-height: 1.2em;
-      padding: 240px 100px 200px;
-      text-rendering: optimizeLegibility;
+      font-weight: 600;
+      font-size: 30px;
+      color: @white;
+      opacity: .5;
+      display: block;
+      padding-bottom: 12px;
+    }
 
+    h1 {
+      margin: 0;
+      text-align: left;
+      font-size: 74px;
+      font-weight: 700;
+      color: @white;
+      line-height: 1.4em;
+      text-rendering: optimizeLegibility;
       @media @queries_sm {
         font-size: 50px;
         padding: 170px 20px 150px;

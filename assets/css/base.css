@@ -5,8 +5,14 @@
   src: url('../fonts/RIDIBatang.woff');
 }
 @font-face {
-  font-family: 'Calibre Bold';
+  font-family: 'Calibre';
+  src: url('../fonts/CalibreSemibold.woff');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Calibre';
   src: url('../fonts/CalibreBold.woff');
+  font-weight: 700;
 }
 @font-face {
   font-family: 'Acumin Bold';
@@ -248,15 +254,24 @@ ol {
   max-width: 1200px;
   margin: auto;
 }
+.intro-header .site-heading .main-caption,
+.intro-header .page-heading .main-caption {
+  font-family: 'Calibre', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: #fff;
+  opacity: 0.5;
+  display: block;
+  padding-bottom: 12px;
+}
 .intro-header .site-heading h1,
 .intro-header .page-heading h1 {
-  font-family: 'Calibre Bold', sans-serif;
-  text-align: left;
   margin: 0;
-  font-size: 130px;
+  text-align: left;
+  font-size: 74px;
+  font-weight: 700;
   color: #fff;
-  line-height: 1.2em;
-  padding: 240px 100px 200px;
+  line-height: 1.4em;
   text-rendering: optimizeLegibility;
 }
 @media only screen and (max-width: 767px) {
@@ -773,12 +788,11 @@ article.post .footnotes ol > li p {
   margin: auto;
 }
 .site-content h2 {
-  font-family: 'Acumin Bold', sans-serif;
-  font-size: 42px;
+  font-family: 'Calibre', sans-serif;
+  font-size: 54px;
   text-align: left;
   line-height: 1.4em;
   color: #141517;
-  padding-bottom: 12px;
   margin: 0;
   letter-spacing: -0.03em;
 }
@@ -788,7 +802,7 @@ article.post .footnotes ol > li p {
   }
 }
 .site-content .dsc {
-  font-size: 21px;
+  font-size: 24px;
   color: #40474D;
   line-height: 1.6em;
   word-break: keep-all;
@@ -798,28 +812,29 @@ article.post .footnotes ol > li p {
     font-size: 18px;
   }
 }
-.work-with-us-banner {
-  background-color: #141517;
+.join-us-banner-blue {
+  background-color: #105DC1;
 }
-.work-with-us-banner .content-wrapper {
+.join-us-banner-blue .content-wrapper {
   padding: 80px 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.work-with-us-banner .content-wrapper div {
+.join-us-banner-blue .content-wrapper div {
   max-width: 500px;
 }
-.work-with-us-banner .content-wrapper div span {
-  font-family: 'Calibre Bold', sans-serif;
+.join-us-banner-blue .content-wrapper div .banner-title {
+  font-family: 'Calibre', sans-serif;
   font-size: 70px;
   color: #fff;
 }
-.work-with-us-banner .content-wrapper div p {
+.join-us-banner-blue .content-wrapper div p {
   font-size: 24px;
+  line-height: 1.6em;
   color: #fff;
 }
-.work-with-us-banner .content-wrapper a {
+.join-us-banner-blue .content-wrapper a {
   display: block;
   width: 330px;
   height: 100px;
@@ -834,7 +849,93 @@ article.post .footnotes ol > li p {
   -moz-transition: background-color 0.3s;
   transition: background-color 0.3s;
 }
-.work-with-us-banner .content-wrapper a:hover {
+.join-us-banner-blue .content-wrapper a:hover {
+  background-color: #105DC1;
+}
+.join-us-banner-black {
+  background-color: #141517;
+}
+.join-us-banner-black .content-wrapper {
+  padding: 80px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.join-us-banner-black .content-wrapper div {
+  max-width: 500px;
+}
+.join-us-banner-black .content-wrapper div .banner-title {
+  font-family: 'Calibre', sans-serif;
+  font-size: 70px;
+  color: #fff;
+}
+.join-us-banner-black .content-wrapper div p {
+  font-size: 24px;
+  line-height: 1.6em;
+  color: #fff;
+}
+.join-us-banner-black .content-wrapper a {
+  display: block;
+  width: 330px;
+  height: 100px;
+  border-radius: 50px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  background-color: #1A7DFF;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.join-us-banner-black .content-wrapper a:hover {
+  background-color: #105DC1;
+}
+.ridibating-banner {
+  background-image: url(../img/about/ridibatang-banner-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+.ridibating-banner .content-wrapper {
+  padding: 80px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ridibating-banner .content-wrapper div {
+  max-width: 600px;
+}
+.ridibating-banner .content-wrapper div .banner-title {
+  display: block;
+  margin-bottom: 12px;
+  font-family: 'RIDIBatang';
+  font-size: 54px;
+  color: #fff;
+}
+.ridibating-banner .content-wrapper div p {
+  font-family: 'RIDIBatang';
+  font-size: 24px;
+  line-height: 1.6em;
+  color: #fff;
+}
+.ridibating-banner .content-wrapper a {
+  display: block;
+  width: 260px;
+  height: 100px;
+  border-radius: 50px;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  background-color: #1A7DFF;
+  -webkit-transition: background-color 0.3s;
+  -moz-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.ridibating-banner .content-wrapper a:hover {
   background-color: #105DC1;
 }
 .line-break {
@@ -845,12 +946,16 @@ article.post .footnotes ol > li p {
     display: inline;
   }
 }
-html.page.about .intro-header.ih-about {
-  background-color: #105DC1;
+html.page.about .intro-header {
   background-image: url(../img/about/hero_bg.png);
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 100% auto;
+  background-size: cover;
+}
+html.page.about .intro-header .ih-about {
+  background-color: #105DC1;
+  opacity: 0.94;
+  padding: 260px 140px 250px;
 }
 html.page.about .intro-header .about-sub-area .sub-heading {
   color: #fff;
@@ -859,51 +964,39 @@ html.page.about .intro-header .sub-description.sd-about {
   color: #78caf3;
 }
 html.page.about .philosophy-area {
-  background: #141517;
-  padding: 100px 0 60px;
+  background: #0B448E;
+  padding: 150px 140px 130px;
 }
 @media only screen and (max-width: 767px) {
   html.page.about .philosophy-area {
     padding: 80px 0;
   }
 }
-html.page.about .philosophy-area .philosophy-wrap {
-  padding: 60px 100px;
-  max-width: 900px;
-}
-html.page.about .philosophy-area .philosophy-wrap:last-child {
-  margin-left: 24%;
-}
-@media only screen and (max-width: 767px) {
-  html.page.about .philosophy-area .philosophy-wrap {
-    padding: 0 20px 24px 20px;
-  }
-}
-html.page.about .philosophy-area .philosophy-wrap .philosophy-main {
-  font-weight: bold;
-  font-size: 42px;
+html.page.about .philosophy-area .philosophy-main {
+  font-family: 'Calibre', sans-serif;
+  font-weight: 600;
+  font-size: 54px;
   text-align: left;
   line-height: 1.4em;
   letter-spacing: -0.03em;
   color: #fff;
-  padding-bottom: 24px;
+  padding-bottom: 8px;
   margin: 0;
   z-index: 3;
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .philosophy-area .philosophy-wrap .philosophy-main {
+  html.page.about .philosophy-area .philosophy-main {
     font-size: 30px;
   }
 }
-html.page.about .philosophy-area .philosophy-wrap .philosophy-dsc {
-  font-size: 20px;
+html.page.about .philosophy-area .philosophy-dsc {
+  font-size: 24px;
   color: white;
   line-height: 1.6em;
-  font-weight: 300;
   word-break: keep-all;
 }
 @media only screen and (max-width: 767px) {
-  html.page.about .philosophy-area .philosophy-wrap .philosophy-dsc {
+  html.page.about .philosophy-area .philosophy-dsc {
     font-size: 18px;
   }
 }
@@ -916,41 +1009,31 @@ html.page.about .ridi-code-area {
   }
 }
 html.page.about .ridi-code-area .ridi-code-wrap {
-  padding: 0 20px;
   margin-top: 80px;
 }
-html.page.about .ridi-code-area .ridi-code-wrap li figure {
-  margin: 80px 0;
-  display: grid;
-  grid-template-columns: 30% 60%;
-  grid-gap: 10%;
+html.page.about .ridi-code-area .ridi-code-wrap li {
+  margin-top: 80px;
 }
-html.page.about .ridi-code-area .ridi-code-wrap li figure img {
-  display: block;
-  width: 240px;
-  height: auto;
-  margin: 16px auto;
-}
-html.page.about .ridi-code-area .ridi-code-wrap li figure figcaption {
-  margin-top: 32px;
+html.page.about .ridi-code-area .ridi-code-wrap li div {
   word-break: keep-all;
 }
-html.page.about .ridi-code-area .ridi-code-wrap li figure figcaption span {
-  font-family: 'Acumin Bold', sans-serif;
-  font-size: 18px;
-  color: #105DC1;
+html.page.about .ridi-code-area .ridi-code-wrap li div .code-caption {
+  font-family: 'Calibre', sans-serif;
+  font-weight: 600;
   letter-spacing: -0.03em;
-}
-html.page.about .ridi-code-area .ridi-code-wrap li figure figcaption h3 {
-  font-family: 'Acumin Bold', sans-serif;
   font-size: 24px;
+  color: #105DC1;
+}
+html.page.about .ridi-code-area .ridi-code-wrap li div h3 {
+  font-family: 'Acumin Bold', sans-serif;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1.4em;
   color: #303538;
-  margin: 8px 0 12px 0;
+  margin: 8px 0 4px 0;
 }
-html.page.about .ridi-code-area .ridi-code-wrap li figure figcaption p {
-  font-size: 18px;
+html.page.about .ridi-code-area .ridi-code-wrap li div p {
+  font-size: 24px;
   line-height: 1.6em;
   color: #40474D;
 }
@@ -1041,7 +1124,7 @@ html.page.about .products-area .products li figure figcaption span {
   word-break: keep-all;
 }
 html.page.about .products-area .products li figure figcaption .text-link {
-  display: block;
+  display: inline-block;
   margin-top: 120px;
   font-size: 24px;
   color: #1A7DFF;
@@ -1052,6 +1135,14 @@ html.page.about .products-area .products li figure figcaption .text-link {
 }
 html.page.about .products-area .products li figure figcaption .text-link:hover {
   color: #105DC1;
+}
+html.page.about .products-area .products li figure figcaption .icon-links {
+  margin-top: 120px;
+}
+html.page.about .products-area .products li figure figcaption .icon-links a {
+  width: 42px;
+  float: left;
+  margin-right: 48px;
 }
 html.page.about .branding-link-area {
   width: 768px;

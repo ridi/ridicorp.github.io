@@ -3,12 +3,11 @@
   margin: auto;
 
   h2 {
-    font-family: @Acumin;
-    font-size: 42px;
+    font-family: @Calibre;
+    font-size: 54px;
     text-align: left;
     line-height: 1.4em;
     color: @jet-black;
-    padding-bottom: 12px;
     margin: 0;
     letter-spacing: -0.03em;
     
@@ -17,7 +16,7 @@
     }
   }
   .dsc {
-    font-size: 21px;
+    font-size: 24px;
     color: @slategray-80;
     line-height: 1.6em;
     word-break: keep-all;
@@ -28,7 +27,48 @@
   }
 }
 
-.work-with-us-banner {
+.join-us-banner-blue {
+  background-color: @deep-blue;
+  .content-wrapper {
+    padding: 80px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      max-width: 500px;
+      .banner-title {
+        font-family: @Calibre;
+        font-size: 70px;
+        color: @white;
+      }
+      p {
+        font-size: 24px;
+        line-height: 1.6em;
+        color: @white;
+      }
+    }
+    a {
+      display: block;
+      width: 330px;
+      height: 100px;
+      border-radius: 50px;
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 100px;
+      color: @white;
+      background-color: @ultra-blue;
+      -webkit-transition: background-color 0.3s;
+      -moz-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: @deep-blue;
+      }
+    }
+  }
+}
+
+.join-us-banner-black {
   background-color: @jet-black;
   .content-wrapper {
     padding: 80px 100px;
@@ -37,19 +77,67 @@
     align-items: center;
     div {
       max-width: 500px;
-      span {
+      .banner-title {
         font-family: @Calibre;
         font-size: 70px;
         color: @white;
       }
       p {
         font-size: 24px;
+        line-height: 1.6em;
         color: @white;
       }
     }
     a {
       display: block;
       width: 330px;
+      height: 100px;
+      border-radius: 50px;
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 100px;
+      color: @white;
+      background-color: @ultra-blue;
+      -webkit-transition: background-color 0.3s;
+      -moz-transition: background-color 0.3s;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: @deep-blue;
+      }
+    }
+  }
+}
+
+.ridibating-banner{
+  background-image: url(../img/about/ridibatang-banner-bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  .content-wrapper {
+    padding: 80px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    div {
+      max-width: 600px;
+      .banner-title {
+        display: block;
+        margin-bottom: 12px;
+        font-family: @ridibatang;
+        font-size: 54px;
+        color: @white;
+      }
+      p {
+        font-family: @ridibatang;
+        font-size: 24px;
+        line-height: 1.6em;
+        color: @white;
+      }
+    }
+    a {
+      display: block;
+      width: 260px;
       height: 100px;
       border-radius: 50px;
       font-size: 40px;

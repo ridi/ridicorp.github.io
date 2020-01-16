@@ -1,11 +1,14 @@
 html.page.about {
   .intro-header {
-    &.ih-about {
+    background-image: url(../img/about/hero_bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    .ih-about {
       background-color: #105DC1;
-      background-image: url(../img/about/hero_bg.png);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 100% auto;
+      opacity: .94;
+      padding: 260px 140px 250px;
     }
 
     .about-sub-area .sub-heading {
@@ -20,49 +23,35 @@ html.page.about {
   }
 
   .philosophy-area {
-    background: @jet-black;
-    padding: 100px 0 60px;
-
+    background: #0B448E;
+    padding: 150px 140px 130px;
     @media @queries_sm {
       padding: 80px 0;
     }
-    .philosophy-wrap {
-      padding: 60px 100px;
-      max-width: 900px;
 
-      &:last-child {
-        margin-left: 24%;
-      }
+    .philosophy-main {
+      font-family: @Calibre;
+      font-weight: 600;
+      font-size: 54px;
+      text-align: left;
+      line-height: 1.4em;
+      letter-spacing: -0.03em;
+      color: @white;
+      padding-bottom: 8px;
+      margin: 0;
+      z-index: 3; 
       @media @queries_sm {
-        padding: 0 20px 24px 20px;
+        font-size: 30px;
       }
+    }
 
-      .philosophy-main {
-        font-weight: bold;
-        font-size: 42px;
-        text-align: left;
-        line-height: 1.4em;
-        letter-spacing: -0.03em;
-        color: @white;
-        padding-bottom: 24px;
-        margin: 0;
-        z-index: 3; 
-        
-        @media @queries_sm {
-          font-size: 30px;
-        }
-      }
-
-      .philosophy-dsc {
-        font-size: 20px;
-        color: white;
-        line-height: 1.6em;
-        font-weight: 300;
-        word-break: keep-all;
-        
-        @media @queries_sm {
-          font-size: 18px;
-        }
+    .philosophy-dsc {
+      font-size: 24px;
+      color: white;
+      line-height: 1.6em;
+      word-break: keep-all;
+      @media @queries_sm {
+        font-size: 18px;
       }
     }
   }
@@ -75,43 +64,30 @@ html.page.about {
     }
 
     .ridi-code-wrap {
-      padding: 0 20px;
       margin-top: 80px;
       li {
-        figure {
-          margin: 80px 0;
-          display: grid;
-          grid-template-columns: 30% 60%;
-          grid-gap: 10%;
-
-          img {
-            display: block;
-            width: 240px;
-            height: auto;
-            margin: 16px auto;
+        margin-top: 80px;
+        div { 
+          word-break: keep-all;
+          .code-caption {
+            font-family: @Calibre;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            font-size: 24px;
+            color: @deep-blue;
           }
-          figcaption {
-            margin-top: 32px;
-            word-break: keep-all;
-            span {
-              font-family: @Acumin;
-              font-size: 18px;
-              color: @deep-blue;
-              letter-spacing: -0.03em
-            }
-            h3 {
-              font-family: @Acumin;
-              font-size: 24px;
-              font-weight: 700;
-              line-height: 1.4em;
-              color: @slategray-90;
-              margin: 8px 0 12px 0;
-            }
-            p {
-              font-size: 18px;
-              line-height: 1.6em;
-              color: @slategray-80;
-            }
+          h3 {
+            font-family: @Acumin;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.4em;
+            color: @slategray-90;
+            margin: 8px 0 4px 0;
+          }
+          p {
+            font-size: 24px;
+            line-height: 1.6em;
+            color: @slategray-80;
           }
         }
       }
@@ -188,7 +164,7 @@ html.page.about {
             }
 
             .text-link {
-              display: block;
+              display: inline-block;
               margin-top: 120px;
               font-size: 24px;
               color: @ultra-blue;
@@ -198,6 +174,14 @@ html.page.about {
               transition: color 0.3s;
               &:hover {
                 color: @deep-blue;
+              }
+            }
+            .icon-links {
+              margin-top: 120px;
+              a {
+                width: 42px;
+                float: left;
+                margin-right: 48px;
               }
             }
           }
