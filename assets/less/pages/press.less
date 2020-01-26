@@ -12,7 +12,7 @@ html.page.press {
       }
 
       a.back {
-        color: #fff;
+        color: @slategray-30;
         .brandon-grotesque();
 
         font-weight: bold;
@@ -21,35 +21,15 @@ html.page.press {
         letter-spacing: 0.1em;
         transition: color .2s;
         margin-left: -1em;
-        color: rgba(255,255,255,.8);
 
         &:hover {
-          color: rgba(255,255,255,.6);
+          opacity: .6;
         }
-
         @media @queries_sm {
           margin-left: 0;
         }
       }
-
-      h2 {
-        font-size: 2.5em;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-        text-align: left;
-        color: #fff;
-        .text-shadow(0 1px 2px rgba(15,93,156,.5));
-
-        @media @queries_sm {
-          font-size: 1.75em;
-        }
-      }
-
-      background-image: url(../img/press-bg.png);
-      background-repeat: repeat-x;
-      background-position: center -50px;
-      background-size: 1060px auto;
-      background-color: #0282da;
+      padding: 260px 140px 250px;
     }
 
     .site-heading,

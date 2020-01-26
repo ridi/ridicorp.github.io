@@ -1,361 +1,70 @@
 html.page.career {
   .intro-header {
     &.ih-career {
-      background-color: @bg-career;
-      background-image: url(../img/career-bg.png);
-      background-repeat: repeat-x;
-      background-position: center -80px;
-
-      @media @queries_md {
-        background-size: 1200px auto;
-      }
-
-      @media @queries_sm {
-        background-size: 1000px auto;
-      }
+      padding: 240px 100px 200px;
     }
-
     .site-heading,
     .page-heading {
       &.career-heading {
         padding-bottom: 40px;
       }
     }
-
-    .career-sub-area .sub-heading {
-      color: #5b6f7f;
-    }
-
-    .sub-description {
-      &.sd-career {
-        color: #697c8a;
-      }
-    }
-
-    .career-sub-area {
-      background: #cbf0ff url(../img/career-sub-bg.png) repeat-x center center;
-      padding-top: 50px;
-      text-align: center;
-      .inner-shadow();
-
-      @media @queries_lg {
-        background-size: 1200px auto;
-      }
-
-      @media @queries_sm {
-        text-align: left;
-        padding-left: 20px;
-        padding-right: 20px;
-      }
+  }
+  .ridi-life-area {
+    padding: 0 0 140px;
+    @media @queries_sm {
+      padding: 80px 20px;
     }
   }
 
-  .job-quick-links {
-    text-align: center;
-    margin-bottom: 150px;
-    .brandon-grotesque();
-
-    @media @queries_md {
-      margin-bottom: 100px;
-    }
+  .ridi-life-area {
+    padding: 0 0 140px;
 
     @media @queries_sm {
-      margin-bottom: 50px;
+      padding: 80px 20px;
     }
 
-    .wrapper {
-      display: inline-block;
-      padding: 0 10px;
-      .border-radius();
-
-      max-width: 500px;
-    }
-
-    strong {
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 0.95em;
-      letter-spacing: 0.2em;
-      font-weight: 700;
-      color: #b0d4ff;
-      padding: 10px 0;
-      background: @bg-career;
-    }
-
-    .now-hiring {
-      .button-blue();
-
-      margin-bottom: 15px;
-    }
-
-    .hiring {
-      color: #7e97ad;
-      font-size: 1em;
-      margin: 0 2px;
-
-      &:after {
-        content: "•";
-        color: #7e97ad;
-        margin: 0 0 0 5px;
-      }
-
-      &:last-child {
-        &:after {
-          display: none;
-        }
-      }
-    }
-  }
-
-  .how-we-work-area {
-    background: #f5faff;
-    padding-bottom: 80px;
-
-    @media @queries_smmd {
-      padding-bottom: 0;
-    }
-  }
-
-  .how-we-work {
-    counter-reset: hww-counter;
-    list-style-type: none;
-    padding-top: 100px;
-    padding-left: 0;
-    width: 960px;
-    margin: 0 auto;
-
-    @media @queries_md {
-      width: auto;
-      padding: 100px 40px 0;
-    }
-
-    @media @queries_sm {
-      width: auto;
-      padding-top: 60px;
-    }
-
-    li {
-      border-bottom: 2px solid @dodgerblue-50;
-      padding-bottom: 30px;
-      padding-left: 0;
-      margin-bottom: 20px;
-      position: relative;
-      counter-increment: hww-counter;
-      color: @base-gray;
-      margin-top: 140px;
-      width: 45%;
-      float: left;
-
-      &:before {
-        content: "0" counter(hww-counter);
-        position: absolute;
-        z-index: 1;
-        left: -0.7em;
-        top: -0.8em;
-        color: @dodgerblue-50;
-        font-size: 6em;
-        font-weight: 100;
-        .brandon-grotesque();
-      }
-
-      h4 {
-        font-size: 4em;
-        font-weight: 100;
-        letter-spacing: -0.03em;
-        padding-bottom: 20px;
-        margin-left: -0.1em;
-        background: #f5faff;
-        position: relative;
-        z-index: 2;
-      }
-
-      &.hww-1 {
-        margin-top: 0;
-      }
-
-      &.hww-2, &.hww-4 {
-        float: right;
-      }
-
-      &.hww-5 {
-        margin-bottom: 0;
-      }
-
-
-      p {
-        letter-spacing: -0.02em;
-        font-size: 1.125em;
-        font-weight: 400;
-      }
-
-      .hww-icon {
-        position: absolute;
-        background-repeat: no-repeat;
-        width: 200px;
-        height: 200px;
-        background-size: 200px 200px;
-        z-index: 3;
-
-        &.hwwi-1 {
-          background-image: url(../img/icon-howwework-1.png);
-          right: -20px;
-          top: -130px;
-        }
-
-        &.hwwi-2 {
-          background-image: url(../img/icon-howwework-2.png);
-          right: 10px;
-          top: -120px;
-        }
-
-        &.hwwi-3 {
-          background-image: url(../img/icon-howwework-3.png);
-          right: 10px;
-          top: -100px;
-        }
-
-        &.hwwi-4 {
-          background-image: url(../img/icon-howwework-4.png);
-          right: 0;
-          top: -120px;
-        }
-
-        &.hwwi-5 {
-          background-image: url(../img/icon-howwework-5.png);
-          right: 0;
-          top: -90px;
-        }
-      }
-
-      @media @queries_md {
-        h4 {
-          font-size: 3em;
-        }
-
-        &:before {
-          left: -0.1em;
-          top: -0.8em;
-          font-size: 4em;
-        }
-
-        .hww-icon {
-          position: absolute;
-          top: -50px !important;
-          left: auto !important;
-          right: 20px !important;
-          width: 120px;
-          height: 120px;
-          background-size: 120px 120px;
-        }
-      }
-
-      @media @queries_sm {
-        margin-top: 80px;
-        float: none !important;
-        padding: 0 20px;
-        width: auto;
-
-        h4 {
-          font-size: 3em;
-        }
-
-        &:before {
-          left: 15px;
-          top: -0.9em;
-          font-size: 4em;
-        }
-
-        .hww-icon {
-          position: absolute;
-          top: -50px !important;
-          left: auto !important;
-          right: 20px !important;
-          width: 120px;
-          height: 120px;
-          background-size: 120px 120px;
-        }
-      }
-    }
-  }
-
-  .benefit-area {
-    background: #f3f3f5;
-    padding: 0 0 50px;
-
-    .benefit-content {
-      width: 750px;
-      margin: 30px auto 0;
-      .clear();
-
-      @media @queries_md {
-        width: 90%;
-        margin: 30px auto 0;
-      }
-
-      @media @queries_sm {
-        width: auto;
-        margin: 30px 20px 0;
-      }
-
-      h4 {
-        float: left;
-        width: 170px;
-        .brandon-grotesque();
-
-        font-weight: 800;
-        text-transform: uppercase;
-        font-size: 0.9em;
-        color: #2763a9;
-        letter-spacing: 0.1em;
-        margin: 0;
-      }
-
-      .bc-box {
-        padding-bottom: 15px;
-
-        .bf-icon {
-          float: left;
-          width: 60px;
-          height: 60px;
-          background-size: 60px 60px;
-          margin-top: -10px;
-          background-repeat: no-repeat;
-
-          &.bfi-1 {
-            background-image: url(../img/icon-benefit-1.png);
+    .benefits {
+      li {
+        figure {
+          margin: 80px 0;
+          display: grid;
+          grid-template-columns: 300px 600px;
+          grid-gap: 120px;
+          img {
+            display: block;
+            margin: 50px auto 0;
+            width: 100%;
+            border-radius: 6px;
           }
-
-          &.bfi-2 {
-            background-image: url(../img/icon-benefit-2.png);
+          figcaption{
+            .benefit-title {
+              display: block;
+              font-size: 36px;
+              font-weight: 700;
+              color: @slategray-90;
+              padding: 16px 0 12px;
+            }
+            .benefit-list {
+              li {
+                position: relative;
+                font-size: 24px;
+                line-height: 160%;
+                color: @slategray-80;
+                word-break: keep-all;
+                &:before {
+                  content: '';
+                  position: absolute;
+                  top: 15px;
+                  left: -16px;
+                  width: 4px;
+                  height: 4px;
+                  border-radius: 2px;
+                  background: @slategray-30;
+                }
+              }
+            }
           }
-
-          &.bfi-3 {
-            background-image: url(../img/icon-benefit-3.png);
-          }
-
-          &.bfi-4 {
-            background-image: url(../img/icon-benefit-4.png);
-          }
-
-          &.bfi-5 {
-            background-image: url(../img/icon-benefit-5.png);
-          }
-
-          &.bfi-6 {
-            background-image: url(../img/icon-benefit-6.png);
-          }
-        }
-
-        h5 {
-          font-weight: 700;
-          margin-left: 80px;
-          font-size: 1em;
-          line-height: 1.3;
-        }
-
-        p {
-          line-height: 1.5;
-          margin-left: 80px;
         }
       }
     }
@@ -381,6 +90,7 @@ html.page.career {
       .no-select();
 
       &:after {
+        content: '';
         background: #333;
       }
     }
@@ -400,8 +110,7 @@ html.page.career {
     }
 
     .jobs {
-      width: 540px;
-      float: left;
+      width: 100%;
 
       @media @queries_md {
         float: none;
@@ -443,11 +152,6 @@ html.page.career {
             font-size: 1.2em;
           }
 
-          i {
-            float: right;
-            margin-right: 5px;
-            color: #165097;
-          }
         }
 
         .job-desc {

@@ -105,7 +105,7 @@ ol {
   text-indent: -444px;
   font-size: 0;
   overflow: hidden;
-  background: url('data:image/svg+xml,%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20119%2048%22%3E%3Cstyle%3Epath,%20polygon%20%7B%20fill%3A%23fff%3B%20%7D%3C/style%3E%3Cpath%20fill%3D%22%23fff%22%20d%3D%22M78.3,0H64.6c-1.1,0-1.6,0.4-1.6,1.6v44.9c0,1.1,0.4,1.6,1.6,1.6h13.8c7.1,0,12.3-1.8,15.5-5.4c3.2-3.6,4.8-9.9,4.8-18.6%0A%09c0-8.8-1.6-15-4.9-18.6C90.7,1.8,85.5,0,78.3,0z%20M84.5,34.3c-1.2,1.9-3.4,2.9-6.4,2.9h-2h-0.6v-0.6V11.3v-0.6h0.6H78%0A%09c3,0,5.2,1,6.4,2.9c1.2,1.8,1.8,5.2,1.8,10.3C86.2,29.1,85.6,32.5,84.5,34.3z%20M55,1.6v44.9c0,1.1-0.4,1.6-1.6,1.6h-9.3%0A%09c-1.1,0-1.6-0.4-1.6-1.6V1.6C42.6,0.4,43,0,44.1,0h9.3C54.6,0,55,0.4,55,1.6z%20M118.6,1.6v44.9c0,1.1-0.4,1.6-1.6,1.6h-9.3%0A%09c-1.1,0-1.6-0.4-1.6-1.6V1.6c0-1.1,0.4-1.6,1.6-1.6h9.3C118.2,0,118.6,0.4,118.6,1.6z%20M27.8,31.2c4.9-2.4,7.5-7.1,7.5-14.1%0A%09c0-6.3-1.4-10.8-4.3-13.3C28.1,1.3,23.3,0,16.8,0H1.6C0.4,0,0,0.4,0,1.6v44.9C0,47.6,0.4,48,1.6,48h9.3c1.1,0,1.6-0.4,1.6-1.6V33.9%0A%09v-0.6h0.6h2.6h0.3l0.2,0.3l6.2,12.8c0.5,1,1.3,1.5,2.6,1.5h9.4c0.8,0,0.9-0.3,1-0.4c0.1-0.3,0.1-0.8-0.2-1.3l-7.5-14.2l-0.3-0.5%0A%09l0.5-0.2L27.8,31.2z%20M21.4,22c-0.9,1.1-2.5,1.6-4.8,1.6h-3.7h-0.6V23V11v-0.6h0.6h3.7c2.3,0,3.8,0.5,4.8,1.5c0.9,1,1.3,2.6,1.3,5.1%0A%09C22.7,19.3,22.3,21,21.4,22z%22/%3E%3C/svg%3E') center center no-repeat;
+  background: url('data:image/svg+xml,%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20119%2048%22%3E%3Cstyle%3Epath,%20polygon%20%7B%20fill%3Argba%28204,%20204,%20204,%200.7%29%3B%20%7D%3C/style%3E%3Cpath%20fill%3D%22rgba%28204,%20204,%20204,%200.7%29%22%20d%3D%22M78.3,0H64.6c-1.1,0-1.6,0.4-1.6,1.6v44.9c0,1.1,0.4,1.6,1.6,1.6h13.8c7.1,0,12.3-1.8,15.5-5.4c3.2-3.6,4.8-9.9,4.8-18.6%0A%09c0-8.8-1.6-15-4.9-18.6C90.7,1.8,85.5,0,78.3,0z%20M84.5,34.3c-1.2,1.9-3.4,2.9-6.4,2.9h-2h-0.6v-0.6V11.3v-0.6h0.6H78%0A%09c3,0,5.2,1,6.4,2.9c1.2,1.8,1.8,5.2,1.8,10.3C86.2,29.1,85.6,32.5,84.5,34.3z%20M55,1.6v44.9c0,1.1-0.4,1.6-1.6,1.6h-9.3%0A%09c-1.1,0-1.6-0.4-1.6-1.6V1.6C42.6,0.4,43,0,44.1,0h9.3C54.6,0,55,0.4,55,1.6z%20M118.6,1.6v44.9c0,1.1-0.4,1.6-1.6,1.6h-9.3%0A%09c-1.1,0-1.6-0.4-1.6-1.6V1.6c0-1.1,0.4-1.6,1.6-1.6h9.3C118.2,0,118.6,0.4,118.6,1.6z%20M27.8,31.2c4.9-2.4,7.5-7.1,7.5-14.1%0A%09c0-6.3-1.4-10.8-4.3-13.3C28.1,1.3,23.3,0,16.8,0H1.6C0.4,0,0,0.4,0,1.6v44.9C0,47.6,0.4,48,1.6,48h9.3c1.1,0,1.6-0.4,1.6-1.6V33.9%0A%09v-0.6h0.6h2.6h0.3l0.2,0.3l6.2,12.8c0.5,1,1.3,1.5,2.6,1.5h9.4c0.8,0,0.9-0.3,1-0.4c0.1-0.3,0.1-0.8-0.2-1.3l-7.5-14.2l-0.3-0.5%0A%09l0.5-0.2L27.8,31.2z%20M21.4,22c-0.9,1.1-2.5,1.6-4.8,1.6h-3.7h-0.6V23V11v-0.6h0.6h3.7c2.3,0,3.8,0.5,4.8,1.5c0.9,1,1.3,2.6,1.3,5.1%0A%09C22.7,19.3,22.3,21,21.4,22z%22/%3E%3C/svg%3E') center center no-repeat;
   background-size: 100% 100%;
   width: 50px;
 }
@@ -125,7 +125,7 @@ ol {
     border-bottom: 1px solid transparent;
   }
   .navbar .nav li a {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(204, 204, 204, 0.7);
     padding: 20px 0 2px;
     margin: 0 16px 10px;
     border-bottom: 2px solid transparent;
@@ -135,12 +135,12 @@ ol {
   }
   .navbar .nav li a:hover,
   .navbar .nav li a:focus {
-    color: white;
+    color: rgba(232, 232, 232, 0.7);
     border-color: rgba(255, 255, 255, 0.5);
   }
   .navbar .nav li a.active {
-    border-color: white;
-    color: white;
+    color: rgba(232, 232, 232, 0.7);
+    border-color: rgba(232, 232, 232, 0.7);
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -231,7 +231,7 @@ ol {
   .navbar-default .navbar-nav > li > a:focus,
   .navbar-default .navbar-nav > li > a:hover,
   .navbar-default .navbar-nav > li > a.active {
-    color: white;
+    color: rgba(232, 232, 232, 0.7);
   }
   .navbar-default .navbar-collapse {
     background-color: #000;
@@ -245,7 +245,7 @@ ol {
 .intro-header {
   background-repeat: no-repeat;
   background-position: center top;
-  background-color: #333;
+  background-color: #fff;
   position: relative;
   z-index: 1;
 }
@@ -280,6 +280,19 @@ ol {
     font-size: 50px;
     padding: 170px 20px 150px;
   }
+}
+.intro-header .site-heading .oneline,
+.intro-header .page-heading .oneline {
+  font-family: 'Calibre', sans-serif;
+  font-weight: 700;
+  font-size: 110px;
+  color: #141517;
+}
+.intro-header .site-heading .page-dsc,
+.intro-header .page-heading .page-dsc {
+  font-size: 32px;
+  line-height: 160%;
+  color: #141517;
 }
 .pager {
   padding-top: 20px;
@@ -816,7 +829,7 @@ article.post .footnotes ol > li p {
   background-color: #105DC1;
 }
 .join-us-banner-blue .content-wrapper {
-  padding: 80px 100px;
+  padding: 80px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -844,7 +857,7 @@ article.post .footnotes ol > li p {
   text-align: center;
   line-height: 100px;
   color: #fff;
-  background-color: #1A7DFF;
+  background-color: #0077FF;
   -webkit-transition: background-color 0.3s;
   -moz-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -856,7 +869,7 @@ article.post .footnotes ol > li p {
   background-color: #141517;
 }
 .join-us-banner-black .content-wrapper {
-  padding: 80px 100px;
+  padding: 80px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -884,7 +897,7 @@ article.post .footnotes ol > li p {
   text-align: center;
   line-height: 100px;
   color: #fff;
-  background-color: #1A7DFF;
+  background-color: #0077FF;
   -webkit-transition: background-color 0.3s;
   -moz-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -899,7 +912,7 @@ article.post .footnotes ol > li p {
   background-size: cover;
 }
 .ridibating-banner .content-wrapper {
-  padding: 80px 100px;
+  padding: 80px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -930,7 +943,7 @@ article.post .footnotes ol > li p {
   text-align: center;
   line-height: 100px;
   color: #fff;
-  background-color: #1A7DFF;
+  background-color: #0077FF;
   -webkit-transition: background-color 0.3s;
   -moz-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -946,25 +959,16 @@ article.post .footnotes ol > li p {
     display: inline;
   }
 }
-html.page.about .intro-header {
-  background-image: url(../img/about/hero_bg.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
 html.page.about .intro-header .ih-about {
-  background-color: #105DC1;
+  background-color: #0077FF;
   opacity: 0.94;
   padding: 260px 140px 250px;
 }
 html.page.about .intro-header .about-sub-area .sub-heading {
   color: #fff;
 }
-html.page.about .intro-header .sub-description.sd-about {
-  color: #78caf3;
-}
 html.page.about .philosophy-area {
-  background: #0B448E;
+  background: #fff;
   padding: 150px 140px 130px;
 }
 @media only screen and (max-width: 767px) {
@@ -979,7 +983,7 @@ html.page.about .philosophy-area .philosophy-main {
   text-align: left;
   line-height: 1.4em;
   letter-spacing: -0.03em;
-  color: #fff;
+  color: #141517;
   padding-bottom: 8px;
   margin: 0;
   z-index: 3;
@@ -991,7 +995,7 @@ html.page.about .philosophy-area .philosophy-main {
 }
 html.page.about .philosophy-area .philosophy-dsc {
   font-size: 24px;
-  color: white;
+  color: #40474D;
   line-height: 1.6em;
   word-break: keep-all;
 }
@@ -1001,7 +1005,8 @@ html.page.about .philosophy-area .philosophy-dsc {
   }
 }
 html.page.about .ridi-code-area {
-  padding: 140px 100px;
+  background: #F7F9FC;
+  padding: 140px 0;
 }
 @media only screen and (max-width: 767px) {
   html.page.about .ridi-code-area {
@@ -1038,7 +1043,7 @@ html.page.about .ridi-code-area .ridi-code-wrap li div p {
   color: #40474D;
 }
 html.page.about .products-area {
-  padding: 140px 100px;
+  padding: 140px 0;
 }
 @media only screen and (max-width: 767px) {
   html.page.about .products-area {
@@ -1048,8 +1053,8 @@ html.page.about .products-area {
 html.page.about .products-area .products li figure {
   margin: 80px 0;
   display: grid;
-  grid-template-columns: 50% 50%;
-  grid-gap: 60px;
+  grid-template-columns: 500px 500px;
+  grid-gap: 80px;
 }
 html.page.about .products-area .products li figure img {
   display: block;
@@ -1127,7 +1132,7 @@ html.page.about .products-area .products li figure figcaption .text-link {
   display: inline-block;
   margin-top: 120px;
   font-size: 24px;
-  color: #1A7DFF;
+  color: #0077FF;
   font-weight: 700;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -1146,7 +1151,7 @@ html.page.about .products-area .products li figure figcaption .icon-links a {
 }
 html.page.about .branding-link-area {
   width: 768px;
-  margin: 0 auto 100px;
+  margin: 0 auto 0;
 }
 @media only screen and (max-width: 767px) {
   html.page.about .branding-link-area {
@@ -1181,358 +1186,63 @@ html.page.about .branding-link-area .go-to-branding:hover {
   background: #1477c5;
 }
 html.page.career .intro-header.ih-career {
-  background-color: #293040;
-  background-image: url(../img/career-bg.png);
-  background-repeat: repeat-x;
-  background-position: center -80px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.career .intro-header.ih-career {
-    background-size: 1200px auto;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.career .intro-header.ih-career {
-    background-size: 1000px auto;
-  }
+  padding: 240px 100px 200px;
 }
 html.page.career .intro-header .site-heading.career-heading,
 html.page.career .intro-header .page-heading.career-heading {
   padding-bottom: 40px;
 }
-html.page.career .intro-header .career-sub-area .sub-heading {
-  color: #5b6f7f;
-}
-html.page.career .intro-header .sub-description.sd-career {
-  color: #697c8a;
-}
-html.page.career .intro-header .career-sub-area {
-  background: #cbf0ff url(../img/career-sub-bg.png) repeat-x center center;
-  padding-top: 50px;
-  text-align: center;
-  -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.25);
-}
-@media only screen and (max-width : 1024px) {
-  html.page.career .intro-header .career-sub-area {
-    background-size: 1200px auto;
-  }
+html.page.career .ridi-life-area {
+  padding: 0 0 140px;
 }
 @media only screen and (max-width: 767px) {
-  html.page.career .intro-header .career-sub-area {
-    text-align: left;
-    padding-left: 20px;
-    padding-right: 20px;
+  html.page.career .ridi-life-area {
+    padding: 80px 20px;
   }
 }
-html.page.career .job-quick-links {
-  text-align: center;
-  margin-bottom: 150px;
-  font-family: "brandon-grotesque", sans-serif;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.career .job-quick-links {
-    margin-bottom: 100px;
-  }
+html.page.career .ridi-life-area {
+  padding: 0 0 140px;
 }
 @media only screen and (max-width: 767px) {
-  html.page.career .job-quick-links {
-    margin-bottom: 50px;
+  html.page.career .ridi-life-area {
+    padding: 80px 20px;
   }
 }
-html.page.career .job-quick-links .wrapper {
-  display: inline-block;
-  padding: 0 10px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  max-width: 500px;
+html.page.career .ridi-life-area .benefits li figure {
+  margin: 80px 0;
+  display: grid;
+  grid-template-columns: 300px 600px;
+  grid-gap: 120px;
 }
-html.page.career .job-quick-links strong {
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 0.95em;
-  letter-spacing: 0.2em;
-  font-weight: 700;
-  color: #b0d4ff;
-  padding: 10px 0;
-  background: #293040;
-}
-html.page.career .job-quick-links .now-hiring {
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  transition: all 0.2s;
-  font-size: 0.875em;
-  padding: 12px 30px;
-  display: inline-block;
-  letter-spacing: -0.03em;
-  font-weight: bold;
-  padding: 16px 30px;
-  background: #1f8ee6;
-  color: #fff;
-  margin-bottom: 15px;
-}
-html.page.career .job-quick-links .now-hiring i {
-  opacity: 0.5;
-}
-html.page.career .job-quick-links .now-hiring:hover {
-  color: #fff;
-  background: #1477c5;
-}
-html.page.career .job-quick-links .hiring {
-  color: #7e97ad;
-  font-size: 1em;
-  margin: 0 2px;
-}
-html.page.career .job-quick-links .hiring:after {
-  content: "•";
-  color: #7e97ad;
-  margin: 0 0 0 5px;
-}
-html.page.career .job-quick-links .hiring:last-child:after {
-  display: none;
-}
-html.page.career .how-we-work-area {
-  background: #f5faff;
-  padding-bottom: 80px;
-}
-@media only screen and (max-width : 1023px) {
-  html.page.career .how-we-work-area {
-    padding-bottom: 0;
-  }
-}
-html.page.career .how-we-work {
-  counter-reset: hww-counter;
-  list-style-type: none;
-  padding-top: 100px;
-  padding-left: 0;
-  width: 960px;
-  margin: 0 auto;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.career .how-we-work {
-    width: auto;
-    padding: 100px 40px 0;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.career .how-we-work {
-    width: auto;
-    padding-top: 60px;
-  }
-}
-html.page.career .how-we-work li {
-  border-bottom: 2px solid #1f8ce6;
-  padding-bottom: 30px;
-  padding-left: 0;
-  margin-bottom: 20px;
-  position: relative;
-  counter-increment: hww-counter;
-  color: #3e3835;
-  margin-top: 140px;
-  width: 45%;
-  float: left;
-}
-html.page.career .how-we-work li:before {
-  content: "0" counter(hww-counter);
-  position: absolute;
-  z-index: 1;
-  left: -0.7em;
-  top: -0.8em;
-  color: #1f8ce6;
-  font-size: 6em;
-  font-weight: 100;
-  font-family: "brandon-grotesque", sans-serif;
-}
-html.page.career .how-we-work li h4 {
-  font-size: 4em;
-  font-weight: 100;
-  letter-spacing: -0.03em;
-  padding-bottom: 20px;
-  margin-left: -0.1em;
-  background: #f5faff;
-  position: relative;
-  z-index: 2;
-}
-html.page.career .how-we-work li.hww-1 {
-  margin-top: 0;
-}
-html.page.career .how-we-work li.hww-2,
-html.page.career .how-we-work li.hww-4 {
-  float: right;
-}
-html.page.career .how-we-work li.hww-5 {
-  margin-bottom: 0;
-}
-html.page.career .how-we-work li p {
-  letter-spacing: -0.02em;
-  font-size: 1.125em;
-  font-weight: 400;
-}
-html.page.career .how-we-work li .hww-icon {
-  position: absolute;
-  background-repeat: no-repeat;
-  width: 200px;
-  height: 200px;
-  background-size: 200px 200px;
-  z-index: 3;
-}
-html.page.career .how-we-work li .hww-icon.hwwi-1 {
-  background-image: url(../img/icon-howwework-1.png);
-  right: -20px;
-  top: -130px;
-}
-html.page.career .how-we-work li .hww-icon.hwwi-2 {
-  background-image: url(../img/icon-howwework-2.png);
-  right: 10px;
-  top: -120px;
-}
-html.page.career .how-we-work li .hww-icon.hwwi-3 {
-  background-image: url(../img/icon-howwework-3.png);
-  right: 10px;
-  top: -100px;
-}
-html.page.career .how-we-work li .hww-icon.hwwi-4 {
-  background-image: url(../img/icon-howwework-4.png);
-  right: 0;
-  top: -120px;
-}
-html.page.career .how-we-work li .hww-icon.hwwi-5 {
-  background-image: url(../img/icon-howwework-5.png);
-  right: 0;
-  top: -90px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.career .how-we-work li h4 {
-    font-size: 3em;
-  }
-  html.page.career .how-we-work li:before {
-    left: -0.1em;
-    top: -0.8em;
-    font-size: 4em;
-  }
-  html.page.career .how-we-work li .hww-icon {
-    position: absolute;
-    top: -50px !important;
-    left: auto !important;
-    right: 20px !important;
-    width: 120px;
-    height: 120px;
-    background-size: 120px 120px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.career .how-we-work li {
-    margin-top: 80px;
-    float: none !important;
-    padding: 0 20px;
-    width: auto;
-  }
-  html.page.career .how-we-work li h4 {
-    font-size: 3em;
-  }
-  html.page.career .how-we-work li:before {
-    left: 15px;
-    top: -0.9em;
-    font-size: 4em;
-  }
-  html.page.career .how-we-work li .hww-icon {
-    position: absolute;
-    top: -50px !important;
-    left: auto !important;
-    right: 20px !important;
-    width: 120px;
-    height: 120px;
-    background-size: 120px 120px;
-  }
-}
-html.page.career .benefit-area {
-  background: #f3f3f5;
-  padding: 0 0 50px;
-}
-html.page.career .benefit-area .benefit-content {
-  width: 750px;
-  margin: 30px auto 0;
-  clear: both;
-}
-html.page.career .benefit-area .benefit-content:after {
-  content: ".";
-  visibility: hidden;
+html.page.career .ridi-life-area .benefits li figure img {
   display: block;
-  height: 0;
-  clear: both;
+  margin: 50px auto 0;
+  width: 100%;
+  border-radius: 6px;
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.career .benefit-area .benefit-content {
-    width: 90%;
-    margin: 30px auto 0;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.career .benefit-area .benefit-content {
-    width: auto;
-    margin: 30px 20px 0;
-  }
-}
-html.page.career .benefit-area .benefit-content h4 {
-  float: left;
-  width: 170px;
-  font-family: "brandon-grotesque", sans-serif;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  color: #2763a9;
-  letter-spacing: 0.1em;
-  margin: 0;
-}
-html.page.career .benefit-area .benefit-content .bc-box {
-  padding-bottom: 15px;
-}
-html.page.career .benefit-area .benefit-content .bc-box .bf-icon {
-  float: left;
-  width: 60px;
-  height: 60px;
-  background-size: 60px 60px;
-  margin-top: -10px;
-  background-repeat: no-repeat;
-}
-html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-1 {
-  background-image: url(../img/icon-benefit-1.png);
-}
-html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-2 {
-  background-image: url(../img/icon-benefit-2.png);
-}
-html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-3 {
-  background-image: url(../img/icon-benefit-3.png);
-}
-html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-4 {
-  background-image: url(../img/icon-benefit-4.png);
-}
-html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-5 {
-  background-image: url(../img/icon-benefit-5.png);
-}
-html.page.career .benefit-area .benefit-content .bc-box .bf-icon.bfi-6 {
-  background-image: url(../img/icon-benefit-6.png);
-}
-html.page.career .benefit-area .benefit-content .bc-box h5 {
+html.page.career .ridi-life-area .benefits li figure figcaption .benefit-title {
+  display: block;
+  font-size: 36px;
   font-weight: 700;
-  margin-left: 80px;
-  font-size: 1em;
-  line-height: 1.3;
+  color: #303538;
+  padding: 16px 0 12px;
 }
-html.page.career .benefit-area .benefit-content .bc-box p {
-  line-height: 1.5;
-  margin-left: 80px;
+html.page.career .ridi-life-area .benefits li figure figcaption .benefit-list li {
+  position: relative;
+  font-size: 24px;
+  line-height: 160%;
+  color: #40474D;
+  word-break: keep-all;
+}
+html.page.career .ridi-life-area .benefits li figure figcaption .benefit-list li:before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: -16px;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: #B8BFC4;
 }
 html.page.career .job-openings-area {
   padding: 0 0 50px;
@@ -1561,6 +1271,7 @@ html.page.career .job-openings-area h3 {
   user-select: none;
 }
 html.page.career .job-openings-area h3:after {
+  content: '';
   background: #333;
 }
 html.page.career .job-openings-area h4 {
@@ -1577,8 +1288,7 @@ html.page.career .job-openings-area h5 {
   padding: 40px 0 0 25px;
 }
 html.page.career .job-openings-area .jobs {
-  width: 540px;
-  float: left;
+  width: 100%;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   html.page.career .job-openings-area .jobs {
@@ -1620,11 +1330,6 @@ html.page.career .job-openings-area .jobs .job-item .job-title {
   html.page.career .job-openings-area .jobs .job-item .job-title {
     font-size: 1.2em;
   }
-}
-html.page.career .job-openings-area .jobs .job-item .job-title i {
-  float: right;
-  margin-right: 5px;
-  color: #165097;
 }
 html.page.career .job-openings-area .jobs .job-item .job-desc {
   padding: 14px 24px;
@@ -1841,41 +1546,15 @@ html.page.career .job-openings-area .talent-pool .talent-pool-list .job-item:hov
   margin-right: 5px;
 }
 html.page.blog .intro-header.ih-blog {
-  background-image: url(../img/blog-bg.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 2000px auto;
-  background-color: #173057;
-}
-@media only screen and (max-width: 767px) {
-  html.page.blog .intro-header.ih-blog {
-    background-size: 1400px auto;
-  }
-}
-html.page.blog .intro-header .site-heading.blog-heading,
-html.page.blog .intro-header .page-heading.blog-heading {
-  padding: 80px 0 40px;
-}
-html.page.blog .intro-header .sub-description.sd-blog {
-  color: #78caf3;
-}
-html.page.blog .intro-header .blog-sub-area {
-  text-align: center;
-}
-@media only screen and (max-width: 767px) {
-  html.page.blog .intro-header .blog-sub-area {
-    text-align: left;
-    padding: 0 20px;
-  }
+  padding: 260px 140px 250px;
 }
 html.page.blog .tab-container {
-  background: #f5faff;
+  background: #fff;
   padding: 28px 0;
   border-bottom: 1px solid rgba(172, 194, 212, 0.4);
-  text-align: center;
+  text-align: left;
   font-weight: bold;
   font-size: 1.2em;
-  font-family: "brandon-grotesque", sans-serif;
   letter-spacing: 0.02em;
   text-transform: uppercase;
 }
@@ -2140,11 +1819,7 @@ html.page.blog.slides .blog-slide-list li .slide-info .date {
   }
 }
 html.page.press .intro-header.ih-press {
-  background-image: url(../img/press-bg.png);
-  background-repeat: repeat-x;
-  background-position: center -50px;
-  background-size: 1060px auto;
-  background-color: #0282da;
+  padding: 260px 140px 250px;
 }
 html.page.press .intro-header.ih-press .wrapper {
   width: 960px;
@@ -2157,7 +1832,7 @@ html.page.press .intro-header.ih-press .wrapper {
   }
 }
 html.page.press .intro-header.ih-press a.back {
-  color: #fff;
+  color: #B8BFC4;
   font-family: "brandon-grotesque", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -2165,27 +1840,13 @@ html.page.press .intro-header.ih-press a.back {
   letter-spacing: 0.1em;
   transition: color 0.2s;
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.8);
 }
 html.page.press .intro-header.ih-press a.back:hover {
-  color: rgba(255, 255, 255, 0.6);
+  opacity: 0.6;
 }
 @media only screen and (max-width: 767px) {
   html.page.press .intro-header.ih-press a.back {
     margin-left: 0;
-  }
-}
-html.page.press .intro-header.ih-press h2 {
-  font-size: 2.5em;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  text-align: left;
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(15, 93, 156, 0.5);
-}
-@media only screen and (max-width: 767px) {
-  html.page.press .intro-header.ih-press h2 {
-    font-size: 1.75em;
   }
 }
 html.page.press .intro-header .site-heading.press-sub-heading,
@@ -2619,23 +2280,7 @@ html.page.press .photos-list li .download i {
   opacity: 1;
 }
 html.page.branding .intro-header.ih-branding {
-  background-color: #0282da;
-  background-image: url(../img/branding-bg.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 1800px auto;
-  padding-bottom: 100px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.branding .intro-header.ih-branding {
-    background-size: 1200px auto;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.branding .intro-header.ih-branding {
-    background-size: 1000px auto;
-    padding-bottom: 20px;
-  }
+  padding: 260px 140px 250px;
 }
 html.page.branding .intro-header .site-heading.branding-heading,
 html.page.branding .intro-header .page-heading.branding-heading {
@@ -3573,7 +3218,7 @@ html.collection.press .intro-header.ih-press .wrapper {
   }
 }
 html.collection.press .intro-header.ih-press a.back {
-  color: #fff;
+  color: #B8BFC4;
   font-family: "brandon-grotesque", sans-serif;
   font-weight: bold;
   text-transform: uppercase;
@@ -3581,10 +3226,9 @@ html.collection.press .intro-header.ih-press a.back {
   letter-spacing: 0.1em;
   transition: color 0.2s;
   margin-left: -1em;
-  color: rgba(255, 255, 255, 0.8);
 }
 html.collection.press .intro-header.ih-press a.back:hover {
-  color: rgba(255, 255, 255, 0.6);
+  opacity: 0.6;
 }
 @media only screen and (max-width: 767px) {
   html.collection.press .intro-header.ih-press a.back {

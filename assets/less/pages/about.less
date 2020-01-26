@@ -1,12 +1,7 @@
 html.page.about {
   .intro-header {
-    background-image: url(../img/about/hero_bg.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    
     .ih-about {
-      background-color: #105DC1;
+      background-color: @ultra-blue;
       opacity: .94;
       padding: 260px 140px 250px;
     }
@@ -14,16 +9,10 @@ html.page.about {
     .about-sub-area .sub-heading {
       color: @white;
     }
-
-    .sub-description {
-      &.sd-about {
-        color: #78caf3;
-      }
-    }
   }
 
   .philosophy-area {
-    background: #0B448E;
+    background: @white;
     padding: 150px 140px 130px;
     @media @queries_sm {
       padding: 80px 0;
@@ -36,7 +25,7 @@ html.page.about {
       text-align: left;
       line-height: 1.4em;
       letter-spacing: -0.03em;
-      color: @white;
+      color: @jet-black;
       padding-bottom: 8px;
       margin: 0;
       z-index: 3; 
@@ -47,7 +36,7 @@ html.page.about {
 
     .philosophy-dsc {
       font-size: 24px;
-      color: white;
+      color: @slategray-80;
       line-height: 1.6em;
       word-break: keep-all;
       @media @queries_sm {
@@ -57,7 +46,8 @@ html.page.about {
   }
 
   .ridi-code-area {
-    padding: 140px 100px;
+    background: @thin-blue;
+    padding: 140px 0;
 
     @media @queries_sm {
       padding: 80px 20px;
@@ -95,7 +85,7 @@ html.page.about {
   }
 
   .products-area {
-    padding: 140px 100px;
+    padding: 140px 0;
 
     @media @queries_sm {
       padding: 80px 20px;
@@ -106,8 +96,8 @@ html.page.about {
         figure {
           margin: 80px 0;
           display: grid;
-          grid-template-columns: 50% 50%;
-          grid-gap: 60px;
+          grid-template-columns: 500px 500px;
+          grid-gap: 80px;
           img {
             display: block;
             margin: 0 auto;
@@ -192,7 +182,7 @@ html.page.about {
 
   .branding-link-area {
     width: 768px;
-    margin: 0 auto 100px;
+    margin: 0 auto 0;
 
     @media @queries_sm {
       width: auto;
