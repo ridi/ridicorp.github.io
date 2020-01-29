@@ -1,14 +1,18 @@
 html.page.blog {
   .intro-header {
     &.ih-blog {
-      padding: 260px 140px 250px;
+      padding: 240px 0 200px;
+      max-width: 1080px;
+      margin: auto;
     }
   }
 
   .tab-container {
+    font-family: @Calibre;
+    font-weight: 600;
     background: @white;
     padding: 28px 0;
-    border-bottom: 1px solid rgba(172, 194, 212, .4);
+    border-bottom: 1px solid @slategray-20;
     text-align: left;
     font-weight: bold;
     font-size: 1.2em;
@@ -20,7 +24,7 @@ html.page.blog {
     }
 
     em, span {
-      color: #acc2d4;
+      color: @slategray-20;
       display: inline-block;
       padding: 0 2px;
     }
@@ -31,15 +35,14 @@ html.page.blog {
       cursor: pointer;
 
       &.active, &:hover {
-        color: #02406f;
+        color: @ultra-blue;
       }
     }
   }
 
   &.posts {
     .blog-post-list {
-      width: 700px;
-      margin: 20px auto;
+      margin: 0 auto;
 
       @media @queries_md {
         margin: 20px auto;
@@ -51,7 +54,6 @@ html.page.blog {
       }
 
       li {
-        display: inline-block;
         vertical-align: top;
         position: relative;
 
@@ -60,8 +62,9 @@ html.page.blog {
         }
 
         .list-item {
-          display: block;
-          padding: 25px 5px 20px;
+          display: flex;
+          justify-content: space-between;
+          padding: 25px 16px 20px;
           position: relative;
           z-index: 1;
           transition: all .1s;
@@ -73,9 +76,7 @@ html.page.blog {
           }
 
           .post-content {
-            display: table-cell;
             vertical-align: top;
-            width: 520px;
 
             @media @queries_sm {
               width: 100%;
@@ -129,14 +130,11 @@ html.page.blog {
           }
 
           .post-meta {
-            .brandon-grotesque();
-
+            font-family: @Calibre;
             color: #545f6f;
             font-size: 14px;
-            width: 180px;
-            display: table-cell;
-            vertical-align: top;
-            padding: 25px 0 0 25px;
+            width: 160px;
+            padding: 25px 0 0 0;
 
             @media @queries_sm {
               width: auto;
@@ -153,8 +151,9 @@ html.page.blog {
             }
 
             .author {
-              font-weight: bold;
+              font-weight: 600;
               font-size: 16px;
+              margin-top: 12px;
             }
           }
         }
@@ -174,14 +173,14 @@ html.page.blog {
 
         &:hover a,
         &:focus a {
-          -webkit-transform: translateY(-1px);
           border-color: @slategray-20;
+          background-color: hsla(215, 30%, 99%, 1);
         }
 
         &:hover figure,
         &:focus figure {
           border: 1px solid #ddd;
-          -webkit-transform: scale(1.05);
+          -webkit-transform: scale(1.10);
         }
       }
     }
@@ -189,30 +188,26 @@ html.page.blog {
 
   &.slides {
     .blog-slide-list {
-      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 30% 30% 30%;
+      grid-gap: 50px;
+      margin: 0;
       padding-top: 60px;
       text-align: center;
-      max-width: 1600px;
 
       li {
-        display: inline-block;
         width: 320px;
-        margin: 0 33px;
-
-          @media @queries_sm {
-              margin: 0 auto;
-          }
-
+        margin: auto;
         .preview-hover {
           opacity: 0;
           position: absolute;
-          background: rgba(255, 255, 255, .9);
+          background: rgba(255, 255, 255, .95);
+          border: 1px solid @slategray-20;
           border-radius: 4px;
           z-index: 1;
           width: 320px;
           min-height: 241px;
           text-align: left;
-          border: 1px solid @slategray-20;
           padding: 20px;
 
           .title {

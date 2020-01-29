@@ -1,9 +1,11 @@
 .site-content {
-  max-width: 1200px;
+  max-width: 1080px;
   margin: auto;
+  padding: 0 40px;
 
   h2 {
     font-family: @Calibre;
+    font-weight: 600;
     font-size: 54px;
     text-align: left;
     line-height: 1.4em;
@@ -21,8 +23,8 @@
     line-height: 1.6em;
     word-break: keep-all;
     
-    @media @queries_sm {
-      font-size: 18px;
+    @media @queries_md {
+      font-size: 20px;
     }
   }
 }
@@ -30,7 +32,7 @@
 .join-us-banner-blue {
   background-color: @deep-blue;
   .content-wrapper {
-    padding: 80px 0;
+    padding: 80px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,6 +40,7 @@
       max-width: 500px;
       .banner-title {
         font-family: @Calibre;
+        font-weight: 700;
         font-size: 70px;
         color: @white;
       }
@@ -63,6 +66,13 @@
       transition: background-color 0.3s;
       &:hover {
         background-color: @deep-blue;
+      }
+      @media @queries_md {
+        width: 300px;
+        height: 90px;
+        font-size: 32px;
+        line-height: 94px;
+        margin-left: 20px;
       }
     }
   }
@@ -71,7 +81,7 @@
 .join-us-banner-black {
   background-color: @jet-black;
   .content-wrapper {
-    padding: 80px 0;
+    padding: 80px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,6 +89,7 @@
       max-width: 500px;
       .banner-title {
         font-family: @Calibre;
+        font-weight: 700;
         font-size: 70px;
         color: @white;
       }
@@ -104,6 +115,13 @@
       transition: background-color 0.3s;
       &:hover {
         background-color: @deep-blue;
+      }
+      @media @queries_md {
+        width: 300px;
+        height: 90px;
+        font-size: 32px;
+        line-height: 94px;
+        margin-left: 20px;
       }
     }
   }
@@ -115,7 +133,7 @@
   background-position: center center;
   background-size: cover;
   .content-wrapper {
-    padding: 80px 0;
+    padding: 80px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -125,8 +143,12 @@
         display: block;
         margin-bottom: 12px;
         font-family: @ridibatang;
+        word-break: keep-all;
         font-size: 54px;
         color: @white;
+      }
+      @media @queries_md {
+        font-size: 44px;
       }
       p {
         font-family: @ridibatang;
@@ -151,6 +173,13 @@
       transition: background-color 0.3s;
       &:hover {
         background-color: @deep-blue;
+      }
+      @media @queries_md {
+        width: 300px;
+        height: 90px;
+        font-size: 32px;
+        line-height: 94px;
+        margin-left: 20px;
       }
     }
   }

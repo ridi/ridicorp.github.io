@@ -1,9 +1,36 @@
-.copyright {
-  padding: 40px 0;
-  .brandon-grotesque();
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: 0.2em;
-  font-size: 0.8em;
-  color: #aaa;
+
+.page-footer {
+  background-color: @jet-black;
+  padding: 36px 20px;
+  .footer-brand {
+    margin-top: 4px;
+    color: #fff;
+    .svg_logo_ridi(@slategray-30);
+    width: 50px;
+    height: 24px;
+    &:hover, &:focus {
+      color: #fff;
+    }
+  }
+  .footer-info {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-family: @Calibre;
+    .address {
+      text-transform: uppercase;
+      color: @slategray-30;
+      margin: 0;
+    }
+    .copyright {
+      text-transform: uppercase;
+      text-align: right;
+      color: @slategray-30;
+      margin: 24px 0 0 0;
+    }
+  }
+  .footer-wrap {
+    margin-top: 48px;
+  }
 }

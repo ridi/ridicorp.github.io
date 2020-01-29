@@ -1,9 +1,29 @@
 html.page.about {
+  .navbar {
+    &>.container-fluid .navbar-brand {
+      .svg_logo_ridi(@white);
+    }
+    @media only screen and (min-width: 768px) {
+      .nav {
+        li {
+          a {
+            color: @white;
+          }
+        }
+      }
+    }
+  }
+  .navbar-default {
+    .navbar-toggle {
+      .icon-bar {
+        background-color: @white;
+      }
+    }
+  }
   .intro-header {
     .ih-about {
       background-color: @ultra-blue;
-      opacity: .94;
-      padding: 260px 140px 250px;
+      padding: 260px 0 250px;
     }
 
     .about-sub-area .sub-heading {
@@ -13,9 +33,7 @@ html.page.about {
 
   .philosophy-area {
     background: @white;
-    padding: 150px 140px 130px;
-    @media @queries_sm {
-      padding: 80px 0;
+    padding: 150px 0 130px;
     }
 
     .philosophy-main {
@@ -29,9 +47,6 @@ html.page.about {
       padding-bottom: 8px;
       margin: 0;
       z-index: 3; 
-      @media @queries_sm {
-        font-size: 30px;
-      }
     }
 
     .philosophy-dsc {
@@ -96,8 +111,11 @@ html.page.about {
         figure {
           margin: 80px 0;
           display: grid;
-          grid-template-columns: 500px 500px;
+          grid-template-columns: 50% 45%;
           grid-gap: 80px;
+          @media @queries_md {
+            grid-gap: 36px;
+          }
           img {
             display: block;
             margin: 0 auto;
@@ -111,6 +129,9 @@ html.page.about {
               font-weight: 700;
               color: @slategray-90;
               padding: 16px 0 12px;
+              @media @queries_md {
+                font-size: 18px;
+              }
             }
 
             .logo-ridibooks {
@@ -142,6 +163,19 @@ html.page.about {
               width: 150px;
               height: 32px;
             }
+            .dog-ear {
+              font-size: 36px;
+              font-weight: 800;
+              color: @slategray-90;
+              padding: 0;
+              img {
+                display: inline;
+                width: 40px;
+                height: 40px;
+                margin: -4px 0 0 12px;
+                border-radius: 0;
+              }
+            }
 
             span {
               display: block;
@@ -151,11 +185,14 @@ html.page.about {
               font-weight: 400;
               letter-spacing: -0.03em;
               word-break: keep-all;
+              @media @queries_md {
+                font-size: 20px;
+              }
             }
 
             .text-link {
               display: inline-block;
-              margin-top: 120px;
+              margin-top: 60px;
               font-size: 24px;
               color: @ultra-blue;
               font-weight: 700;
@@ -165,13 +202,27 @@ html.page.about {
               &:hover {
                 color: @deep-blue;
               }
+              @media @queries_md {
+                font-size: 18px;
+                margin-top: 30px;
+              }
             }
             .icon-links {
-              margin-top: 120px;
+              margin-top: 90px;
               a {
-                width: 42px;
+                width: 60px;
                 float: left;
-                margin-right: 48px;
+                margin-right: 20px;
+                img {
+                  width: auto;
+                  height: 36px;
+                  @media @queries_md {
+                    height: 30px;
+                  }
+                }
+              }
+              @media @queries_md {
+                margin-top: 30px;
               }
             }
           }
@@ -194,4 +245,3 @@ html.page.about {
       margin-top: 20px;
     }
   }
-}

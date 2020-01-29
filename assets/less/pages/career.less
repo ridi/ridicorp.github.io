@@ -1,25 +1,28 @@
 html.page.career {
   .intro-header {
     &.ih-career {
-      padding: 240px 100px 200px;
+      padding: 240px 0 200px;
+      max-width: 1080px;
+      margin: auto;
     }
     .site-heading,
     .page-heading {
       &.career-heading {
         padding-bottom: 40px;
+        .now-hiring {
+          display: block;
+          margin-top: 32px;
+          font-size: 24px;
+          font-weight: 700;
+          color: @ultra-blue;
+        }
       }
     }
   }
-  .ridi-life-area {
-    padding: 0 0 140px;
-    @media @queries_sm {
-      padding: 80px 20px;
-    }
-  }
 
   .ridi-life-area {
     padding: 0 0 140px;
-
+    word-break: keep-all;
     @media @queries_sm {
       padding: 80px 20px;
     }
@@ -29,13 +32,20 @@ html.page.career {
         figure {
           margin: 80px 0;
           display: grid;
-          grid-template-columns: 300px 600px;
+          grid-template-columns: 35% 50%;
           grid-gap: 120px;
+          @media @queries_md {
+            grid-template-columns: 40% 50%;
+            grid-gap: 48px;
+          }
           img {
             display: block;
-            margin: 50px auto 0;
+            margin: 30px auto 0;
             width: 100%;
             border-radius: 6px;
+            @media @queries_md {
+              margin: 50px auto 0;
+            }
           }
           figcaption{
             .benefit-title {
@@ -47,20 +57,24 @@ html.page.career {
             }
             .benefit-list {
               li {
+                margin: 8px 0;
                 position: relative;
-                font-size: 24px;
-                line-height: 160%;
+                font-size: 20px;
+                line-height: 140%;
                 color: @slategray-80;
                 word-break: keep-all;
+                @media @queries_md {
+                  font-size: 17px;
+                }
                 &:before {
                   content: '';
                   position: absolute;
-                  top: 15px;
-                  left: -16px;
-                  width: 4px;
-                  height: 4px;
+                  top: 8px;
+                  left: -12px;
+                  width: 3px;
+                  height: 3px;
                   border-radius: 2px;
-                  background: @slategray-30;
+                  background: @slategray-20;
                 }
               }
             }
@@ -71,19 +85,7 @@ html.page.career {
   }
 
   .job-openings-area {
-    padding: 0 0 50px;
-    width: 900px;
-    margin: 0 auto;
-
-    @media @queries_md {
-      width: 90%;
-    }
-
-    @media @queries_sm {
-      width: auto;
-
-    }
-
+    margin-bottom: 120px;
     h3 {
       color: #333;
       margin-bottom: 10px;
@@ -104,52 +106,50 @@ html.page.career {
     }
 
     h5 {
-      color: #165097;
-      font-size: 0.9em;
-      padding: 40px 0 0 25px;
+      color: @slategray-90;
+      font-size: 36px;
+      margin: 60px 0 0 0;
+      font-weight: 700;
+      padding-bottom: 24px;
+      border-bottom: 1px solid @slategray-20;
+      margin-bottom: 0;
+      @media @queries_md {
+        font-size: 28px;
+      }
     }
 
     .jobs {
       width: 100%;
-
-      @media @queries_md {
-        float: none;
-        width: 90%;
-        margin: 0 auto;
-      }
-
-      @media @queries_sm {
-        float: none;
-        width: auto;
-        margin: 50px 0 10px;
-      }
-
       .job-item {
         background: #fff;
         box-sizing: border-box;
         position: relative;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid @slategray-20;
         transition: all 0.25s ease-in-out;
 
         &:hover {
-          border-color: #aaa;
-
           .job-title {
-            padding-left: 28px;
+            padding-left: 20px;
+            background-color: hsla(215, 30%, 99%, 1);
           }
         }
 
         .job-title {
           display: block;
-          color: #555;
-          font-size: 1.4em;
+          color: @slategray-90;
+          font-size: 28px;
+          line-height: 34px;
           font-weight: 400;
-          line-height: 1;
-          padding: 18px 24px 15px;
+          padding: 32px 16px;
           transition: all 0.15s ease-in-out;
+          @media @queries_md {
+            font-size: 24px;
+            padding: 24px 16px;
+          }
 
-          @media @queries_sm {
-            font-size: 1.2em;
+          .icon-arrow-right-1 {
+            float: right;
+            margin-top: 4px;
           }
 
         }
@@ -194,10 +194,6 @@ html.page.career {
                 content: "";
               }
             }
-
-            @media @queries_sm {
-              font-size: 0.9em;
-            }
           }
 
           .button-area {
@@ -218,156 +214,158 @@ html.page.career {
 
               font-size: 1em;
               display: inline-block;
-
-              @media @queries_sm {
-                margin-top: 20px;
-                display: block;
-                text-align: center;
-              }
             }
           }
         }
       }
 
       .apply-instruction {
-        margin: 30px auto;
-        padding: 20px 30px;
-        border: 1px solid #165097;
-        border-radius: 8px;
-
-        @media @queries_smmd {
-          margin: 20px;
+        h5 {
+          border-bottom: 0px;
+          padding-bottom: 0;
         }
-
-        h4 {
-          font-size: 1.4em;
-          color: #165097;
+        .dsc {
+          margin-top: 14px;
         }
+        .acc {
+          margin: 8px 0 8px 0;
+          padding: 0;
+          overflow: hidden;
+          border-bottom: 1px solid @slategray-20;
+          
+          li {
+            position: relative;
+            
+            .acc_panel {
+              display: none;
+              overflow: hidden;
+              
+              .talent-pool-list {
+                .job-item {
+                  background: #fff;
+                  box-sizing: border-box;
+                  position: relative;
+                  border-bottom: 1px solid @slategray-20;
+                  transition: all 0.25s ease-in-out;
+                  &:first-child {
+                    .job-title {
+                      border-top: 0px;
+                    }
+                  }
+          
+                  &:hover {
+                    border-color: #aaa;
+                    .job-title {
+                      padding-left: 20px;
+                      
+                    }
+                  }
 
-        strong {
-          display: block;
-          padding: 30px 0 10px;
-          color: #333;
-          font-size: 1em;
-          font-weight: 400;
-          color: #999;
-        }
-
-        .icon-arrow-right-1 {
-          margin: 0 5px;
-          color: #999;
-        }
-
-        p, li {
-          margin: 0;
-        }
-
-        p {
-          font-size: 1.2em;
-
-          &.subtext {
-            color: #888;
-            font-size: 0.8em;
+                  .job-title {
+                    display: block;
+                    color: @slategray-90;
+                    font-size: 28px;
+                    line-height: 34px;
+                    font-weight: 400;
+                    padding: 32px 16px;
+                    transition: all 0.15s ease-in-out;
+                    border-top: 1px solid @slategray-20;
+                  }
+                  .icon-arrow-right-1 {
+                    float: right;
+                    margin-top: 4px;
+                    color: @slategray-90;
+                    font-size: 28px;
+                  }
+                }
+              }
+              .detail-title {
+                font-size: 24px;
+                line-height: 160%;
+                font-weight: 700;
+                color: @slategray-80;
+              }
+              ul {
+                margin-bottom: 24px;
+                .datail-list {
+                  position: relative;
+                  padding-left: 24px;
+                  font-size: 24px;
+                  line-height: 160%;
+                  color: @slategray-80;
+                  &:before {
+                    content: '';
+                    position: absolute;
+                    top: 14px;
+                    left: 8px;
+                    width: 4px;
+                    height: 4px;
+                    border-radius: 2px;
+                    background: @slategray-30;
+                  }
+                }
+              }
+            }
           }
-
-          &.contact-info {
-            font-weight: 700;
-            font-size: 1em;
-
-            i {
-              font-size: 0.8em;
+          .acc_ctrl {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: block;
+            outline: none;
+            position: relative;
+            text-align: left;
+            width: 100%;
+            padding: 11px 0;
+            margin: 0;
+            
+            &::before {
+              content: '';
+              height: 12px;
+              width: 12px;
+              border: 2px solid @slategray-90;
+              border-width: 2px 2px 0 0;
+              float: right;
               margin-right: 5px;
+              position: absolute;
+              right: 0;
+              top: 46%;
+              -webkit-transform: rotate(-225deg);
+              -moz-transform: rotate(-225deg);
+              -ms-transform: rotate(-225deg);
+              -o-transform: rotate(-225deg);
+              transform: rotate(-225deg);
             }
-          }
-        }
-
-        li {
-          font-size: 1em;
-          position: relative;
-
-          &:before {
-            position: absolute;
-            content: "•";
-            left: -1em;
-            top: 0;
-            color: #ccc;
-          }
-        }
-      }
-    } // 채용공고
-    .talent-pool {
-      margin-top: 40px;
-      float: right;
-      width: 330px;
-      background: #f5faff;
-      padding: 20px 25px 30px;
-      border-radius: 10px;
-      box-sizing: border-box;
-
-      @media @queries_md {
-        float: none;
-        width: 86%;
-        margin: 0 auto;
-      }
-
-      @media @queries_sm {
-        float: none;
-        width: auto;
-        margin: 30px 0 10px;
-      }
-
-      h4 {
-        color: #124c79;
-        font-size: 1.4em;
-        padding-bottom: 5px;
-        line-height: 1.2;
-        font-weight: 700;
-        letter-spacing: -0.03em;
-      }
-
-      p {
-        color: #303745;
-        font-size: 0.875em;
-        line-height: 1.5;
-        padding-bottom: 15px;
-      }
-
-      .talent-pool-list {
-        .job-item {
-          display: block;
-          border-bottom: 1px solid #cddce5;
-          padding: 15px 0 11px;
-          transition: all 0.15s ease-in-out;
-
-          .job-title {
-            color: #02406f;
-            font-size: 1.125em;
-            transition: all 0.15s ease-in-out;
-          }
-
-          .arrow {
-            float: right;
-            color: #02406f;
-            font-size: 1.125em;
-            margin-top: 2px;
-            margin-right: 10px;
-            transition: all 0.15s ease-in-out;
-          }
-
-          &:hover {
-            border-color: #124c79;
-
-            .job-title {
-              padding-left: 3px;
+            
+            &.active {
+              transition: all 0.15s ease-in-out;
+              &::before {
+                top: 46%;
+                border-color: @slategray-40;
+                -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+                -ms-transform: rotate(-45deg);
+                -o-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+              }
+              p {
+                color: @slategray-40;
+              }
             }
-
-            .arrow {
-              margin-right: 5px;
+            
+            p{
+              display: block;
+              color: @slategray-90;
+              font-size: 28px;
+              line-height: 34px;
+              font-weight: 400;
+              padding: 32px 0 20px;
+              margin: 0;
+              border-top: 1px solid @slategray-20;
             }
           }
         }
       }
-    } // 인재풀
-
+    } 
   }
 }

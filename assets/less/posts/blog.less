@@ -1,4 +1,25 @@
 html.post.blog {
+  .navbar {
+    &>.container-fluid .navbar-brand {
+      .svg_logo_ridi(@white);
+    }
+    @media only screen and (min-width: 768px) {
+      .nav {
+        li {
+          a {
+            color: @white;
+          }
+        }
+      }
+    }
+  }
+  .navbar-default {
+    .navbar-toggle {
+      .icon-bar {
+        background-color: @white;
+      }
+    }
+  }
   .intro-header {
     &.post-header {
       background-position: center center;
