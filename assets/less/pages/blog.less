@@ -2,7 +2,7 @@ html.page.blog {
   .intro-header {
     &.ih-blog {
       padding: 240px 0 200px;
-      max-width: 1080px;
+      max-width: 1160px;
       margin: auto;
     }
   }
@@ -70,13 +70,9 @@ html.page.blog {
           transition: all .1s;
           border-bottom: 1px #eee solid;
 
-          @media @queries_sm {
-            width: 90%;
-            margin: 5px auto;
-          }
-
           .post-content {
             vertical-align: top;
+            max-width: 70%;
 
             @media @queries_sm {
               width: 100%;
@@ -194,6 +190,10 @@ html.page.blog {
       margin: 0;
       padding-top: 60px;
       text-align: center;
+      @media @queries_md {
+        grid-template-columns: 50% 50%;
+        grid-gap: 0px;
+      }
 
       li {
         width: 320px;

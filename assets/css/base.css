@@ -291,7 +291,7 @@ ol {
 }
 .intro-header .site-heading,
 .intro-header .page-heading {
-  max-width: 1080px;
+  max-width: 1160px;
   margin: auto;
 }
 .intro-header .site-heading .main-caption,
@@ -338,6 +338,7 @@ ol {
   font-size: 29px;
   line-height: 160%;
   color: #40474D;
+  word-break: keep-all;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .intro-header .site-heading .page-dsc,
@@ -347,6 +348,7 @@ ol {
 }
 .pager {
   padding-top: 20px;
+  margin-bottom: 160px;
 }
 .pager .page-button {
   margin-right: 10px;
@@ -847,7 +849,7 @@ article.post .footnotes ol > li p {
   background: #e6f5ff;
 }
 .site-content {
-  max-width: 1080px;
+  max-width: 1160px;
   margin: auto;
   padding: 0 40px;
 }
@@ -1119,7 +1121,7 @@ html.page.about .philosophy-dsc {
   font-weight: 600;
   letter-spacing: -0.03em;
   font-size: 24px;
-  color: #105DC1;
+  color: #0077FF;
 }
 .ridi-code-area .ridi-code-wrap li div h3 {
   font-family: 'Acumin Bold', sans-serif;
@@ -1327,7 +1329,7 @@ html.page.about .philosophy-dsc {
 }
 html.page.career .intro-header.ih-career {
   padding: 240px 0 200px;
-  max-width: 1080px;
+  max-width: 1160px;
   margin: auto;
 }
 html.page.career .intro-header .site-heading.career-heading,
@@ -1405,7 +1407,7 @@ html.page.career .ridi-life-area .benefits li figure figcaption .benefit-list li
   background: #D1D5D9;
 }
 html.page.career .job-openings-area {
-  margin-bottom: 120px;
+  margin-bottom: 160px;
 }
 html.page.career .job-openings-area h3 {
   color: #333;
@@ -1691,7 +1693,7 @@ html.page.career .job-openings-area .jobs .apply-instruction .acc .acc_ctrl p {
 }
 html.page.blog .intro-header.ih-blog {
   padding: 240px 0 200px;
-  max-width: 1080px;
+  max-width: 1160px;
   margin: auto;
 }
 html.page.blog .tab-container {
@@ -1756,14 +1758,9 @@ html.page.blog.posts .blog-post-list li .list-item {
   transition: all 0.1s;
   border-bottom: 1px #eee solid;
 }
-@media only screen and (max-width: 767px) {
-  html.page.blog.posts .blog-post-list li .list-item {
-    width: 90%;
-    margin: 5px auto;
-  }
-}
 html.page.blog.posts .blog-post-list li .list-item .post-content {
   vertical-align: top;
+  max-width: 70%;
 }
 @media only screen and (max-width: 767px) {
   html.page.blog.posts .blog-post-list li .list-item .post-content {
@@ -1866,6 +1863,12 @@ html.page.blog.slides .blog-slide-list {
   padding-top: 60px;
   text-align: center;
 }
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  html.page.blog.slides .blog-slide-list {
+    grid-template-columns: 50% 50%;
+    grid-gap: 0px;
+  }
+}
 html.page.blog.slides .blog-slide-list li {
   width: 320px;
   margin: auto;
@@ -1960,20 +1963,10 @@ html.page.blog.slides .blog-slide-list li .slide-info .date {
 }
 html.page.press .intro-header.ih-press {
   padding: 240px 0 200px;
-  max-width: 1080px;
+  max-width: 1160px;
   margin: auto;
 }
-html.page.press .intro-header.ih-press .wrapper {
-  width: 960px;
-  margin: 0 auto;
-  text-align: left;
-}
-@media only screen and (max-width : 1023px) {
-  html.page.press .intro-header.ih-press .wrapper {
-    width: 90% !important;
-  }
-}
-html.page.press .intro-header.ih-press a.back {
+html.page.press .intro-header a.back {
   color: #B8BFC4;
   font-family: "brandon-grotesque", sans-serif;
   font-weight: bold;
@@ -1983,44 +1976,55 @@ html.page.press .intro-header.ih-press a.back {
   transition: color 0.2s;
   margin-left: -1em;
 }
-html.page.press .intro-header.ih-press a.back:hover {
+html.page.press .intro-header a.back:hover {
   opacity: 0.6;
 }
 @media only screen and (max-width: 767px) {
-  html.page.press .intro-header.ih-press a.back {
+  html.page.press .intro-header a.back {
     margin-left: 0;
   }
 }
-html.page.press .intro-header .site-heading.press-sub-heading,
-html.page.press .intro-header .page-heading.press-sub-heading {
+html.page.press .site-heading.press-sub-heading,
+html.page.press .page-heading.press-sub-heading {
   padding: 80px 0 40px;
 }
-html.page.press .intro-header .site-heading.press-sub-heading .wrapper-compact,
-html.page.press .intro-header .page-heading.press-sub-heading .wrapper-compact {
+html.page.press .site-heading.press-sub-heading .wrapper-compact,
+html.page.press .page-heading.press-sub-heading .wrapper-compact {
   width: 700px;
 }
-html.page.press .press-quick-links .press-link-item li {
+.press-quick-links .press-link-item li {
   margin-bottom: 120px;
 }
-html.page.press .press-quick-links .press-link-item li figure {
-  margin: 80px 0;
+.press-quick-links .press-link-item li figure {
+  margin: 0 0 140px 0;
   display: grid;
   grid-template-columns: 30% 50%;
   grid-gap: 130px;
 }
-html.page.press .press-quick-links .press-link-item li figure img {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .press-quick-links .press-link-item li figure {
+    grid-template-columns: 40% 50%;
+    grid-gap: 80px;
+  }
+}
+.press-quick-links .press-link-item li figure img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
-html.page.press .press-quick-links .press-link-item li figure figcaption strong {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .press-quick-links .press-link-item li figure img {
+    margin: 24px auto 0;
+  }
+}
+.press-quick-links .press-link-item li figure figcaption strong {
   display: block;
   font-size: 36px;
   font-weight: 700;
   color: #303538;
   padding: 16px 0 12px;
 }
-html.page.press .press-quick-links .press-link-item li figure figcaption span {
+.press-quick-links .press-link-item li figure figcaption span {
   display: block;
   padding: 16px 0 20px;
   font-size: 24px;
@@ -2029,7 +2033,7 @@ html.page.press .press-quick-links .press-link-item li figure figcaption span {
   letter-spacing: -0.03em;
   word-break: keep-all;
 }
-html.page.press .press-quick-links .press-link-item li figure figcaption .text-link {
+.press-quick-links .press-link-item li figure figcaption .text-link {
   display: inline-block;
   margin-top: 20px;
   font-size: 24px;
@@ -2039,26 +2043,27 @@ html.page.press .press-quick-links .press-link-item li figure figcaption .text-l
   -moz-transition: color 0.3s;
   transition: color 0.3s;
 }
-html.page.press .press-quick-links .press-link-item li figure figcaption .text-link:hover {
+.press-quick-links .press-link-item li figure figcaption .text-link:hover {
   color: #105DC1;
 }
-html.page.press .press-articles-area {
+.press-articles-area {
   background: #f5faff;
   padding: 80px 0;
+  margin-bottom: 160px;
 }
-html.page.press .press-articles-area .paa-tab {
+.press-articles-area .paa-tab {
   text-align: center;
   font-weight: bold;
   font-size: 1.5em;
   padding-bottom: 40px;
 }
-html.page.press .press-articles-area .paa-tab button,
-html.page.press .press-articles-area .paa-tab span {
+.press-articles-area .paa-tab button,
+.press-articles-area .paa-tab span {
   color: #acc2d4;
   display: inline-block;
   padding: 0 2px;
 }
-html.page.press .press-articles-area .paa-tab button {
+.press-articles-area .paa-tab button {
   font-style: normal;
   transition: color 0.2s;
   cursor: pointer;
@@ -2067,31 +2072,31 @@ html.page.press .press-articles-area .paa-tab button {
   background: none;
   border: 0;
 }
-html.page.press .press-articles-area .paa-tab button.active,
-html.page.press .press-articles-area .paa-tab button:hover {
+.press-articles-area .paa-tab button.active,
+.press-articles-area .paa-tab button:hover {
   color: #02406f;
 }
-html.page.press .press-articles-area .articles-list {
+.press-articles-area .articles-list {
   width: 780px;
   margin: 0 auto;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.press .press-articles-area .articles-list {
+  .press-articles-area .articles-list {
     width: 90%;
     max-width: 690px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.page.press .press-articles-area .articles-list {
+  .press-articles-area .articles-list {
     width: auto;
   }
 }
-html.page.press .press-articles-area .articles-list li {
+.press-articles-area .articles-list li {
   display: inline-block;
   vertical-align: top;
   position: relative;
 }
-html.page.press .press-articles-area .articles-list li a {
+.press-articles-area .articles-list li a {
   display: block;
   width: 380px;
   padding: 20px 15px 10px;
@@ -2100,17 +2105,17 @@ html.page.press .press-articles-area .articles-list li a {
   transition: all 0.1s;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.press .press-articles-area .articles-list li a {
+  .press-articles-area .articles-list li a {
     width: 340px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.page.press .press-articles-area .articles-list li a {
+  .press-articles-area .articles-list li a {
     width: auto;
     padding: 20px 20px 10px;
   }
 }
-html.page.press .press-articles-area .articles-list li figure {
+.press-articles-area .articles-list li figure {
   position: absolute;
   z-index: 0;
   left: 0;
@@ -2121,15 +2126,15 @@ html.page.press .press-articles-area .articles-list li figure {
   transform-origin: 50% 50%;
   border-radius: 5px;
 }
-html.page.press .press-articles-area .articles-list li:hover a {
+.press-articles-area .articles-list li:hover a {
   -webkit-transform: translateY(-3px);
 }
-html.page.press .press-articles-area .articles-list li:hover figure {
+.press-articles-area .articles-list li:hover figure {
   background: #fff;
   -webkit-transform: scale(1.08);
   box-shadow: 0 3px 10px rgba(2, 64, 111, 0.15);
 }
-html.page.press .press-articles-area .articles-list li .date {
+.press-articles-area .articles-list li .date {
   display: block;
   font-size: 0.8em;
   color: #a1afbb;
@@ -2137,7 +2142,7 @@ html.page.press .press-articles-area .articles-list li .date {
   font-family: "brandon-grotesque", sans-serif;
   font-weight: bold;
 }
-html.page.press .press-articles-area .articles-list li .title {
+.press-articles-area .articles-list li .title {
   display: block;
   font-size: 1.5em;
   color: #0282da;
@@ -2146,11 +2151,11 @@ html.page.press .press-articles-area .articles-list li .title {
   letter-spacing: -0.03em;
 }
 @media only screen and (max-width: 767px) {
-  html.page.press .press-articles-area .articles-list li .title {
+  .press-articles-area .articles-list li .title {
     font-size: 1.125em;
   }
 }
-html.page.press .press-articles-area .articles-list li p {
+.press-articles-area .articles-list li p {
   font-size: 0.875em;
   color: #495262;
   line-height: 1.5;
@@ -2163,48 +2168,48 @@ html.page.press .press-articles-area .articles-list li p {
   -webkit-box-orient: vertical;
 }
 @media only screen and (max-width : 1023px) {
-  html.page.press .press-articles-area .articles-list li p {
+  .press-articles-area .articles-list li p {
     -webkit-line-clamp: 3;
     height: 63px;
   }
 }
-html.page.press .press-articles-area .report-list {
+.press-articles-area .report-list {
   width: 500px;
   margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
-  html.page.press .press-articles-area .report-list {
+  .press-articles-area .report-list {
     width: 90%;
     margin: 0 auto;
   }
 }
-html.page.press .press-articles-area .report-list li {
+.press-articles-area .report-list li {
   position: relative;
 }
-html.page.press .press-articles-area .report-list li a {
+.press-articles-area .report-list li a {
   display: block;
   padding: 14px 0 2px;
   position: relative;
   z-index: 1;
   transition: all 0.1s;
 }
-html.page.press .press-articles-area .report-list li .title {
+.press-articles-area .report-list li .title {
   display: block;
   font-size: 1.2em;
   color: #0282da;
   line-height: 1.4;
   letter-spacing: -0.03em;
 }
-html.page.press .press-articles-area .report-list li span {
+.press-articles-area .report-list li span {
   font-weight: bold;
   color: #a1afbb;
   font-size: 0.8em;
 }
-html.page.press .press-articles-area .report-list li .date {
+.press-articles-area .report-list li .date {
   font-family: "brandon-grotesque", sans-serif;
   margin-right: 6px;
 }
-html.page.press .press-articles-area .report-list li figure {
+.press-articles-area .report-list li figure {
   position: absolute;
   z-index: 0;
   left: 0;
@@ -2215,51 +2220,51 @@ html.page.press .press-articles-area .report-list li figure {
   transform-origin: 50% 50%;
   border-radius: 5px;
 }
-html.page.press .press-articles-area .report-list li:hover a {
+.press-articles-area .report-list li:hover a {
   -webkit-transform: translateY(-3px);
 }
-html.page.press .press-articles-area .report-list li:hover figure {
+.press-articles-area .report-list li:hover figure {
   background: #fff;
   -webkit-transform: scale(1.08);
   box-shadow: 0 3px 10px rgba(2, 64, 111, 0.15);
 }
-html.page.press .ridi-insights h3 {
+.ridi-insights h3 {
   letter-spacing: -0.03em;
 }
-html.page.press .ridi-insights .ri-list {
+.ridi-insights .ri-list {
   text-align: center;
   margin-top: 30px;
 }
-html.page.press .ridi-insights .ri-list li {
+.ridi-insights .ri-list li {
   display: inline-block;
   text-align: center;
   position: relative;
 }
-html.page.press .ridi-insights .ri-list li a {
+.ridi-insights .ri-list li a {
   padding: 15px;
   display: block;
   position: relative;
   transition: all 0.1s;
 }
-html.page.press .ridi-insights .ri-list li a:hover {
+.ridi-insights .ri-list li a:hover {
   -webkit-transform: translateY(-3px);
 }
-html.page.press .ridi-insights .ri-list li strong {
+.ridi-insights .ri-list li strong {
   display: block;
   font-size: 1.25em;
   font-family: "brandon-grotesque", sans-serif;
   color: #000;
 }
-html.page.press .ridi-insights .ri-list li span {
+.ridi-insights .ri-list li span {
   display: block;
   font-size: 0.8em;
   font-family: "brandon-grotesque", sans-serif;
   color: #abb3ba;
 }
-html.page.press .ridi-insights .ri-list li .book-thumbnail {
+.ridi-insights .ri-list li .book-thumbnail {
   margin-bottom: 10px;
 }
-html.page.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image {
+.ridi-insights .ri-list li .book-thumbnail .thumbnail-image {
   display: inline-block;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -2269,7 +2274,7 @@ html.page.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image {
   position: relative;
   background: #d9d9d9;
 }
-html.page.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image:before {
+.ridi-insights .ri-list li .book-thumbnail .thumbnail-image:before {
   content: '';
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -2287,11 +2292,11 @@ html.page.press .ridi-insights .ri-list li .book-thumbnail .thumbnail-image:befo
   background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
 }
-html.page.press .ridi-insights .ri-list li .book-thumbnail img {
+.ridi-insights .ri-list li .book-thumbnail img {
   width: 150px;
   max-height: 232px;
 }
-html.page.press .ridi-insights .ri-list li .book-thumbnail .border {
+.ridi-insights .ri-list li .book-thumbnail .border {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2307,19 +2312,24 @@ html.page.press .ridi-insights .ri-list li .book-thumbnail .border {
   z-index: 3;
   border: 1px solid #000;
 }
-html.page.press .photo-dl-area .photos-list figure {
+.photo-dl-area .photos-list figure {
   margin: 80px 0;
   display: grid;
-  grid-template-columns: 500px 500px;
+  grid-template-columns: 45% 50%;
   grid-gap: 80px;
 }
-html.page.press .photo-dl-area .photos-list figure img {
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .photo-dl-area .photos-list figure {
+    grid-gap: 36px;
+  }
+}
+.photo-dl-area .photos-list figure img {
   display: block;
   margin: 0 auto;
   width: 100%;
   border-radius: 6px;
 }
-html.page.press .photo-dl-area .photos-list figure figcaption strong {
+.photo-dl-area .photos-list figure figcaption strong {
   display: block;
   font-family: 'Calibre', sans-serif;
   font-size: 40px;
@@ -2327,7 +2337,7 @@ html.page.press .photo-dl-area .photos-list figure figcaption strong {
   color: #303538;
   padding: 16px 0 12px;
 }
-html.page.press .photo-dl-area .photos-list figure figcaption span {
+.photo-dl-area .photos-list figure figcaption span {
   display: block;
   font-size: 24px;
   color: #40474D;
@@ -2335,7 +2345,7 @@ html.page.press .photo-dl-area .photos-list figure figcaption span {
   letter-spacing: -0.03em;
   word-break: keep-all;
 }
-html.page.press .photo-dl-area .photos-list figure figcaption .text-link {
+.photo-dl-area .photos-list figure figcaption .text-link {
   display: inline-block;
   margin-top: 80px;
   font-size: 24px;
@@ -2345,7 +2355,7 @@ html.page.press .photo-dl-area .photos-list figure figcaption .text-link {
   -moz-transition: color 0.3s;
   transition: color 0.3s;
 }
-html.page.press .photo-dl-area .photos-list figure figcaption .text-link .arrow-download {
+.photo-dl-area .photos-list figure figcaption .text-link .arrow-download {
   display: inline-block;
   text-indent: -444px;
   font-size: 0;
@@ -2356,12 +2366,12 @@ html.page.press .photo-dl-area .photos-list figure figcaption .text-link .arrow-
   height: 24px;
   margin-top: -6px;
 }
-html.page.press .photo-dl-area .photos-list figure figcaption .text-link:hover {
+.photo-dl-area .photos-list figure figcaption .text-link:hover {
   color: #105DC1;
 }
 html.page.branding .intro-header.ih-branding {
   padding: 240px 0 200px;
-  max-width: 1080px;
+  max-width: 1160px;
   margin: auto;
 }
 html.page.branding .intro-header .site-heading.branding-heading,
@@ -2675,7 +2685,7 @@ html.page.branding .branding-download-all .download-all:hover {
 }
 html.page.contact .intro-header.ih-contact {
   padding: 240px 0 200px;
-  max-width: 1080px;
+  max-width: 1160px;
   margin: auto;
 }
 html.page.contact .intro-header .site-heading.contact-heading h1,
@@ -2689,7 +2699,7 @@ html.page.contact .ridi-map img {
   width: 100%;
 }
 html.page.contact .how-to-contact {
-  margin-top: 80px;
+  margin: 80px auto 160px;
 }
 html.page.contact .how-to-contact .info-item {
   display: grid;

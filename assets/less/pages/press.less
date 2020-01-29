@@ -2,7 +2,7 @@ html.page.press {
   .intro-header {
     &.ih-press {
       padding: 240px 0 200px;
-      max-width: 1080px;
+      max-width: 1160px;
       margin: auto;
       }
 
@@ -43,14 +43,21 @@ html.page.press {
       li {
         margin-bottom: 120px;
         figure {
-          margin: 80px 0;
+          margin: 0 0 140px 0;
           display: grid;
           grid-template-columns: 30% 50%;
           grid-gap: 130px;
+          @media @queries_md {
+            grid-template-columns: 40% 50%;
+            grid-gap: 80px;
+          }
           img {
             display: block;
             margin: 0 auto;
             width: 100%;
+            @media @queries_md {
+              margin: 24px auto 0;
+            }
           }
           figcaption{
             strong {
@@ -92,6 +99,7 @@ html.page.press {
   .press-articles-area {
     background: #f5faff;
     padding: 80px 0;
+    margin-bottom: 160px;
 
     .paa-tab {
       text-align: center;
@@ -391,8 +399,11 @@ html.page.press {
       figure {
         margin: 80px 0;
         display: grid;
-        grid-template-columns: 500px 500px;
+        grid-template-columns: 45% 50%;
         grid-gap: 80px;
+        @media @queries_md {
+          grid-gap: 36px;
+        }
         img {
           display: block;
           margin: 0 auto;
@@ -443,4 +454,3 @@ html.page.press {
       }
     }
   }
-}
