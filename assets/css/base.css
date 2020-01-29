@@ -327,11 +327,23 @@ ol {
   font-size: 110px;
   color: #141517;
 }
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .intro-header .site-heading .oneline,
+  .intro-header .page-heading .oneline {
+    font-size: 80px;
+  }
+}
 .intro-header .site-heading .page-dsc,
 .intro-header .page-heading .page-dsc {
   font-size: 29px;
   line-height: 160%;
   color: #40474D;
+}
+@media only screen and (min-width : 768px) and (max-width : 1023px) {
+  .intro-header .site-heading .page-dsc,
+  .intro-header .page-heading .page-dsc {
+    font-size: 25px;
+  }
 }
 .pager {
   padding-top: 20px;
@@ -2681,7 +2693,7 @@ html.page.contact .how-to-contact {
 }
 html.page.contact .how-to-contact .info-item {
   display: grid;
-  grid-template-columns: 200px 800px;
+  grid-template-columns: 25% 75%;
   margin-bottom: 80px;
 }
 html.page.contact .how-to-contact .info-item .info-title {
