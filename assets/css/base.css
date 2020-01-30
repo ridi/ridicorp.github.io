@@ -365,6 +365,7 @@ ol {
   color: #fff;
   line-height: 1.4em;
   text-rendering: optimizeLegibility;
+  word-break: keep-all;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .intro-header .site-heading h1,
