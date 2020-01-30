@@ -402,7 +402,7 @@ ol {
 @media only screen and (max-width : 1023px) {
   .intro-header .site-heading .page-dsc,
   .intro-header .page-heading .page-dsc {
-    font-size: 25px;
+    font-size: 22px;
   }
 }
 .pager {
