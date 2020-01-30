@@ -4,6 +4,9 @@ html.page.blog {
       padding: 240px 0 200px;
       max-width: 1160px;
       margin: auto;
+      @media @queries_sm {
+        padding: 200px 0 160px;
+      }
     }
   }
 
@@ -69,13 +72,17 @@ html.page.blog {
           z-index: 1;
           transition: all .1s;
           border-bottom: 1px #eee solid;
+          @media @queries_sm {
+            display: block;
+          }
 
           .post-content {
             vertical-align: top;
             max-width: 70%;
+            word-break: keep-all;
 
             @media @queries_sm {
-              width: 100%;
+              max-width: 100%;
             }
           }
 
@@ -135,7 +142,7 @@ html.page.blog {
             @media @queries_sm {
               width: auto;
               display: block;
-              padding-left: 0;
+              padding: 20px 0 12px 0;
             }
 
             .profile-img {
@@ -193,6 +200,9 @@ html.page.blog {
       @media @queries_md {
         grid-template-columns: 50% 50%;
         grid-gap: 0px;
+      }
+      @media @queries_sm {
+        grid-template-columns: 100%;
       }
 
       li {
@@ -279,17 +289,17 @@ html.page.blog {
           }
           .author {
             display: inline-block;
-            font-family: @brandon;
+            font-family: @Calibre;
             color: @bluegray-40;
-            margin-left: 4px;
+            margin: 4px;
             font-weight: 600;
-            font-size: 17px;
+            font-size: 20px;
           }
 
           .date {
-            font-family: @brandon;
+            font-family: @Calibre;
             color: @bluegray-40;
-            font-size: 14px;
+            font-size: 18px;
             margin-top: 6px;
             display: none;
 

@@ -4,17 +4,32 @@ html.page.career {
       padding: 240px 0 200px;
       max-width: 1160px;
       margin: auto;
+      @media @queries_sm {
+        padding: 200px 0 160px;
+      }
     }
     .site-heading,
     .page-heading {
       &.career-heading {
         padding-bottom: 40px;
         .now-hiring {
-          display: block;
+          display: inline-block;
           margin-top: 32px;
           font-size: 24px;
           font-weight: 700;
           color: @ultra-blue;
+          .arrow-link {
+            .svg_arrow(@ultra-blue);
+            width: 24px;
+            height: 24px;
+            margin-top: -6px;
+          }
+          &:hover {
+            color: @deep-blue;
+            &>.arrow-link {
+              .svg_arrow(@deep-blue);
+            }
+          }
         }
       }
     }
@@ -24,19 +39,22 @@ html.page.career {
     padding: 0 0 140px;
     word-break: keep-all;
     @media @queries_sm {
-      padding: 80px 20px;
+      padding: 80px 0;
     }
 
     .benefits {
       li {
         figure {
-          margin: 80px 0;
+          margin: 120px 0;
           display: grid;
           grid-template-columns: 35% 50%;
           grid-gap: 120px;
           @media @queries_md {
             grid-template-columns: 40% 50%;
             grid-gap: 48px;
+          }
+          @media @queries_sm {
+            display: block;
           }
           img {
             display: block;
@@ -46,6 +64,9 @@ html.page.career {
             @media @queries_md {
               margin: 50px auto 0;
             }
+            @media @queries_sm {
+              width: 80%;
+            }
           }
           figcaption{
             .benefit-title {
@@ -54,8 +75,14 @@ html.page.career {
               font-weight: 700;
               color: @slategray-90;
               padding: 16px 0 12px;
+              @media @queries_sm {
+                font-size: 24px;
+              }
             }
             .benefit-list {
+              @media @queries_sm {
+                padding-left: 20px;
+              }
               li {
                 margin: 8px 0;
                 position: relative;
@@ -63,8 +90,8 @@ html.page.career {
                 line-height: 140%;
                 color: @slategray-80;
                 word-break: keep-all;
-                @media @queries_md {
-                  font-size: 17px;
+                @media @queries_smmd {
+                  font-size: 18px;
                 }
                 &:before {
                   content: '';
@@ -113,8 +140,8 @@ html.page.career {
       padding-bottom: 24px;
       border-bottom: 1px solid @slategray-20;
       margin-bottom: 0;
-      @media @queries_md {
-        font-size: 28px;
+      @media @queries_smmd {
+        font-size: 26px;
       }
     }
 
@@ -142,7 +169,7 @@ html.page.career {
           font-weight: 400;
           padding: 32px 16px;
           transition: all 0.15s ease-in-out;
-          @media @queries_md {
+          @media @queries_smmd {
             font-size: 24px;
             padding: 24px 16px;
           }
@@ -287,12 +314,16 @@ html.page.career {
               }
               ul {
                 margin-bottom: 24px;
-                .datail-list {
+                .detail-list {
                   position: relative;
                   padding-left: 24px;
                   font-size: 24px;
                   line-height: 160%;
                   color: @slategray-80;
+                  word-break: keep-all;
+                  @media @queries_sm {
+                    font-size: 20px;
+                  }
                   &:before {
                     content: '';
                     position: absolute;
@@ -328,7 +359,7 @@ html.page.career {
               float: right;
               margin-right: 5px;
               position: absolute;
-              right: 0;
+              right: 16px;
               top: 46%;
               -webkit-transform: rotate(-225deg);
               -moz-transform: rotate(-225deg);
@@ -353,7 +384,7 @@ html.page.career {
               }
             }
             
-            p{
+            p {
               display: block;
               color: @slategray-90;
               font-size: 28px;
@@ -362,6 +393,10 @@ html.page.career {
               padding: 32px 0 20px;
               margin: 0;
               border-top: 1px solid @slategray-20;
+              @media @queries_smmd {
+                font-size: 24px;
+                padding: 24px 16px 10px;
+              }
             }
           }
         }

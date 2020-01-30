@@ -1,4 +1,5 @@
 html.page.about {
+  // nav overriding
   .navbar {
     &>.container-fluid .navbar-brand {
       .svg_logo_ridi(@white);
@@ -18,12 +19,20 @@ html.page.about {
       .icon-bar {
         background-color: @white;
       }
+      &:hover, &:focus {
+        background-color: @deep-blue;
+      }
     }
   }
+  // orerriding end
+
   .intro-header {
     .ih-about {
       background-color: @ultra-blue;
       padding: 260px 0 250px;
+      @media @queries_sm {
+        padding: 200px 0;
+      }
     }
 
     .about-sub-area .sub-heading {
@@ -47,6 +56,10 @@ html.page.about {
       padding-bottom: 8px;
       margin: 0;
       z-index: 3; 
+      @media @queries_sm {
+        font-size: 44px;
+        font-weight: 1.2em;
+      }
     }
 
     .philosophy-dsc {
@@ -55,7 +68,7 @@ html.page.about {
       line-height: 1.6em;
       word-break: keep-all;
       @media @queries_sm {
-        font-size: 18px;
+        font-size: 20px;
       }
     }
   }
@@ -65,7 +78,7 @@ html.page.about {
     padding: 140px 0;
 
     @media @queries_sm {
-      padding: 80px 20px;
+      padding: 80px 0;
     }
 
     .ridi-code-wrap {
@@ -80,6 +93,9 @@ html.page.about {
             letter-spacing: -0.03em;
             font-size: 24px;
             color: @ultra-blue;
+            @media @queries_sm {
+              font-size: 18px;
+            }
           }
           h3 {
             font-family: @Acumin;
@@ -88,11 +104,17 @@ html.page.about {
             line-height: 1.4em;
             color: @slategray-90;
             margin: 8px 0 4px 0;
+            @media @queries_sm {
+              font-size: 24px;
+            }
           }
           p {
             font-size: 24px;
             line-height: 1.6em;
             color: @slategray-80;
+            @media @queries_sm {
+              font-size: 20px;
+            }
           }
         }
       }
@@ -103,7 +125,7 @@ html.page.about {
     padding: 140px 0;
 
     @media @queries_sm {
-      padding: 80px 20px;
+      padding: 80px 0;
     }
 
     .products {
@@ -115,6 +137,10 @@ html.page.about {
           grid-gap: 80px;
           @media @queries_md {
             grid-gap: 36px;
+          }
+          @media @queries_sm {
+            grid-template-columns: 100%;
+            grid-gap: 16px;
           }
           img {
             display: block;
@@ -185,7 +211,7 @@ html.page.about {
               font-weight: 400;
               letter-spacing: -0.03em;
               word-break: keep-all;
-              @media @queries_md {
+              @media @queries_smmd {
                 font-size: 20px;
               }
             }
@@ -199,12 +225,27 @@ html.page.about {
               -webkit-transition: color 0.3s;
               -moz-transition: color 0.3s;
               transition: color 0.3s;
+              @media @queries_smmd {
+                font-size: 18px;
+                margin-top: 24px;
+              }
+              .arrow-link {
+                .svg_arrow(@ultra-blue);
+                width: 24px;
+                height: 24px;
+                margin-top: -6px;
+                transform: rotate(-90deg);
+                @media @queries_smmd {
+                  width: 18px;
+                  height: 18px;
+                  margin-top: -5px;
+                }
+              }
               &:hover {
                 color: @deep-blue;
-              }
-              @media @queries_md {
-                font-size: 18px;
-                margin-top: 30px;
+                &>.arrow-link {
+                  .svg_arrow(@deep-blue);
+                }
               }
             }
             .icon-links {
@@ -216,13 +257,13 @@ html.page.about {
                 img {
                   width: auto;
                   height: 36px;
-                  @media @queries_md {
+                  @media @queries_smmd {
                     height: 30px;
                   }
                 }
               }
-              @media @queries_md {
-                margin-top: 30px;
+              @media @queries_smmd {
+                margin-top: 24px;
               }
             }
           }

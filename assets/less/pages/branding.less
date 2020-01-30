@@ -15,7 +15,7 @@ html.page.branding {
   }
 
   .branding-area {
-    margin: 50px auto;
+    margin: 50px auto 160px;
 
     @media @queries_sm {
       width: auto;
@@ -39,59 +39,58 @@ html.page.branding {
     }
 
     .branding-box {
-      border-bottom: 1px solid #ccd5db;
-      padding: 40px;
-
-      @media @queries_sm {
-        padding: 20px 20px 40px;
+      display: grid;
+      grid-template-columns: 30% 70%;
+      border-bottom: 1px solid @slategray-20;
+      @media @queries_smmd {
+        grid-template-columns: 100%;
       }
-
+      .bb-header {
+        display: flex;
+        align-items: center;
+      }
       .bb-body {
-        padding-left: 24px;
-        text-align: center;
-
+        padding: 32px 0 0 24px;
+        @media @queries_md {
+          padding: 0 0 0 24px;
+        }
         @media @queries_sm {
-          padding-left: 0;
-          text-align: left;
+          display: block;
+          padding: 0 0 0 24px;
         }
       }
-
       .bbb-box {
         text-align: left;
         display: inline-block;
         vertical-align: top;
-        padding-right: 20px;
       }
 
       .big-logo {
-        text-align: center;
         margin-top: 24px;
         padding-bottom: 20px;
 
-        @media @queries_sm {
-          text-align: left;
+        @media @queries_smmd {
+          padding-left: 24px;
         }
 
         &>span {
-          margin: 48px 0;
+          margin: 24px 0;
           vertical-align: top;
-
-          @media @queries_sm {
-            margin: 20px 0;
-          }
         }
 
         .logo-ridi {
-          .svg_logo_ridi(#1f8ee6);
+          .svg_logo_ridi(@slategray-90);
 
+          display: block;
           width: 76px;
           height: 31px;
           margin-right: 56px;
         }
 
         .logo-ridibooks {
-          .svg_logo_ridibooks(#1f8ee6);
+          .svg_logo_ridibooks(@slategray-90);
 
+          display: block;
           width: 205px;
           height: 31px;
           margin-right: 56px;
@@ -99,7 +98,7 @@ html.page.branding {
         }
 
         .logo-ridiselect {
-          .svg_logo_ridiselect(#17202e);
+          .svg_logo_ridiselect(@slategray-90);
 
           width: 189px;
           height: 31px;
@@ -107,9 +106,9 @@ html.page.branding {
         }
 
         .logo-paper {
-          .svg_logo_paper(#333);
+          .svg_logo_paper(@slategray-90);
 
-          width: 189px;
+          width: 170px;
           height: 31px;
         }
       }
@@ -204,7 +203,7 @@ html.page.branding {
           .logo-paper {
             .svg_logo_paper(#fff);
 
-            width: 85px;
+            width: 108px;
             height: 22px;
           }
         }

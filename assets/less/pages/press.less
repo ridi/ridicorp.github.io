@@ -4,25 +4,9 @@ html.page.press {
       padding: 240px 0 200px;
       max-width: 1160px;
       margin: auto;
+      @media @queries_sm {
+        padding: 200px 0 160px;
       }
-
-      a.back {
-        color: @slategray-30;
-        .brandon-grotesque();
-
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 0.8em;
-        letter-spacing: 0.1em;
-        transition: color .2s;
-        margin-left: -1em;
-
-        &:hover {
-          opacity: .6;
-        }
-        @media @queries_sm {
-          margin-left: 0;
-        }
       }
     }
 
@@ -51,12 +35,19 @@ html.page.press {
             grid-template-columns: 40% 50%;
             grid-gap: 80px;
           }
+          @media @queries_sm {
+            grid-template-columns: 100%;
+            grid-gap: 40px;
+          }
           img {
             display: block;
             margin: 0 auto;
             width: 100%;
             @media @queries_md {
               margin: 24px auto 0;
+            }
+            @media @queries_sm {
+              width: 70%;
             }
           }
           figcaption{
@@ -66,6 +57,12 @@ html.page.press {
               font-weight: 700;
               color: @slategray-90;
               padding: 16px 0 12px;
+              @media @queries_md{
+                font-size: 30px;
+              }
+              @media @queries_sm {
+                font-size: 24px;
+              }
             }
             span {
               display: block;
@@ -75,6 +72,10 @@ html.page.press {
               font-weight: 400;
               letter-spacing: -0.03em;
               word-break: keep-all;
+              @media @queries_smmd {
+                font-size: 20px;
+                padding: 0 0 20px 0;
+              }
             }
 
             .text-link {
@@ -86,8 +87,26 @@ html.page.press {
               -webkit-transition: color 0.3s;
               -moz-transition: color 0.3s;
               transition: color 0.3s;
+              .arrow-link {
+                .svg_arrow(@ultra-blue);
+                width: 24px;
+                height: 24px;
+                margin-top: -6px;
+                transform: rotate(-90deg);
+                @media @queries_smmd {
+                  width: 18px;
+                  height: 18px;
+                  margin-top: -5px;
+                }
+              }
               &:hover {
                 color: @deep-blue;
+                &>.arrow-link {
+                  .svg_arrow(@deep-blue);
+                }
+              }
+              @media @queries_smmd {
+                font-size: 18px;
               }
             }
           }
@@ -397,12 +416,16 @@ html.page.press {
   .photo-dl-area {
     .photos-list {
       figure {
-        margin: 80px 0;
+        margin: 100px 0;
         display: grid;
         grid-template-columns: 45% 50%;
         grid-gap: 80px;
         @media @queries_md {
-          grid-gap: 36px;
+          grid-gap: 32px;
+        }
+        @media @queries_sm {
+          grid-template-columns: 100%;
+          grid-gap: 24px;
         }
         img {
           display: block;
@@ -414,10 +437,14 @@ html.page.press {
           strong {
             display: block;
             font-family: @Calibre;
-            font-size: 40px;
+            font-size: 36px;
             font-weight: 600;
             color: @slategray-90;
             padding: 16px 0 12px;
+            @media @queries_smmd {
+              font-size: 30px;
+              padding: 4px 0 12px;
+            }
           }
 
           span {
@@ -427,6 +454,9 @@ html.page.press {
             font-weight: 400;
             letter-spacing: -0.03em;
             word-break: keep-all;
+            @media @queries_smmd {
+              font-size: 20px;
+            }
           }
 
           .text-link {
@@ -438,16 +468,27 @@ html.page.press {
             -webkit-transition: color 0.3s;
             -moz-transition: color 0.3s;
             transition: color 0.3s;
+            @media @queries_smmd {
+              font-size: 18px;
+              margin-top: 30px;
+            }
 
             .arrow-download {
-              .svg_download_arrow(@ultra-blue);
+              .svg_arrow(@ultra-blue);
               width: 24px;
               height: 24px;
               margin-top: -6px;
+              @media @queries_smmd {
+                width: 18px;
+                height: 18px;
+                margin-top: -5px;
+              }
             }
-
             &:hover {
               color: @deep-blue;
+              &>.arrow-download {
+                .svg_arrow(@deep-blue);
+              }
             }
           }
         }

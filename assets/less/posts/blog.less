@@ -1,4 +1,5 @@
 html.post.blog {
+  // nav overriding
   .navbar {
     &>.container-fluid .navbar-brand {
       .svg_logo_ridi(@white);
@@ -18,8 +19,12 @@ html.post.blog {
       .icon-bar {
         background-color: @white;
       }
+      &:hover, &:focus {
+        background-color: @deep-blue;
+      }
     }
   }
+  // orerriding end
   .intro-header {
     &.post-header {
       background-position: center center;

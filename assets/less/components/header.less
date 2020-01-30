@@ -9,6 +9,29 @@
   .page-heading {
     max-width: 1160px;
     margin: auto;
+    .back {
+      display: inline-block;
+      padding-bottom: 16px;
+      color: @slategray-30;
+      font-family: @Calibre;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 24px;
+      transition: color .2s;
+      .arrow-back {
+        .svg_arrow(@slategray-30);
+        width: 20px;
+        height: 20px;
+        margin-top: -6px;
+        transform: rotate(90deg);
+      }
+      &:hover {
+        color: @slategray-40;
+        &>.arrow-download {
+          .svg_arrow(@slategray-40);
+        }
+      }
+    }
     .main-caption {
       font-family: @Calibre;
       font-weight: 600;
@@ -17,6 +40,9 @@
       opacity: .5;
       display: block;
       padding-bottom: 12px;
+      @media @queries_sm {
+        font-size: 20px;
+      }
     }
 
     h1 {
@@ -30,14 +56,18 @@
       @media @queries_md {
         font-size: 58px
       }
+      @media @queries_sm {
+        font-size: 48px;
+      }
     }
     .oneline {
       font-family: @Calibre;
       font-weight: 700;
       font-size: 110px;
       color: @jet-black;
-      @media @queries_md {
+      @media @queries_smmd {
         font-size: 80px;
+        line-height: 1em;
       }
     }
     .page-dsc {
@@ -45,7 +75,7 @@
       line-height: 160%;
       color: @slategray-80;
       word-break: keep-all;
-      @media @queries_md {
+      @media @queries_smmd {
         font-size: 25px;
       }
     }

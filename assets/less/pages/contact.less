@@ -32,11 +32,19 @@ html.page.contact {
         font-size: 28px;
         font-weight: 700;
         color: @slategray-90;
+        @media @queries_sm {
+          font-size: 24px;
+        }
       }
       .info-dsc {
+        margin-top: 6px;
         font-size: 24px;
-        line-height: 1.6em;
+        line-height: 1.4em;
         color: @slategray-70;
+        @media @queries_smmd {
+          margin-top: 2px;
+          font-size: 20px;
+        }
       }
     }
   }
