@@ -3,5 +3,6 @@ _site
 node_modules
 Gemfile.lock
 .ruby-version
+.vscode
 
 _posts/blog/2016-04-01-flume.md

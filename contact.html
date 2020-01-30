@@ -4,75 +4,47 @@ title: "Contact"
 fb-img: "assets/img/fb-img-ridicorp.png"
 root_class: "contact page"
 ---
-
 <header class="intro-header ih-contact">
-    <div class="site-heading contact-heading">
-        <h1 class="oneline" data-effect="slide-top">
-            Get in Touch.
-        </h1>
-    </div>
-    <div class="contact-buttons" data-effect="slide-bottom">
-        <a href="http://naver.me/5vDFvyuJ" class="view-map">지도 보기 <i class="icon-pin"></i></a>
-
-        <a href="https://drive.google.com/uc?export=download&id=1_-t_XTnmTBKRg66yF1nvcMji0yP0K0J7" class="other-button">
-            제휴안내 <i class="icon-direct-right"></i>
-        </a>
-        
-    </div>
+  <div class="site-heading contact-heading site-content">
+    <h1 class="oneline">Contact</h1>
+  </div>
 </header>
 
-<div class="contact-fader"></div>
-
-<div id="map_canvas"></div>
-<div id="map_controls">
-    <a href="#" class="close-map"><i class="icon-close"></i></a>
+<div class="site-content">
+  <a href="http://naver.me/GiidHTye" class="ridi-map">
+    <img src="/assets/img/contact/ridi-map.png" alt="RIDI 지도">
+  </a>
 </div>
 
-<div class="how-to-contact">
-    <div class="htc-left">
-        <h2>주소와 연락처</h2>
-        <h3>서울시 강남구 역삼동 702-28 <br>어반벤치빌딩 10층 (테헤란로 325) </h3>
-        <h4>10F, URBAN BENCH, 325 Teheran-ro, Gangnam-gu, Seoul, Korea</h4>
-        <ul class="contact-point">
-            <li>대표번호 : 02-2051-0331</li>
-            <li>채용문의 : 02-6196-0305</li>
-            <li>언론문의 : 02-6196-0333</li>
-            <li>고객센터 : 1644-0331</li>
-        </ul>
+<section class="how-to-contact site-content">
+  <div class="info-item">
+    <strong class="info-title">주소</strong>
+    <ul class="info-dsc">
+      <li>서울시 강남구 역삼동 702-28 어반벤치빌딩 10층 (테헤란로 325)</li>
+      <li>10F, URBAN BENCH, 325 Teheran-ro, Gangnam-gu, Seoul, Korea</li>
+    </ul>
+  </div>
+  <div class="info-item">
+    <strong class="info-title">오시는 길</strong>
+    <ol class="info-dsc">
+      <li>1) 선릉역(2호선, 분당선) 5번 출구로 나와서 80m 직진하세요.</li>
+      <li>2) 대각선 형태의 골조가 들어간 검은 톤의 건물이며, 10층으로 방문해주시기 랍니다.</li>
+    </ol>
+  </div>
+  <div class="info-item">
+    <strong class="info-title">연락처</strong>
+    <ul class="info-dsc">
+      <li>대표 메일: <a href="mailto:contents@ridi.com">contents@ridi.com</a></li>
+    </ul>
+  </div>
+</section>
+
+<div class="join-us-banner-blue">
+  <div class="content-wrapper site-content">
+    <div>
+      <span class="banner-title">Join Us!</span>
+      <p>인류의 정신을 풍요롭게 하는 RIDI의 제품과 브랜드, 함께 만들어갈 당신을 기다립니다.</p>
     </div>
-    <div class="htc-right">
-        <h2>오시는 길</h2>
-        <div class="hr-box">
-            <h3>지하철 이용 시</h3>
-            <p class="steps">
-                <i class="icon-num-1"></i> 선릉역(2호선, 분당선) 5번 출구로 나와서 80m 직진하세요.
-            </p>
-            <p class="steps">
-                <i class="icon-num-2"></i> 대각선 형태의 골조가 들어간 검은 톤의 건물이며, 10층으로 방문해주시기 바랍니다.
-            </p>
-        </div>
-    </div>
-    <div class="clear"></div>
+    <a href="{{ '/career/' | prepend: site.baseurl }}">채용 바로가기</a>
+  </div>
 </div>
-
-<!-- Google Maps -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxAIeYbtHhUZSD8Ib4xLX6J6yPEIKCxVs"></script>
-<script src="{{ "/assets/js/maps.js" | prepend: site.baseurl }}"></script>
-<script>
-    $(function(){
-        $(".view-map").click(function(){
-            $("header, .how-to-contact, nav, .contact-fader").fadeOut();
-            $("#map_controls").fadeIn();
-            return true;
-        });
-        $(".close-map").click(function(){
-           $("#map_controls").fadeOut();
-           $("header, .how-to-contact, nav, .contact-fader").fadeIn();
-            return false; 
-        });
-
-        initialize();
-    });
-</script>
-
-
