@@ -1132,6 +1132,7 @@ article.post .footnotes ol > li p {
 .ridibating-banner .content-wrapper div p {
   font-family: 'RIDIBatang';
   font-size: 24px;
+  word-break: keep-all;
   line-height: 1.6em;
   color: #fff;
 }
