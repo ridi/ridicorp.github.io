@@ -1304,41 +1304,46 @@ html.page.about .philosophy-dsc {
   }
 }
 .products-area {
-  padding: 140px 0;
+  padding: 140px 0 60px;
 }
 @media only screen and (max-width: 767px) {
   .products-area {
     padding: 80px 0;
   }
 }
+.products-area .products {
+  margin-top: 50px;
+}
+.products-area .products li {
+  overflow: hidden;
+}
 .products-area .products li figure {
-  margin: 80px 0;
-  display: grid;
-  display: -ms-grid;
-  grid-template-columns: 50% 45%;
-  -ms-grid-columns: 50% 80px 45%;
-  grid-gap: 80px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .products-area .products li figure {
-    -ms-grid-columns: 50% 36px 45%;
-    grid-gap: 36px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .products-area .products li figure {
-    display: block;
-  }
+  margin: 0 0 100px 0;
 }
 .products-area .products li figure img {
+  float: left;
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 50%;
   border-radius: 6px;
 }
 @media only screen and (max-width: 767px) {
   .products-area .products li figure img {
     margin-bottom: 16px;
+    float: none;
+    width: 100%;
+  }
+}
+.products-area .products li figure figcaption {
+  float: right;
+  display: block;
+  width: 46%;
+}
+@media only screen and (max-width: 767px) {
+  .products-area .products li figure figcaption {
+    float: none;
+    width: 100%;
+    margin-bottom: 100px;
   }
 }
 .products-area .products li figure figcaption strong {
@@ -1410,6 +1415,7 @@ html.page.about .philosophy-dsc {
   padding: 0;
 }
 .products-area .products li figure figcaption .dog-ear img {
+  float: none;
   display: inline;
   width: 40px;
   height: 40px;
@@ -1590,43 +1596,48 @@ html.page.career .ridi-life-area {
     padding: 80px 0;
   }
 }
-html.page.career .ridi-life-area .benefits li figure {
-  margin: 120px 0;
-  display: grid;
-  display: -ms-grid;
-  grid-template-columns: 35% 50%;
-  -ms-grid-columns: 35% 120px 50%;
-  grid-gap: 120px;
+html.page.career .ridi-life-area .benefits {
+  margin-top: 50px;
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.career .ridi-life-area .benefits li figure {
-    grid-template-columns: 40% 50%;
-    -ms-grid-columns: 40% 48px 50%;
-    grid-gap: 48px;
-  }
+html.page.career .ridi-life-area .benefits .benefits-list {
+  height: 430px;
 }
 @media only screen and (max-width: 767px) {
-  html.page.career .ridi-life-area .benefits li figure {
-    display: block;
+  html.page.career .ridi-life-area .benefits .benefits-list {
+    height: auto;
   }
 }
-html.page.career .ridi-life-area .benefits li figure img {
+html.page.career .ridi-life-area .benefits .benefits-list figure img {
+  float: left;
   display: block;
   margin: 30px auto 0;
-  width: 100%;
+  width: 35%;
   border-radius: 6px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.career .ridi-life-area .benefits li figure img {
+  html.page.career .ridi-life-area .benefits .benefits-list figure img {
     margin: 50px auto 0;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.page.career .ridi-life-area .benefits li figure img {
+  html.page.career .ridi-life-area .benefits .benefits-list figure img {
+    float: none;
     width: 80%;
   }
 }
-html.page.career .ridi-life-area .benefits li figure figcaption .benefit-title {
+html.page.career .ridi-life-area .benefits .benefits-list figure figcaption {
+  float: right;
+  display: block;
+  width: 57%;
+}
+@media only screen and (max-width: 767px) {
+  html.page.career .ridi-life-area .benefits .benefits-list figure figcaption {
+    float: none;
+    width: 100%;
+    margin-bottom: 100px;
+  }
+}
+html.page.career .ridi-life-area .benefits .benefits-list figure figcaption .benefit-title {
   display: block;
   font-size: 36px;
   font-weight: 700;
@@ -1634,16 +1645,16 @@ html.page.career .ridi-life-area .benefits li figure figcaption .benefit-title {
   padding: 16px 0 12px;
 }
 @media only screen and (max-width: 767px) {
-  html.page.career .ridi-life-area .benefits li figure figcaption .benefit-title {
+  html.page.career .ridi-life-area .benefits .benefits-list figure figcaption .benefit-title {
     font-size: 24px;
   }
 }
 @media only screen and (max-width: 767px) {
-  html.page.career .ridi-life-area .benefits li figure figcaption .benefit-list {
+  html.page.career .ridi-life-area .benefits .benefits-list figure figcaption .benefit-list {
     padding-left: 20px;
   }
 }
-html.page.career .ridi-life-area .benefits li figure figcaption .benefit-list li {
+html.page.career .ridi-life-area .benefits .benefits-list figure figcaption .benefit-list li {
   margin: 8px 0;
   position: relative;
   font-size: 20px;
@@ -1652,11 +1663,11 @@ html.page.career .ridi-life-area .benefits li figure figcaption .benefit-list li
   word-break: keep-all;
 }
 @media only screen and (max-width : 1023px) {
-  html.page.career .ridi-life-area .benefits li figure figcaption .benefit-list li {
+  html.page.career .ridi-life-area .benefits .benefits-list figure figcaption .benefit-list li {
     font-size: 18px;
   }
 }
-html.page.career .ridi-life-area .benefits li figure figcaption .benefit-list li:before {
+html.page.career .ridi-life-area .benefits .benefits-list figure figcaption .benefit-list li:before {
   content: '';
   position: absolute;
   top: 8px;
@@ -2139,30 +2150,20 @@ html.page.blog.posts .blog-post-list li:focus figure {
   -webkit-transform: scale(1.1);
 }
 html.page.blog.slides .blog-slide-list {
-  display: grid;
-  display: -ms-grid;
-  grid-template-columns: 30% 30% 30%;
-  -ms-grid-columns: 30% 50px 30% 50px 30%;
-  grid-gap: 50px;
-  margin: 0;
+  margin: 0 auto;
   padding-top: 60px;
   text-align: center;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  html.page.blog.slides .blog-slide-list {
-    grid-template-columns: 50% 50%;
-    -ms-grid-columns: 50% 0px 50%;
-    grid-gap: 0px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  html.page.blog.slides .blog-slide-list {
-    display: block;
-  }
+  max-width: 1600px;
 }
 html.page.blog.slides .blog-slide-list li {
+  display: inline-block;
   width: 320px;
-  margin: auto;
+  margin: 0 16px;
+}
+@media only screen and (max-width: 767px) {
+  html.page.blog.slides .blog-slide-list li {
+    margin: 0 auto;
+  }
 }
 html.page.blog.slides .blog-slide-list li .preview-hover {
   opacity: 0;
@@ -2271,32 +2272,18 @@ html.page.press .page-heading.press-sub-heading .wrapper-compact {
   width: 700px;
 }
 .press-quick-links .press-link-item li {
-  margin-bottom: 120px;
-}
-.press-quick-links .press-link-item li figure {
-  margin: 0 0 140px 0;
-  display: grid;
-  display: -ms-grid;
-  grid-template-columns: 30% 50%;
-  -ms-grid-columns: 30% 130px 50%;
-  grid-gap: 130px;
-}
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .press-quick-links .press-link-item li figure {
-    grid-template-columns: 40% 50%;
-    -ms-grid-columns: 40% 80px 50%;
-    grid-gap: 80px;
-  }
+  height: 400px;
 }
 @media only screen and (max-width: 767px) {
-  .press-quick-links .press-link-item li figure {
-    display: block;
+  .press-quick-links .press-link-item li {
+    height: auto;
   }
 }
 .press-quick-links .press-link-item li figure img {
+  float: left;
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 35%;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .press-quick-links .press-link-item li figure img {
@@ -2307,6 +2294,19 @@ html.page.press .page-heading.press-sub-heading .wrapper-compact {
   .press-quick-links .press-link-item li figure img {
     width: 70%;
     margin-bottom: 40px;
+    float: none;
+  }
+}
+.press-quick-links .press-link-item li figure figcaption {
+  width: 57%;
+  display: block;
+  float: right;
+}
+@media only screen and (max-width: 767px) {
+  .press-quick-links .press-link-item li figure figcaption {
+    float: none;
+    width: 100%;
+    margin-bottom: 100px;
   }
 }
 .press-quick-links .press-link-item li figure figcaption strong {
@@ -2652,31 +2652,43 @@ html.page.press .page-heading.press-sub-heading .wrapper-compact {
   z-index: 3;
   border: 1px solid #000;
 }
-.photo-dl-area .photos-list figure {
-  margin: 100px 0;
-  display: grid;
-  display: -ms-grid;
-  grid-template-columns: 45% 50%;
-  -ms-grid-columns: 45% 80px 50%;
-  grid-gap: 80px;
+.photo-dl-area {
+  margin-top: 50px;
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
-  .photo-dl-area .photos-list figure {
-    -ms-grid-columns: 45% 32px 50%;
-    grid-gap: 32px;
-  }
+.photo-dl-area .photos-list {
+  height: 500px;
 }
 @media only screen and (max-width: 767px) {
-  .photo-dl-area .photos-list figure {
-    display: block;
+  .photo-dl-area .photos-list {
+    height: auto;
   }
 }
 .photo-dl-area .photos-list figure img {
+  float: left;
   display: block;
   margin: 0 auto;
-  width: 100%;
+  width: 50%;
   border-radius: 6px;
   margin-bottom: 24px;
+}
+@media only screen and (max-width: 767px) {
+  .photo-dl-area .photos-list figure img {
+    margin-bottom: 16px;
+    float: none;
+    width: 100%;
+  }
+}
+.photo-dl-area .photos-list figure figcaption {
+  float: right;
+  display: block;
+  width: 46%;
+}
+@media only screen and (max-width: 767px) {
+  .photo-dl-area .photos-list figure figcaption {
+    float: none;
+    width: 100%;
+    margin-bottom: 100px;
+  }
 }
 .photo-dl-area .photos-list figure figcaption strong {
   display: block;
@@ -2806,22 +2818,24 @@ html.page.branding .branding-area .branding-sub-area p {
   color: #999;
 }
 html.page.branding .branding-area .branding-box {
-  display: grid;
-  display: -ms-grid;
-  grid-template-columns: 30% 70%;
-  -ms-grid-columns: 30% 70%;
+  padding: 30px 0;
   border-bottom: 1px solid #D1D5D9;
-}
-@media only screen and (max-width : 1023px) {
-  html.page.branding .branding-area .branding-box {
-    display: block;
-  }
+  overflow: hidden;
 }
 html.page.branding .branding-area .branding-box .bb-header {
+  float: left;
+  width: 30%;
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 767px) {
+  html.page.branding .branding-area .branding-box .bb-header {
+    float: none;
+  }
+}
 html.page.branding .branding-area .branding-box .bb-body {
+  float: right;
+  width: 70%;
   padding: 32px 0 0 24px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
@@ -2831,6 +2845,7 @@ html.page.branding .branding-area .branding-box .bb-body {
 }
 @media only screen and (max-width: 767px) {
   html.page.branding .branding-area .branding-box .bb-body {
+    float: none;
     display: block;
     padding: 0 0 0 24px;
   }
@@ -3089,14 +3104,13 @@ html.page.contact .how-to-contact {
   margin: 80px auto 160px;
 }
 html.page.contact .how-to-contact .info-item {
-  display: grid;
-  display: -ms-grid;
-  grid-template-columns: 25% 70%;
-  -ms-grid-columns: 25% 16px 70%;
-  grid-gap: 16px;
   margin-bottom: 80px;
+  height: 100px;
 }
 html.page.contact .how-to-contact .info-item .info-title {
+  display: block;
+  width: 30%;
+  float: left;
   font-size: 28px;
   font-weight: 700;
   color: #303538;
@@ -3104,9 +3118,13 @@ html.page.contact .how-to-contact .info-item .info-title {
 @media only screen and (max-width: 767px) {
   html.page.contact .how-to-contact .info-item .info-title {
     font-size: 24px;
+    float: none;
   }
 }
 html.page.contact .how-to-contact .info-item .info-dsc {
+  display: block;
+  float: right;
+  width: 65%;
   margin-top: 6px;
   font-size: 24px;
   line-height: 1.4em;
@@ -3116,6 +3134,12 @@ html.page.contact .how-to-contact .info-item .info-dsc {
   html.page.contact .how-to-contact .info-item .info-dsc {
     margin-top: 2px;
     font-size: 20px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  html.page.contact .how-to-contact .info-item .info-dsc {
+    float: none;
+    width: 100%;
   }
 }
 html.page.ridibatang body {

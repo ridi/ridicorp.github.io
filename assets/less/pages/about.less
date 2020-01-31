@@ -122,38 +122,39 @@ html.page.about {
   }
 
   .products-area {
-    padding: 140px 0;
+    padding: 140px 0 60px;
 
     @media @queries_sm {
       padding: 80px 0;
     }
 
     .products {
+      margin-top: 50px;
       li {
+        overflow: hidden;
         figure {
-          margin: 80px 0;
-          display: grid;
-          display: -ms-grid;
-          grid-template-columns: 50% 45%;
-          -ms-grid-columns: 50% 80px 45%;
-          grid-gap: 80px;
-          @media @queries_md {
-            -ms-grid-columns: 50% 36px 45%;
-            grid-gap: 36px;
-          }
-          @media @queries_sm {
-            display: block;
-          }
+          margin: 0 0 100px 0;
           img {
+            float: left;
             display: block;
             margin: 0 auto;
-            width: 100%;
+            width: 50%;
             border-radius: 6px;
             @media @queries_sm {
               margin-bottom: 16px;
+              float: none;
+              width: 100%;
             }
           }
           figcaption{
+            float: right;
+            display: block;
+            width: 46%;
+            @media @queries_sm {
+              float: none;
+              width: 100%;
+              margin-bottom: 100px;
+            }
             strong {
               display: block;
               font-size: 22px;
@@ -200,6 +201,7 @@ html.page.about {
               color: @slategray-90;
               padding: 0;
               img {
+                float: none;
                 display: inline;
                 width: 40px;
                 height: 40px;

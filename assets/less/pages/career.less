@@ -43,35 +43,36 @@ html.page.career {
     }
 
     .benefits {
-      li {
+      margin-top: 50px;
+      .benefits-list {
+        height: 430px;
+        @media @queries_sm {
+          height: auto;
+        }
         figure {
-          margin: 120px 0;
-          display: grid;
-          display: -ms-grid;
-          grid-template-columns: 35% 50%;
-          -ms-grid-columns: 35% 120px 50%;
-          grid-gap: 120px;
-          @media @queries_md {
-            grid-template-columns: 40% 50%;
-            -ms-grid-columns: 40% 48px 50%;
-            grid-gap: 48px;
-          }
-          @media @queries_sm {
-            display: block;
-          }
           img {
+            float: left;
             display: block;
             margin: 30px auto 0;
-            width: 100%;
+            width: 35%;
             border-radius: 6px;
             @media @queries_md {
               margin: 50px auto 0;
             }
             @media @queries_sm {
+              float: none;
               width: 80%;
             }
           }
           figcaption{
+            float: right;
+            display: block;
+            width: 57%;
+            @media @queries_sm {
+              float: none;
+              width: 100%;
+              margin-bottom: 100px;
+            }
             .benefit-title {
               display: block;
               font-size: 36px;

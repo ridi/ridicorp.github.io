@@ -25,35 +25,34 @@ html.page.press {
   .press-quick-links {
     .press-link-item {
       li {
-        margin-bottom: 120px;
+        height: 400px;
+        @media @queries_sm {
+          height: auto;
+        }
         figure {
-          margin: 0 0 140px 0;
-          display: grid;
-          display: -ms-grid;
-          grid-template-columns: 30% 50%;
-          -ms-grid-columns: 30% 130px 50%;
-          grid-gap: 130px;
-          @media @queries_md {
-            grid-template-columns: 40% 50%;
-            -ms-grid-columns: 40% 80px 50%;
-            grid-gap: 80px;
-          }
-          @media @queries_sm {
-            display: block;
-          }
           img {
+            float: left;
             display: block;
             margin: 0 auto;
-            width: 100%;
+            width: 35%;
             @media @queries_md {
               margin: 24px auto 0;
             }
             @media @queries_sm {
               width: 70%;
               margin-bottom: 40px;
+              float: none;
             }
           }
           figcaption{
+            width: 57%;
+            display: block;
+            float: right;
+            @media @queries_sm {
+              float: none;
+              width: 100%;
+              margin-bottom: 100px;
+            }
             strong {
               display: block;
               font-size: 36px;
@@ -417,29 +416,35 @@ html.page.press {
   }
 
   .photo-dl-area {
+    margin-top: 50px;
     .photos-list {
-      figure {
-        margin: 100px 0;
-        display: grid;
-        display: -ms-grid;
-        grid-template-columns: 45% 50%;
-        -ms-grid-columns: 45% 80px 50%;
-        grid-gap: 80px;
-        @media @queries_md {
-          -ms-grid-columns: 45% 32px 50%;
-          grid-gap: 32px;
-        }
+      height: 500px;
         @media @queries_sm {
-          display: block;
+          height: auto;
         }
+      figure {
         img {
+          float: left;
           display: block;
           margin: 0 auto;
-          width: 100%;
+          width: 50%;
           border-radius: 6px;
           margin-bottom: 24px;
+          @media @queries_sm {
+            margin-bottom: 16px;
+            float: none;
+            width: 100%;
+          }
         }
         figcaption{
+          float: right;
+            display: block;
+            width: 46%;
+            @media @queries_sm {
+              float: none;
+              width: 100%;
+              margin-bottom: 100px;
+            }
           strong {
             display: block;
             font-family: @Calibre;
