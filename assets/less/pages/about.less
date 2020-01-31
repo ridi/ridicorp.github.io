@@ -133,20 +133,25 @@ html.page.about {
         figure {
           margin: 80px 0;
           display: grid;
+          display: -ms-grid;
           grid-template-columns: 50% 45%;
+          -ms-grid-columns: 50% 80px 45%;
           grid-gap: 80px;
           @media @queries_md {
+            -ms-grid-columns: 50% 36px 45%;
             grid-gap: 36px;
           }
           @media @queries_sm {
-            grid-template-columns: 100%;
-            grid-gap: 16px;
+            display: block;
           }
           img {
             display: block;
             margin: 0 auto;
             width: 100%;
             border-radius: 6px;
+            @media @queries_sm {
+              margin-bottom: 16px;
+            }
           }
           figcaption{
             strong {

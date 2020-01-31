@@ -1314,18 +1314,20 @@ html.page.about .philosophy-dsc {
 .products-area .products li figure {
   margin: 80px 0;
   display: grid;
+  display: -ms-grid;
   grid-template-columns: 50% 45%;
+  -ms-grid-columns: 50% 80px 45%;
   grid-gap: 80px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .products-area .products li figure {
+    -ms-grid-columns: 50% 36px 45%;
     grid-gap: 36px;
   }
 }
 @media only screen and (max-width: 767px) {
   .products-area .products li figure {
-    grid-template-columns: 100%;
-    grid-gap: 16px;
+    display: block;
   }
 }
 .products-area .products li figure img {
@@ -1333,6 +1335,11 @@ html.page.about .philosophy-dsc {
   margin: 0 auto;
   width: 100%;
   border-radius: 6px;
+}
+@media only screen and (max-width: 767px) {
+  .products-area .products li figure img {
+    margin-bottom: 16px;
+  }
 }
 .products-area .products li figure figcaption strong {
   display: block;
@@ -1586,12 +1593,15 @@ html.page.career .ridi-life-area {
 html.page.career .ridi-life-area .benefits li figure {
   margin: 120px 0;
   display: grid;
+  display: -ms-grid;
   grid-template-columns: 35% 50%;
+  -ms-grid-columns: 35% 120px 50%;
   grid-gap: 120px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   html.page.career .ridi-life-area .benefits li figure {
     grid-template-columns: 40% 50%;
+    -ms-grid-columns: 40% 48px 50%;
     grid-gap: 48px;
   }
 }
@@ -2130,7 +2140,9 @@ html.page.blog.posts .blog-post-list li:focus figure {
 }
 html.page.blog.slides .blog-slide-list {
   display: grid;
+  display: -ms-grid;
   grid-template-columns: 30% 30% 30%;
+  -ms-grid-columns: 30% 50px 30% 50px 30%;
   grid-gap: 50px;
   margin: 0;
   padding-top: 60px;
@@ -2139,12 +2151,13 @@ html.page.blog.slides .blog-slide-list {
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   html.page.blog.slides .blog-slide-list {
     grid-template-columns: 50% 50%;
+    -ms-grid-columns: 50% 0px 50%;
     grid-gap: 0px;
   }
 }
 @media only screen and (max-width: 767px) {
   html.page.blog.slides .blog-slide-list {
-    grid-template-columns: 100%;
+    display: block;
   }
 }
 html.page.blog.slides .blog-slide-list li {
@@ -2263,19 +2276,21 @@ html.page.press .page-heading.press-sub-heading .wrapper-compact {
 .press-quick-links .press-link-item li figure {
   margin: 0 0 140px 0;
   display: grid;
+  display: -ms-grid;
   grid-template-columns: 30% 50%;
+  -ms-grid-columns: 30% 130px 50%;
   grid-gap: 130px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .press-quick-links .press-link-item li figure {
     grid-template-columns: 40% 50%;
+    -ms-grid-columns: 40% 80px 50%;
     grid-gap: 80px;
   }
 }
 @media only screen and (max-width: 767px) {
   .press-quick-links .press-link-item li figure {
-    grid-template-columns: 100%;
-    grid-gap: 40px;
+    display: block;
   }
 }
 .press-quick-links .press-link-item li figure img {
@@ -2291,6 +2306,7 @@ html.page.press .page-heading.press-sub-heading .wrapper-compact {
 @media only screen and (max-width: 767px) {
   .press-quick-links .press-link-item li figure img {
     width: 70%;
+    margin-bottom: 40px;
   }
 }
 .press-quick-links .press-link-item li figure figcaption strong {
@@ -2639,18 +2655,20 @@ html.page.press .page-heading.press-sub-heading .wrapper-compact {
 .photo-dl-area .photos-list figure {
   margin: 100px 0;
   display: grid;
+  display: -ms-grid;
   grid-template-columns: 45% 50%;
+  -ms-grid-columns: 45% 80px 50%;
   grid-gap: 80px;
 }
 @media only screen and (min-width : 768px) and (max-width : 1023px) {
   .photo-dl-area .photos-list figure {
+    -ms-grid-columns: 45% 32px 50%;
     grid-gap: 32px;
   }
 }
 @media only screen and (max-width: 767px) {
   .photo-dl-area .photos-list figure {
-    grid-template-columns: 100%;
-    grid-gap: 24px;
+    display: block;
   }
 }
 .photo-dl-area .photos-list figure img {
@@ -2658,6 +2676,7 @@ html.page.press .page-heading.press-sub-heading .wrapper-compact {
   margin: 0 auto;
   width: 100%;
   border-radius: 6px;
+  margin-bottom: 24px;
 }
 .photo-dl-area .photos-list figure figcaption strong {
   display: block;
@@ -2788,12 +2807,14 @@ html.page.branding .branding-area .branding-sub-area p {
 }
 html.page.branding .branding-area .branding-box {
   display: grid;
+  display: -ms-grid;
   grid-template-columns: 30% 70%;
+  -ms-grid-columns: 30% 70%;
   border-bottom: 1px solid #D1D5D9;
 }
 @media only screen and (max-width : 1023px) {
   html.page.branding .branding-area .branding-box {
-    grid-template-columns: 100%;
+    display: block;
   }
 }
 html.page.branding .branding-area .branding-box .bb-header {
@@ -3069,7 +3090,10 @@ html.page.contact .how-to-contact {
 }
 html.page.contact .how-to-contact .info-item {
   display: grid;
-  grid-template-columns: 25% 75%;
+  display: -ms-grid;
+  grid-template-columns: 25% 70%;
+  -ms-grid-columns: 25% 16px 70%;
+  grid-gap: 16px;
   margin-bottom: 80px;
 }
 html.page.contact .how-to-contact .info-item .info-title {
@@ -3599,13 +3623,8 @@ html.collection.press article.press-article blockquote p {
 }
 html.collection.slides .intro-header.ih-blog {
   padding: 200px 0 100px;
-  max-width: 1080px;
+  max-width: 1160px;
   margin: auto;
-}
-@media only screen and (max-width: 767px) {
-  html.collection.slides .intro-header.ih-blog {
-    padding: 200px 0 160px;
-  }
 }
 html.collection.slides .intro-header .sub-description.sd-blog {
   color: #78caf3;

@@ -47,10 +47,13 @@ html.page.career {
         figure {
           margin: 120px 0;
           display: grid;
+          display: -ms-grid;
           grid-template-columns: 35% 50%;
+          -ms-grid-columns: 35% 120px 50%;
           grid-gap: 120px;
           @media @queries_md {
             grid-template-columns: 40% 50%;
+            -ms-grid-columns: 40% 48px 50%;
             grid-gap: 48px;
           }
           @media @queries_sm {

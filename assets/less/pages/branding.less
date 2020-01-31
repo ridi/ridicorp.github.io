@@ -40,10 +40,12 @@ html.page.branding {
 
     .branding-box {
       display: grid;
+      display: -ms-grid;
       grid-template-columns: 30% 70%;
+      -ms-grid-columns: 30% 70%;
       border-bottom: 1px solid @slategray-20;
       @media @queries_smmd {
-        grid-template-columns: 100%;
+        display: block;
       }
       .bb-header {
         display: flex;

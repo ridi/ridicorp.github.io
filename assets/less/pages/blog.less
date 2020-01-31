@@ -192,17 +192,20 @@ html.page.blog {
   &.slides {
     .blog-slide-list {
       display: grid;
+      display: -ms-grid;
       grid-template-columns: 30% 30% 30%;
+      -ms-grid-columns: 30% 50px 30% 50px 30%;
       grid-gap: 50px;
       margin: 0;
       padding-top: 60px;
       text-align: center;
       @media @queries_md {
         grid-template-columns: 50% 50%;
+        -ms-grid-columns: 50% 0px 50%;
         grid-gap: 0px;
       }
       @media @queries_sm {
-        grid-template-columns: 100%;
+        display: block;
       }
 
       li {

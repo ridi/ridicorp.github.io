@@ -29,15 +29,17 @@ html.page.press {
         figure {
           margin: 0 0 140px 0;
           display: grid;
+          display: -ms-grid;
           grid-template-columns: 30% 50%;
+          -ms-grid-columns: 30% 130px 50%;
           grid-gap: 130px;
           @media @queries_md {
             grid-template-columns: 40% 50%;
+            -ms-grid-columns: 40% 80px 50%;
             grid-gap: 80px;
           }
           @media @queries_sm {
-            grid-template-columns: 100%;
-            grid-gap: 40px;
+            display: block;
           }
           img {
             display: block;
@@ -48,6 +50,7 @@ html.page.press {
             }
             @media @queries_sm {
               width: 70%;
+              margin-bottom: 40px;
             }
           }
           figcaption{
@@ -418,20 +421,23 @@ html.page.press {
       figure {
         margin: 100px 0;
         display: grid;
+        display: -ms-grid;
         grid-template-columns: 45% 50%;
+        -ms-grid-columns: 45% 80px 50%;
         grid-gap: 80px;
         @media @queries_md {
+          -ms-grid-columns: 45% 32px 50%;
           grid-gap: 32px;
         }
         @media @queries_sm {
-          grid-template-columns: 100%;
-          grid-gap: 24px;
+          display: block;
         }
         img {
           display: block;
           margin: 0 auto;
           width: 100%;
           border-radius: 6px;
+          margin-bottom: 24px;
         }
         figcaption{
           strong {
