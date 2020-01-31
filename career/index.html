@@ -79,25 +79,6 @@ root_class: "career page"
   <h2>JOB OPENINGS</h2>
 <div class="jobs">
     <!-- 채용공고 정보 위치 -->
-
-    <div class="apply-instruction">
-      <h5>찾고 계신 채용 포지션이 없나요?</h5>
-      <p class="dsc">인재풀에 등록해 주세요. 추후 공고 게재 시, 우선적으로 검토하고 연락드리겠습니다.</p>
-      <ul class="acc">
-        <li>
-          <button class="acc_ctrl"><p>인재풀 등록하기</p></button>
-          <div class="acc_panel">
-            <div class="talent-pool-list">
-              {% for job in site.data.talent-pool %}
-              <a href="{{ job.url }}" class="job-item typeform-share" data-mode="1" target="_blank">
-                <div class="job-title">{{ job.name }}<i class="arrow icon-arrow-right-1"></i></div>
-              </a>
-              {% endfor %}
-            </div>
-          </div>
-        </li>
-      </ul>
-    </div>
     <div class="apply-instruction">
       <h5>지원 방법과 전형 절차는 어떻게 되나요?</h5>
       <ul class="acc">
@@ -120,6 +101,11 @@ root_class: "career page"
             <ul>
               <li class="detail-list">면접 일정은 최대한 지원자의 가능한 일정을 배려하여 확정해드립니다.</li>
               <li class="detail-list">전 부문 상시 채용으로 면접이 수시로 진행되며, 선 지원자에게 기회가 먼저 부여됩니다.</li>
+            </ul>
+            <strong class="detail-title">찾고 계신 채용 포지션이 아직 없나요?</strong>
+            <ul>
+              <li class="detail-list"><a href="mailto:start@ridi.com">start@ridi.com</a> 메일로 지원 부문 및 입사지원서류(이력서 및 포트폴리오)를 보내주세요.</li>
+              <li class="detail-list">인재풀에 등록하여, 추후 공고 게재 시 우선적으로 검토하고 연락드리겠습니다.</li>
             </ul>
             <strong class="detail-title">Contact Info</strong>
             <ul>
