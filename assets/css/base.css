@@ -367,16 +367,10 @@ ol {
   text-rendering: optimizeLegibility;
   word-break: keep-all;
 }
-@media only screen and (min-width : 768px) and (max-width : 1023px) {
+@media only screen and (max-width : 1023px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
-    font-size: 58px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .intro-header .site-heading h1,
-  .intro-header .page-heading h1 {
-    font-size: 48px;
+    font-size: 55px;
   }
 }
 .intro-header .site-heading .oneline,
@@ -2270,6 +2264,9 @@ html.page.press .page-heading.press-sub-heading {
 html.page.press .site-heading.press-sub-heading .wrapper-compact,
 html.page.press .page-heading.press-sub-heading .wrapper-compact {
   width: 700px;
+}
+.press-quick-links {
+  margin-top: 80px;
 }
 .press-quick-links .press-link-item li {
   height: 400px;
