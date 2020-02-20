@@ -84,7 +84,7 @@ html.page.about {
     .ridi-code-wrap {
       margin-top: 80px;
       li {
-        margin-top: 80px;
+        margin-top: 120px;
         div { 
           word-break: keep-all;
           .code-caption {
@@ -225,7 +225,7 @@ html.page.about {
 
             .text-link {
               display: inline-block;
-              margin-top: 60px;
+              margin-top: 16px;
               font-size: 24px;
               color: @ultra-blue;
               font-weight: 700;
@@ -240,27 +240,28 @@ html.page.about {
                 .svg_arrow(@ultra-blue);
                 width: 24px;
                 height: 24px;
-                margin-top: -6px;
+                margin-top: -3px;
                 transform: rotate(-90deg);
+                transition: transform 0.3s;
                 @media @queries_smmd {
                   width: 18px;
                   height: 18px;
-                  margin-top: -5px;
+                  margin-top: -2px;
                 }
               }
               &:hover {
                 color: @deep-blue;
                 &>.arrow-link {
                   .svg_arrow(@deep-blue);
+                  transform: translateX(8px) rotate(-90deg);
                 }
               }
             }
             .icon-links {
-              margin-top: 90px;
-              a {
-                width: 60px;
+              margin-top: 24px;
+              a {                
                 float: left;
-                margin-right: 20px;
+                margin-right: 32px;
                 img {
                   width: auto;
                   height: 36px;

@@ -1257,7 +1257,7 @@ html.page.about .philosophy-dsc {
   margin-top: 80px;
 }
 .ridi-code-area .ridi-code-wrap li {
-  margin-top: 80px;
+  margin-top: 120px;
 }
 .ridi-code-area .ridi-code-wrap li div {
   word-break: keep-all;
@@ -1432,7 +1432,7 @@ html.page.about .philosophy-dsc {
 }
 .products-area .products li figure figcaption .text-link {
   display: inline-block;
-  margin-top: 60px;
+  margin-top: 16px;
   font-size: 24px;
   color: #0077FF;
   font-weight: 700;
@@ -1455,14 +1455,15 @@ html.page.about .philosophy-dsc {
   background-size: 100% 100%;
   width: 24px;
   height: 24px;
-  margin-top: -6px;
+  margin-top: -3px;
   transform: rotate(-90deg);
+  transition: transform 0.3s;
 }
 @media only screen and (max-width : 1023px) {
   .products-area .products li figure figcaption .text-link .arrow-link {
     width: 18px;
     height: 18px;
-    margin-top: -5px;
+    margin-top: -2px;
   }
 }
 .products-area .products li figure figcaption .text-link:hover {
@@ -1475,14 +1476,14 @@ html.page.about .philosophy-dsc {
   overflow: hidden;
   background: url('data:image/svg+xml,%3Csvg%20version%3D%221.0%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cstyle%3Epath,%20polygon%20%7B%20fill%3A%23105DC1%3B%20%7D%3C/style%3E%3Cpath%20d%3D%22M23.25%2012L21.4862%2010.2377L13.25%2018.474L13.25%200.749999L10.75%200.749999L10.75%2018.455L2.52177%2010.2267L0.75%2012L10.75%2021.9915V22L10.7585%2022L12.0095%2023.25L23.25%2012Z%22/%3E%3C/svg%3E') center center no-repeat;
   background-size: 100% 100%;
+  transform: translateX(8px) rotate(-90deg);
 }
 .products-area .products li figure figcaption .icon-links {
-  margin-top: 90px;
+  margin-top: 24px;
 }
 .products-area .products li figure figcaption .icon-links a {
-  width: 60px;
   float: left;
-  margin-right: 20px;
+  margin-right: 32px;
 }
 .products-area .products li figure figcaption .icon-links a img {
   width: auto;
