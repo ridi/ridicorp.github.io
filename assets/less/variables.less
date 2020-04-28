@@ -1,29 +1,23 @@
-// Variables
-
-@must-use: #e54e26;
-@bg-career: #293040;
-
-@base-gray: #3e3835;
-@bright-red: #f31717;
-@bright-orange: #f55327;
-
 // Media Queries
 @queries_high: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
-  ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
-  ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
-  ~"only screen and (min-device-pixel-ratio: 1.5)";
+~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+~"only screen and (min-device-pixel-ratio: 1.5)";
 @queries_low: ~"only screen and (min-device-width : 768px)", 
-  ~"only screen and (max-device-width : 1024px)",
-  ~"only screen and (-webkit-device-pixel-ratio: 1)",
-  ~"only screen and (min-device-width : 320px)", 
-  ~"only screen and (max-device-width : 480px)";
+~"only screen and (max-device-width : 1024px)",
+~"only screen and (-webkit-device-pixel-ratio: 1)",
+~"only screen and (min-device-width : 320px)", 
+~"only screen and (max-device-width : 480px)";
 @queries_lg: ~"only screen and (max-width : 1024px)";
 @queries_md: ~"only screen and (min-width : 768px) and (max-width : 1023px)";
 @queries_sm: ~"only screen and (max-width: 767px)";
 @queries_smmd: ~"only screen and (max-width : 1023px)";
 
-@queries_960: ~"only screen and (max-width : 960px)";
-@queries_480: ~"only screen and (max-width : 480px)";
+@queries_1280: ~"only screen and (max-width: 1280px)";
+@queries_960: ~"only screen and (max-width: 960px)";
+@queries_568: ~"only screen and (max-width: 568px)";
+@queries_480: ~"only screen and (max-width: 480px)";
+@queries_414: ~"only screen and (max-width: 414px)";
 
 
 // oldies
@@ -34,20 +28,84 @@
 @gray-light: #eee;
 
 // Color
+@must-use: #e54e26;
+@bg-career: #293040;
+
+@base-gray: #3e3835;
+@bright-red: #f31717;
+@bright-orange: #f55327;
 
 @white: #fff;
+@black: #000;
 
-@slate-gray-5: #f2f4f5;
-@slate-gray-20: #D1D5D9;
-@slate-gray-30: #B8BFC4;
-@slate-gray-90: #303538;
+@slategray-5: #f2f4f5;
+@slategray-20: #D1D5D9;
+@slategray-30: #B8BFC4;
+@slategray-40: #9EA7AD;
+@slategray-70: #525A61;
+@slategray-80: #40474D;
+@slategray-90: #303538;
 
-@blue-gray-10: #d6deeb;
-@blue-gray-20: #94a2b8;
-@blue-gray-30: #738096;
-@blue-gray-40: #59667a;
+@bluegray-10: #d6deeb;
+@bluegray-20: #94a2b8;
+@bluegray-30: #738096;
+@bluegray-40: #59667a;
+@bluegray-70: #2e3847;
+@bluegray-80: #212B3B;
 
-@light-steel-blue-60: #B3C2D1;
+@lightsteelblue-20: #e3edf7;
+@lightsteelblue-60: #B3C2D1;
+@lightsteelblue-70: #9eafbf;
+@lightsteelblue-90: #7D8E9E;
+@lightsteelblue-100: #70808f;
+
+@dodgerblue-50: #1f8ce6;
+@red-30: #ed6d5e;
+@green-60: #469e03;
+
+// Ridi Corp. Design Renewal
+@jet-black: #141517;
+@deep-blue: #105DC1;
+@ultra-blue: #0077FF;
+@thin-blue: #F7F9FC;
 
 // fonts
 @brandon: "brandon-grotesque", sans-serif;
+
+//ridibating
+@font-face {
+  font-family: 'RIDIBatang';
+  src: url('../fonts/RIDIBatang.woff');
+}
+
+@ridibatang: 'RIDIBatang';
+
+//Calibre
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../fonts/CalibreRegular.woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../fonts/CalibreSemibold.woff');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../fonts/CalibreBold.woff');
+  font-weight: 700;
+}
+
+@Calibre: 'Calibre', sans-serif;
+
+//Acumin
+@font-face {
+  font-family: 'Acumin Bold';
+  src: url('../fonts/Acumin-BdPro.woff');
+}
+
+@Acumin: 'Acumin Bold', sans-serif;

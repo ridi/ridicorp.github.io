@@ -1,221 +1,61 @@
 html.page.contact {
-  body {
-    background-color: #000;
-
-    > footer {
-      display: none;
-    }
-  }
-
   .intro-header {
     &.ih-contact {
-      background: transparent;
-      margin-bottom: 0;
-      padding-bottom: 140px;
-      position: relative;
-      z-index: 2;
-
-      @media @queries_sm {
-        padding-bottom: 40px;
-      }
+      padding: 240px 0 200px;
+      max-width: 1160px;
+      margin: auto;
     }
 
     .site-heading,
     .page-heading {
       &.contact-heading {
         h1 {
-          color: @bright-orange;
-        }
-
-        padding-bottom: 40px;
-      }
-    }
-
-    .contact-buttons {
-      text-align: center;
-
-      a {
-        .button();
-      }
-
-      .view-map {
-        .button-orange();
-
-        margin-right: 10px;
-      }
-
-      .other-button {
-        .button-gray();
-
-        background: #5f5f5f;
-      }
-
-      @media @queries_smmd {
-        margin-top: 30px;
-
-        a {
-          display: block !important;
-          width: 240px;
-          margin: 0 auto 5px !important;
-          border: none !important;
-          border-radius: 4px !important;
-        }
-
-        .view-map {
-          margin-bottom: 10px !important;
+          color: @jet-black;
         }
       }
     }
   }
-
-  .contact-fader {
-    background: rgba(0,0,0,.75) url(../img/bg-fader.png) repeat;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+  .ridi-map {
+    display: block;
+    img {
+      width: 100%;
+    }
   }
-
   .how-to-contact {
-    background: #000;
-    padding: 30px 50px;
-    position: relative;
-    border-radius: 10px;
-    width: 840px;
-    margin: 0 auto;
-    z-index: 1;
-
-    @media @queries_smmd {
-      border-radius: 0;
-      width: auto;
-      padding: 20px 20px 50px;
-    }
-
-    .htc-left {
-      width: 35%;
-      margin-right: 5%;
-      float: left;
-      padding-bottom: 20px;
-
-      @media @queries_smmd {
-        width: auto;
-        float: none;
+    margin: 80px auto 160px;
+    .info-item {
+      margin-bottom: 80px;
+      height: 100px;
+      .info-title {
+        display: block;
+        width: 30%;
+        float: left;
+        font-size: 28px;
+        font-weight: 700;
+        color: @slategray-90;
+        @media @queries_sm {
+          font-size: 24px;
+          float: none;
+        }
       }
-    }
-
-    .htc-right {
-      width: 60%;
-      float: left;
-
-      @media @queries_md {
-        width: auto;
-        float: none;
-      }
-
-      @media @queries_sm {
-        width: auto;
-        float: none;
-        padding-top: 20px;
-      }
-    }
-
-    h2 {
-      color: @bright-orange;
-      font-size: 1em;
-      margin-bottom: 0;
-    }
-
-    h3 {
-      font-size: 1.125em;
-      line-height: 1.5;
-      color: #dadada;
-      font-weight: 500;
-    }
-
-    h4 {
-      font-size: 1em;
-      line-height: 1.5;
-      color: #919191;
-    }
-
-    p {
-      color: #919191;
-      line-height: 1.4;
-      margin-bottom: 5px;
-
-      &.steps {
-        text-indent: -1.2em;
-        padding-left: 1.2em;
-      }
-
-      &.bus-lines {
-        margin-bottom: 0;
-        text-indent: -0.5em;
-        padding-left: 0.5em;
-      }
-    }
-
-    .contact-point {
-      color: #dadada;
-      font-size: 1em;
-      padding-top: 10px;
-
-      li {
-        padding: 3px 0;
-      }
-
-      a {
-        color: #dadada;
-      }
-    }
-
-    .hr-box {
-      padding-right: 5%;
-
-      @media @queries_smmd {
-        width: auto;
-        float: none;
-        padding: 10px 0 0;
+      .info-dsc {
+        display: block;
+        float: right;
+        width: 65%;
+        margin-top: 6px;
+        font-size: 24px;
+        line-height: 1.4em;
+        color: @slategray-70;
+        @media @queries_smmd {
+          margin-top: 2px;
+          font-size: 20px;
+        }
+        @media @queries_sm {
+          float: none;
+          width: 100%;
+        }
       }
     }
   }
 
-  #map_canvas {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-
-  #map_controls {
-    display: none;
-    position: relative;
-    z-index: 4;
-
-    .close-map {
-      position: fixed;
-      left: 20px;
-      top: 20px;
-      color: #555;
-      padding: 12px;
-      font-size: 1.4em;
-      border: 1px solid #aaa;
-      background: rgba(255,255,255,.8);
-      line-height: 0.9;
-
-      .drop-shadow();
-      .border-radius();
-      .transition();
-
-      &:hover {
-        color: #222;
-        border-color: #999;
-        .drop-shadow(0, 3px, 6px, 0, rgba(0,0,0,.2));
-      }
-    }
-  }
 }

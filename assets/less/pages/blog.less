@@ -1,49 +1,24 @@
 html.page.blog {
   .intro-header {
     &.ih-blog {
-      background-image: url(../img/blog-bg.png);
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: 2000px auto;
-      background-color: #173057;
-
+      padding: 240px 0 200px;
+      max-width: 1160px;
+      margin: auto;
       @media @queries_sm {
-        background-size: 1400px auto;
-      }
-    }
-
-    .site-heading,
-    .page-heading {
-      &.blog-heading {
-        padding: 80px 0 40px;
-      }
-    }
-
-    .sub-description {
-      &.sd-blog {
-        color: #78caf3;
-      }
-    }
-
-    .blog-sub-area {
-      text-align: center;
-
-      @media @queries_sm {
-        text-align: left;
-        padding: 0 20px;
+        padding: 200px 0 160px;
       }
     }
   }
 
   .tab-container {
-    background: #f5faff;
+    font-family: @Calibre;
+    font-weight: 600;
+    background: @white;
     padding: 28px 0;
-    border-bottom: 1px solid rgba(172, 194, 212, .4);
-
-    text-align: center;
+    border-bottom: 1px solid @slategray-20;
+    text-align: left;
     font-weight: bold;
     font-size: 1.2em;
-    font-family: @brandon;
     letter-spacing: 0.02em;
     text-transform: uppercase;
 
@@ -52,7 +27,7 @@ html.page.blog {
     }
 
     em, span {
-      color: #acc2d4;
+      color: @slategray-20;
       display: inline-block;
       padding: 0 2px;
     }
@@ -63,15 +38,14 @@ html.page.blog {
       cursor: pointer;
 
       &.active, &:hover {
-        color: #02406f;
+        color: @ultra-blue;
       }
     }
   }
 
   &.posts {
     .blog-post-list {
-      width: 700px;
-      margin: 20px auto;
+      margin: 0 auto;
 
       @media @queries_md {
         margin: 20px auto;
@@ -83,7 +57,6 @@ html.page.blog {
       }
 
       li {
-        display: inline-block;
         vertical-align: top;
         position: relative;
 
@@ -92,26 +65,24 @@ html.page.blog {
         }
 
         .list-item {
-          display: block;
-          padding: 25px 5px 20px;
+          display: flex;
+          justify-content: space-between;
+          padding: 25px 16px 20px;
           position: relative;
           z-index: 1;
           transition: all .1s;
-          outline: none;
           border-bottom: 1px #eee solid;
-
           @media @queries_sm {
-            width: 90%;
-            margin: 5px auto;
+            display: block;
           }
 
           .post-content {
-            display: table-cell;
             vertical-align: top;
-            width: 520px;
+            max-width: 70%;
+            word-break: keep-all;
 
             @media @queries_sm {
-              width: 100%;
+              max-width: 100%;
             }
           }
 
@@ -127,11 +98,15 @@ html.page.blog {
             margin: 5px 0 10px 0;
 
             &.type-design {
-              color: #00a259;
+              color: @red-30;
+            }
+            
+            &.type-uxui {
+               color: @green-60;
             }
 
             &.type-engineering {
-              color: #284f8c;
+              color: @dodgerblue-50;
             }
           }
 
@@ -158,19 +133,16 @@ html.page.blog {
           }
 
           .post-meta {
-            .brandon-grotesque();
-
+            font-family: @Calibre;
             color: #545f6f;
             font-size: 14px;
-            width: 180px;
-            display: table-cell;
-            vertical-align: top;
-            padding: 25px 0 0 25px;
+            width: 160px;
+            padding: 25px 0 0 0;
 
             @media @queries_sm {
               width: auto;
               display: block;
-              padding-left: 0;
+              padding: 20px 0 12px 0;
             }
 
             .profile-img {
@@ -182,8 +154,9 @@ html.page.blog {
             }
 
             .author {
-              font-weight: bold;
+              font-weight: 600;
               font-size: 16px;
+              margin-top: 12px;
             }
           }
         }
@@ -203,14 +176,14 @@ html.page.blog {
 
         &:hover a,
         &:focus a {
-          -webkit-transform: translateY(-1px);
-          border-color: @slate-gray-20;
+          border-color: @slategray-20;
+          background-color: hsla(215, 30%, 99%, 1);
         }
 
         &:hover figure,
         &:focus figure {
           border: 1px solid #ddd;
-          -webkit-transform: scale(1.05);
+          -webkit-transform: scale(1.10);
         }
       }
     }
@@ -222,30 +195,28 @@ html.page.blog {
       padding-top: 60px;
       text-align: center;
       max-width: 1600px;
-
       li {
         display: inline-block;
         width: 320px;
-        margin: 0 33px;
-          
+        margin: 0 16px;
+
           @media @queries_sm {
               margin: 0 auto;
           }
-
         .preview-hover {
           opacity: 0;
           position: absolute;
-          background: rgba(255, 255, 255, .9);
+          background: rgba(255, 255, 255, .95);
+          border: 1px solid @slategray-20;
           border-radius: 4px;
           z-index: 1;
           width: 320px;
           min-height: 241px;
           text-align: left;
-          border: 1px solid @slate-gray-20;
           padding: 20px;
 
           .title {
-            color: @slate-gray-90;
+            color: @slategray-90;
             font-size: 25px;
             font-weight: 700;
             line-height: 1.25em;
@@ -254,7 +225,7 @@ html.page.blog {
 
           .date {
             font-family: @brandon;
-            color: @blue-gray-40;
+            color: @bluegray-40;
             font-size: 14px;
             margin-top: 6px;
             font-weight: 500;
@@ -269,12 +240,12 @@ html.page.blog {
           display: flex;
           align-items: center;
           min-height: 241px;
-          background: @blue-gray-10;
+          background: @bluegray-10;
           border-radius: 4px;
           position: relative;
 
           .preview {
-            border: 1px solid @slate-gray-20;
+            border: 1px solid @slategray-20;
             border-radius: 4px;
             width: 100%;
             cursor: pointer;
@@ -313,17 +284,17 @@ html.page.blog {
           }
           .author {
             display: inline-block;
-            font-family: @brandon;
-            color: @blue-gray-40;
-            margin-left: 4px;
+            font-family: @Calibre;
+            color: @bluegray-40;
+            margin: 4px;
             font-weight: 600;
-            font-size: 17px;
+            font-size: 20px;
           }
 
           .date {
-            font-family: @brandon;
-            color: @blue-gray-40;
-            font-size: 14px;
+            font-family: @Calibre;
+            color: @bluegray-40;
+            font-size: 18px;
             margin-top: 6px;
             display: none;
 

@@ -1,0 +1,350 @@
+html.page.ridibatang {
+      body {
+        font-family: @ridibatang;
+        word-wrap: break-word;
+          // nav overriding
+        .navbar {
+          &>.container-fluid .navbar-brand {
+            .svg_logo_ridi(@white);
+          }
+          @media only screen and (min-width: 768px) {
+            .nav {
+              li {
+                a {
+                  color: @white;
+                }
+              }
+            }
+          }
+        }
+        .navbar-default {
+          .navbar-toggle {
+            .icon-bar {
+              background-color: @white;
+            }
+            &:hover, &:focus {
+              background-color: @deep-blue;
+            }
+          }
+        }
+        // orerriding end
+      }
+
+  .intro-header {
+      background-image: url(../img/ridibatang-bg.jpg);
+      background-repeat: repeat;
+      background-position: center -40px;
+      background-size: 1049px auto;
+      background-color: @bluegray-80;
+      padding: 190px 0;
+
+      @media @queries_sm {
+        padding: 160px 0;
+      }
+
+      h1 {
+        text-align: left;
+        font-weight: 300;
+        text-shadow: none;
+        font-style: normal;
+        font-size: 54px;
+        letter-spacing: -.03em;
+        line-height: 1.35em;
+        color: @white;
+        max-width: 1040px;
+        width: 90%;
+        margin: 0 auto;
+        padding: 0;
+        word-break: keep-all;
+
+        p {
+          margin: 0;
+        }
+
+        @media @queries_sm {
+          font-size: 32px;
+        }
+      }
+
+      @media @queries_md {
+        background-size: 1200px auto;
+      }
+
+      @media @queries_sm {
+        background-size: 820px auto;
+      }
+
+    .site-heading,
+    .page-heading {
+      &.rb-heading {
+        text-align: left;
+      }
+    }
+  }
+
+  .rb-explanation-box {
+    max-width: 740px;
+    margin: 0 auto;
+
+    @media @queries_md {
+      max-width: none;
+      padding: 0 24px;
+
+    }
+    @media @queries_sm {
+      max-width: none;
+      padding: 0 16px;
+    }
+  }
+
+  .rb-title {
+    font-size: 36px;
+    color: @black;
+    letter-spacing: -.03em;
+    line-height: 1.45em;
+    word-break: keep-all;
+
+    @media @queries_sm {
+      font-size: 26px;
+      line-height: 1.35em;
+    }
+  }
+
+  .rb-body {
+    padding-top: 12px;
+    font-size: 24px;
+    color: @slategray-70;
+    letter-spacing: -.02em;
+    line-height: 1.65em;
+
+    @media @queries_sm {
+      font-size: 20px;
+    }
+  }
+
+  .rb-caption {
+    font-size: 30px;
+    color: @lightsteelblue-90;
+    letter-spacing: -.01em;
+    margin-top: 140px;
+    line-height: 1.5em;
+
+    @media @queries_sm {
+      margin-top: 100px;
+      font-size: 23px;
+    }
+  }
+  
+  figure {
+    text-align: center;
+  }
+
+  figcaption {
+    display: inline-block;
+    font-size: 19px;
+    color: @bluegray-30;
+    letter-spacing: -.01em;
+    line-height: 1.5em;
+    padding-top: 12px;
+  }  
+
+  img {
+    width: 100%;
+    border: 1px solid @lightsteelblue-20;
+    border-radius: 3px;
+  }
+
+  .rb-img {
+    margin-top: 30px;
+
+    @media @queries_sm {
+      display: inline-block;
+    }
+  }
+
+  .rb-img-size-half {
+    display: inline-block;
+    width: 49%;
+    margin-right: 1%;
+
+    @media @queries_sm {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  
+  .rb-img-size-half:last-child {
+    margin: 0;
+    @media @queries_sm {
+      margin: 30px 0 0 0;
+    }
+  }
+  
+  .rb-img-size-full:last-child {
+      margin: 30px 0 0 0;
+  }
+
+  .rb-reason-area {
+    background: @lightsteelblue-20;
+    padding: 120px 0 380px 0;
+    background-image: url(../img/ridibatang-toc-desktop.png);
+    background-repeat: no-repeat;
+    background-position: center 310px;
+    background-size: 1400px auto;
+
+    @media @queries_sm {
+      background-size: 1200px auto;
+      background-position: center 280px;
+      padding: 100px 0 360px 0;
+    }
+
+    @media @queries_568 {
+      background-position: center 320px;
+      padding: 100px 0 340px 0;
+    }
+
+    @media @queries_414 {
+      background-image: url(../img/ridibatang-toc-mobile.png);
+      background-size: 530px auto;
+      background-position: center 340px;
+      padding: 100px 0 500px 0;
+    }
+  }
+
+  .rb-feature-area {
+    textarea {
+      width: 740px;
+      margin: 0 auto;
+
+      @media @queries_md {
+        padding: 0 24px;
+
+      }
+      @media @queries_sm {
+        padding: 0 16px;
+      }
+    }
+  }
+
+  .rb-download-area {
+    background: @bluegray-70;
+    background-image: url(../img/ridibatang-bg.jpg);
+    background-repeat: repeat;
+    background-position: center -40px;
+    background-size: 1049px auto;
+    padding: 140px 0;
+    margin-top: 140px;
+
+    a {
+      color: @bluegray-70;
+    }
+
+    .rb-title {
+      color: @white;
+    }
+
+    .rb-body {
+      color: rgba(255,255,255,.8);
+    }
+
+    @media @queries_sm {
+      padding: 100px 0;
+      margin-top: 100px;
+    }
+  }
+
+  footer {
+    display: none;
+  }
+
+  
+
+  .rb-download {
+    transition: all .25s ease-in-out;
+    max-width: 740px;
+    padding: 24px 0 26px 0;
+    background: @white;
+    font-size: 20px;
+    letter-spacing: -.02em;
+    margin: 50px auto 100px;
+    text-align: center;
+    border-radius: 3px;
+
+    @media @queries_md {
+      max-width: none;
+      margin: 50px 24px 100px;
+    }
+
+    @media @queries_sm {
+      max-width: none;
+      margin: 50px 16px 100px;
+    }
+
+    .icon-download {
+      margin-left: 12px;
+    } 
+
+  }
+
+  .rb-download:hover,
+  .rb-download:active {
+    opacity: .7;
+    cursor: pointer;
+    transition: all .25s ease-in-out;
+  }
+
+  .rb-license {
+    max-width: 740px;
+    margin: 0 auto;
+    color: @lightsteelblue-100;
+    font-size: 14px;
+    line-height: 1.9em;
+    letter-spacing: -.02em;
+
+    span {
+      font-size: 18px;
+      line-height: 2em;
+    }
+
+    p {
+      margin: 0;
+      a {
+        color: #fff;
+        border-bottom: 1px solid rgba(255,255,255,.2);
+      }
+      a:hover, a:active {
+        color: rgba(255,255,255,.6);
+      }
+    }
+
+    .rb-license-info {
+      margin-bottom: 16px;
+    }
+
+    @media @queries_md {
+      max-width: none;
+      padding: 0 24px;
+    }
+
+    @media @queries_sm {
+      max-width: none;
+      padding: 0 16px;
+    }
+  }
+
+  .rb-footer {
+    text-align: center;
+
+    .copyright {
+      font-family: @ridibatang;
+      font-weight: 300;
+      font-size: 16px;
+      color: @lightsteelblue-70;
+      letter-spacing: 0;
+      line-height: 1.5em;
+      padding: 0;
+      margin-top: 50px;
+      display: inline-block;
+    }
+  }
+}

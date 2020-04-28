@@ -6,16 +6,19 @@
   "author": "RIDI Corporation",
   "license": "Apache-2.0",
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-less": "^1.0.1",
+    "grunt": "^1.0.4",
+    "grunt-contrib-less": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-webfont": "^1.4.0",
-    "stylelint": "^8.2.0",
-    "stylelint-config-standard": "^17.0.0"
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ridi/ridi.github.io"
+  },
+  "scripts": {
+    "start": "grunt",
+    "watch": "grunt watch"
   },
   "stylelint": {
     "extends": "stylelint-config-standard"

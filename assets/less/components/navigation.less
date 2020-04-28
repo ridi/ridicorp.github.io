@@ -1,24 +1,17 @@
 .navbar {
-  .brandon-grotesque();
-
+  font-family: @Calibre;
   background: transparent;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 5;
-  padding-left: 16px;
 
   &>.container-fluid .navbar-brand {
     margin-top: 4px;
     color: #fff;
-    text-shadow: 0 1px 2px rgba(0,0,0,.3);
-    .svg_logo_ridi(#fff);
-
+    .svg_logo_ridi(@ultra-blue);
     width: 50px;
-
-    @media @queries_sm {
-    }
 
     &:hover, &:focus {
       color: #fff;
@@ -29,9 +22,8 @@
     li {
       a {
         text-transform: uppercase;
-        font-size: 12px;
-        font-weight: 800;
-        letter-spacing: 1px;
+        font-size: 20px;
+        font-weight: 600;
       }
     }
   }
@@ -43,21 +35,19 @@
     .nav {
       li {
         a {
-          color: @white-faded;
+          color: @jet-black;
+          opacity: .5;
           padding: 20px 0 2px;
-          margin: 0 16px 10px;
-          border-bottom: 2px solid transparent;
+          margin: 0 12px 10px;
           .transition();
 
           &:hover,
           &:focus {
-            color: white;
-            border-color: rgba(255,255,255,.5);
+            opacity: 1;
           }
 
           &.active {
-            border-color: white;
-            color: white;
+            opacity: 1;
           }
         }
       }
@@ -132,20 +122,22 @@
 }
 
 .navbar-default {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
   border-color: transparent;
 
   .navbar-toggle {
     border: 0 none;
-    margin-right: 10px;
+    margin-right: 0;
     z-index: 5;
 
     .icon-bar {
-      background-color: #fff;
+      background-color: @slategray-70;
     }
 
-    &:hover,
-    &:focus {
-      background-color: #000;
+    &:hover, &:focus {
+      background-color: @thin-blue;
     }
   }
 
@@ -157,29 +149,34 @@
   @media @queries_sm {
     .navbar-nav {
       margin: 0 -15px;
+      margin-top: 80px;
+      border-top: 1px solid hsla(214, 85%, 35%, 1);
     }
 
     .navbar-nav > li {
       padding-right: 70px;
-      border-bottom: 1px solid #222;
+      border-bottom: 1px solid hsla(214, 85%, 35%, 1);
     }
 
     .navbar-nav > li > a {
-      color: @white-faded;
-      padding: 15px 20px;
+      color: @white;
+      opacity: .5;
+      padding: 20px 20px 15px;
     }
 
     .navbar-nav > li > a:focus,
     .navbar-nav > li > a:hover,
     .navbar-nav > li > a.active {
-      color: white;
+      color: @white;
+      opacity: 1;
     }
 
     .navbar-collapse {
-      background-color: #000;
+      background-color: @deep-blue;
       position: absolute;
       z-index: 2;
       width: 100%;
+      max-height: none;
       top: 0;
       left: 0;
     }

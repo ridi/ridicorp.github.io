@@ -1,157 +1,67 @@
 ---
 layout: default
 title: Press
-fb-img: "assets/img/fb-img-ridicorp.png"
+fb-img: "assets/img/fb-ridicorp.png"
 root_class: "press page"
 ---
 
 <header class="intro-header ih-press">
-  <div class="site-heading press-heading">
-    <h1 data-effect="slide-top">
-
-      Press<br>
-      Information
-
-    </h1>
+  <div class="site-heading press-heading site-content">
+    <h1 class="oneline">Press</h1>
+    <p class="page-dsc">리디의 브랜드 가이드라인과 언론 보도를 소개합니다.</p>
   </div>
 </header>
 
-<div class="press-quick-links">
-  <div class="pql-item">
-    <img src="{{ site.baseurl }}/assets/img/press-illust-introduction.png" alt="" class="pql-illust">
-    <strong>회사소개서</strong>
-    <span>리디 주식회사 <br>소개 자료입니다.</span>
-    <a href="https://drive.google.com/uc?export=download&id=1_A6rFQWPMi8EsNPPyyTwFk7Tj64ixHDk">
-      자세히 보기 <i class="icon-direct-right"></i>
-    </a>
-  </div>
-  <div class="pql-item">
-    <img src="{{ site.baseurl }}/assets/img/press-illust-brandguideline.png" alt="" class="pql-illust">
-    <strong>브랜드 가이드라인</strong>
-    <span>리디 로고를 쓰시려고요?<br>브랜드 가이드라인을 참고하세요.</span>
-    <a href="{{ '/branding/' | prepend: site.baseurl }}">자세히 보기 <i class="icon-direct-right"></i></a>
-  </div>
-  <div class="pql-item">
-    <img src="{{ site.baseurl }}/assets/img/press-illust-photos.png" alt="" class="pql-illust">
-    <strong>사진 자료실</strong>
-    <span>리디 서비스 및 제품 관련<br>공식 이미지를 다운받을 수 있습니다.</span>
-    <a href="{{ '/press/photos/' | prepend: site.baseurl }}">자세히 보기 <i class="icon-direct-right"></i></a>
-  </div>
-  <div class="clear"></div>
+<div class="press-quick-links site-content">
+  <ul class="press-link-item">
+    <li>
+      <figure>
+        <img src="/assets/img/press/press_1.png" alt="">
+        <figcaption>
+          <strong>브랜드 가이드라인</strong>
+          <span>RIDI PRODUCT & Brand의 로고와 브랜드 가이드라인을 살펴보세요.</span>
+          <a href="{{ '/branding/' | prepend: site.baseurl }}" class="text-link">자세히 보기 <i class="arrow-link"></i></a>
+        </figcaption>
+        <div class="clear"></div>
+      </figure>
+    </li>
+    <li>
+      <figure>
+        <img src="/assets/img/press/press_2.png" alt="">
+        <figcaption>
+          <strong>사진 자료실</strong>
+          <span>RIDI PRODUCT & BRAND 관련공식 이미지를 다운받을 수 있습니다.</span>
+          <a href="{{ '/press/photos/' | prepend: site.baseurl }}" class="text-link">자세히 보기 <i class="arrow-link"></i></a>
+        </figcaption>
+        <div class="clear"></div>
+      </figure>
+    </li>
+  </ul>
 </div>
-
 
 <!-- Press Articles -->
 <div class="press-articles-area site-content">
   <div class="paa-tab">
-    <em class="active" rel="article">언론보도</em>
-    <span class="separator">∙</span>
-    <em rel="material">보도자료</em>
+    <button class="active" rel="article">언론보도</button>
   </div>
   <div class="tab_container">
     <!-- 언론보도 -->
     <ol class="report-list tab_content" id="article">
     </ol>
-    <!-- 보도자료 -->
-    <ol class="articles-list tab_content" id="material" hidden>
-      <li id="press_material1" hidden>
-        <a id="press_material_url1" href="">
-          <span id="press_material_date1" class="date"></span>
-          <strong id="press_material_title1" class="title"></strong>
-
-          <p id="press_material_desc1"></p>
-        </a>
-        <figure></figure>
-      </li>
-      <li id="press_material2" hidden>
-        <a id="press_material_url2" href="">
-          <span id="press_material_date2" class="date"></span>
-          <strong id="press_material_title2" class="title"></strong>
-
-          <p id="press_material_desc2"></p>
-        </a>
-        <figure></figure>
-      </li>
-      <li id="press_material3" hidden>
-        <a id="press_material_url3" href="">
-          <span id="press_material_date3" class="date"></span>
-          <strong id="press_material_title3" class="title"></strong>
-
-          <p id="press_material_desc3"></p>
-        </a>
-        <figure></figure>
-      </li>
-      <li id="press_material4" hidden>
-        <a id="press_material_url4" href="">
-          <span id="press_material_date4" class="date"></span>
-          <strong id="press_material_title4" class="title"></strong>
-
-          <p id="press_material_desc4"></p>
-        </a>
-        <figure></figure>
-      </li>
-    </ol>
-
 
     <div class="clear"></div>
 
     <!-- Pager -->
     <div class="pager">
-      <div class="page-button" id="prev_page" data-flag="material"><i class="icon-direct-left"></i> 이전</div>
+      <button class="page-button" id="prev_page" data-flag="material"><i class="icon-direct-left"></i> 이전</button>
 
-      <div class="page-button" id="next_page" data-flag="material">다음 <i class="icon-direct-right"></i></div>
+      <button class="page-button" id="next_page" data-flag="material">다음 <i class="icon-direct-right"></i></button>
     </div>
   </div>
   <div class="clear"></div>
 </div>
-
-<!-- 소식지 -->
-<div class="ridi-insights site-content">
-  <div class="text-center">
-    <h3>리디북스 소식지</h3>
-  </div>
-  <ul class="ri-list">
-    <li>
-      <a href="https://ridibooks.com/v2/Detail?id=111014081" target="_blank">
-        <div class="book-thumbnail">
-          <div class="thumbnail-image">
-            <img src="https://misc.ridibooks.com/cover/111014081/xxlarge" alt="">
-            <span class="border"></span>
-          </div>
-        </div>
-        <strong>Vol. 3</strong>
-        <span>2015. 12</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://ridibooks.com/v2/Detail?id=111013974" target="_blank">
-        <div class="book-thumbnail">
-          <div class="thumbnail-image">
-            <img src="https://misc.ridibooks.com/cover/111013974/xxlarge" alt="">
-            <span class="border"></span>
-          </div>
-        </div>
-        <strong>Vol. 2</strong>
-        <span>2015. 9</span>
-      </a>
-    </li>
-    <li>
-      <a href="https://ridibooks.com/v2/Detail?id=111013833" target="_blank">
-        <div class="book-thumbnail">
-          <div class="thumbnail-image">
-            <img src="https://misc.ridibooks.com/cover/111013833/xxlarge" alt="">
-            <span class="border"></span>
-          </div>
-        </div>
-        <strong>Vol. 1</strong>
-        <span>2015. 6</span>
-      </a>
-    </li>
-  </ul>
-</div>
 <script>
   $(function () {
-    var MATERIALS_PER_PAGE = 4;
     var ARTICLES_PER_PAGE = 8;
 
     var posts = [
@@ -173,63 +83,30 @@ root_class: "press page"
     var prev_button = $("#prev_page");
     var next_button = $("#next_page");
 
-    attachHandler();
-    refreshPageInfo();
+    initializeButtons();
+    refreshArticleInfo();
 
     // 이벤트 핸들러 달기
-    function attachHandler() {
-      var parentTab = $(".paa-tab em");
-
-      parentTab.click(function () {
-        tabChanged(this);
-      });
-
+    function initializeButtons() {
       next_button.click(function () {
         cur_page++;
         refreshAndFocusToActiveTab();
       });
+      next_button.hide();
 
       prev_button.click(function () {
         cur_page--;
         refreshAndFocusToActiveTab();
       });
-    }
-
-    function getActiveTab() {
-      return $(".paa-tab em[class='active']");
+      prev_button.hide();
     }
 
     function calculateTotalPages(items_count, items_per_page) {
       return Math.ceil(items_count / items_per_page);
     }
 
-    function tabChanged(tab) {
-      cur_page = 0;
-
-      var clicked_tab = $(tab);
-      var current_active_tab = getActiveTab();
-
-      current_active_tab.removeClass('active');
-      $(".tab_content").hide();
-
-      clicked_tab.addClass('active');
-      $("#" + clicked_tab.attr('rel')).fadeIn();
-
-      refreshAndFocusToActiveTab();
-    }
-
-    function refreshPageInfo() {
-      if (getActiveTab().attr('rel') == 'material') {
-        refreshMaterialInfo();
-      } else {
-        refreshArticleInfo();
-      }
-
-      refreshPageButton();
-    }
-
     function refreshAndFocusToActiveTab() {
-      refreshPageInfo();
+      refreshArticleInfo();
       focusToActiveTab();
     }
 
@@ -244,50 +121,11 @@ root_class: "press page"
       );
     }
 
-    function refreshMaterialInfo() {
-      var i = 0;
-      total_pages = calculateTotalPages(posts.length, MATERIALS_PER_PAGE);
-
-      // 다음페이지가 존재하는 경우
-      if (total_pages > cur_page + 1) {
-        for (i = 0; i < MATERIALS_PER_PAGE; i++) {
-          setPressMaterial(i);
-        }
-      } else {
-        // 마지막 페이지
-        var remain_press_material = posts.length - (cur_page * MATERIALS_PER_PAGE);
-
-        for (i = 0; i < remain_press_material; i++) {
-          setPressMaterial(i);
-        }
-
-        // set 되지 않은 html element hide
-        for (i = remain_press_material; i < MATERIALS_PER_PAGE; i++) {
-          hidePressMaterial(i);
-        }
-      }
-    }
-
     function refreshArticleInfo() {
-      $.getJSON('https://intra.ridicorp.com/press/list?callback=?&page=' + (cur_page + 1) + '&items_per_page=' + ARTICLES_PER_PAGE, null, function (data) {
+      $.getJSON('https://intra.ridi.com/press/list?page=' + (cur_page + 1) + '&items_per_page=' + ARTICLES_PER_PAGE, null, function (data) {
         setArticles(data);
+        refreshPageButton();
       });
-    }
-
-    // 보도자료 항목 값을 각 html element에 set
-    function setPressMaterial(index) {
-      var item_index = (cur_page * MATERIALS_PER_PAGE) + index;
-      var post = posts[item_index];
-
-      $("#press_material_url" + (index + 1)).attr("href", post.url);
-      $("#press_material_date" + (index + 1)).text(post.date);
-      $("#press_material_title" + (index + 1)).html(post.title);
-      $("#press_material_desc" + (index + 1)).html(post.description);
-      $("#press_material" + (index + 1)).show();
-    }
-
-    function hidePressMaterial(index) {
-      $("#press_material" + (index + 1)).hide();
     }
 
     function setArticles(data) {
