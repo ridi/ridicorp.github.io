@@ -810,6 +810,7 @@ article.post .post-meta .author-desc:after {
 article.post .post-content {
   width: 700px;
   margin: 0 auto;
+  font-family: 'RIDIBatang';
   font-size: 1.0625em;
 }
 @media only screen and (max-width: 767px) {
