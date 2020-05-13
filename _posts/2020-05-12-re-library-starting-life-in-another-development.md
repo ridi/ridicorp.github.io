@@ -76,7 +76,7 @@ published: true
 
 ![query-result-1](/blog/img/2020-05-12/query-result-1.png)
 
-시리즈 별로 책을 묶어서 보여주기로 했으니까, <span style="color:#196b9f">GROUP BY</span> 를 이용해서 묶어서 보여주자.
+시리즈 별로 책을 묶어서 보여주기로 했으니까, GROUP BY를 이용해서 묶어서 보여주자.
 
 <pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
 	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f"><span style="color:#196b9f">FROM</span></span> book 
@@ -96,7 +96,7 @@ published: true
 
 <br>
 
-기획자👨‍⚖️ : 리발자님, 시리즈의 경우 만료가 가장 먼저 되는 책 기준으로 데이터를 보여줬으면 좋겠습니다! 아무래도 유저 입장에서는 만료될 책을 빨리 봐야 좋을테니까요!
+기획자👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 먼저 되는 책 기준으로 데이터를 보여줬으면 좋겠습니다! 아무래도 유저 입장에서는 만료될 책을 빨리 봐야 좋을테니까요!
 
 ### New Quest
 
@@ -124,7 +124,7 @@ published: true
 
 그 이유는 쿼리의 실행 순서 때문이었다. 
 
-쿼리는 GROUP BY → <span style="color:#196b9f">ORDER BY</span> 순으로 실행되기 때문이다. 즉, 그룹핑을 해버린 이후에 정렬을 하기 때문이다. 정렬 이후에 그룹핑을 하고 싶은 경우라면, 서브 쿼리를 이용해서 해결해야 한다. 따라서 쿼리를 아래처럼 바꾼다. 
+쿼리는 GROUP BY → ORDER BY 순으로 실행되기 때문이다. 즉, 그룹핑을 해버린 이후에 정렬을 하기 때문이다. 정렬 이후에 그룹핑을 하고 싶은 경우라면, 서브 쿼리를 이용해서 해결해야 한다. 따라서 쿼리를 아래처럼 바꾼다. 
 
 <pre><code><b><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (</b>
 	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
@@ -184,7 +184,7 @@ published: true
 그러나 나는 병합을 하고 싶지 않다. 서브 쿼리에서 만들어졌던 순서를 유지한 채로 GROUP BY 를 적용하고 싶기 때문이다. 그렇다면 어떻게 해야 할까? 두 가지 방법이 있다. 
 
 1. mySql Optimizer 전체 쿼리 병합 옵션을 해제하는 방법이 있다. optimizer_switch 라는 시스템 변수를 설정하면 된다. ([관련 링크](https://dev.mysql.com/doc/refman/5.7/en/switchable-optimizations.html)) 그러나 그렇게 하면 다른 쿼리들도 영향을 받아 성능이 저하될 수 있으므로 사용하지 않겠다.
-2. 서브 쿼리에 병합이 불가능한 옵션을 설정하면 된다. 병합이 불가능한 조건은 AGGREGATE Function, limit, group by, having 등이 있다. ([관련 링크](https://dev.mysql.com/doc/refman/5.7/en/derived-table-optimization.html)) 
+2. 서브 쿼리에 병합이 불가능한 옵션을 설정하면 된다. 병합이 불가능한 조건은 AGGREGATE Function, LIMIT, GROUP BY, HAVING 등이 있다. ([관련 링크](https://dev.mysql.com/doc/refman/5.7/en/derived-table-optimization.html)) 
 
 <br>
 나는 2번 방식으로 결정했다. 서브 쿼리 내에 Limit 을 걸어주면, 병합이 불가능하게 되어 가상 테이블을 생성하고, 가상 테이블 내에서 order by 의 순서가 보장될테니까 말이다.
@@ -231,7 +231,7 @@ published: true
 - 유저가 구매한 책을 조회할 수 있는 [내서재] 서비스를 개발해주세요. 
 	- book, series, sereis_member, user, library_item 등의 테이블을 조인했다.
 - 연재 도서같은 시리즈 책의 경우 묶어서 하나로 보여주세요.
-    - series.id로 group by 했다.
+    - series.id로 GROUP BY 했다.
 - 묶을 때, 만료가 가장 먼저 되는 책 기준으로 데이터를 보여주세요.
     - 서브 쿼리를 사용해 정렬 이후 그룹바이를 했다. 
 	- 이 때, 자동 병합이 되지 않도록 LIMIT을 설정했다.
@@ -519,15 +519,15 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 <span style="color:#196b9f">ORDER BY</span> series.title;
 </code></pre>
 
-→ 소요되는 시간이 무려 **7.97s 가 걸린다!** 서비스가 불가능한 수준이다. (실제로 2000만건을 넣고 돌린 결과)
+→ 소요되는 시간이 무려 **7.97s 가 걸린다!** 이는 서비스가 불가능한 수준이다. (실제로 2000만건을 넣고 돌린 결과)
 
 ![query-result-13](/blog/img/2020-05-12/query-result-13.png)
 
-이 쿼리들의 속도를 향상시키기 위해서는 DB Index 를 생성해줘야 한다. 그런데, MySQL은 다중 테이블에 인덱스를 걸 수가 없다. 각 테이블에 인덱스를 걸어봤자, 조인하면서 인덱스의 순서가 보장되지 않아 성능 향상에 크게 도움이 되지 않는다. 
+이 쿼리들의 속도를 향상시키기 위해서는 DB Index 를 생성해줘야 한다. 그런데, MySQL은 다중 테이블에 인덱스를 걸 수가 없다. 또한 각 테이블에 인덱스를 걸어봤자, 조인하면서 인덱스의 순서가 보장되지 않아 성능 향상에 크게 도움이 되지 않는다. 
 
 <br>
 
-그래서 읽기 성능 개선을 위해 [역정규화]를 시전한다.
+그래서 읽기 성능 개선을 위해 [역정규화]를 <b>시.전.한.다.</b>
 
 <span style="color:green">combined_library_item</span> 테이블을 만들어보자.
 
@@ -566,7 +566,7 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 <span style="color:#196b9f">ORDER BY</span> series_title;
 </code></pre>
 
-→ 0.16s 로 엄청나게 빠른 성능 향상이 있었다. 이 정도면.. 도내 랭크 상위급... 아니 최상위급도 노려볼 수 있겠는걸...?
+→ 무려 **0.16s** 로 엄청나게 빠른 성능 향상이 있었다. 이 정도면.. 도내 랭크 상위급... 아니 최상위급도 노려볼 수 있겠는걸...?
 
 ![query-result-14](/blog/img/2020-05-12/query-result-14.png)
  
