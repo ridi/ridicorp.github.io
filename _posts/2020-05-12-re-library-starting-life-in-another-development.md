@@ -65,25 +65,25 @@ published: true
 
 위의 테이블을 이용하면 유저가 구매한 책의 정보들을 추출할 수 있다. 각 테이블을 조인해서 아래와 같이 쿼리를 날려보자.
 
-<pre><code>SELECT series.title AS series_title, book.title AS book_title, 
-	library_item.expire_date AS expire_date FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id;
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id;
 </code></pre>
 
 → しまった(시맛타)! 기획자의 말을 깜빡했군. 
 
 ![query-result-1](/blog/img/2020-05-12/query-result-1.png)
 
-시리즈 별로 책을 묶어서 보여주기로 했으니까, GROUP BY 를 이용해서 묶어서 보여주자.
+시리즈 별로 책을 묶어서 보여주기로 했으니까, <span style="color:#196b9f">GROUP BY</span> 를 이용해서 묶어서 보여주자.
 
-<pre><code>SELECT series.title AS series_title, book.title AS book_title, 
-	library_item.expire_date AS expire_date FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-<b>GROUP BY series.id</b>;
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f"><span style="color:#196b9f">FROM</span></span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<b><span style="color:#196b9f">GROUP BY</span> series.id</b>;
 </code></pre>
 
 → 실행 결과를 보면, 시리즈별로 한권의 데이터를 보여주는 걸 알 수 있다.
@@ -106,13 +106,13 @@ JOIN library_item ON library_item.book_id = book.id
 
 やれやれ(야레야레)... 새로운 요구 사항인가. 나는 order by를 추가해보기로 했다.
 
-<pre><code>SELECT series.title AS series_title, book.title AS book_title, 
-	library_item.expire_date AS expire_date FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-GROUP BY series.id
-<b>ORDER BY expire_date;</b>
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">GROUP BY</span> series.id
+<b><span style="color:#196b9f">ORDER BY</span> expire_date;</b>
 </code></pre>
 
 → 그런데, 결과를 보면 조금 이상하다. 위의 책 정보를 보면 '달빛조각사 2권'이 '달빛조각사 1권'보다 먼저 만료된다. 그래서 달빛조각사 2권을 반환해줘야 하는데, 1권을 준 걸 알 수 있다.
@@ -124,16 +124,16 @@ GROUP BY series.id
 
 그 이유는 쿼리의 실행 순서 때문이었다. 
 
-쿼리는 GROUP BY → ORDER BY 순으로 실행되기 때문이다. 즉, 그룹핑을 해버린 이후에 정렬을 하기 때문이다. 정렬 이후에 그룹핑을 하고 싶은 경우라면, 서브 쿼리를 이용해서 해결해야 한다. 따라서 쿼리를 아래처럼 바꾼다. 
+쿼리는 GROUP BY → <span style="color:#196b9f">ORDER BY</span> 순으로 실행되기 때문이다. 즉, 그룹핑을 해버린 이후에 정렬을 하기 때문이다. 정렬 이후에 그룹핑을 하고 싶은 경우라면, 서브 쿼리를 이용해서 해결해야 한다. 따라서 쿼리를 아래처럼 바꾼다. 
 
-<pre><code><b>SELECT * FROM (</b>
-	SELECT series.title AS series_title, book.title AS book_title, 
-		library_item.expire_date AS expire_date FROM book 
-	JOIN series_member ON series_member.book_id = book.id
-	JOIN series ON series_member.series_id = series.id
-	JOIN library_item ON library_item.book_id = book.id
-	ORDER BY expire_date
-<b>) sub GROUP BY sub.series_id;</b>
+<pre><code><b><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (</b>
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+	<span style="color:#196b9f">ORDER BY</span> expire_date
+<b>) sub <span style="color:#196b9f">GROUP BY</span> sub.series_id;</b>
 </code></pre>
 
 →  그러나, 같은 결과를 뱉는다. 
@@ -148,14 +148,14 @@ GROUP BY series.id
 <br>
 실행 계획을 확인해보면, SELECT 타입을 통해 결과값을 얻는 것으로 보아 가상 테이블을 생성하지 않고 병합되었다는 걸 다시 한 번 확인할 수 있었다.
 
-<pre><code><b>EXPLAIN</b> SELECT * FROM (
-	SELECT series.title AS series_title, book.title AS book_title, 
-		library_item.expire_date AS expire_date FROM book 
-	JOIN series_member ON series_member.book_id = book.id
-	JOIN series ON series_member.series_id = series.id
-	JOIN library_item ON library_item.book_id = book.id
-	ORDER BY expire_date
-) sub GROUP BY sub.series_id;
+<pre><code><b><span style="color:#196b9f">EXPLAIN</span></b> <span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+	<span style="color:#196b9f">ORDER BY</span> expire_date
+) sub <span style="color:#196b9f">GROUP BY</span> sub.series_id;
 </code></pre>
 
 → select_type 이 모두 SIMPLE 로 구성되어 있다.
@@ -164,21 +164,21 @@ GROUP BY series.id
 <br>
 즉, 1번 쿼리가 내부적으로 병합되어 2번과 같이 처리되었다는 걸 의미한다.
 
-<pre><code>1. <b>SELECT * FROM (</b>
-	SELECT series.title AS series_title, book.title AS book_title, 
-		library_item.expire_date AS expire_date FROM book 
-	JOIN series_member ON series_member.book_id = book.id
-	JOIN series ON series_member.series_id = series.id
-	JOIN library_item ON library_item.book_id = book.id
-	ORDER BY expire_date
-<b>) sub GROUP BY sub.series_id;</b>
-2. SELECT series.title AS series_title, book.title AS book_title,
-	library_item.expire_date AS expire_date FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series On series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-<b>GROUP BY</b> series.id 
-ORDER BY expire_date;
+<pre><code>1. <b><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (</b>
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+	<span style="color:#196b9f">ORDER BY</span> expire_date
+<b>) sub <span style="color:#196b9f">GROUP BY</span> sub.series_id;</b>
+2. <span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title,
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series On series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<b><span style="color:#196b9f">GROUP BY</span></b> series.id 
+<span style="color:#196b9f">ORDER BY</span> expire_date;
 </code></pre>
 
 그러나 나는 병합을 하고 싶지 않다. 서브 쿼리에서 만들어졌던 순서를 유지한 채로 GROUP BY 를 적용하고 싶기 때문이다. 그렇다면 어떻게 해야 할까? 두 가지 방법이 있다. 
@@ -189,15 +189,15 @@ ORDER BY expire_date;
 <br>
 나는 2번 방식으로 결정했다. 서브 쿼리 내에 Limit 을 걸어주면, 병합이 불가능하게 되어 가상 테이블을 생성하고, 가상 테이블 내에서 order by 의 순서가 보장될테니까 말이다.
 
-<pre><code>SELECT * FROM (
-	SELECT series.title AS series_title, book.title AS book_title, 
-		library_item.expire_date AS expire_date FROM book 
-	JOIN series_member ON series_member.book_id = book.id
-	JOIN series ON series_member.series_id = series.id
-	JOIN library_item ON library_item.book_id = book.id
-	ORDER BY expire_date 
-	<b>LIMIT 2147483647</b>
-) sub GROUP BY sub.series_id;
+<pre><code><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+	<span style="color:#196b9f">ORDER BY</span> expire_date 
+	<b><span style="color:#196b9f">LIMIT</span> 2147483647</b>
+) sub <span style="color:#196b9f">GROUP BY</span> sub.series_id;
 </code></pre>
 
 → expire_date 와 book_title 이 모두 달빛조각사 2권의 데이터로 변경된 걸 확인할 수 있다!
@@ -207,16 +207,16 @@ ORDER BY expire_date;
 <br>
 
 실행 계획 또한 확인해보면 DERIVED, 가상 테이블을 생성함을 알 수 있다.
-<pre><code><b>EXPLAIN</b> SELECT * FROM 
+<pre><code><b><span style="color:#196b9f">EXPLAIN</span></b> <span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> 
 	(
-	SELECT series.title AS series_title, book.title AS book_title, 
-		library_item.expire_date AS expire_date FROM book 
-	JOIN series_member ON series_member.book_id = book.id
-	JOIN series ON series_member.series_id = series.id
-	JOIN library_item ON library_item.book_id = book.id
-	ORDER BY expire_date 
-	LIMIT 2147483647
-) sub GROUP BY sub.series_id;
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+	<span style="color:#196b9f">ORDER BY</span> expire_date 
+	<span style="color:#196b9f">LIMIT</span> 2147483647
+) sub <span style="color:#196b9f">GROUP BY</span> sub.series_id;
 </code></pre>
 
 → select_type 이 DERIVED 로 변경되었다!
@@ -264,22 +264,22 @@ ORDER BY expire_date;
 
 자, 그러면 쿼리를 통해 '만료될 책 중에, 가장 빨리 만료될 시간' 을 찾아보자.
 
-<pre><code>SELECT <b>MIN(library_item.expire_date) AS expire_date</b> FROM book 
-	JOIN series_member ON series_member.book_id = book.id
-	JOIN series on series_member.series_id = series.id
-	JOIN library_item ON library_item.book_id = book.id
-WHERE <b>expire_date > NOW()</b>
-GROUP BY series.id;
+<pre><code><span style="color:#196b9f">SELECT</span> <b><span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+	<span style="color:#196b9f">JOIN</span> series on series_member.series_id = series.id
+	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">WHERE</span> <b>expire_date > <span style="color:#d23255">NOW</span>()</b>
+<span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
 
 '만료될 책 중에, 가장 빨리 만료될 시간' 이 없다면, '만료된 책 중에, 가장 늦게 만료된 시간'을 아래 쿼리로 돌려주도록 만들면 될 것 같다.
 
-<pre><code>SELECT <b>MAX(library_item.expire_date) AS expire_date</b> FROM book 
-	JOIN series_member ON series_member.book_id = book.id
-	JOIN series on series_member.series_id = series.id
-	JOIN library_item ON library_item.book_id = book.id
-WHERE <b>expire_date < NOW()</b>
-GROUP BY series.id;
+<pre><code><span style="color:#196b9f">SELECT</span> <b><span style="color:#d23255">MAX</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+	<span style="color:#196b9f">JOIN</span> series on series_member.series_id = series.id
+	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">WHERE</span> <b>expire_date < <span style="color:#d23255">NOW</span>()</b>
+<span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
 
 고작 이 정도인가? 시시해서 죽고 싶어졌다.
@@ -307,13 +307,13 @@ GROUP BY series.id;
 
 그러면 이제 서비스 타입을 포함시켜서 조회해보자.
 
-<pre><code>SELECT series.title AS series_title, book.title AS book_title,
-	library_item.expire_date AS expire_date, 
-	<b>library_item.service_type AS service_type</b> FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-JOIN user ON library_item.user_id = user.id;
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title,
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date, 
+	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">JOIN</span> user <span style="color:#196b9f">ON</span> library_item.user_id = user.id;
 </code></pre>
 
 → 정상적으로 조회된다. 여기서 <span style="color:purple">'달빛조각사 1권'</span>의 서비스 타입은 <span style="color:purple">0(일반 서점)</span>, <span style="color:orange">'달빛조각사 2권'</span>의 서비스 타입은 <span style="color:orange">1(리디 셀렉트)</span>로 구매했다는 것에 유념하자.
@@ -324,15 +324,15 @@ JOIN user ON library_item.user_id = user.id;
 
 자 그러면, 만료기간을 보여달라는 요구사항을 유지한 채로 시리즈 별로 묶어서 내려주자.
 
-<pre><code>SELECT series.title AS title, 
-	MIN(library_item.expire_date) AS expire_date, 
-	<b>library_item.service_type AS service_type</b> FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-JOIN user ON library_item.user_id = user.id 
-WHERE expire_date > NOW() 
-GROUP BY series.id;
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> title, 
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date, 
+	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">JOIN</span> user <span style="color:#196b9f">ON</span> library_item.user_id = user.id 
+<span style="color:#196b9f">WHERE</span> expire_date > <span style="color:#d23255">NOW</span>() 
+<span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
 
 → 그런데, 결과값이 이상하다. 뭐가 이상한지 보이는가?
@@ -350,14 +350,14 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 
 자, 그러면 만료 기간 요구사항을 충족하는 series_id 와 expire_date 를 구해보자.
 
-<pre><code>SELECT <b>series.id AS series_id,</b>
-	series.title AS title,
-	<b>MIN(library_item.expire_date) AS expire_date</b> FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-WHERE expire_date > NOW() 
-GROUP BY series.id;
+<pre><code><span style="color:#196b9f">SELECT</span> <b>series.id <span style="color:#196b9f">AS</span> series_id,</b>
+	series.title <span style="color:#196b9f">AS</span> title,
+	<b><span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">WHERE</span> expire_date > <span style="color:#d23255">NOW</span>() 
+<span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
 
 → <span style="color:orange">18:25, 달빛조각사 2권</span>을 가져온 걸 알 수 있다. 
@@ -366,13 +366,13 @@ GROUP BY series.id;
 
 그리고 이 series_id 와 expire_date 를 가지고 있는 library_item 을 찾아서 service_type 을 알아내자!
 
-<pre><code>SELECT book.title AS book_title, 
-	<b>library_item.service_type AS service_type</b> FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id 
-WHERE <b>series_id = 1 AND expire_date="2020-06-11 18:25:22"</b> 
-GROUP BY series.id;
+<pre><code><span style="color:#196b9f">SELECT</span> book.title <span style="color:#196b9f">AS</span> book_title, 
+	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id 
+<span style="color:#196b9f">WHERE</span> <b>series_id = 1 <span style="color:#946f44">AND</span> expire_date="2020-06-11 18:25:22"</b> 
+<span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
 
 → <span style="color:orange">service_type이 1인 달빛조각사 2권</span>을 가져왔다.
@@ -383,14 +383,14 @@ GROUP BY series.id;
 
 이렇게 데이터 후보정을 통해 올바른 서비스 타입을 내려주는 걸 성공했다. 그러면 이제 서비스타입에 따른 필터도 넣어주자. 방법은 간단하다. 첫번째 쿼리에 where 절을 추가하면 된다. <span style="color:purple">service_type 이 0</span>인 책만 조회하고 싶다고 해보자.
 
-<pre><code>SELECT series.id AS series_id, 
-	series.title AS title,
-	MIN(library_item.expire_date) AS expire_date FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-WHERE expire_date > NOW() AND <b>service_type = 0</b>
-GROUP BY series.id;
+<pre><code><span style="color:#196b9f">SELECT</span> series.id <span style="color:#196b9f">AS</span> series_id, 
+	series.title <span style="color:#196b9f">AS</span> title,
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">WHERE</span> expire_date > <span style="color:#d23255">NOW</span>() <span style="color:#946f44">AND</span> <b>service_type = 0</b>
+<span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
 
 → <span style="color:purple">service_type이 0인 '달빛조각사 1권'</span>의 expire_date 를 가져오게 되었다. 그러면 두번째 쿼리에서 찾을 때, expire_date 를 이용해 service_type 을 보정할 수 있게 된다.
@@ -441,17 +441,17 @@ GROUP BY series.id;
 
 이제 테이블을 조인해서 데이터를 조회해보자!
 
-<pre><code>SELECT series.id AS series_id, 
-	<b>category.name AS category_name,
-	book.author AS author,</b>
-	series.title AS title,
-	MIN(library_item.expire_date) AS expire_date FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-<b>JOIN category ON book.category_id = category.id</b>
-WHERE expire_date > NOW()
-GROUP BY series.id;
+<pre><code><span style="color:#196b9f">SELECT</span> series.id <span style="color:#196b9f">AS</span> series_id, 
+	<b>category.name <span style="color:#196b9f">AS</span> category_name,
+	book.author <span style="color:#196b9f">AS</span> author,</b>
+	series.title <span style="color:#196b9f">AS</span> title,
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<b><span style="color:#196b9f">JOIN</span> category <span style="color:#196b9f">ON</span> book.category_id = category.id</b>
+<span style="color:#196b9f">WHERE</span> expire_date > <span style="color:#d23255">NOW</span>()
+<span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
 
 → 잘 나온다.
@@ -462,19 +462,19 @@ GROUP BY series.id;
 
 그러면 이제 작가순, 제목순 정렬을 넣어주자! 방법은 간단하다. 쿼리에 ORDER BY 절만 추가하면 된다.
 
-<pre><code>SELECT series.id AS series_id, 
-	<b>category.name AS category_name,
-	book.author AS author,</b>
-	series.title AS title,
-	MIN(library_item.expire_date) AS expire_date FROM book 
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-<b>JOIN category ON book.category_id = category.id</b>
-JOIN user ON library_item.user_id = user.id 
-WHERE expire_date > NOW()
-GROUP BY series.id 
-<b>ORDER BY series.title</b>;
+<pre><code><span style="color:#196b9f">SELECT</span> series.id <span style="color:#196b9f">AS</span> series_id, 
+	<b>category.name <span style="color:#196b9f">AS</span> category_name,
+	book.author <span style="color:#196b9f">AS</span> author,</b>
+	series.title <span style="color:#196b9f">AS</span> title,
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<b><span style="color:#196b9f">JOIN</span> category <span style="color:#196b9f">ON</span> book.category_id = category.id</b>
+<span style="color:#196b9f">JOIN</span> user <span style="color:#196b9f">ON</span> library_item.user_id = user.id 
+<span style="color:#196b9f">WHERE</span> expire_date > <span style="color:#d23255">NOW</span>()
+<span style="color:#196b9f">GROUP BY</span> series.id 
+<b><span style="color:#196b9f">ORDER BY</span> series.title</b>;
 </code></pre>
 
 → 시리즈 별로 묶인 데이터가 제목 순으로 데이터가 내려오고 있다. 
@@ -504,19 +504,19 @@ GROUP BY series.id
 
 예를 들어서 user_id 가 3인 유저가 category_id=3 인 책들에 대해 제목순으로 정렬해서 책을 조회한다면, 
 
-<pre><code>SELECT series.id AS series_id, 
-	category.name AS category_name,
-	book.author AS author,
-	series.title AS title,
-	MIN(library_item.expire_date) AS expire_date FROM book
-JOIN series_member ON series_member.book_id = book.id
-JOIN series ON series_member.series_id = series.id
-JOIN library_item ON library_item.book_id = book.id
-JOIN category ON book.category_id = category.id
-JOIN user ON library_item.user_id = user.id 
-WHERE expire_date > NOW() AND user.id = 3 AND category_id = 3
-GROUP BY series.id 
-ORDER BY series.title;
+<pre><code><span style="color:#196b9f">SELECT</span> series.id <span style="color:#196b9f">AS</span> series_id, 
+	category.name <span style="color:#196b9f">AS</span> category_name,
+	book.author <span style="color:#196b9f">AS</span> author,
+	series.title <span style="color:#196b9f">AS</span> title,
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">JOIN</span> category <span style="color:#196b9f">ON</span> book.category_id = category.id
+<span style="color:#196b9f">JOIN</span> user <span style="color:#196b9f">ON</span> library_item.user_id = user.id 
+<span style="color:#196b9f">WHERE</span> expire_date > <span style="color:#d23255">NOW</span>() <span style="color:#946f44">AND</span> user.id = 3 <span style="color:#946f44">AND</span> category_id = 3
+<span style="color:#196b9f">GROUP BY</span> series.id 
+<span style="color:#196b9f">ORDER BY</span> series.title;
 </code></pre>
 
 → 소요되는 시간이 무려 **7.97s 가 걸린다!** 서비스가 불가능한 수준이다. (실제로 2000만건을 넣고 돌린 결과)
@@ -535,20 +535,20 @@ ORDER BY series.title;
 
 이 테이블에 다른 테이블들의 데이터를 모아서 넣어보자. 
 
-<pre><code><b>INSERT INTO combined_library_item</b>
- (book_id, user_id, category_id, series_id, service_type, 
+<pre><code><b><span style="color:#196b9f">INSERT INTO</span> combined_library_item</b>
+ 	(book_id, user_id, category_id, series_id, service_type, 
 	expire_date, book_title, series_title, book_author) 
-SELECT book.id AS book_id, user.id AS user_id, 
-			 category.id AS category_id, series.id AS series_id,
-			 library_item.service_type AS service_type, 
-			 library_item.expire_date AS expire_date,
-		 	 book.title AS book_title, series.title as series_title,
-       book.author AS book_author FROM book 
-	JOIN series_member ON series_member.book_id = book.id
-	JOIN series ON series_member.series_id = series.id
-	JOIN library_item ON library_item.book_id = book.id
-  JOIN category ON book.category_id = category.id
-	JOIN user ON library_item.user_id = user.id
+<span style="color:#196b9f">SELECT</span> book.id <span style="color:#196b9f">AS</span> book_id, user.id <span style="color:#196b9f">AS</span> user_id, 
+	category.id <span style="color:#196b9f">AS</span> category_id, series.id <span style="color:#196b9f">AS</span> series_id,
+	library_item.service_type <span style="color:#196b9f">AS</span> service_type, 
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date,
+	book.title <span style="color:#196b9f">AS</span> book_title, series.title as series_title,
+	book.author <span style="color:#196b9f">AS</span> book_author <span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<span style="color:#196b9f">JOIN</span> category <span style="color:#196b9f">ON</span> book.category_id = category.id
+<span style="color:#196b9f">JOIN</span> user <span style="color:#196b9f">ON</span> library_item.user_id = user.id
 ;
 </code></pre>
 
@@ -560,10 +560,10 @@ SELECT book.id AS book_id, user.id AS user_id,
 
 이전에 진행했던 쿼리를 역정규화 테이블에 실행해보자.
 
-<pre><code>SELECT * FROM <b>combined_library_item</b>
-WHERE expire_date > NOW() AND user_id = 3 AND category_id = 3
-GROUP BY series_id 
-ORDER BY series_title;
+<pre><code><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> <b>combined_library_item</b>
+<span style="color:#196b9f">WHERE</span> expire_date > <span style="color:#d23255">NOW</span>() <span style="color:#946f44">AND</span> user_id = 3 <span style="color:#946f44">AND</span> category_id = 3
+<span style="color:#196b9f"><span style="color:#196b9f">GROUP BY</span></span> series_id 
+<span style="color:#196b9f">ORDER BY</span> series_title;
 </code></pre>
 
 → 0.16s 로 엄청나게 빠른 성능 향상이 있었다. 이 정도면.. 도내 랭크 상위급... 아니 최상위급도 노려볼 수 있겠는걸...?
