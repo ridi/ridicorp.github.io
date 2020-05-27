@@ -1,7 +1,7 @@
 ---
 layout: blog_post
-title: "Re: 내서재로 시작하는 이세계 개발"
-description: "리디에 갔다가 돌아오는 길에 갑자기 내서재로 소환된 개발자. 이건 유행 중인 이세계 개발인가?!"
+title: "Re: 내 서재로 시작하는 이세계 개발"
+description: "리디에 갔다가 돌아오는 길에 갑자기 내 서재로 소환된 개발자. 이건 유행 중인 이세계 개발인가?!"
 header-img: "blog/img/bg-4.jpg"
 date: 2020-05-12
 author: hyunjoon.park
@@ -9,13 +9,13 @@ category: engineering
 published: true
 ---
 
-리디 계정팀에서는 유저가 구매한 책을 조회할 수 있는 [내서재] 라는 서비스를 운영하고 있습니다. [내서재]를 개발하면서 여러 요구사항 변화들이 있었습니다. 이에 대응해 개발하던 중 RDBMS와 관련해 문제들이 발생했습니다. 그 문제들을 서브 쿼리, 데이터 후보정, 역정규화 등을 이용해 해결했습니다. 이번 글에서는 위와 같이 내서재를 개발하면서 겪은 문제, 그리고 해결방법에 대해 이야기 해드리고자 합니다. 
+리디 계정팀에서는 유저가 구매한 책을 조회할 수 있는 [내 서재] 라는 서비스를 운영하고 있습니다. [내 서재]를 개발하면서 여러 요구사항 변화들이 있었습니다. 이에 대응해 개발하던 중 RDBMS와 관련해 문제들이 발생했습니다. 그 문제들을 서브 쿼리, 데이터 후보정, 역정규화 등을 이용해 해결했습니다. 이번 글에서는 위와 같이 [내 서재]를 개발하면서 겪은 문제, 그리고 해결방법에 대해 이야기 해드리고자 합니다. 
 
 그럼, 시작하겠습니다! 
 
 ## 내가 리디의 개발자라니 절대 무리!
 
-나는 리디에 막 입사한 개발자(리발자). 입사하자마자 새로운 업무를 맡았다. 유저가 구매한 책을 [내서재]에서 보여줘야 한다. 딱히 어려운 문제는 없을 것 같다고 생각하는 순간, 옆에서 PM이 말을 걸어 온다.
+나는 리디에 막 입사한 개발자(리발자). 입사하자마자 새로운 업무를 맡았다. 유저가 구매한 책을 [내 서재]에서 보여줘야 한다. 딱히 어려운 문제는 없을 것 같다고 생각하는 순간, 옆에서 PM이 말을 걸어 온다.
 
 PM👨‍⚖️ : 리발자님! 리디에 오신 걸 환영합니다! 저희 리디에는 리디북스라는 한국의 전자책 서비스가 있습니다. 안드로이드, iOS, Windows, macOS를 지원하는 전자책 서비스 앱이 있으며 자체 전자책 리더도 출시한 걸 아시나요? 흠흠.. 소개는 이 정도만 하고, 개발을 진행하시기 전에 간단한 퀴즈를 하나 풀어보고 가는 게 좋을 것 같아서 찾아왔습니다! 아래 퀴즈를 한 번 풀어보시겠어요?
 
@@ -35,11 +35,11 @@ PM👨‍⚖️ : 정답은 총 11권입니다!
 
 연재 도서같은 시리즈 책의 경우, 여러 권의 책을 하나의 표지로 묶어서 보여주고 있습니다. 따라서 [약탈혼]은 3권, [SSS급 촉수괴물이 지능을 얻음!]이 3권 있어서 실제로는 총 11권이 있습니다. 즉, 시리즈의 경우 실제로는 여러 책이 존재하지만 묶어서 하나의 도서만 보여주도록 만들어야 합니다.
 
-이 요구사항을 염두해두시면서 [내서재] 를 개발해주세요!
+이 요구사항을 염두해두시면서 [내 서재] 를 개발해주세요!
 <br>
 
 ### 🎯New Quest
-- 유저가 구매한 책을 조회할 수 있는 [내서재] 서비스를 개발해주세요.
+- 유저가 구매한 책을 조회할 수 있는 [내 서재] 서비스를 개발해주세요.
 - 연재 도서같은 시리즈 책의 경우 묶어서 하나로 보여주세요.
 
 <br>
@@ -50,9 +50,9 @@ PM👨‍⚖️ : 정답은 총 11권입니다!
 
 ## 개발중입니다만, 문제 있나요?
 
-리발자는 입사 이후 증정되는 최고 사양의 업무 장비 및 유료 소프트웨어를 지급받고 자리로 향했다. 그는 사용자의 체형 및 자세 변화에 따라 적절한 높이로 목과 머리를 편안하게 하는 의자에 앉아 [내서재]를 개발하기 위해 필요한 모델들을 생각해보기로 했다.
+리발자는 입사 이후 증정되는 최고 사양의 업무 장비 및 유료 소프트웨어를 지급받고 자리로 향했다. 그는 사용자의 체형 및 자세 변화에 따라 적절한 높이로 목과 머리를 편안하게 하는 의자에 앉아 [내 서재]를 개발하기 위해 필요한 모델들을 생각해보기로 했다.
 
-[내서재]를 만들기 위해서는 책, 시리즈, 유저, 구매이력이 필요하다.
+[내 서재]를 만들기 위해서는 책, 시리즈, 유저, 구매이력이 필요하다.
 
 1. 책: 책 제목, 정보, 이미지 등 책 정보가 담겨져있는 모델
 2. 시리즈 : 여러 책을 하나로 묶어주기 위해 필요한 모델
@@ -65,8 +65,10 @@ PM👨‍⚖️ : 정답은 총 11권입니다!
 
 위의 테이블을 이용하면 유저가 구매한 책의 정보들을 추출할 수 있다. 각 테이블을 조인해서 아래와 같이 쿼리를 날려보자.
 
-<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
-	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+	book.title <span style="color:#196b9f">AS</span> book_title, 
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id;
@@ -78,8 +80,10 @@ PM👨‍⚖️ : 정답은 총 11권입니다!
 
 시리즈 별로 책을 묶어서 보여주기로 했으니까, GROUP BY를 이용해서 묶어서 보여주자.
 
-<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
-	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f"><span style="color:#196b9f">FROM</span></span> book 
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+	book.title <span style="color:#196b9f">AS</span> book_title, 
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">
+<span style="color:#196b9f">FROM</span></span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -106,8 +110,10 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 やれやれ(야레야레)... 새로운 요구 사항인가. 나는 order by를 추가해보기로 했다.
 
-<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
-	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+	book.title <span style="color:#196b9f">AS</span> book_title, 
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -126,9 +132,12 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 쿼리는 GROUP BY → ORDER BY 순으로 실행되기 때문이다. 즉, 그룹핑을 해버린 이후에 정렬을 하기 때문이다. 정렬 이후에 그룹핑을 하고 싶은 경우라면, 서브 쿼리를 이용해서 해결해야 한다. 따라서 쿼리를 아래처럼 바꾼다. 
 
-<pre><code><b><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (</b>
-	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
-		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<pre><code><b><span style="color:#196b9f">SELECT</span> * 
+<span style="color:#196b9f">FROM</span> (</b>
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+		book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date 
+	<span style="color:#196b9f">FROM</span> book 
 	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -148,9 +157,12 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 <br>
 실행 계획을 확인해보면, SELECT 타입을 통해 결과값을 얻는 것으로 보아 가상 테이블을 생성하지 않고 병합되었다는 걸 다시 한 번 확인할 수 있었다.
 
-<pre><code><b><span style="color:#196b9f">EXPLAIN</span></b> <span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (
-	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
-		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<pre><code><b><span style="color:#196b9f">EXPLAIN</span></b> <span style="color:#196b9f">SELECT</span> * 
+<span style="color:#196b9f">FROM</span> (
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+		book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date 
+	<span style="color:#196b9f">FROM</span> book 
 	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -164,16 +176,24 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 <br>
 즉, 1번 쿼리가 내부적으로 병합되어 2번과 같이 처리되었다는 걸 의미한다.
 
-<pre><code>1. <b><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (</b>
-	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
-		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<pre><code>1. 
+<b><span style="color:#196b9f">SELECT</span> * 
+<span style="color:#196b9f">FROM</span> (</b>
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+		book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date 
+	<span style="color:#196b9f">FROM</span> book 
 	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
 	<span style="color:#196b9f">ORDER BY</span> expire_date
 <b>) sub <span style="color:#196b9f">GROUP BY</span> sub.series_id;</b>
-2. <span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title,
-	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+
+2. 
+<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+	book.title <span style="color:#196b9f">AS</span> book_title,
+	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series On series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -189,9 +209,12 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 <br>
 나는 2번 방식으로 결정했다. 서브 쿼리 내에 Limit 을 걸어주면, 병합이 불가능하게 되어 가상 테이블을 생성하고, 가상 테이블 내에서 order by 의 순서가 보장될테니까 말이다.
 
-<pre><code><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> (
-	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
-		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<pre><code><span style="color:#196b9f">SELECT</span> * 
+<span style="color:#196b9f">FROM</span> (
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+		book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date 
+	<span style="color:#196b9f">FROM</span> book 
 	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -207,10 +230,12 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 <br>
 
 실행 계획 또한 확인해보면 DERIVED, 가상 테이블을 생성함을 알 수 있다.
-<pre><code><b><span style="color:#196b9f">EXPLAIN</span></b> <span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> 
-	(
-	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title, 
-		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+<pre><code><b><span style="color:#196b9f">EXPLAIN</span></b> <span style="color:#196b9f">SELECT</span> * 
+<span style="color:#196b9f">FROM</span> (
+	<span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+		book.title <span style="color:#196b9f">AS</span> book_title, 
+		library_item.expire_date <span style="color:#196b9f">AS</span> expire_date 
+	<span style="color:#196b9f">FROM</span> book 
 	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 	<span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -228,7 +253,7 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 ### 🔮Quest Complete
 
-- 유저가 구매한 책을 조회할 수 있는 [내서재] 서비스를 개발해주세요. 
+- 유저가 구매한 책을 조회할 수 있는 [내 서재] 서비스를 개발해주세요. 
 	- book, series, sereis_member, user, library_item 등의 테이블을 조인했다.
 - 연재 도서같은 시리즈 책의 경우 묶어서 하나로 보여주세요.
     - series.id로 GROUP BY 했다.
@@ -238,7 +263,7 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 ## 데이터 보정? 그거 어떻게 하는건데
 
-잠시 뒷짐을 지고 만들어놓은 [내서재] 서비스를 보면서 흐뭇하게 웃음짓던 도중 리발자는 갑자기 귓가에 들려오는 날카로운 휘파람 소리에 소리가 들려오는 쪽으로 시선을 돌렸다.
+잠시 뒷짐을 지고 만들어놓은 [내 서재] 서비스를 보면서 흐뭇하게 웃음짓던 도중 리발자는 갑자기 귓가에 들려오는 날카로운 휘파람 소리에 소리가 들려오는 쪽으로 시선을 돌렸다.
 
 두두두두두-! 
 
@@ -264,20 +289,22 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 자, 그러면 쿼리를 통해 '만료될 책 중에, 가장 빨리 만료될 시간' 을 찾아보자.
 
-<pre><code><span style="color:#196b9f">SELECT</span> <b><span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> <span style="color:#196b9f">FROM</span> book 
-	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
-	<span style="color:#196b9f">JOIN</span> series on series_member.series_id = series.id
-	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<pre><code><span style="color:#196b9f">SELECT</span> <b><span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> 
+<span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series on series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
 <span style="color:#196b9f">WHERE</span> <b>expire_date > <span style="color:#d23255">NOW</span>()</b>
 <span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
 
 '만료될 책 중에, 가장 빨리 만료될 시간' 이 없다면, '만료된 책 중에, 가장 늦게 만료된 시간'을 아래 쿼리로 돌려주도록 만들면 될 것 같다.
 
-<pre><code><span style="color:#196b9f">SELECT</span> <b><span style="color:#d23255">MAX</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> <span style="color:#196b9f">FROM</span> book 
-	<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
-	<span style="color:#196b9f">JOIN</span> series on series_member.series_id = series.id
-	<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
+<pre><code><span style="color:#196b9f">SELECT</span> <b><span style="color:#d23255">MAX</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> 
+<span style="color:#196b9f">FROM</span> book 
+<span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
+<span style="color:#196b9f">JOIN</span> series on series_member.series_id = series.id
+<span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
 <span style="color:#196b9f">WHERE</span> <b>expire_date < <span style="color:#d23255">NOW</span>()</b>
 <span style="color:#196b9f">GROUP BY</span> series.id;
 </code></pre>
@@ -288,7 +315,7 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 <br>
 
-👨‍⚖️PM: 리발자님. 좋은 소식을 알려드리려 왔습니다! ^^ 이제 [리디셀렉트]라는 서비스를 런칭해보려고 합니다! [리디셀렉트]란 이번에 새롭게 런칭한 전자책 월정액 서비스입니다! 매월 6,500 원을 내면 수많은 베스트셀러를 무제한으로 볼 수 있는 그야말로 독자들의 천국 같은 서비스죠! 흠흠.. 아무튼!  [내서재]에서 [리디셀렉트]의 책인지, 기존 상점으로 서비스하고 있는 책인지 알려주시고, 서비스에 따라 조회할 수 있도록 필터를 추가해주세요! 넣어주실 수 있죠?
+👨‍⚖️PM: 리발자님. 좋은 소식을 알려드리려 왔습니다! ^^ 이제 [리디셀렉트]라는 서비스를 런칭해보려고 합니다! [리디셀렉트]란 이번에 새롭게 런칭한 전자책 월정액 서비스입니다! 매월 6,500 원을 내면 수많은 베스트셀러를 무제한으로 볼 수 있는 그야말로 독자들의 천국 같은 서비스죠! 흠흠.. 아무튼!  [내 서재]에서 [리디셀렉트]의 책인지, 기존 상점으로 서비스하고 있는 책인지 알려주시고, 서비스에 따라 조회할 수 있도록 필터를 추가해주세요! 넣어주실 수 있죠?
 
 ### 🎯New Quest
 
@@ -307,9 +334,11 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 그러면 이제 서비스 타입을 포함시켜서 조회해보자.
 
-<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, book.title <span style="color:#196b9f">AS</span> book_title,
+<pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> series_title, 
+	book.title <span style="color:#196b9f">AS</span> book_title,
 	library_item.expire_date <span style="color:#196b9f">AS</span> expire_date, 
-	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> <span style="color:#196b9f">FROM</span> book 
+	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -326,7 +355,8 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 <pre><code><span style="color:#196b9f">SELECT</span> series.title <span style="color:#196b9f">AS</span> title, 
 	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date, 
-	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> <span style="color:#196b9f">FROM</span> book 
+	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -352,7 +382,8 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 
 <pre><code><span style="color:#196b9f">SELECT</span> <b>series.id <span style="color:#196b9f">AS</span> series_id,</b>
 	series.title <span style="color:#196b9f">AS</span> title,
-	<b><span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> <span style="color:#196b9f">FROM</span> book 
+	<b><span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date</b> 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -367,7 +398,8 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 그리고 이 series_id 와 expire_date 를 가지고 있는 library_item 을 찾아서 service_type 을 알아내자!
 
 <pre><code><span style="color:#196b9f">SELECT</span> book.title <span style="color:#196b9f">AS</span> book_title, 
-	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> <span style="color:#196b9f">FROM</span> book 
+	<b>library_item.service_type <span style="color:#196b9f">AS</span> service_type</b> 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id 
@@ -385,7 +417,8 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 
 <pre><code><span style="color:#196b9f">SELECT</span> series.id <span style="color:#196b9f">AS</span> series_id, 
 	series.title <span style="color:#196b9f">AS</span> title,
-	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -445,7 +478,8 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 	<b>category.name <span style="color:#196b9f">AS</span> category_name,
 	book.author <span style="color:#196b9f">AS</span> author,</b>
 	series.title <span style="color:#196b9f">AS</span> title,
-	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -466,7 +500,8 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 	<b>category.name <span style="color:#196b9f">AS</span> category_name,
 	book.author <span style="color:#196b9f">AS</span> author,</b>
 	series.title <span style="color:#196b9f">AS</span> title,
-	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book 
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date 
+<span style="color:#196b9f">FROM</span> book 
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -487,7 +522,7 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 
 <br> 
 
-👨‍⚖️ PM: 축하드려요 리발자님!!!! [내서재]가 무럭무럭 성장해 책 2700만 권, 구매목록 2000만개 이상을 달성했습니다!!! 저희 둘 다 연말 보너스는 따 놓은 당상이에요! 그런데.... 너무 느리다는 고객들의 문의 사항이 자주 오고 있습니다 ㅠㅠ API 응답 시간을 낮출 방법이 없을까요?? 300ms 까지는 내려주셔야 합니다!!
+👨‍⚖️ PM: 축하드려요 리발자님!!!! [내 서재]가 무럭무럭 성장해 책 2700만 권, 구매 목록 2000만개 이상을 달성했습니다!!! 저희 둘 다 연말 보너스는 따 놓은 당상이에요! 그런데.... 너무 느리다는 고객들의 문의 사항이 자주 오고 있습니다 ㅠㅠ API 응답 시간을 낮출 방법이 없을까요?? 300ms 까지는 내려주셔야 합니다!!
 
 ### 🎯New Quest
 
@@ -508,7 +543,8 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 	category.name <span style="color:#196b9f">AS</span> category_name,
 	book.author <span style="color:#196b9f">AS</span> author,
 	series.title <span style="color:#196b9f">AS</span> title,
-	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date <span style="color:#196b9f">FROM</span> book
+	<span style="color:#d23255">MIN</span>(library_item.expire_date) <span style="color:#196b9f">AS</span> expire_date 
+<span style="color:#196b9f">FROM</span> book
 <span style="color:#196b9f">JOIN</span> series_member <span style="color:#196b9f">ON</span> series_member.book_id = book.id
 <span style="color:#196b9f">JOIN</span> series <span style="color:#196b9f">ON</span> series_member.series_id = series.id
 <span style="color:#196b9f">JOIN</span> library_item <span style="color:#196b9f">ON</span> library_item.book_id = book.id
@@ -560,7 +596,8 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 
 이전에 진행했던 쿼리를 역정규화 테이블에 실행해보자.
 
-<pre><code><span style="color:#196b9f">SELECT</span> * <span style="color:#196b9f">FROM</span> <b>combined_library_item</b>
+<pre><code><span style="color:#196b9f">SELECT</span> * 
+<span style="color:#196b9f">FROM</span> <b>combined_library_item</b>
 <span style="color:#196b9f">WHERE</span> expire_date > <span style="color:#d23255">NOW</span>() <span style="color:#946f44">AND</span> user_id = 3 <span style="color:#946f44">AND</span> category_id = 3
 <span style="color:#196b9f"><span style="color:#196b9f">GROUP BY</span></span> series_id 
 <span style="color:#196b9f">ORDER BY</span> series_title;
@@ -584,7 +621,7 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 
 "리디를 향해라아아아아!!"
 
-수많은 유저들은 오늘도 리디를 향하고 있다. 그에 따라 발생하는 수없이 많은 문제들을 PM과 리발자는 합을 맞춰 해결해나가고 있다. 초기에는 [내서재]를 기획했던 방향과 다르게 수많은 요구사항이 발생했다. 리디에서는 제품을 기획하면서 끊임없이 고객의 소리를 들으며 발전시켜나갔다. 고객의 니즈를 파악하며 우선순위에 따라 서비스를 확장시켜나갔다.
+수많은 유저들은 오늘도 리디를 향하고 있다. 그에 따라 발생하는 수없이 많은 문제들을 PM과 리발자는 합을 맞춰 해결해나가고 있다. 초기에는 [내 서재]를 기획했던 방향과 다르게 수많은 요구사항이 발생했다. 리디에서는 제품을 기획하면서 끊임없이 고객의 소리를 들으며 발전시켜나갔다. 고객의 니즈를 파악하며 우선순위에 따라 서비스를 확장시켜나갔다.
 
 서비스를 확장함에 따라 개발 부문에서는 다양한 문제들이 생긴다. 글에서 언급한 서브 쿼리, 데이터 후보정, 역정규화 외에도 서비스 자동화, 규모 확장, 동시성 처리 등의 새로운 난관들에 부딪치곤 한다. 그렇지만 리발자는 포기하지 않는다. 문제 상황을 파악하고, 방법을 찾아내 이내 해결하고 있다. 또한 보다 나은 개발 환경을 만들기 위하여, 우리가 겪었던 다양한 문제들과 해결 과정 및 개발 문화를 공유하고 있다. 수많은 문제를 겪고 해결해나가며 어느새 눈에 띄게 성장한 리발자는 고개를 돌리며 나에게 말했다.
 
