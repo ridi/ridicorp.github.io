@@ -1,7 +1,7 @@
 ---
 layout: blog_post
-title: "Re: 내 서재로 시작하는 이세계 개발"
-description: "리디에 갔다가 돌아오는 길에 갑자기 내 서재로 소환된 개발자. 이건 유행 중인 이세계 개발인가?!"
+title: "개발했더니 내 서재였던 건에 대하여"
+description: "길거리에서 난데없이 정신을 잃은 25살의 나이스 가이. 정신을 차리고 자신의 몸을 확인해보니, 개발자가 되어버렸다!"
 header-img: "blog/img/bg-4.jpg"
 date: 2020-05-12
 author: hyunjoon.park
