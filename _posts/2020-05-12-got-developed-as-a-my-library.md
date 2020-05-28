@@ -608,7 +608,7 @@ MIN(expire_date) 으로 선택한 값이 <span style="color:orange">18:25분</sp
 ![query-result-14](/blog/img/2020-05-12/query-result-14.png)
  
 
-이로써 역정규화를 통해 13.68s 에서 0.16s로 비약적인 속도 향상을 시킬 수 있었다. 
+이로써 역정규화를 통해 7.97s 에서 0.16s로 비약적인 속도 향상을 시킬 수 있었다. 
 
 ### 🔮Quest Complete
 
