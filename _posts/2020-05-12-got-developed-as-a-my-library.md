@@ -149,7 +149,7 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 ![query-result-4](/blog/img/2020-05-12/query-result-4.png)
 
-그 이유는 바로 MySql Optimizer에서 내부적으로 파생 테이블을 병합해버리기 때문이었다.
+그 이유는 바로 MySQL Optimizer에서 내부적으로 파생 테이블을 병합해버리기 때문이었다.
 
 > 파생 테이블(Derived Table)은 쿼리가 실행될 때 FROM 절 아래에 서브쿼리로 만들어진 테이블을 말합니다. 쿼리 실행 시에 내부 작업으로 메모리/디스크 상에 가상의 테이블을 생성하게 됩니다. 그러나 때에 따라 필요 없는 가상 테이블 생성 작업을 줄이기 위해서 병합해서 쿼리를 실행하게 됩니다. [관련 링크](https://dev.mysql.com/doc/refman/5.7/en/derived-table-optimization.html)
 
