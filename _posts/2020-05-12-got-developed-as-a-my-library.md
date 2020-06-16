@@ -203,7 +203,7 @@ PM👨‍⚖️ : 앗차차 리발자님, 시리즈의 경우 만료가 가장 �
 
 그러나 나는 병합을 하고 싶지 않다. 서브쿼리에서 만들어졌던 순서를 유지한 채로 GROUP BY를 적용하고 싶기 때문이다. 그렇다면 어떻게 해야 할까? 두 가지 방법이 있다. 
 
-1. MySql Optimizer 전체 쿼리 병합 옵션을 해제하는 방법이 있다. optimizer_switch 라는 시스템 변수를 설정하면 된다([관련 링크](https://dev.mysql.com/doc/refman/5.7/en/switchable-optimizations.html)). 그러나 그렇게 하면 다른 쿼리들도 영향을 받아 성능이 저하될 수 있으므로 사용하지 않겠다.
+1. MySQL Optimizer 전체 쿼리 병합 옵션을 해제하는 방법이 있다. optimizer_switch 라는 시스템 변수를 설정하면 된다([관련 링크](https://dev.mysql.com/doc/refman/5.7/en/switchable-optimizations.html)). 그러나 그렇게 하면 다른 쿼리들도 영향을 받아 성능이 저하될 수 있으므로 사용하지 않겠다.
 2. 서브쿼리에 병합이 불가능한 옵션을 설정하면 된다. 병합이 불가능한 조건은 AGGREGATE Function, LIMIT, GROUP BY, HAVING 등이 있다. ([관련 링크](https://dev.mysql.com/doc/refman/5.7/en/derived-table-optimization.html)) 
 
 <br>
