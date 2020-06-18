@@ -534,6 +534,21 @@ article.post a:hover {
   color: #0282da;
   border-color: #0282da;
 }
+article.post details {
+  line-height: 1.9;
+  color: #333;
+}
+article.post details summary {
+  outline: none;
+}
+article.post details summary:active {
+  background: rgba(0, 0, 0, 0.05);
+}
+article.post details p {
+  font-size: 0.95em;
+  padding-left: 18px;
+  color: #636C73;
+}
 article.post hr {
   border: none;
   height: auto;
