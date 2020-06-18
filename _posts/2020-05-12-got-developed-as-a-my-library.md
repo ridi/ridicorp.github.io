@@ -2,7 +2,7 @@
 layout: blog_post
 title: "개발했더니 내 서재였던 건에 대하여"
 description: "길거리에서 난데없이 정신을 잃은 25살의 나이스 가이. 정신을 차리고 자신의 몸을 확인해보니, 개발자가 되어버렸다!"
-header-img: "blog/img/bg-16.jpg"
+header-img: "blog/img/bg-12.jpg"
 date: 2020-05-12
 author: hyunjoon.park
 category: engineering
