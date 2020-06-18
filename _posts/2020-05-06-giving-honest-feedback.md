@@ -5,7 +5,7 @@ description: "솔직한 피드백이 오가는 환경을 만들기 위한 고민
 header-img: "blog/img/bg-15.jpg"
 date: 2020-05-06
 author: daeho.kim
-category: ux/ui
+category: culture
 published: true
 ---
 

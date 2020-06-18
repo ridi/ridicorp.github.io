@@ -5,7 +5,7 @@ description: "리디의 개발자들은 어떻게 일하며 성장해 나가고 
 header-img: "blog/img/bg-14.jpg"
 date: 2020-04-21
 author: kyungjun.park
-category: engineering
+category: culture
 published: true
 ---
 

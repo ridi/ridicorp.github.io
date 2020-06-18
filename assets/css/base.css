@@ -2075,6 +2075,9 @@ html.page.blog.posts .blog-post-list li .list-item .type.type-uxui {
 html.page.blog.posts .blog-post-list li .list-item .type.type-engineering {
   color: #1f8ce6;
 }
+html.page.blog.posts .blog-post-list li .list-item .type.type-culture {
+  color: #16a8be;
+}
 html.page.blog.posts .blog-post-list li .list-item .title {
   display: block;
   font-size: 26px;
