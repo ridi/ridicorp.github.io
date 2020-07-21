@@ -24,19 +24,24 @@ html.page.contact {
   .how-to-contact {
     margin: 80px auto 160px;
     .info-item {
-      display: grid;
-      grid-template-columns: 25% 75%;
       margin-bottom: 80px;
-
+      height: 100px;
       .info-title {
+        display: block;
+        width: 30%;
+        float: left;
         font-size: 28px;
         font-weight: 700;
         color: @slategray-90;
         @media @queries_sm {
           font-size: 24px;
+          float: none;
         }
       }
       .info-dsc {
+        display: block;
+        float: right;
+        width: 65%;
         margin-top: 6px;
         font-size: 24px;
         line-height: 1.4em;
@@ -44,6 +49,10 @@ html.page.contact {
         @media @queries_smmd {
           margin-top: 2px;
           font-size: 20px;
+        }
+        @media @queries_sm {
+          float: none;
+          width: 100%;
         }
       }
     }
