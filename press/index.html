@@ -121,30 +121,42 @@ root_class: "press page"
       );
     }
 
+    function calculateRange(page) {
+      const base = 3;
+      const begin = base + (ARTICLES_PER_PAGE * page);
+      const end = begin + ARTICLES_PER_PAGE - 1;
+      return [begin, end];
+    }
+
     function refreshArticleInfo() {
-      $.getJSON('https://intra.ridi.com/press/list?page=' + (cur_page + 1) + '&items_per_page=' + ARTICLES_PER_PAGE, null, function (data) {
-        setArticles(data);
+      const key = 'AIzaSyCcbVeKxrUvlCPZuQwKFJ9rEer8e5OpKFA';
+      const documentId = '1Do6NWJep2AZmv-p7p5aj-aRmQ5YYJw7pJMNXDCaJ0Cc';        
+      const [begin, end] = calculateRange(cur_page);
+      $.getJSON(`https://sheets.googleapis.com/v4/spreadsheets/${documentId}/values:batchGet?ranges=meta!B1&ranges=A${begin}:D${end}&key=${key}`, null, function (data) {
+        const [meta, rows] = data.valueRanges;
+        const [row_count] = meta.values;
+
+        total_pages = calculateTotalPages(row_count, ARTICLES_PER_PAGE);
+        setArticles(rows.values);
         refreshPageButton();
       });
     }
 
-    function setArticles(data) {
-      var article_tab = $("#article");
-      var articles = data.data['press'];
-
-      total_pages = calculateTotalPages(data.data['count'], ARTICLES_PER_PAGE);
+    function setArticles(articles) {
+      const article_tab = $("#article");
 
       article_tab.empty();
 
       for (var i = 0; i < articles.length; i++) {
-        var date = articles[i]['date'].substr(0, 4) + '.' + articles[i]['date'].substr(4, 2);
-        var temp = "<li>" +
-          "<a id='article" + i + "' href=" + articles[i]['link_url'] + " target=_blank>" +
-          "<strong id='article_title" + i + "' class='title'>" + articles[i]['title'] + "</strong>" +
-          "<span id='article_date" + i + "' class='date'>" + date + "</span>" +
-          "<span id='article_media" + i + "' class='media-name'>" + articles[i]['media'] + "</span>" +
-          "</a> <figure></figure>" +
-          "</li>";
+        const [date, media, title, link_url] = articles[i];
+        const dateFormmated = date.substr(0, 4) + '.' + date.substr(4, 2);
+        const temp = `<li>
+          <a id='article${i}' href=${link_url} target=_blank>
+          <strong id='article_title${i}' class='title'>${title}</strong>
+          <span id='article_date${i}' class='date'>${dateFormmated}</span>
+          <span id='article_media${i}' class='media-name'>${media}</span>
+          </a> <figure></figure>
+          </li>`;
 
         article_tab.append(temp);
       }
