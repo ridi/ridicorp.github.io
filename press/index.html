@@ -107,18 +107,11 @@ root_class: "press page"
 
     function refreshAndFocusToActiveTab() {
       refreshArticleInfo();
-      focusToActiveTab();
     }
 
     function refreshPageButton() {
       (cur_page > 0) ? prev_button.show() : prev_button.hide();
       (cur_page + 1 < total_pages) ? next_button.show() : next_button.hide();
-    }
-
-    function focusToActiveTab() {
-      $("html, body").animate(
-          {scrollTop: getActiveTab().offset().top}
-      );
     }
 
     function calculateRange(page) {
