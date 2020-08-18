@@ -119,11 +119,18 @@ ol {
   color: #B8BFC4;
   margin: 0;
 }
+.page-footer .footer-info .privacy_link {
+  display: inline-block;
+  color: #636C73;
+  font-size: 0.8em;
+  border-bottom: 1px solid #525A61;
+  margin-top: 10px;
+}
 .page-footer .footer-info .copyright {
   text-transform: uppercase;
   text-align: right;
   color: #B8BFC4;
-  margin: 24px 0 0 0;
+  margin: 50px 0 0 0;
 }
 @media only screen and (max-width: 767px) {
   .page-footer .footer-info .copyright {
